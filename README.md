@@ -25,7 +25,7 @@ The complete 000-011 sequence is under [`papers/language-mechanics`](papers/lang
 
 ### Coppalini Architecture extension
 
-*Tool & Technique: Stopping Point & The Theory of Enough* is housed with Language Mechanics as the requested CA-03 extension: [PDF](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf) / [LaTeX](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.tex). The retained manuscript identifies itself internally as **Coppalini Architecture - Methodology Basis 01**; the repository does not silently rewrite that source-level numbering.
+*Tool & Technique: Stopping Point & The Theory of Enough* is housed with Language Mechanics as the requested CA-03 extension: [PDF](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf) / [LaTeX](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.tex). 
 
 ## Principal papers
 
