@@ -32,11 +32,11 @@ The complete 000-011 sequence is under [`papers/language-mechanics`](papers/lang
 | Paper | Edition | PDF | Source |
 |---|---|---|---|
 | Contact Recognition: A Typed Architecture for Compatible Curved Geometry
-and Refinement-Stable Physical Readout| [PDF](https://github.com/Coppalini-Architecture/coppalini-architecture/blob/0534b478ffc8e5a818d624763d84037c286e6bf8/papers/Contact_Recognition_Continuum.pdf))
+and Refinement-Stable Physical Readout | 24 Sep 2026 | [PDF](papers/Contact_Recognition_Continuum.pdf) |
 | Motion and Difference | 17 Jul 2026 | [PDF](papers/motion-and-difference/motion-and-difference-2026-07-17.pdf) | [LaTeX](papers/motion-and-difference/motion-and-difference-2026-07-17.tex) |
 | Continuum Closure in Covariant Loop Quantum Gravity | canonical v1.1, 2 Sep 2026; DOI citation update only | [PDF](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf) | [LaTeX](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.tex) |
 | Metric Mirror Symmetry / Riemann's i Machine | 9 Sep 2026 canonical edition | [PDF](papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf) | PDF is the retained canonical artifact |
-| Mirror Recognition: The Minimum Symmetric Field Closure | final form v1.0 | [PDF](papers/mirror-recognition/mirror-recognition-v1.0.pdf) | [Markdown audit source](papers/mirror-recognition/mirror-recognition-v1.0.md) |
+| Mirror Recognition: The Minimum Symmetric Field Closure | 11 Sep 2026 | [PDF](papers/mirror-recognition/mirror-recognition-v1.0.pdf) | [Markdown audit source](papers/mirror-recognition/mirror-recognition-v1.0.md) |
 | The Exact Reader | v0.1 | [PDF](papers/the-exact-reader/the-exact-reader-v0.1.pdf) | [Markdown](papers/the-exact-reader/the-exact-reader-v0.1.md) |
 
 ## Citation and integrity
