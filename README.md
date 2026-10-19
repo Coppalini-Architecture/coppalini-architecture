@@ -31,8 +31,7 @@ The complete 000-011 sequence is under [`papers/language-mechanics`](papers/lang
 
 | Paper | Edition | PDF | Source |
 |---|---|---|---|
-| Contact Recognition: A Typed Architecture for Compatible Curved Geometry
-and Refinement-Stable Physical Readout | 24 Sep 2026 | [PDF](papers/Contact_Recognition_Continuum.pdf) |
+| Contact Recognition: A Typed Architecture for Compatible Curved Geometry | 24 Sep 2026 | [PDF](papers/Contact_Recognition_Continuum.pdf) |
 | Motion and Difference | 17 Jul 2026 | [PDF](papers/motion-and-difference/motion-and-difference-2026-07-17.pdf) | [LaTeX](papers/motion-and-difference/motion-and-difference-2026-07-17.tex) |
 | Continuum Closure in Covariant Loop Quantum Gravity | canonical v1.1, 2 Sep 2026; DOI citation update only | [PDF](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf) | [LaTeX](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.tex) |
 | Metric Mirror Symmetry / Riemann's i Machine | 9 Sep 2026 canonical edition | [PDF](papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf) | PDF is the retained canonical artifact |
