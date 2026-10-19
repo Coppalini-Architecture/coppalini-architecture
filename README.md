@@ -31,7 +31,7 @@ The complete 000-011 sequence is under [`papers/language-mechanics`](papers/lang
 
 | Paper | Edition | PDF | Source |
 |---|---|---|---|
-| Motion and Difference | 17 Jul 2026; DOI-bearing display edition | [PDF](papers/motion-and-difference/motion-and-difference-2026-07-17.pdf) | [LaTeX](papers/motion-and-difference/motion-and-difference-2026-07-17.tex) |
+| Motion and Difference | 17 Jul 2026 | [PDF](papers/motion-and-difference/motion-and-difference-2026-07-17.pdf) | [LaTeX](papers/motion-and-difference/motion-and-difference-2026-07-17.tex) |
 | Continuum Closure in Covariant Loop Quantum Gravity | canonical v1.1, 2 Sep 2026; DOI citation update only | [PDF](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf) | [LaTeX](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.tex) |
 | Metric Mirror Symmetry / Riemann's i Machine | 9 Sep 2026 canonical edition | [PDF](papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf) | PDF is the retained canonical artifact |
 | Mirror Recognition: The Minimum Symmetric Field Closure | final form v1.0 | [PDF](papers/mirror-recognition/mirror-recognition-v1.0.pdf) | [Markdown audit source](papers/mirror-recognition/mirror-recognition-v1.0.md) |
