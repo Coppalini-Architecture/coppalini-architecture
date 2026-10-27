@@ -26,6 +26,8 @@ The stable concept DOI for *The Structure of Survival* is [10.5281/zenodo.236972
 
 The complete sequence is under [`papers/language-mechanics`](papers/language-mechanics/). Every numbered paper has a LaTeX source and PDF display copy.
 
+Language Mechanics isolates the minimum foundation of fit and function in written form. The basis of survival calculus, wave grammar, rotational algebra.
+
 | No. | Paper | Version | PDF | Source |
 |---:|---|---|---|---|
 | 000 | Language Mechanics | v0.2.1 | [PDF](papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf) | [LaTeX](papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.tex) |
@@ -41,7 +43,7 @@ The complete sequence is under [`papers/language-mechanics`](papers/language-mec
 | 010 | Minimum Root Algebra | v0.2 | [PDF](papers/language-mechanics/010-minimum-root-algebra/minimum-root-algebra-010-v0.2.pdf) | [LaTeX](papers/language-mechanics/010-minimum-root-algebra/minimum-root-algebra-010-v0.2.tex) |
 | 011 | Occurrence and the Twenty-Eight-Seam Reader | v0.2 | [PDF](papers/language-mechanics/011-occurrence-twenty-eight-seam-reader/occurrence-twenty-eight-seam-reader-011-v0.2.pdf) | [LaTeX](papers/language-mechanics/011-occurrence-twenty-eight-seam-reader/occurrence-twenty-eight-seam-reader-011-v0.2.tex) |
 
-The extension *Tool & Technique: Stopping Point & The Theory of Enough* is retained at the requested CA-03 repository address: [PDF](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf) · [LaTeX](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.tex).
+The extension *Tool & Technique: Stopping Point & The Theory of Enough* is retained at the CA-03 repository address: [PDF](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf) · [LaTeX](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.tex).
 
 ## Principal papers
 
