@@ -26,7 +26,7 @@ The stable concept DOI for *The Structure of Survival* is [10.5281/zenodo.236972
 
 The complete sequence is under [`papers/language-mechanics`](papers/language-mechanics/). Every numbered paper has a LaTeX source and PDF display copy.
 
-Language Mechanics isolates the minimum foundation of fit and function in written form. The basis of survival calculus, wave grammar, rotational algebra.
+Language Mechanics isolates the minimum foundation of fit and function in written form. The basis of survival calculus, wave grammar, rotational algebra, baby mathematics.
 
 | No. | Paper | Version | PDF | Source |
 |---:|---|---|---|---|
