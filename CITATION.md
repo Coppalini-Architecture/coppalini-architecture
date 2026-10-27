@@ -1,10 +1,14 @@
 # Citation
 
-Prefer the individual paper when citing a result. Use the repository citation only when referring to the collection as a whole.
+Prefer the individual paper when citing a result. Use the repository citation when referring to the collection as a whole.
 
 ## Repository
 
-Coppa, Anthony Vito. *Coppalini Architecture: Paper Archive*. Version 1.0.0, 15 September 2026. GitHub repository, `lotuslift/coppalini-architecture`.
+Coppa, Anthony Vito. *Coppalini Architecture: Paper Archive and Formal Maps*. Version 1.1.0, 27 October 2026. GitHub repository, [`Coppalini-Architecture/coppalini-architecture`](https://github.com/Coppalini-Architecture/coppalini-architecture).
+
+## Current synthesis
+
+Coppa, Anthony Vito. *The Structure of Survival: The Minimum Geometry of Motion, Memory, and Recognition*. Review Edition v66, 27 October 2026. [Concept DOI 10.5281/zenodo.23697264](https://doi.org/10.5281/zenodo.23697264); [version DOI 10.5281/zenodo.23697265](https://doi.org/10.5281/zenodo.23697265).
 
 ## DOI-bearing paper
 
@@ -12,11 +16,14 @@ Coppa, Anthony Vito. *Motion and Difference*. 17 July 2026. [https://doi.org/10.
 
 ## Principal papers
 
-- Coppa, A. V. *Continuum Closure in Covariant Loop Quantum Gravity: Compatibility, Physical-State Refinement, and the Spin-Two Sector*. Canonical v1.1, 2 September 2026; bibliography updated with the Motion and Difference DOI.
+- Coppa, Anthony Vito. *Contact Recognition: A Typed Architecture for Compatible Curved Geometry*. 24 September 2026.
+- Coppa, A. V. *Continuum Closure in Covariant Loop Quantum Gravity: Compatibility, Physical-State Refinement, and the Spin-Two Sector*. Canonical v1.1, 2 September 2026.
 - Coppa, Anthony Vito. *Metric Mirror Symmetry: Riemann's i Machine*. Canonical edition, 9 September 2026.
 - Coppa, A. V. *Mirror Recognition: The Minimum Symmetric Field Closure*. Final form v1.0, 11 September 2026.
 - Coppa, A. V. *The Exact Reader*. v0.1, 15 September 2026.
-- Coppa, Anthony Vito. *The Structure of Survival: Minimum Enduring Complexity - From Typed Zero to Non-Erasing Continuum Closure*. Corrected adapter edition v0.2, 3 September 2026.
+- Coppa, Anthony Vito. *Linear Infinity*. Canonical v0.1.
+- Coppa, Anthony Vito. *Clear_Onyx Computational Kernel Briefing*. 5 August 2026.
+- Coppa, Anthony Vito. *The Structure of Survival: Minimum Enduring Complexity — From Typed Zero to Non-Erasing Continuum Closure*. Corrected adapter edition v0.2, 3 September 2026.
 - Coppa, Anthony Vito. *Compatibility Without Flatness: Exact Gluing with Nonzero Curvature, Holonomy, and Proper-Time Difference*. v0.1, 2 September 2026.
 - Coppa, Anthony Vito. *Coarse-Grained Entropy and Exterior Records: Compatible Microstates, Semiclassical Horizon Entropy, and the Limits of Reconstruction*. v0.1, 2 September 2026.
 

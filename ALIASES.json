@@ -1,0 +1,13 @@
+{
+  "schema": "coppalini-architecture.path-aliases.v1",
+  "aliases": [
+    {
+      "alias": "papers/Metric_Mirror_Symmetry.pdf",
+      "canonical": "papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf"
+    },
+    {
+      "alias": "papers/Mirror_Recognition_v1_0.pdf",
+      "canonical": "papers/mirror-recognition/mirror-recognition-v1.0.pdf"
+    }
+  ]
+}

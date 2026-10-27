@@ -1,7 +1,15 @@
 # Contributing
 
-This is an author-maintained paper archive, not an open software project.
+This is an author-maintained paper archive and formal-map surface.
 
-Corrections may be proposed through GitHub issues. A useful report identifies the paper, edition, page or source line, the exact statement at issue, and a supporting reference or reproducible calculation.
+Corrections may be proposed through GitHub issues. A useful report identifies:
 
-New manuscripts enter only when they are presentation-ready and include a stable display PDF plus the best available authoring source. Working drafts, conversational provenance, speculative roadmap material, duplicate bundles, and build products remain outside the public archive.
+1. the exact paper, map, edition, page, or source line;
+2. the statement or relation at issue;
+3. the proposed correction;
+4. the source authority or reproducible calculation;
+5. the status that remains open after correction.
+
+New papers enter with a stable display artifact, the best available authoring source, and an explicit edition. Formal maps enter as maps and remain separately typed from papers. Open constructions retain an OPEN status until their own closure conditions are met.
+
+Updates preserve existing citation paths or declare an exact alias. The integrity ledger is regenerated and verified before a public commit.

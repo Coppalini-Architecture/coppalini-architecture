@@ -1,19 +1,35 @@
-# Repository status
+# Repository Status
 
-**Paper archive edition: 15 September 2026**
+**Coordinated archive edition: 27 October 2026**
 
-The repository currently contains:
+## Current public surface
 
-- the complete Language Mechanics 000-011 formal basis, with LaTeX and PDF for every paper;
-- Tool & Technique, retained with its canonical Methodology Basis 01 manuscript numbering and placed at the requested CA-03 repository address;
-- the latest located display editions of Motion and Difference, Continuum Closure in Covariant Loop Quantum Gravity, Metric Mirror Symmetry / Riemann's i Machine, Mirror Recognition, and The Exact Reader; CCLQG retains its original 2 September 2026 date and changes only reference [11] to add the Motion and Difference DOI;
-- three closely related, presentation-ready papers: Minimum Enduring Complexity, Compatibility Without Flatness, and Coarse-Grained Entropy and Exterior Records.
+- 12 numbered Language Mechanics papers;
+- 1 Tool & Technique extension;
+- 8 principal papers;
+- 3 supporting papers;
+- 19 formal dependency and field-ownership maps;
+- 1 explicitly open ultraviolet construction;
+- 2 byte-identical path aliases retained for address continuity;
+- 1 complete checksum ledger and automated integrity verifier.
 
-Working drafts, duplicate bundles, audit ledgers, conversation records, build products, roadmaps, computational models, and future-development nodes are excluded.
+The current deposited synthesis is *The Structure of Survival*, Review Edition v66: [10.5281/zenodo.23697265](https://doi.org/10.5281/zenodo.23697265).
 
-All retained PDFs open successfully and have nonzero page counts. Exact file hashes are recorded in [`SHA256SUMS`](SHA256SUMS).
+## Source boundaries
 
-Two source-format boundaries remain explicit:
+- Every numbered Language Mechanics paper carries PDF and LaTeX.
+- Motion and Difference, Continuum Closure, Minimum Enduring Complexity, Compatibility Without Flatness, and Coarse-Grained Entropy carry PDF and LaTeX.
+- Mirror Recognition and The Exact Reader carry PDF and Markdown authoring sources.
+- Contact Recognition, Metric Mirror Symmetry, Linear Infinity, and the Clear_Onyx briefing are retained as display artifacts in this repository.
+- Formal maps retain their Markdown source form.
 
-1. Mirror Recognition and The Exact Reader are retained with their Markdown authoring sources rather than synthetic LaTeX conversions.
-2. The canonical Metric Mirror Symmetry / Riemann's i Machine artifact was located as a PDF; no matching canonical authoring source was found in the available files.
+## Integrity boundary
+
+`SHA256SUMS` covers every tracked repository file except the ledger itself. `scripts/verify_archive.py` verifies:
+
+1. checksum equality;
+2. complete tracked-file coverage;
+3. absence of stale ledger paths;
+4. identity of declared aliases.
+
+No unique paper or formal map was removed in this coordination edition.

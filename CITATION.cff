@@ -1,17 +1,18 @@
 cff-version: 1.2.0
 message: "Please cite the specific paper whenever possible; cite this record when referring to the collection as a whole."
-title: "Coppalini Architecture: Paper Archive"
+title: "Coppalini Architecture: Paper Archive and Formal Maps"
 type: dataset
 authors:
   - family-names: "Coppa"
     given-names: "Anthony Vito"
-version: 1.0.0
-date-released: 2026-09-15
-repository-code: "https://github.com/lotuslift/coppalini-architecture"
+version: 1.1.0
+date-released: 2026-10-27
+repository-code: "https://github.com/Coppalini-Architecture/coppalini-architecture"
 abstract: >-
-  A curated public archive of the Language Mechanics 000-011 formal basis and
-  selected Coppalini Architecture papers on reference-preserving formal
-  systems, mirror symmetry, exact reading, and mathematical physics.
+  The public paper archive and formal dependency-map surface of the Coppalini
+  Architecture, including the Language Mechanics 000-011 formal basis,
+  selected mathematical-physics papers, source-ownership maps, citation
+  records, and exact integrity receipts.
 keywords:
   - Language Mechanics
   - formal architecture
@@ -20,3 +21,4 @@ keywords:
   - mirror symmetry
   - continuum closure
   - exact reader
+  - reproducible research
