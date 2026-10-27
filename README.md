@@ -4,7 +4,7 @@
 
 This repository is the public paper shelf and reference map for the Coppalini Architecture. Its contents occupy three declared offices:
 
-1. **Papers** carry fixed mathematical and formal arguments.
+1. **Papers** carry fixed mathematical and formal constructions.
 2. **Maps and registers** record dependency, source ownership, and open construction.
 3. **Integrity records** preserve citation, path, edition, alias, and checksum identity.
 
