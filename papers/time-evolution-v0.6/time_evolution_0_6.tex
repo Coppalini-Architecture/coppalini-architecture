@@ -1,0 +1,745 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.86in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newpxtext}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz-cd}
+\usepackage{booktabs,longtable,array,tabularx,multicol}
+\usepackage{enumitem,xcolor}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,pdftitle={Time Evolution: Selection, Symmetry, and Retained Descent},pdfauthor={Anthony Vito Coppa}}
+\definecolor{ink}{RGB}{29,45,61}
+\definecolor{muted}{RGB}{99,110,121}
+\definecolor{rule}{RGB}{189,200,207}
+\pagestyle{fancy}\fancyhf{}\lhead{\small\color{muted}TIME EVOLUTION \textbar\ PAPER 32}\rhead{\small\color{muted}Time Evolution / 0.6}\cfoot{\small\color{muted}\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\setlist[itemize]{topsep=3pt,itemsep=1pt,leftmargin=1.4em}
+\setlist[enumerate]{topsep=4pt,itemsep=2pt,leftmargin=1.7em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\Id}{I}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\OO}{\operatorname{O}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\snoc}{\operatorname{snoc}}
+\newcommand{\splitop}{\operatorname{split}}
+\newcommand{\aE}{\mathcal E}
+\newcommand{\Ah}{\mathcal A_h}
+\newcommand{\ph}{\varphi}
+\newcommand{\varp}{\varpi}
+\newcommand{\rhoax}{\rho_{\mathrm{ax}}}
+\newcommand{\rhos}{\rho_{\pm}}
+\newcommand{\etaT}{\eta_T}
+\newcommand{\bb}[1]{\left[#1\right]}
+\newcommand{\coord}[1]{\textsf{#1}}
+\begin{document}
+\begin{center}
+{\small\scshape Paper 32}\par\vspace{5pt}
+{\Huge\bfseries\color{ink} Time Evolution}\par\vspace{5pt}
+{\large\color{muted} Conserved form, selected return, and seed-admitted descent}\par\vspace{9pt}
+{\large Anthony Vito Coppa}\par\vspace{2pt}
+{\small Technical edition 0.6 \textbar\ 30 October 2026 \textbar\ review manuscript}\par
+\end{center}
+\vspace{3pt}
+\begin{abstract}
+We classify a real split-plane evolution in which invariant structure, advancing state, returning observation, and retained succession have separately declared mathematical types. A recurrence matrix $Q$ and an area form $\Omega$ determine a split metric $G=[Q,\Omega]$, its hyperbolic flow $L_s=e^{sS}$, and a reversing reflection $H$. The full linear isometry group is $\OO(g)=\SO(g)\rtimes\langle H\rangle$, with $\SO(g)\cong\RR\times\{\pm1\}$ acting simply transitively on each nonzero metric level. In the exact chart $(\lambda,m,\kappa,\sigma)$, evolution translates $\lambda$ while retaining $(m,\kappa)$ and transporting the oriented sign. Selecting $T=-L_{\log\ph}$ gives an axial return each step, an oriented return every second step, and distinct complete states. All selected homogeneous readers are classified by stabilizer subgroups. The two natural double covers of the axial circle, together with their four-sheet common refinement, follow from a single subgroup diagram. The full $T$-orbit quotient is a circle and has a degree-two map to the axial reader. A finite receipt extension retains predecessor--successor transitions; a chosen four-phase timing register gives exact four- and eight-microstep readout periods. A scale theorem separates the general mechanism from its Fibonacci-normalized sampling interval. A conditional controlled-evolution theorem extends the fixed orbit to admissible, seed-dependent steps in $\SO(g)$, with a nonredundant action receipt and exact accumulated return criteria. Defined applications distinguish the split-metric sector from optical contrast and represent DNA complementarity as a selected half-turn without replacing biochemical replication. A time-indexed reader interface identifies the additional structure required to model learning. Mathematical results, empirical mechanisms, and historical evidence retain separate authorities.
+\end{abstract}
+\vspace{2pt}
+\noindent\textbf{Jurisdiction and strength.} The proved object is a real $2\times2$ matrix action with specified state space, quotient readers and a finite receipt extension. Its parameter $s$ is dimensionless mathematical time. Statements about measured physical time, inheritance, survival, and history occupy declared application interfaces with their own data and validation conditions. The word \emph{reader} means a map acting on states inside the declared dynamical system.
+
+\section{Reference, question, and claim}
+Fix the real plane $V=\RR^2$, a bilinear metric $g$, a two-form $\omega$, an action $\aE\curvearrowright V$, a non-null state domain $X$, and declared readers $\rho:X\to Y$. A \emph{state} is a vector $z\in X$; a \emph{reading} is the value of a specified map $\rho$ on that vector; a \emph{return of a reading} is equality of reader values along an evolving orbit; a \emph{record} is a retained finite sequence of transitions. These offices have distinct codomains and distinct tests.
+
+The structural question is whether one exact realization can carry, simultaneously,
+\begin{equation}\label{eq:goal}
+ g(Tz,Tz)=g(z,z),\qquad \rho(Tz)=\rho(z),\qquad
+ T^nz=T^mz\Longrightarrow n=m,
+\end{equation}
+with a record that preserves the intervening transitions. The second construction permits a typed seed to select successive group steps; it retains the action and input as part of each receipt. Equation \eqref{eq:goal} declares \emph{conservation}, \emph{reader return}, and \emph{faithful progression}. Each relation will follow from the stronger classification theorems below; it is the entry point rather than the final result.
+
+A second question concerns exact selection: which structures are forced by the matrix realization, which are selected by a chosen reader, and which arise when a stored history or an outside interpretation is added? The manuscript resolves these in dependency order: declared reference $\to$ arithmetic $\to$ metric geometry $\to$ group action $\to$ reader selection $\to$ history and timing $\to$ application interfaces.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{1.12in}p{1.48in}X@{}}
+\toprule
+\textbf{Office}&\textbf{Source of authority}&\textbf{Exact commitment}\\\midrule
+Declared reference & $V,Q,\Omega$ & State plane, recurrence matrix, oriented area convention.\\
+Derived structure & $G,S,H,C,L_s$ & Split metric, infinitesimal flow, reflection, angular generator and isometries.\\
+Selected sampling & $a_0=\log\ph$, $T=-L_{a_0}$ & Fibonacci-normalized forward interval coupled to the central sign.\\
+Selected reading & $K\leq\mathcal E$ & An observation quotient whose return subgroup is $K$.\\
+Admitted selection & $a_n=\mathsf{Select}_{J_*}(z_n,R_n,u_n)$ & Conditional seed-dependent step within $\SO(g)$; exact if a selected step is admitted.\\
+Retained occurrence & $\widehat T$, $R_n$ & Append-only predecessor--successor trace for the declared trajectory.\\
+Added timing & $r\in\ZZ/4\ZZ$ & A four-position register with a carry at the fourth position.\\
+Application & $f$, clocks, instruments, criteria & External correspondence and validation rules supplied for a proposed use.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Arithmetic origin and declared geometry}
+Let
+\begin{equation}\label{eq:root}
+ Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+ \Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+ C=-\Omega=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad
+ G=[Q,\Omega]=\begin{pmatrix}-2&1\\1&2\end{pmatrix}.
+\end{equation}
+Here $[A,B]=AB-BA$. Direct multiplication gives
+\begin{equation}\label{eq:rootrels}
+ Q^2=Q+\Id,\qquad C^2=-\Id,\qquad G^2=5\Id,\qquad
+ \det G=-5,\qquad \operatorname{sig}(G)=(1,1).
+\end{equation}
+The symmetric pairing and alternating area form are
+\begin{equation}
+ g(u,v)=u^{\mathsf T}Gv,\qquad \omega(u,v)=u^{\mathsf T}\Omega v.
+\end{equation}
+The metric has one positive and one negative direction. Under a basis change $P\in\GL_2(\RR)$, vectors and bilinear forms transport as $z'=P^{-1}z$, $G'=P^{\mathsf T}GP$, and $\Omega'=P^{\mathsf T}\Omega P$. The scalar values of $g$ and $\omega$ are therefore preserved under coherent reference change.
+
+Write
+\begin{equation}\label{eq:eigen}
+ \ph=\frac{1+\sqrt5}{2},\qquad \psi=\frac{1-\sqrt5}{2}=-\ph^{-1},\qquad
+ v_+=\begin{pmatrix}\ph\\1\end{pmatrix},\quad
+ v_-=\begin{pmatrix}\psi\\1\end{pmatrix}.
+\end{equation}
+These satisfy $Qv_+=\ph v_+$ and $Qv_-=\psi v_-$. Their exact metric pairing is
+\begin{equation}\label{eq:nullpair}
+ g(v_+,v_+)=g(v_-,v_-)=0,\qquad g(v_+,v_-)=5.
+\end{equation}
+Thus any $z=av_++bv_-$ obeys $g(z,z)=10ab$. Its non-null domain is
+\begin{equation}\label{eq:X}
+ X=\{av_++bv_-:a,b\in\RR,\ ab\ne0\}
+   =\{z\in V:g(z,z)\ne0\}.
+\end{equation}
+Each $h\in\RR\setminus\{0\}$ defines an invariant level $\Ah=\{z:g(z,z)=h\}$.
+
+\section{Selected evolution: recurrence, flow, and reflection}
+Define
+\begin{equation}\label{eq:ops}
+ S=\frac{2Q-\Id}{\sqrt5},\qquad H=\frac{G}{\sqrt5},\qquad
+ L_s=e^{sS},\qquad a_0=\log\ph,\quad \varp=2a_0,
+\end{equation}
+\begin{equation}\label{eq:step}
+ L=L_{a_0}=\frac{Q+2\Id}{\sqrt5},\qquad
+ U(\alpha)=e^{\alpha C}=\begin{pmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{pmatrix},\qquad
+ T=U(\pi)L=-L.
+\end{equation}
+
+\begin{lemma}[Metric flow and arithmetic factorization]\label{lem:arithmetic}
+The following identities hold:
+\begin{align}\label{eq:arithmetic}
+&S^2=H^2=\Id,\quad S^{\mathsf T}G+GS=0,\quad
+ L_s=\cosh s\,\Id+\sinh s\,S,\quad L_sL_t=L_{s+t},\\
+&L_s^{\mathsf T}GL_s=G,\quad \det L_s=1,\quad H L_sH=L_{-s},
+   \quad H^{\mathsf T}GH=G,\\
+&Q=LS,\quad Q^{\mathsf T}GQ=-G,\quad
+ Q^2=L^2=T^2,\quad HTH=T^{-1}.\nonumber
+\end{align}
+\end{lemma}
+\begin{proof}
+The first line is direct from $Q^2=Q+\Id$ and $G^2=5\Id$. Since $S^2=\Id$, the exponential separates into its even and odd powers. Differentiating $L_s^{\mathsf T}GL_s$ gives $L_s^{\mathsf T}(S^{\mathsf T}G+GS)L_s=0$, with initial value $G$. The eigenvalues $e^s,e^{-s}$ imply determinant one. Direct multiplication yields $HSH=-S$, hence $HL_sH=L_{-s}$; symmetry and $H^2=\Id$ give $H^{\mathsf T}GH=G$. Using $\cosh(a_0)=\sqrt5/2$ and $\sinh(a_0)=1/2$ gives the stated $L$. Then $LS=Q$, while $S^{\mathsf T}GS=-G$, so $Q^{\mathsf T}GQ=-G$. Finally $Q^2=L^2$ follows from $Q=LS$ and $[L,S]=0$, and $T=-L$ gives the remaining claims.
+\end{proof}
+
+The factorization $Q=LS$ identifies three distinct operations from the same recurrence. The matrix $Q$ transports the metric level $h$ to $-h$; $L$ advances the flow while preserving $h$; $T$ advances by the same amount and carries the central sign. Their second powers coincide. This is the exact arithmetic selection connecting recurrence and metric-compatible evolution. Here $Q$ has determinant $-1$ and transports $g$ to $-g$, whereas $L$ and $T$ have determinant $+1$ and preserve $g$. The original Fibonacci recurrence is the historical antecedent of $Q^2=Q+I$; $Q$ is its present matrix encoding.
+
+\section{The complete isometry group}\label{sec:isom}
+Set
+\begin{equation}\label{eq:group}
+ \aE=\RR\times\{\pm1\},\qquad
+ \mathcal E(s,\eps)=\eps L_s,
+ \quad (s,\eps)(t,\delta)=(s+t,\eps\delta).
+\end{equation}
+The connected flow is $s\mapsto L_s$; the second factor is the central half-turn $-\Id=U(\pi)$.
+
+\begin{theorem}[Complete linear symmetry and reversal]\label{thm:fullgroup}
+For the metric $g$ in \eqref{eq:root},
+\begin{equation}\label{eq:orthgroup}
+ \SO(g)=\{\eps L_s:s\in\RR,\eps\in\{\pm1\}\}\cong\RR\times\{\pm1\},
+ \qquad \OO(g)=\SO(g)\rtimes\langle H\rangle.
+\end{equation}
+Each $\mathcal E(s,\eps)$ preserves $g$ and $\omega$; $H$ preserves $g$, reverses $\omega$, and acts by
+\begin{equation}\label{eq:reverse}
+ H\mathcal E(s,\eps)H=\mathcal E(-s,\eps).
+\end{equation}
+The two factors in $\OO(g)$ are exact: $H^2=\Id$ and $\det H=-1$.
+\end{theorem}
+\begin{proof}
+Use the null eigenbasis $(v_+,v_-)$. By \eqref{eq:nullpair}, the matrix of $g$ becomes $J=\bigl(\begin{smallmatrix}0&5\\5&0\end{smallmatrix}\bigr)$. If $M=\bigl(\begin{smallmatrix}p&q\\r&t\end{smallmatrix}\bigr)$ obeys $M^{\mathsf T}JM=J$, then $pr=qt=0$ and $pt+qr=1$. Consequently $M$ is either $\operatorname{diag}(u,u^{-1})$ or $\bigl(\begin{smallmatrix}0&u\\u^{-1}&0\end{smallmatrix}\bigr)$, with $u\in\RR^\times$. The first family has determinant $+1$ and is exactly $\eps\operatorname{diag}(e^s,e^{-s})$, namely $\mathcal E(s,\eps)$. The second has determinant $-1$ and equals $\mathcal E(s,\eps)H$ for a suitable $(s,\eps)$, since $H$ is $\bigl(\begin{smallmatrix}0&\ph^{-1}\\\ph&0\end{smallmatrix}\bigr)$ in this basis. Conjugation follows from $HSH=-S$. Any $2\times2$ matrix $M$ obeys $M^{\mathsf T}\Omega M=(\det M)\Omega$, proving the area assertions.
+\end{proof}
+
+\begin{proposition}[The invariant bilinear form is selected up to scale]\label{prop:unique}
+For the generator $S$, the vector space of symmetric bilinear forms $B$ satisfying $L_s^{\mathsf T}BL_s=B$ for every $s\in\RR$ is one-dimensional, generated by $G$. Each nonzero such $B$ is split and nondegenerate. The space of alternating bilinear forms on $V$ is also one-dimensional; every member is preserved by $\mathcal E$.
+\end{proposition}
+\begin{proof}
+In the eigenbasis, $L_s=\operatorname{diag}(e^s,e^{-s})$. The two diagonal entries of $B$ multiply by $e^{2s}$ and $e^{-2s}$; invariance for all $s$ sets them to zero. The symmetric off-diagonal entry remains free, yielding $B=c\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$. When $c\ne0$ its determinant is $-c^2$. Every alternating $2\times2$ matrix is a scalar multiple of $\Omega$, and $\det\mathcal E=1$.
+\end{proof}
+
+\section{Normal form and homogeneous metric levels}\label{sec:chart}
+For $z=av_++bv_-\in X$, define the complete signed chart
+\begin{equation}\label{eq:chart}
+ N(z)=(\lambda,m,\kappa,\sigma),\quad
+ \lambda=\log|a/b|,\quad m=|ab|,\quad
+ \kappa=\sgn(ab),\quad \sigma=\sgn(a).
+\end{equation}
+An orientation of $v_+$ is fixed when $\sigma$ is read; reversing that orientation transports the sign convention along with the reference frame.
+
+\begin{lemma}[Exact translation chart]\label{lem:chart}
+The map $N$ is a bijection
+\begin{equation}\label{eq:chartmap}
+ X\longrightarrow \RR\times\RR_{>0}\times\{\pm1\}^2,\qquad
+ a=\sigma\sqrt m\,e^{\lambda/2},\quad
+ b=\kappa\sigma\sqrt m\,e^{-\lambda/2}.
+\end{equation}
+Its transformation laws are
+\begin{align}\label{eq:chartlaws}
+N(\mathcal E(s,\eps)z)&=(\lambda+2s,m,\kappa,\eps\sigma),\\
+N(Hz)&=(-\lambda-\varp,m,\kappa,\kappa\sigma),\\
+N(Qz)&=(\lambda+\varp,m,-\kappa,\sigma),\\
+N(Tz)&=(\lambda+\varp,m,\kappa,-\sigma),\qquad
+  g(z,z)=10\kappa m.\nonumber
+\end{align}
+\end{lemma}
+\begin{proof}
+The inverse follows from $|a||b|=m$ and $|a|/|b|=e^\lambda$. The eigenline multipliers for $L_s$ are $e^s,e^{-s}$; $S$ multiplies $b$ by $-1$; $Q=LS$. Further, $H(av_++bv_-)=(b/\ph)v_++(\ph a)v_-$, proving the reflection formula. The final equality follows from \eqref{eq:nullpair}.
+\end{proof}
+
+\begin{theorem}[Metric levels are homogeneous state spaces]\label{thm:torsor}
+For every $h\in\RR^\times$, the level
+\begin{equation}
+ \Ah=\{z\in X:g(z,z)=h\}\cong\RR\times\{\pm1\}
+\end{equation}
+is a simply transitive $\SO(g)$-space: for every ordered pair $z,w\in\Ah$ there is exactly one $\mathcal E(s,\eps)$ with $\mathcal E(s,\eps)z=w$. In particular the action on $X$ is free.
+\end{theorem}
+\begin{proof}
+On $\Ah$, the parameters $\kappa=\sgn h$ and $m=|h|/10$ are fixed. For states with coordinates $(\lambda,\sigma)$ and $(\lambda',\sigma')$, choose uniquely $s=(\lambda'-\lambda)/2$ and $\eps=\sigma'/\sigma$. The chart law gives existence and uniqueness.
+\end{proof}
+
+Thus metric value $h$ labels the invariant level, $\lambda$ supplies a continuous coordinate along its flow, and $\sigma$ supplies the transported oriented branch. Free progression is an intrinsic symmetry property of each metric level.
+
+\section{Readers and exact return periods}
+Declare a quotient-periodic axial reader and its oriented-sign refinement:
+\begin{equation}\label{eq:readers}
+ \rhoax(z)=[\lambda]_{\varp}\in\RR/\varp\ZZ,
+ \qquad \rhos(z)=([\lambda]_{\varp},\sigma)\in(\RR/\varp\ZZ)\times\{\pm1\}.
+\end{equation}
+For a full projective reference also write $p(z)=[z]\in\RR P^1$. The reader $\rhoax$ records the logarithmic axis modulo the selected step. The reader $\rhos$ additionally records the oriented eigenline sign. The projective reader $p$ records a direction and is invariant under scalar $-I$. On a fixed $\Ah$ it retains the full real coordinate $\lambda$ (with $\kappa$ fixed), whereas $\rhoax$ additionally quotients by the discrete axial step. Both have a declared role in the reading hierarchy.
+
+\begin{theorem}[Exact selection of homogeneous readers]\label{thm:readerselection}
+Fix $h\in\RR^{\times}$ and a reference state $z_h\in\Ah$. By Theorem~\ref{thm:torsor}, each $z\in\Ah$ has a unique expression $z=e z_h$ with $e\in\mathcal E$. For any closed subgroup $K\leq\mathcal E$, define
+\begin{equation}\label{eq:readergeneral}
+ \rho_K(e z_h)=eK\in\mathcal E/K.
+\end{equation}
+This reader has fibers exactly the $K$-orbits. A group step $t\in\mathcal E$ returns its reading precisely when $t\in K$, and its $n$th iterate returns precisely when $t^n\in K$. For $K_1\subseteq K_2$, the canonical map $\mathcal E/K_1\to\mathcal E/K_2$ factors the corresponding readers. Thus the subgroup $K$ selects the information retained by this class of readers.
+\end{theorem}
+\begin{proof}
+The action on $\Ah$ is simply transitive and $\mathcal E$ is abelian. Therefore $\rho_K(t e z_h)=teK=eK$ precisely when $t\in K$. The same criterion applies to powers $t^n$. If $K_1\subseteq K_2$, sending $eK_1$ to $eK_2$ is well-defined and realizes the factorization. Closedness gives the usual Hausdorff quotient topology for the selected subgroups.
+\end{proof}
+
+The declared axial and oriented-sign readers are concrete presentations of this construction, up to a fixed translation of the quotient coordinate determined by $z_h$. The theorem classifies \emph{homogeneous quotient readers}; an arbitrary instrument-specific observation map requires its own definition.
+
+\begin{theorem}[Reader stabilizers and faithful progression]\label{thm:returns}
+For every $z\in X$ and $(s,\eps)\in\aE$ the return criteria are
+\begin{align}\label{eq:returns}
+ \rhoax(\mathcal E(s,\eps)z)=\rhoax(z)
+ &\quad\Longleftrightarrow\quad s\in a_0\ZZ,\\
+ \rhos(\mathcal E(s,\eps)z)=\rhos(z)
+ &\quad\Longleftrightarrow\quad s\in a_0\ZZ\ \text{and}\ \eps=+1,\\
+ \mathcal E(s,\eps)z=z
+ &\quad\Longleftrightarrow\quad(s,\eps)=(0,+1).\nonumber
+\end{align}
+For $n\in\ZZ$, the complete iterate is
+\begin{equation}\label{eq:iterate}
+ \boxed{\displaystyle
+ T^nz=(-1)^n\bigl(\ph^n a\,v_++\ph^{-n}b\,v_-\bigr),\qquad
+ N(T^nz)=(\lambda+n\varp,m,\kappa,(-1)^n\sigma).}
+\end{equation}
+Consequently $\rhoax$ returns under each $T$-step, $\rhos$ has least positive $T$-period $2$, and the full $T$-orbit is injectively indexed by $n\in\ZZ$. Under $L$, both $\rhoax$ and $\rhos$ return after every integer step.
+\end{theorem}
+\begin{proof}
+Equation \eqref{eq:chartlaws} changes $\lambda$ by $2s$ and $\sigma$ by $\eps$. A quotient class $[\lambda]_{\varp}$ is fixed exactly when $2s\in\varp\ZZ$. The refined reader also requires $\eps\sigma=\sigma$. The complete state criterion follows from injectivity of $N$. Finally $T^n=(-1)^nL_{na_0}$, so both eigencomponents carry the same central factor $(-1)^n$, proving \eqref{eq:iterate} and all stated periods.
+\end{proof}
+
+The least positive continuous flow parameter returning $\rhoax(L_sz)$ is $a_0=\log\ph$. This makes $L$ its sampling map. The map $T=-L$ is the sampling map coupled to the branch exchange. These are \emph{reader-return sampling maps}; a Poincar\'e first-return map would additionally specify a transverse section of the state flow.
+
+\section{The step quotient is an exact double cover}\label{sec:cover}
+Let $\beta(\sigma)=(1-\sigma)/2\in\{0,1\}$. On each fixed metric level define
+\begin{equation}\label{eq:eta}
+ \etaT:\Ah\longrightarrow\RR/(2\varp\ZZ),\qquad
+ \etaT(z)=\bb{\lambda+\varp\beta(\sigma)}_{2\varp}.
+\end{equation}
+The bracket subscript specifies the period of the class. This is an orbit-class coordinate chosen by the step $T$ and the oriented chart.
+
+\begin{theorem}[Orbit quotient, covering projection, and reflection]\label{thm:cover}
+For each $h\in\RR^\times$, the coordinate $\etaT$ induces a homeomorphism
+\begin{equation}\label{eq:quotient}
+ \Ah/\langle T\rangle\ \cong\ \RR/(2\varp\ZZ).
+\end{equation}
+Writing $q([u]_{2\varp})=[u]_{\varp}$, the reader factors exactly as
+\begin{equation}\label{eq:cover}
+ \rhoax\big|_{\Ah}=q\circ\etaT,\qquad
+ q:\RR/(2\varp\ZZ)\longrightarrow\RR/(\varp\ZZ),
+\end{equation}
+where $q$ is a degree-two covering map. In these coordinates,
+\begin{align}\label{eq:coveraction}
+ \etaT(Tz)&=\etaT(z),\\
+ \etaT(Lz)&=\etaT(z)+\varp\quad\pmod{2\varp},\\
+ \etaT(\mathcal E(s,\eps)z)&=\etaT(z)+2s+\varp\beta(\eps)\quad\pmod{2\varp},\\
+ \etaT(Hz)&=-\etaT(z)+\varp\frac{1+\kappa}{2}\quad\pmod{2\varp}.
+\end{align}
+The quotient symmetry group is likewise a circle:
+\begin{equation}\label{eq:exactseq}
+ 0\longrightarrow\langle T\rangle\longrightarrow\aE
+ \xrightarrow{\ (s,\eps)\mapsto[2s+\varp\beta(\eps)]_{2\varp}\ }
+ \RR/(2\varp\ZZ)\longrightarrow0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Under $T$, $\lambda$ advances by $\varp$ and $\sigma$ changes sign. Since $\beta(-\sigma)=1-\beta(\sigma)$, the quantity $\lambda+\varp\beta(\sigma)$ changes by $0$ or $2\varp$, hence has the same class in $\RR/(2\varp\ZZ)$. Conversely, equality of two $\etaT$ values means that the $\lambda$ coordinates differ by an integer multiple of $\varp$ whose parity gives precisely the observed relation between their signs. The two states therefore differ by one and only one power of $T$. The map $\etaT$ is a local homeomorphism on each signed component and produces the asserted circle quotient. Reducing its class modulo $\varp$ proves \eqref{eq:cover}; its fibers have two points. The first three transformation formulas follow from \eqref{eq:chartlaws}; inserting $N(Hz)$ into \eqref{eq:eta} gives the reflection formula, separately for $\kappa=+1$ and $-1$. Finally the displayed group map is a surjective homomorphism; its kernel consists exactly of the pairs $(na_0,(-1)^n)$, which form $\langle T\rangle$.
+\end{proof}
+
+\begin{corollary}[Complete classification of step orbits]\label{cor:orbits}
+Two states $z,w\in X$ lie on the same integer $T$-orbit exactly when
+\begin{equation}
+ g(z,z)=g(w,w)\qquad\text{and}\qquad\etaT(z)=\etaT(w).
+\end{equation}
+Thus $(g(z,z),\etaT(z))$ is a complete orbit-class reader for the chosen $T$, while $\rhoax$ is its two-sheet projection on each metric level.
+\end{corollary}
+\begin{proof}
+Metric invariance is Lemma~\ref{lem:arithmetic}. Equal metric values place the states on one $\Ah$, where Theorem~\ref{thm:cover} identifies equal $\etaT$ values with the same $T$-orbit.
+\end{proof}
+
+The three readers now have explicit and distinct offices: $\rhoax$ is a quotient-periodic observation; $\rhos$ transports an oriented branch and has two-step return; $\etaT$ classifies full $T$-orbits on a fixed metric level. This is a precise reader hierarchy derived from the same state dynamics.
+
+\begin{corollary}[Two selected double covers and their common refinement]\label{cor:diamond}
+The symmetry subgroups fixing the declared axial and branch readings and the selected step orbits are
+\begin{equation}
+ K_{\mathrm{ax}}=\langle L,-I\rangle\cong\ZZ\times\mathbb Z_2,\qquad
+ K_{\pm}=\langle L\rangle,\qquad K_T=\langle T\rangle.
+\end{equation}
+They obey $K_{\pm}\cap K_T=\langle L^2\rangle=\langle T^2\rangle$, and
+\begin{equation}\label{eq:diamond}
+ K_{\mathrm{ax}}/K_{\pm}\cong\mathbb Z_2,\qquad
+ K_{\mathrm{ax}}/K_T\cong\mathbb Z_2,\qquad
+ K_{\mathrm{ax}}/\langle L^2\rangle\cong\mathbb Z_2\times\mathbb Z_2.
+\end{equation}
+On each $\mathcal A_h$, $\rho_{\pm}$ classifies $K_{\pm}$-orbits and gives a \emph{disconnected} double cover of the axial reader (two circles of period $\varp$), while $\eta_T$ classifies $K_T$-orbits and gives the \emph{connected} double cover (one circle of period $2\varp$). Their common refinement $\mathcal A_h/\langle L^2\rangle$ is a four-sheet covering of the axial reader.
+\end{corollary}
+\begin{proof}
+An element $\mathcal E(s,\eps)$ fixes $\rhoax$ for every state exactly when $s=na_0$; it also fixes $\rhos$ exactly when $\eps=+1$. The selected step has group coordinates $(a_0,-1)$, giving $K_T=\{(na_0,(-1)^n):n\in\ZZ\}$. The intersection with $K_{\pm}=\{(na_0,+1)\}$ consists precisely of the even powers. The quotient groups follow by retaining parity of the exponent and of the central sign. The quotient spaces are respectively $(\RR/\varp\ZZ)\times\{\pm1\}$, $\RR/(2\varp\ZZ)$, and $(\RR/(2\varp\ZZ))\times\{\pm1\}$, with the final one mapping four-to-one onto $\RR/(\varp\ZZ)$.
+\end{proof}
+
+\begin{proposition}[Projective reference and the full reader hierarchy]\label{prop:projective}
+On each $\Ah$ the projective reader $p(z)=[z]$ is the quotient reader for
+\begin{equation}
+ K_p=\langle-\Id\rangle, \qquad \Ah/K_p\cong\RR.
+\end{equation}
+It retains $\lambda$ exactly and identifies the two orientations $z$ and $-z$. For $n\in\ZZ$, the equality $p(T^n z)=p(z)$ holds precisely at $n=0$, while $p(T^n z)=p(L^n z)$ for every $n$. The axial reader is the further quotient of this projective coordinate by $\lambda\sim\lambda+\varp$.
+\end{proposition}
+\begin{proof}
+Two vectors on $\Ah$ determine the same projective point exactly when $w=c z$ with $c^2=1$; hence $w=\pm z$. In signed coordinates this identifies $\sigma$ while preserving $\lambda$. The projective ratio $a/b=\kappa e^\lambda$ recovers $\lambda$ for fixed $\kappa$. The shift $\lambda(T^n z)=\lambda(z)+n\varp$ fixes this ratio exactly when $n=0$; the central sign in $T^n=(-1)^nL^n$ disappears under $p$.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{1.01in}p{1.43in}X p{0.65in}@{}}
+\toprule
+\textbf{Reader}&\textbf{Stabilizer $K$}&\textbf{Quotient of a fixed $\Ah$}&\textbf{\shortstack{Least $T$\\period}}\\\midrule
+Full state & $\{\Id\}$ & Two real lines; signed $\lambda$ coordinate & Progresses\\
+Projective $p$ & $\langle-\Id\rangle$ & One real line & Progresses\\
+Axial $\rhoax$ & $\langle L,-\Id\rangle$ & One circle, circumference $\varp$ & $1$\\
+Signed $\rhos$ & $\langle L\rangle$ & Two circles, each circumference $\varp$ & $2$\\
+Step orbit $\etaT$ & $\langle T\rangle$ & One circle, circumference $2\varp$ & $1$\\
+Common refinement & $\langle L^2\rangle$ & Two circles, each circumference $2\varp$ & $2$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The covering relationship is an exact subgroup diagram, with each arrow a degree-two projection:
+\begin{equation}\label{eq:diamondpicture}
+\begin{tikzcd}[row sep=large,column sep=large]
+& \Ah/\langle L^2\rangle \arrow[dl, "2{:}1"'] \arrow[dr,"2{:}1"] & \\
+\Ah/\langle L\rangle \arrow[dr,"2{:}1"'] & & \Ah/\langle T\rangle \arrow[dl,"2{:}1"] \\
+& \Ah/\langle L,-\Id\rangle &
+\end{tikzcd}
+\end{equation}
+The axial map on the full state level has countably many occurrences in each $T$-orbit. The degree-two statement concerns the induced map from the \emph{step-orbit quotient} to the axial circle, as in Theorem~\ref{thm:cover}.
+
+\section{Half-turn, area, and the surrounding matrix algebra}
+The real complex-structure operator $C^2=-\Id$ gives rotations $U(\alpha)=e^{\alpha C}$; in particular
+\begin{equation}\label{eq:half}
+ U(\pi)=-\Id,\qquad
+ p(-z)=p(z),\qquad
+ g(-u,-v)=g(u,v),\qquad \omega(-u,-v)=\omega(u,v).
+\end{equation}
+For every real vector space $W$, $\bigwedge^2(-\Id_W)=\Id_{\bigwedge^2W}$. In dimension two, $\bigwedge^2 M$ is multiplication by $\det M$; hence both $L_s$ and $T$ fix all exterior two-vectors. The projective group quotient $\PSL_2(\RR)=\SL_2(\RR)/\{\pm\Id\}$ provides the exact algebraic reference for the central sign disappearing in projective readings.
+
+The generator of the hyperbolic flow and the generator of angular rotation occupy distinct directions inside the trace-zero matrix algebra. In fact
+\begin{equation}\label{eq:lie}
+ CS=H,\qquad SC=-H,\qquad
+ [C,S]=2H,\quad [S,H]=-2C,\quad [H,C]=2S,
+\end{equation}
+so $C,S,H$ form a basis of $\mathfrak{sl}_2(\RR)$, while their exponentials live in $\SL_2(\RR)$. The central element $U(\pi)$ commutes with the hyperbolic flow. The general angular family $U(\alpha)$ preserves the area form; the split-metric isometries are precisely the group classified in Theorem~\ref{thm:fullgroup}. This gives the exact relation between the rotational, metric, and projective references.
+
+\section{Retained descent and the four-phase lift}\label{sec:history}
+A \emph{receipt} of a step is the triple $(n,z,Tz)$ recording its index, predecessor, and successor. On finite sequences define append and split by
+\begin{equation}\label{eq:snoc}
+ \snoc((r_0,\ldots,r_{k-1}),r)=(r_0,\ldots,r_{k-1},r),\qquad
+ \splitop((r_0,\ldots,r_k))=((r_0,\ldots,r_{k-1}),r_k).
+\end{equation}
+Then $\splitop(\snoc(R,r))=(R,r)$ for every finite record $R$ and receipt $r$.
+
+\begin{proposition}[Reversible receipt extension]\label{prop:record}
+The augmented map
+\begin{equation}\label{eq:That}
+ \widehat T(n,z,R)=\bigl(n+1,Tz,\snoc(R,(n,z,Tz))\bigr)
+\end{equation}
+is injective and admits an exact inverse on its image. From $(z_0,0)$ and the empty record its $n$-step record is
+\begin{equation}\label{eq:records}
+ R_n(z_0)=\bigl((j,T^jz_0,T^{j+1}z_0)\bigr)_{j=0}^{n-1}
+ \quad(n\in\ZZ_{\ge0}).
+\end{equation}
+This record is a deterministic function of $(z_0,n)$. Within a fixed trajectory $n=(\lambda(T^nz_0)-\lambda(z_0))/\varp$.
+\end{proposition}
+\begin{proof}
+Split the final receipt of \eqref{eq:That}. It supplies the previous index $n$, previous vector $z$, and previous prefix $R$; checking $T^{-1}(Tz)=z$ independently confirms predecessor transport. Thus the inverse is well-defined on the image. Iteration proves \eqref{eq:records} by induction, and Theorem~\ref{thm:returns} gives the expression for $n$.
+\end{proof}
+
+The record retains successive occurrences that the quotient reader maps to one value. Its additional work is \emph{access} to the sequence of transitions: a known deterministic initial state and an index already suffice to regenerate it. Any information-theoretic entropy assignment requires a separately declared probability distribution; with a discrete distribution on initial states and indices, functional dependence gives $H(R_N\mid Z_0,N)=0$ in Shannon's sense. The present deterministic statement is \eqref{eq:records}.
+
+For either carry operator $A\in\{L,T\}$, define a four-phase timing system with $r\in\ZZ/4\ZZ$:
+\begin{equation}\label{eq:F}
+ F_A(r,z)=\begin{cases}
+ (r+1,z),&r=0,1,2,\\
+ (0,Az),&r=3.
+ \end{cases}
+ \qquad F_A^4(r,z)=(r,Az).
+\end{equation}
+Its readouts are
+\begin{equation}
+ D_0(r,z)=(i^r,\rhoax(z)),\qquad D_1(r,z)=(i^r,\rhos(z)),
+ \quad i^2=-1.
+\end{equation}
+For every $z\in X$, $D_0$ has least positive return period $4$ microsteps under both $F_L$ and $F_T$. The refined readout $D_1$ has least positive period $4$ under $F_L$ and $8$ under $F_T$. For $F_T$ the first four ticks return the phase while exchanging the branch, and the next four complete the oriented return. The full lifted state $(r,z)$ advances injectively across complete four-tick blocks.
+
+
+\section{Admitted steps, new seeds, and nonredundant history}\label{sec:control}
+The fixed rule $z_{n+1}=Tz_n$ makes $R_n$ a function of $(z_0,n)$. A controlled system can carry additional, admitted input without changing the established metric carrier. Let $\mathcal U$ be a typed input set, and let $\mathsf{Select}_{J_*}$ be a partial rule that, when its Gate returns $\mathsf{can}$, supplies
+\begin{equation}\label{eq:selector}
+ a_n=\mathsf{Select}_{J_*}(z_n,R_n,u_n)=\mathcal E(s_n,\eps_n)\in\SO(g),
+ \quad u_n\in\mathcal U,\quad z_{n+1}=a_nz_n .
+\end{equation}
+The declared condition includes ownership of the input $u_n$ and proof that $a_n$ lies in the displayed group. An input may be a fresh seed. Its admission is an operation at the present occurrence; a selector with learning or biological authority requires its own realization.
+
+\begin{theorem}[Controlled metric evolution and retained action]\label{thm:controlled}
+Fix $z_0\in X$ and an admitted finite sequence $a_j=\mathcal E(s_j,\eps_j)$, $0\le j<n$. Then
+\begin{equation}\label{eq:controlledchart}
+ N(z_n)=\left(\lambda_0+2\sum_{j<n}s_j,\ m_0,\ \kappa_0,\ (\prod_{j<n}\eps_j)\sigma_0\right).
+\end{equation}
+Every transition preserves $g$ and $\omega$. For every homogeneous reader $\rho_K$ of Theorem~\ref{thm:readerselection},
+\begin{equation}\label{eq:controlledreturn}
+ \rho_K(z_n)=\rho_K(z_0)\ \Longleftrightarrow\ \prod_{j<n}a_j\in K,
+ \qquad \rho_K(z_{j+1})=\rho_K(z_j)\ \Longleftrightarrow\ a_j\in K.
+\end{equation}
+With an appended receipt
+\begin{equation}\label{eq:controlledrec}
+ \mathcal R_{j+1}=\snoc\bigl(\mathcal R_j,(j,z_j,u_j,a_j,z_{j+1})\bigr),
+\end{equation}
+the prefix, admitted input, actual action, and predecessor are recoverable by splitting the final receipt. If the admitted actions include $L$ and $T=-L$ as choices from the same $z_0$, the record is not a function of $(z_0,n)$ alone. If every $s_j>0$, the $\lambda$ coordinate strictly advances and the complete states at successive occurrences are distinct.
+\end{theorem}
+\begin{proof}
+The group law gives $z_n=(\prod_{j<n}a_j)z_0$ and the chart law of Lemma~\ref{lem:chart} yields \eqref{eq:controlledchart} by induction. Every factor belongs to $\SO(g)$, hence preserves $g$ and $\omega$. Theorem~\ref{thm:readerselection}, applied to the accumulated group product or to one factor, proves \eqref{eq:controlledreturn}. The append/split identity \eqref{eq:snoc} recovers the entire final receipt and its preceding prefix.
+For the promised witness, let $u_0\in\{0,1\}$ choose $a_0=L$ when $u_0=0$ and $a_0=T=-L$ when $u_0=1$. The two possible successors are $Lz_0$ and $-Lz_0$; both lie on the same metric level, have the same axial reading, and differ in their oriented-sign reading. Freeness of the action makes them distinct. Their action receipts therefore differ at the same $(z_0,1)$. Finally $s_j>0$ gives $\lambda_{j+1}>\lambda_j$, and the injective chart distinguishes complete states.
+\end{proof}
+
+\begin{remark}[Full mirror isometries and the boundary of the test]
+The theorem declares $a_n\in\SO(g)$, where $\omega$ is preserved and $\mathcal E$ is abelian. The reversing isometry $H\in\OO(g)$ also preserves $g$, but $H^*\omega=-\omega$ and
+\begin{equation}
+N(Hz)=(-\lambda-\varp,m,\kappa,\kappa\sigma),\qquad
+\eta_T(Hz)=-\eta_T(z)+\frac{\varp}{2}(1+\kappa)\pmod{2\varp}.
+\end{equation}
+A model admitting $H$ uses the corresponding full-group reader action and records its orientation reversal. Equation~\eqref{eq:controlledreturn} is stated for the $\SO(g)$ selectors and their homogeneous $K$ readers.
+\end{remark}
+
+\paragraph{Information and stopping.}
+A deterministic selector with a fully specified input sequence again makes the record reconstructible from those inputs and the initial state. A genuinely new admitted input enlarges the information required for reconstruction when it leads to a distinguishable action or is separately retained in the receipt. The Gate, selector, and prospective possibility set have their own types. The theorem establishes an exact \emph{conditional extension}; it makes no claim that this selector has already been realized in physical evolution or that the resulting computation is Class IV.
+
+\section{Orbit growth, invariants, and admissible interfaces}
+The eigenvectors satisfy $v_+\cdot v_-=\ph\psi+1=0$ in the standard Euclidean dot product. For $z=av_++bv_-\in X$ and any $\eps$,
+\begin{equation}\label{eq:norm}
+ \|\mathcal E(s,\eps)z\|^2
+ =a^2e^{2s}\|v_+\|^2+b^2e^{-2s}\|v_-\|^2.
+\end{equation}
+With
+\begin{equation}
+ c_z=\min\{|a|\|v_+\|,|b|\|v_-\|\}>0,\qquad
+ C_z=\sqrt{a^2\|v_+\|^2+b^2\|v_-\|^2},
+\end{equation}
+we obtain $c_ze^{|s|}\le\|\mathcal E(s,\eps)z\|\le C_ze^{|s|}$. Each full orbit therefore escapes every compact subset as $|s|\to\infty$. This establishes \emph{proper, unbounded progression} together with exact conservation of $g$ and $\omega$. These properties coexist because an indefinite metric fixes the product of null coordinates while their ratio changes.
+
+\begin{theorem}[Scale covariance and Fibonacci selection]\label{thm:scale}
+For every $u>0$, define a selected step $T_u=-L_u$ and period $\varp_u=2u$. The corresponding readers
+\begin{equation}
+ \rho_{\mathrm{ax},u}(z)=[\lambda]_{\varp_u},\quad
+ \rho_{\pm,u}(z)=([\lambda]_{\varp_u},\sigma),\quad
+ \eta_u(z)=[\lambda+\varp_u\beta(\sigma)]_{2\varp_u}
+\end{equation}
+obey the same one-step axial return, two-step oriented return, and degree-two step-quotient covering as at $u=\log\ph$. All $u>0$ sampled systems are conjugate by an explicit homeomorphism on $X$. The recurrence factorization $Q=L_u S$ holds exactly at $u=\log\ph$.
+\end{theorem}
+\begin{proof}
+In the signed chart $N(T_u z)=(\lambda+2u,m,\kappa,-\sigma)$; all return and quotient proofs use only this shift and sign transport. Fix $u,v>0$ and define $D_{u\to v}$ in chart coordinates by
+\begin{equation}
+ N(D_{u\to v}z)=\bigl((v/u)\lambda,m,\kappa,\sigma\bigr).
+\end{equation}
+Then $D_{u\to v}\,T_u=T_v\,D_{u\to v}$, and $D_{v\to u}$ is its inverse. Finally $Q=L_{a_0}S$ from Lemma~\ref{lem:arithmetic}; comparison of positive eigenline multipliers $e^u$ and $\ph$ makes $u=a_0$ the unique positive matching value.
+\end{proof}
+
+\textbf{Exact selection consequence.} The group and covering pattern is a general split-plane construction. The Fibonacci matrix supplies a distinguished arithmetic realization through $Q=L_{\log\ph}S$; the branch-exchanging choice $T=-L_{\log\ph}$ specifies which of the two sample isometries is used. The four-phase timing register in Section~\ref{sec:history} is a further declared selection, with its own return periods.
+
+Poincar\'e's measure recurrence theorem concerns invariant measure systems with a suitable finite-measure domain. The present $X$ has infinite Lebesgue measure, and its full trajectories are explicitly escaping. The periodic objects are the chosen \emph{readouts}; their return sets have been computed in Theorem~\ref{thm:returns}. This is the exact scope of recurrence terminology in this manuscript.
+
+The model supplies a reusable interface for applications. An external use must specify (i) what observable states map into $X$, (ii) what measured change corresponds to $s$ or $T$, (iii) what apparatus implements each reader, (iv) which conservation relation has a measured counterpart, and (v) which external criteria determine persistence or viability. With such data, the abstract theorems can be transported and tested at that resolution.
+
+
+\section{Contrast, complementarity, and the evolution of readers}\label{sec:interfaces}
+This section defines optional bridges to empirical processes. Each declaration carries an exact mathematical result; the biological and perceptual mechanisms retain their independently measured laws.
+
+\subsection*{Graded light--shadow contrast}
+Given measured nonnegative intensities $I_{\rm sample},I_{\rm ref}$ with $I_{\rm sample}+I_{\rm ref}>0$, the signed normalized contrast is
+\begin{equation}\label{eq:contrast}
+ d=\frac{I_{\rm sample}-I_{\rm ref}}{I_{\rm sample}+I_{\rm ref}}\in[-1,1].
+\end{equation}
+For $d\ne0$, choose the exact encoding
+\begin{equation}\label{eq:contrastbridge}
+ \iota_g(d)=\sqrt{\frac{|d|}{10}}\bigl(v_++\sgn(d)v_-\bigr)\in X.
+\end{equation}
+The established null-pair formula gives
+\begin{equation}\label{eq:contrastproof}
+ \boxed{g(\iota_g(d),\iota_g(d))=d,\qquad
+ g(Q\iota_g(d),Q\iota_g(d))=-d.}
+\end{equation}
+Thus $m=|d|/10$ and $\kappa=\sgn(d)$ encode the grade and orientation of a \emph{selected} contrast measurement. For $d=0$, the balanced measurement is assigned the ambient origin, outside the logarithmic chart $X$. The sign $\kappa$ is originally a split-metric sector: its optical interpretation is earned by the stated intensity reader and encoding. In retinal physiology, ON and OFF pathways carry luminance increments and decrements; their physical sensitivity functions and receptor circuits are independently measured \cite{retina}. The map \eqref{eq:contrastbridge} encodes a contrast value rather than deriving the retinal circuitry.
+
+\subsection*{Four-letter complement and inherited sequence}
+Let $\Sigma_{\rm DNA}=\{A,C,G,T\}$ and define Watson--Crick complementarity by $c(A)=T$, $c(T)=A$, $c(C)=G$, $c(G)=C$, so $c^2=\operatorname{id}$. Fix the realification $V\cong\mathbb C$, with $x+iy$ identified with $(x,y)^{\mathsf T}$, and choose a map of the four bases into four compact-phase positions of $V$:
+\begin{equation}\label{eq:dna}
+ \iota(A)=1,\quad \iota(C)=i,\quad\iota(T)=-1,\quad\iota(G)=-i,
+ \qquad\boxed{\iota\circ c=\Omega^2\circ\iota,\quad\Omega^2=-I.}
+\end{equation}
+For a directed strand $w=b_1\cdots b_k$, its reverse-complement $\operatorname{RC}(w)=c(b_k)\cdots c(b_1)$ satisfies $\operatorname{RC}^2=\operatorname{id}$. This is an exact four-position representation of the complementary pairing and directed-order reversal. The quarter-turn placement is chosen; molecular replication proceeds through antiparallel DNA templates, polymerase action, helicase, repair, and semiconservative inheritance \cite{watsoncrick,meselsonstahl,dnatext}. Chemical helical winding and the four symbolic phase positions are kept as separately typed carriers.
+
+\subsection*{Changing the observer}
+The preceding theorems fix a map $\rho:X\to Y$. A living reader can change its sensitivity or reference through inheritance and learning. Mathematically, a family of readers is
+\begin{equation}\label{eq:readerfamily}
+ \rho_{p_n}:X\longrightarrow Y_{p_n},\quad
+ p_{n+1}=\mathsf{Update}(p_n,R_n,u_n),\quad
+ \mathcal A_{n+1\leftarrow n}:Y_{p_n}\longrightarrow Y_{p_{n+1}}.
+\end{equation}
+The comparison across changed readers is defined by the typed pair
+\begin{equation}\label{eq:readercompare}
+ \left(\mathcal A_{n+1\leftarrow n}(\rho_{p_n}(z_n)),\rho_{p_{n+1}}(z_{n+1})\right).
+\end{equation}
+A return criterion compares those two coordinates at the declared resolution. An optical realization can use a spectral sensitivity family $S_{n,k}(\nu)$ and read $\rho_{p_n}(E)_k=\int S_{n,k}(\nu)E(\nu)\,d\nu$. Visual opsin genes and their expression evolve, altering spectral sensitivity across vertebrate lineages \cite{opsinreview}. The formula supplies a reader interface; a model of its actual evolution requires inherited states, measured sensitivities, a selection operator, and recorded conditions.
+
+\subsection*{Return, Meaning, and the next Difference}
+A typed notice $d_n$ and an earned Meaning certificate $\Lambda_n(d_n)$ occupy one present recognition packet, $(d_n,\Lambda_n(d_n))$. The carried certificate can inform the next admitted selection through \eqref{eq:selector}; a fresh input $u_n$ can also enter at that transition. This defines the proposed feedback interface
+\begin{equation}\label{eq:meaningdelta}
+ (d_n,\Lambda_n(d_n),R_n;u_n)
+ \xrightarrow{\ \mathsf{Select}_{J_*}\ } a_n
+ \xrightarrow{\ \mathsf{Act}\ } z_{n+1}
+ \xrightarrow{\ \mathsf{Notice}\ } d_{n+1}.
+\end{equation}
+$\Lambda_n$ here denotes a \emph{Meaning certificate}, while the axial coordinate $\Lambda_{\rm ax}$ of the companion geometry satisfies $\Lambda_{\rm ax}(Lz)=\Lambda_{\rm ax}(z)+2\log\ph$. The equation \eqref{eq:meaningdelta} is a typed proposed interface, not a supplied biological selection rule. The exact scope is: Paper 32 proves the underlying symmetry and controlled conservation; genetics and sensation provide empirical examples of carrying inherited structure while the physical reader itself can change.
+
+\section{Formal reference coordinates: selection, order, connection}\label{sec:refs}
+References are admitted when a specific mathematical or interpretive office is identified. The mathematical assertions are proved in this paper. Foundational references provide established terminology and relevant background, measurement references specify additional hypotheses, and historical works provide named comparisons. Source roles are ordered by the dependency of the attached coordinate, then by the strength of the correspondence.
+
+\subsection*{Mathematical foundation and measurement interfaces}
+\small
+\begin{longtable}{@{}p{1.03in}p{0.68in}p{2.20in}p{1.99in}@{}}
+\caption{Formal coordinates selected by mathematical dependency.}\label{tab:foundations}\\
+\toprule
+\textbf{Reference}&\textbf{Office}&\textbf{Exact attachment}&\textbf{Connection and selection}\\\midrule\endfirsthead
+\toprule\textbf{Reference}&\textbf{Office}&\textbf{Exact attachment}&\textbf{Connection and selection}\\\midrule\endhead
+Fibonacci \cite{fibonacci}& Recurrence & $Q^2=Q+I$, its eigenvalues, $a_0=\log\ph$. & $Q$ is a modern matrix encoding of the recurrence; $a_0$ is its sample normalization.\\
+Euler \cite{euler}& Exponential & $C^2=-I$, $U(\alpha)=e^{\alpha C}$, $U(\pi)=-I$. & A classical angular/complex coordinate; the half-turn supplies the selected central sign.\\
+Klein \cite{klein}& Geometry & $G$ and its full invariance group $\OO(g)$. & Transformation-invariant classification; the matrices and proof are given here.\\
+Lie--Engel \cite{lieengel}& Flow & $S\in\mathfrak{so}(g)$, $L_s=e^{sS}$, $\SO(g)$. & One-parameter group and generator.\\
+Lamb--Roberts \cite{lambroberts}& Reversal & $H^2=I$, $HL_sH=L_{-s}$. & Standard reversor terminology; this realization is explicitly computed.\\
+Hatcher \cite{hatcher}& Quotient & $\Ah/\langle T\rangle\cong S^1$, the double covering $q$. & Covering-space theory organizes the quotient/subgroup proof.\\
+Poincar\'e \cite{poincare}& Recurrence test & $T$ as sampling map and exact reader-return times. & State recurrence additionally depends on invariant-measure hypotheses; compare at that resolution.\\
+Shannon \cite{shannon1,shannon2}& Recorded information & $R_n=f(z_0,n)$ and conditional entropy when a probability law is supplied. & Distinguishes deterministic storage from information-theoretic uncertainty.\\
+G\"odel--Rosser \cite{godel1931,rosser1936}& Formal horizon & Provability relative to an effectively axiomatized, consistent arithmetical theory. & Formal incompleteness has its own hypotheses; it supplies a comparison coordinate for a reader's reconstruction boundary, not a result about historical evidence.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Historical and interpretive attachments}
+\small
+\begin{longtable}{@{}p{1.22in}p{2.25in}p{2.43in}@{}}
+\caption{Historical and interpretive interfaces with source-owned authority.}\label{tab:historyrefs}\\
+\toprule
+\textbf{Reference}&\textbf{Proposed counterpart here}&\textbf{Admitted strength and extension}\\\midrule\endfirsthead
+\toprule\textbf{Reference}&\textbf{Proposed counterpart}&\textbf{Admitted strength and extension}\\\midrule\endhead
+Mendel \cite{mendel}& The chosen branch factor $\sigma$ and the separately defined DNA complement operator \eqref{eq:dna}. & A discrete inheritance-coordinate comparison; molecular replication and Mendelian segregation retain their native mechanisms.\\
+Darwin--Wallace; Darwin \cite{darwinwallace,darwin}& Controlled descent and receipt distinction in Theorem~\ref{thm:controlled}. & A formal interface for inherited succession with admitted variation; Darwinian selection additionally requires a population and a reproduction/fitness model.\\
+Schr\"odinger (1926) \cite{schro26}& Generator-defined evolution $\dot z=Sz$. & A comparison between evolution equations. Here the conserved form has real split signature; quantum dynamics has a different state and inner-product structure.\\
+Schr\"odinger (1944) \cite{schro44}& Conserved $m,\kappa$ alongside moving $\lambda,\sigma$. & An analogy to stable information carriers during change. Molecular carrier, code and reproduction require biological attachments.\\
+Dennett \cite{dennettCE,dennett91}& The time-indexed observer of \eqref{eq:readerfamily} is a proposed reader-update interface. & \emph{Consciousness Explained} supplies the multiple-drafts and timing problem; \emph{Real Patterns} supplies a separate pattern criterion. No neurocognitive update law is inferred from the algebra.\\
+Graeber--Wengrow \cite{graeberwengrow}& Exact opening: ``Most of human history is irreparably lost to us.'' & Historical evidence horizon: \eqref{eq:horizonfiber} types reconstruction fibers; the 2017 Jebel Irhoud studies give a separately cited empirical datum \cite{hublin2017,richter2017}.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\subsection*{The historical knowledge horizon and the reader's inverse boundary}
+Graeber and Wengrow's exact opening sentence is the selected historical coordinate: ``Most of human history is irreparably lost to us.'' \cite{graeberwengrow}. Their next sentence gives an ``at least 200,000 years'' minimum for \emph{Homo sapiens} and names the limits of what can be reconstructed. The Jebel Irhoud fossils are associated with independent dates of $315\pm34$ thousand years (thermoluminescence) and $286\pm32$ thousand years (tooth ESR) \cite{hublin2017,richter2017}; these findings were published in 2017, preceding the 2021 book. The dates belong to their fossil and archaeological evidence, independently of the matrix model. The new measurements enlarge the set of historically accessible relations while the ancient occurrences retain their own addresses. Graeber and Wengrow's opening statement carries the observational horizon; the next paragraph supplies the mathematical criterion for a reconstruction fiber.
+
+For any declared historical-state space $\mathcal H$ and evidence reader $\rho_{\rm ev}:\mathcal H\to\mathcal O$, write the compatible-history fiber as
+\begin{equation}\label{eq:horizonfiber}
+ \mathcal F_r=\{h\in\mathcal H:\rho_{\rm ev}(h)=r\}.
+\end{equation}
+A reading $r$ determines a unique history at the stated resolution exactly when $|\mathcal F_r|=1$. A fiber of multiple compatible histories marks a \emph{reader-inverse knowledge horizon}: the evidence retains $r$ while a uniquely determined antecedent requires additional receipts. In the proved matrix instance, $\rhoax(T^nz)=\rhoax(z)$ for all $n\in\ZZ$, while the occurrence records distinguish the successive states. Thus the model demonstrates precisely how a readout can retain a value across different occurrences. A historical evidence reader would require its own states and observations.
+
+\paragraph{Awareness: read relation and relation read.}
+Define the state reader $r:\mathbb R\to\mathbb R_{\ge0}$ by $r(x)=|x|$ and the distance relation $D(x,y)=|x-y|$. Both of the following are well typed as nonnegative real outputs:
+\begin{equation}\label{eq:awareness}
+ \operatorname{ReadRel}(x,y):=D(x,y),\qquad
+ \operatorname{RelRead}(x,y):=D(r(x),r(y)).
+\end{equation}
+At the exact witness $x=1$, $y=-1$,
+\begin{equation}\label{eq:awarenesswitness}
+\boxed{\operatorname{ReadRel}(1,-1)=2,\qquad \operatorname{RelRead}(1,-1)=0.}
+\end{equation}
+Thus the two orders can give distinct outputs. An awareness claim is bounded by the relation, the reading operation, the observed data and their provenance. New traces refine what the reader can reconstruct. At an admitted seed seam, the next executed transition becomes a further occurrence; what remains possible has its own prospective type.
+
+The G\"odel--Rosser incompleteness theorem provides a distinct, logical horizon \cite{godel1931,rosser1936}. For an effectively axiomatized consistent theory $F$ capable of expressing sufficient arithmetic, its sentences with an established proof or refutation form a proper subset of the sentences of $F$. The historical horizon concerns inference from surviving traces; the reader-inverse horizon concerns fibers of an observation map; G\"odel's horizon concerns derivability within $F$. Their formal ownership remains explicit.
+
+The proposed complex-root inscription admits an exact algebraic realization using the already declared $C^2=-I$:
+\begin{equation}\label{eq:root7}
+ J_7:=\sqrt7\,C,\qquad J_7^2=-7I,\qquad
+ \operatorname{spec}_{\mathbb C}(J_7)=\{i\sqrt7,-i\sqrt7\}.
+\end{equation}
+This types $i\sqrt7$ as a complex eigenvalue of the scaled rotation generator. Its proposed \emph{knowledge-limit} office is a separately declared interpretation; the root identity by itself supplies an algebraic carrier and no criterion for an empirical or formal proof limit.
+
+The active namespace reserves $\varnothing=\mathsf{UNTYPEABLE}$. At the \emph{forget threshold}, a demanded uniquely determined reconstruction from an observation with $|\mathcal F_r|>1$ has no evidence-forced inverse at that resolution; the requested unique determination is marked $\uparrow\varnothing$. The compatible-history fiber remains a typed set of possible histories, while an unresolved claim about a member of that fiber remains \textsc{open}. Additional retained traces can refine the reader and alter the fiber. The historical observation, inverse-reader test, logical incompleteness theorem, and complex-root identity therefore occupy connected but separately justified offices.
+
+The exact mathematical dependency is
+\begin{equation}\label{eq:dep}
+ \boxed{(V,Q,\Omega)\longrightarrow(G,S,C,H)\longrightarrow\mathcal E\curvearrowright X
+ \longrightarrow N\longrightarrow (K,\rho_K)
+ \longrightarrow (\widehat T,F_A)\longrightarrow(\mathsf{Select}_{J_*},\mathcal R_n).}
+\end{equation}
+Source offices follow this chain. A historical source may clarify why an attachment is interesting; its named subject supplies a further application test rather than an extra premise in the matrix proof. This separates \emph{foundation}, \emph{choice}, \emph{consequence}, and \emph{external recognition}.
+
+\section{Conclusion: precise mathematical significance}
+The result is a fully specified correspondence among five offices. \emph{State evolution}: the free action of $\SO(g)$ moves each complete state through a homogeneous metric level. \emph{Conserved structure}: $g$ and $\omega$ are held by the group while the state coordinate $\lambda$ advances. \emph{Reader selection}: closed subgroups $K\leq\mathcal E$ determine homogeneous quotient observations and their exact return sets. \emph{Branch and covering}: $T=-L_{a_0}$ exchanges the oriented sign, the selected orbit quotient forms a connected circle, and its map to the axial circle is two-to-one; the signed quotient gives a second, disconnected double cover and the two share a four-sheet refinement. \emph{Retained occurrence}: finite receipts make the actual transitions addressable, while a known initial state and step count reconstruct the deterministic sequence.
+
+\textbf{What is established.} The manuscript proves the isometry-group classification, translation chart, homogeneous-reader subgroup theorem, covering relations, and the reversible fixed-action receipt. Theorem~\ref{thm:controlled} then proves a conditional seed-admitted extension: admitted group actions preserve the same forms, their accumulated return is determined by subgroup membership, and a variable action receipt can carry information beyond $(z_0,n)$. The optical-contrast and complementarity calculations are exact selected encodings of measured or biological inputs. Reader evolution and the Meaning-to-new-Difference feedback interface remain explicitly typed constructions requiring domain-specific selectors.
+
+\textbf{Why it matters.} The same formally conserved dynamical system carries advancing states, recurring observations, and a recoverable sequence of occurrences. When a new choice enters through an admitted selector, the state and the historical receipt can depend on that additional input while the governing invariant remains preserved. The resulting distinction between state, reading and record is mathematically exact. The classical group, quotient and recurrence concepts provide the tools; the paper's specific result is their integrated Fibonacci-normalized realization, with its choices and equivalences fully exposed. Applications to lived timing, genetic descent, visual contrast and recorded history are specified as comparison problems with declared maps, measurements, and native evidence. The formal clock provides a returning coordinate; the ledger holds the actual transitions. A turn may extend through arbitrarily many recorded occurrences under the same rule. The continued chapter is determined by its admitted sequence rather than a fixed number of pages.
+
+\appendix
+\section{Compact proof ledger and representation glossary}
+\begin{tabularx}{\linewidth}{@{}p{1.38in}X@{}}
+\toprule
+\textbf{Office} & \textbf{Exact type and operation}\\\midrule
+$V$, $X$, $\Ah$ & Real plane; non-null sector; nonzero metric level.\\
+$Q$, $\Omega$, $G$ & Recurrence matrix; area matrix; symmetric split metric matrix.\\
+$C$, $S$, $H$ & Angular generator ($C^2=-I$); hyperbolic generator ($S^2=I$); reversing reflection ($H^2=I$).\\
+$L_s$, $T$ & One-parameter isometry $e^{sS}$; selected step $-L_{\log\ph}$.\\
+$N$ & Complete signed coordinate chart $(\lambda,m,\kappa,\sigma)$.\\
+$p$, $\rhoax$, $\rhos$ & Projective reference; quotient-periodic axial observation; axial-plus-branch observation.\\
+$K$, $\rho_K$, $\etaT$, $q$ & Reader-selection subgroup; homogeneous quotient reader; step-orbit class; two-sheet projection.\\
+$\widehat T$, $R_n$ & Receipt-augmented step; explicit finite history of transitions.\\
+$F_A$, $D_0$, $D_1$ & Four-phase timing lift and two timed readouts.\\
+$h$, $s$, $n$ & Conserved metric value; continuous mathematical time coordinate; discrete step index.\\
+$\omega$, $\bigwedge^2$ & Oriented alternating pairing; exterior two-vector representation.\\
+\bottomrule
+\end{tabularx}
+
+The representation $U(\alpha)$ provides the angular action; the clock variable $r\in\ZZ/4\ZZ$ provides a separately declared timing register. The occurrence of $i^r$ in a readout labels the four timing phases. The two uses share a complex quarter-turn convention and retain their respective domains.
+
+\section{Verification status and retained receipts}
+The source draft (review 0.3) reports forty exact-arithmetic check groups, C01--C40. Their labels and proof offices are retained below as a receipt of that review. The C01--C40 register is the source manuscript's own reported audit and retains that provenance. Independently, the accompanying \texttt{time\_evolution\_0\_5\_checks.py} tests the retained algebra and added quotient, projective, and scale-selection statements using exact symbolic arithmetic. Its preserved execution receipt contains 102 passing labeled entries; some entries aggregate multiple exact samples. The output is a separate verification receipt. The general one-parameter, classification, and covering claims are established by written proofs in this edition.
+
+\footnotesize
+\begingroup\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.41in}p{2.77in}p{0.41in}p{2.77in}@{}}
+\toprule ID & Source-registered check & ID & Source-registered check\\\midrule\endfirsthead
+\toprule ID & Source-registered check & ID & Source-registered check\\\midrule\endhead
+C01 & $Q^2=Q+I$ & C21 & $\bigwedge^2(-I_n)=I$ for $2\le n\le8$\\
+C02 & $C^2=-I$ & C22 & Five unit-circle test vectors for area/projective return\\
+C03 & $G=[Q,\Omega]$ & C23 & Seventeen exact iterates $-8\le n\le8$\\
+C04 & Symmetric $G$, $\det G=-5$ & C24 & Four-phase carries for $L,T$, every starting phase\\
+C05 & $G^2=5I$ & C25 & Twelve exact receipt steps and prefix recovery\\
+C06 & Positive and negative metric witnesses & C26 & Four power-composition samples\\
+C07 & $H^2=I$, $H^{\mathsf T}H=I$ & C27 & Signed-chart and inverse samples\\
+C08 & $S^2=I$ & C28 & Branch reader, five states and nine iterates\\
+C09 & $S^{\mathsf T}G+GS=0$ & C29 & Twelve history reconstructions and $\ph^{2n}$ shifts\\
+C10 & $L^2=Q^2$ & C30 & Four/eight microstep branch return\\
+C11 & $\det L=\det T=1$ & C31 & Hyperbolic exponential and lattice group law\\
+C12 & $L^{\mathsf T}GL=G$ & C32 & Reflection in signed chart and ratio transport\\
+C13 & $T^{\mathsf T}GT=G$ & C33 & $HL^kH=L^{-k}$, $HT^kH=T^{-k}$\\
+C14 & $HTH=T^{-1}$ & C34 & Free action and exact reader return sets\\
+C15 & $Tv_+=-\ph v_+$ & C35 & $SC\ne CS$ for the complex-structure generator\\
+C16 & $Tv_-=-\ph^{-1}v_-$ & C36 & Exact norm formula and finite growth samples\\
+C17 & Null eigenlines and $g(v_+,v_-)=5$ & C37 & $H$ metric/area transport and level invariance\\
+C18 & $\det(-I_2)=1$ & C38 & Area-form transport on test pairs\\
+C19 & $\det T^n=1$ for sample iterates & C39 & $\cosh\log\ph=\sqrt5/2$, $\sinh\log\ph=1/2$\\
+C20 & $\det H=-1$ and exterior reversal & C40 & Golden-ratio polynomial identities\\
+\bottomrule
+\end{longtable}
+\endgroup
+\normalsize
+\textbf{Additional theorem receipt.} The controlled-extension claims in Theorem~\ref{thm:controlled} have written proofs and a separate finite exact-arithmetic verifier for the $L/T$ witness, complementarity encoding, and sampled controlled returns. The original static proofs and source C01--C40 registry remain unchanged.
+
+\section{Formal references}
+\begingroup\footnotesize
+\begin{thebibliography}{99}\setlength{\itemsep}{3pt}
+\bibitem{fibonacci} Leonardo Pisano (Fibonacci), \emph{Liber abaci} (1202). Translation: L.~E. Sigler, \emph{Fibonacci's Liber Abaci}, Springer, New York, 2002; ISBN 978-0-387-40737-1.
+\bibitem{euler} L. Euler, \emph{Introductio in analysin infinitorum}, 2 vols., Lausanne, 1748. ETH Z\"urich digital edition, \href{https://doi.org/10.3931/e-rara-8740}{doi:10.3931/e-rara-8740}.
+\bibitem{klein} F. Klein, \emph{Vergleichende Betrachtungen \"uber neuere geometrische Forschungen}, A. Deichert, Erlangen, 1872. Historical text: \url{https://textgridrep.de/browse/4bngg.0}.
+\bibitem{lieengel} S. Lie and F. Engel, \emph{Theorie der Transformationsgruppen}, 3 vols., Teubner, Leipzig, 1888, 1890, 1893.
+\bibitem{lambroberts} J. S. W. Lamb and J. A. G. Roberts, ``Time-reversal symmetry in dynamical systems: a survey,'' \emph{Physica D} \textbf{112} (1998), 1--39, \href{https://doi.org/10.1016/S0167-2789(97)00199-1}{doi:10.1016/S0167-2789(97)00199-1}.
+\bibitem{hatcher} A. Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002, Section 1.3 (covering spaces). \url{https://pi.math.cornell.edu/~hatcher/AT/ATpage.html}.
+\bibitem{poincare} H. Poincar\'e, ``Sur le probl\`eme des trois corps et les \'equations de la dynamique,'' \emph{Acta Mathematica} \textbf{13} (1890), 1--270.
+\bibitem{schro26} E. Schr\"odinger, ``Quantisierung als Eigenwertproblem (Vierte Mitteilung),'' \emph{Annalen der Physik} (4) \textbf{81} (1926), 109--139.
+\bibitem{mendel} G. Mendel, ``Versuche \"uber Pflanzen-Hybriden,'' read 1865, published 1866 in \emph{Verhandlungen des naturforschenden Vereines in Br\"unn} \textbf{4}, 3--47; \href{https://doi.org/10.5962/bhl.title.61004}{doi:10.5962/bhl.title.61004}.
+\bibitem{darwinwallace} C. Darwin and A. R. Wallace, ``On the tendency of species to form varieties; and on the perpetuation of varieties and species by natural means of selection,'' \emph{J. Proc. Linnean Soc. London, Zoology} \textbf{3} (1858), 45--62; \href{https://doi.org/10.1111/j.1096-3642.1858.tb02500.x}{doi:10.1111/j.1096-3642.1858.tb02500.x}.
+\bibitem{darwin} C. Darwin, \emph{On the Origin of Species by Means of Natural Selection}, John Murray, London, 1859.
+\bibitem{schro44} E. Schr\"odinger, \emph{What Is Life? The Physical Aspect of the Living Cell}, Cambridge University Press, 1944.
+\bibitem{shannon1} C. E. Shannon, ``A mathematical theory of communication,'' \emph{Bell System Technical Journal} \textbf{27} (1948), 379--423, \href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{Part I}.
+\bibitem{shannon2} C. E. Shannon, same title, \emph{Bell System Technical Journal} \textbf{27} (1948), 623--656, \href{https://doi.org/10.1002/j.1538-7305.1948.tb00917.x}{Part II}.
+\bibitem{dennett91} D. C. Dennett, ``Real Patterns,'' \emph{The Journal of Philosophy} \textbf{88} (1991), 27--51, \href{https://doi.org/10.2307/2027085}{doi:10.2307/2027085}.
+\bibitem{dennettCE} D. C. Dennett, \emph{Consciousness Explained}, Little, Brown and Company, Boston, 1991.
+\bibitem{graeberwengrow} D. Graeber and D. Wengrow, \emph{The Dawn of Everything: A New History of Humanity}, Farrar, Straus and Giroux, 2021, Chapter 1; ISBN 978-0-374-15735-7.
+\bibitem{godel1931} K. G\"odel, ``\"Uber formal unentscheidbare S\"atze der Principia Mathematica und verwandter Systeme I,'' \emph{Monatshefte f\"ur Mathematik und Physik} 38 (1931), 173--198. \url{https://doi.org/10.1007/BF01700692}.
+\bibitem{rosser1936} J. B. Rosser, ``Extensions of Some Theorems of G\"odel and Church,'' \emph{The Journal of Symbolic Logic} 1 (1936), 87--91. \url{https://doi.org/10.2307/2269028}.
+\bibitem{watsoncrick} J. D. Watson and F. H. C. Crick, ``Molecular Structure of Nucleic Acids: A Structure for Deoxyribose Nucleic Acid,'' \emph{Nature} \textbf{171} (1953), 737--738; doi:10.1038/171737a0.
+\bibitem{meselsonstahl} M. Meselson and F. W. Stahl, ``The Replication of DNA in Escherichia coli,'' \emph{Proceedings of the National Academy of Sciences USA} \textbf{44} (1958), 671--682; doi:10.1073/pnas.44.7.671.
+\bibitem{dnatext} B. Alberts et al., \emph{Molecular Biology of the Cell}, 4th ed., Garland Science, 2002, ``DNA Replication Mechanisms,'' \url{https://www.ncbi.nlm.nih.gov/books/NBK26850/}.
+\bibitem{retina} D. Purves et al., \emph{Neuroscience}, 2nd ed., Sinauer Associates, 2001, ``Retinal Circuits for Detecting Differences in Luminance,'' \url{https://www.ncbi.nlm.nih.gov/books/NBK11052/}.
+\bibitem{opsinreview} J. F. D. Hagen, N. S. Roberts, and R. J. Johnston Jr., ``The evolutionary history and spectral tuning of vertebrate visual opsins,'' \emph{Developmental Biology} \textbf{493} (2023), 40--66; doi:10.1016/j.ydbio.2022.10.014.
+\bibitem{hublin2017} J.-J. Hublin et al., ``New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens,'' \emph{Nature} \textbf{546} (2017), 289--292. \href{https://doi.org/10.1038/nature22336}{doi:10.1038/nature22336}.
+\bibitem{richter2017} D. Richter et al., ``The age of the hominin fossils from Jebel Irhoud, Morocco, and the origins of the Middle Stone Age,'' \emph{Nature} \textbf{546} (2017), 293--296. \href{https://doi.org/10.1038/nature22335}{doi:10.1038/nature22335}.
+\end{thebibliography}
+\endgroup
+
+\vspace{4pt}\hrule\vspace{4pt}
+\small\textbf{Research status.} Algebraic and conditional theorems are proved as stated; the selected biological and observational embeddings are definitions with separately cited native evidence. The seed-selection policy and time-varying observer realization remain OPEN. External peer review remains OPEN.
+\end{document}

@@ -1,0 +1,686 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.92in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Physical Reality Inside Constraint: Gravity Contacting Light},
+  pdfauthor={Anthony Vito Coppa},
+  pdfsubject={Audited formal structure}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\textsc{Physical Reality Inside Constraint}}
+\rhead{\footnotesize Audited Revision \textbar\ 2 November 2026}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\Ev}{\operatorname{Ev}}
+\newcommand{\Admit}{\mathsf{Admit}}
+\newcommand{\Id}{\mathsf{Id}}
+\newcommand{\Pats}{\mathbf{Pats}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cstatus}[1]{\hfill\textsc{#1}}
+\newcommand{\exact}{\textsc{Exact}}
+\newcommand{\postulate}{\textsc{Postulate}}
+\newcommand{\interface}{\textsc{Contact}}
+\newcommand{\implementation}{\textsc{Implementation}}
+\newcommand{\pending}{\textsc{Pending at $\mathbf F$}}
+\newcommand{\Face}{\mathcal F_4}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Physical Reality Inside Constraint}\\[3pt]
+{\large Gravity Contacting Light: an audited formal structure}\\[8pt]
+{\normalsize Anthony Vito Coppa \quad\textbar\quad Coppalini Architecture}\\[2pt]
+{\small Audited revision, 2 November 2026}
+\end{center}
+
+\vspace{2pt}\hrule\vspace{8pt}
+
+\begin{abstract}
+This paper gives a receipt-preserving formal calculus with a typed address
+space and an append-only registry.  The evaluation map
+\(\Ev:P^*\to(\N_{>0},\times)\) is the surjective, non-injective
+abelianization of ordered prime words; the root carrier
+\[
+G=\begin{pmatrix}-2&1\\1&2\end{pmatrix}
+\]
+satisfies \(G^2=5I\) and has split signature \((1,1)\); the inertia of
+\(Q\otimes Q\) is \((2,2)\), while \(G\oplus I_2\) has inertia \((3,1)\);
+the pp-wave curvature law, Fibonacci correction, and reduced Burau identities
+hold under their stated conventions and hypotheses; and the future-boundary
+registry \(\widehat K_n=H_n\sqcup\{\mathbf F\}\) preserves historical
+receipts by append-only admission.
+
+Its physical contact relation is
+\[
+G_{\mathrm{embodied}}=e,\qquad \Pi(e,\ell)=c,\qquad
+c=(e,\ell,w,r),\qquad \Id(c)=(e,\ell,w,r).
+\]
+Here the embodied metric carrier \(e\) contacts light \(\ell\) at an ordered,
+receipt-bearing address.  The formal results, supplied structures, contact
+interfaces, and finite implementation are typed separately throughout.
+\end{abstract}
+
+\vspace{2pt}\hrule\vspace{6pt}
+
+\textbf{Verification receipt.}\enspace The companion program
+\texttt{verify\_physical\_reality\_final.py} uses only Python's standard
+library.  Every pass/fail assertion uses exact arithmetic in
+$\mathbb Q(\sqrt5)$, Laurent polynomials, or a finite jet algebra.  It
+verifies the displayed algebraic identities deterministically; its captured
+output is part of this edition's audit record.
+
+\section{Scope, status, and notation}
+
+\subsection{Assertion discipline}
+
+Five different kinds of assertion occur below.
+
+\begin{center}
+\begin{tabular}{@{}L{3.15cm}L{9.5cm}@{}}
+\toprule
+\textsc{Status} & \textsc{Meaning}\\
+\midrule
+\exact & A definition, calculation, or proof stated in this note.\\
+\postulate & Supplied structure or a chosen specialization carried as an input.\\
+\interface & A typed relation linking formal symbols to their physical reading.\\
+\implementation & A finite realization that witnesses the stated relation.\\
+\pending & A candidate held at the boundary object $\mathbf F$, awaiting admission into the historical registry.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This separation keeps proof, supplied input, physical reading, computation,
+and pending occurrence in their own offices.
+
+\subsection{Root data}
+
+Let
+\[
+ Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+ \Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+ G=[Q,\Omega]=Q\Omega-\Omega Q
+   =\begin{pmatrix}-2&1\\1&2\end{pmatrix}.
+\tag{1}
+\]
+Write
+\[
+ \Phi=\frac{1+\sqrt5}{2},\qquad
+ \Psi=\frac{1-\sqrt5}{2}=-\Phi^{-1},\qquad F_1=F_2=1.
+\tag{2}
+\]
+Here $[A,B]$ denotes the matrix commutator.
+
+\section{Contact, addresses, and the future boundary}
+
+\subsection{Prime-word address space}
+
+Let $P$ be the set of prime numbers and let $W=P^*$ be the free monoid of
+finite ordered words in $P$, with concatenation as product and empty word
+$\varepsilon$ as unit.  A word $w=(p_1,\ldots,p_m)$ is an address history,
+not merely the integer it evaluates to.
+
+\begin{definition}[Evaluation and compression]\label{def:ev}
+Define
+\[
+ \Ev:W\longrightarrow(\N_{>0},\times),\qquad
+ \Ev(p_1,\ldots,p_m)=\prod_{j=1}^{m}p_j,
+ \quad \Ev(\varepsilon)=1.
+\tag{3}
+\]
+\end{definition}
+
+\begin{theorem}[Exact compression theorem]\label{thm:ev}
+The map $\Ev$ is the abelianization of the free monoid $W$: it is a
+surjective monoid homomorphism onto the free commutative monoid on $P$ and is
+not injective.
+\end{theorem}
+
+\begin{proof}
+Concatenation becomes multiplication under (3), so $\Ev$ is a monoid
+homomorphism.  Unique prime factorization gives a prime word for every
+positive integer, so it is surjective \cite{gauss1801}.  It identifies every pair of words
+that differ by adjacent exchanges, hence factors through the universal
+commutative quotient of $P^*$.  Conversely, equality in the target fixes the
+multiplicity of each prime and therefore is exactly the equivalence generated
+by those exchanges.  Finally,
+\[
+ \Ev(2,3)=6=\Ev(3,2),\qquad (2,3)\ne(3,2).
+\tag{4}
+\]
+Thus the map is not injective.
+\end{proof}
+
+Equation (4) gives the formal compression read: order belongs to the source
+$W$, while multiplication belongs to its commutative numerical image.
+\cstatus{\exact}
+
+\subsection{Contact as a typed record}
+
+The physical reading used by this project is retained as a declared interface:
+\[
+ G_{\mathrm{embodied}}=e,\qquad
+ \Pi(e,\ell)=c,\qquad
+ c=(e,\ell,w,r).
+\tag{5}
+\]
+Here $e$ names the embodied metric carrier, $\ell$ names light, $w\in W$ is
+the ordered prime-word address, and $r$ is an append-only occurrence receipt.
+For this formal system the identity record is
+\[
+ \Id(c)=(e,\ell,w,r).
+\tag{6}
+\]
+The numerical observation $\Ev(w)$ is one forgetting map out of that record;
+$w$ and $r$ remain carried by $c$.  Equation (5) fixes the physical contact
+relation through which the formal system reads embodied gravity contacting
+light. \cstatus{\interface}
+
+\subsection{Closed boundary and admission}
+
+Let $K_n=(c_1,\ldots,c_n)$ be an append-only finite sequence of contact
+records and let $H_n=\{c_1,\ldots,c_n\}$ be its historical carrier.  The
+formal boundary completion is
+\[
+ \widehat K_n=H_n\sqcup\{\mathbf F\},
+\tag{7}
+\]
+where $\sqcup$ is disjoint union and $\mathbf F\notin H_n$ is the
+future-boundary object.  A candidate is typed at $\mathbf F$ until an
+externally supplied predicate grants admission.
+More explicitly, for a candidate datum $d$ let
+\[
+ \Admit(K_n,d)\in\{\mathsf{can},\mathsf{refuse}\}.
+\tag{8}
+\]
+If the value is $\mathsf{can}$, a fresh receipt $r_{n+1}$ is issued,
+$c_{n+1}=(e,\ell,w,r_{n+1})$, and
+$K_{n+1}=K_n\mathbin{\Vert}c_{n+1}$; otherwise $K_{n+1}=K_n$ and the datum
+remains at $\mathbf F$.
+
+\begin{proposition}[Boundary invariant]
+Under the definition above, every issued contact record is historical (an
+element of $H_n$), while every unadmitted candidate remains at $\mathbf F$;
+no admitted receipt rewrites an earlier member of $K_n$.
+\end{proposition}
+
+\begin{proof}
+This is immediate by induction on the update rule following (8).  The only
+successful update appends one new record; the refusal branch leaves the
+registry unchanged.
+\end{proof}
+
+The boundary form (7) and the predicate in (8) are supplied structure.  They
+give the registry a fixed type: sequence for history, set carrier for its
+members, and a distinct boundary object for pending candidates.
+\cstatus{\postulate}
+
+\subsection{Finite four-face admission policy}
+
+For the deterministic implementation receipt, define the ordered face set
+\[
+ \Face=(\mathsf{Color},\mathsf{Meaning},\mathsf{Memory},\mathsf{Motion})
+\]
+and its cyclic successor by
+\[
+ \mathsf{Color}\mapsto\mathsf{Meaning}\mapsto\mathsf{Memory}
+ \mapsto\mathsf{Motion}\mapsto\mathsf{Color}.
+\]
+Write $f_n$ for the $n$th member of this cycle, with
+$f_0=\mathsf{Color}$.  The finite policy used in V10 is
+\[
+ \Admit_4(K_n,(f,e,\ell,w))=\mathsf{can}
+ \quad\Longleftrightarrow\quad f=f_n.
+\]
+On admission it issues the receipt $r_{n+1}=(f,n)$ and appends
+$c_{n+1}=(e,\ell,w,r_{n+1})$ to $K_n$.  All other candidates remain at
+$\mathbf F$.  This is one supplied policy realizing the generic admission
+form (8). \cstatus{\postulate\; + \implementation}
+
+\section{Mirror carrier and exact discrete witnesses}
+
+\begin{theorem}[Root carrier]\label{thm:root}
+The carrier $G$ in (1) satisfies
+\[
+ G^2=5I,\qquad \det G=-5,
+\tag{9}
+\]
+and has eigenvalues $\pm\sqrt5$ and signature $(1,1)$.
+\end{theorem}
+
+\begin{proof}
+Direct multiplication gives
+\[
+ \begin{pmatrix}-2&1\\1&2\end{pmatrix}^2=
+ \begin{pmatrix}5&0\\0&5\end{pmatrix}.
+\]
+The characteristic polynomial is $\lambda^2-5$, giving one positive and one
+negative eigenvalue.
+\end{proof}
+
+\begin{proposition}[Null-coordinate normal form]\label{prop:null}
+Set
+\[
+ n_+=\binom{1}{-\Psi},\qquad n_-=\binom{1}{-\Phi},\qquad
+ M=\left[\,n_+\ \middle|\ -\frac15n_-\,\right].
+\tag{10}
+\]
+Then
+\[
+ n_+^{\mathsf T}Gn_+=n_-^{\mathsf T}Gn_-=0,\qquad
+ n_+^{\mathsf T}Gn_-=-5,
+\tag{11}
+\]
+and
+\[
+ M^{\mathsf T}GM=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+ \det M=\frac1{\sqrt5}.
+\tag{12}
+\]
+Thus the quadratic form of $G$ has the null-coordinate read $2\,du\,dv$.
+\end{proposition}
+
+\begin{proof}
+Substitute $\Phi+\Psi=1$ and $\Phi\Psi=-1$ into the three quadratic
+expressions in (11); (12) then follows from bilinearity. \cstatus{\exact}
+\end{proof}
+
+\begin{proposition}[Fibonacci correction]\label{prop:fib}
+For every $n\ge1$,
+\[
+ F_{n+1}-\Phi F_n=\Psi^n,
+\qquad
+ \left|\Phi-\frac{F_{n+1}}{F_n}\right|
+=\frac{|\Psi|^n}{F_n}
+=\frac{1-(-1)^n\Phi^{-2n}}{\sqrt5\,F_n^2}.
+\tag{13}
+\]
+\end{proposition}
+
+\begin{proof}
+The first identity follows by induction from the Fibonacci recurrence, or
+from Binet's formula.  Divide it by $F_n$ and use
+$F_n=(\Phi^n-\Psi^n)/\sqrt5$ to obtain the two exact error forms.
+\end{proof}
+
+The final factor in (13) approaches $1$ but is not identically $1$.
+This corrects the common but false replacement of the last expression by
+$1/(\sqrt5F_n^2)$. \cstatus{\exact}
+
+\begin{proposition}[A prime logarithmic near return]\label{prop:comma}
+The ratio
+\[
+ \frac{3^{12}}{2^{19}}=\frac{531441}{524288}
+\tag{14}
+\]
+is not $1$.  More generally $\log 3/\log 2$ is irrational, so no nonzero
+integer powers of $2$ and $3$ coincide.
+\end{proposition}
+
+\begin{proof}
+If $\log3/\log2=a/b$ with nonzero integers $a,b$, then $3^b=2^a$ after
+clearing signs, contrary to unique prime factorization.  The stated ratio is
+an exact unequal rational number. \cstatus{\exact}
+\end{proof}
+
+\section{Lorentzian interface and pp-wave boundary}
+
+\begin{theorem}[Signature obstruction]\label{thm:signature}
+The characteristic polynomial of $Q\otimes Q$ is
+\[
+ \chi_{Q\otimes Q}(\lambda)=
+ (\lambda+1)^2(\lambda-\Phi^2)(\lambda-\Psi^2).
+\tag{15}
+\]
+Hence $Q\otimes Q$ has inertia $(2,2)$, while
+\[
+ G\oplus I_2\quad\text{has inertia}\quad(3,1).
+\tag{16}
+\]
+No real invertible congruence changes one of these forms into the other.
+\end{theorem}
+
+\begin{proof}
+The real symmetric matrix $Q$ has an orthonormal eigenbasis by the spectral
+theorem.  Tensor products of those eigenvectors diagonalize $Q\otimes Q$;
+its eigenvalues are therefore $\Phi^2,\Phi\Psi,\Psi\Phi,\Psi^2$, namely two
+positive values and two copies of $-1$.  The eigenvalues of $G\oplus I_2$
+are $\sqrt5,-\sqrt5,1,1$.  Sylvester's law of inertia preserves these
+positive and negative counts under real congruence
+\cite{hornjohnson}.
+\end{proof}
+
+Set $\widetilde M=M\oplus I_2$.  Equation (12) gives the exact bridge
+\[
+ \widetilde M^{\mathsf T}(G\oplus I_2)\widetilde M
+ =\begin{pmatrix}0&1\\1&0\end{pmatrix}\oplus I_2.
+\]
+In the coordinate order $(u,v,x,y)$, this is the $H=0$ Gram matrix of (17).
+Accordingly, $G\oplus I_2$ carries the flat signature $(3,1)$ read of (12),
+while the inertia of $Q\otimes Q$ remains $(2,2)$.  The transverse block
+$I_2$ is the supplied extension carrying the planar mirror form into the
+Lorentzian carrier. \cstatus{\exact\; + \postulate}
+
+For this section, coordinates are ordered $(u,v,x,y)$ and signature is
+counted as $(\#\,+,\#\,-)$.  Curvature uses
+\[
+ R_{bc}=\partial_a\Gamma^a_{bc}-\partial_c\Gamma^a_{ba}
+ +\Gamma^a_{ad}\Gamma^d_{bc}-\Gamma^a_{cd}\Gamma^d_{ba},
+\]
+and the field-equation convention is $G_{bc}=\kappa T_{bc}$.  The symbol
+$H$ is reserved in this note for the pp-wave profile.  These are the
+Brinkmann pp-wave and Einstein-equation conventions used below
+\cite{brinkmann1925,einstein1916}.
+
+\begin{proposition}[Conditional pp-wave identity]\label{prop:pp}
+For the metric
+\[
+ ds^2=2\,du\,dv+H(u,x,y)\,du^2+dx^2+dy^2,
+\tag{17}
+\]
+one has $\det g=-1$, scalar curvature $R=0$, and
+\[
+ R_{uu}=-\frac12(\partial_x^2+\partial_y^2)H,
+\tag{18}
+\]
+with all other Ricci components zero.  Thus, if the Einstein equation with
+this source ansatz is imposed, its $uu$ component reads
+\[
+ \nabla_\perp^2H=-2\kappa T_{uu}.
+\tag{19}
+\]
+\end{proposition}
+
+\begin{proof}
+Invert the $uv$ block of (17): $g^{uv}=1$ and $g^{vv}=-H$.  The only
+derivatives of the metric are derivatives of $g_{uu}=H$.  Substitution in the
+Christoffel formula gives (18), and contraction gives $R=0$.
+\end{proof}
+
+Equation (18) is the conditional differential-geometric identity carried by
+the pp-wave instance.  Its profile $H$ and source $T_{uu}$ are specified
+pp-wave data. \cstatus{Postulate boundary}
+
+\section{Braid--Burau read and the exact \texorpdfstring{$\mathbb Z[\Phi]$}{Z[Phi]} specialization}
+
+Use Artin's presentation
+\[
+ B_3=\langle\sigma_1,\sigma_2\mid
+ \sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\rangle.
+\]
+Both sides of the defining relation have exponent sum $3$; hence
+$\sigma_i\mapsto1$ descends to the exponent-sum homomorphism
+$\alpha:B_3\to\Z$.  Define the reduced Burau matrices over
+$\Z[t,t^{-1}]$ by \cite{artin1925,burau1935}
+\[
+ \psi(\sigma_1)=\begin{pmatrix}-t&1\\0&1\end{pmatrix},\qquad
+ \psi(\sigma_2)=\begin{pmatrix}1&0\\t&-t\end{pmatrix}.
+\tag{20}
+\]
+
+\begin{theorem}[Braid relation and determinant]\label{thm:burau}
+The matrices in (20) satisfy
+\[
+ \psi(\sigma_1\sigma_2\sigma_1)
+=\psi(\sigma_2\sigma_1\sigma_2)
+=\begin{pmatrix}0&-t\\-t^2&0\end{pmatrix},
+\qquad
+ \det\psi(w)=(-t)^{\alpha(w)}.
+\tag{21}
+\]
+\end{theorem}
+
+\begin{proof}
+Multiply the two sides of the braid relation directly.  Each generator has
+determinant $-t$, and the inverse generators have determinant $(-t)^{-1}$;
+the determinant formula follows multiplicatively. \cstatus{\exact}
+\end{proof}
+
+The specialization
+\[
+ t=\Phi^2=1+\Phi
+\tag{22}
+\]
+is the chosen parameter value carried by the specialization.
+\cstatus{\postulate}
+
+\begin{proposition}[Exact specialization ring]\label{prop:ring}
+At (22) the entries of $\psi(\sigma_i^{\pm1})$ belong to
+\[
+ \Z[\Phi]=\{a+b\Phi:a,b\in\Z\},\qquad \Phi^2=1+\Phi.
+\tag{23}
+\]
+In particular,
+\[
+ \Phi^4=2+3\Phi,\qquad \Phi^{-1}=\Phi-1,\qquad
+ \Phi^{-2}=2-\Phi.
+\tag{24}
+\]
+The number $\Phi^2=(3+\sqrt5)/2$ has half-integral
+$\{1,\sqrt5\}$-coordinates and integral $\{1,\Phi\}$-coordinates in
+$\Z[\Phi]$.
+\end{proposition}
+
+\begin{proof}
+The relation $\Phi^2=1+\Phi$ gives the first part of (24); multiplying by
+the displayed inverses gives $1$.  In the basis $\{1,\sqrt5\}$, the
+coordinates of $\Phi^2$ are half-integral, while $\{1,\Phi\}$ gives the
+integral coordinates displayed in (23).
+\end{proof}
+
+\begin{proposition}[Orientation parity]\label{prop:parity}
+At the specialization (22),
+\[
+ \psi(\sigma_1)^2=
+ \begin{pmatrix}t^2&1-t\\0&1\end{pmatrix}
+=\begin{pmatrix}\Phi^4&-\Phi\\0&1\end{pmatrix}.
+\tag{25}
+\]
+It has eigenvalues $\Phi^4$ and $1$.  For every $w\in B_3$,
+\[
+ \sgn\det\psi(w)=(-1)^{\alpha(w)}.
+\tag{26}
+\]
+\end{proposition}
+
+\begin{proof}
+Square the first matrix in (20), use $1-\Phi^2=-\Phi$, and apply (21).
+Because $\Phi^2>0$, only the parity of the exponent sum contributes to the
+sign in (26).
+\end{proof}
+
+Equation (26) is the orientation-parity statement of this real matrix
+representation.  The M\"obius half-turn and physical-phase readings enter
+through their separately typed map. \cstatus{Postulate boundary}
+
+\begin{proposition}[Why a receipt is needed]\label{prop:receipt}
+Let the generators act on a length-three prime word by adjacent swaps.  The
+permutation read is its $S_3$ quotient, while $\alpha$ retains braid winding:
+$\sigma_1^2$ fixes $(2,3,5)$ while
+$\alpha(\sigma_1^2)=2$.
+\end{proposition}
+
+\begin{proof}
+Two adjacent swaps cancel as permutations, whereas exponent sum is additive.
+The receipt carries the braid winding that lies beyond the permutation read.
+\cstatus{\exact}
+\end{proof}
+
+\section{Address categories and loop interfaces}
+
+The following modest categorical conclusion is enough for the present note.
+If finite words are joined only by prefix inclusions, then the resulting
+category $\Pats_{\mathrm{pre}}$ is a poset: there is at most one morphism
+between any two objects.  The position-covering sheaf read carries supplied
+covers and restriction maps.  With strictly increasing subsequence embeddings,
+identical letters may carry more than one embedding.
+\cstatus{\exact}
+
+The position-covering Grothendieck topology and all registry restriction maps
+are the supplied address interface. \cstatus{\postulate}
+
+For a standard gauge-theory loop interface, set $\hbar=1$, let
+$q\in\R$ denote charge, and let $\phi=\rho e^{i\theta}$ on a closed loop
+$\gamma$, with $\rho\ne0$ on that loop.  Here $e^{i\theta}$ uses Euler's
+constant; the embodied carrier remains the distinct symbol $e$ of (5).
+Let $A$ be a connection one-form on a domain containing a spanning surface
+$\Sigma$ with $\partial\Sigma=\gamma$, and write
+\[
+ F_A=dA,\qquad \Phi_B(\gamma;\Sigma)=\int_\Sigma F_A=\oint_\gamma A.
+\]
+The final equality is Stokes' theorem on that domain.  Then, for
+$n\in\Z$,
+\[
+ \oint_\gamma d\theta=2\pi n,\qquad
+ \oint_\gamma(d\theta-qA)=2\pi n-q\oint_\gamma A
+ =2\pi n-q\Phi_B(\gamma;\Sigma).
+\tag{27}
+\]
+It equals $2\pi k$ for $k\in\Z$ exactly when
+\[
+ q\Phi_B(\gamma;\Sigma)=2\pi(n-k).
+\tag{28}
+\]
+The nonvanishing hypothesis gives the loop a phase read.  The golden ratio
+$\Phi$ of (2) and the flux $\Phi_B$ are distinct named quantities.  The
+braid-word or receipt to physical-loop map belongs to the separately typed
+phase interface \cite{weyl1929,aharonovbohm1959}.
+\cstatus{Exact + postulate boundary}
+
+\section{Deterministic implementation receipt}
+
+The accompanying verifier checks the following finite, reproducible results.
+
+\begin{center}
+\begin{tabular}{@{}L{1.2cm}L{10.9cm}@{}}
+\toprule
+\textsc{Test} & \textsc{Exact check}\\
+\midrule
+V1--V2 & The commutator $G$, $G^2=5I$, determinant, null vectors, and congruence (12).\\
+V3--V4 & Characteristic polynomial and inertia in (15)--(16), plus the diagonal transition calculation.\\
+V5 & The pp-wave inverse, determinant, Ricci tensor, and scalar curvature in (17)--(18).\\
+V6 & The braid relation and determinant formula over a fixed twelve-word suite.\\
+V7--V8 & Fibonacci identities, the exact comma ratio, and the word-action/winding separation.\\
+V9 & The $\Z[\Phi]$ identities, (25), and the determinant-sign parity statement.\\
+V10 & The supplied four-face policy $\Admit_4$ admits only the next cyclic face and appends its receipt in that order.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+V10 realizes the finite admission policy defined above.  A passing test is
+the deterministic receipt that the stated finite formulas and receipt
+discipline were implemented correctly. \cstatus{\implementation}
+
+\section{Closure ledger}
+
+\begin{center}
+\begin{tabular}{@{}L{4.0cm}L{2.3cm}L{5.8cm}@{}}
+\toprule
+\textsc{Statement} & \textsc{Status} & \textsc{Reason}\\
+\midrule
+Ordered prime words and $\Ev$ & exact & Theorem~\ref{thm:ev}.\\
+Contact tuple $c=(e,\ell,w,r)$ & contact & It carries the embodied metric carrier, light, address, and receipt.\\
+Future object $\mathbf F$ and admission & postulate & The supplied policy issues an append-only historical receipt.\\
+$G^2=5I$ and null form & exact & Theorem~\ref{thm:root} and Proposition~\ref{prop:null}.\\
+Lorentzian flat carrier $G\oplus I_2$ & exact plus postulate & Its signature is exact; the supplied $I_2$ completes the carrier.\\
+pp-wave curvature equation & exact conditional identity & The metric (17) and Einstein equation carry its source law.\\
+Burau orientation parity & exact after (22) & The chosen specialization carries the exact parity read.\\
+M\"obius/phase correspondence & postulate & Its typed map carries path data into braid and gauge data.\\
+Detector, CIE, or real-field completion & pending at $\mathbf F$ & This address awaits its corresponding map and receipt.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+The completed formal result is a receipt-preserving refinement placed before
+commutative evaluation.  The exact map $\Ev$ gives the numerical read, while
+$w$ and $r$ preserve its ordered address and occurrence history.  The matrix
+carrier supplies the split-signature algebraic normal form; the inertia
+calculation distinguishes the tensor carrier from the Lorentzian extension;
+and the Burau computation supplies an exact orientation-parity invariant at
+the chosen specialization.
+
+The specification boundary is closed: historical records are in $H_n$,
+candidates are typed at $\mathbf F$, and each future address carries its
+required map, hypothesis, and receipt condition.  The contact relation
+\(\Pi(e,\ell)=c\) remains present throughout this closure as the address of
+embodied gravity contacting light.
+
+\section*{Source coordinates and audit provenance}
+
+The cited sources provide the standard constructions named in this note:
+prime factorization, matrix spectral and inertia results, braid presentation
+and Burau representation, pp-wave geometry, and gauge-loop phase.  The audit
+record consists of this TeX source, the companion verifier
+\nolinkurl{verify_physical_reality_final.py}, its captured output
+\nolinkurl{verify_physical_reality_final_out.txt}, and the checksum record
+\nolinkurl{physical_reality_release.sha256}.  Together they provide the exact
+definitions, finite checks, and release receipt for this edition.
+
+\begin{thebibliography}{99}
+
+\bibitem{gauss1801}
+C.~F.~Gauss, \emph{Disquisitiones Arithmeticae}, 1801, art.~16.
+
+\bibitem{hornjohnson}
+R.~A.~Horn and C.~R.~Johnson, \emph{Matrix Analysis}, 2nd ed., Cambridge
+University Press, 2013, Chapters 4 and 7.
+
+\bibitem{artin1925}
+E.~Artin, ``Theorie der Z\"opfe,'' \emph{Abhandlungen aus dem Mathematischen
+Seminar der Universit\"at Hamburg} \textbf{4} (1925), 47--72.
+\href{https://doi.org/10.1007/BF02950718}{doi:10.1007/BF02950718}.
+
+\bibitem{burau1935}
+W.~Burau, ``\"Uber Zopfgruppen und gleichsinnig verdrillte Verkettungen,''
+\emph{Abhandlungen aus dem Mathematischen Seminar der Universit\"at Hamburg}
+\textbf{11} (1935), 179--186.
+\href{https://doi.org/10.1007/BF02940722}{doi:10.1007/BF02940722}.
+
+\bibitem{brinkmann1925}
+H.~W.~Brinkmann, ``Einstein spaces which are mapped conformally on each
+other,'' \emph{Mathematische Annalen} \textbf{94} (1925), 119--145.
+\href{https://doi.org/10.1007/BF01208647}{doi:10.1007/BF01208647}.
+
+\bibitem{einstein1916}
+A.~Einstein, ``Die Grundlage der allgemeinen Relativit\"atstheorie,''
+\emph{Annalen der Physik} \textbf{49} (1916), 769--822.
+\href{https://doi.org/10.1002/andp.19163540702}{doi:10.1002/andp.19163540702}.
+
+\bibitem{weyl1929}
+H.~Weyl, ``Elektron und Gravitation. I,'' \emph{Zeitschrift f\"ur Physik}
+\textbf{56} (1929), 330--352.
+\href{https://doi.org/10.1007/BF01339504}{doi:10.1007/BF01339504}.
+
+\bibitem{aharonovbohm1959}
+Y.~Aharonov and D.~Bohm, ``Significance of electromagnetic potentials in the
+quantum theory,'' \emph{Physical Review} \textbf{115} (1959), 485--491.
+\href{https://doi.org/10.1103/PhysRev.115.485}{doi:10.1103/PhysRev.115.485}.
+
+\end{thebibliography}
+
+\end{document}

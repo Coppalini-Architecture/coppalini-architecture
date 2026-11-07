@@ -83,3 +83,24 @@ Nineteen source-consolidation and field-ownership maps are retained as typed dep
 The repository preserves papers, formal maps, and their exact public identities. Computational instruments and executable kernels retain their own repositories and are linked rather than silently copied into this archive.
 
 Public visibility does not itself grant a reuse license. See [LICENSING.md](LICENSING.md).
+
+<!-- BEGIN NOVEMBER_2026_PUBLICATIONS -->
+## Current papers and Gauge & Matter Laboratory (November 2026)
+
+The following newer editions are held in versioned folders; they supplement the original formal basis and maps above.
+
+| Paper / instrument | Edition and read copy | Source and checks |
+|---|---|---|
+| **The 3 Body Mirror** | [Corrected PDF](papers/three-body-mirror/The_3_Body_Mirror.pdf) | [TeX](papers/three-body-mirror/The_3_Body_Mirror.tex) · [Markdown](papers/three-body-mirror/The_3_Body_Mirror.md) · [two checkers](papers/three-body-mirror/README.md) |
+| Scope Recognition: Metric Minimum | [PDF](papers/scope-recognition/Scope_Recognition_Metric_Minimum.pdf) | [Source / verifier](papers/scope-recognition/README.md) |
+| The Structure of Survival | [Review Edition v66 PDF](papers/structure-of-survival-v66/The_Structure_of_Survival_v66.pdf) | [LaTeX and proof notes](papers/structure-of-survival-v66/README.md) |
+| Time Evolution | [v0.6 PDF](papers/time-evolution-v0.6/time_evolution_0_6.pdf) | [Source / verification](papers/time-evolution-v0.6/README.md) |
+| Physical Reality Inside Constraint | [Final PDF](papers/physical-reality-inside-constraint/physical_reality_inside_constraint_final.pdf) | [Source / verification](papers/physical-reality-inside-constraint/README.md) |
+| The Theory of Everything | [R27 PDF](papers/theory-of-everything/r27/The_Theory_Of_Everything_R27.pdf) | [Version register, sources and receipts](papers/theory-of-everything/README.md) |
+| The Condition of Trust | [PDF](papers/condition-of-trust/The_Condition_Of_Trust.pdf) | [Source / verification](papers/condition-of-trust/README.md) |
+| Gauge & Matter Laboratory | [Standalone v0.5.2 HTML](programs/gauge-matter-laboratory/clear-onyx-gauge-laboratory-v0.5.2.html) | [Full implementation and tests](programs/gauge-matter-laboratory/REPOSITORY_ENTRY.md) |
+
+The explicit repository inclusion of this latest laboratory is an author-selected exception to the earlier practice of keeping computational instruments in separate repositories. Source and display assets preserve distinct edition identities. The three-body theorem is complete at its stated mathematical scope; astronomical and biological extensions remain open.
+
+[November 2026 provenance and verification register](RELEASES/2026-11-07.md).
+<!-- END NOVEMBER_2026_PUBLICATIONS -->

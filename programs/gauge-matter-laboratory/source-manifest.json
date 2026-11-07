@@ -1,0 +1,84 @@
+{
+  "name": "Clear Onyx Gauge & Matter Laboratory",
+  "version": "0.5.2",
+  "entry": "clear-onyx-gauge-laboratory-v0.5.2.html",
+  "scope": "Finite gauge and matter carriers, including a 2+1D electroweak Higgs-sector lattice with fixed declared SU(2)L x U(1)Y background links and a separate tree-level mass-algebra receipt. SU(3) transport supplies QCD kinematics only; a confinement ensemble remains open.",
+  "files": [
+    {
+      "path": ".openai/hosting.json",
+      "sha256": "b3d544b7fdffb5fdade3a35cdcc144a875a1e5cb7674eb3063fd07d7c6aca2b8"
+    },
+    {
+      "path": "build.mjs",
+      "sha256": "b18f1da265576f4f00f99283e804a2f7ba0d4c0e3de1b7ad89a30bd31493f8ec"
+    },
+    {
+      "path": "write-manifest.mjs",
+      "sha256": "41180ef3d9f00ecfe38437240b38ac3c2243685b125de0de2bae6bcdc3fb6f7f"
+    },
+    {
+      "path": "README.md",
+      "sha256": "31a260f3083724b5ff954d453e8a4a73f61ed4c398c59736f5c980cc7aafeab6"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "bd79aff8f3ad902a08e7f63c0df1277dd3b183181efe2640a1d245900d6667db"
+    },
+    {
+      "path": "AUDIT.md",
+      "sha256": "b6317580e6e5b3ecaacf2f3ebf8c69e37a09d3a0d29d140dad62b38d869ad1e9"
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "47130948c3ddc9df131ea8ac2e3be5ac0299248738ddf7c2ab08676780e30410"
+    },
+    {
+      "path": "src/core.js",
+      "sha256": "1a638fe52d1faeb85abe5c1bb3ab8faec43ef34b8abacbeaa80ddb22b5dcc61d"
+    },
+    {
+      "path": "src/template.html",
+      "sha256": "46c1f80892d4f3112035777da96c39b77a007fe99b91741b837820f4d48b2a6a"
+    },
+    {
+      "path": "src/carriers/complex-phi4.js",
+      "sha256": "2c3f98071db589159cd948229a0f7b008f135865a5181d2106833e8b52129707"
+    },
+    {
+      "path": "src/carriers/two-flavour-neutrino.js",
+      "sha256": "619dd9d7137d855f910060f1a9f87abf255e77e594ca5a0bdceb21cb0602b12e"
+    },
+    {
+      "path": "src/carriers/massive-dirac.js",
+      "sha256": "2607fcb744123aca878a6d228e96cbeaefd80507df160031eb770d5e1d4b3ce9"
+    },
+    {
+      "path": "src/carriers/gauge.js",
+      "sha256": "a29e4443585cff4d86e1f3e81cda73d6ab1cdcbaf3f9a5c7623fee55cc658c3b"
+    },
+    {
+      "path": "src/carriers/electroweak-higgs.js",
+      "sha256": "693a489fc11f7b06bfbd430ebcc7e2f95d128c9455a744e0cfff3a459e4787d1"
+    },
+    {
+      "path": "tests/check-v042.cjs",
+      "sha256": "a30ce3fa13af56fe29ec3841f46370be679bd8ab27d658293612d3cc26f56b01"
+    },
+    {
+      "path": "tests/check-v05.cjs",
+      "sha256": "c69fd48350681b99562d96b4b5a6332ee5081a40d421d47a26000af7a4981197"
+    },
+    {
+      "path": "tests/check-browser-bootstrap.cjs",
+      "sha256": "081ed9f07a3f388fa1dca9106c5ff53e3cbdbb891b150a13a37b637aafd2bda7"
+    },
+    {
+      "path": "tests/check-manifest.cjs",
+      "sha256": "b04b062edf6237310d74d9d6406e82a10fd40b9dd737afd1132a32a4b0917d48"
+    },
+    {
+      "path": "clear-onyx-gauge-laboratory-v0.5.2.html",
+      "sha256": "f365ab25c6ca5455b0a4c297318249ffcb89f85b52a6248e22c51930cc71aac2"
+    }
+  ]
+}

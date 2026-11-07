@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{booktabs,array,longtable}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+\geometry{paperwidth=6.75in,paperheight=9.75in,top=0.68in,bottom=0.72in,left=0.72in,right=0.72in}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\abovedisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{5pt plus 2pt}
+\setlength{\belowdisplayshortskip}{5pt plus 2pt}
+\renewcommand{\arraystretch}{1.08}
+\allowdisplaybreaks[2]
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize\scshape The Theory of Everything}
+\fancyhead[R]{\scriptsize A. V. Coppa}
+\fancyfoot[C]{\scriptsize\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\setlength{\headheight}{13pt}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\section}{\normalfont\large\scshape}{\thesection.}{0.55em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.45em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.35em}
+\setlist{nosep,leftmargin=1.45em}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Cons}{\operatorname{Cons}}
+\newcommand{\snoc}{\operatorname{snoc}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\sloppy
+
+\begin{document}
+
+\begin{center}
+{\LARGE\scshape The Theory of Everything\par}
+\vspace{0.15em}
+{\large A Formal Edition: Scalar Symmetry, Riemann Return, and Field Closure\par}
+\vspace{0.8em}
+{\normalsize Anthony V. Coppa\par}
+{\small Coppalini Architecture\par}
+\vspace{0.35em}
+{\small 3 November 2026\par}
+\end{center}
+
+\vspace{0.5em}
+\hrule height 0.35pt
+\vspace{0.75em}
+
+\noindent\textbf{Formal declaration.}
+This edition typesets the controlling manuscripts and current formal receipts as
+one source-indexed record.  It closes the exact $2\times2$ root, scalar
+centralizer, phase mirror, Riemann quotient-and-lift reader, four-phase
+occurrence form, $K_8$ cochain criterion, and implemented check suite.  It
+places Lorentzian, Einstein--Maxwell, gauge, thermodynamic, biological, and
+quantum-gravity content in the native equations and conditions identified by
+their source owners.  Every relation carries its carrier, status, credit, and
+completion condition.
+
+\medskip
+\noindent\textbf{Reference and credit discipline.}
+A source carries formal authority in this edition only when it is a
+publisher/DOI record, an official institutional data or standards record, or
+a content-addressed primary project artifact fixed by a commit or SHA-256
+receipt.  Historical locations without a matching byte certificate are kept
+in the provenance registry so that the work is not erased; they do not carry
+a theorem, empirical, or completion assertion.  The appendices retain the
+full source-to-use map, named authors and institutions, archive state, hash
+state, and the exact office each source carries.
+
+\input{theory_of_everything_formal_edition_body.tex}
+
+\end{document}

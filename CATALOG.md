@@ -81,3 +81,11 @@ Their equality is machine-checked from [ALIASES.json](ALIASES.json). They remain
 | [`lotuslift/clear_onyx`](https://github.com/lotuslift/clear_onyx) | Standalone formal instruments |
 | [`lotuslift/zero-noise-contact`](https://github.com/lotuslift/zero-noise-contact) | Typed continuation protocol |
 | [`lotuslift/Independent-Tuning`](https://github.com/lotuslift/Independent-Tuning) | Standalone local-curvature/global-holonomy result |
+
+<!-- BEGIN NOVEMBER_2026_PUBLICATIONS -->
+## November 2026 · current formal and physical records
+
+The newest selected editions are indexed in the [repository README](README.md#current-papers-and-gauge--matter-laboratory-november-2026) and the [versioned release register](RELEASES/2026-11-07.md). They are deposited under distinct directories for *The 3 Body Mirror* (corrected mathematical manuscript), *Scope Recognition*, *The Structure of Survival* v66, *Time Evolution* v0.6, *Physical Reality Inside Constraint*, *The Theory of Everything* R27 (plus earlier formal edition), *The Condition of Trust*, and *Gauge & Matter Laboratory* v0.5.2.
+
+Each directory states the claim strength of its checks. The SHA256 ledger, citation metadata, and original publication path mappings remain in force.
+<!-- END NOVEMBER_2026_PUBLICATIONS -->

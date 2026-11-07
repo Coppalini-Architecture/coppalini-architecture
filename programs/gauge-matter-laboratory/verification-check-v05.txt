@@ -1,0 +1,14 @@
+{
+  "electroweakHiggs": {
+    "initialLinkResidual": 1.1102230246251565e-16,
+    "densityResidual": 6.217248937900877e-15,
+    "covarianceResidual": 4.107825191113079e-15,
+    "massResidual": 5.551115123125783e-17,
+    "ratioResidual": 0,
+    "massFailureWitness": 0.03204099999999996,
+    "linkFailureWitness": 0.31663015298374786,
+    "radialMass": 0.8246211251235321,
+    "radialMeasured": 0.8349969288889071,
+    "radialResidual": 3.7645472850122985e-8
+  }
+}

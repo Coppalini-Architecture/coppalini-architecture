@@ -1,0 +1,476 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in,headheight=22pt,headsep=18pt,footskip=28pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\definecolor{paper}{RGB}{248,246,240}
+\definecolor{ink}{RGB}{22,35,41}
+\definecolor{deep}{RGB}{19,56,65}
+\definecolor{cyan}{RGB}{58,116,126}
+\definecolor{gold}{RGB}{167,126,49}
+\definecolor{line}{RGB}{183,191,187}
+\pagecolor{paper}
+\color{ink}
+\hypersetup{colorlinks=true,linkcolor=deep,urlcolor=deep,citecolor=deep,pdftitle={The Condition Of Trust},pdfauthor={Anthony Vito Coppa}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.62em}
+\linespread{1.045}
+\renewcommand{\arraystretch}{1.24}
+\setlist[itemize]{leftmargin=1.35em,itemsep=0.28em,topsep=0.28em}
+\setlist[enumerate]{leftmargin=1.65em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\smallcaps}[1]{{\footnotesize\textsc{#1}}}
+\newcommand{\status}[1]{{\small\textcolor{cyan}{\textsc{#1}}}}
+\newcommand{\eqrefn}[1]{(\ref{#1})}
+\DeclareMathOperator{\snoc}{snoc}
+\titleformat{\section}{\Large\bfseries\color{deep}}{\thesection.}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries\color{deep}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.45em}{0.55em}
+\titlespacing*{\subsection}{0pt}{1.05em}{0.4em}
+\newenvironment{claimbox}[1]{%
+  \par\vspace{0.55em}\noindent\begin{minipage}{\linewidth}
+  \color{line}\rule{\linewidth}{0.55pt}\par\vspace{0.34em}%
+  \textcolor{gold}{\smallcaps{#1}}\par\vspace{0.3em}\color{ink}%
+}{%
+  \par\vspace{0.38em}\color{line}\rule{\linewidth}{0.55pt}%
+  \end{minipage}\par\vspace{0.55em}%
+}
+\newenvironment{proofbox}{%
+  \begin{quote}\small\color{deep}\textit{Proof.}\ }{\hfill$\square$\end{quote}}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textsc{Coppalini Architecture}}
+\chead{\small\textsc{The Condition Of Trust}}
+\rhead{\small\textsc{7 November 2026}}
+\cfoot{\small\textsc{Mechanical continuation / \thepage}}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{line}\leaders\hrule height \headrulewidth\hfill}}
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{0.8cm}
+\begin{center}
+  {\large\textcolor{cyan}{\textsc{Coordinate Lineage / Formal Reader / Source Ledger}}\par}
+  \vspace{1.55cm}
+  {\fontsize{38}{43}\selectfont\bfseries\color{deep}The Condition Of Trust\par}
+  \vspace{0.45cm}
+  {\Large\itshape Mechanical Continuation and the Common-Sense Stopping Point of Enough\par}
+  \vspace{1.2cm}
+  {\large Anthony Vito Coppa\par}
+  {\normalsize Coppalini Architecture\par}
+  \vspace{0.5cm}
+  {\small 7 November 2026\par}
+\end{center}
+\vfill
+\noindent\rule{\linewidth}{0.55pt}\par\vspace{0.75em}
+\begin{minipage}{0.93\linewidth}
+\textcolor{gold}{\smallcaps{The question}}\par
+\large\textbf{What must cross from one occurrence to the next so that a later reader can find the reference, state the difference, test the fit, and know when the present work is enough?}
+\end{minipage}
+\vspace{0.75em}\par\noindent\rule{\linewidth}{0.55pt}
+\vfill
+\begin{minipage}{0.93\linewidth}
+\small
+\textbf{Scope.} This paper gives a formal common layer for declared state spaces, reads, decisions, carriage, return, receipts, and stopping rules. Each field supplies its own observable, calibration, authority, and empirical evidence. The construction tests whether a stated read can support a stated decision, whether a receipt can recover its promised distinction, and whether the present task may stop.
+\end{minipage}
+\end{titlepage}
+\clearpage
+\pagenumbering{arabic}
+
+\section*{The working problem}
+\addcontentsline{toc}{section}{The working problem}
+
+Every durable hand-off has a simple demand. A later person must be able to locate the same reference, determine what changed, apply the declared rule, and see why the next action is warranted. A workshop needs this when a part moves from measurement to assembly. A laboratory needs it when a result moves from instrument to report. A family, court, or public office needs it whenever a later decision depends on an earlier occurrence. The materials differ; the mechanical problem is the same.
+
+The problem becomes sharp when a system changes while a declared read comes back to the same value. The returning read does not erase the carriage that occurred. It also does not supply a record of that carriage. A sound construction keeps distinct the offices of memory, return, receipt, carriage, and recognition.
+
+\begin{claimbox}{The common-sense theorem}
+\textbf{A read can support a decision exactly when every pair of full conditions that gives the same read also requires the same decision.}
+\[
+\rho(x)=\rho(y)\quad\Longrightarrow\quad D(x)=D(y).
+\tag{1}\label{eq:plain}
+\]
+\end{claimbox}
+
+If two conditions give the same read yet require different actions, that read is too coarse for that action. The repair is exact: add a declared read that separates the pair, or select a decision that is constant on the original read classes. The proof below gives this result directly, then gives the companion requirements for occurrence history and enough.
+
+\section{The offices of continuation}
+
+The source construction assigns different jobs to different relations. The following table is a typing rule for this paper. None of these offices is a synonym for another.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.17\linewidth}p{0.27\linewidth}Y@{}}
+\toprule
+Office & Formal coordinate & Plain work \\
+\midrule
+Reference & $r_n\in X$ & fixes the comparison point for the current read \\
+Carriage & $T_\gamma:X\to X$ & carries a condition through its declared traversal $\gamma$ \\
+Memory & $(r_n,\Delta_n)$ & brings the prior comparison point and stated difference into the later read \\
+Return & $\rho(T_\gamma x)=\rho(x)$, $T_\gamma x\ne x$ & reapplies the declared reader after carriage \\
+Receipt & $\mathsf R_{n+1}=\snoc(\mathsf R_n,o_{n+1})$ & appends one occurrence so a later reader can recover the promised distinction \\
+Recognition & $\operatorname{Fit}_J(P)=1$ & states that the declared packet fits its declared use under jurisdiction $J$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The relation for return is exact and limited:
+\[
+\boxed{\rho(T_\gamma x)=\rho(x),\qquad T_\gamma x\ne x.}
+\tag{2}\label{eq:return}
+\]
+The chosen read returns; the full condition has advanced. The equality belongs to the reader. The inequality belongs to the carried condition. The receipt is a third object. It records the occurrence without changing either claim.
+
+Let $\delta$ be the declared difference map for the current jurisdiction:
+\[
+\Delta_n=\delta\bigl(\rho(x_n),\rho(r_n)\bigr).
+\tag{3}\label{eq:difference}
+\]
+Memory is the availability of the earlier comparison point and its stated difference at the next read. It does not name the receipt; the receipt supplies a decoder for a promised distinction. Recognition does not name carriage; it evaluates the declared packet after carriage, reference, read, and receipt have been stated.
+
+\begin{claimbox}{Source form}
+\textbf{Memory carries the prior comparison. Return keeps the relation. Recognition states the fit.}
+\end{claimbox}
+
+\section{The exact jurisdiction}
+
+Fix a declared jurisdiction $J$. It provides the spaces, maps, reference, and acceptance relation required for one stated use:
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.14\linewidth}p{0.22\linewidth}Y@{}}
+\toprule
+Object & Formal type & Plain office \\
+\midrule
+$X$ & set of full conditions & what may actually be the case at the declared resolution \\
+$C$ & set of read coordinates & codomain of the declared reader \\
+$A$ & set of actions or decisions & possible next actions \\
+$\rho$ & $\rho:X\to C$ & declared reader or measurement \\
+$D$ & $D:X\to A$ & decision required by a full condition \\
+$T_\gamma$ & $T_\gamma:X\to X$ & declared carriage operation \\
+$\mathcal H$ & set of histories & ordered occurrences \\
+$r$ & $r:\mathcal H\to\mathcal R$ & receipt code for a history \\
+$p$ & $p:\mathcal H\to P$ & historical distinction the receipt promises to make recoverable \\
+$\mathsf R_n$ & ordered receipt archive & occurrence sequence through the current stage \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The notation carries no hidden empirical claim. A field selects $X$, $\rho$, $D$, $T_\gamma$, and the meaning of its acceptance test. The construction applies only once those data are declared. Admissible reapplication carries its owning constraint:
+\[
+\boxed{\mathsf{Ad}(x)\Longrightarrow C_J(x).}
+\tag{4}\label{eq:ad}
+\]
+
+\section{Decision fidelity}
+
+The reader $\rho$ induces an equality relation on $X$:
+\[
+x\sim_\rho y\quad\Longleftrightarrow\quad \rho(x)=\rho(y).
+\tag{5}\label{eq:eqkernel}
+\]
+The quotient $X/{\sim_\rho}$ gathers exactly the full conditions that the reader treats as equal. Let $q_\rho:X\to X/{\sim_\rho}$ send each condition to its read class.
+
+\begin{claimbox}{Definition: read sufficiency}
+The read $\rho$ is sufficient for decision $D$ precisely when there is a map $\overline D:X/{\sim_\rho}\to A$ such that
+\[
+D=\overline D\circ q_\rho.
+\tag{6}\label{eq:factor}
+\]
+The decision then depends only on distinctions represented by the read.
+\end{claimbox}
+
+\begin{claimbox}{Theorem 1: quotient factorization}
+For $\rho:X\to C$ and $D:X\to A$, the following are equivalent:
+\[
+\exists\,\overline D:X/{\sim_\rho}\to A\ \text{with}\ D=\overline D\circ q_\rho
+\quad\Longleftrightarrow\quad
+\forall x,y\in X,\ \rho(x)=\rho(y)\Rightarrow D(x)=D(y).
+\tag{7}\label{eq:factorization}
+\]
+\end{claimbox}
+
+\begin{proofbox}
+Assume the factorization on the left. Equal reads place $x$ and $y$ in the same quotient class, so applying $\overline D$ yields equal decisions. Conversely, assume the right-hand implication. Define $\overline D([x])=D(x)$. The implication makes this independent of the selected representative. Thus $\overline D$ is well-defined and $D=\overline D\circ q_\rho$.
+\end{proofbox}
+
+\begin{claimbox}{Corollary 1: a collision is a decisive falsifier}
+If there are $x,y\in X$ with
+\[
+\rho(x)=\rho(y)\qquad\text{and}\qquad D(x)\ne D(y),
+\tag{8}\label{eq:collision}
+\]
+then no decision rule using only $\rho$ can implement $D$ on both conditions.
+\end{claimbox}
+
+\begin{proofbox}
+Any rule using only the read is constant on a read class. Equation \eqrefn{eq:collision} gives one class on which the required decision is not constant. This contradicts Theorem 1.
+\end{proofbox}
+
+\subsection{The required repair}
+
+Let $S:X\to B$ be an additional read and form the joint read $(\rho,S):X\to C\times B$. The joint read is sufficient for $D$ exactly when
+\[
+\rho(x)=\rho(y)\ \land\ S(x)=S(y)\quad\Longrightarrow\quad D(x)=D(y).
+\tag{9}\label{eq:supplement}
+\]
+
+\begin{claimbox}{Theorem 2: residual distinction law}
+If \eqrefn{eq:collision} holds and $(\rho,S)$ is sufficient for $D$, then $S(x)\ne S(y)$.
+\end{claimbox}
+
+\begin{proofbox}
+If $S(x)=S(y)$ as well as $\rho(x)=\rho(y)$, joint sufficiency would force $D(x)=D(y)$, contrary to \eqrefn{eq:collision}.
+\end{proofbox}
+
+When a measurement merges a difference that changes the next move, add a measurement that separates that difference. Selecting one uniquely smallest repair requires a separate candidate family and a separate order on that family.
+
+\section{Receipt fidelity}
+
+A state can return to a familiar visible form while its occurrence history has advanced. Let $t:\mathcal H\to X$ be the terminal-state map, and let $p:\mathcal H\to P$ be the historical distinction promised by the work: provenance, calibration, repair path, hand-off chain, or another declared projection.
+
+\begin{claimbox}{Theorem 3: terminal form cannot recover a missing promised history}
+If two histories $h_1,h_2\in\mathcal H$ satisfy
+\[
+t(h_1)=t(h_2)\qquad\text{and}\qquad p(h_1)\ne p(h_2),
+\tag{10}\label{eq:receiptcollision}
+\]
+then there is no decoder $\delta:X\to P$ with $\delta\circ t=p$ on both histories.
+\end{claimbox}
+
+\begin{proofbox}
+The equal terminal states require $\delta(t(h_1))=\delta(t(h_2))$. The claimed recovery would require these equal values to be $p(h_1)$ and $p(h_2)$, which are distinct. One function value cannot equal both.
+\end{proofbox}
+
+Let $r:\mathcal H\to\mathcal R$ be a receipt code. It is adequate for $p$ when there is a decoder $\overline p:\mathcal R\to P$ with
+\[
+p=\overline p\circ r.
+\tag{11}\label{eq:receipt}
+\]
+The append rule gives an ordered carrier for occurrences:
+\[
+\mathsf R_{n+1}=\snoc(\mathsf R_n,o_{n+1}),\qquad
+\operatorname{dropLast}(\mathsf R_{n+1})=\mathsf R_n,\qquad
+\operatorname{last}(\mathsf R_{n+1})=o_{n+1}.
+\tag{12}\label{eq:ledger}
+\]
+A returned display can therefore coexist with an inspectable traversal.
+
+\section{Enough: the mechanical stopping point}
+
+Trust also needs a stopping rule. Further alteration after a finished task can consume material, obscure the hand-off, or damage a completed fit. The condition of enough separates a completed local task from an unbounded demand for improvement.
+
+For a declared jurisdiction $J$, write $\operatorname{Fit}_J$ for the verified relation among a workpiece, its receiving condition, and its use; $\operatorname{Cert}_J$ for a certificate naming the required evidence; $\operatorname{Gate}_J=\mathsf{can}$ for permitted release; and $\operatorname{SafeStop}_J$ for a safe hand-off. Define
+\[
+\operatorname{Enough}_J(x,h)
+\Longleftrightarrow
+\operatorname{Fit}_J(x)\land
+\operatorname{Cert}_J(x,h)\land
+(\operatorname{Gate}_J(x,h)=\mathsf{can})\land
+\operatorname{SafeStop}_J(x,h).
+\tag{13}\label{eq:enough}
+\]
+
+\begin{claimbox}{Theorem 4: prefix stopping}
+Let a fixed admissible course of work reach $\operatorname{Enough}_J$ at time $\tau$. Suppose the work can be released safely then, and let the active running cost satisfy $\mathcal L_J\ge0$. For every later time $T>\tau$ on the same eligible extension,
+\[
+\mathcal A_J[T]=\mathcal A_J[\tau]+\int_\tau^T\mathcal L_J\,dt
+\ge \mathcal A_J[\tau].
+\tag{14}\label{eq:prefix}
+\]
+Thus the sufficient prefix is action-minimal among its own eligible extensions. It is strictly cheaper whenever every nonempty interval of further active work has positive integrated cost.
+\end{claimbox}
+
+\begin{proofbox}
+Action is additive over consecutive intervals. The added interval has nonnegative integral. The enough and safe-release clauses make the prefix an eligible completed task.
+\end{proofbox}
+
+\subsection{Exact scalar model}
+
+For a one-dimensional adjustment $q(t)$, target interval $K$, initial distance $D=\operatorname{dist}(q_0,K)$, and nonnegative craft cost
+\[
+\mathcal L(a)=\frac{m}{2}a^2+c,\qquad m,c>0,\qquad a=\dot q,
+\tag{15}\label{eq:scalarcost}
+\]
+the global minimum over all durations and terminal points in $K$ is reached by constant speed to the nearest accepted endpoint:
+\[
+T_*=D\sqrt{\frac{m}{2c}},\qquad
+|a_*|=\sqrt{\frac{2c}{m}},\qquad
+\mathcal A_*=D\sqrt{2mc}.
+\tag{16}\label{eq:scalar}
+\]
+The proof uses the integral Cauchy-Schwarz inequality followed by the arithmetic-geometric mean inequality:
+\[
+\int_0^T\dot q^2dt\ge\frac{D^2}{T}
+\quad\Longrightarrow\quad
+\mathcal A\ge\frac{mD^2}{2T}+cT\ge D\sqrt{2mc}.
+\tag{17}\label{eq:scalarproof}
+\]
+Equality holds at constant speed with the stated duration. This is enough in mechanical form: a declared fit boundary, a declared cost, and a work course that stops on entry.
+
+\section{A finite root witness for reversible carriage}
+
+The preceding theorems concern arbitrary functions and records. This section gives one exact finite carrier for forward transport and mirror reversal. Let
+\[
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+G=[Q,\Omega]=\begin{pmatrix}-2&1\\1&2\end{pmatrix},
+\tag{18}\label{eq:matrices}
+\]
+and set
+\[
+B=Q^2=\begin{pmatrix}2&1\\1&1\end{pmatrix},\qquad
+H=\frac{G}{\sqrt5},\qquad
+B^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\tag{19}\label{eq:BH}
+\]
+Direct multiplication gives
+\[
+G^2=5I,\qquad B^{\mathsf T}GB=G,\qquad H^2=I,\qquad HBH=B^{-1}.
+\tag{20}\label{eq:mirror}
+\]
+
+The characteristic polynomial of $B$ is $\lambda^2-3\lambda+1$, so its eigenvalues are
+\[
+\frac{3+\sqrt5}{2},\qquad\frac{3-\sqrt5}{2}.
+\tag{21}\label{eq:eigs}
+\]
+Equivalently, for $n\ge1$,
+\[
+B^n=
+\begin{pmatrix}
+F_{2n+1}&F_{2n}\\
+F_{2n}&F_{2n-1}
+\end{pmatrix}.
+\tag{22}\label{eq:fib}
+\]
+The positive off-diagonal entry gives $B^n\ne I$ for every $n\ge1$. Also $\det(B^n)=1$ while $\det(HB^n)=-1$. Thus each word has a distinct normal form $B^n$ or $HB^n$, and the carrier realizes the infinite-dihedral relation exactly.
+
+The witness has a defined jurisdiction: an exact two-dimensional model of reversible carriage and mirror reversal. Its role is limited and clear. It shows in finite arithmetic that forward progression and involutive return are distinct operations. A physical field requires its own declared equation, observable, calibration, and evidence path.
+
+\section{The Condition Of Trust}
+
+We can now state the paper's final construction.
+
+\begin{claimbox}{Definition: operational trust}
+For a declared jurisdiction $J$, a result is \textbf{trusted for its declared use} when:
+\[
+\boxed{
+\begin{aligned}
+\operatorname{Trust}_J\ \Longleftrightarrow\ &
+\underbrace{D\ \text{factors through}\ X/{\sim_\rho}}_{\text{the read supports the decision}}\\
+&\land\underbrace{p\ \text{factors through}\ r}_{\text{the receipt decodes the promised history relation}}\\
+&\land\underbrace{\operatorname{Enough}_J(x,h)}_{\text{fit, evidence, permission, and safe stop are present}}.
+\end{aligned}}
+\tag{23}\label{eq:trust}
+\]
+\end{claimbox}
+
+For an occurrence that includes carriage, the completed packet also declares the reference, reader, difference map, update law, and receipt append:
+\[
+P_n=\bigl(r_n,x_n,\rho,\delta,\Delta_n,T_\gamma,o_{n+1},\mathsf R_{n+1},\operatorname{Fit}_J,\Theta_n\bigr).
+\tag{24}\label{eq:packet}
+\]
+Equation \eqrefn{eq:trust} gives the condition of trust for the declared use. Equations \eqrefn{eq:return} and \eqrefn{eq:ledger} specify how a returning read and a later occurrence remain distinct within a declared continuation packet.
+
+Theorems 1--4 give the construction its exact content:
+\begin{itemize}
+  \item Theorem 1 decides whether a declared read can support its declared decision.
+  \item Theorem 2 identifies a distinction any sufficient repair must add.
+  \item Theorem 3 decides whether a receipt can decode its promised history relation.
+  \item Theorem 4 identifies the local stopping point once the task reaches enough.
+\end{itemize}
+
+The result replaces a demand for belief with an inspectable route to use. A second reader can locate the reference, reproduce the read, test the decision relation, decode the receipt at its declared resolution, and see the stated stopping condition.
+
+\section{Use at field boundaries}
+
+Each field keeps its own equations, observables, calibration, and empirical authority. The shared construction is a discipline for handing a declared result forward.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.22\linewidth}Y@{}}
+\toprule
+Field of use & What the construction requires \\
+\midrule
+Engineering & A measurement that distinguishes the conditions affecting the part, assembly, or safety decision. \\
+Chemistry and laboratory work & A calibration, occurrence record, and decoder sufficient for the stated observable, method, and hand-off. \\
+Law and public process & A stated jurisdiction, a record adequate for the claimed decision, and a route for later review. \\
+Family and civil life & A separation between occurrence, read, proposed action, and the record available to later contact. \\
+Computation & Typed inputs, a declared output function, an explicit update law, and a receipt enabling independent rebuild. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+These are application schemas. Their adequacy in a particular field depends on that field's own terms. The common rule is exact: a decision needs the distinctions it uses; a receipt needs a decoder for the history relation it promises; a completed task needs a declared condition for enough.
+
+\begin{claimbox}{Five operational questions}
+\begin{enumerate}
+  \item What condition is addressed, and what reference fixes the comparison?
+  \item What reader is used, at what declared resolution?
+  \item Does the read distinguish every pair requiring different actions?
+  \item What receipt and decoder make the promised historical distinction recoverable?
+  \item What evidence makes the present task enough for safe release?
+\end{enumerate}
+\end{claimbox}
+
+\section{Verification and open work}
+
+The paper's line of reasoning is bounded by the source checks recorded in \textit{MIRROR\_AUDIT}, the Lean-supported MoneyRoot quotient kernel, and the LLM Diaper editorial gate. The ledger gives the present strength of each component.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{0.34\linewidth}p{0.25\linewidth}Y@{}}
+\toprule
+Item & Present evidence & Status \\
+\midrule
+Quotient factorization and collision obstruction & MoneyRoot v0.2 Lean 4.33 receipt; direct proof reproduced here & \status{Lean-elaborated source / reproduced} \\
+Supplement necessity & MoneyRoot T6 source and Lean receipt; direct proof reproduced here & \status{Lean-elaborated source / reproduced} \\
+Return, occurrence, and receipt coordination & Structure of Survival and Contact Recognition source forms; direct formal use stated here & \status{Source-owned / stated use} \\
+Receipt reconstruction and stopping prefix & Direct elementary proofs here and in The Condition of Enough & \status{Direct proof} \\
+Scalar minimum-action model & Direct inequality proof with declared coefficients & \status{Direct proof} \\
+Finite $B,H$ witness & Exact rational-arithmetic executable check distributed with this paper & \status{Executed finite receipt} \\
+Real-world adapters & Field-specific observable, calibration, authority, and evidence remain to be declared & \status{Field-owned} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The work that remains is concrete. A field adapter names its full condition space, reader, decision, carriage law where applicable, receipt and decoder, stopping rule, and evidence path. That is how the formal result becomes useful without exceeding its proof.
+
+\section*{Closing statement}
+\addcontentsline{toc}{section}{Closing statement}
+
+Trust begins where a reference and a difference survive their first contact in a form another reader can use. It becomes durable when a declared read supports the next decision, a declared receipt decodes the history relation it promises, and a declared stopping condition identifies enough. Memory carries the prior comparison. Return keeps the relation. Recognition states the fit. The receipt gives the later reader an address for the completed occurrence.
+
+\newpage
+\section*{Source ledger and external coordinates}
+\addcontentsline{toc}{section}{Source ledger and external coordinates}
+
+\small
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.1em]
+  \item Anthony Vito Coppa, \textit{The Structure of Survival: Master Return}. Source for the return law $\rho(Tx)=\rho(x)$ with $Tx\ne x$, the jurisdiction rule $\mathsf{Ad}(x)\Rightarrow C_J(x)$, and the separation of returning read from advancing occurrence.
+  \item Anthony Vito Coppa, \textit{Contact Recognition}. Source for the contact-to-contact packet, occurrence receipt, append rule $\mathsf R_{n+1}=\snoc(\mathsf R_n,o_{n+1})$, decoder requirement, and use-specific fit.
+  \item Anthony Vito Coppa, \textit{Language Mechanics}. Source for context, state, equivalence, traversal, and recognizability after traversal.
+  \item Anthony Vito Coppa, \textit{Color Meaning Memory Motion: Canonical Normal Form}. Source for the office distinction: memory carries the prior comparison, return keeps the relation, recognition states the fit.
+  \item Anthony Vito Coppa, \textit{MIRROR\_AUDIT -- MoneyRoot v0.1}. Source boundary for quotient claims, finite witnesses, falsifiers, and field-owned adapters.
+  \item Anthony Vito Coppa, \textit{MoneyRoot v0.2 -- Lean Elaboration Receipt}, Lean 4.33.0, exit code 0; and \textit{MoneyRoot v0.3}. Sources for the quotient/fibre kernel, collision obstruction, and supplemental-read result under the pinned toolchain.
+  \item Anthony Vito Coppa, \textit{Tool \& Technique: The Condition of Enough}, 30 October 2026. Source for the Fit, Certificate, Gate, and SafeStop construction, prefix stopping theorem, scalar action model, and terminal-form reconstruction lemma.
+  \item Anthony Vito Coppa, \textit{Recognizable Architecture: Historical Dependency Lineage and Receipt Ledger v1.1}, 25 September 2026. Source ledger for ownership, root algebra, return, and receipt coordination.
+  \item \textit{Architecture / Formal Basis -- Editorial Cut Receipt}, LLM Diaper v1.2.0. Bounded output-gate evidence for its stated grammar.
+  \item P. R. Halmos, \textit{Naive Set Theory}, D. Van Nostrand, 1960. Elementary external coordinate for functions, equivalence relations, and quotient notation.
+  \item D. Blackwell, "Equivalent Comparisons of Experiments," \textit{Annals of Mathematical Statistics} 24(2), 1953, 265--272. \href{https://doi.org/10.1214/aoms/1177729032}{doi:10.1214/aoms/1177729032}. External coordinate for comparing information by the decisions it supports.
+  \item P. Cousot and R. Cousot, "Abstract Interpretation: A Unified Lattice Model for Static Analysis of Programs by Construction or Approximation of Fixpoints," \textit{POPL}, 1977, 238--252. \href{https://doi.org/10.1145/512950.512973}{doi:10.1145/512950.512973}. External coordinate for preservation of task-relevant properties by abstraction.
+  \item A.-L. Cauchy, \textit{Cours d'analyse}, 1821; V. Ya. Bunyakovsky, "Sur quelques inegalites concernant les integrales ordinaires et les integrales aux differences finies," 1859. Coordinates for the inequality used in \eqrefn{eq:scalarproof}.
+\end{enumerate}
+
+\vspace{1em}
+\begin{claimbox}{Editorial receipt}
+This edition distinguishes memory, return, carriage, receipt, and recognition throughout. It also corrects the finite-witness spectral line: the eigenvalues of $B=\begin{psmallmatrix}2&1\\1&1\end{psmallmatrix}$ are $(3\pm\sqrt5)/2$, the roots of $\lambda^2-3\lambda+1$. The accompanying script verifies the displayed matrix relations in exact arithmetic.
+\end{claimbox}
+
+\end{document}

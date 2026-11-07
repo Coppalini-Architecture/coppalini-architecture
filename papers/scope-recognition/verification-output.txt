@@ -1,0 +1,11 @@
+PASS  P2 environment receipt fixes chart, boundary rules, stencil, and reader norm
+PASS  P2 declared electrovac source scale is positive and compact circle scale is valid
+PASS  retained transverse mode is analytically harmonic and changes no exact source term
+N=128 h=4.908738521234e-02 max|E_uu|=7.388546940788e-04 epsilon=7.388546940788e-04
+N=256 h=2.454369260617e-02 max|E_uu|=1.892846791546e-04 epsilon=1.892846791529e-04
+N=512 h=1.227184630309e-02 max|E_uu|=4.790319213017e-05 epsilon=4.790319212670e-05
+p(128->256)=1.964733023553e+00 p(256->512)=1.982363941727e+00
+PASS  P2 tetrad-frame residual decreases on every declared refinement
+PASS  P2 observed convergence rates agree with the declared second-order stencil
+PASS  P2 finest-grid normalized residual is below the declared fixture threshold
+CHECK count: 6, failures: 0

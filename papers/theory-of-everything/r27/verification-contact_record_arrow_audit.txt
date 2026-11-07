@@ -1,0 +1,9 @@
+PASS | B=Q^2 is an exact G-isometry with exact inverse
+PASS | GBG=5B^-1 clears the mirror denominator
+PASS | F_7 transport and local interaction are bijective
+PASS | reader quotient has seven-state fibres at stated resolution
+PASS | distinct carried states can share one reader outcome
+PASS | snoc ledger retains ordered history with exact pop inverse
+BOUNDARY | finite contact grammar; physical calibration is field-specific
+
+Exit code: 0

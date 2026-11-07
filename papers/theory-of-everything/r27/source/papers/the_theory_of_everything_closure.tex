@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{booktabs,array,longtable}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+\geometry{paperwidth=6.75in,paperheight=9.75in,top=0.68in,bottom=0.72in,left=0.72in,right=0.72in}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\abovedisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{5pt plus 2pt}
+\setlength{\belowdisplayshortskip}{5pt plus 2pt}
+\renewcommand{\arraystretch}{1.08}
+\allowdisplaybreaks[2]
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize\scshape The Theory of Everything}
+\fancyhead[R]{\scriptsize A. V. Coppa}
+\fancyfoot[C]{\scriptsize\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\setlength{\headheight}{13pt}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\section}{\normalfont\large\scshape}{\thesection.}{0.55em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.45em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.35em}
+\setlist{nosep,leftmargin=1.45em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\dd}{\,\mathrm d}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\sloppy
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2.0in}
+{\fontsize{26}{31}\selectfont\scshape The Theory of Everything\par}
+\vspace{0.9em}
+{\large Noether--Klein Scalar Symmetry, Covariant Field Interfaces, and an Exact \texorpdfstring{$2\times2$}{2x2} Lorentzian Root\par}
+\vspace{2.5em}
+{\normalsize Anthony V. Coppa\par}
+{\small Coppalini Architecture\par}
+\vspace{0.6em}
+{\small 5 November 2026 · Contact--record edition\par}
+\end{center}
+\vfill
+\begin{center}
+\begin{minipage}{0.76\textwidth}
+\centering\footnotesize
+\textsc{Colophon}\par\smallskip
+Human author and formal direction: Anthony V. Coppa (AVC).\\
+Language-machine mirror collaboration, code, and typesetting: GPT-5.6 Terra.\\
+Formal audit and adversarial reading: Claude Sonnet 5.5. External review: Gemini.\\
+Exploratory stress testing: Grok.
+\end{minipage}
+\end{center}
+\vspace*{0.34in}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\input{theory_of_everything_closure_body.tex}
+
+\end{document}

@@ -33,3 +33,11 @@ The current deposited synthesis is *The Structure of Survival*, Review Edition v
 4. identity of declared aliases.
 
 No unique paper or formal map was removed in this coordination edition.
+
+<!-- BEGIN NOVEMBER_2026_PUBLICATIONS -->
+## 7 November 2026 · additional publication set
+
+Seven source-indexed papers and the Gauge & Matter Laboratory v0.5.2 are now represented under the current repository release register. The *3 Body Mirror* has a verified nonlinear mirror-cross theorem and a nonzero fourth-order Birkhoff normal-form coefficient. That mathematical result does not assert independently selected astronomical timing or an experimentally identified biological phase-lock.
+
+All added code receipts preserve the distinct conditions and scope of the tested carriers. The author selects the final Zenodo deposition, version, and license.
+<!-- END NOVEMBER_2026_PUBLICATIONS -->

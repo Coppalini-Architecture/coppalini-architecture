@@ -1,0 +1,3209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gauge & Matter Laboratory — Color Meaning Memory Motion — The Standard Model | QCD.">
+  <title>Gauge & Matter Laboratory — Color Meaning Memory Motion — The Standard Model | QCD</title>
+  <style>
+    :root { color-scheme: dark; --bg:#050a0f; --panel:#0b151c; --panel2:#101f28; --ink:#e9f0ed; --muted:#9fb2b4; --line:#28404a; --lineBright:#486872; --moon:#dfc983; --water:#9dd9df; --green:#abd2ba; --violet:#c3b3ef; --warm:#e7a66e; }
+    * { box-sizing:border-box; } html { background:var(--bg); } body { margin:0; background:radial-gradient(ellipse at 50% 10%,#16303a 0%,var(--bg) 61%); color:var(--ink); font:14px/1.55 Arial,Helvetica,sans-serif; }
+    main { max-width:1240px; margin:0 auto; padding:30px clamp(16px,4vw,44px) 30px; } h1,h2,h3 { margin:0; font-family:Georgia,"Times New Roman",serif; font-weight:400; line-height:1.12; } h1 { color:var(--moon); font-size:clamp(2.2rem,5vw,3.9rem); letter-spacing:-.035em; } h1 em { color:var(--water); }
+    button,input,select { font:inherit; color:var(--ink); } button,input,select { border:1px solid var(--lineBright); background:#10222c; border-radius:3px; } button { min-height:36px; padding:8px 11px; cursor:pointer; } button:hover { border-color:var(--moon); } button.quiet { color:var(--muted); background:transparent; } button:focus-visible,input:focus-visible,select:focus-visible { outline:2px solid var(--water); outline-offset:3px; } input:disabled { opacity:.38; cursor:not-allowed; }
+    .skip { position:absolute; top:-60px; left:8px; padding:8px; background:var(--panel); color:var(--ink); z-index:10; } .skip:focus { top:8px; }
+    .masthead { display:grid; gap:12px; align-items:end; padding-bottom:18px; }.overline,.mono,.stat span,label { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.065em; }.overline { color:var(--muted); font-size:10px; margin:0 0 8px; }.title-series { margin:9px 0 0; color:var(--water); font:clamp(.78rem,1.28vw,.98rem)/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.11em; text-transform:uppercase; }.deck { margin:6px 0 0; max-width:60rem; color:#c8d5d1; font:clamp(1rem,1.65vw,1.22rem)/1.55 Georgia,"Times New Roman",serif; }
+    .boundary { max-width:75rem; margin:0 0 20px; padding:10px 0 10px 14px; border-left:2px solid var(--moon); color:var(--muted); font-size:11px; line-height:1.65; }.boundary strong { color:var(--ink); font-weight:400; }
+    .control-shell { border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.25fr 1fr .95fr; gap:16px 20px; padding:14px 0; }.control { display:grid; gap:6px; align-content:start; min-width:0; }.control label { color:var(--muted); font-size:9px; text-transform:uppercase; }.control .pair { display:flex; align-items:center; gap:8px; }.control input[type=range] { width:100%; min-width:0; accent-color:var(--water); }.value { color:var(--green); min-width:46px; text-align:right; font:10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }.actions { grid-template-columns:auto 1fr; align-items:end; }.actions button { white-space:nowrap; }.status { min-height:22px; margin:9px 0 0; color:var(--green); font:10px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .scope-stage { margin:0 0 18px; }.scope-shell { position:relative; overflow:hidden; border:1px solid var(--line); background:#04090d; box-shadow:0 18px 54px rgba(0,0,0,.31); }.scope-shell:after { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 50%,transparent 16%,rgba(0,0,0,.04) 55%,rgba(0,0,0,.46) 100%); }.scope-overlay { position:absolute; inset:0; z-index:1; display:flex; justify-content:space-between; gap:12px; padding:12px; pointer-events:none; color:rgba(222,236,234,.68); font:9px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.08em; }.scope-stage .scope-shell canvas { display:block; width:100%; aspect-ratio:1.65/1; touch-action:none; }.scope-caption { margin:9px 0 0; color:var(--muted); font:10px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .atlas { margin-top:20px; }.reader { display:grid; gap:16px; max-width:680px; margin:0 auto; }.panel { padding-top:13px; border-top:1px solid var(--line); }.panel:first-child { padding-top:0; border-top:0; }.panel h2 { color:var(--moon); font-size:27px; }.panel p { margin:7px 0 0; color:var(--muted); font-size:11px; line-height:1.62; }.chips { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }.chip { border:1px solid var(--line); padding:5px 7px; color:var(--water); font:9px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.04em; }.equation { color:var(--ink)!important; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:10px!important; }.spin-shell { margin-top:11px; border:1px solid var(--line); background:var(--panel); }.spin-shell canvas { display:block; width:100%; aspect-ratio:1.55/1; }
+    .readout { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }.stat { min-width:0; padding:10px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }.stat span { display:block; color:var(--muted); font-size:8px; text-transform:uppercase; }.stat strong { display:block; margin-top:4px; color:var(--moon); overflow-wrap:anywhere; font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:400; }.stat:nth-child(2) strong{color:var(--water)}.stat:nth-child(3) strong{color:var(--violet)}.stat:nth-child(4) strong{color:var(--green)}
+    details { border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:19px; } summary { padding:11px 0; color:var(--water); cursor:pointer; font:10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.06em; }.inspect { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px 24px; padding:2px 0 17px; }.inspect h3 { color:var(--moon); font-size:17px; }.inspect p { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.62; }.ledger { color:var(--green)!important; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:10px!important; }
+    footer { display:flex; justify-content:space-between; gap:16px; margin-top:20px; color:var(--muted); font:9px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    @media(max-width:900px){.control-shell{grid-template-columns:1fr 1fr}} @media(max-width:560px){main{padding-top:22px}.control-shell,.inspect{grid-template-columns:1fr}.actions{grid-template-columns:auto 1fr}.scope-stage .scope-shell canvas{aspect-ratio:1.18/1}.scope-overlay{flex-wrap:wrap}footer{display:block}footer span{display:block;margin:3px 0}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#field">Skip to field</a>
+<main>
+  <header class="masthead"><div><p class="overline">CLEAR ONYX · REVIEW BUILD 0.5.2</p><h1>Gauge &amp; Matter Laboratory</h1><p class="title-series">Color Meaning Memory Motion</p><p class="deck">The Standard Model | QCD</p></div></header>
+  <section class="scope-stage"><div id="field" class="scope-shell" aria-label="Finite declared model"><canvas id="scope" aria-label="Interactive finite field or model reader. Click or tap to add a declared local condition."></canvas><div class="scope-overlay" aria-hidden="true"><span id="particle-label">ELECTRON</span><span id="scope-type">FINITE FIELD · CLICK TO PULSE</span></div></div><p id="caption" class="scope-caption"></p></section>
+  <p class="boundary"><strong>Finite model reader.</strong> This laboratory shows each selected state space evolving under its declared update law. Brightness reads local magnitude, hue reads phase, filaments read transport, and the compass names a three-coordinate model read.</p>
+  <section class="control-shell" aria-label="Particle atlas controls">
+    <div class="control"><label for="carrier">Declared model</label><select id="carrier"><optgroup label="Gauge carriers"><option value="flux">Aharonov–Bohm · U(1) flux ring</option><option value="su3">SU(3) colour-link transport</option></optgroup><optgroup label="Admitted dynamic carriers"><option value="higgs">Electroweak Higgs doublet · SU(2)L × U(1)Y</option><option value="electron">Electron · Pauli spinor</option><option value="neutrino">Neutral spinor · Weyl-type</option><option value="photon">Photon mode · Maxwell</option><option value="scalar">Scalar mode · Klein–Gordon</option><option value="noether">Noether–Klein · memory field</option><option value="dirac">Massive Dirac · 2D packet</option><option value="phi4">Complex φ⁴ · vortex pair</option><option value="oscillation">Two-flavour neutrino oscillation</option></optgroup><optgroup label="Visual studies · certification open"><option value="higgs1d">Real 1D φ⁴ · domain study</option><option value="hydrogen">Hydrogen · orbital slice</option><option value="helium">Helium · configuration slice</option><option value="water">Water · H₂O normal mode</option><option value="lithium">Lithium · valence slice</option></optgroup></select></div>
+    <div class="control"><label for="rate">Virtual time</label><div class="pair"><input id="rate" type="range" min="1" max="5" step="1" value="2"><output id="rate-value" class="value">2 steps/f</output></div></div>
+    <div class="control actions"><label>Field action</label><button id="pulse" type="button">Pulse aperture</button></div>
+    <div class="control"><label id="phase-label" for="phase">Global U(1) phase</label><div class="pair"><input id="phase" type="range" min="0" max="360" step="1" value="0"><output id="phase-value" class="value">0°</output></div></div>
+    <div class="control actions"><label>Transport</label><button id="pause" type="button" class="quiet" aria-pressed="false">Pause</button></div>
+    <div class="control actions"><label>Return</label><button id="reset" type="button" class="quiet">Return seed</button></div>
+  </section>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+  <section class="atlas"><aside class="reader"><section class="panel"><p class="overline">DECLARED MODEL</p><h2 id="carrier-title">Electron</h2><div class="chips"><span id="family" class="chip">FERMION −1</span><span id="spin" class="chip">spin ½</span><span id="charge" class="chip">charge −e</span></div><p id="equation" class="equation"></p><p id="boundary"></p></section><section class="panel"><p id="read-heading" class="overline">SPIN / POLARIZATION READ</p><div class="spin-shell"><canvas id="spin-read" aria-label="Selected model read"></canvas></div></section><section class="panel"><p class="overline">FINITE RECEIPT</p><div class="readout"><div class="stat"><span id="metric-label">NORM</span><strong id="norm">—</strong></div><div class="stat"><span id="energy-label">ENERGY PROXY</span><strong id="energy">—</strong></div><div class="stat"><span id="current-label">NET CURRENT</span><strong id="current">—</strong></div><div class="stat"><span>RUNTIME CHECK</span><strong id="audit">—</strong></div></div><p class="ledger"><span id="history">0 retained / 72</span> · session-local visual history</p></section></aside></section>
+  <details><summary>INSPECT THE MODEL CLASSES, EQUATIONS, AND BOUNDARY</summary><div class="inspect">
+    <section><h3>U(1) flux ring</h3><p class="equation">Uℓ = eⁱᴬℓ; ∏loop Uℓ = eⁱΦ</p><p>Gauge-covariant, unitary transport on a closed finite graph. The receipts test local covariance, 2π large-gauge covariance after its required seed twist, and a nonzero half-flux response. The displayed holonomy is a declared reader coordinate.</p></section>
+    <section><h3>SU(3) colour links</h3><p class="equation">ψₓ → Gₓψₓ; U₍ₓ,μ₎ → GₓU₍ₓ,μ₎G†₍ₓ+μ₎</p><p>Finite non-Abelian link transport. General non-diagonal SU(3) covariance, plaquette and 2×1 Wilson-loop traces, and an evolved colour-singlet determinant are finite checks. RGB maps basis populations for the reader.</p></section>
+    <section><h3>Massive Dirac</h3><p class="equation">H(k) = kₓσₓ + kᵧσᵧ + mσ_z</p><p>Exact spectral evolution of a 2+1D packet. The receipt checks both branches, charge conjugation, norm, and the 2E mixed-branch beat.</p></section>
+    <section><h3>Complex φ⁴ vortex pair</h3><p class="equation">∂t²φ − c²∇²φ + λ(|φ|²−v²)φ = 0</p><p>A visible vortex–antivortex seed makes phase winding readable from the first frame. The receipt measures its initial winding and a time-local plaquette count, U(1) action, charge, and both lattice frequencies. The pair is allowed to annihilate.</p></section>
+    <section><h3>Electroweak Higgs doublet</h3><p class="equation">ℒH = (DμΦ)†DμΦ − λ(Φ†Φ−v²/2)²</p><p>The field is a complex hypercharge-one SU(2)L doublet on a finite 2+1D lattice. Its receipts test local SU(2)L × U(1)Y covariance, invariant modulus, radial mass, and the tree-level W/Z/photon mass spectrum generated by DμΦ.</p></section>
+    <section><h3>Two-flavour oscillation</h3><p class="equation">P(α→β) = sin²(2θ) sin²(Δm²L/4E)</p><p>The two-lobe display is a state-reader projection. The closed form belongs only to the unpulsed pure-α preparation; a pulsed state reports measured Pβ.</p></section>
+    <section><h3>Visual studies</h3><p class="equation">OPEN · check not admitted</p><p>Hydrogen, lithium, helium, water, and real 1D φ⁴ remain visible while their independent dynamic receipts are completed. They do not contribute PASS evidence.</p></section>
+  </div></details>
+  <footer><span>Anthony Vito Coppa / Coppalini Architecture · Clear Onyx review candidate</span><span>v0.5.2 · electroweak Higgs sector, gauge transport, admitted carriers, and open studies remain distinct</span></footer>
+</main>
+<script>
+/*
+ * Clear Onyx v0.4.2 — 2D complex phi^4 Mexican-hat carrier.
+ *
+ * State: phi = x + i y on a periodic square lattice.
+ * Potential: V(phi) = lambda/4 (|phi|^2 - v^2)^2.
+ * Update: centered leapfrog in time, nearest-neighbour periodic Laplacian.
+ *
+ * This file is browser and Node compatible. It intentionally contains no DOM.
+ */
+'use strict';
+
+const ComplexPhi4 = (() => {
+  const TAU = Math.PI * 2;
+  const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+  const indexAt = (x, y, width, height) => mod(y, height) * width + mod(x, width);
+
+  class Engine {
+    constructor(options = {}) {
+      this.width = options.width || 96;
+      this.height = options.height || 96;
+      this.size = this.width * this.height;
+      this.dt = options.dt || .10;
+      this.c = options.c || 1;
+      this.lambda = options.lambda || .72;
+      this.v = options.v || 1;
+      this.courant2 = (this.c * this.dt) ** 2;
+      this.lambdaDt2 = this.lambda * this.dt ** 2;
+      if (this.courant2 > .5) throw new Error('Courant stability requires (c dt)^2 <= 0.5 on this 2D nearest-neighbour lattice.');
+      this.reNow = new Float64Array(this.size);
+      this.imNow = new Float64Array(this.size);
+      this.rePrev = new Float64Array(this.size);
+      this.imPrev = new Float64Array(this.size);
+      this.reNext = new Float64Array(this.size);
+      this.imNext = new Float64Array(this.size);
+      this.frame = 0;
+      this.pulses = [];
+      this.seedVacuum();
+    }
+
+    seedVacuum(phase = 0) {
+      const re = this.v * Math.cos(phase);
+      const im = this.v * Math.sin(phase);
+      this.reNow.fill(re); this.imNow.fill(im);
+      this.rePrev.fill(re); this.imPrev.fill(im);
+      this.reNext.fill(0); this.imNext.fill(0);
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baselineCharge = this.charge();
+    }
+
+    step(count = 1) {
+      for (let turn = 0; turn < count; turn += 1) {
+        const { width, height, reNow, imNow, rePrev, imPrev, reNext, imNext, courant2, lambdaDt2, v } = this;
+        for (let y = 0; y < height; y += 1) {
+          for (let x = 0; x < width; x += 1) {
+            const index = y * width + x;
+            const left = indexAt(x - 1, y, width, height);
+            const right = indexAt(x + 1, y, width, height);
+            const up = indexAt(x, y - 1, width, height);
+            const down = indexAt(x, y + 1, width, height);
+            const re = reNow[index];
+            const im = imNow[index];
+            const lapRe = reNow[left] + reNow[right] + reNow[up] + reNow[down] - 4 * re;
+            const lapIm = imNow[left] + imNow[right] + imNow[up] + imNow[down] - 4 * im;
+            const radial = re * re + im * im - v * v;
+            reNext[index] = 2 * re - rePrev[index] + courant2 * lapRe - lambdaDt2 * radial * re;
+            imNext[index] = 2 * im - imPrev[index] + courant2 * lapIm - lambdaDt2 * radial * im;
+          }
+        }
+        const oldPrevRe = this.rePrev, oldPrevIm = this.imPrev;
+        this.rePrev = this.reNow; this.imPrev = this.imNow;
+        this.reNow = this.reNext; this.imNow = this.imNext;
+        this.reNext = oldPrevRe; this.imNext = oldPrevIm;
+        this.frame += 1;
+      }
+    }
+
+    rotateGlobal(degrees) {
+      const angle = degrees * Math.PI / 180;
+      const cosine = Math.cos(angle);
+      const sine = Math.sin(angle);
+      for (const [reName, imName] of [['reNow', 'imNow'], ['rePrev', 'imPrev']]) {
+        const re = this[reName], im = this[imName];
+        for (let index = 0; index < this.size; index += 1) {
+          const oldRe = re[index], oldIm = im[index];
+          re[index] = oldRe * cosine - oldIm * sine;
+          im[index] = oldRe * sine + oldIm * cosine;
+        }
+      }
+    }
+
+    inject(x = this.width * .5, y = this.height * .5, options = {}) {
+      const phase = options.phase === undefined ? this.pulses.length * .61803398875 : options.phase;
+      const amplitude = options.amplitude || .13;
+      const spread = options.spread || Math.min(this.width, this.height) * .065;
+      const velocity = options.velocity || 0;
+      for (let row = 0; row < this.height; row += 1) {
+        for (let col = 0; col < this.width; col += 1) {
+          const index = row * this.width + col;
+          const envelope = amplitude * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread));
+          const re = envelope * Math.cos(phase);
+          const im = envelope * Math.sin(phase);
+          this.reNow[index] += re;
+          this.imNow[index] += im;
+          this.rePrev[index] += re * (1 - velocity * this.dt);
+          this.imPrev[index] += im * (1 - velocity * this.dt);
+        }
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, phase, amplitude, frame: this.frame });
+      this.baselineCharge = this.charge();
+    }
+
+    densityAt(index) { return this.reNow[index] ** 2 + this.imNow[index] ** 2; }
+
+    visualAt(index) {
+      const re = this.reNow[index], im = this.imNow[index];
+      return { density: re * re + im * im, phase: Math.atan2(im, re) };
+    }
+
+    // Exact discrete Noether charge for the centered update, evaluated on the
+    // time link (n-1,n). Periodic summation makes the lattice flux telescope.
+    charge() {
+      let total = 0;
+      for (let index = 0; index < this.size; index += 1) {
+        total += this.rePrev[index] * this.imNow[index] - this.imPrev[index] * this.reNow[index];
+      }
+      return total / this.dt;
+    }
+
+    energyProxy() {
+      let total = 0;
+      const { width, height, reNow, imNow, rePrev, imPrev, c, lambda, v, dt } = this;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const right = indexAt(x + 1, y, width, height);
+          const down = indexAt(x, y + 1, width, height);
+          const velocityRe = (reNow[index] - rePrev[index]) / dt;
+          const velocityIm = (imNow[index] - imPrev[index]) / dt;
+          const gradXRe = reNow[right] - reNow[index];
+          const gradXIm = imNow[right] - imNow[index];
+          const gradYRe = reNow[down] - reNow[index];
+          const gradYIm = imNow[down] - imNow[index];
+          const radial = reNow[index] ** 2 + imNow[index] ** 2 - v * v;
+          total += .5 * (velocityRe ** 2 + velocityIm ** 2)
+            + .5 * c * c * (gradXRe ** 2 + gradXIm ** 2 + gradYRe ** 2 + gradYIm ** 2)
+            + lambda * .25 * radial * radial;
+        }
+      }
+      return total;
+    }
+
+    relativeChargeDrift() {
+      const base = this.baselineCharge;
+      return Math.abs(base) > 1e-14 ? (this.charge() - base) / Math.abs(base) : this.charge() - base;
+    }
+
+    // Lattice dispersions for the same centered finite-difference equation.
+    goldstoneOmega(kx, ky) {
+      const sine2 = Math.sin(kx / 2) ** 2 + Math.sin(ky / 2) ** 2;
+      return 2 / this.dt * Math.asin(Math.min(1, this.c * this.dt * Math.sqrt(sine2)));
+    }
+
+    radialOmega(kx = 0, ky = 0) {
+      const m2 = 2 * this.lambda * this.v * this.v;
+      const sine2 = Math.sin(kx / 2) ** 2 + Math.sin(ky / 2) ** 2;
+      const argument = this.dt * .5 * Math.sqrt(m2 + 4 * this.c * this.c * sine2);
+      return 2 / this.dt * Math.asin(Math.min(1, argument));
+    }
+
+    radialMass() { return Math.sqrt(2 * this.lambda) * this.v; }
+
+    setGoldstoneMode(kxMode = 1, kyMode = 0, amplitude = 1e-5) {
+      const kx = TAU * kxMode / this.width;
+      const ky = TAU * kyMode / this.height;
+      const omega = this.goldstoneOmega(kx, ky);
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const shape = Math.cos(kx * x + ky * y);
+          this.reNow[index] = this.v;
+          this.imNow[index] = amplitude * shape;
+          this.rePrev[index] = this.v;
+          this.imPrev[index] = amplitude * shape * Math.cos(omega * this.dt);
+        }
+      }
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baselineCharge = this.charge();
+      return { kx, ky, omega };
+    }
+
+    setRadialMode(amplitude = 1e-5) {
+      const omega = this.radialOmega();
+      const now = this.v + amplitude;
+      const previous = this.v + amplitude * Math.cos(omega * this.dt);
+      this.reNow.fill(now); this.imNow.fill(0);
+      this.rePrev.fill(previous); this.imPrev.fill(0);
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baselineCharge = this.charge();
+      return { omega, radialMass: this.radialMass() };
+    }
+
+    // Project a selected real or imaginary component on cos(kx x + ky y).
+    modeProjection(component, kx, ky) {
+      const field = component === 'im' ? this.imNow : this.reNow;
+      let sum = 0;
+      let norm = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const shape = Math.cos(kx * x + ky * y);
+          sum += field[y * this.width + x] * shape;
+          norm += shape * shape;
+        }
+      }
+      return sum / norm;
+    }
+  }
+
+  return { Engine, TAU, indexAt };
+})();
+
+if (typeof module !== 'undefined') module.exports = ComplexPhi4;
+
+/* Clear Onyx v0.4.2 two-flavour neutrino oscillation carrier.
+ * Exact two-state flavour propagation in declared natural units.
+ * Browser and Node compatible; no external dependencies.
+ */
+'use strict';
+
+const TwoFlavourNeutrino = (() => {
+  const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+  const sq = (value) => value * value;
+
+  function multiplyPhase(re, im, phase) {
+    const c = Math.cos(phase);
+    const s = Math.sin(phase);
+    return [re * c - im * s, re * s + im * c];
+  }
+
+  function probability(re, im) { return re * re + im * im; }
+
+  class OscillationEngine {
+    constructor({ theta = .61, m1sq = .72, m2sq = 1.48, energy = 2.3 } = {}) {
+      this.theta = theta;
+      this.m1sq = m1sq;
+      this.m2sq = m2sq;
+      this.energy = energy;
+      this.massRe = new Float64Array(2);
+      this.massIm = new Float64Array(2);
+      this.distance = 0;
+      this.frame = 0;
+      this.pulses = [];
+      this.prepare('alpha');
+    }
+
+    get deltaMSq() { return this.m2sq - this.m1sq; }
+
+    normalize() {
+      const norm = probability(this.massRe[0], this.massIm[0]) + probability(this.massRe[1], this.massIm[1]);
+      const scale = 1 / Math.sqrt(norm || 1);
+      for (let i = 0; i < 2; i += 1) { this.massRe[i] *= scale; this.massIm[i] *= scale; }
+      return norm;
+    }
+
+    flavourState() {
+      const c = Math.cos(this.theta);
+      const s = Math.sin(this.theta);
+      return {
+        alpha: { re: c * this.massRe[0] + s * this.massRe[1], im: c * this.massIm[0] + s * this.massIm[1] },
+        beta: { re: -s * this.massRe[0] + c * this.massRe[1], im: -s * this.massIm[0] + c * this.massIm[1] }
+      };
+    }
+
+    setFlavourState(alpha, beta) {
+      const c = Math.cos(this.theta);
+      const s = Math.sin(this.theta);
+      this.massRe[0] = c * alpha.re - s * beta.re;
+      this.massIm[0] = c * alpha.im - s * beta.im;
+      this.massRe[1] = s * alpha.re + c * beta.re;
+      this.massIm[1] = s * alpha.im + c * beta.im;
+      this.normalize();
+    }
+
+    prepare(flavour = 'alpha') {
+      const alpha = flavour === 'beta' ? { re: 0, im: 0 } : { re: 1, im: 0 };
+      const beta = flavour === 'beta' ? { re: 1, im: 0 } : { re: 0, im: 0 };
+      this.setFlavourState(alpha, beta);
+      this.distance = 0;
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.initialFlavour = flavour;
+      this.baseline = this.read();
+    }
+
+    step(deltaL = .125) {
+      const phases = [-this.m1sq * deltaL / (2 * this.energy), -this.m2sq * deltaL / (2 * this.energy)];
+      for (let i = 0; i < 2; i += 1) {
+        const next = multiplyPhase(this.massRe[i], this.massIm[i], phases[i]);
+        this.massRe[i] = next[0];
+        this.massIm[i] = next[1];
+      }
+      this.distance += deltaL;
+      this.frame += 1;
+    }
+
+    injectFlavour(flavour = 'beta', amplitude = .14, phase = this.frame * .61803398875) {
+      const state = this.flavourState();
+      const target = flavour === 'alpha' ? state.alpha : state.beta;
+      target.re += amplitude * Math.cos(phase);
+      target.im += amplitude * Math.sin(phase);
+      this.setFlavourState(state.alpha, state.beta);
+      this.pulses.push({ flavour, amplitude, phase, distance: this.distance, frame: this.frame });
+    }
+
+    expectedTransition(distance = this.distance) {
+      const mixing = sq(Math.sin(2 * this.theta));
+      const phase = this.deltaMSq * distance / (4 * this.energy);
+      return mixing * sq(Math.sin(phase));
+    }
+
+    read() {
+      const state = this.flavourState();
+      const pa = probability(state.alpha.re, state.alpha.im);
+      const pb = probability(state.beta.re, state.beta.im);
+      const coherenceRe = state.alpha.re * state.beta.re + state.alpha.im * state.beta.im;
+      const coherenceIm = state.alpha.re * state.beta.im - state.alpha.im * state.beta.re;
+      return {
+        alphaProbability: pa,
+        betaProbability: pb,
+        totalProbability: pa + pb,
+        distance: this.distance,
+        expectedTransition: this.initialFlavour === 'alpha' ? this.expectedTransition() : this.expectedTransition(),
+        // A declared flavour-Bloch readout: x/y are coherence, z is flavour imbalance.
+        compass: { x: 2 * coherenceRe, y: 2 * coherenceIm, z: pa - pb }
+      };
+    }
+
+    audit() {
+      const read = this.read();
+      const normalizationResidual = Math.abs(read.totalProbability - 1);
+      if (normalizationResidual > 2e-12) return 'WATCH · probability residual';
+      if (this.initialFlavour === 'alpha' && this.pulses.length === 0) {
+        const residual = Math.abs(read.betaProbability - read.expectedTransition);
+        return residual < 2e-12 ? 'PASS · closed-form oscillation' : 'WATCH · transition residual';
+      }
+      return 'PASS · normalized flavour state';
+    }
+  }
+
+  return { OscillationEngine, multiplyPhase, probability, clamp };
+})();
+
+if (typeof module !== 'undefined') module.exports = TwoFlavourNeutrino;
+if (typeof window !== 'undefined') window.TwoFlavourNeutrino = TwoFlavourNeutrino;
+
+/* Clear Onyx v0.4.2 — 2+1D finite massive Dirac carrier.
+ * H(k) = k_x sigma_x + k_y sigma_y + m sigma_z.
+ * Browser and Node compatible; no dependencies.
+ */
+'use strict';
+
+const MassiveDiracCore = (() => {
+  const TAU = Math.PI * 2;
+  const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+
+  function fft1d(re, im, inverse) {
+    const n = re.length;
+    for (let i = 1, j = 0; i < n; i += 1) {
+      let bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) { [re[i], re[j]] = [re[j], re[i]]; [im[i], im[j]] = [im[j], im[i]]; }
+    }
+    for (let length = 2; length <= n; length <<= 1) {
+      const angle = (inverse ? TAU : -TAU) / length;
+      const sr = Math.cos(angle), si = Math.sin(angle);
+      for (let start = 0; start < n; start += length) {
+        let wr = 1, wi = 0;
+        const half = length >> 1;
+        for (let offset = 0; offset < half; offset += 1) {
+          const even = start + offset, odd = even + half;
+          const or = re[odd] * wr - im[odd] * wi;
+          const oi = re[odd] * wi + im[odd] * wr;
+          const er = re[even], ei = im[even];
+          re[even] = er + or; im[even] = ei + oi;
+          re[odd] = er - or; im[odd] = ei - oi;
+          const nr = wr * sr - wi * si;
+          wi = wr * si + wi * sr; wr = nr;
+        }
+      }
+    }
+    if (inverse) for (let i = 0; i < n; i += 1) { re[i] /= n; im[i] /= n; }
+  }
+
+  function fft2d(re, im, width, height, inverse) {
+    const rowRe = new Float64Array(width), rowIm = new Float64Array(width);
+    for (let y = 0; y < height; y += 1) {
+      const base = y * width;
+      for (let x = 0; x < width; x += 1) { rowRe[x] = re[base + x]; rowIm[x] = im[base + x]; }
+      fft1d(rowRe, rowIm, inverse);
+      for (let x = 0; x < width; x += 1) { re[base + x] = rowRe[x]; im[base + x] = rowIm[x]; }
+    }
+    const colRe = new Float64Array(height), colIm = new Float64Array(height);
+    for (let x = 0; x < width; x += 1) {
+      for (let y = 0; y < height; y += 1) { const i = y * width + x; colRe[y] = re[i]; colIm[y] = im[i]; }
+      fft1d(colRe, colIm, inverse);
+      for (let y = 0; y < height; y += 1) { const i = y * width + x; re[i] = colRe[y]; im[i] = colIm[y]; }
+    }
+  }
+
+  function energy(kx, ky, mass) { return Math.hypot(kx, ky, mass); }
+
+  // Normalized eigenvectors of d.sigma. Values are [aRe,aIm,bRe,bIm].
+  function eigenSpinor(kx, ky, mass, branch = 1) {
+    const e = energy(kx, ky, mass);
+    const transverse = Math.hypot(kx, ky);
+    if (transverse < 1e-13) {
+      return branch > 0 ? (mass >= 0 ? [1, 0, 0, 0] : [0, 0, 1, 0]) : (mass >= 0 ? [0, 0, 1, 0] : [1, 0, 0, 0]);
+    }
+    const cosHalf = Math.sqrt((e + mass) / (2 * e));
+    const sinHalf = Math.sqrt((e - mass) / (2 * e));
+    const phaseRe = kx / transverse, phaseIm = ky / transverse;
+    if (branch > 0) return [cosHalf, 0, phaseRe * sinHalf, phaseIm * sinHalf];
+    return [-phaseRe * sinHalf, phaseIm * sinHalf, cosHalf, 0];
+  }
+
+  function modeStep(vector, kx, ky, mass, dt) {
+    const [aRe, aIm, bRe, bIm] = vector;
+    const e = energy(kx, ky, mass);
+    const c = Math.cos(e * dt), s = Math.sin(e * dt) / e;
+    const hARe = mass * aRe + kx * bRe + ky * bIm;
+    const hAIm = mass * aIm + kx * bIm - ky * bRe;
+    const hBRe = kx * aRe - ky * aIm - mass * bRe;
+    const hBIm = kx * aIm + ky * aRe - mass * bIm;
+    return [c * aRe + s * hAIm, c * aIm - s * hARe, c * bRe + s * hBIm, c * bIm - s * hBRe];
+  }
+
+  function inner(left, right) {
+    return {
+      re: left[0] * right[0] + left[1] * right[1] + left[2] * right[2] + left[3] * right[3],
+      im: left[0] * right[1] - left[1] * right[0] + left[2] * right[3] - left[3] * right[2]
+    };
+  }
+
+  function normVector(vector) { return vector[0] ** 2 + vector[1] ** 2 + vector[2] ** 2 + vector[3] ** 2; }
+
+  // In this 2+1D representation use C = sigma_x K. It maps a mode at k to
+  // the charge-conjugate mode at -k while retaining the mass representation.
+  function chargeConjugate(vector) { return [vector[2], -vector[3], vector[0], -vector[1]]; }
+
+  function sigmaRead(vector) {
+    const [aRe, aIm, bRe, bIm] = vector;
+    const norm = normVector(vector) || 1;
+    return {
+      x: 2 * (aRe * bRe + aIm * bIm) / norm,
+      y: 2 * (aRe * bIm - aIm * bRe) / norm,
+      z: (aRe ** 2 + aIm ** 2 - bRe ** 2 - bIm ** 2) / norm
+    };
+  }
+
+  class MassiveDiracEngine {
+    constructor(width = 128, height = 128, mass = .74) {
+      if ((width & (width - 1)) || (height & (height - 1))) throw new Error('width and height must be powers of two');
+      this.width = width; this.height = height; this.size = width * height; this.mass = mass;
+      this.aRe = new Float64Array(this.size); this.aIm = new Float64Array(this.size);
+      this.bRe = new Float64Array(this.size); this.bIm = new Float64Array(this.size);
+      this.frame = 0; this.seedPacket(); this.baseline = this.read();
+    }
+
+    seedPacket() {
+      const cx = this.width * .27, cy = this.height * .50, spread = Math.min(this.width, this.height) * .085;
+      const kx = .48, ky = .12;
+      const u = eigenSpinor(kx, ky, this.mass, 1);
+      let norm = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const i = y * this.width + x;
+        const envelope = Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * spread * spread));
+        const phase = kx * (x - cx) + ky * (y - cy);
+        const cr = Math.cos(phase), ci = Math.sin(phase);
+        this.aRe[i] = envelope * (u[0] * cr - u[1] * ci); this.aIm[i] = envelope * (u[0] * ci + u[1] * cr);
+        this.bRe[i] = envelope * (u[2] * cr - u[3] * ci); this.bIm[i] = envelope * (u[2] * ci + u[3] * cr);
+        norm += this.aRe[i] ** 2 + this.aIm[i] ** 2 + this.bRe[i] ** 2 + this.bIm[i] ** 2;
+      }
+      const scale = 1 / Math.sqrt(norm);
+      for (const array of [this.aRe, this.aIm, this.bRe, this.bIm]) for (let i = 0; i < this.size; i += 1) array[i] *= scale;
+      this.frame = 0;
+    }
+
+    setPlaneWave(nx = 5, ny = 3, branch = 1) {
+      const kx = TAU * nx / this.width, ky = TAU * ny / this.height;
+      const u = eigenSpinor(kx, ky, this.mass, branch);
+      const scale = 1 / Math.sqrt(this.size);
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const i = y * this.width + x;
+        const phase = kx * x + ky * y, cr = Math.cos(phase), ci = Math.sin(phase);
+        this.aRe[i] = scale * (u[0] * cr - u[1] * ci); this.aIm[i] = scale * (u[0] * ci + u[1] * cr);
+        this.bRe[i] = scale * (u[2] * cr - u[3] * ci); this.bIm[i] = scale * (u[2] * ci + u[3] * cr);
+      }
+      this.frame = 0; this.baseline = this.read();
+      return { kx, ky };
+    }
+
+    step(dt = .05) {
+      for (const pair of [[this.aRe, this.aIm], [this.bRe, this.bIm]]) fft2d(pair[0], pair[1], this.width, this.height, false);
+      for (let y = 0; y < this.height; y += 1) {
+        const ky = TAU * (y <= this.height / 2 ? y : y - this.height) / this.height;
+        for (let x = 0; x < this.width; x += 1) {
+          const kx = TAU * (x <= this.width / 2 ? x : x - this.width) / this.width;
+          const i = y * this.width + x;
+          const next = modeStep([this.aRe[i], this.aIm[i], this.bRe[i], this.bIm[i]], kx, ky, this.mass, dt);
+          this.aRe[i] = next[0]; this.aIm[i] = next[1]; this.bRe[i] = next[2]; this.bIm[i] = next[3];
+        }
+      }
+      for (const pair of [[this.aRe, this.aIm], [this.bRe, this.bIm]]) fft2d(pair[0], pair[1], this.width, this.height, true);
+      this.frame += 1;
+    }
+
+    read() {
+      let norm = 0, sx = 0, sy = 0, sz = 0, xMoment = 0, yMoment = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const i = y * this.width + x;
+        const density = this.aRe[i] ** 2 + this.aIm[i] ** 2 + this.bRe[i] ** 2 + this.bIm[i] ** 2;
+        norm += density; xMoment += x * density; yMoment += y * density;
+        sx += 2 * (this.aRe[i] * this.bRe[i] + this.aIm[i] * this.bIm[i]);
+        sy += 2 * (this.aRe[i] * this.bIm[i] - this.aIm[i] * this.bRe[i]);
+        sz += this.aRe[i] ** 2 + this.aIm[i] ** 2 - this.bRe[i] ** 2 - this.bIm[i] ** 2;
+      }
+      return { norm, spin: { x: sx / norm, y: sy / norm, z: sz / norm }, centroid: { x: xMoment / norm / this.width, y: yMoment / norm / this.height } };
+    }
+
+    visualAt(index) {
+      const density = this.aRe[index] ** 2 + this.aIm[index] ** 2 + this.bRe[index] ** 2 + this.bIm[index] ** 2;
+      return { density, phase: Math.atan2(this.aIm[index] + this.bIm[index], this.aRe[index] + this.bRe[index]), spin: sigmaRead([this.aRe[index], this.aIm[index], this.bRe[index], this.bIm[index]]) };
+    }
+
+    clone() {
+      const copy = new MassiveDiracEngine(this.width, this.height, this.mass);
+      for (const key of ['aRe', 'aIm', 'bRe', 'bIm']) copy[key].set(this[key]);
+      copy.frame = this.frame; copy.baseline = copy.read();
+      return copy;
+    }
+
+    chargeConjugate() {
+      const out = this.clone();
+      for (let i = 0; i < this.size; i += 1) {
+        out.aRe[i] = this.bRe[i]; out.aIm[i] = -this.bIm[i];
+        out.bRe[i] = this.aRe[i]; out.bIm[i] = -this.aIm[i];
+      }
+      return out;
+    }
+  }
+
+  function planeWave(width, height, mass, nx, ny, branch) {
+    const kx = TAU * nx / width, ky = TAU * ny / height;
+    const spinor = eigenSpinor(kx, ky, mass, branch);
+    const vector = spinor.map((value) => value / Math.sqrt(width * height));
+    return { kx, ky, spinor, vector };
+  }
+
+  function phaseEnergyMeasurement(kx, ky, mass, branch, dt = .037) {
+    const initial = eigenSpinor(kx, ky, mass, branch);
+    const next = modeStep(initial, kx, ky, mass, dt);
+    const overlap = inner(initial, next);
+    const measured = -Math.atan2(overlap.im, overlap.re) / dt;
+    return { measured, expected: branch * energy(kx, ky, mass), residual: measured - branch * energy(kx, ky, mass) };
+  }
+
+  function zitterbewegungMeasurement(kx, ky, mass, dt = .035) {
+    const plus = eigenSpinor(kx, ky, mass, 1), minus = eigenSpinor(kx, ky, mass, -1);
+    const root = Math.SQRT1_2;
+    const initial = plus.map((value, i) => root * (value + minus[i]));
+    const next = modeStep(initial, kx, ky, mass, dt);
+    const project = (state, basis) => inner(basis, state);
+    const p0 = project(initial, plus), m0 = project(initial, minus);
+    const p1 = project(next, plus), m1 = project(next, minus);
+    const coherence = (p, m) => ({ re: p.re * m.re + p.im * m.im, im: p.re * m.im - p.im * m.re });
+    const c0 = coherence(p0, m0), c1 = coherence(p1, m1);
+    const ratio = { re: c1.re * c0.re + c1.im * c0.im, im: c1.im * c0.re - c1.re * c0.im };
+    const measuredFrequency = Math.atan2(ratio.im, ratio.re) / dt;
+    const v0 = sigmaRead(initial).x, v1 = sigmaRead(next).x;
+    return { measuredFrequency, expectedFrequency: 2 * energy(kx, ky, mass), residual: measuredFrequency - 2 * energy(kx, ky, mass), velocityChange: v1 - v0 };
+  }
+
+  function maxDifference(left, right) {
+    let max = 0;
+    for (let i = 0; i < left.size; i += 1) {
+      max = Math.max(max, Math.abs(left.aRe[i] - right.aRe[i]), Math.abs(left.aIm[i] - right.aIm[i]), Math.abs(left.bRe[i] - right.bRe[i]), Math.abs(left.bIm[i] - right.bIm[i]));
+    }
+    return max;
+  }
+
+  return { TAU, MassiveDiracEngine, fft1d, fft2d, energy, eigenSpinor, modeStep, inner, normVector, chargeConjugate, sigmaRead, planeWave, phaseEnergyMeasurement, zitterbewegungMeasurement, maxDifference, mod };
+})();
+
+if (typeof module !== 'undefined') module.exports = MassiveDiracCore;
+
+/* Clear Onyx v0.4.2 — finite gauge carriers.
+ *
+ * U(1) flux ring: a gauge-covariant split-step transport on a closed graph.
+ * SU(3) colour transport: a gauge-covariant split-step transport of a colour
+ * triplet on a 2D lattice in a declared, non-commuting SU(3) background.
+ *
+ * These are lattice-gauge kinematics. They do not claim an ensemble QCD
+ * confinement calculation.
+ */
+'use strict';
+
+const GaugeCarriers = (() => {
+  const TAU = Math.PI * 2;
+  const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+  const wrap = (value) => Math.atan2(Math.sin(value), Math.cos(value));
+
+  const cmul = (ar, ai, br, bi) => [ar * br - ai * bi, ar * bi + ai * br];
+  const cabs2 = (re, im) => re * re + im * im;
+
+  function matrixIdentity() {
+    const re = new Float64Array(9), im = new Float64Array(9);
+    re[0] = re[4] = re[8] = 1;
+    return { re, im };
+  }
+  function matrixClone(m) { return { re: new Float64Array(m.re), im: new Float64Array(m.im) }; }
+  function matrixMultiply(a, b) {
+    const re = new Float64Array(9), im = new Float64Array(9);
+    for (let row = 0; row < 3; row += 1) for (let col = 0; col < 3; col += 1) {
+      let rr = 0, ii = 0;
+      for (let k = 0; k < 3; k += 1) {
+        const [pr, pi] = cmul(a.re[row * 3 + k], a.im[row * 3 + k], b.re[k * 3 + col], b.im[k * 3 + col]);
+        rr += pr; ii += pi;
+      }
+      re[row * 3 + col] = rr; im[row * 3 + col] = ii;
+    }
+    return { re, im };
+  }
+  function matrixDagger(a) {
+    const re = new Float64Array(9), im = new Float64Array(9);
+    for (let row = 0; row < 3; row += 1) for (let col = 0; col < 3; col += 1) {
+      re[row * 3 + col] = a.re[col * 3 + row]; im[row * 3 + col] = -a.im[col * 3 + row];
+    }
+    return { re, im };
+  }
+  function matrixVector(m, vector) {
+    const out = new Float64Array(6);
+    for (let row = 0; row < 3; row += 1) for (let k = 0; k < 3; k += 1) {
+      const [rr, ii] = cmul(m.re[row * 3 + k], m.im[row * 3 + k], vector[k * 2], vector[k * 2 + 1]);
+      out[row * 2] += rr; out[row * 2 + 1] += ii;
+    }
+    return out;
+  }
+  function matrixTrace(m) { return { re: m.re[0] + m.re[4] + m.re[8], im: m.im[0] + m.im[4] + m.im[8] }; }
+  function matrixDet(m) {
+    const e = (a, b, c, d, e0, f, g, h, i) => {
+      const ab = cmul(a[0], a[1], e0[0], e0[1]); const abf = cmul(ab[0], ab[1], i[0], i[1]);
+      const bc = cmul(b[0], b[1], f[0], f[1]); const bch = cmul(bc[0], bc[1], g[0], g[1]);
+      const cd = cmul(c[0], c[1], d[0], d[1]); const cde = cmul(cd[0], cd[1], h[0], h[1]);
+      const ce = cmul(c[0], c[1], e0[0], e0[1]); const ceg = cmul(ce[0], ce[1], g[0], g[1]);
+      const bf = cmul(b[0], b[1], d[0], d[1]); const bfi = cmul(bf[0], bf[1], i[0], i[1]);
+      const ah = cmul(a[0], a[1], f[0], f[1]); const ahh = cmul(ah[0], ah[1], h[0], h[1]);
+      return { re: abf[0] + bch[0] + cde[0] - ceg[0] - bfi[0] - ahh[0], im: abf[1] + bch[1] + cde[1] - ceg[1] - bfi[1] - ahh[1] };
+    };
+    const v = (i) => [m.re[i], m.im[i]];
+    return e(v(0), v(1), v(2), v(3), v(4), v(5), v(6), v(7), v(8));
+  }
+  function su3R12(angle) {
+    const out = matrixIdentity(), c = Math.cos(angle), s = Math.sin(angle);
+    out.re[0] = out.re[4] = c; out.im[1] = s; out.im[3] = s;
+    return out;
+  }
+  function su3R23(angle) {
+    const out = matrixIdentity(), c = Math.cos(angle), s = Math.sin(angle);
+    out.re[4] = out.re[8] = c; out.im[5] = s; out.im[7] = s;
+    return out;
+  }
+  function su3Diagonal(alpha, beta) {
+    const out = matrixIdentity();
+    for (const [index, phase] of [[0, alpha], [4, beta], [8, -alpha - beta]]) { out.re[index] = Math.cos(phase); out.im[index] = Math.sin(phase); }
+    return out;
+  }
+  function maxMatrixDifference(a, b) {
+    let result = 0; for (let i = 0; i < 9; i += 1) result = Math.max(result, Math.abs(a.re[i] - b.re[i]), Math.abs(a.im[i] - b.im[i])); return result;
+  }
+
+  class U1FluxRingEngine {
+    constructor(width = 128, height = 128, nodes = 128, flux = 1.27 * Math.PI) {
+      this.width = width; this.height = height; this.size = width * height; this.nodes = nodes; this.flux = flux; this.theta = .105;
+      this.re = new Float64Array(nodes); this.im = new Float64Array(nodes); this.frame = 0; this.pulses = [];
+      this.gauge = null; this.seedPacket(); this.baseline = this.read();
+    }
+    link(index) {
+      const base = this.flux / this.nodes;
+      const shift = this.gauge ? this.gauge[index] - this.gauge[mod(index + 1, this.nodes)] : 0;
+      return base + shift;
+    }
+    seedPacket() {
+      const centre = this.nodes * .13, spread = this.nodes * .055;
+      let norm = 0;
+      for (let i = 0; i < this.nodes; i += 1) { const distance = Math.min(Math.abs(i - centre), this.nodes - Math.abs(i - centre)); this.re[i] = Math.exp(-distance * distance / (2 * spread * spread)); this.im[i] = 0; norm += this.re[i] ** 2; }
+      const scale = 1 / Math.sqrt(norm); for (let i = 0; i < this.nodes; i += 1) this.re[i] *= scale;
+      this.frame = 0; this.pulses.length = 0;
+    }
+    bond(index) {
+      const next = mod(index + 1, this.nodes), phase = this.link(index), c = Math.cos(this.theta), s = Math.sin(this.theta);
+      const ar = this.re[index], ai = this.im[index];
+      const [br, bi] = cmul(Math.cos(phase), Math.sin(phase), this.re[next], this.im[next]);
+      const naR = c * ar + s * bi, naI = c * ai - s * br;
+      const nbR = s * ai + c * br, nbI = -s * ar + c * bi;
+      const [outR, outI] = cmul(Math.cos(phase), -Math.sin(phase), nbR, nbI);
+      this.re[index] = naR; this.im[index] = naI; this.re[next] = outR; this.im[next] = outI;
+    }
+    step(count = 1) {
+      for (let turn = 0; turn < count; turn += 1) { for (let parity = 0; parity < 2; parity += 1) for (let i = parity; i < this.nodes; i += 2) this.bond(i); this.frame += 1; }
+    }
+    rotateGlobal(degrees) { const a = degrees * Math.PI / 180, c = Math.cos(a), s = Math.sin(a); for (let i = 0; i < this.nodes; i += 1) { const r = this.re[i], q = this.im[i]; this.re[i] = r * c - q * s; this.im[i] = r * s + q * c; } }
+    inject(x = this.width * .5, y = this.height * .5) {
+      const angle = Math.atan2(y / this.height - .5, x / this.width - .5); const centre = mod(Math.round((angle / TAU + .5) * this.nodes), this.nodes);
+      for (let i = 0; i < this.nodes; i += 1) { const distance = Math.min(Math.abs(i - centre), this.nodes - Math.abs(i - centre)); const phase = .9 * Math.exp(-distance * distance / (2 * 5 ** 2)); const c = Math.cos(phase), s = Math.sin(phase), r = this.re[i], q = this.im[i]; this.re[i] = r * c - q * s; this.im[i] = r * s + q * c; }
+      this.pulses.push({ node: centre, frame: this.frame });
+    }
+    nodeAt(x, y) { return mod(Math.round((Math.atan2(y / this.height - .5, x / this.width - .5) / TAU + .5) * this.nodes), this.nodes); }
+    visualAt(index) {
+      const x = index % this.width, y = Math.floor(index / this.width), dx = x / this.width - .5, dy = y / this.height - .5;
+      const radius = Math.hypot(dx, dy), radial = Math.exp(-(((radius - .30) / .036) ** 2)), node = this.nodeAt(x, y);
+      return { density: radial * cabs2(this.re[node], this.im[node]), phase: Math.atan2(this.im[node], this.re[node]) };
+    }
+    norm() { let sum = 0; for (let i = 0; i < this.nodes; i += 1) sum += cabs2(this.re[i], this.im[i]); return sum; }
+    holonomy() { let phase = 0; for (let i = 0; i < this.nodes; i += 1) phase += this.link(i); return wrap(phase); }
+    read() {
+      let c = 0, s = 0; for (let i = 0; i < this.nodes; i += 1) { const density = cabs2(this.re[i], this.im[i]); c += density * Math.cos(TAU * i / this.nodes); s += density * Math.sin(TAU * i / this.nodes); }
+      const n = this.norm() || 1;
+      return { norm: n, energyProxy: wrap(this.flux), current: { x: c / n, y: s / n }, spin: { x: Math.cos(this.holonomy()), y: Math.sin(this.holonomy()), z: Math.hypot(c, s) / n } };
+    }
+    clone() { const copy = new U1FluxRingEngine(this.width, this.height, this.nodes, this.flux); copy.re.set(this.re); copy.im.set(this.im); copy.frame = this.frame; copy.pulses = [...this.pulses]; copy.gauge = this.gauge && new Float64Array(this.gauge); copy.baseline = copy.read(); return copy; }
+    withFlux(flux) { const copy = new U1FluxRingEngine(this.width, this.height, this.nodes, flux); copy.re.set(this.re); copy.im.set(this.im); copy.frame = this.frame; copy.pulses = [...this.pulses]; copy.baseline = copy.read(); return copy; }
+    twist(momentumQuantum = -1) {
+      for (let i = 0; i < this.nodes; i += 1) { const phase = momentumQuantum * TAU * i / this.nodes, [r, q] = cmul(Math.cos(phase), Math.sin(phase), this.re[i], this.im[i]); this.re[i] = r; this.im[i] = q; }
+      return this;
+    }
+    gaugeTransform() { const copy = this.clone(), gauge = new Float64Array(this.nodes); for (let i = 0; i < this.nodes; i += 1) gauge[i] = .43 * Math.sin(TAU * i / this.nodes) + .19 * Math.cos(2 * TAU * i / this.nodes); for (let i = 0; i < this.nodes; i += 1) { const [r, q] = cmul(Math.cos(gauge[i]), Math.sin(gauge[i]), copy.re[i], copy.im[i]); copy.re[i] = r; copy.im[i] = q; } copy.gauge = gauge; return copy; }
+    gaugeCovarianceResidual(steps = 11) { const base = this.clone(), transformed = this.gaugeTransform(); base.step(steps); transformed.step(steps); const expected = base.gaugeTransform(); let residual = 0; for (let i = 0; i < this.nodes; i += 1) residual = Math.max(residual, Math.abs(expected.re[i] - transformed.re[i]), Math.abs(expected.im[i] - transformed.im[i])); return residual; }
+    largeGaugeResidual(steps = 400) {
+      const base = this.clone(), shifted = this.withFlux(this.flux + TAU).twist(-1);
+      base.step(steps); shifted.step(steps);
+      let residual = 0; for (let i = 0; i < this.nodes; i += 1) residual = Math.max(residual, Math.abs(cabs2(base.re[i], base.im[i]) - cabs2(shifted.re[i], shifted.im[i])));
+      return residual;
+    }
+    halfFluxResponse(steps = 400) {
+      const base = this.clone(), shifted = this.withFlux(this.flux + Math.PI);
+      base.step(steps); shifted.step(steps);
+      let response = 0; for (let i = 0; i < this.nodes; i += 1) response = Math.max(response, Math.abs(cabs2(base.re[i], base.im[i]) - cabs2(shifted.re[i], shifted.im[i])));
+      return response;
+    }
+    audit(read) { return Math.abs(read.norm - this.baseline.norm) < 2e-12 ? 'PASS · gauge-unitary transport' : 'WATCH · norm residual'; }
+  }
+
+  class SU3ColorTransportEngine {
+    constructor(width = 64, height = 64) {
+      if (width % 2 || height % 2) throw new Error('SU(3) bond partition requires even lattice dimensions.');
+      this.width = width; this.height = height; this.size = width * height; this.theta = .067;
+      this.re = [new Float64Array(this.size), new Float64Array(this.size), new Float64Array(this.size)];
+      this.im = [new Float64Array(this.size), new Float64Array(this.size), new Float64Array(this.size)];
+      this.linkX = su3R12(.31); this.linkY = su3R23(.23); this.localX = null; this.localY = null; this.frame = 0; this.pulses = [];
+      this.seedPacket(); this.baseline = this.read();
+    }
+    index(x, y) { return mod(y, this.height) * this.width + mod(x, this.width); }
+    link(direction, index) { const links = direction === 'x' ? this.localX : this.localY; return links ? links[index] : direction === 'x' ? this.linkX : this.linkY; }
+    vector(index) { return new Float64Array([this.re[0][index], this.im[0][index], this.re[1][index], this.im[1][index], this.re[2][index], this.im[2][index]]); }
+    setVector(index, v) { for (let k = 0; k < 3; k += 1) { this.re[k][index] = v[k * 2]; this.im[k][index] = v[k * 2 + 1]; } }
+    seedPacket(basis = 0) {
+      const cx = this.width * .28, cy = this.height * .5, spread = Math.min(this.width, this.height) * .09; let norm = 0;
+      for (let k = 0; k < 3; k += 1) { this.re[k].fill(0); this.im[k].fill(0); }
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) { const i = this.index(x, y), amp = Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * spread * spread)); this.re[basis][i] = amp; norm += amp * amp; }
+      const scale = 1 / Math.sqrt(norm); for (let i = 0; i < this.size; i += 1) this.re[basis][i] *= scale;
+      this.frame = 0; this.pulses.length = 0;
+    }
+    bond(index, neighbour, link) {
+      const a = this.vector(index), b = this.vector(neighbour), atB = matrixVector(link, b), c = Math.cos(this.theta), s = Math.sin(this.theta);
+      const na = new Float64Array(6), nbAtA = new Float64Array(6);
+      for (let k = 0; k < 3; k += 1) { const ar = a[2 * k], ai = a[2 * k + 1], br = atB[2 * k], bi = atB[2 * k + 1]; na[2 * k] = c * ar + s * bi; na[2 * k + 1] = c * ai - s * br; nbAtA[2 * k] = s * ai + c * br; nbAtA[2 * k + 1] = -s * ar + c * bi; }
+      this.setVector(index, na); this.setVector(neighbour, matrixVector(matrixDagger(link), nbAtA));
+    }
+    stage(direction, parity) {
+      if (direction === 'x') for (let y = 0; y < this.height; y += 1) for (let x = parity; x < this.width; x += 2) { const i = this.index(x, y); this.bond(i, this.index(x + 1, y), this.link('x', i)); }
+      else for (let y = parity; y < this.height; y += 2) for (let x = 0; x < this.width; x += 1) { const i = this.index(x, y); this.bond(i, this.index(x, y + 1), this.link('y', i)); }
+    }
+    step(count = 1) { for (let turn = 0; turn < count; turn += 1) { this.stage('x', 0); this.stage('x', 1); this.stage('y', 0); this.stage('y', 1); this.frame += 1; } }
+    rotateGlobal(degrees) { const a = degrees * Math.PI / 180, c = Math.cos(a), s = Math.sin(a); for (let k = 0; k < 3; k += 1) for (let i = 0; i < this.size; i += 1) { const r = this.re[k][i], q = this.im[k][i]; this.re[k][i] = r * c - q * s; this.im[k][i] = r * s + q * c; } }
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.min(this.width, this.height) * .08;
+      for (let row = 0; row < this.height; row += 1) for (let col = 0; col < this.width; col += 1) { const i = this.index(col, row), amount = .88 * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread)), rotation = matrixMultiply(su3R12(amount), su3R23(amount * .72)); this.setVector(i, matrixVector(rotation, this.vector(i))); }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+    norm() { let sum = 0; for (let k = 0; k < 3; k += 1) for (let i = 0; i < this.size; i += 1) sum += cabs2(this.re[k][i], this.im[k][i]); return sum; }
+    populations() { const out = [0, 0, 0]; for (let k = 0; k < 3; k += 1) for (let i = 0; i < this.size; i += 1) out[k] += cabs2(this.re[k][i], this.im[k][i]); return out; }
+    plaquette(index = this.index(Math.floor(this.width / 2), Math.floor(this.height / 2))) { const x = index % this.width, y = Math.floor(index / this.width), right = this.index(x + 1, y), up = this.index(x, y + 1); return matrixMultiply(matrixMultiply(matrixMultiply(this.link('x', index), this.link('y', right)), matrixDagger(this.link('x', up))), matrixDagger(this.link('y', index))); }
+    plaquetteTrace() { return matrixTrace(this.plaquette()); }
+    wilsonLoop(dx = 2, dy = 1, x0 = Math.floor(this.width / 2), y0 = Math.floor(this.height / 2)) {
+      let product = matrixIdentity();
+      for (let step = 0; step < dx; step += 1) product = matrixMultiply(product, this.link('x', this.index(x0 + step, y0)));
+      for (let step = 0; step < dy; step += 1) product = matrixMultiply(product, this.link('y', this.index(x0 + dx, y0 + step)));
+      for (let step = 0; step < dx; step += 1) product = matrixMultiply(product, matrixDagger(this.link('x', this.index(x0 + dx - step - 1, y0 + dy))));
+      for (let step = 0; step < dy; step += 1) product = matrixMultiply(product, matrixDagger(this.link('y', this.index(x0, y0 + dy - step - 1))));
+      return product;
+    }
+    wilsonLoopTrace(dx = 2, dy = 1) { return matrixTrace(this.wilsonLoop(dx, dy)); }
+    visualAt(index) {
+      const channels = [cabs2(this.re[0][index], this.im[0][index]), cabs2(this.re[1][index], this.im[1][index]), cabs2(this.re[2][index], this.im[2][index])];
+      const density = channels[0] + channels[1] + channels[2];
+      const phase = Math.atan2(this.im[0][index] + this.im[1][index] + this.im[2][index], this.re[0][index] + this.re[1][index] + this.re[2][index]);
+      return { density, phase, rgb: channels, spin: { x: 0, y: 0, z: 0 } };
+    }
+    read() {
+      const n = this.norm() || 1, p = this.populations(), phase = Math.atan2(this.im[0].reduce((a, b) => a + b, 0) + this.im[1].reduce((a, b) => a + b, 0), this.re[0].reduce((a, b) => a + b, 0) + this.re[1].reduce((a, b) => a + b, 0));
+      const trace = this.plaquetteTrace();
+      return { norm: n, energyProxy: 1 - trace.re / 3, current: { x: p[0] / n, y: p[1] / n }, spin: { x: (p[0] - p[1]) / n, y: (p[1] - p[2]) / n, z: Math.cos(phase) }, populations: p.map((value) => value / n), plaquette: trace };
+    }
+    clone() { const copy = new SU3ColorTransportEngine(this.width, this.height); for (let k = 0; k < 3; k += 1) { copy.re[k].set(this.re[k]); copy.im[k].set(this.im[k]); } copy.linkX = matrixClone(this.linkX); copy.linkY = matrixClone(this.linkY); copy.localX = this.localX && this.localX.map(matrixClone); copy.localY = this.localY && this.localY.map(matrixClone); copy.frame = this.frame; copy.pulses = [...this.pulses]; copy.baseline = copy.read(); return copy; }
+    gaugeMatrices() {
+      const matrices = new Array(this.size);
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const a = .31 * Math.sin(TAU * x / this.width), b = .23 * Math.cos(TAU * y / this.height), c = .19 * Math.sin(TAU * (x + y) / this.width), d = .17 * Math.cos(TAU * (2 * x - y) / this.height);
+        matrices[this.index(x, y)] = matrixMultiply(matrixMultiply(matrixMultiply(su3R12(a), su3R23(b)), su3Diagonal(c, d)), su3R12(.13 * Math.sin(TAU * y / this.height)));
+      }
+      return matrices;
+    }
+    gaugeTransform() {
+      const copy = this.clone(), gauge = this.gaugeMatrices(); copy.localX = new Array(this.size); copy.localY = new Array(this.size);
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) { const i = this.index(x, y), g = gauge[i]; copy.setVector(i, matrixVector(g, copy.vector(i))); copy.localX[i] = matrixMultiply(matrixMultiply(g, this.link('x', i)), matrixDagger(gauge[this.index(x + 1, y)])); copy.localY[i] = matrixMultiply(matrixMultiply(g, this.link('y', i)), matrixDagger(gauge[this.index(x, y + 1)])); }
+      return copy;
+    }
+    gaugeCovarianceResidual(steps = 5) { const base = this.clone(), transformed = this.gaugeTransform(); base.step(steps); transformed.step(steps); const expected = base.gaugeTransform(); let result = 0; for (let k = 0; k < 3; k += 1) for (let i = 0; i < this.size; i += 1) result = Math.max(result, Math.abs(expected.re[k][i] - transformed.re[k][i]), Math.abs(expected.im[k][i] - transformed.im[k][i])); return result; }
+    colourSingletResidual(steps = 9) {
+      const trio = [0, 1, 2].map((basis) => { const engine = new SU3ColorTransportEngine(this.width, this.height); engine.seedPacket(basis); return engine; });
+      const transformed = trio.map((engine) => engine.gaugeTransform());
+      for (const engine of [...trio, ...transformed]) engine.step(steps);
+      let selected = 0, magnitude = 0, before = null;
+      for (let index = 0; index < this.size; index += 1) {
+        const matrix = matrixIdentity();
+        for (let row = 0; row < 3; row += 1) for (let column = 0; column < 3; column += 1) { matrix.re[row * 3 + column] = trio[column].re[row][index]; matrix.im[row * 3 + column] = trio[column].im[row][index]; }
+        const determinant = matrixDet(matrix), candidate = Math.hypot(determinant.re, determinant.im);
+        if (candidate > magnitude) { selected = index; magnitude = candidate; before = determinant; }
+      }
+      const afterMatrix = matrixIdentity();
+      for (let row = 0; row < 3; row += 1) for (let column = 0; column < 3; column += 1) { afterMatrix.re[row * 3 + column] = transformed[column].re[row][selected]; afterMatrix.im[row * 3 + column] = transformed[column].im[row][selected]; }
+      const after = matrixDet(afterMatrix);
+      return { residual: Math.hypot(before.re - after.re, before.im - after.im), magnitude };
+    }
+    plaquetteGaugeResidual() { const before = this.plaquetteTrace(), after = this.gaugeTransform().plaquetteTrace(); return Math.hypot(before.re - after.re, before.im - after.im); }
+    wilsonLoopGaugeResidual() { const before = this.wilsonLoopTrace(2, 1), after = this.gaugeTransform().wilsonLoopTrace(2, 1); return Math.hypot(before.re - after.re, before.im - after.im); }
+    audit(read) { return Math.abs(read.norm - this.baseline.norm) < 3e-11 ? 'PASS · SU(3) link transport' : 'WATCH · norm residual'; }
+  }
+
+  return { TAU, mod, wrap, U1FluxRingEngine, SU3ColorTransportEngine, matrixIdentity, matrixClone, matrixMultiply, matrixDagger, matrixVector, matrixTrace, matrixDet, su3R12, su3R23, su3Diagonal, maxMatrixDifference };
+})();
+
+if (typeof module !== 'undefined') module.exports = GaugeCarriers;
+
+/*
+ * Clear Onyx v0.5 — finite electroweak Higgs-doublet carrier.
+ *
+ * Field: Phi_x in C^2 with hypercharge Y = 1.
+ * Gauge links: L_(x,mu) = exp(i g' B_(x,mu) / 2) U_(x,mu), U in SU(2).
+ * Potential: V(Phi) = lambda (Phi^dagger Phi - v^2 / 2)^2.
+ * Update: centered leapfrog with the gauge-covariant nearest-neighbour
+ * lattice Laplacian in two spatial dimensions.
+ *
+ * This module is browser and Node compatible. It models the electroweak
+ * Higgs sector on a declared finite 2+1D lattice; the background links are
+ * fixed during a run so that the doublet's covariant dynamics are readable.
+ */
+'use strict';
+
+const ElectroweakHiggs = (() => {
+  const TAU = Math.PI * 2;
+  const SQRT2 = Math.SQRT2;
+  const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+  const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+
+  const cmul = (ar, ai, br, bi) => [ar * br - ai * bi, ar * bi + ai * br];
+
+  function matrixIdentity() {
+    const re = new Float64Array(4), im = new Float64Array(4);
+    re[0] = re[3] = 1;
+    return { re, im };
+  }
+
+  function matrixClone(matrix) {
+    return { re: new Float64Array(matrix.re), im: new Float64Array(matrix.im) };
+  }
+
+  function matrixDagger(matrix) {
+    const re = new Float64Array(4), im = new Float64Array(4);
+    re[0] = matrix.re[0]; im[0] = -matrix.im[0];
+    re[1] = matrix.re[2]; im[1] = -matrix.im[2];
+    re[2] = matrix.re[1]; im[2] = -matrix.im[1];
+    re[3] = matrix.re[3]; im[3] = -matrix.im[3];
+    return { re, im };
+  }
+
+  function matrixMultiply(left, right) {
+    const re = new Float64Array(4), im = new Float64Array(4);
+    for (let row = 0; row < 2; row += 1) for (let column = 0; column < 2; column += 1) {
+      const index = row * 2 + column;
+      for (let k = 0; k < 2; k += 1) {
+        const [rr, ii] = cmul(left.re[row * 2 + k], left.im[row * 2 + k], right.re[k * 2 + column], right.im[k * 2 + column]);
+        re[index] += rr; im[index] += ii;
+      }
+    }
+    return { re, im };
+  }
+
+  function matrixPhase(matrix, phase) {
+    const cosine = Math.cos(phase), sine = Math.sin(phase), re = new Float64Array(4), im = new Float64Array(4);
+    for (let i = 0; i < 4; i += 1) {
+      re[i] = cosine * matrix.re[i] - sine * matrix.im[i];
+      im[i] = sine * matrix.re[i] + cosine * matrix.im[i];
+    }
+    return { re, im };
+  }
+
+  // exp(i angle n.sigma), with a normalized real axis n.
+  function su2Exponential(nx, ny, nz, angle) {
+    const length = Math.hypot(nx, ny, nz) || 1;
+    const x = nx / length, y = ny / length, z = nz / length;
+    const cosine = Math.cos(angle), sine = Math.sin(angle);
+    const re = new Float64Array(4), im = new Float64Array(4);
+    re[0] = re[3] = cosine;
+    im[0] = sine * z; im[3] = -sine * z;
+    re[1] = sine * y; im[1] = sine * x;
+    re[2] = -sine * y; im[2] = sine * x;
+    return { re, im };
+  }
+
+  function multiplyInto(matrix, ar, ai, br, bi, out) {
+    const re = matrix.re, im = matrix.im;
+    out[0] = re[0] * ar - im[0] * ai + re[1] * br - im[1] * bi;
+    out[1] = im[0] * ar + re[0] * ai + im[1] * br + re[1] * bi;
+    out[2] = re[2] * ar - im[2] * ai + re[3] * br - im[3] * bi;
+    out[3] = im[2] * ar + re[2] * ai + im[3] * br + re[3] * bi;
+    return out;
+  }
+
+  function daggerMultiplyInto(matrix, ar, ai, br, bi, out) {
+    const re = matrix.re, im = matrix.im;
+    out[0] = re[0] * ar + im[0] * ai + re[2] * br + im[2] * bi;
+    out[1] = -im[0] * ar + re[0] * ai - im[2] * br + re[2] * bi;
+    out[2] = re[1] * ar + im[1] * ai + re[3] * br + im[3] * bi;
+    out[3] = -im[1] * ar + re[1] * ai - im[3] * br + re[3] * bi;
+    return out;
+  }
+
+  function phaseVectorInto(phase, ar, ai, br, bi, out) {
+    const cosine = Math.cos(phase), sine = Math.sin(phase);
+    out[0] = cosine * ar - sine * ai; out[1] = sine * ar + cosine * ai;
+    out[2] = cosine * br - sine * bi; out[3] = sine * br + cosine * bi;
+    return out;
+  }
+
+  function matrixUnitarityResidual(matrix) {
+    const product = matrixMultiply(matrixDagger(matrix), matrix);
+    let residual = 0;
+    for (let row = 0; row < 2; row += 1) for (let column = 0; column < 2; column += 1) {
+      const index = row * 2 + column;
+      residual = Math.max(residual, Math.abs(product.re[index] - (row === column ? 1 : 0)), Math.abs(product.im[index]));
+    }
+    return residual;
+  }
+
+  function hermitianEigenvalues(matrix) {
+    // Jacobi rotations for a real symmetric matrix. The Higgs mass matrix is
+    // constructed from the covariant derivative, before this diagonalization.
+    const a = matrix.map((row) => row.slice());
+    const n = a.length;
+    for (let iteration = 0; iteration < 96; iteration += 1) {
+      let p = 0, q = 1, largest = 0;
+      for (let row = 0; row < n; row += 1) for (let column = row + 1; column < n; column += 1) {
+        const magnitude = Math.abs(a[row][column]);
+        if (magnitude > largest) { largest = magnitude; p = row; q = column; }
+      }
+      if (largest < 1e-15) break;
+      const angle = .5 * Math.atan2(2 * a[p][q], a[q][q] - a[p][p]);
+      const cosine = Math.cos(angle), sine = Math.sin(angle);
+      const app = a[p][p], aqq = a[q][q], apq = a[p][q];
+      for (let k = 0; k < n; k += 1) {
+        if (k === p || k === q) continue;
+        const akp = a[k][p], akq = a[k][q];
+        a[k][p] = a[p][k] = cosine * akp - sine * akq;
+        a[k][q] = a[q][k] = sine * akp + cosine * akq;
+      }
+      a[p][p] = cosine * cosine * app - 2 * sine * cosine * apq + sine * sine * aqq;
+      a[q][q] = sine * sine * app + 2 * sine * cosine * apq + cosine * cosine * aqq;
+      a[p][q] = a[q][p] = 0;
+    }
+    return a.map((row, index) => row[index]).sort((left, right) => left - right);
+  }
+
+  class Engine {
+    constructor(options = {}) {
+      this.width = options.width || 96;
+      this.height = options.height || 96;
+      this.size = this.width * this.height;
+      this.dt = options.dt || .052;
+      this.c = options.c || 1;
+      this.lambda = options.lambda || .34;
+      this.v = options.v || 1;
+      this.g = options.g || .653;
+      this.gPrime = options.gPrime || .358;
+      this.background = options.background || 'curved';
+      this.courant2 = (this.c * this.dt) ** 2;
+      this.potentialDt2 = this.dt ** 2;
+      if (this.courant2 > .5) throw new Error('Electroweak Higgs lattice requires (c dt)^2 <= 0.5.');
+      this.aReNow = new Float64Array(this.size); this.aImNow = new Float64Array(this.size);
+      this.bReNow = new Float64Array(this.size); this.bImNow = new Float64Array(this.size);
+      this.aRePrev = new Float64Array(this.size); this.aImPrev = new Float64Array(this.size);
+      this.bRePrev = new Float64Array(this.size); this.bImPrev = new Float64Array(this.size);
+      this.aReNext = new Float64Array(this.size); this.aImNext = new Float64Array(this.size);
+      this.bReNext = new Float64Array(this.size); this.bImNext = new Float64Array(this.size);
+      this.scratch = new Float64Array(4);
+      this.frame = 0;
+      this.pulses = [];
+      this.baseLinkX = this.makeBaseLink('x');
+      this.baseLinkY = this.makeBaseLink('y');
+      this.localX = null;
+      this.localY = null;
+      this.linkResidual = this.linkUnitarityResidual();
+      this.seed();
+    }
+
+    index(x, y) { return mod(y, this.height) * this.width + mod(x, this.width); }
+
+    makeBaseLink(direction) {
+      if (this.background === 'identity') return matrixIdentity();
+      if (direction === 'x') return matrixPhase(su2Exponential(.71, .31, .63, .188), .127);
+      return matrixPhase(su2Exponential(-.22, .91, .35, .151), -.093);
+    }
+
+    link(direction, index) {
+      const local = direction === 'x' ? this.localX : this.localY;
+      if (local) return local[index];
+      return direction === 'x' ? this.baseLinkX : this.baseLinkY;
+    }
+
+    densityAt(index) {
+      return this.aReNow[index] ** 2 + this.aImNow[index] ** 2 + this.bReNow[index] ** 2 + this.bImNow[index] ** 2;
+    }
+
+    radialAt(index) { return Math.sqrt(2 * this.densityAt(index)); }
+
+    setDoublet(index, target, ar, ai, br, bi) {
+      target.aRe[index] = ar; target.aIm[index] = ai;
+      target.bRe[index] = br; target.bIm[index] = bi;
+    }
+
+    seed() {
+      const centreX = this.width * .33, centreY = this.height * .50;
+      const spread = Math.min(this.width, this.height) * .145;
+      const kx = .23, ky = .09, amplitude = .25;
+      const previousPhase = this.radialOmega(kx, ky) * this.dt;
+      const now = { aRe: this.aReNow, aIm: this.aImNow, bRe: this.bReNow, bIm: this.bImNow };
+      const previous = { aRe: this.aRePrev, aIm: this.aImPrev, bRe: this.bRePrev, bIm: this.bImPrev };
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = this.index(x, y), dx = x - centreX, dy = y - centreY;
+        const envelope = Math.exp(-(dx * dx + dy * dy) / (2 * spread * spread));
+        const argument = kx * dx + ky * dy;
+        const radialNow = this.v + amplitude * envelope * Math.cos(argument);
+        const radialPrevious = this.v + amplitude * envelope * Math.cos(argument + previousPhase);
+        const twist = .44 * envelope * Math.sin(.16 * dx - .10 * dy);
+        const rotation = su2Exponential(.46, .78, .42, twist);
+        multiplyInto(rotation, 0, 0, radialNow / SQRT2, 0, this.scratch);
+        this.setDoublet(index, now, this.scratch[0], this.scratch[1], this.scratch[2], this.scratch[3]);
+        multiplyInto(rotation, 0, 0, radialPrevious / SQRT2, 0, this.scratch);
+        this.setDoublet(index, previous, this.scratch[0], this.scratch[1], this.scratch[2], this.scratch[3]);
+      }
+      this.aReNext.fill(0); this.aImNext.fill(0); this.bReNext.fill(0); this.bImNext.fill(0);
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baseline = this.read();
+    }
+
+    step(count = 1) {
+      for (let turn = 0; turn < count; turn += 1) {
+        const { width, height, aReNow, aImNow, bReNow, bImNow, aRePrev, aImPrev, bRePrev, bImPrev, aReNext, aImNext, bReNext, bImNext } = this;
+        const halfV2 = this.v * this.v * .5;
+        for (let y = 0; y < height; y += 1) for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const left = this.index(x - 1, y), right = this.index(x + 1, y), up = this.index(x, y - 1), down = this.index(x, y + 1);
+          const ar = aReNow[index], ai = aImNow[index], br = bReNow[index], bi = bImNow[index];
+          let lapAr = -4 * ar, lapAi = -4 * ai, lapBr = -4 * br, lapBi = -4 * bi;
+          multiplyInto(this.link('x', index), aReNow[right], aImNow[right], bReNow[right], bImNow[right], this.scratch);
+          lapAr += this.scratch[0]; lapAi += this.scratch[1]; lapBr += this.scratch[2]; lapBi += this.scratch[3];
+          daggerMultiplyInto(this.link('x', left), aReNow[left], aImNow[left], bReNow[left], bImNow[left], this.scratch);
+          lapAr += this.scratch[0]; lapAi += this.scratch[1]; lapBr += this.scratch[2]; lapBi += this.scratch[3];
+          multiplyInto(this.link('y', index), aReNow[down], aImNow[down], bReNow[down], bImNow[down], this.scratch);
+          lapAr += this.scratch[0]; lapAi += this.scratch[1]; lapBr += this.scratch[2]; lapBi += this.scratch[3];
+          daggerMultiplyInto(this.link('y', up), aReNow[up], aImNow[up], bReNow[up], bImNow[up], this.scratch);
+          lapAr += this.scratch[0]; lapAi += this.scratch[1]; lapBr += this.scratch[2]; lapBi += this.scratch[3];
+          const radialForce = 2 * this.lambda * (ar * ar + ai * ai + br * br + bi * bi - halfV2);
+          aReNext[index] = 2 * ar - aRePrev[index] + this.courant2 * lapAr - this.potentialDt2 * radialForce * ar;
+          aImNext[index] = 2 * ai - aImPrev[index] + this.courant2 * lapAi - this.potentialDt2 * radialForce * ai;
+          bReNext[index] = 2 * br - bRePrev[index] + this.courant2 * lapBr - this.potentialDt2 * radialForce * br;
+          bImNext[index] = 2 * bi - bImPrev[index] + this.courant2 * lapBi - this.potentialDt2 * radialForce * bi;
+        }
+        [this.aRePrev, this.aReNow, this.aReNext] = [this.aReNow, this.aReNext, this.aRePrev];
+        [this.aImPrev, this.aImNow, this.aImNext] = [this.aImNow, this.aImNext, this.aImPrev];
+        [this.bRePrev, this.bReNow, this.bReNext] = [this.bReNow, this.bReNext, this.bRePrev];
+        [this.bImPrev, this.bImNow, this.bImNext] = [this.bImNow, this.bImNext, this.bImPrev];
+        this.frame += 1;
+      }
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.max(3, Math.min(this.width, this.height) * .075);
+      for (let row = 0; row < this.height; row += 1) for (let column = 0; column < this.width; column += 1) {
+        const index = this.index(column, row);
+        const envelope = .18 * Math.exp(-((column - x) ** 2 + (row - y) ** 2) / (2 * spread * spread));
+        // A radial kick plus a local weak-isospin rotation is a declared local
+        // condition. Both time slices are updated, preserving the leapfrog state.
+        this.bReNow[index] += envelope / SQRT2;
+        this.bRePrev[index] += envelope * .38 / SQRT2;
+        const rotation = su2Exponential(.62, -.51, .59, envelope * 1.7);
+        multiplyInto(rotation, this.aReNow[index], this.aImNow[index], this.bReNow[index], this.bImNow[index], this.scratch);
+        this.aReNow[index] = this.scratch[0]; this.aImNow[index] = this.scratch[1]; this.bReNow[index] = this.scratch[2]; this.bImNow[index] = this.scratch[3];
+        multiplyInto(rotation, this.aRePrev[index], this.aImPrev[index], this.bRePrev[index], this.bImPrev[index], this.scratch);
+        this.aRePrev[index] = this.scratch[0]; this.aImPrev[index] = this.scratch[1]; this.bRePrev[index] = this.scratch[2]; this.bImPrev[index] = this.scratch[3];
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+
+    rotateGlobal(degrees) {
+      const phase = degrees * Math.PI / 180 / 2;
+      for (const names of [['aReNow', 'aImNow', 'bReNow', 'bImNow'], ['aRePrev', 'aImPrev', 'bRePrev', 'bImPrev']]) {
+        const [arName, aiName, brName, biName] = names;
+        for (let index = 0; index < this.size; index += 1) {
+          phaseVectorInto(phase, this[arName][index], this[aiName][index], this[brName][index], this[biName][index], this.scratch);
+          this[arName][index] = this.scratch[0]; this[aiName][index] = this.scratch[1]; this[brName][index] = this.scratch[2]; this[biName][index] = this.scratch[3];
+        }
+      }
+    }
+
+    visualAt(index) {
+      const ar = this.aReNow[index], ai = this.aImNow[index], br = this.bReNow[index], bi = this.bImNow[index];
+      const rho = ar * ar + ai * ai + br * br + bi * bi;
+      const modulus = Math.sqrt(2 * rho);
+      // This weak-isospin longitude belongs to the displayed gauge choice.
+      const nx = 2 * (ar * br + ai * bi) / Math.max(rho, 1e-14);
+      const ny = 2 * (ar * bi - ai * br) / Math.max(rho, 1e-14);
+      const nz = (ar * ar + ai * ai - br * br - bi * bi) / Math.max(rho, 1e-14);
+      return {
+        density: Math.abs(modulus - this.v) / Math.max(this.v, 1e-12),
+        phase: Math.atan2(ny, nx),
+        spin: { x: nx, y: ny, z: nz }
+      };
+    }
+
+    currentAt(x, y) {
+      const index = this.index(x, y), right = this.index(x + 1, y), down = this.index(x, y + 1);
+      const ar = this.aReNow[index], ai = this.aImNow[index], br = this.bReNow[index], bi = this.bImNow[index];
+      multiplyInto(this.link('x', index), this.aReNow[right], this.aImNow[right], this.bReNow[right], this.bImNow[right], this.scratch);
+      const jx = 2 * (ar * this.scratch[1] - ai * this.scratch[0] + br * this.scratch[3] - bi * this.scratch[2]);
+      multiplyInto(this.link('y', index), this.aReNow[down], this.aImNow[down], this.bReNow[down], this.bImNow[down], this.scratch);
+      const jy = 2 * (ar * this.scratch[1] - ai * this.scratch[0] + br * this.scratch[3] - bi * this.scratch[2]);
+      return { x: jx, y: jy, magnitude: Math.hypot(jx, jy) };
+    }
+
+    read() {
+      let magnitude = 0, energy = 0, radial = 0, jx = 0, jy = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = this.index(x, y), right = this.index(x + 1, y), down = this.index(x, y + 1);
+        const ar = this.aReNow[index], ai = this.aImNow[index], br = this.bReNow[index], bi = this.bImNow[index];
+        const rho = ar * ar + ai * ai + br * br + bi * bi;
+        const h = Math.sqrt(2 * rho);
+        const velocity2 = ((ar - this.aRePrev[index]) / this.dt) ** 2 + ((ai - this.aImPrev[index]) / this.dt) ** 2 + ((br - this.bRePrev[index]) / this.dt) ** 2 + ((bi - this.bImPrev[index]) / this.dt) ** 2;
+        multiplyInto(this.link('x', index), this.aReNow[right], this.aImNow[right], this.bReNow[right], this.bImNow[right], this.scratch);
+        const gradientX2 = (this.scratch[0] - ar) ** 2 + (this.scratch[1] - ai) ** 2 + (this.scratch[2] - br) ** 2 + (this.scratch[3] - bi) ** 2;
+        const currentX = 2 * (ar * this.scratch[1] - ai * this.scratch[0] + br * this.scratch[3] - bi * this.scratch[2]);
+        multiplyInto(this.link('y', index), this.aReNow[down], this.aImNow[down], this.bReNow[down], this.bImNow[down], this.scratch);
+        const gradientY2 = (this.scratch[0] - ar) ** 2 + (this.scratch[1] - ai) ** 2 + (this.scratch[2] - br) ** 2 + (this.scratch[3] - bi) ** 2;
+        const currentY = 2 * (ar * this.scratch[1] - ai * this.scratch[0] + br * this.scratch[3] - bi * this.scratch[2]);
+        magnitude += rho;
+        radial += h / this.v - 1;
+        jx += currentX; jy += currentY;
+        energy += .5 * velocity2 + .5 * this.c * this.c * (gradientX2 + gradientY2) + this.lambda * (rho - this.v * this.v * .5) ** 2;
+      }
+      const radialMean = radial / this.size, currentX = jx / this.size, currentY = jy / this.size;
+      return {
+        norm: magnitude / Math.max(this.size * this.v * this.v * .5, 1e-14),
+        energyProxy: energy / this.size,
+        current: { x: currentX, y: currentY },
+        spin: { x: clamp(radialMean * 2.5, -1, 1), y: clamp(currentX * 5, -1, 1), z: clamp(currentY * 5, -1, 1) },
+        radialMean,
+        linkResidual: this.linkResidual
+      };
+    }
+
+    audit() {
+      return this.linkResidual < 3e-12 ? 'PASS · SU(2)×U(1) link action' : 'WATCH · link unitarity residual';
+    }
+
+    radialMass() { return Math.sqrt(2 * this.lambda) * this.v; }
+
+    radialOmega(kx = 0, ky = 0) {
+      const latticeK2 = 4 * (Math.sin(kx / 2) ** 2 + Math.sin(ky / 2) ** 2);
+      const continuum = this.radialMass() ** 2 + this.c * this.c * latticeK2;
+      return 2 / this.dt * Math.asin(Math.min(1, this.dt * Math.sqrt(continuum) / 2));
+    }
+
+    setRadialMode(amplitude = 1e-5, kxMode = 0, kyMode = 0) {
+      const kx = TAU * kxMode / this.width, ky = TAU * kyMode / this.height, omega = this.radialOmega(kx, ky);
+      this.localX = null; this.localY = null;
+      this.baseLinkX = matrixIdentity(); this.baseLinkY = matrixIdentity(); this.linkResidual = this.linkUnitarityResidual();
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = this.index(x, y), shape = Math.cos(kx * x + ky * y);
+        const now = (this.v + amplitude * shape) / SQRT2;
+        const previous = (this.v + amplitude * shape * Math.cos(omega * this.dt)) / SQRT2;
+        this.aReNow[index] = this.aImNow[index] = this.aRePrev[index] = this.aImPrev[index] = 0;
+        this.bReNow[index] = now; this.bImNow[index] = 0;
+        this.bRePrev[index] = previous; this.bImPrev[index] = 0;
+      }
+      this.frame = 0; this.pulses.length = 0; this.baseline = this.read();
+      return { kx, ky, omega, radialMass: this.radialMass() };
+    }
+
+    radialProjection(kx = 0, ky = 0) {
+      let sum = 0, norm = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const shape = Math.cos(kx * x + ky * y);
+        sum += (this.radialAt(this.index(x, y)) - this.v) * shape;
+        norm += shape * shape;
+      }
+      return sum / Math.max(norm, 1e-14);
+    }
+
+    localGauge() {
+      const su2 = new Array(this.size), hypercharge = new Float64Array(this.size);
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = this.index(x, y), qx = TAU * x / this.width, qy = TAU * y / this.height;
+        hypercharge[index] = .31 * Math.sin(qx + .37 * qy) + .17 * Math.cos(2 * qy - .21 * qx);
+        su2[index] = su2Exponential(.61 + .12 * Math.cos(qy), .44 * Math.sin(qx), .65 + .10 * Math.cos(qx - qy), .29 * Math.sin(qx) + .18 * Math.cos(qy));
+      }
+      return { su2, hypercharge };
+    }
+
+    clone() {
+      const copy = new Engine({ width: this.width, height: this.height, dt: this.dt, c: this.c, lambda: this.lambda, v: this.v, g: this.g, gPrime: this.gPrime, background: this.background });
+      for (const key of ['aReNow', 'aImNow', 'bReNow', 'bImNow', 'aRePrev', 'aImPrev', 'bRePrev', 'bImPrev', 'aReNext', 'aImNext', 'bReNext', 'bImNext']) copy[key].set(this[key]);
+      copy.baseLinkX = matrixClone(this.baseLinkX); copy.baseLinkY = matrixClone(this.baseLinkY);
+      copy.localX = this.localX && this.localX.map(matrixClone); copy.localY = this.localY && this.localY.map(matrixClone);
+      copy.linkResidual = this.linkResidual; copy.frame = this.frame; copy.pulses = this.pulses.map((pulse) => ({ ...pulse })); copy.baseline = copy.read();
+      return copy;
+    }
+
+    gaugeTransform() {
+      const copy = this.clone(), gauge = this.localGauge();
+      const transformSlice = (reA, imA, reB, imB) => {
+        for (let index = 0; index < this.size; index += 1) {
+          multiplyInto(gauge.su2[index], reA[index], imA[index], reB[index], imB[index], this.scratch);
+          phaseVectorInto(gauge.hypercharge[index] / 2, this.scratch[0], this.scratch[1], this.scratch[2], this.scratch[3], this.scratch);
+          reA[index] = this.scratch[0]; imA[index] = this.scratch[1]; reB[index] = this.scratch[2]; imB[index] = this.scratch[3];
+        }
+      };
+      transformSlice(copy.aReNow, copy.aImNow, copy.bReNow, copy.bImNow);
+      transformSlice(copy.aRePrev, copy.aImPrev, copy.bRePrev, copy.bImPrev);
+      copy.localX = new Array(this.size); copy.localY = new Array(this.size);
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = this.index(x, y), right = this.index(x + 1, y), down = this.index(x, y + 1);
+        const transformLink = (direction, neighbour) => matrixPhase(matrixMultiply(matrixMultiply(gauge.su2[index], this.link(direction, index)), matrixDagger(gauge.su2[neighbour])), (gauge.hypercharge[index] - gauge.hypercharge[neighbour]) / 2);
+        copy.localX[index] = transformLink('x', right);
+        copy.localY[index] = transformLink('y', down);
+      }
+      copy.linkResidual = copy.linkUnitarityResidual();
+      return copy;
+    }
+
+    gaugeCovarianceResidual(steps = 11) {
+      const base = this.clone(), transformed = this.gaugeTransform();
+      base.step(steps); transformed.step(steps);
+      const expected = base.gaugeTransform();
+      let residual = 0;
+      for (const key of ['aReNow', 'aImNow', 'bReNow', 'bImNow']) for (let index = 0; index < this.size; index += 1) residual = Math.max(residual, Math.abs(expected[key][index] - transformed[key][index]));
+      return residual;
+    }
+
+    gaugeInvariantDensityResidual(steps = 0) {
+      const base = this.clone(), transformed = this.gaugeTransform();
+      if (steps) { base.step(steps); transformed.step(steps); }
+      let residual = 0;
+      for (let index = 0; index < this.size; index += 1) residual = Math.max(residual, Math.abs(base.densityAt(index) - transformed.densityAt(index)));
+      return residual;
+    }
+
+    linkUnitarityResidual() {
+      let residual = 0;
+      if (this.localX) {
+        for (let index = 0; index < this.size; index += 1) residual = Math.max(residual, matrixUnitarityResidual(this.localX[index]), matrixUnitarityResidual(this.localY[index]));
+      } else residual = Math.max(matrixUnitarityResidual(this.baseLinkX), matrixUnitarityResidual(this.baseLinkY));
+      return residual;
+    }
+
+    gaugeMassQuadratic(fields) {
+      const [w1, w2, w3, b] = fields;
+      const lower = this.v / SQRT2;
+      const upperRe = this.g * w1 * lower / 2;
+      const upperIm = -this.g * w2 * lower / 2;
+      const lowerRe = (-this.g * w3 + this.gPrime * b) * lower / 2;
+      return 2 * (upperRe * upperRe + upperIm * upperIm + lowerRe * lowerRe);
+    }
+
+    gaugeMassMatrix() {
+      const matrix = Array.from({ length: 4 }, () => Array(4).fill(0));
+      const unit = (index) => { const out = [0, 0, 0, 0]; out[index] = 1; return out; };
+      for (let row = 0; row < 4; row += 1) {
+        matrix[row][row] = this.gaugeMassQuadratic(unit(row));
+        for (let column = row + 1; column < 4; column += 1) {
+          const sum = unit(row); sum[column] = 1;
+          const value = (this.gaugeMassQuadratic(sum) - matrix[row][row] - this.gaugeMassQuadratic(unit(column))) / 2;
+          matrix[row][column] = matrix[column][row] = value;
+        }
+      }
+      return matrix;
+    }
+
+    massSpectrum() {
+      const mW = this.g * this.v / 2;
+      const mZ = Math.hypot(this.g, this.gPrime) * this.v / 2;
+      const thetaW = Math.atan2(this.gPrime, this.g);
+      return { mW, mZ, mPhoton: 0, thetaW };
+    }
+
+    spectrumResidual(matrix = this.gaugeMassMatrix(), spectrum = this.massSpectrum()) {
+      const eigenvalues = hermitianEigenvalues(matrix);
+      const expected = [spectrum.mPhoton ** 2, spectrum.mW ** 2, spectrum.mW ** 2, spectrum.mZ ** 2].sort((left, right) => left - right);
+      let residual = 0;
+      for (let index = 0; index < expected.length; index += 1) residual = Math.max(residual, Math.abs(eigenvalues[index] - expected[index]));
+      return { eigenvalues, expected, residual };
+    }
+
+    massSpectrumReceipt() {
+      const spectrum = this.massSpectrum(), matrix = this.gaugeMassMatrix(), diagonal = this.spectrumResidual(matrix, spectrum);
+      const ratioResidual = Math.abs(spectrum.mW / spectrum.mZ - Math.cos(spectrum.thetaW));
+      return { ...diagonal, ratioResidual, massMatrix: matrix, spectrum };
+    }
+  }
+
+  return { Engine, TAU, matrixIdentity, matrixClone, matrixDagger, matrixMultiply, matrixPhase, su2Exponential, matrixUnitarityResidual, hermitianEigenvalues };
+})();
+
+if (typeof module !== 'undefined') module.exports = ElectroweakHiggs;
+
+</script>
+<script>
+/* Clear Onyx Gauge Laboratory v0.5.2 — finite field, gauge, and matter carriers.
+ * Browser and Node compatible. No external dependencies.
+ */
+'use strict';
+
+const ParticleAtlasCore = (() => {
+  const Phi4Core = typeof module !== 'undefined' ? require('./carriers/complex-phi4.js') : ComplexPhi4;
+  const OscillationCore = typeof module !== 'undefined' ? require('./carriers/two-flavour-neutrino.js') : TwoFlavourNeutrino;
+  const DiracCore = typeof module !== 'undefined' ? require('./carriers/massive-dirac.js') : MassiveDiracCore;
+  const GaugeCore = typeof module !== 'undefined' ? require('./carriers/gauge.js') : GaugeCarriers;
+  const ElectroweakCore = typeof module !== 'undefined' ? require('./carriers/electroweak-higgs.js') : ElectroweakHiggs;
+  const TAU = Math.PI * 2;
+  const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+  const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+  const indexAt = (x, y, width, height) => mod(y, height) * width + mod(x, width);
+  const signed = (value, places = 3) => `${value >= 0 ? '+' : '−'}${Math.abs(value).toFixed(places)}`;
+
+  function fft1d(re, im, inverse) {
+    const n = re.length;
+    for (let i = 1, j = 0; i < n; i += 1) {
+      let bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) {
+        [re[i], re[j]] = [re[j], re[i]];
+        [im[i], im[j]] = [im[j], im[i]];
+      }
+    }
+    for (let length = 2; length <= n; length <<= 1) {
+      const angle = (inverse ? TAU : -TAU) / length;
+      const stepRe = Math.cos(angle);
+      const stepIm = Math.sin(angle);
+      for (let start = 0; start < n; start += length) {
+        let unitRe = 1;
+        let unitIm = 0;
+        const half = length >> 1;
+        for (let offset = 0; offset < half; offset += 1) {
+          const even = start + offset;
+          const odd = even + half;
+          const oddRe = re[odd] * unitRe - im[odd] * unitIm;
+          const oddIm = re[odd] * unitIm + im[odd] * unitRe;
+          const evenRe = re[even];
+          const evenIm = im[even];
+          re[even] = evenRe + oddRe;
+          im[even] = evenIm + oddIm;
+          re[odd] = evenRe - oddRe;
+          im[odd] = evenIm - oddIm;
+          const nextRe = unitRe * stepRe - unitIm * stepIm;
+          unitIm = unitRe * stepIm + unitIm * stepRe;
+          unitRe = nextRe;
+        }
+      }
+    }
+    if (inverse) {
+      for (let i = 0; i < n; i += 1) {
+        re[i] /= n;
+        im[i] /= n;
+      }
+    }
+  }
+
+  function fft2d(re, im, width, height, inverse) {
+    const rowRe = new Float64Array(width);
+    const rowIm = new Float64Array(width);
+    for (let y = 0; y < height; y += 1) {
+      const base = y * width;
+      for (let x = 0; x < width; x += 1) {
+        rowRe[x] = re[base + x];
+        rowIm[x] = im[base + x];
+      }
+      fft1d(rowRe, rowIm, inverse);
+      for (let x = 0; x < width; x += 1) {
+        re[base + x] = rowRe[x];
+        im[base + x] = rowIm[x];
+      }
+    }
+    const columnRe = new Float64Array(height);
+    const columnIm = new Float64Array(height);
+    for (let x = 0; x < width; x += 1) {
+      for (let y = 0; y < height; y += 1) {
+        const index = y * width + x;
+        columnRe[y] = re[index];
+        columnIm[y] = im[index];
+      }
+      fft1d(columnRe, columnIm, inverse);
+      for (let y = 0; y < height; y += 1) {
+        const index = y * width + x;
+        re[index] = columnRe[y];
+        im[index] = columnIm[y];
+      }
+    }
+  }
+
+  function multiplyPhase(re, im, phase) {
+    const cosine = Math.cos(phase);
+    const sine = Math.sin(phase);
+    const nextRe = re * cosine - im * sine;
+    return [nextRe, re * sine + im * cosine];
+  }
+
+  function spinNorm(state) {
+    let sum = 0;
+    for (let i = 0; i < state.size; i += 1) {
+      sum += state.aRe[i] ** 2 + state.aIm[i] ** 2 + state.bRe[i] ** 2 + state.bIm[i] ** 2;
+    }
+    return sum;
+  }
+
+  function scaleSpin(state, scale) {
+    for (const key of ['aRe', 'aIm', 'bRe', 'bIm']) {
+      const array = state[key];
+      for (let i = 0; i < array.length; i += 1) array[i] *= scale;
+    }
+  }
+
+  function spinRead(state) {
+    const { width, height, size, aRe, aIm, bRe, bIm } = state;
+    let norm = 0;
+    let sx = 0;
+    let sy = 0;
+    let sz = 0;
+    let energyWeight = 0;
+    let xMoment = 0;
+    let yMoment = 0;
+    let currentX = 0;
+    let currentY = 0;
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width; x += 1) {
+        const index = y * width + x;
+        const density = aRe[index] ** 2 + aIm[index] ** 2 + bRe[index] ** 2 + bIm[index] ** 2;
+        const abRe = aRe[index] * bRe[index] + aIm[index] * bIm[index];
+        const abIm = aRe[index] * bIm[index] - aIm[index] * bRe[index];
+        norm += density;
+        sx += 2 * abRe;
+        sy += 2 * abIm;
+        sz += aRe[index] ** 2 + aIm[index] ** 2 - bRe[index] ** 2 - bIm[index] ** 2;
+        const right = indexAt(x + 1, y, width, height);
+        const left = indexAt(x - 1, y, width, height);
+        const down = indexAt(x, y + 1, width, height);
+        const up = indexAt(x, y - 1, width, height);
+        const gradAxRe = (aRe[right] - aRe[left]) * .5;
+        const gradAxIm = (aIm[right] - aIm[left]) * .5;
+        const gradBxRe = (bRe[right] - bRe[left]) * .5;
+        const gradBxIm = (bIm[right] - bIm[left]) * .5;
+        const gradAyRe = (aRe[down] - aRe[up]) * .5;
+        const gradAyIm = (aIm[down] - aIm[up]) * .5;
+        const gradByRe = (bRe[down] - bRe[up]) * .5;
+        const gradByIm = (bIm[down] - bIm[up]) * .5;
+        const jx = aRe[index] * gradAxIm - aIm[index] * gradAxRe + bRe[index] * gradBxIm - bIm[index] * gradBxRe;
+        const jy = aRe[index] * gradAyIm - aIm[index] * gradAyRe + bRe[index] * gradByIm - bIm[index] * gradByRe;
+        const localEnergy = .5 * (gradAxRe ** 2 + gradAxIm ** 2 + gradBxRe ** 2 + gradBxIm ** 2 + gradAyRe ** 2 + gradAyIm ** 2 + gradByRe ** 2 + gradByIm ** 2);
+        currentX += jx;
+        currentY += jy;
+        energyWeight += localEnergy;
+        xMoment += x * density;
+        yMoment += y * density;
+      }
+    }
+    const safeNorm = norm || 1;
+    return {
+      norm,
+      density: norm / size,
+      spin: { x: sx / safeNorm, y: sy / safeNorm, z: sz / safeNorm },
+      spinLength: Math.hypot(sx / safeNorm, sy / safeNorm, sz / safeNorm),
+      current: state.type === 'neutrino' ? { x: sx / safeNorm, y: sy / safeNorm } : { x: currentX / safeNorm, y: currentY / safeNorm },
+      energyProxy: energyWeight,
+      centroid: { x: xMoment / safeNorm / width, y: yMoment / safeNorm / height }
+    };
+  }
+
+  class SpinorEngine {
+    constructor(type, width = 128, height = 128) {
+      this.type = type;
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.aRe = new Float64Array(this.size);
+      this.aIm = new Float64Array(this.size);
+      this.bRe = new Float64Array(this.size);
+      this.bIm = new Float64Array(this.size);
+      this.frame = 0;
+      this.pulses = [];
+      this.phaseDegrees = 0;
+      this.zeeman = .15;
+      this.seed();
+    }
+
+    seed() {
+      const { width, height } = this;
+      this.aRe.fill(0); this.aIm.fill(0); this.bRe.fill(0); this.bIm.fill(0);
+      const cx = width * .225;
+      const cy = height * .50;
+      const spread = Math.min(width, height) * .108;
+      const kx = this.type === 'neutrino' ? .46 : .61;
+      const theta = this.type === 'neutrino' ? Math.PI / 2 : 1.03;
+      const up = Math.cos(theta / 2);
+      const down = Math.sin(theta / 2);
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const envelope = Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * spread * spread));
+          const phase = kx * (x - cx) + .035 * (y - cy);
+          this.aRe[index] = envelope * up * Math.cos(phase);
+          this.aIm[index] = envelope * up * Math.sin(phase);
+          this.bRe[index] = envelope * down * Math.cos(phase);
+          this.bIm[index] = envelope * down * Math.sin(phase);
+        }
+      }
+      const norm = spinNorm(this);
+      scaleSpin(this, 1 / Math.sqrt(norm || 1));
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.phaseDegrees = 0;
+      this.baseline = this.read();
+    }
+
+    applyPotential(dt) {
+      const { width, height } = this;
+      const barrierX = width * .565;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const slitUpper = Math.abs(y - height * .36) < height * .055;
+          const slitLower = Math.abs(y - height * .64) < height * .055;
+          const barrier = Math.abs(x - barrierX) < 1.4 && !(slitUpper || slitLower) ? 2.85 : 0;
+          const localB = this.zeeman * (1 + .17 * Math.tanh((x - width * .53) / 12));
+          let pair = multiplyPhase(this.aRe[index], this.aIm[index], -(barrier - localB * .5) * dt);
+          this.aRe[index] = pair[0]; this.aIm[index] = pair[1];
+          pair = multiplyPhase(this.bRe[index], this.bIm[index], -(barrier + localB * .5) * dt);
+          this.bRe[index] = pair[0]; this.bIm[index] = pair[1];
+        }
+      }
+    }
+
+    applyKinetic(dt) {
+      const { width, height } = this;
+      fft2d(this.aRe, this.aIm, width, height, false);
+      fft2d(this.bRe, this.bIm, width, height, false);
+      for (let y = 0; y < height; y += 1) {
+        const ky = TAU * (y <= height / 2 ? y : y - height) / height;
+        for (let x = 0; x < width; x += 1) {
+          const kx = TAU * (x <= width / 2 ? x : x - width) / width;
+          const index = y * width + x;
+          const phase = -.5 * (kx * kx + ky * ky) * dt;
+          let pair = multiplyPhase(this.aRe[index], this.aIm[index], phase);
+          this.aRe[index] = pair[0]; this.aIm[index] = pair[1];
+          pair = multiplyPhase(this.bRe[index], this.bIm[index], phase);
+          this.bRe[index] = pair[0]; this.bIm[index] = pair[1];
+        }
+      }
+      fft2d(this.aRe, this.aIm, width, height, true);
+      fft2d(this.bRe, this.bIm, width, height, true);
+    }
+
+    applyWeyl(dt) {
+      const { width, height } = this;
+      fft2d(this.aRe, this.aIm, width, height, false);
+      fft2d(this.bRe, this.bIm, width, height, false);
+      for (let y = 0; y < height; y += 1) {
+        const ky = TAU * (y <= height / 2 ? y : y - height) / height;
+        for (let x = 0; x < width; x += 1) {
+          const kx = TAU * (x <= width / 2 ? x : x - width) / width;
+          const index = y * width + x;
+          const magnitude = Math.hypot(kx, ky);
+          if (magnitude < 1e-12) continue;
+          const cosine = Math.cos(magnitude * dt);
+          const sineByK = Math.sin(magnitude * dt) / magnitude;
+          const aRe = this.aRe[index], aIm = this.aIm[index];
+          const bRe = this.bRe[index], bIm = this.bIm[index];
+          const offABRe = kx * bRe + ky * bIm;
+          const offABIm = kx * bIm - ky * bRe;
+          const offBARe = kx * aRe - ky * aIm;
+          const offBAIm = kx * aIm + ky * aRe;
+          this.aRe[index] = cosine * aRe + sineByK * offABIm;
+          this.aIm[index] = cosine * aIm - sineByK * offABRe;
+          this.bRe[index] = cosine * bRe + sineByK * offBAIm;
+          this.bIm[index] = cosine * bIm - sineByK * offBARe;
+        }
+      }
+      fft2d(this.aRe, this.aIm, width, height, true);
+      fft2d(this.bRe, this.bIm, width, height, true);
+    }
+
+    step(dt = .052) {
+      if (this.type === 'electron') {
+        this.applyPotential(dt * .5);
+        this.applyKinetic(dt);
+        this.applyPotential(dt * .5);
+      } else {
+        this.applyWeyl(dt * 1.13);
+      }
+      this.frame += 1;
+    }
+
+    rotateGlobal(degrees) {
+      const delta = degrees * Math.PI / 180;
+      for (const [reName, imName] of [['aRe', 'aIm'], ['bRe', 'bIm']]) {
+        const re = this[reName], im = this[imName];
+        for (let i = 0; i < this.size; i += 1) {
+          const pair = multiplyPhase(re[i], im[i], delta);
+          re[i] = pair[0]; im[i] = pair[1];
+        }
+      }
+      this.phaseDegrees = mod(this.phaseDegrees + degrees, 360);
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.min(this.width, this.height) * .052;
+      const angle = this.phaseDegrees * Math.PI / 180 + this.pulses.length * .61803398875;
+      for (let row = 0; row < this.height; row += 1) {
+        for (let col = 0; col < this.width; col += 1) {
+          const index = row * this.width + col;
+          const envelope = .030 * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread));
+          this.aRe[index] += envelope * Math.cos(angle);
+          this.aIm[index] += envelope * Math.sin(angle);
+          this.bRe[index] += envelope * .54 * Math.cos(angle + .82);
+          this.bIm[index] += envelope * .54 * Math.sin(angle + .82);
+        }
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+
+    visualAt(index) {
+      const a2 = this.aRe[index] ** 2 + this.aIm[index] ** 2;
+      const b2 = this.bRe[index] ** 2 + this.bIm[index] ** 2;
+      const density = a2 + b2;
+      const phase = Math.atan2(this.aIm[index] + this.bIm[index], this.aRe[index] + this.bRe[index]);
+      const sx = density ? 2 * (this.aRe[index] * this.bRe[index] + this.aIm[index] * this.bIm[index]) / density : 0;
+      const sy = density ? 2 * (this.aRe[index] * this.bIm[index] - this.aIm[index] * this.bRe[index]) / density : 0;
+      const sz = density ? (a2 - b2) / density : 0;
+      return { density, phase, spin: { x: sx, y: sy, z: sz } };
+    }
+
+    read() {
+      return spinRead(this);
+    }
+  }
+
+  class PhotonEngine {
+    constructor(width = 128, height = 128) {
+      this.type = 'photon';
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.e = new Float64Array(this.size);
+      this.hx = new Float64Array(this.size);
+      this.hy = new Float64Array(this.size);
+      this.frame = 0;
+      this.pulses = [];
+      this.seed();
+    }
+
+    seed() {
+      const { width, height } = this;
+      this.e.fill(0); this.hx.fill(0); this.hy.fill(0);
+      const cx = width * .23;
+      const cy = height * .50;
+      const sx = width * .083;
+      const sy = height * .13;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const envelope = Math.exp(-((x - cx) ** 2 / (2 * sx * sx) + (y - cy) ** 2 / (2 * sy * sy)));
+          const carrier = Math.cos(.58 * (x - cx));
+          this.e[index] = envelope * carrier;
+          this.hy[index] = -this.e[index];
+        }
+      }
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baseline = this.read();
+    }
+
+    step(dt = .29) {
+      const { width, height, e, hx, hy } = this;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const up = indexAt(x, y + 1, width, height);
+          const right = indexAt(x + 1, y, width, height);
+          hx[index] -= dt * (e[up] - e[index]);
+          hy[index] += dt * (e[right] - e[index]);
+        }
+      }
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const left = indexAt(x - 1, y, width, height);
+          const above = indexAt(x, y - 1, width, height);
+          e[index] += dt * ((hy[index] - hy[left]) - (hx[index] - hx[above]));
+        }
+      }
+      this.frame += 1;
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.min(this.width, this.height) * .06;
+      for (let row = 0; row < this.height; row += 1) {
+        for (let col = 0; col < this.width; col += 1) {
+          const index = row * this.width + col;
+          const pulse = .18 * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread));
+          this.e[index] += pulse;
+          this.hy[index] -= pulse;
+        }
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+
+    visualAt(index) {
+      const e = this.e[index], hx = this.hx[index], hy = this.hy[index], density = e * e + hx * hx + hy * hy, safeDensity = density || 1;
+      return { density, phase: Math.atan2(-hy, e), spin: { x: (e * e - hy * hy) / safeDensity, y: 2 * e * hy / safeDensity, z: 2 * e * hx / safeDensity } };
+    }
+
+    read() {
+      let energy = 0;
+      let px = 0;
+      let py = 0;
+      let qx = 0;
+      let qy = 0;
+      let qz = 0;
+      for (let i = 0; i < this.size; i += 1) {
+        energy += .5 * (this.e[i] ** 2 + this.hx[i] ** 2 + this.hy[i] ** 2);
+        px += -this.e[i] * this.hy[i];
+        py += this.e[i] * this.hx[i];
+        qx += this.e[i] ** 2 - this.hy[i] ** 2;
+        qy += 2 * this.e[i] * this.hy[i];
+        qz += 2 * this.e[i] * this.hx[i];
+      }
+      const fieldNorm = 2 * energy || 1;
+      return { norm: energy, energyProxy: energy, current: { x: px / (energy || 1), y: py / (energy || 1) }, spin: { x: qx / fieldNorm, y: qy / fieldNorm, z: qz / fieldNorm }, spinLength: Math.hypot(qx, qy, qz) / fieldNorm };
+    }
+  }
+
+  class ScalarEngine {
+    constructor(width = 128, height = 128) {
+      this.type = 'scalar';
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.reNow = new Float64Array(this.size);
+      this.imNow = new Float64Array(this.size);
+      this.rePrev = new Float64Array(this.size);
+      this.imPrev = new Float64Array(this.size);
+      this.reNext = new Float64Array(this.size);
+      this.imNext = new Float64Array(this.size);
+      this.c2 = .152;
+      this.m2 = .005;
+      this.frame = 0;
+      this.pulses = [];
+      this.phaseDegrees = 0;
+      this.seed();
+    }
+
+    seed() {
+      const { width, height } = this;
+      this.reNow.fill(0); this.imNow.fill(0); this.rePrev.fill(0); this.imPrev.fill(0);
+      const cxA = width * .32, cyA = height * .44;
+      const cxB = width * .68, cyB = height * .57;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const a = Math.exp(-((x - cxA) ** 2 + (y - cyA) ** 2) / 142);
+          const b = .85 * Math.exp(-((x - cxB) ** 2 + (y - cyB) ** 2) / 176);
+          const phaseA = .27 * (x - cxA) + .10 * (y - cyA);
+          const phaseB = -.22 * (x - cxB) + .12 * (y - cyB) + 2.5;
+          this.reNow[index] = a * Math.cos(phaseA) + b * Math.cos(phaseB);
+          this.imNow[index] = a * Math.sin(phaseA) + b * Math.sin(phaseB);
+          this.rePrev[index] = a * Math.cos(phaseA + .34) + b * Math.cos(phaseB + .34);
+          this.imPrev[index] = a * Math.sin(phaseA + .34) + b * Math.sin(phaseB + .34);
+        }
+      }
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.phaseDegrees = 0;
+      this.baseline = this.read();
+    }
+
+    step() {
+      const { width, height, c2, m2, reNow, imNow, rePrev, imPrev, reNext, imNext } = this;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const right = indexAt(x + 1, y, width, height);
+          const left = indexAt(x - 1, y, width, height);
+          const down = indexAt(x, y + 1, width, height);
+          const up = indexAt(x, y - 1, width, height);
+          reNext[index] = 2 * reNow[index] - rePrev[index] + c2 * (reNow[right] + reNow[left] + reNow[down] + reNow[up] - 4 * reNow[index]) - m2 * reNow[index];
+          imNext[index] = 2 * imNow[index] - imPrev[index] + c2 * (imNow[right] + imNow[left] + imNow[down] + imNow[up] - 4 * imNow[index]) - m2 * imNow[index];
+        }
+      }
+      this.rePrev = this.reNow; this.imPrev = this.imNow;
+      this.reNow = this.reNext; this.imNow = this.imNext;
+      this.reNext = this.rePrev; this.imNext = this.imPrev;
+      this.frame += 1;
+    }
+
+    rotateGlobal(degrees) {
+      const angle = degrees * Math.PI / 180;
+      for (const [reName, imName] of [['reNow', 'imNow'], ['rePrev', 'imPrev']]) {
+        const re = this[reName], im = this[imName];
+        for (let i = 0; i < this.size; i += 1) {
+          const pair = multiplyPhase(re[i], im[i], angle);
+          re[i] = pair[0]; im[i] = pair[1];
+        }
+      }
+      this.phaseDegrees = mod(this.phaseDegrees + degrees, 360);
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.min(this.width, this.height) * .06;
+      const phase = this.phaseDegrees * Math.PI / 180 + this.pulses.length * .618;
+      for (let row = 0; row < this.height; row += 1) {
+        for (let col = 0; col < this.width; col += 1) {
+          const index = row * this.width + col;
+          const amplitude = .55 * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread));
+          this.reNow[index] += amplitude * Math.cos(phase);
+          this.imNow[index] += amplitude * Math.sin(phase);
+          this.rePrev[index] += amplitude * Math.cos(phase + .22);
+          this.imPrev[index] += amplitude * Math.sin(phase + .22);
+        }
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+
+    visualAt(index) {
+      const re = this.reNow[index], im = this.imNow[index];
+      return { density: re * re + im * im, phase: Math.atan2(im, re), spin: { x: 0, y: 0, z: 0 } };
+    }
+
+    read() {
+      const { width, height, reNow, imNow, rePrev, imPrev, c2, m2 } = this;
+      let charge = 0;
+      let energy = 0;
+      let totalDensity = 0;
+      let meanRe = 0;
+      let meanIm = 0;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const index = y * width + x;
+          const right = indexAt(x + 1, y, width, height);
+          const left = indexAt(x - 1, y, width, height);
+          const down = indexAt(x, y + 1, width, height);
+          const up = indexAt(x, y - 1, width, height);
+          const vr = reNow[index] - rePrev[index];
+          const vi = imNow[index] - imPrev[index];
+          const gxR = (reNow[right] - reNow[left]) * .5;
+          const gxI = (imNow[right] - imNow[left]) * .5;
+          const gyR = (reNow[down] - reNow[up]) * .5;
+          const gyI = (imNow[down] - imNow[up]) * .5;
+          const density = reNow[index] ** 2 + imNow[index] ** 2;
+          totalDensity += density;
+          meanRe += reNow[index];
+          meanIm += imNow[index];
+          charge += reNow[index] * vi - imNow[index] * vr;
+          energy += .5 * (vr * vr + vi * vi + c2 * (gxR * gxR + gxI * gxI + gyR * gyR + gyI * gyI) + m2 * density);
+        }
+      }
+      const coherenceScale = Math.sqrt(Math.max(totalDensity * this.size, 1e-12));
+      return { norm: charge, charge, energyProxy: energy, current: { x: 0, y: 0 }, spin: { x: meanRe / coherenceScale, y: meanIm / coherenceScale, z: Math.tanh(charge / Math.sqrt(Math.max(totalDensity, 1e-12))) }, spinLength: Math.hypot(meanRe / coherenceScale, meanIm / coherenceScale, Math.tanh(charge / Math.sqrt(Math.max(totalDensity, 1e-12)))) };
+    }
+  }
+
+  // The memory field keeps the previously separate Noether–Klein visual
+  // carrier inside the shared reader. Its field law remains a complex scalar
+  // update; the retained samples are a display receipt, not a physical-memory
+  // measurement.
+  class NoetherKleinEngine extends ScalarEngine {
+    constructor(width = 160, height = 112) {
+      super(width, height);
+      this.type = 'noether';
+      this.c2 = .160;
+      this.m2 = .004;
+      this.memoryLimit = 156;
+      this.seed();
+    }
+
+    packet(x, y, cx, cy, spread, kx, ky, phaseOffset, amplitude) {
+      const dx = x - cx;
+      const dy = y - cy;
+      const envelope = amplitude * Math.exp(-(dx * dx + dy * dy) / (2 * spread * spread));
+      const theta = kx * dx + ky * dy + phaseOffset;
+      const omega = Math.sqrt(this.m2 + 4 * this.c2 * (Math.sin(kx / 2) ** 2 + Math.sin(ky / 2) ** 2));
+      return { envelope, theta, omega };
+    }
+
+    seed() {
+      const { width, height, reNow, imNow, rePrev, imPrev } = this;
+      reNow.fill(0); imNow.fill(0); rePrev.fill(0); imPrev.fill(0);
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const a = this.packet(x, y, width * .30, height * .46, Math.min(width, height) * .094, .24, .085, .15, .96);
+          const b = this.packet(x, y, width * .70, height * .56, Math.min(width, height) * .105, -.20, .115, Math.PI * .83, .88);
+          const ringDistance = Math.hypot(x - width * .50, y - height * .50);
+          const ringEnvelope = .13 * Math.exp(-((ringDistance - Math.min(width, height) * .18) ** 2) / (Math.min(width, height) * .42));
+          const ringTheta = ringDistance * .42 - .7;
+          const ringOmega = Math.sqrt(this.m2 + 4 * this.c2 * Math.sin(.42 / 2) ** 2);
+          const index = y * width + x;
+          reNow[index] = a.envelope * Math.cos(a.theta) + b.envelope * Math.cos(b.theta) + ringEnvelope * Math.cos(ringTheta);
+          imNow[index] = a.envelope * Math.sin(a.theta) + b.envelope * Math.sin(b.theta) + ringEnvelope * Math.sin(ringTheta);
+          rePrev[index] = a.envelope * Math.cos(a.theta + a.omega) + b.envelope * Math.cos(b.theta + b.omega) + ringEnvelope * Math.cos(ringTheta + ringOmega);
+          imPrev[index] = a.envelope * Math.sin(a.theta + a.omega) + b.envelope * Math.sin(b.theta + b.omega) + ringEnvelope * Math.sin(ringTheta + ringOmega);
+        }
+      }
+      this.frame = 0;
+      this.pulses = [];
+      this.phaseDegrees = 0;
+      this.memory = [];
+      this.baseline = this.read();
+      this.retainMemory(true);
+    }
+
+    retainMemory(force = false) {
+      if (!force && this.frame % 3 !== 0) return;
+      const m = this.read();
+      this.memory.push({ frame: this.frame, phase: m.probePhase, charge: m.charge, energy: m.energyProxy, x: m.centroid.x, y: m.centroid.y, centroidResolved: m.centroid.resolved });
+      const limit = this.memoryLimit || 156;
+      if (this.memory.length > limit) this.memory.shift();
+    }
+
+    step() {
+      super.step();
+      this.retainMemory();
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      super.inject(x, y);
+      this.baseline = this.read();
+      this.retainMemory(true);
+    }
+
+    circularCentroid() {
+      let total = 0;
+      let xCos = 0;
+      let xSin = 0;
+      let yCos = 0;
+      let ySin = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const density = this.reNow[index] ** 2 + this.imNow[index] ** 2;
+          total += density;
+          xCos += density * Math.cos(TAU * x / this.width);
+          xSin += density * Math.sin(TAU * x / this.width);
+          yCos += density * Math.cos(TAU * y / this.height);
+          ySin += density * Math.sin(TAU * y / this.height);
+        }
+      }
+      const safeTotal = total || 1;
+      const xResultant = Math.hypot(xCos, xSin) / safeTotal;
+      const yResultant = Math.hypot(yCos, ySin) / safeTotal;
+      if (!Number.isFinite(xResultant) || !Number.isFinite(yResultant) || xResultant < 1e-8 || yResultant < 1e-8) return { x: null, y: null, resolved: false, xResultant, yResultant };
+      return { x: mod(Math.atan2(xSin, xCos) / TAU, 1), y: mod(Math.atan2(ySin, yCos) / TAU, 1), resolved: true, xResultant, yResultant };
+    }
+
+    read() {
+      const base = super.read();
+      const center = Math.floor(this.height / 2) * this.width + Math.floor(this.width / 2);
+      const probePhase = Math.atan2(this.imNow[center], this.reNow[center]);
+      const centroid = this.circularCentroid();
+      const offsetX = centroid.resolved ? centroid.x - .5 : 0;
+      const offsetY = centroid.resolved ? centroid.y - .5 : 0;
+      return {
+        ...base,
+        current: { x: centroid.resolved ? offsetX : null, y: centroid.resolved ? offsetY : null, resolved: centroid.resolved, xResultant: centroid.xResultant, yResultant: centroid.yResultant },
+        spin: { x: offsetX * 2, y: offsetY * 2, z: Math.sin(probePhase) },
+        centroid,
+        probePhase,
+        memoryCount: this.memory ? this.memory.length : 0
+      };
+    }
+
+    audit(m) {
+      const drift = relative(m.charge, this.baseline.charge);
+      return Math.abs(drift) < 1e-10 ? 'PASS · U(1) charge proxy' : 'WATCH · charge-proxy drift';
+    }
+  }
+
+  // A real, one-dimensional phi^4 field with a double-well potential.
+  class Higgs1DEngine {
+    constructor(width = 192, height = 96) {
+      this.type = 'higgs1d';
+      this.dimension = 1;
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.phiNow = new Float64Array(width);
+      this.phiPrev = new Float64Array(width);
+      this.phiNext = new Float64Array(width);
+      this.c2 = .22;
+      this.lambda = .032;
+      this.v = .86;
+      this.frame = 0;
+      this.pulses = [];
+      this.seed();
+    }
+
+    seed() {
+      for (let x = 0; x < this.width; x += 1) {
+        const q = x / this.width;
+        const domain = this.v * Math.tanh((x - this.width * .34) / 7) * Math.tanh((x - this.width * .66) / 7);
+        const ripple = .048 * Math.sin(TAU * 3 * q + .31);
+        this.phiNow[x] = domain + ripple;
+        this.phiPrev[x] = domain + .048 * Math.sin(TAU * 3 * q + .31 + .22);
+      }
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.baseline = this.read();
+    }
+
+    step() {
+      for (let x = 0; x < this.width; x += 1) {
+        const left = mod(x - 1, this.width);
+        const right = mod(x + 1, this.width);
+        const value = this.phiNow[x];
+        const lap = this.phiNow[right] + this.phiNow[left] - 2 * value;
+        const force = this.lambda * (value * value - this.v * this.v) * value;
+        this.phiNext[x] = 2 * value - this.phiPrev[x] + this.c2 * lap - force;
+      }
+      const previous = this.phiPrev;
+      this.phiPrev = this.phiNow;
+      this.phiNow = this.phiNext;
+      this.phiNext = previous;
+      this.frame += 1;
+    }
+
+    inject(x = this.width * .5) {
+      const spread = Math.max(3, this.width * .032);
+      for (let index = 0; index < this.width; index += 1) {
+        const kick = .17 * Math.exp(-((index - x) ** 2) / (2 * spread * spread));
+        this.phiPrev[index] -= kick;
+      }
+      this.pulses.push({ x: x / this.width, y: .5, frame: this.frame });
+    }
+
+    profileAt(x) {
+      const index = clamp(Math.round(x), 0, this.width - 1);
+      return { value: this.phiNow[index], velocity: this.phiNow[index] - this.phiPrev[index] };
+    }
+
+    visualAt(index) {
+      const x = index % this.width;
+      const y = Math.floor(index / this.width);
+      const value = this.phiNow[x];
+      const velocity = value - this.phiPrev[x];
+      const yNorm = y / Math.max(1, this.height - 1) - .5;
+      const bandCenter = -value / Math.max(this.v, 1e-9) * .22;
+      const ribbon = Math.exp(-((yNorm - bandCenter) ** 2) * 84);
+      return {
+        density: ribbon * (.15 + Math.abs(value) / Math.max(this.v, 1e-9)),
+        phase: value >= 0 ? velocity * 3 : Math.PI + velocity * 3,
+        spin: { x: clamp(value / this.v, -1, 1), y: clamp(velocity * 4, -1, 1), z: Math.tanh(value * velocity * 3) }
+      };
+    }
+
+    read() {
+      let energy = 0;
+      let magnitude = 0;
+      let mean = 0;
+      let meanVelocity = 0;
+      let walls = 0;
+      for (let x = 0; x < this.width; x += 1) {
+        const right = mod(x + 1, this.width);
+        const value = this.phiNow[x];
+        const velocity = this.phiNow[x] - this.phiPrev[x];
+        const gradient = this.phiNow[right] - value;
+        energy += .5 * velocity * velocity + .5 * this.c2 * gradient * gradient + this.lambda * .25 * (value * value - this.v * this.v) ** 2;
+        magnitude += Math.abs(value);
+        mean += value;
+        meanVelocity += velocity;
+        if (value * this.phiNow[right] < 0) walls += 1;
+      }
+      const order = mean / this.width / this.v;
+      return {
+        norm: magnitude / this.width / this.v,
+        energyProxy: energy / this.width,
+        current: { x: order, y: meanVelocity / this.width },
+        spin: { x: clamp(order, -1, 1), y: clamp(meanVelocity / this.width * 4, -1, 1), z: clamp(walls / 4, 0, 1) },
+        spinLength: 1,
+        order,
+        walls
+      };
+    }
+
+    audit(m) {
+      const drift = relative(m.energyProxy, this.baseline.energyProxy);
+      return Math.abs(drift) < .35 ? 'PASS · bounded φ⁴ slice' : 'WATCH · energy-proxy drift';
+    }
+  }
+
+  // Analytic, normalized two-basis orbital slices. They deliberately expose
+  // the projection boundary: the canvas is a 2D effective orbital view.
+  class OrbitalEngine {
+    constructor(type, width = 128, height = 128) {
+      this.type = type;
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.re = new Float64Array(this.size);
+      this.im = new Float64Array(this.size);
+      this.sBasis = new Float64Array(this.size);
+      this.pBasis = new Float64Array(this.size);
+      this.frame = 0;
+      this.pulses = [];
+      this.phaseDegrees = 0;
+      this.mix = type === 'lithium' ? .20 : .16;
+      this.energyGap = type === 'lithium' ? .045 : .115;
+      this.scale = type === 'lithium' ? Math.min(width, height) * .145 : Math.min(width, height) * .135;
+      this.seed();
+    }
+
+    normalizeBasis(array) {
+      let sum = 0;
+      for (let i = 0; i < array.length; i += 1) sum += array[i] * array[i];
+      const scale = 1 / Math.sqrt(sum || 1);
+      for (let i = 0; i < array.length; i += 1) array[i] *= scale;
+    }
+
+    seed() {
+      const cx = (this.width - 1) * .5;
+      const cy = (this.height - 1) * .5;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const dx = x - cx;
+          const dy = y - cy;
+          const r = Math.hypot(dx, dy);
+          if (this.type === 'lithium') {
+            const q = r / this.scale;
+            this.sBasis[index] = (1 - q * .72) * Math.exp(-q * .72);
+            this.pBasis[index] = (dx / this.scale) * Math.exp(-q * .84);
+          } else {
+            const q = r / this.scale;
+            this.sBasis[index] = Math.exp(-q);
+            this.pBasis[index] = (dx / this.scale) * Math.exp(-q * .64);
+          }
+        }
+      }
+      this.normalizeBasis(this.sBasis);
+      this.normalizeBasis(this.pBasis);
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.phaseDegrees = 0;
+      this.rebuild();
+      this.baseline = this.read();
+    }
+
+    rebuild() {
+      const phase = this.phaseDegrees * Math.PI / 180;
+      const slow = this.frame * this.energyGap;
+      const cs = Math.cos(phase - slow * .32);
+      const ss = Math.sin(phase - slow * .32);
+      const cp = Math.cos(phase - slow * 1.32 + .71);
+      const sp = Math.sin(phase - slow * 1.32 + .71);
+      const latest = this.pulses.slice(-4);
+      let norm = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          let re = this.sBasis[index] * cs + this.mix * this.pBasis[index] * cp;
+          let im = this.sBasis[index] * ss + this.mix * this.pBasis[index] * sp;
+          for (const pulse of latest) {
+            const age = this.frame - pulse.frame;
+            const envelope = pulse.amplitude * Math.exp(-age / 145) * Math.exp(-((x - pulse.x) ** 2 + (y - pulse.y) ** 2) / (2 * pulse.spread * pulse.spread));
+            const pulsePhase = pulse.phase - age * .085;
+            re += envelope * Math.cos(pulsePhase);
+            im += envelope * Math.sin(pulsePhase);
+          }
+          this.re[index] = re;
+          this.im[index] = im;
+          norm += re * re + im * im;
+        }
+      }
+      const scale = 1 / Math.sqrt(norm || 1);
+      for (let i = 0; i < this.size; i += 1) { this.re[i] *= scale; this.im[i] *= scale; }
+    }
+
+    step() { this.frame += 1; this.rebuild(); }
+
+    rotateGlobal(degrees) {
+      this.phaseDegrees = mod(this.phaseDegrees + degrees, 360);
+      this.rebuild();
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      this.pulses.push({ x, y, frame: this.frame, phase: this.phaseDegrees * Math.PI / 180 + this.pulses.length * .618, amplitude: .13, spread: Math.min(this.width, this.height) * .085 });
+      this.rebuild();
+    }
+
+    visualAt(index) {
+      const re = this.re[index];
+      const im = this.im[index];
+      return { density: re * re + im * im, phase: Math.atan2(im, re), spin: { x: 0, y: 0, z: 0 } };
+    }
+
+    read() {
+      let norm = 0;
+      let energy = 0;
+      let xMoment = 0;
+      let yMoment = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const density = this.re[index] ** 2 + this.im[index] ** 2;
+          norm += density;
+          xMoment += x * density;
+          yMoment += y * density;
+          energy += density * (1 + (this.type === 'lithium' ? .28 : .52) * this.mix * this.mix);
+        }
+      }
+      const centroid = { x: xMoment / Math.max(norm, 1e-12) / this.width, y: yMoment / Math.max(norm, 1e-12) / this.height };
+      return {
+        norm,
+        energyProxy: energy,
+        current: { x: centroid.x - .5, y: centroid.y - .5 },
+        spin: { x: (centroid.x - .5) * 2, y: (centroid.y - .5) * 2, z: this.mix },
+        spinLength: 1,
+        centroid
+      };
+    }
+
+    audit(m) {
+      const drift = relative(m.norm, this.baseline.norm);
+      return Math.abs(drift) < 2e-11 ? 'PASS · normalized orbital slice' : 'WATCH · normalization drift';
+    }
+  }
+
+  // A two-coordinate, exchange-symmetric configuration-space slice. The
+  // square is explicitly (r1,r2), never a square-shaped helium atom.
+  class HeliumEngine {
+    constructor(width = 128, height = 128) {
+      this.type = 'helium';
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.re = new Float64Array(this.size);
+      this.im = new Float64Array(this.size);
+      this.frame = 0;
+      this.phaseDegrees = 0;
+      this.pulses = [];
+      this.seed();
+    }
+
+    seed() {
+      this.frame = 0;
+      this.phaseDegrees = 0;
+      this.pulses.length = 0;
+      this.rebuild();
+      this.baseline = this.read();
+    }
+
+    rebuild() {
+      const phase = this.phaseDegrees * Math.PI / 180;
+      const breathing = .14 * Math.sin(this.frame * .045);
+      const scale = 1.18 + breathing;
+      const latest = this.pulses.slice(-3);
+      let norm = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const r1 = x / Math.max(1, this.width - 1) * 5.8;
+          const r2 = y / Math.max(1, this.height - 1) * 5.8;
+          const orbital = Math.exp(-(r1 + r2) / scale);
+          const correlation = 1 - .42 * Math.exp(-((r1 - r2) ** 2) / .26);
+          const configuration = 1 + .11 * Math.cos(this.frame * .071) * ((r1 + r2) / 5.8 - .75);
+          let re = orbital * correlation * configuration * Math.cos(phase - this.frame * .035);
+          let im = orbital * correlation * configuration * Math.sin(phase - this.frame * .035);
+          for (const pulse of latest) {
+            const age = this.frame - pulse.frame;
+            const envelope = .08 * Math.exp(-age / 130) * Math.exp(-((x - pulse.x) ** 2 + (y - pulse.y) ** 2) / (2 * pulse.spread * pulse.spread));
+            const localPhase = pulse.phase - age * .055;
+            re += envelope * Math.cos(localPhase);
+            im += envelope * Math.sin(localPhase);
+          }
+          this.re[index] = re;
+          this.im[index] = im;
+          norm += re * re + im * im;
+        }
+      }
+      const normalize = 1 / Math.sqrt(norm || 1);
+      for (let i = 0; i < this.size; i += 1) { this.re[i] *= normalize; this.im[i] *= normalize; }
+    }
+
+    step() { this.frame += 1; this.rebuild(); }
+
+    rotateGlobal(degrees) { this.phaseDegrees = mod(this.phaseDegrees + degrees, 360); this.rebuild(); }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      this.pulses.push({ x, y, frame: this.frame, phase: this.phaseDegrees * Math.PI / 180 + this.pulses.length * .618, spread: Math.min(this.width, this.height) * .07 });
+      this.rebuild();
+    }
+
+    visualAt(index) {
+      const re = this.re[index];
+      const im = this.im[index];
+      return { density: re * re + im * im, phase: Math.atan2(im, re), spin: { x: 0, y: 0, z: 0 } };
+    }
+
+    read() {
+      let norm = 0;
+      let diagonal = 0;
+      let offDiagonal = 0;
+      let energy = 0;
+      for (let y = 0; y < this.height; y += 1) {
+        for (let x = 0; x < this.width; x += 1) {
+          const index = y * this.width + x;
+          const density = this.re[index] ** 2 + this.im[index] ** 2;
+          norm += density;
+          energy += density * (1 + Math.abs(x - y) / Math.max(this.width, this.height));
+          if (Math.abs(x - y) < 3) diagonal += density;
+          if (Math.abs(x - y) > this.width * .16) offDiagonal += density;
+        }
+      }
+      const correlation = (offDiagonal - diagonal) / Math.max(norm, 1e-12);
+      return {
+        norm,
+        energyProxy: energy,
+        current: { x: correlation, y: 0 },
+        spin: { x: 0, y: correlation, z: Math.cos(this.frame * .045) },
+        spinLength: 1,
+        correlation
+      };
+    }
+
+    audit(m) {
+      const drift = relative(m.norm, this.baseline.norm);
+      return Math.abs(drift) < 2e-11 ? 'PASS · exchange-symmetric slice' : 'WATCH · normalization drift';
+    }
+  }
+
+  // A dimensionless three-mass H2O normal-mode read. Its atoms and bonds are
+  // a geometric mode display, not an electronic-structure or chemistry model.
+  class WaterEngine {
+    constructor(width = 160, height = 112) {
+      this.type = 'water';
+      this.width = width;
+      this.height = height;
+      this.size = width * height;
+      this.frame = 0;
+      this.pulses = [];
+      this.kick = 0;
+      this.geometry = null;
+      this.seed();
+    }
+
+    updateGeometry() {
+      const t = this.frame * .058;
+      const qStretch = .11 * Math.sin(t) + this.kick * .08;
+      const qBend = .075 * Math.sin(t * 1.618 + .78) + this.kick * .035;
+      const bond = .235 + qStretch;
+      const halfAngle = Math.PI * (52.25 + qBend * 96) / 180;
+      const oxygen = { x: .5, y: .56 };
+      const h1 = { x: oxygen.x - Math.sin(halfAngle) * bond, y: oxygen.y - Math.cos(halfAngle) * bond };
+      const h2 = { x: oxygen.x + Math.sin(halfAngle) * bond, y: oxygen.y - Math.cos(halfAngle) * bond };
+      this.geometry = { oxygen, h1, h2, qStretch, qBend, halfAngle };
+    }
+
+    seed() {
+      this.frame = 0;
+      this.pulses.length = 0;
+      this.kick = 0;
+      this.updateGeometry();
+      this.baseline = this.read();
+    }
+
+    step() {
+      this.frame += 1;
+      this.kick *= .988;
+      this.updateGeometry();
+    }
+
+    inject(x = this.width * .5, y = this.height * .5) {
+      this.kick += .75 * (1 - .35 * Math.hypot(x / this.width - .5, y / this.height - .5));
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+      this.updateGeometry();
+    }
+
+    visualAt(index) {
+      const x = (index % this.width) / Math.max(1, this.width - 1);
+      const y = Math.floor(index / this.width) / Math.max(1, this.height - 1);
+      const g = this.geometry;
+      const gaussian = (point, spread) => Math.exp(-((x - point.x) ** 2 + (y - point.y) ** 2) / (2 * spread * spread));
+      const oxygen = gaussian(g.oxygen, .075);
+      const h1 = gaussian(g.h1, .052);
+      const h2 = gaussian(g.h2, .052);
+      const density = .82 * oxygen + .34 * (h1 + h2);
+      const phase = Math.atan2(y - g.oxygen.y, x - g.oxygen.x) + g.qStretch * 6 + g.qBend * 4;
+      return { density: density * density, phase, spin: { x: g.qStretch * 5, y: g.qBend * 7, z: Math.cos(this.frame * .058) } };
+    }
+
+    read() {
+      const g = this.geometry;
+      const stretchVelocity = .11 * .058 * Math.cos(this.frame * .058);
+      const bendVelocity = .075 * .058 * 1.618 * Math.cos(this.frame * .058 * 1.618 + .78);
+      const energy = .5 * (stretchVelocity ** 2 + bendVelocity ** 2 + 1.8 * g.qStretch ** 2 + 2.5 * g.qBend ** 2);
+      return {
+        norm: Math.hypot(g.qStretch, g.qBend),
+        energyProxy: energy,
+        current: { x: g.qStretch, y: g.qBend },
+        spin: { x: clamp(g.qStretch * 5, -1, 1), y: clamp(g.qBend * 7, -1, 1), z: Math.cos(this.frame * .058) },
+        spinLength: 1,
+        geometry: g
+      };
+    }
+
+    audit(m) {
+      return Number.isFinite(m.energyProxy) ? 'PASS · three-mass normal mode' : 'WATCH · invalid mode value';
+    }
+  }
+
+  class Phi4DisplayEngine extends Phi4Core.Engine {
+    constructor(width = 96, height = 96) {
+      super({ width: width === 128 ? 96 : width, height: height === 128 ? 96 : height });
+      this.dimension = 2;
+      this.seedVortexPair();
+      this.baseline = this.read();
+    }
+    seedVortexPair() {
+      const first = [this.width * .37, this.height * .50, 1];
+      const second = [this.width * .63, this.height * .50, -1];
+      const core = Math.min(this.width, this.height) * .034, omega = .057;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) {
+        const index = y * this.width + x;
+        let amplitude = this.v, phase = 0;
+        for (const [cx, cy, sign] of [first, second]) { const radius = Math.hypot(x - cx, y - cy); amplitude *= Math.tanh(radius / core); phase += sign * Math.atan2(y - cy, x - cx); }
+        this.reNow[index] = amplitude * Math.cos(phase); this.imNow[index] = amplitude * Math.sin(phase);
+        this.rePrev[index] = amplitude * Math.cos(phase - omega * this.dt); this.imPrev[index] = amplitude * Math.sin(phase - omega * this.dt);
+      }
+      this.frame = 0; this.pulses.length = 0; this.baselineCharge = this.charge();
+    }
+    step(count = 1) { super.step(count); }
+    windingAt(cx, cy, radius = Math.min(this.width, this.height) * .075) {
+      let total = 0, previous = null;
+      for (let tick = 0; tick <= 48; tick += 1) { const angle = TAU * tick / 48, x = mod(Math.round(cx + radius * Math.cos(angle)), this.width), y = mod(Math.round(cy + radius * Math.sin(angle)), this.height), phase = Math.atan2(this.imNow[y * this.width + x], this.reNow[y * this.width + x]); if (previous !== null) total += Math.atan2(Math.sin(phase - previous), Math.cos(phase - previous)); previous = phase; }
+      return total / TAU;
+    }
+    windingNumbers() { return [this.windingAt(this.width * .37, this.height * .50), this.windingAt(this.width * .63, this.height * .50)]; }
+    plaquetteWinding(x, y) {
+      const phaseAt = (col, row) => Math.atan2(this.imNow[mod(row, this.height) * this.width + mod(col, this.width)], this.reNow[mod(row, this.height) * this.width + mod(col, this.width)]);
+      const phases = [phaseAt(x, y), phaseAt(x + 1, y), phaseAt(x + 1, y + 1), phaseAt(x, y + 1), phaseAt(x, y)];
+      let total = 0; for (let i = 0; i < 4; i += 1) total += Math.atan2(Math.sin(phases[i + 1] - phases[i]), Math.cos(phases[i + 1] - phases[i]));
+      return total / TAU;
+    }
+    vortexCount() {
+      let positive = 0, negative = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) { const winding = this.plaquetteWinding(x, y); if (winding > .5) positive += 1; if (winding < -.5) negative += 1; }
+      return { positive, negative, total: positive + negative };
+    }
+    read() {
+      let magnitude = 0, phaseX = 0, phaseY = 0;
+      for (let i = 0; i < this.size; i += 1) { magnitude += this.densityAt(i); phaseX += this.reNow[i]; phaseY += this.imNow[i]; }
+      const radial = Math.hypot(phaseX, phaseY) || 1;
+      return { norm: this.charge(), energyProxy: this.energyProxy(), current: { x: phaseX / this.size, y: phaseY / this.size }, spin: { x: phaseX / radial, y: phaseY / radial, z: Math.min(1, Math.max(-1, (magnitude / this.size - this.v * this.v))) } };
+    }
+    audit() { return Math.abs(this.relativeChargeDrift()) < 2e-10 ? 'PASS · discrete U(1) charge' : 'WATCH · charge drift'; }
+  }
+
+  class OscillationDisplayEngine extends OscillationCore.OscillationEngine {
+    constructor(width = 96, height = 96) {
+      super(); this.width = width === 128 ? 96 : width; this.height = height === 128 ? 96 : height; this.size = this.width * this.height; this.dimension = 2; this.baseline = this.read();
+    }
+    visualAt(index) {
+      const r = this.read(), x = index % this.width, y = Math.floor(index / this.width), horizontal = x / Math.max(1, this.width - 1), vertical = y / Math.max(1, this.height - 1);
+      const alphaLobe = Math.exp(-((horizontal - .28) ** 2 + (vertical - .50) ** 2) / .055);
+      const betaLobe = Math.exp(-((horizontal - .72) ** 2 + (vertical - .50) ** 2) / .055);
+      return { density: r.alphaProbability * alphaLobe + r.betaProbability * betaLobe, phase: horizontal < .5 ? Math.atan2(this.flavourState().alpha.im, this.flavourState().alpha.re) : Math.atan2(this.flavourState().beta.im, this.flavourState().beta.re), spin: r.compass };
+    }
+    inject(x = 0, y = 0) { this.injectFlavour(x / this.width < .5 ? 'alpha' : 'beta'); this.baseline = this.read(); }
+    rotateGlobal() { /* flavour probabilities are global-phase invariant by construction. */ }
+    read() { const r = super.read(), closedFormApplies = this.initialFlavour === 'alpha' && this.pulses.length === 0; return { norm: r.totalProbability, energyProxy: closedFormApplies ? r.expectedTransition : r.betaProbability, current: { x: r.alphaProbability, y: r.betaProbability }, spin: r.compass, closedFormApplies, ...r }; }
+  }
+
+  class DiracDisplayEngine extends DiracCore.MassiveDiracEngine {
+    constructor(width = 128, height = 128) { super(width, height); this.dimension = 2; this.pulses = []; }
+    circularCentroid() {
+      let xCos = 0, xSin = 0, yCos = 0, ySin = 0, norm = 0;
+      for (let y = 0; y < this.height; y += 1) for (let x = 0; x < this.width; x += 1) { const i = y * this.width + x, density = this.aRe[i] ** 2 + this.aIm[i] ** 2 + this.bRe[i] ** 2 + this.bIm[i] ** 2; norm += density; xCos += density * Math.cos(TAU * x / this.width); xSin += density * Math.sin(TAU * x / this.width); yCos += density * Math.cos(TAU * y / this.height); ySin += density * Math.sin(TAU * y / this.height); }
+      const safeNorm = norm || 1;
+      const xResultant = Math.hypot(xCos, xSin) / safeNorm;
+      const yResultant = Math.hypot(yCos, ySin) / safeNorm;
+      if (!Number.isFinite(xResultant) || !Number.isFinite(yResultant) || xResultant < 1e-8 || yResultant < 1e-8) return { x: null, y: null, resolved: false, xResultant, yResultant };
+      return { x: mod(Math.atan2(xSin, xCos) / TAU, 1), y: mod(Math.atan2(ySin, yCos) / TAU, 1), resolved: true, xResultant, yResultant };
+    }
+    read() { const r = super.read(), centroid = this.circularCentroid(); return { ...r, energyProxy: this.mass, current: centroid, centroid }; }
+    inject(x = this.width * .5, y = this.height * .5) {
+      const spread = Math.min(this.width, this.height) * .055;
+      for (let row = 0; row < this.height; row += 1) for (let col = 0; col < this.width; col += 1) {
+        const i = row * this.width + col, angle = .72 * Math.exp(-((col - x) ** 2 + (row - y) ** 2) / (2 * spread * spread)), c = Math.cos(angle), s = Math.sin(angle), ar = this.aRe[i], ai = this.aIm[i], br = this.bRe[i], bi = this.bIm[i];
+        this.aRe[i] = c * ar - s * br; this.aIm[i] = c * ai - s * bi; this.bRe[i] = s * ar + c * br; this.bIm[i] = s * ai + c * bi;
+      }
+      this.pulses.push({ x: x / this.width, y: y / this.height, frame: this.frame });
+    }
+    rotateGlobal(degrees) { const a = degrees * Math.PI / 180, c = Math.cos(a), s = Math.sin(a); for (const [re, im] of [[this.aRe, this.aIm], [this.bRe, this.bIm]]) for (let i = 0; i < this.size; i += 1) { const rr = re[i], ii = im[i]; re[i] = rr * c - ii * s; im[i] = rr * s + ii * c; } }
+    audit(m) { return Math.abs(m.norm - this.baseline.norm) < 3e-10 ? 'PASS · spectral norm' : 'WATCH · norm residual'; }
+  }
+
+  class FluxRingDisplayEngine extends GaugeCore.U1FluxRingEngine {
+    constructor(width = 128, height = 128) { super(width, height); this.dimension = 2; }
+  }
+
+  class SU3DisplayEngine extends GaugeCore.SU3ColorTransportEngine {
+    constructor(width = 64, height = 64) { super(width === 128 ? 64 : width, height === 128 ? 64 : height); this.dimension = 2; }
+  }
+
+  const SPECIES = {
+    electron: {
+      label: 'Electron', family: 'FERMION −1', spin: '½', charge: '−e',
+      equation: 'Pauli spinor: i∂tΨ = [−½∇² + V − ½B·σ]Ψ',
+      detail: 'One prepared charged spin-½ state on a finite 2D grid. The scalar aperture potential and Zeeman term are declared effective external fields; orbital coupling to a vector potential is outside this build.',
+      read: 'Brightness = probability density · hue = spinor projection phase · ring = spin expectation.',
+      hasGlobalPhase: true, filaments: true, tone: 43, readoutLabel: 'SPIN READ', metricLabel: 'NORM', currentLabel: 'NET CURRENT', readAxes: 'σx, σy, σz'
+    },
+    neutrino: {
+      label: 'Neutral spinor', family: 'FERMION −1', spin: '½', charge: '0',
+      equation: 'Massless 2D Weyl-type spinor: i∂tΨ = −iσ·∇Ψ',
+      detail: 'A finite massless two-component spinor carrier. It is not a three-flavour neutrino-oscillation or weak-interaction calculation.',
+      read: 'Brightness = probability density · hue = spinor phase · ring = spin expectation. The current read is the integrated Weyl current ⟨σₓ, σᵧ⟩.',
+      hasGlobalPhase: true, filaments: true, tone: 43, readoutLabel: 'SPIN READ', metricLabel: 'NORM', currentLabel: 'WEYL CURRENT ⟨σ⟩', readAxes: 'σx, σy, σz'
+    },
+    photon: {
+      label: 'Photon mode', family: 'BOSON +1', spin: '1', charge: '0',
+      equation: '2D transverse Maxwell update: ∂tE = ∇×H, ∂tH = −∇×E',
+      detail: 'One finite transverse electromagnetic mode on a periodic 2D grid. It is a classical field mode, not a photon-counting measurement.',
+      read: 'Brightness = local electromagnetic amplitude · hue = field quadrature · filaments = Poynting direction.',
+      hasGlobalPhase: false, filaments: true, tone: 200, readoutLabel: 'FIELD-QUADRATURE READ', metricLabel: 'FIELD ENERGY', currentLabel: 'POYNTING READ', readAxes: 'E²−Hᵧ², 2EHᵧ, 2EHₓ'
+    },
+    scalar: {
+      label: 'Scalar mode', family: 'BOSON +1', spin: '0', charge: '0',
+      equation: '(∂t² − c²∇² + m²)φ = 0',
+      detail: 'A complex Klein–Gordon-type scalar carrier with its own finite update law, field magnitude, phase, and current reader.',
+      read: 'Brightness = field magnitude · hue = complex phase · filaments = phase-current display.',
+      hasGlobalPhase: true, filaments: true, tone: 284, readoutLabel: 'SCALAR FIELD READ', metricLabel: 'CHARGE PROXY', currentLabel: 'CURRENT', readAxes: 'mean Re φ, mean Im φ, scaled charge'
+    },
+    noether: {
+      label: 'Noether–Klein memory field', family: 'COMPLEX SCALAR', spin: '0', charge: 'U(1)',
+      equation: '(∂t² − c²∇² + m²)φ = 0  ·  φ → eⁱᵅφ',
+      detail: 'The prior Noether–Klein complex scalar carrier: a periodic two-dimensional lattice with declared global U(1) phase, post-pulse charge baseline, and retained visual history. Its memory weave is a finite-grid receipt, not a physical-memory observation.',
+      read: 'Brightness = field magnitude · hue = U(1) phase · weave = retained samples from the declared lattice · centroid = circular density read.',
+      hasGlobalPhase: true, filaments: true, tone: 284, readoutLabel: 'NOETHER / MEMORY READ', metricLabel: 'CHARGE PROXY', currentLabel: 'CENTROID', historyLimit: 156, readAxes: 'torus x, torus y, probe-phase sine'
+    },
+    flux: {
+      label: 'Aharonov–Bohm flux ring', family: 'U(1) GAUGE · RING', spin: '0', charge: 'U(1)',
+      equation: 'Uℓ = eⁱᴬℓ · ∏loop Uℓ = eⁱΦ',
+      detail: 'A closed finite U(1) link lattice. The state advances by gauge-covariant unitary bond transport. The independent receipts are norm preservation, local-gauge covariance, 2π large-gauge covariance after the declared seed twist, and a nonzero half-flux response. The centre reads the declared loop phase; it is not itself a verification receipt.',
+      read: 'Brightness = transported amplitude around the ring · hue = local wave phase · centre = excluded flux reader.',
+      hasGlobalPhase: true, filaments: false, tone: 202, readoutLabel: 'U(1) HOLONOMY READ', metricLabel: 'NORM', energyLabel: 'WRAPPED FLUX', currentLabel: 'CIRCULAR MOMENT', readAxes: 'cos Φ, sin Φ, ring concentration'
+    },
+    su3: {
+      label: 'SU(3) colour-link transport', family: 'QCD KINEMATICS · SU(3)', spin: '½', charge: 'COLOUR TRIPLET',
+      equation: 'ψₓ → Gₓψₓ · U₍ₓ,μ₎ → GₓU₍ₓ,μ₎G†₍ₓ+μ₎',
+      detail: 'A finite colour-triplet packet transported through non-commuting SU(3) links by an exactly unitary gauge-covariant bond update. Its receipts use general non-diagonal local SU(3) transformations and test covariance, plaquette and 2×1 Wilson-loop trace invariance, and an evolved εₐᵦᶜ singlet determinant. This supplies QCD gauge structure; it is not a path-integral ensemble, continuum extrapolation, or a confinement measurement.',
+      read: 'Brightness = triplet density · RGB channels = reader mapping of three colour-basis populations · phase filaments = transport phase.',
+      hasGlobalPhase: true, filaments: true, tone: 340, readoutLabel: 'SU(3) COLOUR READ', metricLabel: 'NORM', energyLabel: 'PLAQUETTE CURVATURE', currentLabel: 'R / G POPULATION', readAxes: 'R−G, G−B, colour-phase cosine'
+    },
+    dirac: {
+      label: 'Massive Dirac packet', family: 'FERMION · 2+1D', spin: '½', charge: 'BRANCH READ',
+      equation: 'H(k) = kₓσₓ + kᵧσᵧ + mσ_z · E = ±√(k² + m²)',
+      detail: 'A finite 2+1D massive Dirac-type packet with exact momentum-space evolution. Its companion checks compare both energy branches, charge conjugation, and the 2E mixed-branch beat; it is not a 3+1D quantum-field calculation.',
+      read: 'Brightness = spinor density · hue = combined spinor phase · filaments = phase-gradient display.',
+      hasGlobalPhase: true, filaments: true, tone: 26, readoutLabel: 'DIRAC SPIN READ', metricLabel: 'NORM', energyLabel: 'MASS', currentLabel: 'TORUS CENTROID', readAxes: 'σx, σy, σz'
+    },
+    phi4: {
+      label: 'Complex φ⁴ field', family: 'U(1) SCALAR · 2D', spin: '0', charge: 'U(1)',
+      equation: '∂t²φ − c²∇²φ + λ(|φ|² − v²)φ = 0',
+      detail: 'A periodic complex Mexican-hat field with centered leapfrog update. The visible seed is a vortex–antivortex pair with nonzero discrete charge. Its receipts check post-pulse U(1) density invariance, charge, a seed winding and time-local plaquette vortex count, Goldstone lattice dispersion, and radial mass √(2λ)v. The pair may annihilate under this finite evolution.',
+      read: 'Brightness = |φ|² · hue = U(1) phase · filaments = phase-gradient display · two seed cores = opposite winding; their later count is dynamic.',
+      hasGlobalPhase: true, filaments: true, tone: 304, readoutLabel: 'U(1) VORTEX READ', metricLabel: 'DISCRETE CHARGE', energyLabel: 'FIELD ENERGY', currentLabel: 'MEAN FIELD', readAxes: 'mean Re φ, mean Im φ, radial departure'
+    },
+    higgs: {
+      label: 'Electroweak Higgs doublet', family: 'HIGGS SECTOR · SU(2)L × U(1)Y', spin: '0', charge: 'Y = 1',
+      equation: 'ℒH = (DμΦ)†DμΦ − λ(Φ†Φ − v²/2)² · Φ ∈ ℂ²',
+      detail: 'A finite 2+1D electroweak Higgs-sector lattice for a complex hypercharge-one SU(2)L doublet. Its gauge-covariant leapfrog evolves through declared non-commuting SU(2)L × U(1)Y links. The admitted receipts test local gauge covariance, gauge-invariant Φ†Φ, the radial lattice mass, and the tree-level W/Z/photon mass matrix constructed from DμΦ.',
+      read: 'Brightness = gauge-invariant Higgs-modulus departure |√(2Φ†Φ) − v| · hue = weak-isospin orientation in the declared gauge · filaments = gauge-covariant Higgs current.',
+      hasGlobalPhase: false, filaments: true, tone: 52, scopeLabel: 'HIGGS SECTOR · CLICK TO PULSE', readoutLabel: 'HIGGS / GAUGE READ', metricLabel: '⟨Φ†Φ⟩ / (v²/2)', energyLabel: 'HIGGS-SECTOR ENERGY', currentLabel: 'Jx, Jy', readAxes: 'H/v−1, Jx, Jy'
+    },
+    oscillation: {
+      label: 'Two-flavour neutrino', family: 'TWO-STATE FLAVOUR', spin: '½', charge: '0',
+      equation: 'P(α→β) = sin²(2θ) sin²(Δm²L / 4E)',
+      detail: 'A declared two-state flavour system propagated in its mass basis. For an unpulsed pure-α preparation the read compares Pβ with the closed form. After a pulse it reports the measured Pβ and normalized state only; it does not represent three-flavour matter effects or weak interactions.',
+      read: 'Brightness = declared two-lobe state-reader projection · hue = each flavour amplitude phase · compass = flavour Bloch coordinates.',
+      hasGlobalPhase: false, filaments: false, tone: 154, readoutLabel: 'FLAVOUR BLOCH READ', metricLabel: 'TOTAL PROBABILITY', energyLabel: 'Pβ / CLOSED FORM', currentLabel: 'Pα, Pβ', readAxes: 'coherence Re, coherence Im, α−β imbalance'
+    },
+    higgs1d: {
+      label: 'Real scalar domain field · 1D φ⁴', family: 'REAL SCALAR · 1D', spin: '0', charge: '0',
+      equation: '∂t²φ − c²∂x²φ + λ(φ² − v²)φ = 0',
+      detail: 'A real one-dimensional φ⁴ field with a double-well potential and a domain-pair seed. It remains a visual study with its own real-scalar state space and update law.',
+      read: 'Ribbon height = real order parameter · gold/cyan rail = the two effective vacua · weave = finite history.',
+      hasGlobalPhase: false, filaments: false, tone: 43, readoutLabel: 'ORDER-PARAMETER READ', metricLabel: 'VACUUM MAGNITUDE', currentLabel: 'FIELD MEAN', pulseLabel: 'Kick field', certification: 'OPEN'
+    },
+    hydrogen: {
+      label: 'Hydrogen · orbital slice', family: 'EFFECTIVE ONE-ELECTRON SLICE', spin: '½', charge: '−e',
+      equation: 'ψ(r,θ,t) = cₛφₛe⁻ⁱᴱˢᵗ + cₚφₚe⁻ⁱᴱᵖᵗ',
+      detail: 'A normalized two-basis orbital superposition on a two-dimensional effective slice through a hydrogenic one-electron model. It is a readable projection, not a three-dimensional spectrum, measurement, or atom in a trap.',
+      read: 'Brightness = normalized orbital density · hue = complex phase · rings = effective radial reference.',
+      hasGlobalPhase: true, filaments: true, tone: 198, readoutLabel: 'ORBITAL READ', metricLabel: 'DISPLAY NORMALIZATION', currentLabel: 'DIPOLE', certification: 'OPEN'
+    },
+    helium: {
+      label: 'Helium · configuration slice', family: 'TWO-ELECTRON CONFIGURATION', spin: 'SINGLET SLICE', charge: '−2e',
+      equation: 'Ψ(r₁,r₂,t) = Ψ(r₂,r₁,t) · C(|r₁ − r₂|)',
+      detail: 'An exchange-symmetric finite configuration-space slice for two radial coordinates. The canvas axes are r₁ and r₂; the diagonal is the exchange seam, not the outline of a square-shaped atom.',
+      read: 'Brightness = configuration probability proxy · hue = common phase · diagonal = exchange seam / correlation read.',
+      hasGlobalPhase: true, filaments: false, tone: 304, readoutLabel: 'CONFIGURATION READ', metricLabel: 'DISPLAY NORMALIZATION', currentLabel: 'RADIAL-SEPARATION PROXY', certification: 'OPEN'
+    },
+    water: {
+      label: 'Water · H₂O normal mode', family: 'THREE-MASS MOLECULAR MODE', spin: 'CLASSICAL MODE', charge: '0',
+      equation: 'M q̈ + Kq = 0',
+      detail: 'A dimensionless three-mass H₂O stretch–bend mode near the familiar bent geometry. The circles and bonds read a declared normal coordinate; this does not calculate electronic structure, bond energies, spectroscopy, or chemistry.',
+      read: 'Brightness = geometric mode envelope · gold = oxygen reference · cyan = hydrogen positions · bonds = instantaneous normal-mode geometry.',
+      hasGlobalPhase: false, filaments: false, tone: 178, readoutLabel: 'MOLECULAR MODE READ', metricLabel: 'MODE AMPLITUDE', energyLabel: 'MODE ENERGY', currentLabel: 'MODE COORDINATE', pulseLabel: 'Kick mode', liveReadouts: true, certification: 'OPEN'
+    },
+    lithium: {
+      label: 'Lithium · valence slice', family: 'EFFECTIVE FROZEN-CORE SLICE', spin: '½', charge: '−e',
+      equation: 'H_eff = −½∇² + V_screened(r)',
+      detail: 'A normalized two-dimensional effective valence-orbital slice with a declared frozen core and a radial node. It is not a three-electron correlated lithium calculation, spectrum, or chemical model.',
+      read: 'Brightness = normalized valence-density proxy · hue = complex phase · central mark = frozen-core reference.',
+      hasGlobalPhase: true, filaments: true, tone: 116, readoutLabel: 'VALENCE-ORBITAL READ', metricLabel: 'DISPLAY NORMALIZATION', currentLabel: 'DIPOLE', certification: 'OPEN'
+    }
+  };
+
+  function makeEngine(type, width = 128, height = 128) {
+    if (type === 'electron') return new SpinorEngine('electron', width, height);
+    if (type === 'neutrino') return new SpinorEngine('neutrino', width, height);
+    if (type === 'photon') return new PhotonEngine(width, height);
+    if (type === 'scalar') return new ScalarEngine(width, height);
+    if (type === 'noether') return new NoetherKleinEngine(width === 128 && height === 128 ? 160 : width, width === 128 && height === 128 ? 112 : height);
+    if (type === 'flux') return new FluxRingDisplayEngine(width, height);
+    if (type === 'su3') return new SU3DisplayEngine(width, height);
+    if (type === 'dirac') return new DiracDisplayEngine(width, height);
+    if (type === 'phi4') return new Phi4DisplayEngine(width, height);
+    if (type === 'higgs') return new ElectroweakCore.Engine({ width, height });
+    if (type === 'oscillation') return new OscillationDisplayEngine(width, height);
+    if (type === 'higgs1d') return new Higgs1DEngine(width === 128 ? 192 : width, height === 128 ? 96 : height);
+    if (type === 'hydrogen' || type === 'lithium') return new OrbitalEngine(type, width, height);
+    if (type === 'helium') return new HeliumEngine(width, height);
+    if (type === 'water') return new WaterEngine(width === 128 && height === 128 ? 160 : width, width === 128 && height === 128 ? 112 : height);
+    throw new Error(`Unknown carrier: ${type}`);
+  }
+
+  function relative(value, baseline) {
+    return baseline ? (value - baseline) / Math.abs(baseline) : 0;
+  }
+
+  function hslToRgb(hue, saturation, lightness) {
+    const h = mod(hue, 360) / 360;
+    const s = clamp(saturation, 0, 1);
+    const l = clamp(lightness, 0, 1);
+    if (s === 0) { const value = Math.round(l * 255); return [value, value, value]; }
+    const q = l < .5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    const channel = (t) => {
+      let value = t;
+      if (value < 0) value += 1;
+      if (value > 1) value -= 1;
+      if (value < 1 / 6) return p + (q - p) * 6 * value;
+      if (value < 1 / 2) return q;
+      if (value < 2 / 3) return p + (q - p) * (2 / 3 - value) * 6;
+      return p;
+    };
+    return [Math.round(channel(h + 1 / 3) * 255), Math.round(channel(h) * 255), Math.round(channel(h - 1 / 3) * 255)];
+  }
+
+  return { TAU, SPECIES, SpinorEngine, PhotonEngine, ScalarEngine, NoetherKleinEngine, Higgs1DEngine, OrbitalEngine, HeliumEngine, WaterEngine, DiracDisplayEngine, Phi4DisplayEngine, OscillationDisplayEngine, FluxRingDisplayEngine, SU3DisplayEngine, ElectroweakHiggsEngine: ElectroweakCore.Engine, makeEngine, fft1d, fft2d, spinNorm, spinRead, relative, signed, clamp, mod, hslToRgb };
+})();
+
+if (typeof module !== 'undefined') module.exports = ParticleAtlasCore;
+
+</script>
+<script>
+/* Clear Onyx Gauge Laboratory v0.5.2 — canvas reader and declared controls. */
+(() => {
+  'use strict';
+  const Core = ParticleAtlasCore;
+  const { SPECIES, makeEngine, hslToRgb, clamp, mod, relative, signed, TAU } = Core;
+  const $ = (selector) => document.querySelector(selector);
+  const canvas = $('#scope');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const fieldCanvas = document.createElement('canvas');
+  const fieldCtx = fieldCanvas.getContext('2d', { alpha: false });
+  const spinCanvas = $('#spin-read');
+  const spinCtx = spinCanvas.getContext('2d');
+  const state = {
+    type: 'electron', engine: null, running: true, rate: 2, lastTime: performance.now(),
+    frame: 0, phaseInput: 0, maxDensity: 0, history: [], pulseCount: 0
+  };
+  const elements = {
+    selector: $('#carrier'), pause: $('#pause'), reset: $('#reset'), rate: $('#rate'), phase: $('#phase'), phaseValue: $('#phase-value'),
+    pulse: $('#pulse'), status: $('#status'), title: $('#carrier-title'), family: $('#family'), charge: $('#charge'), spin: $('#spin'),
+    equation: $('#equation'), boundary: $('#boundary'), caption: $('#caption'), norm: $('#norm'), energy: $('#energy'),
+    current: $('#current'), audit: $('#audit'), history: $('#history'), particle: $('#particle-label'), scope: canvas,
+    metricLabel: $('#metric-label'), energyLabel: $('#energy-label'), currentLabel: $('#current-label'), readHeading: $('#read-heading'),
+    phaseLabel: $('#phase-label'), scopeType: $('#scope-type')
+  };
+
+  function setStatus(text) { elements.status.textContent = text; }
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const width = Math.max(1, Math.round(rect.width * ratio));
+    const height = Math.max(1, Math.round(rect.height * ratio));
+    if (canvas.width !== width || canvas.height !== height) { canvas.width = width; canvas.height = height; }
+  }
+
+  function switchCarrier(type) {
+    state.type = type;
+    state.engine = makeEngine(type);
+    elements.selector.value = type;
+    state.phaseInput = 0;
+    state.pulseCount = 0;
+    state.history = [];
+    state.maxDensity = 0;
+    elements.phase.value = '0'; elements.phaseValue.value = '0°';
+    const meta = SPECIES[type];
+    elements.title.textContent = meta.label;
+    elements.particle.textContent = meta.label.toUpperCase();
+    elements.family.textContent = meta.family;
+    elements.charge.textContent = `charge ${meta.charge}`;
+    elements.spin.textContent = `spin ${meta.spin}`;
+    elements.equation.textContent = meta.equation;
+    elements.boundary.textContent = meta.detail;
+    elements.caption.textContent = meta.read;
+    elements.readHeading.textContent = meta.readoutLabel || 'SPIN / POLARIZATION READ';
+    elements.metricLabel.textContent = meta.metricLabel || 'NORM';
+    elements.energyLabel.textContent = meta.energyLabel || 'ENERGY PROXY';
+    elements.currentLabel.textContent = meta.currentLabel || 'NET CURRENT';
+    elements.phaseLabel.textContent = meta.hasGlobalPhase ? 'Global U(1) phase' : 'Phase control';
+    elements.phase.disabled = !meta.hasGlobalPhase;
+    elements.phaseValue.value = meta.hasGlobalPhase ? '0°' : 'N/A';
+    elements.pulse.textContent = meta.pulseLabel || 'Pulse aperture';
+    elements.scopeType.textContent = meta.scopeLabel || (meta.family.includes('FIELD') || meta.family.includes('SCALAR') ? 'FINITE FIELD · CLICK TO PULSE' : 'DECLARED MODEL · CLICK TO PULSE');
+    setStatus(`${meta.label} carrier prepared from its declared initial condition.`);
+  }
+
+  function record() {
+    const m = state.engine.read();
+    state.history.push({ frame: state.engine.frame, norm: m.norm, energy: m.energyProxy, spin: m.spin });
+    const limit = SPECIES[state.type].historyLimit || 72;
+    if (state.history.length > limit) state.history.shift();
+  }
+
+  function drawField() {
+    const engine = state.engine;
+    if (engine.dimension === 1) {
+      drawOneDimensionalField();
+      return;
+    }
+    const { width, height, size } = engine;
+    if (fieldCanvas.width !== width || fieldCanvas.height !== height) { fieldCanvas.width = width; fieldCanvas.height = height; }
+    const image = fieldCtx.createImageData(width, height);
+    let peak = 0;
+    for (let i = 0; i < size; i += 1) peak = Math.max(peak, engine.visualAt(i).density);
+    state.maxDensity = state.maxDensity ? state.maxDensity * .94 + Math.max(peak, 1e-8) * .06 : Math.max(peak, 1e-8);
+    for (let i = 0; i < size; i += 1) {
+      const value = engine.visualAt(i);
+      const normalized = Math.tanh(Math.sqrt(value.density / Math.max(state.maxDensity, 1e-9)) * 1.36);
+      const visible = clamp((normalized - .042) / .958, 0, 1);
+      const hue = 198 + value.phase / TAU * 360;
+      const spinTint = state.type === 'electron' || state.type === 'neutrino' ? value.spin.z * 14 : 0;
+      let r, g, b;
+      if (value.rgb) {
+        const sum = value.rgb[0] + value.rgb[1] + value.rgb[2] || 1;
+        const scale = .04 + visible * .96;
+        r = Math.round(255 * scale * Math.sqrt(value.rgb[0] / sum));
+        g = Math.round(255 * scale * Math.sqrt(value.rgb[1] / sum));
+        b = Math.round(255 * scale * Math.sqrt(value.rgb[2] / sum));
+      } else [r, g, b] = hslToRgb(hue + spinTint, .28 + visible * .52, (.006 + visible * .61));
+      const offset = i * 4;
+      image.data[offset] = r; image.data[offset + 1] = g; image.data[offset + 2] = b; image.data[offset + 3] = 255;
+    }
+    fieldCtx.putImageData(image, 0, 0);
+    resize();
+    const widthPx = canvas.width;
+    const heightPx = canvas.height;
+    const gradient = ctx.createRadialGradient(widthPx * .5, heightPx * .5, 0, widthPx * .5, heightPx * .5, Math.max(widthPx, heightPx) * .75);
+    gradient.addColorStop(0, '#122731'); gradient.addColorStop(.55, '#071219'); gradient.addColorStop(1, '#030609');
+    ctx.fillStyle = gradient; ctx.fillRect(0, 0, widthPx, heightPx);
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(fieldCanvas, 0, 0, widthPx, heightPx);
+    drawSceneGeometry(widthPx, heightPx);
+    if (SPECIES[state.type].filaments !== false) drawCurrentFilaments(widthPx, heightPx);
+    drawHistoryWeave(widthPx, heightPx);
+    if (state.type !== 'flux' && state.type !== 'su3') drawAperture(widthPx, heightPx);
+  }
+
+  function drawSceneGeometry(widthPx, heightPx) {
+    if (state.type === 'flux') { drawFluxGeometry(widthPx, heightPx); return; }
+    if (state.type === 'su3') { drawSU3Geometry(widthPx, heightPx); return; }
+    if (state.type === 'electron') { drawElectronAperture(widthPx, heightPx); return; }
+    if (state.type === 'hydrogen' || state.type === 'lithium') { drawAtomicReference(widthPx, heightPx); return; }
+    if (state.type === 'helium') { drawHeliumConfiguration(widthPx, heightPx); return; }
+    if (state.type === 'water') { drawWaterGeometry(widthPx, heightPx); }
+  }
+
+  function drawFluxGeometry(widthPx, heightPx) {
+    const min = Math.min(widthPx, heightPx), cx = widthPx * .5, cy = heightPx * .5, radius = min * .30;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(152,220,231,.38)'; ctx.lineWidth = Math.max(1, min * .0017); ctx.setLineDash([min * .012, min * .012]);
+    ctx.beginPath(); ctx.arc(cx, cy, radius, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+    const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius * .72); glow.addColorStop(0, 'rgba(216,190,100,.34)'); glow.addColorStop(1, 'rgba(216,190,100,0)'); ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(cx, cy, radius * .72, 0, TAU); ctx.fill();
+    ctx.fillStyle = 'rgba(234,222,183,.88)'; ctx.font = `${Math.max(11, min * .035)}px Georgia, serif`; ctx.textAlign = 'center'; ctx.fillText('Φ', cx, cy + min * .012);
+    ctx.fillStyle = 'rgba(196,226,226,.68)'; ctx.font = `${Math.max(7, min * .014)}px ui-monospace, monospace`; ctx.fillText('U(1) HOLONOMY', cx, cy + min * .048); ctx.restore();
+  }
+
+  function drawSU3Geometry(widthPx, heightPx) {
+    const min = Math.min(widthPx, heightPx), cx = widthPx * .86, cy = heightPx * .14, radius = min * .042;
+    ctx.save();
+    const points = [[cx, cy - radius], [cx - radius * .87, cy + radius * .5], [cx + radius * .87, cy + radius * .5]];
+    ctx.strokeStyle = 'rgba(224,235,232,.33)'; ctx.lineWidth = Math.max(1, min * .0012); ctx.beginPath(); ctx.moveTo(points[0][0], points[0][1]); ctx.lineTo(points[1][0], points[1][1]); ctx.lineTo(points[2][0], points[2][1]); ctx.closePath(); ctx.stroke();
+    for (const [[x, y], color, label] of [[points[0], '#ff6b72', 'R'], [points[1], '#7ee4a0', 'G'], [points[2], '#7cb5ff', 'B']]) { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x, y, Math.max(3, min * .007), 0, TAU); ctx.fill(); ctx.fillStyle = 'rgba(228,241,238,.78)'; ctx.font = `${Math.max(7, min * .012)}px ui-monospace, monospace`; ctx.textAlign = 'center'; ctx.fillText(label, x, y - min * .014); }
+    ctx.restore();
+  }
+
+  function drawElectronAperture(widthPx, heightPx) {
+    const x = widthPx * .565;
+    const upperA = heightPx * .305, upperB = heightPx * .415;
+    const lowerA = heightPx * .585, lowerB = heightPx * .695;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(169,214,218,.36)';
+    ctx.lineWidth = Math.max(1, Math.min(widthPx, heightPx) * .002);
+    for (const [from, to] of [[0, upperA], [upperB, lowerA], [lowerB, heightPx]]) {
+      ctx.beginPath(); ctx.moveTo(x, from); ctx.lineTo(x, to); ctx.stroke();
+    }
+    ctx.fillStyle = 'rgba(183,218,216,.52)';
+    ctx.font = `${Math.max(8, Math.min(widthPx, heightPx) * .017)}px ui-monospace, monospace`;
+    ctx.textAlign = 'center'; ctx.fillText('V', x, heightPx * .055);
+    ctx.restore();
+  }
+
+  function drawAtomicReference(widthPx, heightPx) {
+    const min = Math.min(widthPx, heightPx);
+    const cx = widthPx * .5, cy = heightPx * .5;
+    const lithium = state.type === 'lithium';
+    ctx.save();
+    ctx.strokeStyle = lithium ? 'rgba(174,224,159,.28)' : 'rgba(165,218,239,.28)';
+    ctx.lineWidth = Math.max(1, min * .0012);
+    for (const q of lithium ? [.12, .24, .39] : [.16, .31, .46]) {
+      ctx.beginPath(); ctx.ellipse(cx, cy, min * q, min * q, 0, 0, TAU); ctx.stroke();
+    }
+    ctx.fillStyle = lithium ? 'rgba(196,236,165,.75)' : 'rgba(184,228,245,.75)';
+    ctx.beginPath(); ctx.arc(cx, cy, Math.max(4, min * .024), 0, TAU); ctx.fill();
+    ctx.fillStyle = 'rgba(224,238,233,.62)';
+    ctx.font = `${Math.max(8, min * .017)}px ui-monospace, monospace`;
+    ctx.textAlign = 'center';
+    ctx.fillText(lithium ? 'Li · FROZEN CORE' : 'H · ONE-ELECTRON SLICE', cx, cy + min * .06);
+    ctx.restore();
+  }
+
+  function drawHeliumConfiguration(widthPx, heightPx) {
+    const min = Math.min(widthPx, heightPx);
+    ctx.save();
+    ctx.strokeStyle = 'rgba(213,178,242,.47)';
+    ctx.lineWidth = Math.max(1, min * .002);
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(widthPx, heightPx); ctx.stroke();
+    ctx.strokeStyle = 'rgba(156,206,216,.22)';
+    ctx.beginPath(); ctx.moveTo(0, heightPx); ctx.lineTo(widthPx, heightPx); ctx.lineTo(widthPx, 0); ctx.stroke();
+    ctx.fillStyle = 'rgba(227,235,232,.68)';
+    ctx.font = `${Math.max(8, min * .017)}px ui-monospace, monospace`;
+    ctx.textAlign = 'left'; ctx.fillText('r₂', min * .035, min * .08);
+    ctx.textAlign = 'right'; ctx.fillText('r₁', widthPx - min * .035, heightPx - min * .035);
+    ctx.fillStyle = 'rgba(221,185,246,.72)'; ctx.textAlign = 'center'; ctx.fillText('EXCHANGE SEAM', widthPx * .62, heightPx * .55);
+    ctx.restore();
+  }
+
+  function drawWaterGeometry(widthPx, heightPx) {
+    const g = state.engine.geometry;
+    if (!g) return;
+    const min = Math.min(widthPx, heightPx);
+    const point = (p) => ({ x: p.x * widthPx, y: p.y * heightPx });
+    const o = point(g.oxygen), h1 = point(g.h1), h2 = point(g.h2);
+    ctx.save();
+    ctx.lineCap = 'round';
+    ctx.lineWidth = Math.max(2, min * .009);
+    ctx.strokeStyle = 'rgba(176,229,233,.48)';
+    ctx.beginPath(); ctx.moveTo(o.x, o.y); ctx.lineTo(h1.x, h1.y); ctx.moveTo(o.x, o.y); ctx.lineTo(h2.x, h2.y); ctx.stroke();
+    const atom = (p, r, fill, label) => {
+      const glow = ctx.createRadialGradient(p.x, p.y, r * .1, p.x, p.y, r * 1.8);
+      glow.addColorStop(0, fill); glow.addColorStop(.42, fill.replace('1)', '.70)')); glow.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(p.x, p.y, r * 1.8, 0, TAU); ctx.fill();
+      ctx.fillStyle = fill; ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, TAU); ctx.fill();
+      ctx.fillStyle = 'rgba(7,16,20,.86)'; ctx.font = `${Math.max(8, r * .65)}px ui-monospace, monospace`; ctx.textAlign = 'center'; ctx.fillText(label, p.x, p.y + r * .22);
+    };
+    atom(o, Math.max(7, min * .042), 'rgba(231,191,111,1)', 'O');
+    atom(h1, Math.max(5, min * .027), 'rgba(162,226,232,1)', 'H');
+    atom(h2, Math.max(5, min * .027), 'rgba(162,226,232,1)', 'H');
+    ctx.restore();
+  }
+
+  function drawOneDimensionalField() {
+    const engine = state.engine;
+    resize();
+    const widthPx = canvas.width, heightPx = canvas.height;
+    const min = Math.min(widthPx, heightPx);
+    const centerY = heightPx * .5;
+    const scale = heightPx * .27 / Math.max(engine.v, 1e-9);
+    const gradient = ctx.createRadialGradient(widthPx * .5, centerY, 0, widthPx * .5, centerY, Math.max(widthPx, heightPx) * .72);
+    gradient.addColorStop(0, '#1b2c31'); gradient.addColorStop(.54, '#08161b'); gradient.addColorStop(1, '#030609');
+    ctx.fillStyle = gradient; ctx.fillRect(0, 0, widthPx, heightPx);
+    ctx.save();
+    ctx.setLineDash([min * .010, min * .014]);
+    for (const sign of [-1, 1]) {
+      ctx.beginPath(); ctx.moveTo(0, centerY - sign * engine.v * scale); ctx.lineTo(widthPx, centerY - sign * engine.v * scale);
+      ctx.strokeStyle = sign > 0 ? 'rgba(226,196,107,.30)' : 'rgba(151,222,229,.27)';
+      ctx.lineWidth = Math.max(1, min * .0012); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    for (let x = 0; x < engine.width; x += 1) {
+      const sample = engine.profileAt(x);
+      const px = x / Math.max(1, engine.width - 1) * widthPx;
+      const py = centerY - sample.value * scale;
+      if (x === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.lineTo(widthPx, centerY); ctx.lineTo(0, centerY); ctx.closePath();
+    const fill = ctx.createLinearGradient(0, 0, widthPx, heightPx);
+    fill.addColorStop(0, 'rgba(224,194,99,.36)'); fill.addColorStop(.48, 'rgba(171,223,225,.12)'); fill.addColorStop(1, 'rgba(162,219,181,.30)');
+    ctx.fillStyle = fill; ctx.fill();
+    ctx.beginPath();
+    for (let x = 0; x < engine.width; x += 1) {
+      const sample = engine.profileAt(x);
+      const px = x / Math.max(1, engine.width - 1) * widthPx;
+      const py = centerY - sample.value * scale;
+      if (x === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.strokeStyle = 'rgba(232,240,224,.89)'; ctx.lineWidth = Math.max(2, min * .004); ctx.stroke();
+    ctx.fillStyle = 'rgba(225,237,232,.63)'; ctx.font = `${Math.max(8, min * .017)}px ui-monospace, monospace`;
+    ctx.textAlign = 'left'; ctx.fillText('+v', min * .035, centerY - engine.v * scale - min * .018);
+    ctx.fillStyle = 'rgba(170,226,229,.63)'; ctx.fillText('−v', min * .035, centerY + engine.v * scale + min * .035);
+    ctx.restore();
+    drawHistoryWeave(widthPx, heightPx);
+    drawAperture(widthPx, heightPx);
+  }
+
+  function localCurrent(x, y) {
+    const e = state.engine;
+    if (typeof e.currentAt === 'function') return e.currentAt(x, y);
+    const sample = (sx, sy) => e.visualAt(((sy + e.height) % e.height) * e.width + ((sx + e.width) % e.width));
+    const left = sample(x - 1, y), right = sample(x + 1, y), up = sample(x, y - 1), down = sample(x, y + 1);
+    const center = sample(x, y);
+    if (center.density < state.maxDensity * .0018) return { x: 0, y: 0, magnitude: 0 };
+    const dx = Math.sin(right.phase - left.phase) * Math.sqrt(center.density);
+    const dy = Math.sin(down.phase - up.phase) * Math.sqrt(center.density);
+    return { x: dx, y: dy, magnitude: Math.hypot(dx, dy) };
+  }
+
+  function drawCurrentFilaments(widthPx, heightPx) {
+    const e = state.engine;
+    ctx.save(); ctx.lineWidth = Math.max(1, Math.min(widthPx, heightPx) * .00115);
+    for (let seed = 0; seed < 36; seed += 1) {
+      let x = Math.floor((seed % 9 + .55) / 9 * e.width);
+      let y = Math.floor((Math.floor(seed / 9) + .6) / 4 * e.height);
+      ctx.beginPath();
+      ctx.moveTo(x / (e.width - 1) * widthPx, y / (e.height - 1) * heightPx);
+      let drawn = false;
+      for (let step = 0; step < 12; step += 1) {
+        const current = localCurrent(x, y);
+        if (current.magnitude < 1e-5) break;
+        x = mod(Math.round(x + current.x / current.magnitude * 2), e.width);
+        y = mod(Math.round(y + current.y / current.magnitude * 2), e.height);
+        ctx.lineTo(x / (e.width - 1) * widthPx, y / (e.height - 1) * heightPx);
+        drawn = true;
+      }
+      if (drawn) {
+        const phase = e.visualAt(y * e.width + x).phase;
+        ctx.strokeStyle = `hsla(${mod(198 + phase / TAU * 360, 360)}, 74%, 76%, .18)`;
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawHistoryWeave(widthPx, heightPx) {
+    if (state.history.length < 2) return;
+    const min = Math.min(widthPx, heightPx);
+    const cx = widthPx * .5, cy = heightPx * .5;
+    ctx.save();
+    for (let i = 0; i < state.history.length - 1; i += 1) {
+      const a = state.history[i], b = state.history[i + 1];
+      const t = i / Math.max(1, state.history.length - 1);
+      const ta = (a.spin.z || 0) * .5 + .5;
+      const radius = min * (.12 + .29 * t);
+      const nextRadius = min * (.12 + .29 * (i + 1) / Math.max(1, state.history.length - 1));
+      const ax = cx + Math.cos(a.frame * .035 + ta * 2.4) * radius;
+      const ay = cy + Math.sin(a.frame * .035 + ta * 2.4) * radius * .72;
+      const bx = cx + Math.cos(b.frame * .035 + ((b.spin.z || 0) * .5 + .5) * 2.4) * nextRadius;
+      const by = cy + Math.sin(b.frame * .035 + ((b.spin.z || 0) * .5 + .5) * 2.4) * nextRadius * .72;
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by);
+      ctx.strokeStyle = `hsla(${205 + 95 * t}, 68%, 68%, ${.025 + .14 * t})`;
+      ctx.lineWidth = Math.max(1, min * (.0008 + .0012 * t)); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawAperture(widthPx, heightPx) {
+    const min = Math.min(widthPx, heightPx);
+    const cx = widthPx * .5, cy = heightPx * .5, r = min * .085;
+    ctx.save();
+    const glow = ctx.createRadialGradient(cx, cy, r * .1, cx, cy, r * 1.5);
+    glow.addColorStop(0, 'rgba(1,5,8,.75)'); glow.addColorStop(.72, 'rgba(1,5,8,.30)'); glow.addColorStop(1, 'rgba(1,5,8,0)');
+    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(cx, cy, r * 1.5, 0, TAU); ctx.fill();
+    for (let ring = 0; ring < 3; ring += 1) {
+      ctx.beginPath(); ctx.ellipse(cx, cy, r * (1 + ring * .25), r * (.72 + ring * .20), state.engine.frame * .0038, 0, TAU);
+      ctx.strokeStyle = `hsla(${42 + ring * 68}, 70%, ${67 - ring * 8}%, ${.48 - ring * .10})`;
+      ctx.lineWidth = Math.max(1, min * (.0014 - ring * .00022)); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawSpin() {
+    const rect = spinCanvas.getBoundingClientRect();
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const width = Math.max(1, Math.round(rect.width * ratio));
+    const height = Math.max(1, Math.round(rect.height * ratio));
+    if (spinCanvas.width !== width || spinCanvas.height !== height) { spinCanvas.width = width; spinCanvas.height = height; }
+    const m = state.engine.read();
+    const s = m.spin;
+    spinCtx.clearRect(0, 0, width, height);
+    const cx = width * .5, cy = height * .52, radius = Math.min(width, height) * .34;
+    spinCtx.strokeStyle = 'rgba(156,205,214,.40)'; spinCtx.lineWidth = Math.max(1, radius * .016);
+    spinCtx.beginPath(); spinCtx.ellipse(cx, cy, radius, radius * .45, 0, 0, TAU); spinCtx.stroke();
+    spinCtx.beginPath(); spinCtx.moveTo(cx - radius, cy); spinCtx.lineTo(cx + radius, cy); spinCtx.stroke();
+    spinCtx.beginPath(); spinCtx.moveTo(cx, cy - radius); spinCtx.lineTo(cx, cy + radius); spinCtx.stroke();
+    const x = cx + s.x * radius;
+    const y = cy - s.z * radius;
+    const tone = SPECIES[state.type].tone || (state.type === 'photon' ? 200 : state.type === 'scalar' ? 284 : 43);
+    spinCtx.strokeStyle = `hsl(${tone} 72% 70%)`; spinCtx.lineWidth = Math.max(2, radius * .045);
+    spinCtx.beginPath(); spinCtx.moveTo(cx, cy); spinCtx.lineTo(x, y); spinCtx.stroke();
+    spinCtx.fillStyle = `hsl(${tone} 76% 72%)`; spinCtx.beginPath(); spinCtx.arc(x, y, Math.max(3, radius * .07), 0, TAU); spinCtx.fill();
+    spinCtx.fillStyle = 'rgba(223,235,230,.70)'; spinCtx.font = `${Math.max(10, radius * .15)}px ui-monospace, monospace`;
+    const axes = SPECIES[state.type].readAxes || 'x, y, z';
+    spinCtx.textAlign = 'center'; spinCtx.fillText(`${axes} = (${signed(s.x, 2)}, ${signed(s.y, 2)}, ${signed(s.z, 2)})`, cx, height * .91);
+  }
+
+  function updateReadout() {
+    const m = state.engine.read();
+    const baseline = state.engine.baseline;
+    const drift = baseline ? relative(m.norm, baseline.norm) : 0;
+    const energyDrift = baseline ? relative(m.energyProxy, baseline.energyProxy) : 0;
+    const meta = SPECIES[state.type];
+    const primaryLabel = meta.metricLabel || (state.type === 'scalar' ? 'charge proxy' : state.type === 'photon' ? 'field energy' : 'norm');
+    elements.metricLabel.textContent = primaryLabel.toUpperCase();
+    elements.energyLabel.textContent = (state.type === 'oscillation' && !m.closedFormApplies ? 'Pβ (MEASURED)' : (meta.energyLabel || 'energy proxy')).toUpperCase();
+    elements.currentLabel.textContent = (meta.currentLabel || 'net current').toUpperCase();
+    elements.norm.textContent = meta.liveReadouts ? `${m.norm.toFixed(5)} · LIVE` : `${m.norm.toFixed(5)} · Δ ${signed(drift * 100, 2)}%`;
+    elements.energy.textContent = meta.liveReadouts ? `${m.energyProxy.toFixed(5)} · LIVE` : `${m.energyProxy.toFixed(5)} · Δ ${signed(energyDrift * 100, 2)}%`;
+    elements.current.textContent = Number.isFinite(m.current?.x) && Number.isFinite(m.current?.y) ? `${signed(m.current.x, 3)}, ${signed(m.current.y, 3)}` : 'UNRESOLVED';
+    let audit = 'PASS';
+    if (meta.certification === 'OPEN') audit = 'OPEN · check not admitted';
+    else if (state.engine.pulses.length && typeof state.engine.audit === 'function') audit = `${state.engine.audit(m)} · pulse ${state.engine.pulses.length}`;
+    else if (state.engine.pulses.length) audit = `PULSE · ${state.engine.pulses.length} admitted`;
+    else if (typeof state.engine.audit === 'function') audit = state.engine.audit(m);
+    else if (state.type === 'electron' || state.type === 'neutrino') audit = Math.abs(drift) < 2e-7 ? 'PASS · unitary carrier' : 'WATCH · numerical drift';
+    else if (state.type === 'photon') audit = Math.abs(energyDrift) < .14 ? 'PASS · bounded FDTD' : 'WATCH · energy drift';
+    else if (state.type === 'scalar') audit = Math.abs(drift) < .08 ? 'PASS · charge proxy' : 'WATCH · proxy drift';
+    elements.audit.textContent = audit;
+    elements.history.textContent = `${state.history.length} retained / ${meta.historyLimit || 72}`;
+  }
+
+  function frame(now) {
+    const elapsed = Math.min(.08, Math.max(0, (now - state.lastTime) / 1000));
+    state.lastTime = now;
+    if (state.running) {
+      const steps = elapsed > .05 ? Math.max(1, Math.round(state.rate * 1.25)) : state.rate;
+      for (let i = 0; i < steps; i += 1) state.engine.step();
+      if (state.engine.frame % 5 === 0) record();
+    }
+    drawField(); drawSpin(); updateReadout();
+    requestAnimationFrame(frame);
+  }
+
+  elements.selector.addEventListener('change', () => switchCarrier(elements.selector.value));
+  elements.pause.addEventListener('click', () => {
+    state.running = !state.running;
+    elements.pause.textContent = state.running ? 'Pause' : 'Resume';
+    elements.pause.setAttribute('aria-pressed', String(!state.running));
+    setStatus(state.running ? 'Carrier resumed.' : 'Carrier held at its current finite state.');
+  });
+  elements.reset.addEventListener('click', () => { switchCarrier(state.type); setStatus('Returned to the declared seed condition.'); });
+  elements.rate.addEventListener('input', () => { state.rate = Number(elements.rate.value); $('#rate-value').value = `${state.rate} steps/f`; });
+  elements.phase.addEventListener('input', () => {
+    const next = Number(elements.phase.value);
+    let delta = next - state.phaseInput;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
+    if (typeof state.engine.rotateGlobal === 'function' && SPECIES[state.type].hasGlobalPhase) {
+      state.engine.rotateGlobal(delta);
+      setStatus(`Global U(1) phase rotated by ${delta >= 0 ? '+' : ''}${delta}°. The selected carrier remains otherwise unchanged.`);
+    } else {
+      setStatus('The selected model has no declared global matter-field phase control.');
+    }
+    state.phaseInput = next; elements.phaseValue.value = `${next}°`;
+  });
+  elements.pulse.addEventListener('click', () => { state.engine.inject(); state.pulseCount += 1; setStatus(`Declared local condition admitted at the aperture. Receipt count: ${state.pulseCount}.`); });
+  canvas.addEventListener('pointerdown', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = clamp((event.clientX - rect.left) / rect.width * state.engine.width, 0, state.engine.width - 1);
+    const y = clamp((event.clientY - rect.top) / rect.height * state.engine.height, 0, state.engine.height - 1);
+    state.engine.inject(x, y); state.pulseCount += 1;
+    setStatus(`Local condition admitted at normalized address (${(x / state.engine.width).toFixed(2)}, ${(y / state.engine.height).toFixed(2)}).`);
+  });
+  new ResizeObserver(resize).observe(canvas);
+  switchCarrier('su3');
+  record();
+  requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>

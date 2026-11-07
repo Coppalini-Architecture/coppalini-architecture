@@ -1,0 +1,1214 @@
+\noindent\textbf{Abstract.} The exact root is
+\[
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+G=[Q,\Omega]=\begin{pmatrix}-2&1\\1&2\end{pmatrix}.
+\]
+The real symmetric matrix $G$ has Lorentzian signature.  Its normalized
+involution $H=G/\sqrt5$ reverses the one-parameter group
+$L_s=\exp(s(2Q-I)/\sqrt5)$:
+\[
+L_s^{\mathsf T}GL_s=G,\qquad HL_sH=L_{-s},\qquad
+L_{2\log\Phi}=Q^2.
+\]
+An explicit congruence carries $G$ to the null form $2\,du\,dv$, and
+$G\oplus I_2$ has signature $(3,1)$.  The construction gives a discrete
+variational map, a $U(1)$ phase inversion
+$HU_\theta H=U_\theta^{-1}$, and a finite Boltzmann entropy identity.  The
+$28$ edges of $K_8$ provide a finite exterior-square ledger for the color
+algebra; its seven perfect matchings retain a complete disjoint partition.
+The root identities define the Noether--Klein scalar-symmetry relation:
+continuous axial transport and discrete mirror return.  Mirror conjugation
+also grades $M_2(\R)$ as a $2|2$ algebra isomorphic to
+$\mathrm{End}(\R^{1|1})$; its two null odd generators form an exact
+$0+1$-dimensional scalar fermionic oscillator.  The $K_8$ ledger carries a
+separately proved finite exterior-square address space for the color algebra.
+General relativity, quantum gravity, and the Standard Model enter through
+their native field equations, state spaces, gauge algebra, and renormalized
+parameter spaces.  A contact--record construction then separates reversible
+transport, a declared reader quotient, and ordered historical receipt.  A
+cross-scale spine holds their addressed carriers, boundaries, measurements,
+and retained receipts in one source-indexed architecture.
+
+\vspace{1.2em}
+\begin{center}
+\begin{minipage}{0.90\textwidth}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}L{0.23\linewidth}L{0.71\linewidth}@{}}
+\toprule
+\textsc{Finite root} & $Q,\Omega,G,$ and $H$ give recurrence, a split metric, axial transport, and mirror reversal by direct calculation.\\
+\addlinespace
+\textsc{Mechanical realization} & $Q^2=L_{2\log\Phi}$, the discrete action, and the cotangent lift provide the stated variational and symplectic carriage.\\
+\addlinespace
+\textsc{Field contract} & Every physical row binds a state space to a governing equation, scale, calibration, observable, and named source.\\
+\addlinespace
+\textsc{Field interface} & Lorentzian geometry, quantum-state readout, gauge theory, quantum gravity, thermodynamics, atomic composition, and living regulation retain their native equations, scales, observables, and evidence paths.\\
+\addlinespace
+\textsc{Inspectable record} & Proofs, source, deterministic audits, named references, and retained receipts keep each result available for independent reading.\\
+\addlinespace
+\textsc{Contact and record} & The reversible carrier $B=Q^2$, a local interaction $U$, reader quotient $\rho$, and ordered ledger $L$ are separately typed.\\
+\addlinespace
+\textsc{Human-scale coda} & Light and clocks, atoms and membranes, viable cells, and measured experience make the same record relation available in ordinary language.\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\centering\textsc{Reading map.} Exact root; mechanical realization; native field interface; contact and record; inspectable receipt.
+\end{minipage}
+\end{center}
+
+\section{Field-theoretic requirements}
+
+A unified field theory contains a Lorentzian spacetime sector, a local quantum
+field theory of matter and gauge fields, a quantum gravitational state space,
+a parameter and mass spectrum, and a statistical-mechanical limit.  The
+standard equations and conditions used in this paper are listed below.
+
+\begin{center}
+\small
+\begin{tabular}{L{0.24\linewidth}L{0.32\linewidth}L{0.29\linewidth}}
+\toprule
+\textbf{Sector} & \textbf{Standard formal requirement} & \textbf{Mathematical result stated here}\\
+\midrule
+General relativity &
+Lorentzian metric, causal cone, curvature, and Einstein field equation &
+An exact signature-$(3,1)$ extension, null coordinates, observer
+decomposition, and pp-wave curvature formula\\
+\addlinespace
+Quantum gravity &
+Physical Hilbert space, constraint quotient, continuum limit, and a
+propagating spin-two sector &
+The physical quotient and spin-two residue criterion are stated in
+Section~\ref{sec:qg}\\
+\addlinespace
+Standard Model &
+$SU(3)_c\times SU(2)_L\times U(1)_Y$ gauge symmetry, Higgs mechanism,
+matter parameters, renormalization scheme and scale &
+The gauge-algebra count, neutral electroweak mass matrix, tree-level
+mass relations, nineteen-parameter register, and covariant renormalization
+criterion\\
+\addlinespace
+Gauge phase &
+Connection, holonomy, and $U(1)$ representation &
+An exact real $2\times2$ representation of phase inversion\\
+\addlinespace
+Scalar supersymmetry &
+$\mathbb Z_2$ grading, odd nilpotent generators, and supercommutator &
+An exact $1|1$ Clifford carrier and scalar fermionic oscillator\\
+\addlinespace
+Classical mechanics &
+Action principle and symplectic evolution &
+A discrete stationary action whose update preserves the canonical
+symplectic form\\
+\addlinespace
+Statistical mechanics &
+Microstates, macrostates, entropy, and coarse graining &
+The finite Boltzmann counting identity for a refinement of a macrostate\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\textsc{Table 1.} Field-theoretic conditions and the equations established or
+specified in this paper.
+\end{center}
+
+\section{Cross-scale spine}
+\label{sec:spine}
+
+The paper carries one disciplined relation through scale:
+\[
+\mathsf{Address}\ \longrightarrow\ \mathsf{Gate}\ \longrightarrow\
+\mathsf{Carrier}\ \longrightarrow\ \mathsf{Boundary}\ \longrightarrow\
+\mathsf{Contact}.
+\tag{R1}
+\]
+An addressed state evolves under a specified operator, retains a declared
+invariant, crosses a named boundary, and yields a record available to a
+reader.  The finite root developed in \cite{coppa-mms} supplies the common
+algebraic carrier; the covariant quantum-gravity interface is given in
+\cite{coppa-lqg}.  Every field retains its native variables, equations,
+measurements, and evidence condition.
+
+\begin{center}
+\small
+\begin{longtable}{L{0.18\linewidth}L{0.29\linewidth}L{0.34\linewidth}}
+\toprule
+\textbf{Scale} & \textbf{Native carrier and equation} & \textbf{Role in the common spine}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Scale} & \textbf{Native carrier and equation} & \textbf{Role in the common spine}\\
+\midrule
+\endhead
+Finite root &
+$V=\R^2$ with $Q,\Omega,G=[Q,\Omega]$, $H=G/\sqrt5$ &
+An exact address space, split metric, involutive mirror, recurrence, and
+phase generator\\
+\addlinespace
+Variational transport &
+$\mathcal A_d$ and $\mathsf M_{\rm cot}^{\mathsf T}\mathsf J_{\rm can}
+\mathsf M_{\rm cot}=\mathsf J_{\rm can}$ &
+The carried state advances by a symplectic update while $q_G$ remains fixed\\
+\addlinespace
+Spacetime geometry &
+$q_G=2uv$, $\widetilde G=G\oplus I_2$, and
+$G^{\rm Ein}_{\mu\nu}+\Lambda_{\rm cos}g_{\mu\nu}
+=8\pi G_NT_{\mu\nu}/c^4$ &
+Null directions, local Lorentzian geometry, curvature, and the gravitational
+field equation\\
+\addlinespace
+Gauge and field phase &
+$U_\theta=e^{\theta\mathsf i}$, $F=dA+A\wedge A$, and
+$\mathfrak g_{\rm SM}=\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak u(1)$ &
+Connection, holonomy, charge, and local gauge transport retain their native
+field-theoretic form\\
+\addlinespace
+Quantum state and readout &
+Projective rays $\mathbb P(\mathcal H)$, density operator $\rho$, and
+$p(a)=\operatorname{tr}(\rho E_a)$ for a POVM $\{E_a\}$ &
+Phase-equivalent state preparation, unitary evolution, and a typed outcome
+record\\
+\addlinespace
+Atomic and molecular form &
+$\widehat H_N=\sum_i-\hbar^2\Delta_i/(2m_e)+V_{\rm Coul}$ &
+Spectra, binding, and equilibrium geometry supply the material carrier of
+composition\\
+\addlinespace
+Thermal and energetic flow &
+$\Delta U=Q_{\rm heat}-W_{\rm out}$ and
+$dS=d_{\rm e}S+d_{\rm i}S$ with $d_{\rm i}S\geq0$ &
+Energy balance, entropy production, refinement, and endurance accounting\\
+\addlinespace
+Living regulation &
+$\dot x=f(x,u,w)$ with a viable set $K$ satisfying $x(t)\in K$ &
+Boundary maintenance, feedback, and persistence under environmental flow\\
+\addlinespace
+Computational receipt &
+$R_{n+1}=R_n\mathbin\Vert r_n$ with a typed address and reversible trace &
+An append-only record joins condition, constraint, operation, residual, and
+readable return\\
+\addlinespace
+Contact and record &
+$\mathcal C_\rho=(U(Bz,e),\operatorname{snoc}(L,r))$ with
+$r=\rho(U(Bz,e))$ &
+Reversible transport, stated reader resolution, local interaction, and ordered
+historical receipt remain separately inspectable\\
+\bottomrule
+\end{longtable}
+\par\smallskip
+\textsc{Table 2.} The cross-scale spine: native equations connected by a
+shared addressed-carrier relation.
+\end{center}
+
+The spine is a formal interface ledger.  Its finite theorem is the root
+construction of Section~\ref{sec:root}; its field rows state the equations,
+state spaces, and measurement relations through which physical realization is
+tested.  The common relation is retained identity under admissible
+transformation: address fixes the state, the gate fixes the allowed operation,
+the carrier retains the evolving value, the boundary fixes scope, and contact
+produces an inspectable receipt.  Section~\ref{sec:contact} gives the
+contact--record construction explicitly and keeps transport, reader quotient,
+and historical order distinct.
+
+\section{The two-dimensional Lorentzian form}
+\label{sec:root}
+
+\begin{definition}[Root carrier]
+Let $V=\R^2$ and let
+\[
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+G=Q\Omega-\Omega Q
+=\begin{pmatrix}-2&1\\1&2\end{pmatrix}.
+\tag{1}
+\]
+Write
+\[
+\Phi=\frac{1+\sqrt5}{2},\qquad
+\Psi=\frac{1-\sqrt5}{2},\qquad
+S=\frac{2Q-I}{\sqrt5},\qquad
+H=\frac{G}{\sqrt5},\qquad
+L_s=e^{sS}.
+\tag{2}
+\]
+The metric read is $q_G(z)=z^{\mathsf T}Gz$.
+\end{definition}
+
+\begin{theorem}[Noether--Klein scalar-symmetry theorem]
+The root carrier satisfies
+\[
+\begin{gathered}
+Q^2=Q+I,\qquad \Omega^2=-I,\qquad G^2=5I,\qquad \det G=-5,\\
+S^2=I,\qquad S^{\mathsf T}G+GS=0,\qquad H^2=I,\qquad
+H^{\mathsf T}GH=G,\qquad HSH=-S,\\
+Q^{\mathsf T}GQ=-G,\qquad
+(Q^2)^{\mathsf T}GQ^2=G,\qquad
+HL_sH=L_{-s}.
+\end{gathered}
+\tag{3}
+\]
+Moreover,
+\[
+L_{\log\Phi}=\frac{Q+2I}{\sqrt5},
+\qquad
+L_{2\log\Phi}=Q^2.
+\tag{4}
+\]
+For the four-step map
+\[
+\mathcal T(p,z)=
+\begin{cases}
+(p+1,z),&p=0,1,2,\\
+(0,Q^2z),&p=3,
+\end{cases}
+\qquad (p,z)\in\Z_4\times V,
+\tag{5}
+\]
+one has
+\[
+\mathcal T^4(p,z)=(p,Q^2z),\qquad
+\bigl(p,q_G(Q^2z)\bigr)=\bigl(p,q_G(z)\bigr).
+\tag{6}
+\]
+\end{theorem}
+
+\begin{proof}
+Direct multiplication gives the first line of (3).  The identity
+$G^2=5I$ gives $\det G=-5$ and $H^2=I$.  Since
+\[
+(2Q-I)^2=5I,\qquad
+(2Q-I)^{\mathsf T}G+G(2Q-I)=0,
+\tag{7}
+\]
+the second line of (3) follows.  Exponentiating the infinitesimal relation in
+(7) gives $L_s^{\mathsf T}GL_s=G$.  The direct identity $HSH=-S$ gives
+\[
+HL_sH=He^{sS}H=e^{sHSH}=e^{-sS}=L_{-s}.
+\]
+
+Because $S^2=I$,
+\[
+e^{sS}=(\cosh s)I+(\sinh s)S.
+\tag{8}
+\]
+The golden identities $\Phi-\Phi^{-1}=1$ and
+$\Phi+\Phi^{-1}=\sqrt5$ give
+\[
+\cosh(\log\Phi)=\frac{\sqrt5}{2},\qquad
+\sinh(\log\Phi)=\frac12.
+\]
+Substitution in (8) yields the first identity in (4).  Squaring it and using
+$Q^2=Q+I$ yields $L_{2\log\Phi}=Q^2$.  Equation (6) is then immediate from
+the definition of $\mathcal T$ and $(Q^2)^{\mathsf T}GQ^2=G$.
+\end{proof}
+
+The identities in \emph{(3)}--\emph{(4)} define the scalar-symmetry relation
+used in the remaining sections: the transport preserves $q_G$, the mirror
+reverses transport, and the normalized mirror is an involution.  These are the
+finite Noether--Klein data of the root carrier.
+
+\begin{corollary}[Null rays and golden transport]
+The two null lines of $G$ are spanned by
+\[
+v_\Phi=\begin{pmatrix}\Phi\\1\end{pmatrix},\qquad
+v_\Psi=\begin{pmatrix}\Psi\\1\end{pmatrix}.
+\tag{9}
+\]
+The matrix $Q$ acts on them by $Qv_\Phi=\Phi v_\Phi$ and
+$Qv_\Psi=\Psi v_\Psi$.  The even transport $Q^2$ preserves each null ray and
+the signed metric $q_G$.
+\end{corollary}
+
+\begin{proof}
+The characteristic equation of $Q$ is $\lambda^2-\lambda-1=0$, with roots
+$\Phi$ and $\Psi$.  Direct substitution gives
+$v_\Phi^{\mathsf T}Gv_\Phi=v_\Psi^{\mathsf T}Gv_\Psi=0$.
+\end{proof}
+
+\section{Discrete variational mechanics}
+
+Let $B=Q^2$.  For $z_j,\xi_j\in\R^2$ and an integer $N\geq1$, consider the
+discrete action
+\[
+\mathcal A_d[z,\xi]
+=\sum_{j=0}^{N-1}\xi_{j+1}^{\mathsf T}
+\bigl(z_{j+1}-Bz_j\bigr).
+\tag{10}
+\]
+The variables $\xi_j$ are covectors represented in the chosen Euclidean
+coordinates.  With $z_0$ and $z_N$ fixed, stationarity of \emph{(10)} gives
+\[
+z_{j+1}=Bz_j,\qquad
+\xi_j=B^{\mathsf T}\xi_{j+1}.
+\tag{11}
+\]
+The full one-step map is therefore
+\[
+\begin{pmatrix}z_{j+1}\\ \xi_{j+1}\end{pmatrix}
+=
+\mathsf M_{\rm cot}
+\begin{pmatrix}z_j\\ \xi_j\end{pmatrix},
+\qquad
+\mathsf M_{\rm cot}
+=
+\begin{pmatrix}B&0\\0&B^{-\mathsf T}\end{pmatrix}.
+\tag{12}
+\]
+
+\begin{proposition}[Variational and symplectic realization]
+The update \emph{(12)} is symplectic for
+\[
+\mathsf J_{\rm can}=
+\begin{pmatrix}0&I_2\\-I_2&0\end{pmatrix},
+\qquad
+\mathsf M_{\rm cot}^{\mathsf T}\mathsf J_{\rm can}\mathsf M_{\rm cot}
+=\mathsf J_{\rm can},
+\tag{13}
+\]
+and its configuration component preserves the Lorentzian quadratic form:
+\[
+q_G(Bz)=q_G(z).
+\tag{14}
+\]
+\end{proposition}
+
+\begin{proof}
+Equation \emph{(11)} follows by independent variation of $\xi_{j+1}$ and of
+the interior vectors $z_j$.  Direct block multiplication proves
+\emph{(13)}.  Equation \emph{(14)} is the identity
+$B^{\mathsf T}GB=G$ in \emph{(3)}.
+\end{proof}
+
+\section{Lorentzian geometry and classical gravity}
+
+Define
+\[
+M=
+\begin{pmatrix}
+1&-\frac15\\[2pt]
+-\Psi&\frac{\Phi}{5}
+\end{pmatrix}.
+\tag{15}
+\]
+Direct multiplication gives
+\[
+M^{\mathsf T}GM=
+\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\qquad
+\det M=\frac{1}{\sqrt5}.
+\tag{16}
+\]
+For $z=M(u,v)^{\mathsf T}$, the quadratic form is consequently
+\[
+q_G(z)=2uv.
+\tag{17}
+\]
+The two coordinate axes $u=0$ and $v=0$ are the null directions of this
+two-dimensional Lorentzian space.
+
+The four-dimensional real form
+\[
+\widetilde G=G\oplus I_2
+\tag{18}
+\]
+has signature $(3,1)$.  If $(\mathcal M,g)$ is a Lorentzian spacetime and
+$P_x\subset T_x\mathcal M$ is a two-dimensional Lorentzian subspace, then
+Sylvester's law of inertia gives an isomorphism
+\[
+A:\R^2\longrightarrow P_x,\qquad
+A^{\mathsf T}(g|_{P_x})A=G.
+\tag{19}
+\]
+In null coordinates, flat spacetime is written
+\[
+ds^2=2\,du\,dv+dx^2+dy^2.
+\tag{20}
+\]
+
+For a future-directed unit timelike vector $u_{\rm obs}$ and a
+future-directed null vector $k$, define
+\[
+g(u_{\rm obs},u_{\rm obs})=-1,\qquad
+E=-g(u_{\rm obs},k),\qquad
+n=\frac{k}{E}-u_{\rm obs}.
+\tag{21}
+\]
+Then
+\[
+g(u_{\rm obs},n)=0,\qquad
+g(n,n)=1,\qquad
+k=E(u_{\rm obs}+n).
+\tag{22}
+\]
+Thus a null tangent vector determines an energy and a unit spatial direction
+relative to an observer.
+
+The Einstein field equation, including the cosmological constant, is
+\[
+G^{\rm Ein}_{\mu\nu}+\Lambda_{\rm cos}g_{\mu\nu}
+=\frac{8\pi G_N}{c^4}T_{\mu\nu},
+\qquad
+G^{\rm Ein}_{\mu\nu}
+=R_{\mu\nu}-\frac12Rg_{\mu\nu}.
+\tag{23}
+\]
+An exact Lorentzian curvature class is provided by the Brinkmann metric
+\[
+ds^2=2\,du\,dv+H_{\rm pp}(u,x,y)\,du^2+dx^2+dy^2,
+\tag{24}
+\]
+for which, with the stated curvature convention,
+\[
+R_{uu}=-\frac12
+\bigl(\partial_x^2+\partial_y^2\bigr)H_{\rm pp},
+\qquad R=0.
+\tag{25}
+\]
+The vacuum equation is satisfied whenever $H_{\rm pp}$ is harmonic in
+$(x,y)$.  Equations \emph{(19)}--\emph{(25)} place the two-dimensional
+Lorentzian construction inside the standard local geometry of general
+relativity.
+
+\section{Gauge phase and mirror conjugation}
+
+Let
+\[
+\mathsf i=-\Omega,\qquad
+U_\theta=e^{\theta\mathsf i}
+=\cos\theta\,I+\sin\theta\,\mathsf i.
+\tag{26}
+\]
+Then $\mathsf i^2=-I$ and, for the complex coordinate
+$\chi(x,y)=x+iy$,
+\[
+\chi U_\theta\chi^{-1}(w)=e^{i\theta}w.
+\tag{27}
+\]
+The mirror equation in \emph{(3)} gives
+\[
+H\mathsf iH=-\mathsf i,\qquad
+HU_\theta H=U_{-\theta}=U_\theta^{-1}.
+\tag{28}
+\]
+At $\theta=\pi$,
+\[
+U_\pi=-I,\qquad e^{i\pi}+1=0.
+\tag{29}
+\]
+
+For a closed curve $\gamma$, electric charge $q_{\rm el}$, and electromagnetic
+connection one-form $A_{\rm em}$, the Aharonov--Bohm phase is
+\[
+\varphi_{\rm AB}=\frac{q_{\rm el}}{\hbar}\oint_\gamma A_{\rm em},
+\qquad
+U_\gamma=e^{-\varphi_{\rm AB}\Omega}.
+\tag{30}
+\]
+Under the complex coordinate in \emph{(27)},
+\[
+\chi U_\gamma\chi^{-1}(w)=e^{i\varphi_{\rm AB}}w,
+\qquad
+HU_\gamma H=U_\gamma^{-1}.
+\tag{31}
+\]
+Thus the two-dimensional real representation realizes the standard
+$U(1)$ phase and its inverse holonomy.
+
+\section{Mirror grading and scalar supersymmetry}
+
+Let
+\[
+S_{\rm raw}=2Q-I,
+\qquad
+\mathsf i=-\Omega,
+\qquad
+\mathcal A=M_2(\R).
+\tag{S1}
+\]
+The normalized mirror $H=G/\sqrt5$ defines an involutive algebra
+automorphism
+\[
+\alpha:\mathcal A\longrightarrow\mathcal A,
+\qquad
+\alpha(X)=HXH.
+\tag{S2}
+\]
+
+\begin{theorem}[Exact $1|1$ mirror grading]
+The eigenspaces of $\alpha$ are
+\[
+\mathcal A_{\bar0}=\operatorname{span}_{\R}\{I,G\},
+\qquad
+\mathcal A_{\bar1}=\operatorname{span}_{\R}\{S_{\rm raw},\mathsf i\},
+\qquad
+\mathcal A=\mathcal A_{\bar0}\oplus\mathcal A_{\bar1}.
+\tag{S3}
+\]
+They have dimensions $(2|2)$ and satisfy
+\[
+\mathcal A_{\bar p}\mathcal A_{\bar q}
+\subseteq\mathcal A_{\overline{p+q}}.
+\tag{S4}
+\]
+The odd generators obey
+\[
+S_{\rm raw}^2=5I,
+\qquad
+\mathsf i^2=-I,
+\qquad
+\{S_{\rm raw},\mathsf i\}=0,
+\qquad
+S_{\rm raw}\mathsf i=-G.
+\tag{S5}
+\]
+Consequently $\mathcal A$ is the real Clifford carrier
+\[
+Cl(1,1)\cong M_2(\R)\cong\operatorname{End}(\R^{1|1}),
+\tag{S6}
+\]
+and its supercommutator is the Lie superalgebra $\mathfrak{gl}(1|1)$.
+\end{theorem}
+
+\begin{proof}
+The equations $H S_{\rm raw}H=-S_{\rm raw}$ and
+$H\mathsf iH=-\mathsf i$ follow from \emph{(3)} and \emph{(28)}, while
+$HIH=I$ and $HGH=G$.  These four independent matrices span $M_2(\R)$,
+giving \emph{(S3)} and \emph{(S4)}.  Direct multiplication gives
+\emph{(S5)}.  The defining Clifford relations and the dimension count yield
+\emph{(S6)}.  Associativity of $\mathcal A$ gives the graded Jacobi identity
+for its supercommutator.
+\end{proof}
+
+The Fibonacci transport is intentionally mixed under this grading:
+\[
+Q=\frac12(I+S_{\rm raw}).
+\tag{S7}
+\]
+Thus recurrence carries one even scalar component and one odd lift component.
+
+\begin{proposition}[Scalar fermionic oscillator]
+The two odd null generators
+\[
+A_+=S_{\rm raw}+\sqrt5\,\mathsf i,
+\qquad
+A_-=S_{\rm raw}-\sqrt5\,\mathsf i=A_+^{\mathsf T}
+\tag{S8}
+\]
+satisfy
+\[
+A_+^2=A_-^2=0,
+\qquad
+\{A_+,A_-\}=20I.
+\tag{S9}
+\]
+They furnish the exact $0+1$-dimensional scalar supersymmetric oscillator
+with Hamiltonian $\mathsf h_{\rm osc}=10I$.
+\end{proposition}
+
+\begin{remark}[Parity, adjoint, and scalar scope]
+The mirror itself implements parity:
+\[
+HA_\pm H=-A_\pm.
+\tag{S10}
+\]
+The adjoint in the scalar oscillator is the Euclidean transpose,
+$A_+^\dagger=A_+^{\mathsf T}=A_-$; it is distinct from the $G$-adjoint.
+Writing $\mathsf q=A_+$ and $\mathsf q^\dagger=A_-$ gives
+\[
+\{\mathsf q,\mathsf q^\dagger\}=2\mathsf h_{\rm osc},
+\qquad \mathsf h_{\rm osc}=10I.
+\tag{S11}
+\]
+Its spectrum is $\{10\}$ on the present $1|1$ carrier.
+\end{remark}
+
+Equations \emph{(S8)}--\emph{(S11)} are the paper's exact scalar
+$0+1$-dimensional result.  A spacetime supercharge representation is the next
+field-theoretic construction: named $Q_\alpha$, a Poincar\'e translation
+sector $P_\mu$ with $[P_\mu,Q_\alpha]=0$, closure relations, and a field
+multiplet with matched degrees of freedom.
+
+\section{Quantum gravity}
+\label{sec:qg}
+
+For a covariant quantum-gravity model, let $\mathcal D_\Sigma$ be a test
+space and let
+\[
+P_\Sigma:\mathcal D_\Sigma\longrightarrow\mathcal D_\Sigma'
+\tag{32}
+\]
+be a rigging map.  The physical Hilbert space is the completion
+\[
+\mathcal H_\Sigma^{\rm phys}
+=\overline{\mathcal D_\Sigma/\ker P_\Sigma}
+\tag{33}
+\]
+in the physical inner product.  If $\mathcal G_{\rm phys}(k)$ is a
+momentum-space physical two-point function and $P_{\rm TT}(k)$ is the
+transverse-traceless projector, the massless spin-two residue is
+\[
+\mathcal W_2[\mathcal G_{\rm phys}]
+=\lim_{k^2\to0}
+k^2P_{\rm TT}(k)\mathcal G_{\rm phys}(k)P_{\rm TT}(k).
+\tag{34}
+\]
+The field-theoretic condition for a propagating graviton sector is
+\[
+\mathcal W_2[\mathcal G_{\rm phys}]\ne0.
+\tag{35}
+\]
+The physical quotient \emph{(33)}, a continuum limit, and the nonzero
+residue \emph{(35)} are the mathematical conditions that connect a
+covariant quantum-gravity construction to a low-energy spin-two field.
+
+\section{Standard Model gauge theory}
+
+The gauge algebra of the Standard Model is
+\[
+\mathfrak g_{\rm SM}
+=\mathfrak{su}(3)_c\oplus\mathfrak{su}(2)_L\oplus\mathfrak u(1)_Y,
+\qquad
+\dim\mathfrak g_{\rm SM}=8+3+1=12.
+\tag{36}
+\]
+For the componentwise Lie bracket
+\[
+\beta:\bigwedge^2\mathfrak g_{\rm SM}\longrightarrow\mathfrak g_{\rm SM},
+\tag{37}
+\]
+the image has dimension $11$: the two simple summands are generated by
+their brackets and $\mathfrak u(1)_Y$ is central.  Hence
+\[
+\dim\bigwedge^2\mathfrak g_{\rm SM}=66,\qquad
+\operatorname{rank}\beta=11,\qquad
+\dim\ker\beta=55.
+\tag{38}
+\]
+In particular,
+\[
+\dim\bigwedge^2\mathfrak{su}(3)=\binom82=28.
+\tag{39}
+\]
+For any ordered basis $(t_0,\ldots,t_7)$ of $\mathfrak{su}(3)$, the map
+\[
+\mathfrak a:\R^{E(K_8)}\longrightarrow\bigwedge^2\mathfrak{su}(3),
+\qquad
+\mathfrak a(e_{ij})=t_i\wedge t_j
+\tag{40}
+\]
+is an isomorphism, where $E(K_8)$ is the edge set of the complete graph on
+eight vertices.  This identifies the twenty-eight edge basis vectors with
+the exterior-square carrier of the color algebra.
+
+With the conventional Higgs doublet, hypercharge $Y_H=\frac12$, and
+$\mathcal Q_{\rm em}=T_3+Y$, the neutral gauge-boson mass matrix is
+\[
+\mathsf{Mass}_{\rm neutral}^2
+=\frac{v^2}{4}
+\begin{pmatrix}
+g_2^2&-g_2g_Y\\
+-g_2g_Y&g_Y^2
+\end{pmatrix}.
+\tag{41}
+\]
+Its eigenvalues are
+\[
+0,\qquad\frac{v^2}{4}(g_2^2+g_Y^2),
+\tag{42}
+\]
+and the tree-level relations are
+\[
+m_W=\frac{g_2v}{2},\qquad
+m_Z=\frac{v}{2}\sqrt{g_2^2+g_Y^2},\qquad
+m_f=\frac{y_fv}{\sqrt2}.
+\tag{43}
+\]
+
+In the minimal renormalizable model with three generations, one Higgs
+doublet, massless neutrinos, and the strong-CP parameter retained, the
+continuous parameter space has nineteen coordinates:
+\[
+\begin{aligned}
+3\ &\text{ gauge couplings}
++2\ \text{ Higgs-potential parameters}\\
+&+9\ \text{ charged-fermion masses}
++4\ \text{ CKM parameters}\\
+&+1\ \text{ strong-CP parameter}=19.
+\end{aligned}
+\tag{44}
+\]
+An all-parameter derivation assigns every coordinate in \emph{(44)} at a
+specified renormalization scale and scheme and compares the resulting
+observables with measurements independent of the selecting data.  Neutrino
+masses and mixing belong to an extended parameter space.
+
+\section{Covariant field renormalization}
+
+For a renormalizable gauge theory in $d=4-2\epsilon$ dimensions, bare and
+renormalized couplings are related by
+\[
+g_{a,0}=\mu^\epsilon Z_{g_a}(\mu)g_a(\mu),
+\qquad
+m_{r,0}=Z_{m_r}(\mu)m_r(\mu),
+\tag{45}
+\]
+with a declared renormalization scheme, scale $\mu$, and renormalization
+constants $Z$.  The corresponding covariant running equations are
+\[
+\mu\frac{\dd g_a}{\dd\mu}=\beta_a(g),
+\qquad
+\mu\frac{\dd m_r}{\dd\mu}=\gamma_r(g)m_r.
+\tag{46}
+\]
+For the color sector, the leading QCD coefficient is
+\[
+\mu\frac{\dd g_3}{\dd\mu}
+=-\frac{g_3^3}{16\pi^2}
+\left(11-\frac23n_f\right)+O(g_3^5).
+\tag{47}
+\]
+Equations \emph{(45)}--\emph{(47)} make the scale dependence of the Standard
+Model parameter register explicit.  At a declared scheme and scale, the QCD
+running relation is the color-sector selection relation for $g_3$.  A parameter
+selection rule maps declared input data to the coordinates of \emph{(44)}; the
+resulting observables are then compared at the same scheme and scale.
+
+\section{Statistical mechanics and thermodynamics}
+
+Let $X$ be a finite microstate space and let
+\[
+\rho:X\longrightarrow\mathcal M
+\tag{48}
+\]
+be a macrostate map.  For $\mu\in\operatorname{im}\rho$, define
+\[
+W_\rho(\mu)=|\rho^{-1}(\mu)|,\qquad
+S_B(\mu)=k_B\log W_\rho(\mu).
+\tag{49}
+\]
+If $\eta:X\to\mathcal R$ is a finer macrostate map and
+$\rho=\lambda\circ\eta$, then every fiber $\eta^{-1}(r)$ is contained in
+the corresponding fiber $\rho^{-1}(\lambda(r))$.  Hence
+\[
+S_\eta(r)
+=S_B(\lambda(r))
+-k_B\log\frac{W_\rho(\lambda(r))}{W_\eta(r)}
+=k_B\log W_\eta(r).
+\tag{50}
+\]
+Equation \emph{(50)} is the exact finite coarse-graining identity.  It
+separates the entropy associated with a declared macrostate from the entropy
+associated with a refinement of that macrostate.
+
+For a thermodynamic system with heat into the system and work done by the
+system, the energy and entropy balances are
+\[
+\Delta U=Q_{\rm heat}-W_{\rm out},
+\qquad
+dS=d_{\rm e}S+d_{\rm i}S,\qquad
+d_{\rm i}S\geq0.
+\tag{51}
+\]
+The balances in \emph{(51)} specify the physical boundary and process to
+which an entropy calculation applies.
+
+\section{Contact, record, and the arrow of time}
+\label{sec:contact}
+
+Let $B=Q^2$.  The root carrier gives a reversible transport with expanding
+and contracting null directions,
+\[
+\operatorname{spec}(B)=\{\Phi^2,\Phi^{-2}\},\qquad
+B^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\tag{52}
+\]
+The transport parameter $s$ of $L_s$, the occurrence index $n$ of a record,
+and a physical clock coordinate $\tau$ have distinct offices:
+\[
+s=\text{root transport parameter},\qquad
+n=\text{record order},\qquad
+\tau=\text{calibrated physical time}.
+\tag{53}
+\]
+A physical model supplies a calibration when it relates these coordinates.
+
+\begin{definition}[Contact--record operator]
+Let $E$ be a declared local interaction carrier, let $U:V\times E\to V$
+be its state update, let $\rho:V\to Y$ be a declared reader at a stated
+resolution, and let $Y^\ast$ be the finite sequences of reader outcomes.
+For $z\in V$, $e\in E$, and $L\in Y^\ast$, define
+\[
+\mathcal C_\rho(z,e,L)
+=\left(
+U(Bz,e),\;
+\operatorname{snoc}\!\left(L,\rho\bigl(U(Bz,e)\bigr)\right)
+\right).
+\tag{54}
+\]
+The first component carries the next state; the second component carries the
+ordered receipt of the stated reader.
+\end{definition}
+
+\begin{proposition}[Reversible carrier and mirror reader]
+The root transport satisfies
+\[
+B^{\mathsf T}GB=G,\qquad
+GBG=5B^{-1},\qquad
+HBH=B^{-1}.
+\tag{55}
+\]
+Consequently $B$ and $H$ generate the translation--reflection relation
+\[
+\langle B,H\mid H^2=I,\;HBH=B^{-1}\rangle\cong D_\infty,
+\tag{56}
+\]
+because $B$ has infinite order.
+\end{proposition}
+
+\begin{proof}
+The first identity is equation \emph{(14)}.  Direct integer multiplication
+gives $GBG=5B^{-1}$, and division by $5$ yields the third identity because
+$H=G/\sqrt5$.  The eigenvalue $\Phi^2>1$ gives infinite order of $B$.
+\end{proof}
+
+\begin{proposition}[Reader fibres and historical order]
+For a fixed local input $e$, a fibre
+\[
+\bigl(\rho\circ U(\,\cdot\,,e)\bigr)^{-1}(r)
+\tag{57}
+\]
+with more than one state identifies distinct predecessor states at the stated
+reader resolution.  The ledger itself retains order exactly: the map
+\[
+\operatorname{snoc}:Y^\ast\times Y\longrightarrow
+Y^\ast\setminus\{()\}
+\tag{58}
+\]
+is bijective, with inverse given by the prefix and final element.  Thus for
+\[
+L_0=(),\qquad
+L_{n+1}=\operatorname{snoc}(L_n,r_{n+1}),
+\tag{59}
+\]
+each $L_m$ is a prefix of $L_n$ whenever $m\leq n$.
+\end{proposition}
+
+\begin{proof}
+Equation \emph{(57)} is the definition of the reader fibre.  Every nonempty
+finite sequence has a unique final element and unique preceding prefix, which
+proves \emph{(58)} and the prefix relation in \emph{(59)}.
+\end{proof}
+
+The contact--record operator resolves three roles that often appear together
+in an observed process.  $B$ supplies the reversible geometric carrier;
+$\rho$ supplies the stated accessible resolution; and $L$ supplies the
+historical order of retained outcomes.  A reader fibre records the precise
+place where a coarse-grained outcome has several compatible predecessor
+states.  The ordered ledger preserves the sequence through which that outcome
+became available.
+
+A physical arrow-of-time realization begins with a declared system and
+environment, a physical interaction $U$, a measurement or coarse-graining
+$\rho$, an outcome record, a calibration connecting $s$, $n$, and $\tau$,
+and the relevant energy and entropy balance \emph{(51)}.  The finite result
+of this section is the exact contact--record architecture and its executable
+toy witness; those stated physical ingredients carry it into a measurable
+process \cite{shannon,landauer}.
+
+\section{Conclusion}
+
+The scalar-symmetry theorem gives a complete finite result:
+\[
+G=[Q,\Omega],\qquad
+G^2=5I,\qquad
+L_s^{\mathsf T}GL_s=G,\qquad
+HL_sH=L_{-s},\qquad
+L_{2\log\Phi}=Q^2.
+\tag{60}
+\]
+The same real $2\times2$ carrier has a discrete variational realization,
+null coordinates, a signature-$(3,1)$ extension, and a faithful
+representation of $U(1)$ phase inversion.  The cross-scale spine of
+Section~\ref{sec:spine} carries this finite relation into the native
+equations of quantum state and readout, atomic composition, energetic flow,
+living regulation, and computational receipt.  The Standard Model, quantum
+gravity, and thermodynamic sectors retain their gauge, state-space,
+field-equation, and entropy structures.  Equations \emph{(23)},
+\emph{(33)}--\emph{(35)}, \emph{(36)}--\emph{(47)}, and
+\emph{(48)}--\emph{(51)} state the field-theoretic requirements in the same
+record as the proved scalar relation.  Equations \emph{(52)}--\emph{(59)}
+then fix the contact--record relation: $B$ carries reversible transport,
+$\rho$ states the reader resolution, and $L$ retains historical order.  The
+physical bridge is completed field by field through the stated interaction,
+calibration, observable, and balance law.
+
+\clearpage
+\section{Coda: Reality at human scale}
+\label{sec:ordinary}
+
+Ordinary reality becomes readable in a simple sequence: something happens; a
+boundary is crossed; a signal registers a difference; a record makes a later
+comparison available.  A clock, a camera, a laboratory spectrum, and a cell
+membrane each carry this relation in a material form.  Coordinates, units,
+calibration, and source fix its resolution.  This is the concrete order of
+address, carrier, boundary, contact, and receipt.
+
+\medskip
+\noindent\textbf{Geometry and light.}  A sunrise, a moving vehicle, and a
+clock face are local events in a Lorentzian geometry.  Proper time orders a
+timelike path; light follows a null path; and an observer resolves an arriving
+null direction into measured energy and spatial direction by
+\emph{(20)}--\emph{(22)}.  The $2\times2$ root supplies a specified
+Lorentzian two-plane inside that standard geometry, whose field equation is
+\emph{(23)}.
+
+\medskip
+\noindent\textbf{Matter and chemistry.}  Atoms and molecules carry spectra,
+bound states, and interaction energies.  Chemistry tracks how matter and free
+energy move through a stated process.  For an ion of charge $z$ moving from
+phase $1$ to phase $2$, the electrochemical difference in a declared sign
+convention is
+\[
+\Delta\widetilde\mu
+=RT\log\frac{a_2}{a_1}+zF(\psi_2-\psi_1),
+\tag{53}
+\]
+where $a_i$ are activities and $\psi_i$ are electric potentials
+\cite{iupac-green}.  A battery, an electrolyte, and a cell membrane all make
+such a difference materially available.
+
+\medskip
+\noindent\textbf{Living regulation.}  A living cell maintains a boundary,
+exchanges matter and energy, and couples chemical gradients to work.  In
+oxidative phosphorylation, redox transport supports a proton-motive gradient;
+ATP synthase couples that gradient to ATP production through rotary catalysis
+\cite{mitchell,alberts}.  A viable state $x(t)$ remains within a declared
+range under its dynamics and feedback.  This gives a physical instance of a
+boundary, a directed operation, a maintained difference, and a continuing
+record.
+
+\medskip
+\noindent\textbf{Experience and record.}  To say that a person crosses a
+room, a bird changes perch, or a clock hand advances is to retain an earlier
+state while reading a later one.  The finite map in \emph{(5)}--\emph{(6)}
+has the same formal order: the phase returns, $Q^2z$ advances, $q_G$ remains
+fixed, and the occurrence carries an address.  Section~\ref{sec:contact}
+separates the moving state, the stated reader, and the retained sequence:
+$B$ carries the state, $\rho$ names the visible resolution, and $L$ retains
+the order in which outcomes become available.  The physical systems retain
+their native dynamics and evidence; the exact root supplies a finite grammar
+for keeping their common formal relations readable.
+
+The ordinary reader therefore begins with what can be held together: a
+coordinate, a condition, an operation, a measurable difference, and a record.
+The relation is complete when a later reader can reproduce the comparison at
+the stated resolution.
+
+\clearpage
+\appendix
+
+\section{The quadratic integer form}
+
+For $x=a+b\Phi\in\Z[\Phi]$, define
+\[
+N_{\rm alg}(x)=a^2+ab-b^2,\qquad
+z=\begin{pmatrix}b\\a\end{pmatrix}.
+\tag{A1}
+\]
+Then
+\[
+z^{\mathsf T}Gz=2N_{\rm alg}(x).
+\tag{A2}
+\]
+Multiplication by $\Phi$ sends $(a,b)$ to $(b,a+b)$, and consequently
+\[
+N_{\rm alg}(\Phi x)=-N_{\rm alg}(x),\qquad
+N_{\rm alg}(\Phi^2x)=N_{\rm alg}(x).
+\tag{A3}
+\]
+Equations \emph{(A2)}--\emph{(A3)} are the integer form of the sign reversal
+under $Q$ and the isometry under $Q^2$.
+
+\section{The \texorpdfstring{$K_8$}{K8} exterior-square carrier}
+
+Write the vertex set of $K_8$ as $\{\infty\}\cup\Z_7$.  For
+$r\in\Z_7$, let
+\[
+M_r=\{\{\infty,r\}\}\cup
+\bigl\{\{r+j,r-j\}:j=1,2,3\bigr\}.
+\tag{A4}
+\]
+Each $M_r$ has four edges, and the seven matchings partition $E(K_8)$: an edge
+incident to $\infty$ determines $r$, while an edge $\{a,b\}\subset\Z_7$
+occurs in the matching with
+\[
+r=4(a+b)\pmod7.
+\tag{A5}
+\]
+Thus every edge occurs exactly once.
+
+Let $(t_1,\ldots,t_8)$ be an orthonormal Gell--Mann basis of
+$\mathfrak{su}(3)$ and write
+\[
+[t_a,t_b]=\sum_{c=1}^8 f_{abc}t_c.
+\tag{A6}
+\]
+The adjoint matrices $(\operatorname{ad}t_a)_{bc}=-f_{abc}$ are skew and
+bracket-preserving, giving the exact representation
+\[
+\operatorname{ad}:\mathfrak{su}(3)\longrightarrow\mathfrak{so}(8).
+\tag{A7}
+\]
+The induced representation on $\Lambda^2\R^8$ has the exact spectral split
+\[
+\Lambda^2(8)=8\oplus W_{20},
+\qquad
+28=8+20.
+\tag{A8}
+\]
+In the compact skew convention, its quadratic Casimir has spectrum
+$\{-3,-6\}$ and satisfies
+\[
+(\mathcal C_2+3I)(\mathcal C_2+6I)=0,
+\qquad
+\operatorname{tr}\mathcal C_2=-144.
+\tag{A9}
+\]
+Thus the $K_8$ edge basis gives
+\[
+\R^{E(K_8)}\xrightarrow{\ \cong\ }\Lambda^2\mathfrak{su}(3),
+\qquad e_{ij}\longmapsto t_i\wedge t_j,
+\tag{A10}
+\]
+while $\mathfrak{so}(8)$ is its ambient skew-endomorphism presentation.  The
+matching ledger is a separately proved finite address space.  Its root
+comparison has continuous transport $L_s$ preserving $q_G$ and mirror relation
+$HL_sH=L_{-s}$; an explicit map from the ledger into the mirror-graded algebra
+is the next linking construction.  The square phase cell is the periodic
+quotient of the infinite dihedral translation--reflection reader:
+\[
+D_\infty/\langle r^4\rangle\cong D_4,
+\qquad
+D_\infty=\langle r,s\mid s^2=1,\ srs=r^{-1}\rangle.
+\tag{A11}
+\]
+
+\medskip
+\noindent\textbf{Finite arithmetic.}  The Fibonacci and Lucas sequences give
+\[
+L_5^2+4^2=11^2+4^2=137=1+4F_9.
+\tag{A12}
+\]
+In the finite field $\mathbb F_{137}$,
+\[
+4^{17}\equiv-1\pmod{137},\qquad
+\operatorname{ord}_{137}(4)=34,\qquad
+\mathbb F_{137}^{\times}/\langle4\rangle\cong C_4.
+\tag{A13}
+\]
+These are exact finite-field identities.
+
+\section{Executable verification}
+
+The source package carries deterministic checks for the finite constructions.
+Each command, hash, result, and stated boundary is retained in the executable
+receipt accompanying this paper.
+
+\begin{center}
+\small
+\begin{tabular}{@{}L{0.22\linewidth}L{0.35\linewidth}L{0.34\linewidth}@{}}
+\toprule
+\textbf{Carrier} & \textbf{Executable witness} & \textbf{Verified result}\\
+\midrule
+Root and typed gate & Root translator and mirror audit & Exact root identities, six typed \texttt{can|fold} paths, and nine declared finite gates\\
+\addlinespace
+Physical-interface witnesses & Physical-reality verifier & Ten exact finite witnesses for the declared formulas and interfaces\\
+\addlinespace
+Scalar and $K_8$ carrier & Scalar-symmetry audit & Mirror grading, all $64$ basis super-Jacobi triples, scalar oscillator, matching ledger, and $\mathfrak{su}(3)$ exterior square\\
+\addlinespace
+Contact and record & Contact--record audit & $B$ transport, mirror reversal, reader-fibre collision, and ordered \texttt{snoc} receipt witness\\
+\addlinespace
+Compile-time carrier & C++ phase and gate assertions & C++17/C++20 syntax and declared compile-time assertions\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\textsc{Receipt.} The executable receipt records the command, SHA-256 identity, result, and boundary for each artifact.
+\end{center}
+
+\clearpage
+\begin{thebibliography}{99}
+
+\bibitem{coppa-mms}
+A.~V.~Coppa,
+\newblock \emph{Metric Mirror Symmetry: Riemann's $i$ Machine},
+\newblock Coppalini Architecture (2026),
+\newblock doi:\href{https://doi.org/10.5281/zenodo.23478606}{10.5281/zenodo.23478606}.
+
+\bibitem{coppa-lqg}
+A.~V.~Coppa,
+\newblock \emph{Continuum Closure in Covariant Loop Quantum Gravity}, v1.1,
+\newblock Zenodo (2026),
+\newblock doi:\href{https://doi.org/10.5281/zenodo.23478786}{10.5281/zenodo.23478786}.
+
+\bibitem{einstein}
+A.~Einstein,
+\newblock Die Grundlage der allgemeinen Relativit\"atstheorie,
+\newblock \emph{Annalen der Physik} \textbf{49} (1916), 769--822,
+\newblock doi:\href{https://doi.org/10.1002/andp.19163540702}{10.1002/andp.19163540702}.
+
+\bibitem{marsdenwest}
+J.~E.~Marsden and M.~West,
+\newblock Discrete mechanics and variational integrators,
+\newblock \emph{Acta Numerica} \textbf{10} (2001), 357--514,
+\newblock doi:\href{https://doi.org/10.1017/S096249290100006X}{10.1017/S096249290100006X}.
+
+\bibitem{aharonovbohm}
+Y.~Aharonov and D.~Bohm,
+\newblock Significance of electromagnetic potentials in the quantum theory,
+\newblock \emph{Physical Review} \textbf{115} (1959), 485--491,
+\newblock doi:\href{https://doi.org/10.1103/PhysRev.115.485}{10.1103/PhysRev.115.485}.
+
+\bibitem{weinberg}
+S.~Weinberg,
+\newblock A model of leptons,
+\newblock \emph{Physical Review Letters} \textbf{19} (1967), 1264--1266,
+\newblock doi:\href{https://doi.org/10.1103/PhysRevLett.19.1264}{10.1103/PhysRevLett.19.1264}.
+
+\bibitem{pdg}
+R.~L.~Workman et al.\ (Particle Data Group),
+\newblock Review of Particle Physics,
+\newblock \emph{Progress of Theoretical and Experimental Physics} \textbf{2022}
+(2022), 083C01,
+\newblock doi:\href{https://doi.org/10.1093/ptep/ptac097}{10.1093/ptep/ptac097}.
+
+\bibitem{shannon}
+C.~E.~Shannon,
+\newblock A mathematical theory of communication,
+\newblock \emph{Bell System Technical Journal} \textbf{27} (1948), 379--423,
+\newblock doi:\href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem{landauer}
+R.~Landauer,
+\newblock Irreversibility and heat generation in the computing process,
+\newblock \emph{IBM Journal of Research and Development} \textbf{5} (1961),
+183--191,
+\newblock doi:\href{https://doi.org/10.1147/rd.53.0183}{10.1147/rd.53.0183}.
+
+\bibitem{iupac-green}
+IUPAC,
+\newblock \emph{Quantities, Units and Symbols in Physical Chemistry}, 3rd ed.,
+\newblock RSC Publishing (2007),
+\newblock \href{https://iupac.org/what-we-do/books/greenbook/}{iupac.org/what-we-do/books/greenbook/}.
+
+\bibitem{mitchell}
+P.~Mitchell,
+\newblock Coupling of phosphorylation to electron and hydrogen transfer
+by a chemi-osmotic type of mechanism,
+\newblock \emph{Nature} \textbf{191} (1961), 144--148,
+\newblock doi:\href{https://doi.org/10.1038/191144a0}{10.1038/191144a0}.
+
+\bibitem{alberts}
+B.~Alberts et al.,
+\newblock \emph{Molecular Biology of the Cell}, 7th ed.,
+\newblock W.~W.~Norton \& Company (2022).
+
+\end{thebibliography}

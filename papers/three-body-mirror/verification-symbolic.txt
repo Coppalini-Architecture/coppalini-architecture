@@ -1,0 +1,13 @@
+CHECKS PASSED: equilibrium, H2/H3/H4, spectrum, eigenvectors, symplectic normalization, Hamiltonian normal form
+nu = 1.748305285531431
+sampling sigma* = 0.5504894700507981
+symplectic eigenvector pairing = -4.482512147501651
+H4 direct xi^2 eta^2 = -1.547622997565423
+cubic elimination correction = -1.225471490664213
+quartic Hamiltonian saddle coefficient a = -107940783*sqrt(51)/292920880 - 82891803/585841760
+a (numeric) = -2.773094488229637
+time-map normal form c1 = 2*sigma* *a = -3.053118630452643
+RESULT: c1 != 0; the hyperbolic saddle normal form has a nonzero analytic linearization obstruction.
+SCOPE: local fixed-angular-momentum equal-mass Euler model; branchwise cross remains conjugate.
+
+Exit code: 0

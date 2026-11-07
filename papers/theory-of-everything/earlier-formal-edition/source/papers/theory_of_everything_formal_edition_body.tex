@@ -1,0 +1,1404 @@
+\noindent\textbf{Abstract.}
+
+Everything is the boundary object for the limit of the imagination. A theory offered under this title therefore requires a public standard by which a reader can follow its constructions and compare its claims with their sources. This paper states such a standard: a declared jurisdiction, typed carrier, admissible operation, reference, reader, and retained receipt. It constructs an exact two-dimensional example in which a readable form returns while its carried state advances. A finite eight-address structure supplies twenty-eight distinct pairwise comparisons and a seven-matching audit.
+
+The undertaking advances three physical claims: a completed quantum theory of gravity; a derivation of all Standard Model parameters; and the canonization of general relativity as the final closure of the seam between two-dimensional formal invariance and three-dimensional experiential reality. The construction is brought into contact with covariant loop quantum gravity, the Standard Model, general relativity, thermodynamics, and living cellular organization. The mathematical witnesses and physical premises are identified at each contact. The available quantum-gravity source makes its continuum result conditional on a physical spin-two readout; the parameter sources identify numerical inputs still to be selected; and the relativity-to-observer claim requires its physical adapters. These are explicit conditions for the three claims at the resolution presented here. Several supporting project records remain private; their access status is identified in the references.
+
+Further work, predictions, experiments, and the quest for understanding persist. The reader is invited to check each written form independently by the minimum gauge.
+
+\hypertarget{everything-and-the-reader}{%
+\section{Everything and the reader}\label{everything-and-the-reader}}
+
+Everything is the boundary object for the limit of the imagination. Its scope is whole: it includes reality, possibility, imagination, and the untypeable. Nothing, designated by \(\varnothing\), is knowable deductively through the negative space of typed form. Within this scope, what is addressed, experienced, imagined, and questioned can be brought into relation.
+
+The body reading these words belongs to that scope. So do light at a window, a remembered voice, a measured field, and a mathematical proof. Each becomes available to a reader through a particular form of contact. The form of the contact determines which differences can be read, which relations can be carried, and what record can be returned to another reader.
+
+Outside folds inside: an incoming difference meets a boundary, becomes available within a carrier, and may be carried into later motion. Fold is proposed as the minimum memory--motion gauge relation at that contact. A declared reference fixes what can be recognized through the change, while a receipt carries the occurrence at the resolution needed for reuse. Each physical instance supplies its own boundary, transport, and evidence.
+
+A theory earns the breadth of its title by making those relations inspectable. Its objects have domains. Its operations have conditions. Its physical applications have carriers and measurements. Its results keep the strength their proofs and observations give them. A reader can then follow a construction from its first distinction to the use it claims.
+
+The central proposal is that one small dependency can organize that passage:
+
+\[
+\text{address}\longrightarrow
+\text{admitted transport}\longrightarrow
+\text{readable return}\longrightarrow
+\text{retained receipt}\longrightarrow
+\text{reuse}.
+\tag{1}
+\]
+
+An address fixes what is under comparison. Transport carries a state through an admitted change. Return compares the result with a reference at a declared resolution. A receipt preserves the occurrence at the resolution required for a later check. Reuse is the further operation that the retained result permits. These duties can be realized by different mathematics and different physical systems. Their particular realizations keep their own laws. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{1}, \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+\hypertarget{a-minimum-gauge-for-written-form}{%
+\section{A minimum gauge for written form}\label{a-minimum-gauge-for-written-form}}
+
+\hypertarget{jurisdiction-typing-and-admission}{%
+\subsection{Jurisdiction, typing, and admission}\label{jurisdiction-typing-and-admission}}
+
+Fix a jurisdiction \(J\) and an active context
+
+\[
+\Gamma_J=(\mathsf{Condition},\mathsf{Constraint},
+\mathsf{SourceAuthority},\mathsf{Namespace}).
+\tag{2}
+\]
+
+The context states what is being considered, what an admitted continuation must preserve, which source supplies the relevant authority, and how its symbols are used. Let
+
+\[
+D_{\Gamma_J}=
+\{w:\exists\tau\;(\Gamma_J\vdash w:\tau)\}
+\tag{3}
+\]
+
+be the expressions assigned a type in that context. The current namespace reserves \(\varnothing\) for \(\mathsf{UNTYPEABLE}\). At the metatheoretic level,
+
+\[
+w\uparrow\varnothing
+\quad\Longleftrightarrow\quad
+\nexists\tau\;(\Gamma_J\vdash w:\tau).
+\tag{4}
+\]
+
+The symbol designates the boundary at which the declared typing rules give no type to the expression. Set-theoretic emptiness, where needed, is written \(\emptyset_{\rm set}\). A particular untypeability claim is checked against a grammar and its rules. For an explicit example, let terms be generated by \(w::=\mathtt z\mid\mathtt A\mid\operatorname{app}(w,w)\), and let the only typing rules be
+
+\[
+\mathtt z:\mathsf{State},\qquad
+\mathtt A:\mathsf{Step},\qquad
+\frac{u:\mathsf{Step}\quad v:\mathsf{State}}
+{\operatorname{app}(u,v):\mathsf{State}}.
+\tag{4a}
+\]
+
+The two sorts are distinct. Thus \(\operatorname{app}(\mathtt A,\mathtt z)\) has type \(\mathsf{State}\), while \(\operatorname{app}(\mathtt A,\mathtt A)\uparrow\varnothing\): its second argument has only type \(\mathsf{Step}\) under these rules. This is a result for the declared fragment. A larger grammar can supply other operations and other typing judgments. In §3 the well-typed term has the interpretation \(\mathtt z\mapsto z_0\), \(\mathtt A\mapsto Q^2\).
+
+For typed candidates, choose a constraint \(C_J\) and define
+
+\[
+\operatorname{Gate}_{\Gamma_J}:D_{\Gamma_J}
+\longrightarrow\{\mathsf{can},\mathbf 2\},\qquad
+\operatorname{Gate}_{\Gamma_J}(w)=
+\begin{cases}
+\mathsf{can},&C_J(w)\text{ holds},\\
+\mathbf 2,&\text{otherwise}.
+\end{cases}
+\tag{5}
+\]
+
+Here \(\mathbf 2=\mathsf{Fold}=\mathsf{Refusal}\) is the typed refusal verdict. Define the refusal domain \(D_J^{\rm ref}=\{w\in D_{\Gamma_J}:\operatorname{Gate}_{\Gamma_J}(w)=\mathbf 2\}\). For a declared receipt carrier \(R_J\), the corresponding record-preserving operation is
+
+\[
+\operatorname{Fold}_J:D_J^{\rm ref}\times R_J\to\{\mathbf 2\}\times R_J,
+\qquad \operatorname{Fold}_J(w,r)=(\mathbf 2,r).
+\tag{5a}
+\]
+
+The proposed memory--motion gauge relation carries a readable difference through motion under a declared constraint. Equation (5a) is its typed refusal component: a jurisdiction refuses a proposed continuation that fails its owning constraint, including one that would erase a distinction needed for coherent reuse. The operation retains the declared receipt \(r\) for a separately admitted continuation; a physical implementation needs a carrier that actually preserves the record. The symbol \(\varnothing\) belongs to the prior typing judgment; the gate's verdicts are \(\mathsf{can}\) and \(\mathbf 2\). A predicate in (5) states a mathematical rule; an effective decision procedure, where required, needs its own construction.
+
+Write \(\mathsf{Ad}_J(w)\) for the verdict \(\operatorname{Gate}_{\Gamma_J}(w)=\mathsf{can}\). Then
+
+\[
+\mathsf{Ad}_J(w)\Longrightarrow C_J(w).
+\tag{6}
+\]
+
+This implication follows directly from the rule in (5). The universal proposal is the form of the admission operation; each field supplies its own typed candidates, constraint, and evidence. Section 3.2 gives an explicit finite instance. Section 8 gives a functional whose value supplies a criterion to a compatibility instance of the same operation. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{1}, \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+\hypertarget{what-a-receipt-preserves}{%
+\subsection{What a receipt preserves}\label{what-a-receipt-preserves}}
+
+Let \(X\) be a state space, \(\mathsf{Op}\) an admitted operation, and \(\rho:X\to Y\) a reader. A return at reader \(\rho\) is the equality
+
+\[
+\rho(\mathsf{Op}(x))=\rho(x).
+\tag{7}
+\]
+
+The equality says exactly what the reader resolves: the initial and later states have the same image in \(Y\). A finer record may distinguish the states or the traversals that produced them. For a set of histories \(\mathcal H\), let \(\mathsf{quot}:\mathcal H\to\mathcal H/{\sim}\) be the comparison relevant to a claim and let \(\operatorname{rec}:\mathcal H\to S\) be a receipt. The receipt is adequate for that comparison when
+
+\[
+\operatorname{rec}(h_1)=\operatorname{rec}(h_2)
+\Longrightarrow h_1\sim h_2.
+\tag{8}
+\]
+
+Under (8), the decoder \(\operatorname{Dec}:\operatorname{im}(\operatorname{rec})\to\mathcal H/{\sim}\) defined by \(\operatorname{Dec}(\operatorname{rec}(h))=[h]\) is well defined. Conversely, a decoder satisfying \(\operatorname{Dec}\circ\operatorname{rec}=\mathsf{quot}\) implies (8). A computable decoder or a physical record introduces further conditions of implementation. At the set-theoretic level, adequacy and existence of a decoder on the receipt's image are equivalent.
+
+Equation (1) consequently has two complementary checks: the selected read returns, and the receipt retains the differences the next claim requires. Meaning is the memory of return: in this paper, that sentence names the use made possible by a retained and recognizable relation. A literary, biological, or human use of meaning receives its own carrier and reader when it enters the argument. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{1}, \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+\hypertarget{an-exact-carrier-for-return}{%
+\section{An exact carrier for return}\label{an-exact-carrier-for-return}}
+
+\hypertarget{the-root}{%
+\subsection{The root}\label{the-root}}
+
+On \(V=\mathbb R^2\), choose
+
+\[
+Q=\begin{pmatrix}1&1\\[2pt]1&0\end{pmatrix},
+\qquad
+\Omega=\begin{pmatrix}0&1\\[2pt]-1&0\end{pmatrix},
+\qquad
+G=Q\Omega-\Omega Q
+=\begin{pmatrix}-2&1\\[2pt]1&2\end{pmatrix}.
+\tag{9}
+\]
+
+The orientation of \(\Omega\) in (9) governs the calculations below. Direct multiplication gives
+
+\[
+\begin{aligned}
+Q^2&=Q+I,& \Omega^2&=-I,\\
+G^2&=5I,& \det G&=-5,\\
+Q^{\mathsf T}GQ&=-G,&
+(Q^2)^{\mathsf T}GQ^2&=G.
+\end{aligned}
+\tag{10}
+\]
+
+Thus \(G\) has one positive and one negative eigenvalue, and \(Q^2\) preserves its signed quadratic form. The eigenvalues of \(Q\) are
+
+\[
+\Phi=\frac{1+\sqrt5}{2},
+\qquad
+\Psi=\frac{1-\sqrt5}{2},
+\tag{11}
+\]
+
+and satisfy \(\Phi+\Psi=1\), \(\Phi\Psi=-1\). For \(n\geq1\), the Fibonacci recurrence gives \(Q^n=F_nQ+F_{n-1}I\), with \(F_0=0\), \(F_1=1\). The carrier, the operation, and the preserved form are explicit. \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+The corresponding algebraic-integer carrier makes the relation between the coefficients and the signed form explicit. For \(x=a+b\Phi\in\mathbb Z[\Phi]\), put
+
+\[
+\mathsf N_{\rm alg}(x)=a^2+ab-b^2,\qquad
+c=\begin{pmatrix}a\\b\end{pmatrix},\qquad
+\mathsf P_{\rm swap}=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+z=\mathsf P_{\rm swap}c=\begin{pmatrix}b\\a\end{pmatrix}.
+\tag{11a}
+\]
+
+Multiplication by \(\Phi\) sends \((a,b)\) to \((b,a+b)\). Direct multiplication consequently gives
+
+\[
+\mathsf P_{\rm swap}
+\begin{pmatrix}0&1\\1&1\end{pmatrix}
+=Q\mathsf P_{\rm swap},\qquad
+z^{\mathsf T}Gz=2\mathsf N_{\rm alg}(x),\qquad
+\mathsf N_{\rm alg}(\Phi x)=-\mathsf N_{\rm alg}(x).
+\tag{11b}
+\]
+
+The Fibonacci transport and the algebraic-integer multiplication are therefore the same linear operation in the two displayed coordinate orders; their quadratic reads agree by the stated factor of two. The norm changes sign at one multiplication and returns after two. For the initial vector used in §3.2, \(z_0=(1,0)^{\mathsf T}\) corresponds to \(x=\Phi\), while \(Q^2z_0=(2,1)^{\mathsf T}\) corresponds to \(x=\Phi^3\). Both have algebraic norm \(-1\) and signed matrix read \(-2\).
+
+A real continuous lift of the even step is also available. Define
+
+\[
+\mathsf S_{\rm ax}=\frac{2Q-I}{\sqrt5},\qquad
+\mathsf L_{\rm ax}=e^{(\log\Phi)\mathsf S_{\rm ax}}
+=\frac{Q+2I}{\sqrt5},\qquad
+F_{\rm lift}=2(\log\Phi)\mathsf S_{\rm ax}.
+\tag{11c}
+\]
+
+Then \(e^{F_{\rm lift}}=\mathsf L_{\rm ax}^{2}=Q^2\). In this equation \(F_{\rm lift}\) is a real matrix generator and the exponential is the matrix exponential. It is distinct from the Fibonacci numbers \(F_n\), a field tensor, and a compatibility functional. The generator and its continuous parameter provide an interpolation on the stated carrier; the exact ring step is its value at the stated time. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{25}
+
+The root also supplies the mirror that reverses its carriage. Put \(H_{\rm mir}=G/\sqrt5\). Then
+
+\[
+H_{\rm mir}^{2}=I,\qquad
+H_{\rm mir}QH_{\rm mir}=-Q^{-1},\qquad
+H_{\rm mir}\Omega H_{\rm mir}=\Omega^{-1},\qquad
+\mathsf S_{\rm ax}H_{\rm mir}=\Omega.
+\tag{11d}
+\]
+
+For the projective classes \(q_{\rm car}=[Q]\) and \(h_{\rm mir}=[H_{\rm mir}]\), the sign in the second identity disappears and \(h_{\rm mir}q_{\rm car}h_{\rm mir}=q_{\rm car}^{-1}\). The projective carriage has infinite order; with the mirror it generates \(D_\infty\). Mapping \(q_{\rm car}\mapsto\Omega\) and \(h_{\rm mir}\mapsto H_{\rm mir}\) gives the order-eight square group \(\mathrm{Dih}_4\), with kernel \(\langle q_{\rm car}^{4}\rangle\). This is the finite mirror wheel of the infinite addressed motion. Its generator-to-quarter-turn representation is a distinct declared read; §3.2 uses four phase transitions for one \(Q^2\) carrier advance. \href{https://chatgpt.com/library?file_id=libfile_d247e341311c8191bb1c0aefc5af4111\&account_id=personal}{32}, \href{https://chatgpt.com/library?file_id=libfile_7054d1b4713481918550a4bf9ef72320\&account_id=personal}{33}, \href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{34}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{35}
+
+The central-return instance of \emph{The Architecture of Silence} carries closure, represented difference, and occurrence as three typed fields. For the standard spin lift
+
+\[
+U_{1/2}(\theta)=
+\begin{pmatrix}e^{-i\theta/2}&0\\0&e^{i\theta/2}\end{pmatrix},
+\qquad U_{1/2}(2\pi)=-I_2,\qquad U_{1/2}(4\pi)=I_2,
+\]
+
+let \(\mathscr L_n\) be an occurrence ledger and \(o_{n+1}\) its next addressed entry. The return read is the product-typed triple
+
+\[
+\mathsf{Sil}_{\rm cent}(\mathscr L_n)
+=\bigl(U_{1/2}(2\pi)+I_2,\ U_{1/2}(2\pi)-I_2,
+\mathscr L_n\mathbin{\|}o_{n+1}\bigr)
+=\bigl(0,-2I_2,\mathscr L_n\mathbin{\|}o_{n+1}\bigr).
+\tag{11e}
+\]
+
+The first two entries are operators; the third is a ledger. Under \(SU(2)\to SO(3)\), the \(2\pi\) spatial rotation has returned while the spin lift retains its central sign. The receipt carries the occurrence at its own type. \href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{34}
+
+\hypertarget{a-returned-read-with-an-advanced-state}{%
+\subsection{A returned read with an advanced state}\label{a-returned-read-with-an-advanced-state}}
+
+Let the addressed state be \((p,z)\in\mathbb Z_4\times\mathbb R^2\), where \(p\) is a four-phase address. Define one transition by
+
+\[
+\mathsf T(p,z)=
+\begin{cases}
+(p+1,z),&p=0,1,2,\\[2pt]
+(0,Q^2z),&p=3.
+\end{cases}
+\tag{12}
+\]
+
+Arithmetic on the phase address is modulo four. In any four consecutive transitions, the phase returns and the carrier advances once:
+
+\[
+\mathsf T^4(p,z)=(p,Q^2z).
+\tag{13}
+\]
+
+Choose the read
+
+\[
+\rho(p,z)=\bigl(p,z^{\mathsf T}Gz\bigr).
+\tag{14}
+\]
+
+Equation (10) gives \(\rho(\mathsf T^4(p,z))=\rho(p,z)\). For the concrete initial state \(z_0=(1,0)^{\mathsf T}\),
+
+\[
+Q^2z_0=(2,1)^{\mathsf T},
+\qquad
+z_0^{\mathsf T}Gz_0
+=(Q^2z_0)^{\mathsf T}G(Q^2z_0)=-2.
+\tag{15}
+\]
+
+\textbf{Fold at the step boundary.} Type a proposed action as \(((p,z),a)\), with \(a\in\{\mathsf{hold},\mathsf{advance}\}\). Let the step constraint require \(\mathsf{hold}\) at phases \(0,1,2\) and \(\mathsf{advance}\) at phase \(3\); the actions carry \(z\) and \(Q^2z\), respectively, while the phase advances. The resulting admitted action is exactly (12). At phase \(0\), proposing \(\mathsf{advance}\) is a typed candidate with verdict \(\mathbf 2\); the state is still available for the admitted \(\mathsf{hold}\) action. This is a concrete gate for the chosen system.
+
+\textbf{Receipt and reuse.} Let \(h_n\) be the unique length-\(n\) executed prefix beginning at \((0,z_0)\), and let \(\mathcal H=\{h_n:n\in\mathbb N_0\}\). Write \(n=4m+p\), with \(0\le p\le3\). Its terminal state is
+
+\[
+\mathsf D(n)=\mathsf T^n(0,z_0)
+=\left(p,Q^{2m}z_0\right)
+=\left(p,\begin{pmatrix}F_{2m+1}\\F_{2m}\end{pmatrix}\right).
+\tag{15a}
+\]
+
+This map is injective on \(\mathbb N_0\). Indeed, \(F_{2(m+1)}-F_{2m}=F_{2m+1}>0\), so the second vector coordinate determines \(m\); the phase determines \(p\). Define \(h_n\sim h_j\) exactly when their terminal states agree, and retain the separately carried count \(\operatorname{rec}(h_n)=n\). Then (8) holds and \(\operatorname{Dec}(n)=[h_n]\) is a decoder. The state reconstructed from the receipt admits the next operation:
+
+\[
+\mathsf D(n+1)=\mathsf T\bigl(\mathsf D(n)\bigr).
+\tag{15b}
+\]
+
+For every \(m\), \(\rho(\mathsf D(4m+p))=(p,-2)\). The read therefore resolves the phase and signed form while the separate count preserves which execution occurred. In particular, \(h_0\) and \(h_4\) have the same read and different receipts. This witness establishes receipt and reuse for the stated single deterministic trajectory; a physical clock or memory needs its own carrier and reading conditions.
+
+The retained count can also determine the next admitted action. Define
+
+\[
+\mathsf{Adm}_{\rm step}(n)=
+\begin{cases}
+\{\mathsf{hold}\},&n\bmod4\in\{0,1,2\},\\
+\{\mathsf{advance}\},&n\bmod4=3.
+\end{cases}
+\tag{15c}
+\]
+
+The count retained from the completed trajectory thus supplies the next constraint: for example, receipt \(0\) admits \(\mathsf{hold}\), while receipt \(3\) admits \(\mathsf{advance}\). A proposal outside the selected set receives the typed refusal verdict. Here \(n\) counts executed steps; a record of attempts, including holds or refusals under another policy, is a separately declared receipt. This realizes the source's feedback office in which a completed receipt informs the next admission. \href{https://chatgpt.com/library?file_id=libfile_7054d1b4713481918550a4bf9ef72320\&account_id=personal}{33}
+
+\textbf{Outside difference and carried receipt.} Let \(u\) be a typed input and let \(\gamma_J(u)\in\{\mathsf{can},\mathbf2\}\) be its declared gate verdict. For a finite sequence \(r\), define an example step by
+
+\[
+\widehat{\mathsf T}_u(p,z,r)
+=\bigl(p',z',r\mathbin{\|}(u,\gamma_J(u))\bigr),
+\qquad(p',z')=\mathsf T(p,z),
+\tag{15d}
+\]
+
+where \(\|\) appends one input--verdict occurrence. Four such steps return the phase, carry \(z\) to \(Q^2z\), and extend \(r\) by four pairs. Equation (10) makes the signed-form read return. Distinct four-input sequences give distinct appended records. An input receiving \(\mathbf2\) is retained as a witnessed proposal; its proposed action is refused. The independent phase step in (15d) remains admitted. This is an explicit mathematical realization of outside difference entering a carried record. Feedback from that input into \(z\), and a physical implementation of the record, require their own specifications.
+
+The phase and signed-form read return; the vector advances. A clock hand can return to a displayed position while the dated occurrence changes. The display carries a periodic reference; the date or other record carries the advance. \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+\hypertarget{eight-addresses-and-twenty-eight-comparisons}{%
+\subsection{Eight addresses and twenty-eight comparisons}\label{eight-addresses-and-twenty-eight-comparisons}}
+
+Two four-phase windows give the distinct addresses \(x_{4\ell+p}=(\ell,p)\), where \(\ell\in\{0,1\}\) and \(p\in\{0,1,2,3\}\). Choose the labeling
+
+\[
+\mathcal O_8=\{\infty\}\cup\mathbb Z_7,\qquad
+\iota(x_0)=\infty,\qquad
+\iota(x_{r+1})=r\quad(r=0,\ldots,6).
+\tag{16}
+\]
+
+This bijection is a declared address adapter. The unordered pairs form the edges of \(K_8\), giving
+
+\[
+|E(K_8)|=\binom82=28,
+\qquad
+|\{\text{three-address subsets}\}|=\binom83=56.
+\tag{17}
+\]
+
+For each \(r\in\mathbb Z_7\), define
+
+\[
+M_r=\{\{\infty,r\}\}
+\cup
+\bigl\{\{r+j,r-j\}:j=1,2,3\bigr\}.
+\tag{18}
+\]
+
+Each \(M_r\) is a perfect matching with four edges. The seven matchings partition all twenty-eight edges. To see this, an edge incident to \(\infty\) fixes \(r\). An edge \(\{a,b\}\subset\mathbb Z_7\) fixes its matching by \(r=4(a+b)\pmod7\), because \(2^{-1}=4\pmod7\); its remaining unsigned displacement selects one of the three slots. Every edge therefore occurs once. Pulling each matching back through \(\iota\) gives a matching of the original phase-window addresses. The chosen labels and factorization provide an explicit finite audit; a physical system needs its own reason for adopting this identification.
+
+The twenty-eight edge labels also give a basis for \(\bigwedge^2\mathbb R^8\) after an ordered basis of \(\mathbb R^8\) is chosen: \(\{i,j\}\mapsto e_i\wedge e_j\) for \(i<j\). The edge count and the exterior-square dimension are exact. A field-specific adapter is made explicit in §5.1. \href{https://doi.org/10.5281/zenodo.23697265}{2}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4}
+
+\hypertarget{a-variational-witness-for-the-carried-step}{%
+\subsection{A variational witness for the carried step}\label{a-variational-witness-for-the-carried-step}}
+
+The even carrier step also has a finite-dimensional variational realization. Put \(B_{\rm car}=Q^2\), and take \(z_j\in\mathbb R^2\) with a dual covector represented by \(\xi_j\in\mathbb R^2\). For \(N\) carried steps, define the phase-space action
+
+\[
+\mathcal A_{\rm d}[z,\xi]
+=\sum_{j=0}^{N-1}
+\xi_{j+1}^{\mathsf T}(z_{j+1}-B_{\rm car}z_j).
+\tag{18a}
+\]
+
+With \(z_0,z_N\) fixed, vary the interior \(z_j\) and all \(\xi_{j+1}\). Stationarity gives
+
+\[
+z_{j+1}=B_{\rm car}z_j\quad(0\leq j<N),\qquad
+\xi_j=B_{\rm car}^{\mathsf T}\xi_{j+1}\quad(1\leq j<N).
+\tag{18b}
+\]
+
+For the prescribed endpoints, a stationary path exists when \(z_N=B_{\rm car}^{N}z_0\). Defining the initial covector by \(\xi_0=B_{\rm car}^{\mathsf T}\xi_1\) gives the corresponding one-step map on the full phase-space carrier:
+
+\[
+\begin{pmatrix}z_{j+1}\\ \xi_{j+1}\end{pmatrix}
+=
+\mathsf M_{\rm cot}
+\begin{pmatrix}z_j\\ \xi_j\end{pmatrix},
+\qquad
+\mathsf M_{\rm cot}
+=\begin{pmatrix}B_{\rm car}&0\\0&B_{\rm car}^{-\mathsf T}\end{pmatrix}.
+\tag{18c}
+\]
+
+This map is symplectic for \(\mathsf J_{\rm can}=\bigl(\begin{smallmatrix}0&I\\-I&0\end{smallmatrix}\bigr)\): \(\mathsf M_{\rm cot}^{\mathsf T}\mathsf J_{\rm can}\mathsf M_{\rm cot}=\mathsf J_{\rm can}\). Equation (10) also gives \(z_{j+1}^{\mathsf T}Gz_{j+1}=z_j^{\mathsf T}Gz_j\). The variational index \(j\) counts carried steps; one such step is the four-transition period in (13). Variations are taken on the real carrier; an integer initial vector stays integral because \(B_{\rm car}\) has integer entries. A receipt for the occurrence remains the separately defined record in §3.2. The action is an explicit mathematical witness; a physical action and its units enter through a separately stated model. \href{https://doi.org/10.1017/S096249290100006X}{39}
+
+\hypertarget{compatibility-and-the-quantum-gravity-claim}{%
+\section{Compatibility and the quantum-gravity claim}\label{compatibility-and-the-quantum-gravity-claim}}
+
+The quantum-gravity claim asks for a physical continuum with quantum states, gravitational dynamics, and observables capable of resolving the degrees of freedom claimed to survive. One useful distinction concerns the fit of local descriptions and the curvature of the physical connection.
+
+In the covariant LQG construction, let local cells carry transition data and shared-face geometric data. A compatibility functional \(\mathcal F_{\rm comp}\) is built from positively weighted squared cocycle, transported-bivector, and induced-geometry defects. On the stated finite complex,
+
+\[
+\mathcal F_{\rm comp}=0
+\quad\Longleftrightarrow\quad
+\text{each included compatibility defect vanishes}.
+\tag{19}
+\]
+
+The criterion compares local descriptions after their declared transport. A physical connection has its own holonomies and curvature. The source provides a Lorentzian witness in which exact gluing coexists with nonzero curvature, nontrivial holonomy, and a proper-time difference. These are separately typed results. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{5}
+
+Refinement must then carry both the compatibility structure and the intended observable toward the continuum. For a test space \(\mathcal D_\Sigma\), an inductive boundary Hilbert space \(\mathcal H_\Sigma^{\rm ind}\), and a suitable distributional rigging map \(P_\Sigma:\mathcal D_\Sigma\to\mathcal D_\Sigma'\), the source uses the physical quotient
+
+\[
+\mathcal H_\Sigma^{\rm phys}
+=\overline{\mathcal D_\Sigma/\ker P_\Sigma},
+\tag{20}
+\]
+
+with completion taken in the physical inner product supplied by the construction. Its refinement and readout compatibility conditions are hypotheses of the result. Bruno, Colafranceschi, Mele, and Rovelli analyze how sufficiently strong convergence can lead to a topological continuum under their assumptions, and how a distributional construction supplies a physical-state framework. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{5}, \href{https://doi.org/10.1103/7493-9nb7}{15}
+
+A gravitational read also needs a propagating sector. Where a momentum-space physical two-point function \(\mathcal G_{\rm phys}(k)\), a transverse-traceless projector \(P_{\rm TT}(k)\), and the indicated limit are defined, the source writes a spin-two residue as
+
+\[
+\mathcal W_2[\mathcal G_{\rm phys}]
+:=\lim_{k^2\to0}
+k^2P_{\rm TT}(k)\mathcal G_{\rm phys}(k)P_{\rm TT}(k).
+\tag{21}
+\]
+
+Its non-erasing continuum criterion is
+
+\[
+\mathcal F_{\rm comp}=0,
+\qquad
+\mathcal W_2[\mathcal G_{\rm phys}]\ne0.
+\tag{22}
+\]
+
+The first condition carries compatibility; the second asks the physical read to retain a spin-two mode. Han's candidate ultraviolet fixed point provides a specific setting for the comparison. The construction cited here leaves the nonzero physical residue of an appropriate deformation as a model-specific calculation. The completed quantum-gravity claim therefore carries a definite next receipt: the chosen physical state, deformation, quotient, observable, and nonzero residue must be exhibited together. \href{https://doi.org/10.5281/zenodo.23697265}{2}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{5}, \href{https://doi.org/10.1103/7493-9nb7}{15}, \href{https://doi.org/10.1103/d8s7-jqfl}{16}, \href{https://doi.org/10.1088/1361-6382/acc5d9}{17}
+
+\hypertarget{the-standard-model-and-its-parameters}{%
+\section{The Standard Model and its parameters}\label{the-standard-model-and-its-parameters}}
+
+\hypertarget{gauge-structure}{%
+\subsection{Gauge structure}\label{gauge-structure}}
+
+The local Standard Model gauge algebra is
+
+\[
+\mathfrak g_{\rm SM}
+=\mathfrak{su}(3)_c\oplus\mathfrak{su}(2)_L\oplus\mathfrak u(1)_Y,
+\qquad
+\dim\mathfrak g_{\rm SM}=8+3+1=12.
+\tag{23}
+\]
+
+For its componentwise bracket \(\beta:\bigwedge^2\mathfrak g_{\rm SM}\to\mathfrak g_{\rm SM}\), the alternating-pair domain has dimension \(\binom{12}{2}=66\). The image is \(\mathfrak{su}(3)\oplus\mathfrak{su}(2)\), of dimension eleven: each simple summand is generated by its brackets, and the \(\mathfrak u(1)\) summand is central. Rank--nullity gives
+
+\[
+\operatorname{rank}\beta=11,
+\qquad
+\dim\ker\beta=55.
+\tag{24}
+\]
+
+In particular, \(\bigwedge^2\mathfrak{su}(3)\) has dimension twenty-eight. Choose an ordered basis \((t_0,\ldots,t_7)\) of \(\mathfrak{su}(3)\), and let \(\mathbb R^{E(K_8)}\) have a basis vector \(e_{ij}\) for each pair \(0\le i<j\le7\). The basis-dependent linear map
+
+\[
+\mathfrak a:\mathbb R^{E(K_8)}\longrightarrow\bigwedge^2\mathfrak{su}(3),
+\qquad \mathfrak a(e_{ij})=t_i\wedge t_j
+\tag{24a}
+\]
+
+is an isomorphism. With the native color bracket \(\beta_c\), its transported bracket read is \(\beta_c\circ\mathfrak a\), so \((\beta_c\circ\mathfrak a)(e_{ij})=[t_i,t_j]\). This makes the choice and the preserved comparison explicit. The construction uses the independently supplied color algebra and basis; their selection, the gauge connection, coupling, matter representations, and physical measurements require their own arguments. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4}, \href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{6}
+
+\hypertarget{the-electroweak-mass-read}{%
+\subsection{The electroweak mass read}\label{the-electroweak-mass-read}}
+
+Take the usual Higgs doublet and the convention \(\mathcal Q_{\rm em}=T_3+Y\), with Higgs hypercharge \(Y_H=\tfrac12\). Here \(\mathcal Q_{\rm em}\) denotes electric charge; \(Q\) in §3 is the Fibonacci matrix. Write \(g_2\) for the weak-isospin coupling and \(g_Y\) for the hypercharge coupling, corresponding to \(g,g'\) in the source. Given positive \(g_2,g_Y\) and a nonzero vacuum parameter \(v\), the neutral gauge-boson mass-squared matrix is
+
+\[
+\mathsf{Mass}^2_{\rm neutral}=\frac{v^2}{4}
+\begin{pmatrix}
+g_2^2&-g_2g_Y\\
+-g_2g_Y&g_Y^2
+\end{pmatrix}.
+\tag{25}
+\]
+
+Its determinant is zero and its trace is \(v^2(g_2^2+g_Y^2)/4\). Hence its eigenvalues are
+
+\[
+0,\qquad \frac{v^2}{4}(g_2^2+g_Y^2).
+\tag{26}
+\]
+
+The charged and neutral tree-level relations are
+
+\[
+m_W=\frac{g_2v}{2},
+\qquad
+m_Z=\frac{v}{2}\sqrt{g_2^2+g_Y^2},
+\qquad
+m_f=\frac{y_fv}{\sqrt2},
+\tag{27}
+\]
+
+where \(y_f\) is a nonnegative charged-fermion Yukawa singular value in the mass-diagonal basis. These are derivations from the supplied representation, vacuum, and parameters. Their comparison with precision measurements requires radiative corrections, a renormalization scheme and scale, and the corresponding observables. \href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{6}, \href{https://doi.org/10.1103/PhysRevLett.19.1264}{18}, \href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{19}
+
+\hypertarget{the-numerical-register}{%
+\subsection{The numerical register}\label{the-numerical-register}}
+
+The minimal renormalizable Standard Model with three generations, one Higgs doublet, massless neutrinos, and the strong-CP angle retained has the following nineteen continuous coordinates:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4286}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5714}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Coordinate family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Number
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gauge couplings \(g_s,g_2,g_Y\) & 3 \\
+Higgs-potential parameters & 2 \\
+Charged-lepton and quark masses, or equivalent Yukawa singular values & 9 \\
+CKM mixing angles and phase & 4 \\
+Strong-CP angle \(\bar\theta_{\rm QCD}\) & 1 \\
+\textbf{Total} & \textbf{19} \\
+\end{longtable}
+
+An invertible change of parameter coordinates preserves the count. Neutrino masses and mixing require a stated extension and its additional coordinates. \href{https://chatgpt.com/library?file_id=libfile_843edf27b3e88191b692d66ea6f0de03\&account_id=personal}{7}, \href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{19}
+
+The electroweak ratio provides a concrete test of numerical selection. Fix the hypercharge normalization above. Every invariant symmetric bilinear form on \(\mathfrak{su}(2)\oplus\mathfrak u(1)\) has an independent coefficient on each summand. Indeed, if \(x=[a,b]\in\mathfrak{su}(2)\) and \(y\in\mathfrak u(1)\), invariance and centrality give
+
+\[
+B(x,y)=B([a,b],y)=B(a,[b,y])=0.
+\tag{28}
+\]
+
+The restriction to the simple \(\mathfrak{su}(2)\) summand has one scale; the one-dimensional central summand has its own. The displayed direct-sum premises therefore leave a relative normalization available. A derivation of \(g_Y/g_2\) requires an additional principle relating the two scales, together with the scale and scheme at which the comparison is made.
+
+The parameter register identifies all nineteen numerical coordinates as empirical inputs at the recorded stage. The claim to derive all Standard Model parameters consequently has a precise form: supply a selector for every independent coordinate, its stated assumptions and units, its calculation at a specified scale and scheme, and a comparison or prediction independent of the inputs used to select it. The direct-sum calculation above fixes one necessary part of that task. \href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{6}, \href{https://chatgpt.com/library?file_id=libfile_843edf27b3e88191b692d66ea6f0de03\&account_id=personal}{7}, \href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{8}, \href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{19}
+
+The electromagnetic coordinate illustrates the required resolution. The mirror-wheel construction starts with four phases. One selected traversal includes its starting and ending reads, giving five observed states; two four-phase occurrence windows and a central read aperture give nine displayed marks. The aperture is a reader, while the eight surrounding marks are occurrences. The finite-address theorem of \emph{Linear Infinity} takes those two reader choices as indices. They give \(L_5=11\) and \(F_9=34\), and the two resulting routes meet at the exact integer
+
+\[
+L_5^2+4^2=11^2+4^2=1+4F_9=137.
+\tag{28a}
+\]
+
+The finite mirror criterion is stronger than a numerical match:
+
+\[
+4^{17}\equiv-1\pmod{137},\qquad
+\operatorname{ord}_{137}(4)=34,\qquad
+\mathbb F_{137}^{\times}/\langle4\rangle\cong C_4.
+\tag{28a1}
+\]
+
+Moreover, \(137\) is the least prime for which \(4\) has order \(34\). Indeed, such a prime must be \(1\pmod{34}\); the only smaller prime in that progression is \(103\), for which \(4^{34}\equiv56\pmod{103}\). The reader choices and the order-four quotient are part of this selection rule. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{25}, \href{https://chatgpt.com/library?file_id=libfile_d247e341311c8191bb1c0aefc5af4111\&account_id=personal}{32}, \href{https://chatgpt.com/library?file_id=libfile_7054d1b4713481918550a4bf9ef72320\&account_id=personal}{33}, \href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{34}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{35}
+
+The quotient in (28a1) can be connected explicitly to the root's four-phase wheel. The residue \(3\) generates \(\mathbb F_{137}^{\times}\), and \(3^{20}\equiv4\pmod{137}\); hence \(\langle4\rangle=\langle3^4\rangle\). Choosing this generator fixes the isomorphism
+
+\[
+\vartheta_{\rm wheel}:\mathbb F_{137}^{\times}/\langle4\rangle
+\longrightarrow\langle\Omega\rangle,\qquad
+\vartheta_{\rm wheel}([3^j])=\Omega^j.
+\tag{28a2}
+\]
+
+Under this map, inversion of a quotient class is carried to inversion of the wheel rotation, which is exactly the mirror conjugation in (11d). The generator choice fixes an orientation of this correspondence. Separately, the four-phase and 137-address clocks combine by the Chinese remainder theorem:
+
+\[
+\mathbb Z/548\mathbb Z\cong
+\mathbb Z/4\mathbb Z\times\mathbb Z/137\mathbb Z.
+\tag{28a3}
+\]
+
+The multiplicative quotient in (28a1) and the 548-state additive address in (28a3) have different carriers and both retain the four-phase coordinate. The 2022 CODATA recommended inverse fine-structure constant is
+
+\[
+\alpha^{-1}(0)=137.035\,999\,177(21).
+\tag{28b}
+\]
+
+The 2022 CODATA reference therefore has \(137\) as its nearest integer. Its displayed uncertainty is retained in the electromagnetic comparison below. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{25}, \href{https://physics.nist.gov/cuu/pdf/JPCRD2022CODATA.pdf}{26}
+
+\hypertarget{the-137-address-and-the-electromagnetic-read}{%
+\subsection{The 137 address and the electromagnetic read}\label{the-137-address-and-the-electromagnetic-read}}
+
+Set \(p_\star=137\). In SI units, write \(R_K=h/e^2\) for the von Klitzing constant and \(Z_0=\mu_0c\) for the characteristic impedance of vacuum. The established electromagnetic relations give the dimensionless identity
+
+\[
+\alpha^{-1}(0)
+=\frac{4\pi\epsilon_0\hbar c}{e^2}
+=\frac{2R_K}{Z_0},
+\qquad
+\delta_\alpha:=\frac{2R_K}{Z_0}-p_\star .
+\tag{28c}
+\]
+
+Consequently \(\alpha^{-1}(0)=p_\star+\delta_\alpha\) exactly, with \(\delta_\alpha=0.035\,999\,177(21)\) at the stated CODATA resolution. The parentheses carry the standard uncertainty in the last displayed digits. The same data can be read in impedance units by defining the 137-reference impedance \(Z_\star:=2R_K/p_\star\):
+
+\[
+Z_0=\frac{Z_\star}{1+\delta_\alpha/p_\star},
+\qquad
+\frac{Z_\star-Z_0}{Z_0}=\frac{\delta_\alpha}{p_\star}.
+\tag{28d}
+\]
+
+Thus the retained offset is also the relative impedance difference multiplied by \(137\). The reference value is \(Z_\star\simeq376.829306\) ohms, and the CODATA vacuum value is \(Z_0=376.730313412(59)\) ohms. \(Z_\star\) is the impedance defined by the chosen finite reference; the physical value carries its measurement uncertainty. The impedance expression and the displayed fine-structure value are two coordinates of the same CODATA input. \href{https://physics.nist.gov/cuu/pdf/JPCRD2022CODATA.pdf}{26}, \href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{37}
+
+The existing electromagnetic reader supplies a complete address decomposition. For any specified positive input \(x_\mu=\alpha^{-1}(\mu)\), with its scale and scheme stated, set
+
+\[
+k_\mu=\lfloor x_\mu\rfloor,\quad
+q_\mu=\Bigl\lfloor\frac{k_\mu}{p_\star}\Bigr\rfloor,\quad
+a_\mu=k_\mu-p_\star q_\mu,\quad
+r_\mu=x_\mu-k_\mu.
+\tag{28e}
+\]
+
+Here \(a_\mu\in\{0,\ldots,136\}\) is the chosen integer representative of an address in \(\mathbb Z/137\mathbb Z\), and \(0\le r_\mu<1\). Euclidean division gives a unique triple for each input. The input is recovered exactly:
+
+\[
+x_\mu=137q_\mu+a_\mu+r_\mu,
+\qquad
+x_\mu-137=137(q_\mu-1)+a_\mu+r_\mu.
+\tag{28f}
+\]
+
+At the CODATA reference this gives \((q_0,a_0,r_0)=(1,0,0.035\,999\,177(21))\); the reported standard uncertainty is small compared with the distance to either address boundary. Here the subscript \(0\) denotes the Thomson-limit input; the running read at \(\mu\) carries its declared renormalization scheme. At other scales the full expression in (28f) retains the offset; its fractional part and total displacement are separately typed. For every \(t\in[0,1)\), the same reader takes \(137+t\) to \((1,0,t)\). The finite address and its retained continuous difference are therefore jointly recoverable from the receipt. \href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{8}, \href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{37}
+
+The wheel and physical phase also share an explicit representation. Let \(\chi_\Omega(x,y)=x+iy\). Then
+
+\[
+\begin{aligned}
+\chi_\Omega\Omega\chi_\Omega^{-1}(w)&=-iw,\\
+\chi_\Omega H_{\rm mir}\chi_\Omega^{-1}(w)
+&=\frac{-2+i}{\sqrt5}\,\overline w,\\
+\bigl(\chi_\Omega\vartheta_{\rm wheel}([3^j])\chi_\Omega^{-1}\bigr)(w)
+&=(-i)^j w.
+\end{aligned}
+\tag{28g}
+\]
+
+The first map identifies the real root rotation with the complex \(U(1)\) phase representation. The second is the root mirror as a unit-modulus multiple of complex conjugation; it reverses the phase. For a closed electromagnetic comparison loop \(\gamma\), charge \(q_{\rm el}\), and potential one-form \(A_{\rm em}\), put
+
+\[
+\varphi_{\rm AB}=\frac{q_{\rm el}}{\hbar}\oint_\gamma A_{\rm em},
+\qquad
+\mathsf U^\Omega_\gamma=e^{-\varphi_{\rm AB}\Omega}.
+\tag{28h}
+\]
+
+Then \(\bigl(\chi_\Omega\mathsf U^\Omega_\gamma\chi_\Omega^{-1}\bigr)(w)=e^{i\varphi_{\rm AB}}w\), and \(H_{\rm mir}\mathsf U^\Omega_\gamma H_{\rm mir}=(\mathsf U^\Omega_\gamma)^{-1}\). Reversing the loop gives that same inverse transport. The finite four-class quotient, root wheel, and electromagnetic phase representation therefore have an explicit orientation-preserving comparison, with mirror return carried as inversion. The phase itself is fixed by the declared physical charge, connection, and loop. \href{https://chatgpt.com/library?file_id=libfile_c8b01c25977c8191821c6dddbe16e0da\&account_id=personal}{36}, \href{https://doi.org/10.1103/PhysRev.115.485}{38}
+
+The Standard Model supplies the coupling coordinate in the same representation. With the convention \(\mathcal Q_{\rm em}=T_3+Y\), the massless direction of (25) gives, in rationalized natural units and at tree level,
+
+\[
+e_{\rm EW}=\frac{g_2g_Y}{\sqrt{g_2^2+g_Y^2}},
+\qquad
+\alpha_{\rm EW}^{-1}
+=4\pi\left(\frac1{g_2^2}+\frac1{g_Y^2}\right).
+\tag{28i}
+\]
+
+At a declared common scale and renormalization scheme, the matching difference between this coordinate and the physical Thomson-limit read is the separately computable quantity
+
+\[
+\begin{aligned}
+\Delta_{\rm match}(\mu)&:=\alpha^{-1}(0)
+-4\pi\left(g_2(\mu)^{-2}+g_Y(\mu)^{-2}\right),\\
+\delta_\alpha&=4\pi\left(g_2(\mu)^{-2}+g_Y(\mu)^{-2}\right)
++\Delta_{\rm match}(\mu)-137.
+\end{aligned}
+\tag{28j}
+\]
+
+Equation (28j) types the matching task: a field-theory calculation supplies \(\Delta_{\rm match}\) from its declared inputs and scale. The finite theorem fixes the 137 reference; the electromagnetic and electroweak readers carry the physical value and its residual. An independent selector for the latter remains the next numerical receipt for this coordinate. \href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{8}, \href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{19}, \href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{37}
+
+\hypertarget{general-relativity-and-the-seam-of-experience}{%
+\section{General relativity and the seam of experience}\label{general-relativity-and-the-seam-of-experience}}
+
+\hypertarget{a-local-lorentzian-correspondence}{%
+\subsection{A local Lorentzian correspondence}\label{a-local-lorentzian-correspondence}}
+
+The symmetric form \(G\) in (9) has eigenvalues \(\pm\sqrt5\), hence signature \((1,1)\). At a spacetime point \(x\), any selected two-dimensional Lorentzian tangent plane \(P_x\) has the same signature. Sylvester's law of inertia therefore supplies a linear isomorphism \(A:\mathbb R^2\to P_x\) for which
+
+\[
+A^{\mathsf T}(g|_{P_x})A=G.
+\tag{29}
+\]
+
+The correspondence identifies a signed two-plane form after the plane and isomorphism have been chosen. To display the four-dimensional signature in one simple extension, take
+
+\[
+\widetilde G=G\oplus I_2.
+\tag{30}
+\]
+
+Its signature is \((3,1)\): three positive and one negative direction. This is a local algebraic carrier. A spacetime metric field, its dynamics, and the choice of an observer require their own data. \href{https://www.cambridge.org/highereducation/books/matrix-analysis/FDA3627DC2B9F5C3DF2FD8C3CC136B48}{27}
+
+\hypertarget{a-spatial-read-of-light}{%
+\subsection{A spatial read of light}\label{a-spatial-read-of-light}}
+
+Use signature \((-+++)\) and units \(c=1\). Let \(u\) be a future-directed unit timelike vector representing an observer's local four-velocity:
+
+\[
+g(u,u)=-1.
+\tag{31}
+\]
+
+The orthogonal space
+
+\[
+u^\perp=\{v\in T_xM:g(u,v)=0\}
+\tag{32}
+\]
+
+is three-dimensional and spacelike. It is the observer's local spatial comparison space. For a future-directed null light vector \(k\), define
+
+\[
+E=-g(u,k)>0,
+\qquad
+n=\frac{k}{E}-u.
+\tag{33}
+\]
+
+Then
+
+\[
+g(u,n)=0,
+\qquad
+g(n,n)=1,
+\qquad
+k=E(u+n).
+\tag{34}
+\]
+
+The equalities follow directly from \(g(k,k)=0\) and (31). The observer assigns the null direction a positive energy scale and a unit spatial direction. Directions at a point form the observer's two-dimensional celestial sphere within the three-dimensional spatial comparison space. Motion, additional observations, optical propagation, and biological or instrumental processing contribute further information to an experienced or reconstructed scene.
+
+With the same signature and units \(c=1\), choose the curvature convention
+
+\[
+R^\rho{}_{\sigma\mu\nu}=
+\partial_\mu\Gamma^\rho_{\nu\sigma}
+-\partial_\nu\Gamma^\rho_{\mu\sigma}
++\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}
+-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma},
+\qquad R_{\sigma\nu}=R^\rho{}_{\sigma\rho\nu}.
+\tag{34a}
+\]
+
+The gravitational field equation, with the cosmological term included, is
+
+\[
+G^{\rm Ein}_{\mu\nu}+\Lambda_{\rm cos}g_{\mu\nu}
+=8\pi G_N T_{\mu\nu},
+\qquad
+G^{\rm Ein}_{\mu\nu}=R_{\mu\nu}-\tfrac12g_{\mu\nu}R.
+\tag{35}
+\]
+
+Here \(G^{\rm Ein}_{\mu\nu}\) is the Einstein tensor, \(G_N\) is Newton's constant, and \(\mathcal G_{\rm phys}\) in (21) is the separately typed two-point function. Restoring conventional SI units puts \(8\pi G_N/c^4\) on the right-hand side. \href{https://doi.org/10.1002/andp.19163540702}{28} The electromagnetic field, its propagation, optical transfer, detector response, and retinal or other biological processing each enter at their own interfaces. The preserved project record of an Einstein-to-eye chain is listed in the provenance registry, while the field equation remains attributed here to its formal primary source. A final formal--experiential closure would require the chain's domains, preserved relations, and recovery resolution to be established together.
+
+One resolution limit is immediate. The declared map \(\sigma_x:\bigwedge^2\mathbb R^8\to\bigwedge^2T_x^*M\) has a twenty-eight-dimensional domain and a six-dimensional codomain. Rank--nullity gives
+
+\[
+\dim\ker\sigma_x\geq28-6=22.
+\tag{36}
+\]
+
+A selected electromagnetic read can therefore produce a two-form in its six-dimensional target, while other independent reads or retained records carry any additional source distinctions required for recovery. The dimensions, the map, and the observer each have an explicit place in the seam. \href{https://doi.org/10.5281/zenodo.23697265}{2}
+
+When a particular adapter has rank six, a kernel basis can be constructed after choosing and ordering its columns. Let \(\mathsf P_\sigma\) be a permutation matrix such that \([\sigma_x]\mathsf P_\sigma=[A_\sigma\ C_\sigma]\), with \(A_\sigma\) an invertible \(6\times6\) matrix and \(C_\sigma\) a \(6\times22\) matrix. Then
+
+\[
+K_\sigma
+=\mathsf P_\sigma
+\begin{pmatrix}-A_\sigma^{-1}C_\sigma\\I_{22}\end{pmatrix},
+\qquad
+[\sigma_x]K_\sigma=0,\qquad
+\operatorname{rank}K_\sigma=22.
+\tag{36a}
+\]
+
+The columns of \(K_\sigma\) form a basis for that adapter's kernel. An adapter of rank less than six has a larger kernel. The basis depends on the selected map and coordinates; a physical interpretation of a kernel direction needs the corresponding field and observable. The target in (36) is a two-form space, and spacetime curvature has its own tensor and field equations.
+
+\hypertarget{thermodynamics-physical-return-entropy-and-the-balance-of-forget}{%
+\section{Thermodynamics: physical return, entropy, and the balance of Forget}\label{thermodynamics-physical-return-entropy-and-the-balance-of-forget}}
+
+Thermodynamics gives the reader a system, its environment, and a boundary through which work, heat, and possibly matter are compared. In a finite microstate model let \(\rho_{\rm th}:X_{\rm th}\to\mathcal M_{\rm th}\) assign a macrostate to each admitted microstate. For \(\mu_{\rm th}\in\operatorname{im}\rho_{\rm th}\), define
+
+\[
+W_{\rho_{\rm th}}(\mu_{\rm th})
+=\bigl|\{x\in X_{\rm th}:\rho_{\rm th}(x)=\mu_{\rm th}\}\bigr|,
+\qquad
+S_B(\mu_{\rm th})=k_B\ln W_{\rho_{\rm th}}(\mu_{\rm th}).
+\tag{37}
+\]
+
+The read fixes a macrostate; the fiber counts its compatible microstates. Equation (37) is the Boltzmann counting form on the stated finite carrier. Continuous phase spaces, quantum states, and other ensembles require their own measures and conventions. Shannon entropy addresses probability distributions and communication; the physical or informational meaning of a particular expression follows from its declared carrier and use. \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{11}, \href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{20}
+
+For a second admitted macrostate \(\mu'_{\rm th}\), the same finite model gives the exact comparison
+
+\[
+S_B(\mu'_{\rm th})-S_B(\mu_{\rm th})
+=k_B\ln\frac{W_{\rho_{\rm th}}(\mu'_{\rm th})}{W_{\rho_{\rm th}}(\mu_{\rm th})}.
+\tag{37a}
+\]
+
+A change of resolution has its own correction. Let \(\eta:X_{\rm th}\to R_{\rm th}\) be a finer read, with \(\rho_{\rm th}=\lambda_{\rm th}\circ\eta\), and put \(W_\eta(r_{\rm th})=|\eta^{-1}(r_{\rm th})|\). For \(r_{\rm th}\in\operatorname{im}\eta\) and \(\mu_{\rm th}=\lambda_{\rm th}(r_{\rm th})\), the refined fiber is contained in the coarse fiber, so
+
+\[
+S_\eta(r_{\rm th})=S_B(\mu_{\rm th})-k_B\ln\frac{W_{\rho_{\rm th}}(\mu_{\rm th})}{W_\eta(r_{\rm th})},
+\qquad S_\eta(r_{\rm th})=k_B\ln W_\eta(r_{\rm th}).
+\tag{37b}
+\]
+
+The correction records a change in the compatible-state count for two declared readers of the same finite carrier. Define the corresponding reader-resolution difference by
+
+\[
+\Delta S_{\rm Forget}(r_{\rm th};\eta\!\to\!\rho_{\rm th})
+:=S_B(\mu_{\rm th})-S_\eta(r_{\rm th})
+=k_B\ln\frac{W_{\rho_{\rm th}}(\mu_{\rm th})}{W_\eta(r_{\rm th})}
+\geq0.
+\tag{37c}
+\]
+
+Here \textbf{Forget} names the declared loss of resolution when a later task requires the fine receipt. The quantity is a state-count difference; a probability distribution remains a separate part of the model. The uniform distribution is the maximum-entropy choice on the stated finite fiber. Entropy production in (38) has its own process and boundary conditions.
+
+For a probability distribution \(P=(P_1,\ldots,P_W)\) on a finite \(W\)-state fiber, the dimensionless Shannon entropy satisfies
+
+\[
+H_{\rm Sh}(P)=-\sum_{i=1}^{W}P_i\ln P_i\leq\ln W,
+\tag{37d}
+\]
+
+with equality for the uniform distribution. The reader-resolution difference in (37c) and a probability-dependent entropy therefore carry their respective resolutions. For an initially equiprobable symmetric two-state memory reset in contact with an equilibrium bath at temperature \(T\), with initially independent memory and bath, a restored energy landscape, and no exploited side information, Landauer's bound gives the mean heat delivered to the bath:
+
+\[
+\langle Q_{\rm bath}\rangle\geq k_BT\ln2.
+\tag{37e}
+\]
+
+The physical bound applies to that reset process; the corresponding experiment and thermal model supply the carrier. Along a Hamilton--Jacobi characteristic with principal function \(\mathcal S_{\rm HJ}(q,t)\), mechanical momentum \(p_i^{\rm mech}=\partial\mathcal S_{\rm HJ}/\partial q^i\), mechanical Hamiltonian \(H_{\rm mech}\), and the stated Legendre relation, one has
+
+\[
+\frac{d\mathcal S_{\rm HJ}}{dt}
+=\frac{\partial\mathcal S_{\rm HJ}}{\partial t}
++\sum_{i=1}^d\frac{\partial\mathcal S_{\rm HJ}}{\partial q^i}\dot q^i
+=-H_{\rm mech}+\sum_{i=1}^dp_i^{\rm mech}\dot q^i
+=L_{\rm mech}.
+\tag{37f}
+\]
+
+Thus \(\mathcal A_{\rm proc}=\int L_{\rm mech}\,dt\) is an action. Given a declared interval \(\tau>0\), the action and the thermal resolution difference have a common energy-dimensional comparison:
+
+\[
+\mathcal B_{\rm Forget}(\tau)
+:=\frac{\mathcal A_{\rm proc}}{\tau}
+-T\Delta S_{\rm Forget}.
+\tag{37g}
+\]
+
+The condition \(\mathcal B_{\rm Forget}(\tau)=0\) belongs to a model that supplies its mechanical carrier, bath, process, and temporal conversion. Equation (37e) supplies a distinct measured heat bound for the stated one-bit reset. \href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{20}, \href{https://doi.org/10.1147/RD.53.0183}{40}, \href{https://doi.org/10.1038/nature10872}{41}
+
+The four laws can be read in a common public form while retaining their physical premises. Thermal equilibrium supplies a calibrated temperature relation. For a closed system, energy balance gives \(\Delta U=Q_{\rm heat}-W_{\rm out}\), with heat into the system and work out of it. Entropy balance writes
+
+\[
+dS=d_{\rm e}S+d_{\rm i}S,
+\qquad
+d_{\rm i}S\geq0
+\tag{38}
+\]
+
+for the stated thermodynamic model, separating exchange from internal production. A low-temperature Nernst condition supplies the limiting entropy relation for the admitted class of changes. In an open system, exchange includes the effects of matter as well as energy crossing the selected boundary. \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{11}
+
+The Fold relation supplies a receipt-preserving control read for a proposed loss of resolution. Let \(w\) be a typed reader change and \(r\) a receipt. Take \(C_{\rm th}(w,r)\) to mean that the proposed change has a declared system, boundary, physical process, and receipt adequate for the distinction needed in its later reuse. Then
+
+\[
+\operatorname{Gate}_{\Gamma_{\rm th}}(w,r)=
+\begin{cases}
+\mathsf{can},&C_{\rm th}(w,r),\\
+\mathbf2,&\text{otherwise},
+\end{cases}
+\qquad
+\operatorname{Fold}_{\Gamma_{\rm th}}(w,r)=(\mathbf2,r)
+\quad\text{when the verdict is }\mathbf2.
+\tag{38a}
+\]
+
+This is an audit and control relation: the receipt remains available to an admitted continuation. The physical entropy production is obtained from the actual carrier and process under the balance in (38).
+
+A stationary macroscopic read can coexist with microscopic motion. For example, an equilibrium distribution can be time independent while the microscopic dynamics it describes continues. The reference, the moving carrier, and the measurement are distinct elements of the same physical account.
+
+\hypertarget{from-metabolism-to-hereditary-memory-biological-section-defect-gates}{%
+\section{From metabolism to hereditary memory: biological section-defect gates}\label{from-metabolism-to-hereditary-memory-biological-section-defect-gates}}
+
+The living cell keeps a boundary across which matter and energy move. In mitochondria, electron-transfer processes support a proton-motive force across the inner membrane, and ATP synthase couples that difference to ATP synthesis. The statement has a molecular carrier and experimentally accessible conditions: membrane potential, chemical gradients, protein complexes, and fluxes. Mitchell's chemiosmotic proposal supplies a foundational source coordinate for this coupling. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{12}, \href{https://doi.org/10.1038/191144a0}{21}
+
+The inner membrane folds into cristae. In a reconstitution study, ATP-synthase dimers from the studied organisms formed rows and bent lipid membranes locally; the observed organization resembled the curved cristae rims. The experiment gives a specific molecular-to-membrane-form receipt. \href{https://doi.org/10.1073/pnas.1816556116}{22}
+
+Cristae junctions connect the invaginated lumen with the intermembrane space. A proposed growth mechanism places increased inner-membrane area within the enclosing organelle by inward buckling; the membrane continues to distinguish that lumen from the matrix. In a molecular-simulation study, the modeled deformation of the membrane generated an effective attraction between ATP-synthase dimers, with a preferred spacing comparable to observation. These are identified geometric and energetic mechanisms, with their stated experimental and model conditions. \href{https://doi.org/10.1085/jgp.201812033}{30}, \href{https://doi.org/10.1038/ncomms7259}{31}
+
+A compatibility functional supplies a field-specific criterion for Fold. The public construction in \emph{Motion and Difference} includes the following section-defect term. On a finite family of overlaps, with a Riemannian base metric \(h\), positive-definite fiber metric \(h_E\), and square-integrable fields, write
+
+\[
+\mathcal F_{\rm glue}^{(q)}
+=\sum_{\alpha<\beta}
+\int_{U_\alpha\cap U_\beta}
+\left\|q_\beta-\mathcal U_{\alpha\beta}q_\alpha
+\right\|_{h_E}^{\,2}\,d\operatorname{vol}_{h}.
+\tag{39}
+\]
+
+This term is nonnegative. Its zero makes the included defects vanish almost everywhere; continuity and full-support volume measure give pointwise agreement. The public source writes this term \(\mathcal F_q\) and includes additional connection and cocycle terms in its full gluing functional; the earlier working note denotes the term \(\mathcal F_\Lambda^{(q)}\). Here the local name \(\mathcal F_{\rm glue}^{(q)}\) keeps that scalar distinct from the cosmological constant and from the refusal verdict.
+
+For the declared exact section-compatibility jurisdiction, take typed tuples \(q=(q_\alpha,\mathcal U_{\alpha\beta},h,h_E)\) satisfying the stated integrability conditions, and choose \(C_{\rm glue}(q):\mathcal F_{\rm glue}^{(q)}=0\). The corresponding gate is
+
+\[
+\operatorname{Gate}_{\Gamma_{\rm biology}}(q)=
+\begin{cases}
+\mathsf{can},&\mathcal F_{\rm glue}^{(q)}=0,\\
+\mathbf2,&\mathcal F_{\rm glue}^{(q)}>0.
+\end{cases}
+\tag{39a}
+\]
+
+For a positive-defect typed tuple and a retained prior receipt \(r\), the receipt-preserving refusal has the declared form
+
+\[
+\operatorname{Fold}_{\Gamma_{\rm biology}}(q,r)=(\mathbf2,r).
+\tag{39b}
+\]
+
+The functional measures the defect; the gate issues the verdict; and \(r\) is an audit record at the stated resolution. This criterion governs the declared section data. Full bundle compatibility also needs the other included defects and their conditions.
+
+A mitochondrial realization of this functional specifies the membrane, local fields, overlap maps, measurements, and relationship between compatibility and biological function. The cristae experiment supplies the molecular-to-membrane measurement, and the functional supplies the compatibility computation; their coupling is the field-specific adapter to be calculated. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4}, \href{https://chatgpt.com/library?file_id=libfile_c45a658f83988191a4057b320f6b5048\&account_id=personal}{14}, \href{https://doi.org/10.1073/pnas.1816556116}{22}
+
+DNA carries a sequence that can serve as a template for another sequence. In semiconservative replication, each parental strand is paired with a newly synthesized complementary strand in a daughter duplex. Meselson and Stahl's experiment supplies a classical receipt for that mechanism. Proofreading and repair act through molecular machinery; their performance is measurable at the resolution of the chosen system and process. A purified mismatch-correction system provides one such mechanistic receipt. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{13}, \href{https://doi.org/10.1073/pnas.44.7.671}{23}, \href{https://doi.org/10.1126/science.2665076}{24}
+
+The sequence, its molecular reading, and the machinery that maintains it form a coupled biological circuit:
+
+\[
+\begin{gathered}
+\text{DNA sequence}
+\longrightarrow
+\text{RNA and protein expression}
+\\[-1pt]
+\longrightarrow
+\text{cellular machinery}
+\longrightarrow
+\text{DNA replication, repair, and reuse}.
+\end{gathered}
+\tag{40}
+\]
+
+Metabolic processes supply usable chemical work to cellular operations; the cell's molecular machinery contributes to metabolism and to maintenance of the hereditary carrier. Mitochondria are one eukaryotic realization of this energy--maintenance relation. The diversity of living systems carries additional realizations and different molecular details. \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{12}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{13}, \href{https://doi.org/10.1038/191144a0}{21}, \href{https://doi.org/10.1073/pnas.1816556116}{22}, \href{https://doi.org/10.1073/pnas.44.7.671}{23}, \href{https://doi.org/10.1126/science.2665076}{24}
+
+This energy--maintenance circuit gives the biological memory--motion gauge a named carrier: material and energy differences are coupled into molecular configurations, while declared readers preserve, repair, and reuse hereditary sequence. Its biological realization is evaluated through the dynamical equations, local fields and transports, and observations assigned by the adapter; the Fold gate remains the explicit section-compatibility read.
+
+\hypertarget{the-standard-of-completion}{%
+\section{The standard of completion}\label{the-standard-of-completion}}
+
+The same question can now be asked at several resolutions. Which relation returns? Which difference advances? What carrier realizes the operation? What does the reader retain? What does the receipt permit another reader to check?
+
+The two-dimensional construction answers these questions exactly for its stated state space. The eight-address audit gives a finite registry of comparisons. The quantum-gravity construction identifies compatibility, the physical quotient, and the spin-two read required of its continuum. The Standard Model register identifies the independent numerical quantities a complete derivation must select. The relativity construction places an observer's spatial comparison inside spacetime and identifies the interfaces by which light may be read. Thermodynamics supplies the physical exchange and entropy ledger; biology supplies a molecular chain of energy, hereditary sequence, repair, and reuse.
+
+The title places the full standard in the foreground. The following dependency map records the present status of the three physical claims:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Claim
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Exhibited in this paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Receipt still required
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Completed quantum theory of gravity & A finite compatibility condition and a stated physical-quotient and spin-two criterion & A specified model, physical quotient and observable, and a calculation establishing its nonzero physical spin-two residue, with the refinement and readout hypotheses checked \\
+Derivation of all Standard Model parameters & Gauge-algebra counts, the tree-level mass relations, the nineteen-coordinate register, and one exact finite integer & A justified selector and calculation for every independent coordinate, including scale, scheme, and comparison independent of the selecting inputs \\
+General relativity as the final formal--experiential closure & A chosen local Lorentzian isomorphism, observer decomposition, field equation, and a stated dimensional limit on one adapter & A physically justified chain of adapters with explicit domains, dynamics, observation, preservation, and recovery at the claimed resolution \\
+\end{longtable}
+
+Completion of a particular physical claim is read through the construction, assumptions, calculation, and empirical comparison appropriate to that claim. Further prediction and experiment extend the record; every reader can return to the premises and test the path.
+
+\input{theory_of_everything_current_closure.tex}
+
+\hypertarget{appendix-a.-notation-and-source-correspondence}{%
+\appendix
+\section{Notation and source correspondence}\label{appendix-a.-notation-and-source-correspondence}}
+
+The complete symbols below have the stated local roles. Indices on tensors are slots or summation labels in their own expressions. Source-specific variants keep their original definitions when the sources are read in their own contexts.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role in this paper
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(J,\Gamma_J,C_J\) & Jurisdiction, typing context, and its admission constraint \\
+\(\varnothing\) & Untypeable designation in the declared grammar; \(\emptyset_{\rm set}\) denotes the empty set when needed \\
+\(\mathbf2=\mathsf{Fold}\), \(\operatorname{Fold}_J\) & Typed refusal verdict and the corresponding receipt-preserving operation \\
+\(\rho,\operatorname{rec},\mathsf{quot},\operatorname{Dec}\) & Reader, receipt, comparison quotient, and decoder \\
+\(Q,\Omega,G\) & Fibonacci transport, oriented quarter-turn, and root signed-form matrix \\
+\(\Phi,\Psi\) & Golden-ratio scalar and its algebraic conjugate in the root construction \\
+\(F_n,L_n\) & Fibonacci and Lucas numbers at integer index \(n\) \\
+\(\mathsf N_{\rm alg}\), \(\mathsf P_{\rm swap}\) & Algebraic norm and the coefficient-order swap \\
+\(\mathsf S_{\rm ax},\mathsf L_{\rm ax},F_{\rm lift}\) & Axial generator, its one-step lift, and the generator whose exponential is \(Q^2\) \\
+\(H_{\rm mir},q_{\rm car},h_{\rm mir}\) & Normalized root mirror and the projective classes of carriage and mirror \\
+\(\vartheta_{\rm wheel}\) & The explicitly chosen isomorphism from the order-four finite quotient to the quarter-turn wheel \\
+\(U_{1/2},\mathsf{Sil}_{\rm cent},\mathscr L_n\) & Spin lift, product-typed central-return read, and occurrence ledger \\
+\(\mathsf T,p,z\) & Four-phase transition, phase address, and two-dimensional state \\
+\(B_{\rm car},\mathcal A_{\rm d},\xi_j,\mathsf M_{\rm cot},\mathsf J_{\rm can}\) & Even carrier step, discrete phase-space action, covector, cotangent lift, and canonical symplectic form \\
+\(\mathcal O_8,\iota\) & Eight-address label set and the chosen address bijection \\
+\(\mathcal F_{\rm comp}\), \(\mathcal F_{\rm glue}^{(q)}\) & Distinct quantum-gravity compatibility functional and section-gluing defect; the latter appears as \(\mathcal F_q\) in \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4} and \(\mathcal F_\Lambda^{(q)}\) in \href{https://chatgpt.com/library?file_id=libfile_c45a658f83988191a4057b320f6b5048\&account_id=personal}{14} \\
+\(P_\Sigma,\mathcal H_\Sigma^{\rm phys}\) & Boundary rigging map and the completed physical quotient in the stated construction \\
+\(\mathcal G_{\rm phys},P_{\rm TT},\mathcal W_2\) & Physical two-point function, transverse-traceless projector, and spin-two residue read \\
+\(g_{\mu\nu},G^{\rm Ein}_{\mu\nu},G_N,\Lambda_{\rm cos}\) & Spacetime metric, Einstein tensor, Newton constant, and cosmological constant \\
+\(\mathfrak g_{\rm SM},g_s,g_2,g_Y,\alpha\) & Standard Model gauge algebra, its three couplings, and the electromagnetic coupling \\
+\(p_\star,\delta_\alpha,q_\mu,a_\mu,r_\mu\) & Finite reference, electromagnetic offset, completed address traversals, address representative, and fractional residual \\
+\(R_K,Z_0,Z_\star\) & Von Klitzing resistance, physical vacuum impedance, and the impedance at the 137 reference \\
+\(\chi_\Omega,\varphi_{\rm AB},\mathsf U^\Omega_\gamma\) & Real-to-complex phase representation, electromagnetic loop phase, and real-matrix loop transport \\
+\(e_{\rm EW},\Delta_{\rm match}\) & Electroweak photon coupling in natural units and the specified quantum matching difference \\
+\(\sigma_x\) & Declared linear adapter from the 28-dimensional exterior-square source to spacetime two-forms at \(x\) \\
+\(\mathsf P_\sigma,A_\sigma,C_\sigma,K_\sigma\) & Chosen column permutation, image block, remaining columns, and resulting kernel-basis matrix \\
+\(S_B,\rho_{\rm th},W_{\rho_{\rm th}},Q_{\rm heat},W_{\rm out}\) & Boltzmann entropy, thermal reader and count, heat into the system, and work out of it \\
+\(H_{\rm Sh},Q_{\rm bath},\Delta S_{\rm Forget}\) & Shannon entropy, heat transferred into the declared thermal bath, and reader-resolution difference \\
+\(\mathcal S_{\rm HJ},p_i^{\rm mech},H_{\rm mech},L_{\rm mech},\mathcal A_{\rm proc},\mathcal B_{\rm Forget}(\tau)\) & Hamilton--Jacobi and mechanical variables, process action, and the declared energy-dimensional balance of Forget \\
+\(h,h_E,\mathcal U_{\alpha\beta}\) & Base metric, fiber metric, and overlap transport in the section-defect functional \\
+\end{longtable}
+
+In the carriage-lift notation \(e^{F_{\rm lift}}\), the exponent is the matrix defined in (11c). Source uses of a future-boundary object \(\mathbf F\) or an electromagnetic field tensor \(F_{\mu\nu}\) refer to separately typed objects.
+
+\hypertarget{appendix-b.-provenance-public-archive-and-historical-coordinate-lineage}{%
+\section{Provenance, public archive, and historical coordinate lineage}\label{appendix-b.-provenance-public-archive-and-historical-coordinate-lineage}}
+
+This appendix carries the working source-map record into the paper without changing its claim status. It distinguishes a retained source, a public edition, a byte-equivalent public copy, a source-corresponding public work, and a proposed archive destination. Those are different evidentiary offices.
+
+The public archive baseline for this audit is the immutable 27 October 2026 commit \href{https://github.com/Coppalini-Architecture/coppalini-architecture/tree/9b7122ca5c3712c2c294e2bc5097276d0ba9817b}{9b7122ca5c3712c2c294e2bc5097276d0ba9817b}. Its checksum ledger supplies the public SHA-256 coordinate. A byte-equivalence receipt reports equality between that public checksum and the SHA-256 of the retained source bytes. It says nothing by itself about theorem scope, physical realization, or claim strength.
+
+\hypertarget{b.1.-august-source-and-dependency-maps}{%
+\subsection{August source and dependency maps}\label{b.1.-august-source-and-dependency-maps}}
+
+The following nineteen maps are source and dependency records, separate from the paper shelf. Each retained copy is byte-equivalent to its public commit-pinned counterpart in the archive baseline. The compact table preserves each source owner, hash, and receipt; the corresponding archive paths remain in the accompanying source manifest.
+
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{0.08\columnwidth}
+  >{\raggedright\arraybackslash}p{0.36\columnwidth}
+  >{\raggedright\arraybackslash}p{0.42\columnwidth}
+  >{\raggedright\arraybackslash}p{0.12\columnwidth}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+Map
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source and dependency record
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SHA-256
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Receipt
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+01 & Formal admission and method & \url{9a193b5817410116e606eb5f7ed826ccad08e4ad4464d6123f16d3224ebf88ab} & exact \\
+02 & Minimum root algebra & \url{b505ceb41585fba8c4ae9622a93ed05d41edbb75177d556ea6f642fc6e2b4f84} & exact \\
+03 & Turn, mirror, central lift & \url{1a691016be6297f2ff2ebc9b3cfc05a1acdd2f7996e8646df000e16a695d299c} & exact \\
+04 & Return, classical field cross-section & \url{fbca28134926c427f0407208b66254d34701be51f27976cddaa25b150bc64247} & exact \\
+05 & Classical mechanics and Noether & \url{12cbe1ed2ebbad80b4f51c9cc548497e49cea629305a202c0ba185f259ce462b} & exact \\
+06 & Relativity, gravity and cosmology & \url{031363d56b062e5cc89106a146309b527806ac86eaea90ae1f1f6b6c7c1865e6} & exact \\
+07 & Maxwell, gauge and holonomy & \url{849bd68ee124df8c5ed46207fe6cfd6ceb263ba73670d1c6bcd3b17f8a1a558d} & exact \\
+08 & Quantum mechanics, measurement and Dirac & \url{025ce3b985d574da66abd81e64038234aeb64d4c7c2f82f8363cc8220edbe3a4} & exact \\
+09 & QFT, Standard Model, electroweak and QCD & \url{7354420f3924fed4ab30f46b9ac1d538e276ce75e466bed72e4fb6811d7b2129} & exact \\
+10 & Thermodynamics: the typed root of entropy & \url{62dabcc28234e15e07ec9eac3965c211fc0a930fa9718de88693c5e5db13ee27} & exact \\
+11 & Atomic and molecular chemistry & \url{21c9c61f0557c9aaa61bde20df30fe3dede77bf76a372b71a93a544c18bbeca0} & exact \\
+12 & Biology, ground up & \url{cfd1da74c17052817e09eb18c174f266520cfb1678a2293b137c74d408039a55} & exact \\
+13 & Membrane, mitochondria, chemiosmosis, ATP and metabolic control & \url{473c31dfd0ab3ce0b1eee1a5db299f408510f7ff4ea28bc587ceb39d7bd06c9d} & exact \\
+14 & DNA replication, repair, expression and hereditary memory & \url{54666a6d7f7d4174d52d026daaf2b80f84d760e4e0a3f60decfc0a3782d71794} & exact \\
+15 & Proteostasis, mitochondrial quality control and cell division & \url{224256cf01f4645d3b3055881b47b54a5f8768da158b43ffd0509991e743ca1e} & exact \\
+16 & The read seam & \url{0927a94c8273c6c8b32b79a069bd79339b068ca164fe904857d2869591bf8b5f} & exact \\
+17 & System of the body & \url{b445bbb050b0724f632f6f9de11f8d5820e141525f37a3ba5d46059c60985d7e} & exact \\
+18 & Sensation, perception, interoception, motor control and learning & \url{5bce9d7b7e699aa638f56fea2b5bfaddae78b2c9193e2bd6dfdcc5bcb9b07d65} & exact \\
+19 & Early experiential mechanics & \url{dfc15c785571ec9b3aedbdb0511452ad06de7807138700559e1afba8140ad321} & exact \\
+\end{longtable}
+
+\hypertarget{b.2.-public-edition-and-historical-manuscript-lineage}{%
+\subsection{Public-edition and historical-manuscript lineage}\label{b.2.-public-edition-and-historical-manuscript-lineage}}
+
+The working source-map record preserves a historical reading set of thirty-eight distinct public editions. This is a source-map coordinate, rather than a live count of a website whose inventory can change after the record was made.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Coordinate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Editions represented in the 38-edition record
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Physical, current, and principle papers (12) & \emph{Physical Reality Inside Constraint}; \emph{The Structure of Survival} v66; \emph{Contact Recognition}; \emph{Motion and Difference}; \emph{Continuum Closure in Covariant LQG} v1.1; \emph{Metric Mirror Symmetry / Riemann's i Machine}; \emph{Mirror Recognition} v1.0; \emph{The Exact Reader} v0.1; \emph{Linear Infinity} v0.1; \emph{Clear Onyx Computational Kernel Briefing}; \emph{Time Evolution} 0.6; \emph{Scope Recognition: Metric Minimum} \\
+Language Mechanics (14) & 000 \emph{Language Mechanics}; 001 \emph{Condition \& Constraint}; 002 \emph{Form \& Fit}; 003 \emph{Form Lambda Fit Delta Function}; 004 \emph{Identity \& Reference}; 005 \emph{Matrix Admissibility}; 006 \emph{Minimum Formal \& Mechanical Reference}; 007 \emph{Memory Return}; 008 \emph{Persistence \& Endurance}; 009 \emph{The Dihedral Phase Constraint}; 010 \emph{Minimum Root Algebra}; 011 \emph{Occurrence and the Twenty-Eight-Seam Reader}; 012 \emph{Axiomatic Closure}; 013 \emph{Formal Alphanumeric Closure} \\
+Additional editions (12) & \emph{Tool \& Technique: Stopping Point} v0.1; \emph{Compatibility Without Flatness}; \emph{Coarse-Grained Entropy and Exterior Records}; \emph{Independent Tunability}; \emph{A Complete 2x2 Operator Algebra}; \emph{Condition \& Constraint: Boundary Discipline}; \emph{Central Lift, Representation Difference and Retained Occurrence}; \emph{Four-Phase Addressing and Eight-State Relations}; \emph{Conserved Transport and Return}; \emph{Tool \& Technique: The Condition of Enough}, final; \emph{Minimum Enduring Complexity}; \emph{Color Meaning Memory Motion} \\
+\end{longtable}
+
+The historical reading room adds four manuscripts: \emph{Meaning Is the Memory of Return}, April 2025 full; \emph{Meaning Is the Memory of Return}, 30 April 2025 compressed; \emph{The Cathedral}, 20 May 2025; and \emph{The Theory That Holds}, 2 May 2025, revised 21 May 2025. Their literary and historical offices remain distinct from the theorem, calculation, and experiment receipts used for the present claims.
+
+\hypertarget{b.3.-public-source-integrity-status}{%
+\subsection{Public-source integrity status}\label{b.3.-public-source-integrity-status}}
+
+The byte audit has completed the nineteen August maps and two immutable public PDF archives: the \href{https://github.com/Coppalini-Architecture/coppalini-architecture/tree/9b7122ca5c3712c2c294e2bc5097276d0ba9817b}{Coppalini Architecture baseline} and the \href{https://github.com/lotuslift/The_Architecture_Of_Silence/tree/a525aff94cd625daa99d85b7840424f650834519}{Architecture of Silence baseline}. Across them, thirty-three named PDF paths resolve to thirty unique byte streams; every stream equals its retained source copy. Table B.4 records the receipt and groups only byte-identical aliases. Four of the fourteen formerly private project citations now have byte-equivalent public records: \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{11}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{12}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{13}, and \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{35}. The remaining ten---\href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{6}--\href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{8}, \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10}, \href{https://chatgpt.com/library?file_id=libfile_c45a658f83988191a4057b320f6b5048\&account_id=personal}{14}, \href{https://chatgpt.com/library?file_id=libfile_d247e341311c8191bb1c0aefc5af4111\&account_id=personal}{32}--\href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{34}, and \href{https://chatgpt.com/library?file_id=libfile_c8b01c25977c8191821c6dddbe16e0da\&account_id=personal}{36}--\href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{37}---have retained source hashes and specified archive destinations in Appendix C. Their public release is a separate archival operation. The thermodynamics source \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10} has SHA-256 \url{e43edf40863ca439ccabe374208a2819fb314753fb61a3ac61173194d77dd218}; the retired route is recorded only as a failed historical address.
+
+\hypertarget{b.4.-public-pdf-byte-equivalence-receipt}{%
+\subsection{Public-PDF byte-equivalence receipt}\label{b.4.-public-pdf-byte-equivalence-receipt}}
+
+Each row names one distinct byte stream. A semicolon in the path field records byte-identical public aliases; no source-correspondence inference is used in this table.
+
+\begingroup
+\footnotesize
+\renewcommand{\_}{\char`\_\allowbreak}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Archive
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Public PDF path or byte-identical aliases
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SHA-256
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Retained-source receipt
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Coppalini / Silence & papers/Clear\_Onyx\_Computational\_Kernel\_Briefing\_AVC\_2026-08-05.pdf; exposition/clear-onyx-computational-kernel/Clear\_Onyx\_Computational\_Kernel\_Briefing\_AVC\_2026-08-05.pdf & \url{1b7fb1ed7f6738964035ce531c31f5fd3409e7656bd0c2370a0487d570e12046} & exact \\
+Coppalini & papers/Contact\_Recognition\_Continuum.pdf & \url{29477d138fbf51604eec38a168e4f4e755bd0041316a94160b3c4e51294715fb} & exact \\
+Coppalini & papers/LINEAR\_INFINITY\_CANONICAL\_v0\_1.pdf & \url{16b6bd00db89619dc0212c41727b4dd535ec9f6c085ce4a86eaed6f66fa07825} & exact \\
+Coppalini & papers/Metric\_Mirror\_Symmetry.pdf; papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf & \url{8674225e327176ee194aae1bf48af084f7e8a9cc2731083bdb0c1fb2be56dbdc} & exact \\
+Coppalini & papers/Mirror\_Recognition\_v1\_0.pdf; papers/mirror-recognition/mirror-recognition-v1.0.pdf & \url{9728df5b483a3ccea53b9f7155b684a0c18859276fc6a162394cd0d25efdcf10} & exact \\
+Coppalini & papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf & \url{e1881be9fde295f7ea84d6d278315c0820c6c857c96ee72a3c31e6f2e27c878b} & exact \\
+Coppalini & papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.pdf & \url{e0c27c13dd8506554e92aecc4eba0be8d4e990a8b247b1c508d440c9ba6efed7} & exact \\
+Coppalini & papers/compatibility-without-flatness/compatibility-without-flatness-v0.1.pdf & \url{a0654379ecd2ad9e012340991e51103523eee1c306b0497eb0200ce8fcac3804} & exact \\
+Coppalini & papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf & \url{74a4359d52461c4676508b9b1f8d3afa6990eaf0e1444e015ff15d763b5ba9ce} & exact \\
+Coppalini & papers/language-mechanics/001-condition-and-constraint/condition-and-constraint-001-v0.2.pdf & \url{3d23bb2dd10a2d904ee81d7010faba0ce30ffa40caac76f08cc6f84b21b10f63} & exact \\
+Coppalini & papers/language-mechanics/002-form-and-fit/form-and-fit-002-v0.2.pdf & \url{7eb4319b1b387a4da2d7595a1fffb45a942129ec210dc72ebf2b5b6bc5557b09} & exact \\
+Coppalini & papers/language-mechanics/003-form-lambda-fit-delta-function/form-lambda-fit-delta-function-003-v0.2.pdf & \url{bc8e2e134b20b98a6a614995c8383359973fa01c47ff9713dffd124b85b5f94b} & exact \\
+Coppalini & papers/language-mechanics/004-identity-and-reference/identity-and-reference-004-v0.2.pdf & \url{d13b54552664a036d5739e9e23e597caba3beb5e573716bc3f36251a30016171} & exact \\
+Coppalini & papers/language-mechanics/005-matrix-admissibility/matrix-admissibility-005-v0.2.pdf & \url{93900d9815874b5223d97892bbdfc50f554554eff20b21fc04e94827cb5e5300} & exact \\
+Coppalini & papers/language-mechanics/006-minimum-formal-mechanical-reference/minimum-formal-mechanical-reference-006-v0.2.pdf & \url{266f9f2ab453cd6e7f7f560c692a80ac2142869f791bb5ac10be19a0b4007497} & exact \\
+Coppalini & papers/language-mechanics/007-memory-return/memory-return-007-v0.2.pdf & \url{f1ac7cd994ae3d94b6696896a648846af50b7a40143db41b00c5920a57fc7677} & exact \\
+Coppalini & papers/language-mechanics/008-persistence-and-endurance/persistence-and-endurance-008-v0.2.pdf & \url{9a3af8a7c394c6aa346e1aadeec121fdfe8813852830207d081ebc85fc708555} & exact \\
+Coppalini & papers/language-mechanics/009-dihedral-phase-constraint/dihedral-phase-constraint-009-v0.2.pdf & \url{c6ac17e033345f1d3ca4e6ede51b40972d4d369b8dd4fca2c54d1e2588b756f8} & exact \\
+Coppalini & papers/language-mechanics/010-minimum-root-algebra/minimum-root-algebra-010-v0.2.pdf & \url{007edc66d390e4e845c0d2ba4429f38e03ebf763a0f561291051660d4d74dd88} & exact \\
+Coppalini & papers/language-mechanics/011-occurrence-twenty-eight-seam-reader/occurrence-twenty-eight-seam-reader-011-v0.2.pdf & \url{a5e6bccecf2dcf239c1832ce7248265ed4bae0f8153ef7969a2104fcae113292} & exact \\
+Coppalini & papers/language-mechanics/ca-03-tool-and-technique/CA\_01\_Tool\_and\_Technique\_Stopping\_Point\_Theory\_of\_Enough\_v0\_1.pdf & \url{87a48a61478d838c2d6d26bb1696e48bc06f9a35547c9a493499b62b788350b8} & exact \\
+Coppalini & papers/minimum-enduring-complexity/minimum-enduring-complexity-v0.2.pdf & \url{093168ce32f0a5ac3ce12ca73d05667f994862a47eb4907115f1b3e9aa6c0534} & exact \\
+Coppalini & papers/motion-and-difference/motion-and-difference-2026-07-17.pdf & \url{9705e414434461cb9e58bf939324d70d97eec5e9ba430d2a573c2e85d5f14a05} & exact \\
+Coppalini & papers/the-exact-reader/the-exact-reader-v0.1.pdf & \url{8ca6fc048defe94020267dd7f4b3ee85725cc7bfaf6ed1c77e74b71c7b48988f} & exact \\
+Silence & exposition/the-structure-of-survival/The\_Structure\_of\_Survival\_v66.pdf & \url{442e344737c4593201a28a3aae09aef988dd5e73f65d8b01705f9ea6fa934b45} & exact \\
+Silence & papers/01-complete-2x2-operator-algebra/A\_Complete\_2x2\_Operator\_Algebra\_Draft\_0\_2.pdf & \url{ade256f471e78e14f1079b3ae6d1787ad22febc6d14cbdefdf37396be2b945ee} & exact \\
+Silence & papers/02-condition-and-constraint/Condition\_and\_Constraint\_Boundary\_Discipline\_Draft\_0\_1.pdf & \url{e2532bfea6508e1ce4ce822b880accb038d42b25d8c763653a72b164a3df4b9b} & exact \\
+Silence & papers/03-central-lift/Central\_Lift\_Representation\_Difference\_and\_Retained\_Occurrence\_Draft\_0\_1.pdf & \url{5abcd4d4fa613307db9b866917eaeecbc8b303edddd1ddc894bff3090c3f06d4} & exact \\
+Silence & papers/04-four-phase-eight-state/Four\_Phase\_Addressing\_and\_Eight\_State\_Relations\_Draft\_0\_1.pdf & \url{2dd070c39b54f320d451820d662cc1323dc7736b7cb63654edcd40210870b4ef} & exact \\
+Silence & papers/05-conserved-transport-return/Conserved\_Transport\_and\_Return\_Draft\_0\_1.pdf & \url{99314b34bc7b81bc07e0ff969425a6c90119b4ff6cc36b7f243d07c9c4875aca} & exact \\
+\end{longtable}
+\endgroup
+
+\hypertarget{appendix-c.-compact-source-manifest}{%
+\section{Compact source manifest}\label{appendix-c.-compact-source-manifest}}
+
+SHA-256 below identifies raw source bytes. A DOI identifies a publisher record and carries a separate versioning office. ``Staged destination'' identifies an exact intended archive path; it does not represent an active public address.
+
+\hypertarget{c.1.-retained-project-sources-used-by-this-paper}{%
+\subsection{Retained project sources used by this paper}\label{c.1.-retained-project-sources-used-by-this-paper}}
+
+\begingroup
+\scriptsize
+\renewcommand{\_}{\char`\_\allowbreak}
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+Ref.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Edition / retained source
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Public address or staged destination
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SHA-256
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source locator \(\to\) exact paper use
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{6} & \emph{The Standard Model as Constrained Dynamics} v0.2 & staged: papers/cited-source-records/the-standard-model-as-constrained-dynamics-v0.2.md & \url{be9bdc9c7cc97515fa620ed458223c6d098c9f77cc2f0b99811783df98a8a69a} & source §3.1--§3.3, §7.1 \(\to\) gauge bracket and supplied electroweak premises; §5.1, (23)--(24a); §5.2, (25)--(27); §5.3, (28) \\
+\href{https://chatgpt.com/library?file_id=libfile_843edf27b3e88191b692d66ea6f0de03\&account_id=personal}{7} & \emph{The Empirical Input Register} v0.1 & staged: papers/cited-source-records/the-empirical-input-register-v0.1.md & \url{90dc9b99ff8f3a98342ab32d9c97d759f177c7d578ed472cb3fc2cfea90c38d0} & source Theorem 1.1; §§3--8, §13 \(\to\) nineteen-coordinate register; §5.3 \\
+\href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{8} & \emph{Gap B Candidate Register} & staged: papers/cited-source-records/gap-b-candidate-register-v0.1.md & \url{3cdea70d39bd186821d4baef8b0cd491197872e4eaf13f8dd5dd77e15cafad11} & source §§3--4, §9.4--§9.5 \(\to\) selector and electromagnetic comparison duties; §5.3, (28); §5.4, (28e)--(28j) \\
+\href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10} & \emph{Thermodynamics Inside Constraint} & staged: papers/cited-source-records/thermodynamics-inside-constraint.pdf & \url{e43edf40863ca439ccabe374208a2819fb314753fb61a3ac61173194d77dd218} & source §§1--6; Props. 3.1, 4.1; Thm. 6.1 \(\to\) thermal boundary, balance, and Fold audit; §7, (37)--(38a) \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{11} & \emph{Thermodynamics: The Typed Root of Entropy} v0.2 & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{public archive map 10} & \url{62dabcc28234e15e07ec9eac3965c211fc0a930fa9718de88693c5e5db13ee27} & source §§VII, IX, XII, XXII, XXIV \(\to\) finite entropy count and reader-resolution lineage; §7, (37)--(38) \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{12} & \emph{Membrane, Mitochondria, Chemiosmosis, ATP and Metabolic Control} & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{public archive map 13} & \url{473c31dfd0ab3ce0b1eee1a5db299f408510f7ff4ea28bc587ceb39d7bd06c9d} & source §§III, VIII--XVI, XXIII--XXVII \(\to\) mitochondrial carrier and metabolic maintenance; §8, (40) \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{13} & \emph{DNA, Replication, Repair, Expression and Hereditary Memory} & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{public archive map 14} & \url{54666a6d7f7d4174d52d026daaf2b80f84d760e4e0a3f60decfc0a3782d71794} & source §§IV, X--XIII, XXI, XXIX--XXXI, XXXV \(\to\) hereditary sequence, replication, repair and reuse; §8, (40) \\
+\href{https://chatgpt.com/library?file_id=libfile_c45a658f83988191a4057b320f6b5048\&account_id=personal}{14} & \emph{Fold Functional} & staged: papers/cited-source-records/fold-functional.pdf & \url{432026626936911f431785215c0bc1367d5430d92bf76a70a7864064d61afeef} & source ``Selected reference,'' ``Minimum fold functional,'' and ``Cocycle completion'' \(\to\) section-gluing defect; §8, (39)--(39b) \\
+\href{https://chatgpt.com/library?file_id=libfile_d247e341311c8191bb1c0aefc5af4111\&account_id=personal}{32} & \emph{Minimum Endurance Delta: Dual-Form Motion, Cup Symmetry, and the Positive Horizon of Return} & staged: papers/cited-source-records/minimum-endurance-delta.pdf & \url{30e57aab4dbbc3278c20a13c73dcaa92d56891c0fbf2b4c6c7803a932aecce86} & source Thms. 1, 8--9, 14, 23; Defs. 10--16 \(\to\) root wheel and finite 137 read; §3.1--§3.2; §5.3, (28a)--(28a3) \\
+\href{https://chatgpt.com/library?file_id=libfile_7054d1b4713481918550a4bf9ef72320\&account_id=personal}{33} & \emph{The Twenty-Eight-Seam Mirror Wheel} draft 0.1 & staged: papers/cited-source-records/twenty-eight-seam-mirror-wheel.pdf & \url{82187cf26788934d8d41462fa6ef16eb71496efe48f0215e226cd75a43939a25} & source §§2.1--2.3, 3.1--3.3, 4.2, 8.1; Thms. 1--4 \(\to\) eight-address seam reader and feedback office; §3.2; §5.3, (28a)--(28a3) \\
+\href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{34} & \emph{The Architecture of Silence: Closure Without Erasure} & staged: papers/cited-source-records/architecture-of-silence-closure-without-erasure.pdf & \url{22785fa9f79e60abf4806134d41dee0201f60787e469a1ba34e05000f740b840} & source Props. 3.1, 4.3--4.5, 8.1--8.2; Def. 5.1; Thm. 6.1 \(\to\) central return, ledger, and mirror-wheel lineage; §3.1--§3.2; §5.3, (28a)--(28a3) \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{35} & \emph{Metric Mirror Symmetry: Riemann's i Machine}, canonical edition & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{public canonical PDF} & \url{8674225e327176ee194aae1bf48af084f7e8a9cc2731083bdb0c1fb2be56dbdc} & source §§1--2, 5--9, 16, 27 \(\to\) axial carrier and wheel correspondence; §3.1; §5.3, (28a)--(28a3) \\
+\href{https://chatgpt.com/library?file_id=libfile_c8b01c25977c8191821c6dddbe16e0da\&account_id=personal}{36} & \emph{The Electromagnetic Holonomy Carrier} v0.1 & staged: papers/cited-source-records/electromagnetic-holonomy-carrier-v0.1.md & \url{074e720043591761ea3d606c35440fc1025b1daa3003e66e2e5d7c0f29db6b78} & source §§3--6, 9, 11--12 \(\to\) electromagnetic loop-phase representation; §5.4, (28g)--(28h) \\
+\href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{37} & \emph{SALIA Mechanical Eye} v0.2 & staged: papers/cited-source-records/salia-mechanical-eye-v0.2.md & \url{e70424c5654663d560a8c3c99b5059a8677d7116999b689b9e5350d9f6f33c0c} & source ``The 137 reference,'' ``Explicit calibration law,'' and ``Authority ledger'' \(\to\) address decomposition, calibration and residual; §5.4, (28c)--(28j) \\
+\end{longtable}
+\endgroup
+
+\hypertarget{c.2.-remaining-cited-sources}{%
+\subsection{Remaining cited sources}\label{c.2.-remaining-cited-sources}}
+
+\begingroup
+\scriptsize
+\renewcommand{\_}{\char`\_\allowbreak}
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+Ref.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Edition or authority
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Public URL / DOI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Hash status in this audit
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dependency role and exact paper use
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{1} & \emph{Language Mechanics 000} v0.2.1 & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{public archive PDF} & public archive SHA-256 \url{74a4359d52461c4676508b9b1f8d3afa6990eaf0e1444e015ff15d763b5ba9ce}; retained byte equality exact & jurisdiction and gate grammar; §§1--2 \\
+\href{https://doi.org/10.5281/zenodo.23697265}{2} & \emph{The Structure of Survival} v66 & \href{https://doi.org/10.5281/zenodo.23697265}{DOI 10.5281/zenodo.23697265} & independent public archive SHA-256 \url{442e344737c4593201a28a3aae09aef988dd5e73f65d8b01705f9ea6fa934b45}; retained byte equality exact & QG and GR contextual synthesis; §4; §6 \\
+\href{https://eulershiddenl.ink/papers/time_evolution_0_6.pdf}{3} & \emph{Time Evolution} 0.6 & \href{https://eulershiddenl.ink/papers/time_evolution_0_6.pdf}{historical public edition} & \textbf{preservation only}; retained-byte comparison pending & lineage only; excluded from formal assertions pending a matching source-byte certificate \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{4} & \emph{Motion and Difference} & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{public archive PDF}; \href{https://doi.org/10.5281/zenodo.22780641}{DOI} & public archive SHA-256 \url{9705e414434461cb9e58bf939324d70d97eec5e9ba430d2a573c2e85d5f14a05}; retained byte equality exact & section-defect construction; §8, (39) \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{5} & \emph{Continuum Closure in Covariant LQG} v1.1 & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{public archive PDF} & public archive SHA-256 \url{e1881be9fde295f7ea84d6d278315c0820c6c857c96ee72a3c31e6f2e27c878b}; retained byte equality exact & compatibility and spin-two criterion; §4, (19)--(22) \\
+\href{https://eulershiddenl.ink/papers/physical-reality-inside-constraint.pdf}{9} & \emph{Physical Reality Inside Constraint} & \href{https://eulershiddenl.ink/papers/physical-reality-inside-constraint.pdf}{historical public edition} & \textbf{preservation only}; retained-byte comparison pending & lineage only; excluded from formal assertions pending a matching source-byte certificate \\
+\href{https://doi.org/10.1103/7493-9nb7}{15} & Bruno et al.~(2026) & DOI 10.1103/7493-9nb7 & publisher record; no local byte hash in this audit & continuum-limit context; §4 \\
+\href{https://doi.org/10.1103/d8s7-jqfl}{16} & Han (2026) & DOI 10.1103/d8s7-jqfl & publisher record; no local byte hash in this audit & ultraviolet fixed-point context; §4 \\
+\href{https://doi.org/10.1088/1361-6382/acc5d9}{17} & Dittrich and Kogios (2023) & DOI 10.1088/1361-6382/acc5d9 & publisher record; no local byte hash in this audit & graviton comparison context; §4 \\
+\href{https://doi.org/10.1103/PhysRevLett.19.1264}{18} & Weinberg (1967) & DOI 10.1103/PhysRevLett.19.1264 & publisher record; no local byte hash in this audit & electroweak mass convention; §5.2, (25)--(27) \\
+\href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{19} & Particle Data Group (2026) & public PDG review & publisher record; no local byte hash in this audit & parameter and scale comparison; §5.2--§5.4 \\
+\href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{20} & Shannon (1948) & DOI 10.1002/j.1538-7305.1948.tb01338.x & publisher record; no local byte hash in this audit & Shannon entropy distinction; §7, (37d) \\
+\href{https://doi.org/10.1038/191144a0}{21} & Mitchell (1961) & DOI 10.1038/191144a0 & publisher record; no local byte hash in this audit & chemiosmotic carrier; §8 \\
+\href{https://doi.org/10.1073/pnas.1816556116}{22} & Blum et al.~(2019) & DOI 10.1073/pnas.1816556116 & publisher record; no local byte hash in this audit & cristae-dimer receipt; §8 \\
+\href{https://doi.org/10.1073/pnas.44.7.671}{23} & Meselson and Stahl (1958) & DOI 10.1073/pnas.44.7.671 & publisher record; no local byte hash in this audit & semiconservative replication receipt; §8 \\
+\href{https://doi.org/10.1126/science.2665076}{24} & Lahue, Au, and Modrich (1989) & DOI 10.1126/science.2665076 & publisher record; no local byte hash in this audit & mismatch-correction receipt; §8 \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{25} & \emph{Linear Infinity} v0.1 & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{public archive PDF} & public archive SHA-256 \url{16b6bd00db89619dc0212c41727b4dd535ec9f6c085ce4a86eaed6f66fa07825}; retained byte equality exact & finite-address theorem and 137; §3.1; §5.3, (28a)--(28b) \\
+\href{https://physics.nist.gov/cuu/pdf/JPCRD2022CODATA.pdf}{26} & CODATA 2022 & NIST public record & publisher record; no local byte hash in this audit & fine-structure and impedance inputs; §5.3--§5.4, (28b)--(28f) \\
+\href{https://www.cambridge.org/highereducation/books/matrix-analysis/FDA3627DC2B9F5C3DF2FD8C3CC136B48}{27} & Horn and Johnson (2013) & publisher record & publisher record; no local byte hash in this audit & Sylvester coordinate; §6, (29) \\
+\href{https://doi.org/10.1002/andp.19163540702}{28} & Einstein (1916) & DOI 10.1002/andp.19163540702 & publisher record; no local byte hash in this audit & field-equation convention; §6 \\
+\href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.pdf}{29} & \emph{Coarse-Grained Entropy and Exterior Records} v0.1 & \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.pdf}{public archive PDF} & public archive SHA-256 \url{e0c27c13dd8506554e92aecc4eba0be8d4e990a8b247b1c508d440c9ba6efed7}; retained byte equality exact & public supporting entropy construction; §7 \\
+\href{https://doi.org/10.1085/jgp.201812033}{30} & Anselmi, Davies, and Faraldo-Gómez (2018) & DOI 10.1085/jgp.201812033 & publisher record; no local byte hash in this audit & membrane-induced dimer attraction; §8 \\
+\href{https://doi.org/10.1038/ncomms7259}{31} & Picard et al.~(2015) & DOI 10.1038/ncomms7259 & publisher record; no local byte hash in this audit & cristae-junction geometry; §8 \\
+\href{https://doi.org/10.1103/PhysRev.115.485}{38} & Aharonov and Bohm (1959) & DOI 10.1103/PhysRev.115.485 & publisher record; no local byte hash in this audit & loop phase; §5.4, (28h) \\
+\href{https://doi.org/10.1017/S096249290100006X}{39} & Marsden and West (2001) & DOI 10.1017/S096249290100006X & publisher record; no local byte hash in this audit & discrete variational carrier; §3.3, (18) \\
+\href{https://doi.org/10.1147/RD.53.0183}{40} & Landauer (1961) & DOI 10.1147/RD.53.0183 & publisher record; no local byte hash in this audit & erasure heat bound; §7, (37e) \\
+\href{https://doi.org/10.1038/nature10872}{41} & Bérut et al.~(2012) & DOI 10.1038/nature10872 & publisher record; no local byte hash in this audit & experimental Landauer receipt; §7, (37e)--(37g) \\
+\end{longtable}
+\endgroup
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+
+\hypertarget{project-sources}{%
+\subsection*{Project sources}\label{project-sources}}
+
+Appendices B--C distinguish public records from retained source records. At the archive snapshot recorded there, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{11}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{12}, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{13}, and \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{35} have byte-equivalent, commit-pinned public records. The remaining cited source records retain their exact source hash and proposed public path; they are not replaced here by later or merely related papers. The former \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{10} route, eulershiddenl.ink/thermodynamics/, returned a 404 on 3 November 2026 and is not a valid public citation target.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf}{\emph{Language Mechanics 000}}, archive baseline.
+\item
+  Anthony Vito Coppa, \href{https://doi.org/10.5281/zenodo.23697265}{\emph{The Structure of Survival}, v66}.
+\item
+  Anthony Vito Coppa, \href{https://eulershiddenl.ink/papers/time_evolution_0_6.pdf}{\emph{Time Evolution}, 0.6}; preserved provenance record only, excluded from the formal-reference layer pending a matching source-byte certificate.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/motion-and-difference/motion-and-difference-2026-07-17.pdf}{\emph{Motion and Difference}}, \href{https://doi.org/10.5281/zenodo.22780641}{DOI 10.5281/zenodo.22780641}.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf}{\emph{Continuum Closure in Covariant Loop Quantum Gravity}, v1.1}, archive baseline.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_5aa28715b83881919460603dea30bc25\&account_id=personal}{\emph{The Standard Model as Constrained Dynamics}, v0.2}.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_843edf27b3e88191b692d66ea6f0de03\&account_id=personal}{\emph{The Empirical Input Register}, v0.1}.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_67018da506648191b88970078f33fd1a\&account_id=personal}{\emph{Gap B Candidate Register}}.
+\item
+  Anthony Vito Coppa, \href{https://eulershiddenl.ink/papers/physical-reality-inside-constraint.pdf}{\emph{Physical Reality Inside Constraint}}; preserved provenance record only, excluded from the formal-reference layer pending a matching source-byte certificate.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_37ba8f1902d88191a1ecc5aa2a9514dd\&account_id=personal}{\emph{Thermodynamics Inside Constraint}}.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/10\%20THERMODYNAMICS_The_Typed_Root_of_Entropy_v0_2.md}{\emph{Thermodynamics: The Typed Root of Entropy}, v0.2}.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/13\%20MEMBRANE_MITOCHONDRIA_CHEMIOSMOSIS_ATP_METABOLIC_CONTROL_v0_1.md}{\emph{Membrane, Mitochondria, Chemiosmosis, ATP and Metabolic Control}}.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/14\%20DNA_REPLICATION_REPAIR_EXPRESSION_HEREDITARY_MEMORY_v0_1.md}{\emph{DNA, Replication, Repair, Expression and Hereditary Memory}}.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_c45a658f83988191a4057b320f6b5048\&account_id=personal}{\emph{Fold Functional}}.
+\end{enumerate}
+
+\hypertarget{literature-and-additional-project-sources}{%
+\subsection*{Literature and additional project sources}\label{literature-and-additional-project-sources}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Matteo Bruno, Eugenia Colafranceschi, Fabio M. Mele, and Carlo Rovelli, \href{https://doi.org/10.1103/7493-9nb7}{``Structure of the continuum limit of spin foams''}, \emph{Physical Review D} \textbf{114}, 066005 (2026).
+\item
+  Muxin Han, \href{https://doi.org/10.1103/d8s7-jqfl}{``Ultraviolet fixed point in covariant loop quantum gravity''}, \emph{Physical Review D} \textbf{114}, 044040 (2026).
+\item
+  Bianca Dittrich and Athanasios Kogios, \href{https://doi.org/10.1088/1361-6382/acc5d9}{``From spin foams to area metric dynamics to gravitons''}, \emph{Classical and Quantum Gravity} \textbf{40}, 095011 (2023).
+\item
+  Steven Weinberg, \href{https://doi.org/10.1103/PhysRevLett.19.1264}{``A Model of Leptons''}, \emph{Physical Review Letters} \textbf{19}, 1264--1266 (1967).
+\item
+  Particle Data Group, \href{https://pdg.lbl.gov/2026/reviews/standard_model_and_related.html}{\emph{Review of Particle Physics}: Standard Model and Related Topics} (2026).
+\item
+  Claude E. Shannon, \href{https://doi.org/10.1002/j.1538-7305.1948.tb01338.x}{``A Mathematical Theory of Communication''}, \emph{Bell System Technical Journal} \textbf{27}, 379--423 (1948).
+\item
+  Peter Mitchell, \href{https://doi.org/10.1038/191144a0}{``Coupling of phosphorylation to electron and hydrogen transfer by a chemi-osmotic type of mechanism''}, \emph{Nature} \textbf{191}, 144--148 (1961).
+\item
+  Thorsten B. Blum, Alexander Hahn, Thomas Meier, Karen M. Davies, and Werner Kühlbrandt, \href{https://doi.org/10.1073/pnas.1816556116}{``Dimers of mitochondrial ATP synthase induce membrane curvature and self-assemble into rows''}, \emph{Proceedings of the National Academy of Sciences} \textbf{116}, 4250--4255 (2019).
+\item
+  Matthew Meselson and Franklin W. Stahl, \href{https://doi.org/10.1073/pnas.44.7.671}{``The Replication of DNA in Escherichia coli''}, \emph{Proceedings of the National Academy of Sciences} \textbf{44}, 671--682 (1958).
+\item
+  R. S. Lahue, K. G. Au, and P. Modrich, \href{https://doi.org/10.1126/science.2665076}{``DNA mismatch correction in a defined system''}, \emph{Science} \textbf{245}, 160--164 (1989).
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf}{\emph{Linear Infinity}, v0.1}, ``Companion finite-address theorem,'' archive baseline.
+\item
+  CODATA, \href{https://physics.nist.gov/cuu/pdf/JPCRD2022CODATA.pdf}{\emph{2022 Recommended Values of the Fundamental Physical Constants}}, National Institute of Standards and Technology.
+\item
+  Roger A. Horn and Charles R. Johnson, \href{https://www.cambridge.org/highereducation/books/matrix-analysis/FDA3627DC2B9F5C3DF2FD8C3CC136B48}{\emph{Matrix Analysis}, 2nd ed.}, Cambridge University Press (2013), chapters 4 and 7.
+\item
+  Albert Einstein, \href{https://doi.org/10.1002/andp.19163540702}{``Die Grundlage der allgemeinen Relativitätstheorie''}, \emph{Annalen der Physik} \textbf{49}, 769--822 (1916).
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.pdf}{\emph{Coarse-Grained Entropy and Exterior Records}, v0.1}, archive baseline.
+\item
+  Claudio Anselmi, Karen M. Davies, and José D. Faraldo-Gómez, \href{https://doi.org/10.1085/jgp.201812033}{``Mitochondrial ATP synthase dimers spontaneously associate due to a long-range membrane-induced force''}, \emph{Journal of General Physiology} \textbf{150}, 763--770 (2018).
+\item
+  Martin Picard et al., \href{https://doi.org/10.1038/ncomms7259}{``Trans-mitochondrial coordination of cristae at regulated membrane junctions''}, \emph{Nature Communications} \textbf{6}, 6259 (2015).
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_d247e341311c8191bb1c0aefc5af4111\&account_id=personal}{\emph{Minimum Endurance Delta: Dual-Form Motion, Cup Symmetry, and the Positive Horizon of Return}}, July 2026.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_7054d1b4713481918550a4bf9ef72320\&account_id=personal}{\emph{The Twenty-Eight-Seam Mirror Wheel}}, draft 0.1, July 2026.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_5167b051c248819185f3673cbcb6537d\&account_id=personal}{\emph{The Architecture of Silence: Closure Without Erasure}}, July 2026.
+\item
+  Anthony Vito Coppa, \href{https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9b7122ca5c3712c2c294e2bc5097276d0ba9817b/papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf}{\emph{Metric Mirror Symmetry: Riemann's i Machine}, canonical edition}, September 2026.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_c8b01c25977c8191821c6dddbe16e0da\&account_id=personal}{\emph{The Electromagnetic Holonomy Carrier}, v0.1}.
+\item
+  Anthony Vito Coppa, \href{https://chatgpt.com/library?file_id=libfile_b30993b2ecd48191aab2855fdb3d932e\&account_id=personal}{\emph{SALIA Mechanical Eye}, v0.2: electromagnetic path and calibration law}.
+\item
+  Y. Aharonov and D. Bohm, \href{https://doi.org/10.1103/PhysRev.115.485}{``Significance of Electromagnetic Potentials in the Quantum Theory''}, \emph{Physical Review} \textbf{115}, 485--491 (1959).
+\item
+  Jerrold E. Marsden and Matthew West, \href{https://doi.org/10.1017/S096249290100006X}{``Discrete mechanics and variational integrators''}, \emph{Acta Numerica} \textbf{10}, 357--514 (2001).
+\item
+  Rolf Landauer, \href{https://doi.org/10.1147/RD.53.0183}{``Irreversibility and Heat Generation in the Computing Process''}, \emph{IBM Journal of Research and Development} \textbf{5}, 183--191 (1961).
+\item
+  Antoine Bérut et al., \href{https://doi.org/10.1038/nature10872}{``Experimental verification of Landauer's principle linking information and thermodynamics''}, \emph{Nature} \textbf{483}, 187--189 (2012).
+\end{enumerate}
