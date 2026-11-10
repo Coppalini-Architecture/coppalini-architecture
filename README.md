@@ -12,6 +12,8 @@ No office silently substitutes for another.
 
 ## Start here
 
+| Four Dual Forms: *Gravity Light*, *Memory Motion*, *Time Scope*, *Horizon Silence* | [Gravity Light](papers/four-dual-forms/pdf/01_gravity_light.pdf) · [Memory Motion](papers/four-dual-forms/pdf/02_memory_motion.pdf) · [Time Scope](papers/four-dual-forms/pdf/03_time_scope.pdf) · [Horizon Silence](papers/four-dual-forms/pdf/04_horizon_silence.pdf) | [Shared source, receipts, and verification](papers/four-dual-forms/README.md) |
+
 | Reader | Entrance | Function |
 |---|---|---|
 | Unified synthesis | [*The Structure of Survival*, Review Edition v66](https://doi.org/10.5281/zenodo.23697265) | Current deposited synthesis |
@@ -96,10 +98,9 @@ The following newer editions are held in versioned folders; they supplement the 
 | The Structure of Survival | [Review Edition v66 PDF](papers/structure-of-survival-v66/The_Structure_of_Survival_v66.pdf) | [LaTeX and proof notes](papers/structure-of-survival-v66/README.md) |
 | Time Evolution | [v0.6 PDF](papers/time-evolution-v0.6/time_evolution_0_6.pdf) | [Source / verification](papers/time-evolution-v0.6/README.md) |
 | Physical Reality Inside Constraint | [Final PDF](papers/physical-reality-inside-constraint/physical_reality_inside_constraint_final.pdf) | [Source / verification](papers/physical-reality-inside-constraint/README.md) |
-| Four Dual Forms: *Gravity Light*, *Memory Motion*, *Time Scope*, *Horizon Silence* | [Gravity Light](papers/four-dual-forms/pdf/01_gravity_light.pdf) · [Memory Motion](papers/four-dual-forms/pdf/02_memory_motion.pdf) · [Time Scope](papers/four-dual-forms/pdf/03_time_scope.pdf) · [Horizon Silence](papers/four-dual-forms/pdf/04_horizon_silence.pdf) | [Shared source, receipts, and verification](papers/four-dual-forms/README.md) |
 | Suture Field | [PDF](papers/suture-field/pdf/05_suture_field.pdf) | [Source, receipt, and verification](papers/suture-field/README.md) |
 | Suture Field Dynamics | [PDF](papers/suture-field-dynamics/pdf/05a_suture_field_dynamics.pdf) | [Source, receipt, and verification](papers/suture-field-dynamics/README.md) |
-| The Theory of Everything | [R27 PDF](papers/theory-of-everything/r27/The_Theory_Of_Everything_R27.pdf) | [Version register, sources and receipts](papers/theory-of-everything/README.md) |
+| The Theory of Everything | [R27](papers/theory-of-everything/r27/The_Theory_Of_Everything_R27.pdf) | [Version register, sources and receipts](papers/theory-of-everything/README.md) |
 | The Condition of Trust | [PDF](papers/condition-of-trust/The_Condition_Of_Trust.pdf) | [Source / verification](papers/condition-of-trust/README.md) |
 | Gauge & Matter Laboratory | [Standalone v0.5.2 HTML](programs/gauge-matter-laboratory/clear-onyx-gauge-laboratory-v0.5.2.html) | [Full implementation and tests](programs/gauge-matter-laboratory/REPOSITORY_ENTRY.md) |
 
