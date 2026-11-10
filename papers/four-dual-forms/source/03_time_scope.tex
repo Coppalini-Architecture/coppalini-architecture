@@ -1,0 +1,292 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Time Scope: Local Phase and Projective Return},pdfauthor={Anthony Vito Coppa},pdfsubject={Physical phase, projective scope, and half-turn return}}
+\begin{document}
+\papertitle{Time Scope}{Local phase and projective return}
+
+\begin{abstract}
+Time carries local phase through physical distance and duration. Scope reads
+the direction of a state through its projective identity. A half-turn changes
+every nonzero local state while leaving its projective scope unchanged. The
+mirror reverses phase. Linear polarization and a two-level quantum state carry
+the same double-angle relation: local phase advances by $\alpha$ while the
+scope read advances by $2\alpha$. The field therefore separates local change,
+projective return, measurement direction, and time-addressed motion.
+\end{abstract}
+
+\section{Time and scope}
+
+For a wave of angular frequency $\omega$ and wave covector $\mathbf k$, phase
+difference across a spacetime interval is
+\[
+\Delta\alpha=\omega\,\Delta t-\mathbf k\cdot\Delta\mathbf x.
+\tag{TS.0}
+\]
+For light in vacuum,
+\[
+\omega=c|\mathbf k|,
+\qquad
+\lambda_{\rm wave}=\frac{2\pi}{|\mathbf k|},
+\qquad
+c=\lambda_{\rm wave}f.
+\tag{TS.0a}
+\]
+For a material trajectory with velocity $\mathbf v$,
+\[
+\Delta\mathbf x=\mathbf v\,\Delta t,
+\qquad
+\Delta\alpha=(\omega-\mathbf k\cdot\mathbf v)\Delta t.
+\tag{TS.0b}
+\]
+Thus duration, distance, wavelength, frequency, and light speed determine one
+physical phase relation. The local phase carrier is
+$V^\times=\RR^2\setminus\{0\}$. Scope reads the unoriented line through its
+state.
+
+The half-turn relation is
+\[
+\Scope(U_\pi z)=\Scope(z),\qquad U_\pi z\ne z
+\quad(z\in V^\times).
+\tag{TS.1}
+\]
+It is a return of scope through local difference.
+
+\section{Phase carrier and mirror}
+
+\sharedroot
+
+Define the phase transport
+\[
+U_\alpha=e^{\alpha C}
+=\begin{pmatrix}\cos\alpha&-\sin\alpha\\
+\sin\alpha&\cos\alpha\end{pmatrix},
+\qquad \alpha\in\RR/2\pi\ZZ.
+\tag{TS.2}
+\]
+
+\begin{proposition}[Phase and mirror]
+For all $\alpha$,
+\[
+U_{\alpha+\beta}=U_\alpha U_\beta,\qquad
+HU_\alpha H=U_{-\alpha},
+\qquad U_\pi=-I.
+\]
+\end{proposition}
+
+\begin{proof}
+The composition law is the one-parameter exponential law. Since $HC=-CH$,
+$H e^{\alpha C}H=e^{-\alpha C}$. Finally
+$e^{\pi C}=I\cos\pi+C\sin\pi=-I$.
+\end{proof}
+
+The split form supplies two null lines
+\[
+\ell_\pm=\RR\left(1,\frac{-1\pm\sqrt5}{2}\right)^{\mathsf T},
+\qquad \ell_\pm^{\mathsf T}G\ell_\pm=0.
+\tag{TS.3}
+\]
+The mirror and quarter-turn exchange these two projective directions.
+
+\section{Scope and the half-turn receipt}
+
+\begin{definition}[Scope reader]
+The scope reader is the projectivization
+\[
+\Scope:V^\times\longrightarrow\RR P^1,\qquad \Scope(z)=[z].
+\tag{TS.4}
+\]
+It forgets nonzero scalar magnitude and sign while preserving the line through
+the origin.
+\end{definition}
+
+Define the scope-closure selector
+\[
+\Phi:\RR/2\pi\ZZ\longrightarrow\mathcal P(V^\times),
+\qquad
+\Phi(\alpha):=
+\{z\in V^\times:\Scope(U_\alpha z)=\Scope(z)\},
+\qquad
+\SilScope:=V^\times.
+\tag{TS.4a}
+\]
+
+\begin{theorem}[Half-turn scope return]
+For every $z\in V^\times$,
+\[
+U_\pi z=-z\ne z,\qquad \Scope(U_\pi z)=\Scope(z).
+\tag{TS.5}
+\]
+Thus the half-turn receipt is
+\[
+\Phi(\pi)=\SilScope.
+\tag{TS.6}
+\]
+\end{theorem}
+
+\begin{proof}
+The first equality is the preceding proposition. A nonzero vector and its
+negative span the same one-dimensional real subspace, so their projective
+readings are equal. A nonzero real vector cannot equal its negative.
+\end{proof}
+
+The projective action of $H$ is well typed:
+\[
+\overline H:\RR P^1\to\RR P^1,\qquad \overline H([z])=[Hz].
+\tag{TS.7}
+\]
+It is a bijection and supplies scope covariance,
+\[
+\Scope(Hz)=\overline H(\Scope(z)).
+\tag{TS.8}
+\]
+
+For an explicit circle coordinate, define
+\[
+\chi([x:y])=
+\left(\frac{x^2-y^2}{x^2+y^2},\frac{2xy}{x^2+y^2}\right)\in S^1.
+\tag{TS.9}
+\]
+If $z=(\cos\alpha,\sin\alpha)$, then
+\[
+\chi(\Scope(z))=(\cos2\alpha,\sin2\alpha).
+\tag{TS.10}
+\]
+The doubled angle is the scope coordinate of the two-to-one phase relation.
+
+
+\section{Ordered transport and memory return}
+
+Let $(A,\preceq)$ be an address order with initial address $a_0$.
+Let $\phi:A_{\succeq a_0}\to\RR/2\pi\ZZ$ be its phase coordinate. Define
+\[
+W_{b\leftarrow a}:=U_{\phi(b)-\phi(a)},
+\qquad a\preceq b.
+\tag{TS.11}
+\]
+
+\begin{proposition}[Functorial transport]
+For $a\preceq b\preceq c$,
+\[
+W_{c\leftarrow b}W_{b\leftarrow a}=W_{c\leftarrow a},
+\qquad W_{a\leftarrow a}=I.
+\tag{TS.12}
+\]
+\end{proposition}
+
+For $\psi_0\in V^\times$, the trajectory is
+\[
+\Psi_{a_0,\psi_0}(a):=W_{a\leftarrow a_0}\psi_0,
+\tag{TS.13}
+\]
+and its trajectory-relative displacement is
+\[
+\delta_{\rm traj}(a):=\Psi_{a_0,\psi_0}(a)-\psi_0.
+\tag{TS.14}
+\]
+The displacement is measured from the initial state at $a_0$.
+
+\sharedoccurrence{TS.14a}{TS.14b}
+
+For $J=\mathsf{TS}$, take $\Theta_n=a_n$,
+$x_n=\Psi_{a_0,\psi_0}(a_n)$, and $y_n=\Scope(x_n)$. The time--scope
+projection is
+\[
+\operatorname{pr}_{\rm TS}(\mathsf{Occ}_{\mathsf{TS},n})
+=(\Theta_n,x_n,y_n,\delta_{\rm traj}(a_n),
+\boldsymbol\varepsilon_n).
+\tag{TS.14c}
+\]
+
+\begin{definition}[Memory return]
+For a reader $\rho:V^\times\to Y$, define
+\[
+\operatorname{MemRet}_{\rho}(a,b;\psi_0)
+\Longleftrightarrow
+\begin{cases}
+a\prec b,\\
+\rho(\Psi(a))=\rho(\Psi(b)),\\
+\exists m\ (a\prec m\prec b\ \land\ \rho(\Psi(m))\ne\rho(\Psi(a))).
+\end{cases}
+\tag{TS.15}
+\]
+\end{definition}
+
+The intermediate address witnesses departure between the equal endpoint reads.
+For the scope reader, a half-turn with an intermediate quarter-turn gives
+memory return:
+\[
+\phi(b)-\phi(a)=\pi,\qquad
+\phi(m)-\phi(a)=\frac\pi2
+\quad\Longrightarrow\quad
+\operatorname{MemRet}_{\Scope}(a,b;\psi_0).
+\tag{TS.16}
+\]
+
+\section{Mirror transfer}
+
+Define mirrored phase data by $\phi^\mu=-\phi$ and mirrored trajectory by
+\[
+\Psi^\mu(a):=H\Psi(a).
+\tag{TS.17}
+\]
+Then $\Psi^\mu$ has transport
+$W^\mu_{b\leftarrow a}=U_{-(\phi(b)-\phi(a))}$.
+
+\begin{theorem}[Mirror transfer of memory return]
+Suppose a reader $\rho$ has an injective mirror covariance
+\[
+\rho(Hz)=\overline H_\rho(\rho(z))
+\tag{TS.18}
+\]
+for an injective map $\overline H_\rho$ on its image. Then
+\[
+\operatorname{MemRet}_{\rho}(a,b;\psi_0)
+\Longleftrightarrow
+\operatorname{MemRet}_{\rho}(a,b;H\psi_0)\ \text{on mirrored data}.
+\tag{TS.19}
+\]
+\end{theorem}
+
+\begin{proof}
+The mirror relation gives $\Psi^\mu(x)=H\Psi(x)$ at every address $x$.
+Covariance transfers endpoint equality. Injectivity transfers the strict
+inequality at the intermediate departure address. The converse follows
+because $H^2=I$.
+\end{proof}
+
+The scope reader satisfies the hypothesis by TS.8, because $\overline H$ is
+a projective bijection.
+
+\section{Light and two-level matter}
+
+\subsection{Linear polarization}
+
+Choose a transverse real electric-field amplitude $E\in\RR^2\setminus\{0\}$
+at a detector plane. Its unoriented polarization axis is $[E]\in
+\RR P^1$. A polarizer reads the scope direction:
+\[
+E\longmapsto [E].
+\tag{TS.20}
+\]
+The half-turn $E\mapsto-E$ preserves the polarization axis. Wavelength,
+detector plane, polarizer convention, intensity threshold, and calibration
+fix the measured read.
+
+\subsection{Two-level realization}
+
+Let $\sigma_x,\sigma_y,\sigma_z$ be the Pauli matrices and define
+\[
+V_\alpha=e^{-i\alpha\sigma_z}.
+\tag{TS.21}
+\]
+For $|+x\rangle$, the Bloch read is
+\[
+\bigl(\langle\sigma_x\rangle,\langle\sigma_y\rangle\bigr)
+=(\cos2\alpha,\sin2\alpha),
+\qquad V_{\alpha+\pi}=-V_\alpha.
+\tag{TS.22}
+\]
+The Bloch vector reads the double-cover geometry directly: state phase carries
+the local turn and the measured transverse direction carries the scope turn.
+
+\end{document}

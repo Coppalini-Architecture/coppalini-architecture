@@ -1,0 +1,226 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Memory Motion: Return, Mirror Transfer, and Relative Phase},pdfauthor={Anthony Vito Coppa},pdfsubject={Time-addressed transport, inverse return, and ordered physical occurrence}}
+\begin{document}
+\papertitle{Memory Motion}{Return, mirror transfer, and relative phase}
+
+\begin{abstract}
+Motion carries a physical state between time addresses. Memory is the inverse
+condition by which a relation returns to its own address while the carriage
+remains ordered. The axial metric flow advances a real coordinate by
+$2\log\varphi$ and closes its quotient reading after that advance. The mirror
+reverses the flow. Curvature records loop transport; material memory records
+state update and readout. The equations distinguish a changing carrier state,
+a returning read, and an ordered occurrence without erasing their difference.
+\end{abstract}
+
+\section{Motion and memory}
+
+At time addresses $a\preceq b$, motion is a transport
+\[
+T_{b\leftarrow a}:X_a\longrightarrow X_b,
+\qquad x_b=T_{b\leftarrow a}x_a.
+\tag{MM.0}
+\]
+Time order composes exactly:
+\[
+T_{c\leftarrow b}T_{b\leftarrow a}=T_{c\leftarrow a},
+\qquad T_{a\leftarrow a}=I_{X_a}.
+\tag{MM.0a}
+\]
+Memory is the inverse condition of an invertible carriage:
+\[
+T_{a\leftarrow b}=T_{b\leftarrow a}^{-1},
+\qquad T_{a\leftarrow b}T_{b\leftarrow a}=I_{X_a}.
+\tag{MM.0b}
+\]
+Return is identity at its addressed carrier. A reader may close under a
+transport while the state continues to differ at the local address.
+
+\section{Axial lift and quotient}
+
+\sharedroot
+
+Let
+\[
+\varphi=\frac{1+\sqrt5}{2},\qquad
+s_0=\log\varphi,\qquad
+\varpi=2\log\varphi.
+\tag{MM.1}
+\]
+The selected transport is
+\[
+L_{\rm ax}:=L_{s_0}=\frac{Q+2I}{\sqrt5},
+\qquad T_{\rm ax}:=-L_{\rm ax}.
+\tag{MM.2}
+\]
+Let $v_\pm$ denote the null eigenvectors of $Q$, with
+$Qv_+=\varphi v_+$ and $Qv_-=-\varphi^{-1}v_-$. On
+\[
+X=\{z=av_++bv_-:ab\ne0\},
+\tag{MM.3}
+\]
+define the lift coordinate
+\[
+\xi_{\rm lift}(z):=\log\left|\frac ab\right|.
+\tag{MM.4}
+\]
+
+\begin{proposition}[Lift advance]
+For $z\in X$,
+\[
+\xi_{\rm lift}(L_s z)=\xi_{\rm lift}(z)+2s,
+\qquad
+\xi_{\rm lift}(L_{\rm ax}z)=\xi_{\rm lift}(z)+\varpi.
+\tag{MM.5}
+\]
+\end{proposition}
+
+\begin{proof}
+The flow $L_s=e^{sS}$ multiplies the two $S$-eigendirections by $e^s$ and
+$e^{-s}$. Their coefficient ratio is therefore multiplied by $e^{2s}$.
+Taking the logarithm proves the result.
+\end{proof}
+
+The axial reader is
+\[
+q_{\rm ax}:\RR\longrightarrow\RR/\varpi\ZZ,
+\qquad q_{\rm ax}(\xi)=[\xi].
+\tag{MM.6}
+\]
+It has the exact return-with-advance relation
+\[
+q_{\rm ax}\bigl(\xi_{\rm lift}(L_{\rm ax}z)\bigr)
+=q_{\rm ax}(\xi_{\rm lift}(z)),
+\qquad
+\xi_{\rm lift}(L_{\rm ax}z)-\xi_{\rm lift}(z)=\varpi.
+\tag{MM.7}
+\]
+
+\begin{theorem}[Quotient and lift]
+The selected axial transport preserves the metric and reverses under the
+mirror:
+\[
+L_{\rm ax}^{\mathsf T}GL_{\rm ax}=G,\qquad
+HL_{\rm ax}H=L_{\rm ax}^{-1}.
+\tag{MM.8}
+\]
+Its quotient return in MM.7 carries one reading across two distinct lift
+coordinates.
+\end{theorem}
+
+\begin{proof}
+The first two identities are instances of the shared root. The lift
+difference in MM.7 is nonzero because $\varpi=2\log\varphi>0$. Hence the
+states have distinct lift coordinates.
+\end{proof}
+
+\section{Reader, state, and record}
+
+\sharedoccurrence{MM.9a}{MM.9b}
+
+For $J=\mathsf{MM}$, let
+\[
+\operatorname{Ref}_{\rm MM}:\mathsf{Occ}_{\mathsf{MM}}
+\to\mathcal R_{\rm MM},
+\qquad
+\Delta_{\rm MM}:\mathsf{Occ}_{\mathsf{MM}}
+\to\mathcal D_{\rm MM}
+\tag{MM.9c}
+\]
+be the declared reference and difference fields. The memory--motion receipt is
+the projection
+\[
+r_n:=\operatorname{pr}_{\rm MM}(\mathsf{Occ}_{\mathsf{MM},n})
+=(\operatorname{Ref}_{\rm MM}(\mathsf{Occ}_{\mathsf{MM},n}),
+\Delta_{\rm MM}(\mathsf{Occ}_{\mathsf{MM},n}),y_n,\Theta_n).
+\tag{MM.9d}
+\]
+An ordered record is
+\[
+R_{n+1}=\snoc(R_n,r_{n+1}).
+\tag{MM.10}
+\]
+The record carries occurrence order while preserving every earlier occurrence
+at its own address.
+
+\begin{definition}[Reader-relative return]
+For a transport $T$ and reader $\rho$, a return at $z$ is
+\[
+\rho(Tz)=\rho(z).
+\tag{MM.11}
+\]
+A carrier difference is separately tested by $Tz\ne z$ or by a declared
+difference map $\Delta(Tz,z)$.
+\end{definition}
+
+The axial instance is
+\[
+\rho=q_{\rm ax}\circ\xi_{\rm lift},\qquad T=L_{\rm ax},
+\tag{MM.12}
+\]
+and satisfies both MM.11 and the nonzero lift condition in MM.7.
+
+\section{Relative phase and mirror transfer}
+
+Phase transport is
+\[
+U_\alpha=e^{\alpha C},
+\]
+with
+\[
+U_{\alpha+\beta}=U_\alpha U_\beta,\qquad
+HU_\alpha H=U_{-\alpha}.
+\tag{MM.13}
+\]
+For two addresses $a\preceq b$, their phase difference is
+\[
+\Delta\alpha_{b,a}:=\alpha(b)-\alpha(a)
+\quad\text{in }\RR/2\pi\ZZ.
+\tag{MM.14}
+\]
+The phase difference orders rotation between the two addresses. The axial lift
+and the phase circle therefore remain separately readable coordinates.
+
+A mirror-covariant reader obeys
+\[
+\rho(Hz)=\overline H_\rho(\rho(z)).
+\tag{MM.15}
+\]
+When $\overline H_\rho$ is injective, equality and departure under $\rho$
+transfer exactly between a trajectory and its mirror. For the projective
+reader $\rho(z)=[z]$, the half-turn satisfies
+\[
+U_\pi z=-z\ne z,
+\qquad [U_\pi z]=[z],
+\tag{MM.15a}
+\]
+and gives an exact instance of reader-relative return.
+
+\section{Curvature and physical memory}
+
+For a connection $A$ on a bundle, curvature is the two-form
+\[
+F=dA+A\wedge A.
+\tag{MM.16}
+\]
+A loop comparison requires a specified transport $P_\gamma$ and reader
+$\rho_\gamma$. A reader-relative return takes the form
+\[
+\rho_\gamma(P_\gamma x)=\rho_\gamma(x).
+\tag{MM.17}
+\]
+The loop relation carries a state around a closed physical path and compares
+the returned read with its initial read.
+
+A physical memory implementation likewise requires a material state space,
+update, readout, and record:
+\[
+m_{n+1}=\mathcal U(m_n,u_n,d_n),
+\qquad y_n=\rho_m(m_n).
+\tag{MM.18}
+\]
+The state update, input, disturbance, readout, and occurrence address give a
+material memory its physical form.
+
+\end{document}

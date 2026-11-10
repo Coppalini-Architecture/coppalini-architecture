@@ -1,0 +1,313 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Suture Field: Solder Flux and Metric g},pdfauthor={Anthony Vito Coppa},pdfsubject={Eight-address carrier, Lorentzian suture, induced flux, and Einstein-Maxwell realization}}
+\newcommand{\hateta}{\widehat\eta}
+\newcommand{\hatC}{\widehat C}
+\newcommand{\hatrho}{\widehat\varrho}
+\newcommand{\hatH}{\widehat H}
+\newcommand{\Fsol}{\mathcal F_{\rm sol}}
+\begin{document}
+\papertitle{Suture Field}{Solder flux and metric $g$}
+
+\begin{abstract}
+Spacetime interval and oriented surface flux arise from one rank-four field.
+The field sutures the tangent carrier of a Lorentzian manifold into an
+eight-address internal carrier. Its symmetric contraction is the metric $g$;
+its antisymmetric contraction is the solder flux $\Fsol$. The sevenfold
+address action preserves both contractions, while the mirror preserves the
+metric and reverses flux orientation. Einstein curvature and Maxwell curvature
+meet when the induced flux satisfies the Maxwell field equations under a
+declared dimensional calibration.
+\end{abstract}
+
+\section{Suture relation}
+
+Let $M$ be a smooth four-manifold. Let $E\to M$ be a real rank-eight vector
+bundle whose fibers carry a symmetric form $\hateta$, an antisymmetric form
+$\hatC$, a cyclic action $\hatrho(\ZZ_7)$, and a mirror $\hatH$. A suture
+field is a smooth $E$-valued one-form
+\[
+\Pi=\Pi^A{}_{\mu}\,dx^\mu\otimes e_A\in\Omega^1(M,E)
+\]
+of constant rank four such that
+\[
+g_{\mu\nu}:=\hateta_{AB}\Pi^A{}_{\mu}\Pi^B{}_{\nu}
+\quad\text{has signature }(3,1).
+\tag{SF.0}
+\]
+Equivalently, at every address $x\in M$,
+\[
+\Pi_x:T_xM\hookrightarrow E_x,
+\qquad
+g_x(u,v)=\hateta_x(\Pi_xu,\Pi_xv).
+\tag{SF.1}
+\]
+Put $L:=\im\Pi\subset E$. The rank and signature conditions make $L$ a
+Lorentzian rank-four subbundle and give a fiberwise isometry
+\[
+\Pi:TM\xrightarrow{\ \cong\ }L.
+\tag{SF.2}
+\]
+Thus $\Pi$ is an extended solder coframe. The word \emph{suture} names the
+same coframe together with its four internal transverse address directions.
+
+\section{Eight-address carrier}
+
+Let
+\[
+\mathcal A_8=\{\infty\}\sqcup\ZZ_7,
+\qquad
+\mathcal V_8:=\RR[\mathcal A_8],
+\qquad
+\tau e_\infty=e_\infty,\quad \tau e_k=e_{k+1}.
+\tag{SF.3}
+\]
+The cyclic action is read in the real Fourier decomposition of
+$\mathcal V_8$. Let
+\[
+u_0=\frac1{\sqrt7}\sum_{k=0}^{6}e_k,
+\]
+and, for $j=1,2,3$, let
+\[
+\begin{aligned}
+c_j&=\sqrt{\frac27}\sum_{k=0}^{6}
+\cos\!\left(\frac{2\pi jk}{7}\right)e_k,\\
+s_j&=\sqrt{\frac27}\sum_{k=0}^{6}
+\sin\!\left(\frac{2\pi jk}{7}\right)e_k.
+\end{aligned}
+\tag{SF.4}
+\]
+Then
+\[
+\mathcal V_8=Span(e_\infty,u_0)\oplus
+\bigoplus_{j=1}^{3}\Span(c_j,s_j).
+\tag{SF.5}
+\]
+Writing $R_\alpha=e^{\alpha C}$, the address action becomes
+\[
+\hatrho(\tau^r)=I_2\oplus R_{2\pi r/7}\oplus
+R_{4\pi r/7}\oplus R_{6\pi r/7},
+\qquad r\in\ZZ_7.
+\tag{SF.6}
+\]
+The first $I_2$ acts on $\Span(e_\infty,u_0)$; the three rotations act on
+the ordered pairs $(c_j,s_j)$. Hence SF.6 is a real eight-dimensional
+realization of the vertex permutation action in SF.3.
+
+\sharedroot
+
+On the Fourier carrier, define
+\[
+\hateta:=G\oplus I_2\oplus I_2\oplus I_2,
+\qquad
+\hatC:=C\oplus C\oplus C\oplus C,
+\tag{SF.7}
+\]
+and, with $D=\diag(1,-1)$,
+\[
+\hatH:=H\oplus D\oplus D\oplus D.
+\tag{SF.8}
+\]
+The symmetric form has signature $(7,1)$. The first summand is the
+gravity--light split carrier; the remaining three planes carry the nontrivial
+real Fourier weights of the sevenfold address cycle.
+
+\begin{theorem}[Cyclic and mirror invariance]
+For every $r\in\ZZ_7$,
+\[
+\hatrho(\tau)^7=I_8,
+\qquad
+\hatrho(\tau^r)^{\mathsf T}\hateta\hatrho(\tau^r)=\hateta,
+\qquad
+\hatrho(\tau^r)^{\mathsf T}\hatC\hatrho(\tau^r)=\hatC,
+\tag{SF.9}
+\]
+and
+\[
+\hatH^{\mathsf T}\hateta\hatH=\hateta,
+\qquad
+\hatH^{\mathsf T}\hatC\hatH=-\hatC,
+\qquad
+\hatH\hatrho(\tau^r)\hatH=\hatrho(\tau^{-r}).
+\tag{SF.10}
+\]
+\end{theorem}
+
+\begin{proof}
+The three transverse blocks have eigenvalues
+$e^{\pm2\pi i r/7}$, $e^{\pm4\pi i r/7}$, and
+$e^{\pm6\pi i r/7}$, while the root block is fixed. Thus seven cyclic
+steps give $I_8$. Every $R_\alpha$ preserves both $I_2$ and $C$.
+The shared root gives $H^{\mathsf T}GH=G$ and $HCH=-C$; each $D$ gives
+$D^{\mathsf T}I_2D=I_2$ and $DCD=-C$. Finally, $DR_\alpha D=R_{-\alpha}$.
+Taking direct sums gives SF.9--SF.10.
+\end{proof}
+
+\section{Metric $g$}
+
+For a locally constant $r:U\to\ZZ_7$, the internal cyclic update is
+\[
+\Pi\longmapsto\Pi^{(r)}:=\hatrho(\tau^{r})\Pi.
+\tag{SF.11}
+\]
+The metric is invariant:
+\[
+\begin{aligned}
+g^{(r)}_{\mu\nu}
+&=\hateta_{AB}(\Pi^{(r)})^A{}_{\mu}(\Pi^{(r)})^B{}_{\nu}\\
+&=\hateta_{AB}\Pi^A{}_{\mu}\Pi^B{}_{\nu}
+=g_{\mu\nu}.
+\end{aligned}
+\tag{SF.12}
+\]
+The mirror field $\Pi^\mu:=\hatH\Pi$ likewise satisfies
+\[
+g(\Pi^\mu)=g(\Pi).
+\tag{SF.13}
+\]
+The Levi--Civita connection and curvature are therefore determined by the
+suture metric:
+\[
+\Gamma^\lambda{}_{\mu\nu}
+=\frac12g^{\lambda\sigma}
+(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}
+-\partial_\sigma g_{\mu\nu}),
+\qquad
+\operatorname{Ein}_{\mu\nu}
+=R_{\mu\nu}-\frac12Rg_{\mu\nu}.
+\tag{SF.14}
+\]
+
+\section{Solder flux}
+
+The antisymmetric contraction of the same field is the solder flux
+\[
+\Fsol:=\frac12\hatC_{AB}\Pi^A\wedge\Pi^B
+\in\Omega^2(M).
+\tag{SF.15}
+\]
+For every oriented surface $\Sigma\subset M$, its integrated flux is
+\[
+\Phi_{\rm sol}(\Sigma):=\int_\Sigma\Fsol.
+\tag{SF.16}
+\]
+The same cyclic update that preserves $g$ preserves $\Fsol$, while the
+mirror reverses its orientation:
+\[
+\Fsol(\Pi^{(r)})=\Fsol(\Pi),
+\qquad
+\Fsol(\Pi^\mu)=-\Fsol(\Pi).
+\tag{SF.17}
+\]
+Metric and flux thus arise at the same address from the symmetric and
+antisymmetric contractions of $\Pi$.
+
+\section{Electromagnetic and gravitational realization}
+
+Let $\chi$ be a declared constant dimensional calibration. An electromagnetic
+realization of solder flux is the field
+\[
+F_{\rm em}:=\chi\Fsol
+\tag{SF.18}
+\]
+when it satisfies
+\[
+dF_{\rm em}=0,
+\qquad
+d\star_gF_{\rm em}=\mu_0\star_gJ.
+\tag{SF.19}
+\]
+On a contractible region, the first condition gives a potential
+$A$ with $F_{\rm em}=dA$. Its $U(1)$ loop read is
+\[
+W^{U(1)}_\gamma=
+\exp\!\left(\frac{iq}{\hbar}\oint_\gamma A\right)
+=\exp\!\left(\frac{iq}{\hbar}\int_\Sigma F_{\rm em}\right)
+\quad(\partial\Sigma=\gamma).
+\tag{SF.20}
+\]
+The electromagnetic stress--energy tensor is
+\[
+T^{\rm em}_{\mu\nu}=\frac1{\mu_0}
+\left(F_{{\rm em}\,\mu\alpha}F_{\rm em\,\nu}{}^\alpha
+-\frac14g_{\mu\nu}F_{{\rm em}\,\alpha\beta}
+F_{\rm em}^{\alpha\beta}\right).
+\tag{SF.21}
+\]
+With material stress--energy $T^{\rm mat}_{\mu\nu}$, curvature obeys
+\[
+\operatorname{Ein}_{\mu\nu}+\Lambda g_{\mu\nu}
+=\frac{8\pi G_N}{c^4}
+\left(T^{\rm mat}_{\mu\nu}+T^{\rm em}_{\mu\nu}\right).
+\tag{SF.22}
+\]
+Thus the suture metric supplies interval and curvature, and the calibrated
+solder flux supplies the electromagnetic two-form and its energy--momentum.
+
+\section{Sevenfold holonomy}
+
+Let $P\to M$ be a principal $\ZZ_7$ bundle with associated internal bundle
+$E=P\times_{\hatrho}\mathcal V_8$. If a closed loop $\gamma$ has monodromy
+$\tau^{w_\gamma}$, $w_\gamma\in\ZZ_7$, its internal holonomy is
+\[
+W^{(7)}_\gamma=\hatrho(\tau^{w_\gamma}).
+\tag{SF.23}
+\]
+The three nontrivial Fourier planes read its phase as
+\[
+\exp\!\left(\frac{2\pi i j w_\gamma}{7}\right),
+\qquad j=1,2,3.
+\tag{SF.24}
+\]
+The $\ZZ_7$ holonomy and the $U(1)$ holonomy have distinct carriers. They
+meet in one physical realization when a material coupling and a calibrated
+observable relate $W^{(7)}_\gamma$ to $F_{\rm em}$ at the same address.
+
+\section{Direct occurrence}
+
+\sharedoccurrence{SF.25}{SF.26}
+
+For $J=\mathsf{SF}$, take the state coordinates to include
+\[
+x_n=(\Pi_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_n,W^{(7)}_{\gamma,n}),
+\tag{SF.27}
+\]
+whenever the Maxwell conditions in SF.19 have been supplied. The suture
+projection is
+\[
+\operatorname{pr}_{\rm SF}(\mathsf{Occ}_{\mathsf{SF},n})
+=(\Theta_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_n,
+W^{(7)}_{\gamma,n},O_n,\kappa_n,\boldsymbol\varepsilon_n).
+\tag{SF.28}
+\]
+The metric, flux, calibration, current, loop read, observable, and residual
+remain separately measured coordinates of one occurrence.
+
+\section{Suture closure}
+
+At every spacetime address, the field closure is
+\[
+\boxed{
+\Pi\in\Omega^1(M,E)
+\quad\longmapsto\quad
+\left(
+g=\Pi^*\hateta,\;
+\Fsol=\Pi^*\hatC
+\right).}
+\tag{SF.29}
+\]
+Here the first pullback is symmetric and the second is antisymmetric:
+\[
+\begin{array}{rcl}
+\text{Suture Field }\Pi&:&TM\xrightarrow{\ \cong\ }L\subset E,\\[2pt]
+\text{Metric }g&:&\text{interval, connection, and curvature},\\[2pt]
+\text{Solder Flux }\Fsol&:&\text{oriented surface relation and loop phase}.
+\end{array}
+\tag{SF.30}
+\]
+The cyclic address action preserves both $g$ and $\Fsol$; the mirror preserves
+$g$ and reverses $\Fsol$. The Maxwell conditions select the electromagnetic
+realization of flux, and the Einstein equation couples its stress--energy to
+spacetime curvature.
+
+\end{document}

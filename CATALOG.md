@@ -88,4 +88,12 @@ Their equality is machine-checked from [ALIASES.json](ALIASES.json). They remain
 The newest selected editions are indexed in the [repository README](README.md#current-papers-and-gauge--matter-laboratory-november-2026) and the [versioned release register](RELEASES/2026-11-07.md). They are deposited under distinct directories for *The 3 Body Mirror* (corrected mathematical manuscript), *Scope Recognition*, *The Structure of Survival* v66, *Time Evolution* v0.6, *Physical Reality Inside Constraint*, *The Theory of Everything* R27 (plus earlier formal edition), *The Condition of Trust*, and *Gauge & Matter Laboratory* v0.5.2.
 
 Each directory states the claim strength of its checks. The SHA256 ledger, citation metadata, and original publication path mappings remain in force.
+
+The six-paper physical-field addition is retained in three directories:
+
+- [`papers/four-dual-forms/`](papers/four-dual-forms/) — *Gravity Light*, *Memory Motion*, *Time Scope*, and *Horizon Silence* from *Physical Reality Field v0.3*.
+- [`papers/suture-field/`](papers/suture-field/) — *Suture Field v0.1*.
+- [`papers/suture-field-dynamics/`](papers/suture-field-dynamics/) — *Suture Field Dynamics v0.1*.
+
+Their package identity, executable receipts, and scope boundaries are recorded in [`RELEASES/2026-11-09-six-paper-addition.md`](RELEASES/2026-11-09-six-paper-addition.md).
 <!-- END NOVEMBER_2026_PUBLICATIONS -->

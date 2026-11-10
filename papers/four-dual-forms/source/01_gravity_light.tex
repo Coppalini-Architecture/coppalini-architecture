@@ -1,0 +1,274 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Gravity Light: Metric Invariance and Fixed Null Directions},pdfauthor={Anthony Vito Coppa},pdfsubject={Metric interval, null propagation, and local Lorentzian normal form}}
+\begin{document}
+\papertitle{Gravity Light}{Metric invariance and fixed null directions}
+
+\begin{abstract}
+Gravity measures interval. Light propagates along the null relation of that
+interval. A recurrence matrix and an oriented area form generate a symmetric
+split metric with two fixed null directions. Its metric flow is a Lorentzian
+boost and its mirror reverses that boost. Every chosen Lorentzian two-plane of
+spacetime has this root as an explicit normal form. Einstein curvature and
+Maxwell curvature then describe the gravitational and electromagnetic fields
+on the spacetime carrier. The resulting equations relate metric, null motion,
+field strength, clock difference, and measured occurrence at one address.
+\end{abstract}
+
+\section{Metric field}
+
+Physical interval is the Lorentzian quadratic form
+\[
+ds^2=g_{\mu\nu}\,dx^\mu dx^\nu.
+\tag{GL.0}
+\]
+Gravity is the curvature relation of $g$. Light follows the null condition
+\[
+ds^2=0.
+\tag{GL.0a}
+\]
+At each spacetime address $x\in M$, a Lorentzian two-plane
+$P_x\subset T_xM$ carries one time direction, one transverse spatial
+direction, and the two null directions between them. The following finite
+root is an exact normal form of that local relation.
+
+\section{The split metric}
+
+\sharedroot
+
+\begin{theorem}[Root identities]
+The matrices above satisfy
+\[
+G=\begin{pmatrix}-2&1\\1&2\end{pmatrix},\qquad
+G^2=5I,\qquad \det G=-5,\qquad
+\operatorname{sig}(G)=(1,1).
+\tag{GL.1}
+\]
+Moreover,
+\[
+S^{\mathsf T}G+GS=0,\qquad
+H^{\mathsf T}GH=G,\qquad
+HSH=-S.
+\tag{GL.2}
+\]
+\end{theorem}
+
+\begin{proof}
+Direct multiplication gives $Q^2=Q+I$, $C^2=-I$, and
+$G=Q\Omega-\Omega Q$. Put $A=2Q-I$. Then
+\[
+A^2=5I,\qquad G^2=5I,\qquad AG=5\Omega=-GA.
+\]
+Dividing by $\sqrt5$ gives the first two relations in GL.2. Since $H$ and
+$S$ are symmetric involutions, the remaining identities follow directly.
+\end{proof}
+
+The metric flow is
+\[
+L_s=e^{sS}=\cosh(s)I+\sinh(s)S.
+\tag{GL.3}
+\]
+Differentiating $L_s^{\mathsf T}GL_s$ and using GL.2 yields
+\[
+L_s^{\mathsf T}GL_s=G,\qquad
+HL_sH=L_{-s}.
+\tag{GL.4}
+\]
+Thus the mirror reverses the flow while preserving the metric relation.
+
+\section{Null directions and fixed metric motion}
+
+The null condition for $z=(x,y)^{\mathsf T}$ is
+\[
+z^{\mathsf T}Gz=-2x^2+2xy+2y^2=0.
+\tag{GL.5}
+\]
+Its two projective solutions are
+\[
+\ell_\pm=\RR\left(1,\frac{-1\pm\sqrt5}{2}\right)^{\mathsf T}.
+\tag{GL.6}
+\]
+
+\begin{proposition}[Fixed null directions]
+Let
+\[
+A_G:=G\Omega=-\sqrt5S,\qquad
+\mathsf B_t:=e^{tA_G}=L_{-\sqrt5t}.
+\tag{GL.7}
+\]
+Then
+\[
+\mathsf B_t\ell_+=e^{-\sqrt5t}\ell_+,\qquad
+\mathsf B_t\ell_-=e^{+\sqrt5t}\ell_-.
+\tag{GL.8}
+\]
+\end{proposition}
+
+\begin{proof}
+The two lines are the eigendirections of $S$ with opposite eigenvalues. Apply
+the exponential in GL.7.
+\end{proof}
+
+The two lines are the two null directions of the local split metric. The boost
+changes scale along them in opposite directions while leaving each direction
+fixed.
+
+\section{Local Lorentzian geometry}
+
+Define
+\[
+A_{\rm Lor}:=
+\begin{pmatrix}
+\sqrt{5/2}&0\\
+1/\sqrt2&\sqrt2
+\end{pmatrix},
+\qquad
+\eta_{1,1}:=\diag(-1,1).
+\tag{GL.9}
+\]
+A direct multiplication gives
+\[
+A_{\rm Lor}^{\mathsf T}\eta_{1,1}A_{\rm Lor}=G.
+\tag{GL.10}
+\]
+Consequently, with $\widetilde A=A_{\rm Lor}\oplus I_2$ and
+$\eta_{3,1}=\diag(-1,1,1,1)$,
+\[
+\widetilde A^{\mathsf T}\eta_{3,1}\widetilde A=G\oplus I_2.
+\tag{GL.11}
+\]
+This is an exact congruence of bilinear forms. On a curved Lorentzian
+spacetime, choose at $x$ an isometric inclusion
+\[
+\iota_x:(\RR^2,G)\longrightarrow(P_x,g_x),
+\qquad
+g_x(\iota_xu,\iota_xv)=u^{\mathsf T}Gv.
+\tag{GL.11a}
+\]
+The root null directions become physical local null directions:
+\[
+g_x(\iota_x\ell_\pm,\iota_x\ell_\pm)=0.
+\tag{GL.11b}
+\]
+The root boost becomes the Lorentzian boost
+\[
+\mathsf B_t^{(x)}=\iota_x\mathsf B_t\iota_x^{-1}
+\quad\text{on }P_x.
+\tag{GL.11c}
+\]
+
+\section{Sevenfold transverse rotation}
+
+Let $E=\RR^2$ carry the Euclidean metric $I_2$ and the oriented rotation
+generator $C$. Define the four-dimensional carrier
+\[
+\widetilde V=\RR^2\oplus E,
+\qquad
+\widetilde G=G\oplus I_2,
+\qquad
+\widetilde C=C\oplus C.
+\tag{GL.11d}
+\]
+With $D=\diag(1,-1)$, the mirror on the extended carrier is
+\[
+\widetilde H=H\oplus D.
+\tag{GL.11e}
+\]
+The relation $DCD=-C$ combines with $HCH=-C$ to give
+\[
+\widetilde H^{\mathsf T}\widetilde G\widetilde H=\widetilde G,
+\qquad
+\widetilde H\widetilde C\widetilde H=-\widetilde C,
+\qquad
+\widetilde H^2=I_4.
+\tag{GL.11f}
+\]
+
+For the cyclic generator $\tau$ of the seven-address transport, put
+\[
+R_r:=e^{(2\pi r/7)C},
+\qquad
+\varrho(\tau^r):=I_2\oplus R_r,
+\qquad r\in\ZZ_7.
+\tag{GL.11g}
+\]
+Then $\varrho$ is a faithful real representation of $\ZZ_7$ in the Lorentzian
+isometry group:
+\[
+\varrho(\tau^r)\varrho(\tau^s)=\varrho(\tau^{r+s}),
+\qquad
+\varrho(\tau)^7=I_4,
+\qquad
+\varrho(\tau)^{\mathsf T}\widetilde G\varrho(\tau)=\widetilde G.
+\tag{GL.11h}
+\]
+It commutes with phase and reverses under the mirror:
+\[
+\varrho(\tau)^{-1}\widetilde C\varrho(\tau)=\widetilde C,
+\qquad
+\widetilde H\varrho(\tau)\widetilde H=\varrho(\tau)^{-1}.
+\tag{GL.11i}
+\]
+The embedded null directions are
+\[
+\widetilde\ell_\pm=(\ell_\pm,0)\in\widetilde V,
+\qquad
+\varrho(\tau^r)\widetilde\ell_\pm=\widetilde\ell_\pm.
+\tag{GL.11j}
+\]
+The sevenfold transport rotates the transverse phase plane while leaving the
+two local gravity--light null directions fixed. The mirror exchanges their
+projective directions and reverses the cyclic rotation.
+
+\section{Gravity and light}
+
+The Einstein curvature tensor is
+\[
+\operatorname{Ein}_{\mu\nu}:=R_{\mu\nu}-\frac12R g_{\mu\nu}.
+\tag{GL.12}
+\]
+The gravitational field equation is
+\[
+\operatorname{Ein}_{\mu\nu}+\Lambda g_{\mu\nu}
+=\frac{8\pi G_N}{c^4}T_{\mu\nu}.
+\tag{GL.12a}
+\]
+For an electromagnetic two-form $F$, Maxwell curvature obeys
+\[
+dF=0,\qquad d\star_gF=J.
+\tag{GL.13}
+\]
+In vacuum $J=0$. In geometric optics, a wave covector $k$ is null when
+\[
+g^{-1}(k,k)=0.
+\tag{GL.14}
+\]
+
+A plane-fronted gravity--light field has the form
+\[
+ds^2=2\,du\,dv+\mathcal H_{\rm pp}(u,x,y)\,du^2+dx^2+dy^2,
+\qquad
+R_{uu}=-\frac12\Delta_\perp\mathcal H_{\rm pp}.
+\tag{GL.15}
+\]
+In vacuum, $R_{uu}=0$ gives $\Delta_\perp\mathcal H_{\rm pp}=0$. Thus curvature,
+null propagation, and the local split metric meet in one spacetime field.
+
+\section{Direct observation}
+
+\sharedoccurrence{GL.16}{GL.17}
+
+For $J=\mathsf{GL}$, take the state coordinates of $x_n$ to include the
+local metric $g_n$, clock difference $\Delta\tau_n$, wave covector $k_n$, and
+electromagnetic two-form $F_n$. With $O_n=O_{\mathsf{GL}}(x_n)$, the
+gravity--light projection is
+\[
+\operatorname{pr}_{\rm GL}(\mathsf{Occ}_{\mathsf{GL},n})
+=(\Theta_n,g_n,\Delta\tau_n,k_n,F_n,O_n,
+\kappa_n,\boldsymbol\varepsilon_n).
+\tag{GL.18}
+\]
+The physical relation is read by comparing these quantities at their common
+address.
+
+\end{document}

@@ -1,0 +1,340 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Horizon Silence: Recognition at the Boundary of Type},pdfauthor={Anthony Vito Coppa},pdfsubject={Viability horizon, physical occurrence, zero residual, and future difference}}
+\begin{document}
+\papertitle{Horizon Silence}{Viability boundary and zero residual}
+
+\begin{abstract}
+A horizon is the boundary of a physically viable region. Silence is the zero
+residual relation at a completed address. A present occurrence has a carrier,
+a constraint, a read, a calibration, and a measured difference. Time orders
+occurrences into history; future differences remain individually addressable.
+The eight-address field is partitioned into seven matchings. Its triangular
+residual condition reconstructs an edge potential exactly. The resulting
+equations type survival, boundary, observation, completion, and continuation
+inside one physical field.
+\end{abstract}
+
+\section{Viability, horizon, and silence}
+
+Let $X$ be the state carrier of a living physical system and let
+$\mathcal V\subset X$ be its viable region. Its survival condition is
+\[
+\theta(x)=1\Longleftrightarrow x\in\mathcal V,
+\tag{HS.0}
+\]
+and its horizon is the boundary
+\[
+\mathcal H_{\rm hor}=\partial\mathcal V.
+\tag{HS.1}
+\]
+For a time-dependent state, regulation carries the system by
+\[
+\dot x=f(x,u,d),
+\qquad \theta(x(t))=1.
+\tag{HS.2}
+\]
+The control $u$ and disturbance $d$ change the trajectory. The viable set
+and its boundary determine which changes remain survivable.
+
+\section{Energy and regulation}
+
+For a thermodynamic state with internal energy $U_{\rm th}$, entropy
+$S_{\rm th}$, volume $V$, pressure $p$, chemical potentials $\mu_i$, particle
+counts $N_i$, and generalized coordinate--force pairs $(X_a,Y_a)$,
+\[
+dU_{\rm th}=T_{\rm th}\,dS_{\rm th}-p\,dV
++\sum_i\mu_i\,dN_i+\sum_aY_a\,dX_a.
+\tag{HS.3}
+\]
+For an irreversible process,
+\[
+dS_{\rm th}=d_eS_{\rm th}+d_iS_{\rm th},
+\qquad d_iS_{\rm th}\ge0.
+\tag{HS.4}
+\]
+Energy, matter, work, and entropy therefore enter the viable trajectory as
+measurable state relations. Regulation changes their flows while preserving
+the survival condition in HS.0.
+
+\section{Constraint and type}
+
+Fix a jurisdiction $J$ and its active context
+\[
+\Gamma_J=(\operatorname{Condition},\operatorname{Constraint},
+\operatorname{SourceAuthority},\operatorname{Namespace}).
+\tag{HS.5}
+\]
+The namespace reserves
+\[
+\varnothing=\mathsf{UNTYPEABLE}.
+\tag{HS.6}
+\]
+A candidate belongs to the typed domain only when it has a type in the active
+context:
+\[
+D_{\Gamma_J}=
+\{\sigma:\exists\tau\;(\Gamma_J\vdash\sigma:\tau)\}.
+\tag{HS.7}
+\]
+The gate acts after type:
+\[
+\Gate_{\Gamma_J}:D_{\Gamma_J}\to\{\mathsf{can},\mathbf2\}.
+\tag{HS.8}
+\]
+Here $\mathbf2$ is the declared fold/refusal value. Set-theoretic emptiness,
+when needed, is written $\emptyset_{\rm set}$.
+
+\section{Occurrence, history, and future difference}
+
+\sharedoccurrence{HS.9}{HS.10}
+
+The lower-case $\theta_J(x)$ is the survival condition; the upper-case
+$\Theta$ is the occurrence timing/address. The calibration $\kappa$ and
+residual $\boldsymbol\varepsilon$ fix the resolution of the read. Put
+\[
+\mathscr O:=\bigsqcup_J\mathsf{Occ}_J,
+\qquad
+\mathscr L_n:=\mathscr O^n,
+\qquad
+\mathcal L_n=(\mathsf{Occ}_1,\ldots,\mathsf{Occ}_n)\in\mathscr L_n.
+\tag{HS.11}
+\]
+Let $\mathcal P_n$ be a candidate subset of $\mathscr O$, and put
+\[
+\mathcal P_n^{\rm typed}:=
+\{p\in\mathcal P_n:\Typed_{\Gamma_{J(p)}}(p)\},
+\qquad
+\mathbf F_n:=\{\Future(p):p\in\mathcal P_n^{\rm typed}\}.
+\tag{HS.12}
+\]
+The tagged elements of $\mathbf F_n$ remain distinct by their occurrence
+addresses. With
+$\operatorname{Past}(\mathcal L_n):=\{\mathsf{Occ}_1,\ldots,\mathsf{Occ}_n\}$,
+the ordered carrier is
+\[
+\widehat K_n=\operatorname{Past}(\mathcal L_n)\sqcup\mathbf F_n.
+\tag{HS.13}
+\]
+
+\begin{definition}[Occurrence]
+The next occurrence enters history through the partial map
+\[
+\Admit_n:\mathbf F_n\rightharpoonup\mathscr L_{n+1},
+\tag{HS.14}
+\]
+For $p\in\mathscr O$, let $x(p)$ denote its state coordinate.
+with
+\[
+\Admit_n(\Future(p))
+=\snoc(\mathcal L_n,p)
+\Longleftrightarrow
+\Gate_{\Gamma_{J(p)}}(p)=\mathsf{can}
+\land\mathsf{Complete}(p)
+\land\theta_{J(p)}(x(p))=1.
+\tag{HS.15}
+\]
+\end{definition}
+
+The map carries one completed occurrence into history and preserves the order
+of every prior occurrence.
+
+\section{Completion and silence}
+
+For $p\in\mathscr O$, define its residual vector by
+\[
+\boldsymbol\varepsilon(p):=
+\bigl(\varepsilon_{\rm drop}(p),
+\varepsilon_{\rm add}(p),
+\varepsilon_{\rm strength}(p)\bigr)
+\in\RR_{\ge0}^{3}.
+\tag{HS.16}
+\]
+For $p=\mathsf{Occ}_{J,n}$, the residual slot in HS.10 is
+$\boldsymbol\varepsilon_n=\boldsymbol\varepsilon(p)$.
+For an occurrence $p$, the completion condition is
+\[
+\mathsf{Complete}(p)
+\Longleftrightarrow
+\Typed_{\Gamma_{J(p)}}(p)
+\land
+\boldsymbol\varepsilon(p)=0.
+\tag{HS.17}
+\]
+If $\operatorname{Out}_n$ is the physical output set, the local stopping
+condition is
+\[
+\mathsf{Enough}_n
+\Longleftrightarrow
+\mathsf{Complete}(\mathsf{Occ}_n)
+\land \operatorname{Out}_n=\{y_n\}.
+\tag{HS.18}
+\]
+
+Silence is the local fit reading
+\[
+\SilFit(p)=1
+\Longleftrightarrow
+\mathsf{Complete}(p)
+\qquad(p\in\mathcal P_n^{\rm typed}).
+\tag{HS.19}
+\]
+The condition states that the required relation is complete at its present
+address and reader resolution.
+
+\section{Eight-address field}
+
+\sharedmatching
+The canonical matching gives each office one paired relation. The complete
+$K_8$ field carries all $28$ unordered pair-relations across seven disjoint
+matchings.
+
+\begin{center}
+\small
+\begin{tabularx}{0.97\linewidth}{@{}lX@{}}
+\toprule
+$M_0$ & Gr--Li, Me--Mo, Ti--Sc, Hz--Si\\
+$M_1$ & Gr--Me, Ti--Li, Hz--Mo, Si--Sc\\
+$M_2$ & Gr--Ti, Hz--Me, Si--Li, Sc--Mo\\
+$M_3$ & Gr--Hz, Si--Ti, Sc--Me, Mo--Li\\
+$M_4$ & Gr--Si, Sc--Hz, Mo--Ti, Li--Me\\
+$M_5$ & Gr--Sc, Mo--Si, Li--Hz, Me--Ti\\
+$M_6$ & Gr--Mo, Li--Sc, Me--Si, Ti--Hz\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Let $d_{ij}\in\RR$ be antisymmetric edge values,
+$d_{ji}=-d_{ij}$, and define the triangular residual by
+\[
+h_{ijk}:=d_{ij}+d_{jk}+d_{ki}.
+\tag{HS.20}
+\]
+Each layer is a four-edge restriction of the complete edge field:
+\[
+d^{(r)}:=d\vert_{\mathsf M_r},
+\qquad
+d=(d^{(0)},\ldots,d^{(6)}).
+\tag{HS.21}
+\]
+
+\begin{theorem}[Potential reconstruction]
+For an antisymmetric edge field on $K_8$,
+\[
+\bigl(\forall\,i,j,k\in\mathcal A_8\text{ distinct}\quad h_{ijk}=0\bigr)
+\Longleftrightarrow
+\bigl(\forall\,0\le i<j\le6\quad h_{\infty i j}=0\bigr)
+\Longleftrightarrow
+\bigl(\exists s:\mathcal A_8\to\RR\quad d_{ij}=s_j-s_i\bigr).
+\tag{HS.22}
+\]
+The potential $s$ is unique up to addition of one constant.
+\end{theorem}
+
+\begin{proof}
+The first condition contains the $21$ triangles through $\infty$. Conversely,
+set $s_\infty=0$ and $s_i=d_{\infty i}$. Then
+\[
+h_{\infty i j}=d_{\infty i}+d_{ij}-d_{\infty j}=0
+\]
+gives $d_{ij}=s_j-s_i$, and this potential telescopes around every triangle.
+Adding a constant to all $s_i$ leaves every difference unchanged; equality of
+all edge differences leaves only that freedom.
+\end{proof}
+
+Writing $\mathbf h(d)=(h_{ijk})_{\{i,j,k\}\in\binom{\mathcal A_8}{3}}$,
+the $21$ residuals through $\infty$ are independent and exhaust the rank:
+\[
+\operatorname{rank}\mathbf h=21,
+\qquad
+\dim\ker\mathbf h=28-21=7.
+\tag{HS.23}
+\]
+Each residual $h_{\infty i j}$ contains its own finite edge coordinate
+$d_{ij}$, which gives independence. The seven-dimensional kernel is the
+potential space modulo its additive constant.
+
+\section{Cyclic matching transport}
+
+The cyclic transport fixes the gravity address and advances every finite
+address by one:
+\[
+\tau(\infty)=\infty,
+\qquad
+\tau(k)=k+1\pmod 7.
+\tag{HS.24}
+\]
+It acts on an edge by its endpoints. For every $r\in\ZZ_7$,
+\[
+\tau(\mathsf M_r)=\mathsf M_{r+1},
+\qquad
+\tau^7=I.
+\tag{HS.25}
+\]
+
+\begin{proof}
+The distinguished edge obeys
+\[
+\tau\{\infty,r\}=\{\infty,r+1\}.
+\]
+For $j=1,2,3$,
+\[
+\tau\{r+j,r-j\}=\{r+1+j,r+1-j\}.
+\]
+Thus every edge of $\mathsf M_r$ maps to the corresponding edge of
+$\mathsf M_{r+1}$. Seven applications return every finite address to itself.
+\end{proof}
+
+\section{Cyclic carrier}
+
+\sharedroot
+
+The signed root actions form the order-eight dihedral group of a square:
+\[
+\langle S,H\rangle
+=\{\pm I,\pm S,\pm H,\pm C\}.
+\tag{HS.26}
+\]
+The address carrier $\mathcal A_8$ and the root action carrier are separately
+typed. Their common cyclic coordinate is the group element $\tau^r$ that
+advances the matching layer $\mathsf M_r$.
+
+Let $E=\RR^2$ carry the Euclidean form $I_2$ and define
+\[
+\widetilde V=\RR^2\oplus E,
+\qquad
+\widetilde G=G\oplus I_2,
+\qquad
+\widetilde C=C\oplus C,
+\qquad
+\operatorname{sig}(\widetilde G)=(3,1).
+\tag{HS.27}
+\]
+With $D=\diag(1,-1)$, define the extended mirror and cyclic action by
+\[
+\widetilde H=H\oplus D,
+\qquad
+R_r=e^{(2\pi r/7)C},
+\qquad
+\varrho(\tau^r)=I_2\oplus R_r
+\quad(r\in\ZZ_7).
+\tag{HS.28}
+\]
+They satisfy
+\[
+\begin{gathered}
+\varrho(\tau^r)\varrho(\tau^s)=\varrho(\tau^{r+s}),
+\qquad
+\varrho(\tau)^7=I_4,
+\qquad
+\varrho(\tau)^{\mathsf T}\widetilde G\varrho(\tau)=\widetilde G,\\
+\varrho(\tau)^{-1}\widetilde C\varrho(\tau)=\widetilde C,
+\qquad
+\widetilde H\varrho(\tau)\widetilde H=\varrho(\tau)^{-1}.
+\end{gathered}
+\tag{HS.29}
+\]
+Thus $\mathsf M_r\mapsto\varrho(\tau^r)$ carries the common sevenfold layer
+coordinate between the finite ledger and the Lorentzian operator carrier.
+
+\end{document}
