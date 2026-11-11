@@ -57,6 +57,19 @@ These records map source authority and dependency. Their status is **formal map*
 18. [`18 SENSATION_PERCEPTION_INTEROCEPTION_MOTOR_CONTROL_LEARNING_v0_1.md`](papers/18%20SENSATION_PERCEPTION_INTEROCEPTION_MOTOR_CONTROL_LEARNING_v0_1.md)
 19. [`19 EARLY_EXPERIENTIAL_MECHANICS_Review_Register_v0_1.md`](papers/19%20EARLY_EXPERIENTIAL_MECHANICS_Review_Register_v0_1.md)
 
+## Verification and source-contact records
+
+The following are **integrity records**, not additional papers or formal maps:
+
+| Record | Repository source | Office |
+|---|---|---|
+| Exact validation and adapter register | [`RELEASES/2026-11-10-exact-validation-and-adapter-records.md`](RELEASES/2026-11-10-exact-validation-and-adapter-records.md) | package index and boundary record |
+| Suture Audit v0.2 | [`Suture_Audit_v0_2.zip`](RELEASES/2026-11-10-exact-validation-and-adapter-records/Suture_Audit_v0_2.zip) | reproducible formal audit; residual ledger retained |
+| Validator Kit B2 v0.1 | [`Validator_Kit_B2_v0_1.zip`](RELEASES/2026-11-10-exact-validation-and-adapter-records/Validator_Kit_B2_v0_1.zip) | hash-gated 12-card runner |
+| W-0 / W-1 electroweak adapters | [release register](RELEASES/2026-11-10-exact-validation-and-adapter-records.md) | declared-model and carrier-map receipts |
+| Native Domain Adapter Atlas v0.3 | [`NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip`](RELEASES/2026-11-10-native-domain-reference-contact/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip) | interface and residual map |
+| A1/H v0.5 and CODATA custody | [A1/H release](RELEASES/2026-11-10-native-domain-reference-contact-v0.5/RELEASE_MANIFEST.md) | frozen source-reference protocol and raw-source custody; no numeric outcome entered |
+
 ## Open construction
 
 [`Ultraviolet_Fixed_Point_Closure_Minimum_TT_Reader_v0_6 (1).md`](papers/Ultraviolet_Fixed_Point_Closure_Minimum_TT_Reader_v0_6%20%281%29.md) is retained as an **open construction**. Its filename and occurrence address remain unchanged in this edition.

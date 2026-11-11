@@ -80,6 +80,20 @@ Nineteen source-consolidation and field-ownership maps are retained as typed dep
 - [SHA256SUMS](SHA256SUMS) covers every tracked file except the ledger itself.
 - `python scripts/verify_archive.py` checks hashes, coverage, and alias identity.
 
+## Current verification and native-domain records
+
+The records below are reproducible audit, adapter, and source-custody artifacts. Their scope is held at the package boundary; they do not silently become physical prediction claims.
+
+| Record | Public entry | Carried result / boundary |
+|---|---|---|
+| Suture Audit v0.2 | [audit package](RELEASES/2026-11-10-exact-validation-and-adapter-records/Suture_Audit_v0_2.zip) | eight packaged verifiers; its residual ledger remains controlling |
+| Validator Kit B2 v0.1 | [12-card kit](RELEASES/2026-11-10-exact-validation-and-adapter-records/Validator_Kit_B2_v0_1.zip) | hash-gated reproducible cards; no laboratory evidence asserted |
+| W-0 / W-1 electroweak adapters | [release record](RELEASES/2026-11-10-exact-validation-and-adapter-records.md) | exact declared-model and carrier-map checks; selection, empirical, and prediction gates remain distinct |
+| Native Domain Adapter Atlas v0.3 | [atlas](RELEASES/2026-11-10-native-domain-reference-contact/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip) | interface map and residual register |
+| A1/H source-reference contact | [v0.5 protocol](RELEASES/2026-11-10-native-domain-reference-contact-v0.5/A1H_PREREGISTRATION_v0_5.md) | frozen and unrun; custody bytes are retained separately in the release record |
+
+[Exact validation and adapter register](RELEASES/2026-11-10-exact-validation-and-adapter-records.md) · [A1/H v0.5 release manifest](RELEASES/2026-11-10-native-domain-reference-contact-v0.5/RELEASE_MANIFEST.md).
+
 ## Scope and rights
 
 The repository preserves papers, formal maps, and their exact public identities. Computational instruments and executable kernels retain their own repositories and are linked rather than silently copied into this archive.

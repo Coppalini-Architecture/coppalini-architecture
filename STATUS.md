@@ -1,6 +1,6 @@
 # Repository Status
 
-**Coordinated archive edition: 27 October 2026**
+**Coordinated archive edition: 10 November 2026**
 
 ## Current public surface
 
@@ -12,6 +12,7 @@
 - 1 explicitly open ultraviolet construction;
 - 2 byte-identical path aliases retained for address continuity;
 - 1 complete checksum ledger and automated integrity verifier.
+- 1 versioned exact-validation and adapter register, including Suture Audit v0.2, the 12-card Validator Kit B2, W-0/W-1 adapter packets, the Native Domain Adapter Atlas v0.3, and the frozen A1/H v0.5 source-reference protocol.
 
 The current deposited synthesis is *The Structure of Survival*, Review Edition v66: [10.5281/zenodo.23697265](https://doi.org/10.5281/zenodo.23697265).
 
@@ -33,6 +34,10 @@ The current deposited synthesis is *The Structure of Survival*, Review Edition v
 4. identity of declared aliases.
 
 No unique paper or formal map was removed in this coordination edition.
+
+## Verification and source-contact surface
+
+The current audit and adapter record is [`RELEASES/2026-11-10-exact-validation-and-adapter-records.md`](RELEASES/2026-11-10-exact-validation-and-adapter-records.md). Its packages preserve their own receipts and scope walls. The A1/H custody bundle contains raw CODATA source pages only; no Phase 2 model calculation, ASD comparison, or held-out result is entered by that bundle.
 
 <!-- BEGIN NOVEMBER_2026_PUBLICATIONS -->
 ## 7 November 2026 · additional publication set
