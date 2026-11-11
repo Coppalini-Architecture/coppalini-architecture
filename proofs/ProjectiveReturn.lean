@@ -147,6 +147,5 @@ theorem infinity_occurrence_return (t : Nat) :
 theorem infinity_occurrence_advances (t : Nat) :
     (occurrenceStep (occurrenceStep (infinity, t))).2 = t + 2 := by
   simp [occurrenceStep]
-  omega
 
 end ProjectiveReturn
