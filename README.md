@@ -1,6 +1,6 @@
 # Coppalini Architecture
 
-**One machine-verifiable entrance:** [Exact Recognition Node](RECOGNITION_NODE.md) — projective return, Lean 4.33 proof, external execution receipt, and original research references.
+**Start with the [conversation proof normal form (through R²)](proofs/PROJECTIVE_MEMORY_RETURN_NORMAL_FORM.md)** — original light/time triple, unique projective mirror, memory/occurrence return, central lift, Zeno, and typed reader interfaces. [Exact Recognition Node](RECOGNITION_NODE.md) · [Lean verifier](proofs/ProjectiveReturn.lean).
 
 **Canonical papers, formal dependency maps, and exact integrity records by Anthony Vito Coppa.**
 

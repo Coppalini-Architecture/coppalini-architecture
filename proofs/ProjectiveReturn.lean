@@ -67,4 +67,86 @@ theorem one_return : act M (act M one) = one := by decide
 
 theorem zero_return : act M (act M zero) = zero := by decide
 
+
+-- The opening source is an ordered pair of projective triples:
+-- Light = (infinity, zero, one), Time = (one, zero, infinity).
+-- Zero returns with a scalar sign: homogeneous/projective equality
+-- is the correct type for this component.
+
+def ProjectiveTriple (a b c d e f : Vec2) : Prop :=
+  SameProjective a d ∧ SameProjective b e ∧ SameProjective c f
+
+theorem light_to_time :
+    ProjectiveTriple (act M infinity) (act M zero) (act M one)
+      one zero infinity := by
+  constructor
+  · refine ⟨1, by decide, ?_⟩
+    decide
+  constructor
+  · exact zero_fixed_projectively
+  · refine ⟨1, by decide, ?_⟩
+    decide
+
+theorem time_to_light :
+    ProjectiveTriple (act M one) (act M zero) (act M infinity)
+      infinity zero one := by
+  constructor
+  · refine ⟨1, by decide, ?_⟩
+    decide
+  constructor
+  · exact zero_fixed_projectively
+  · refine ⟨1, by decide, ?_⟩
+    decide
+
+def determinant (m : Mat2) : Int := m.a * m.d - m.b * m.c
+
+theorem determinant_is_minus_one : determinant M = -1 := by decide
+
+-- An exact Gaussian-integer matrix realization of the central lift iM.
+def zeroMatrix : Mat2 := ⟨0, 0, 0, 0⟩
+
+def matAdd (u v : Mat2) : Mat2 :=
+  ⟨u.a + v.a, u.b + v.b, u.c + v.c, u.d + v.d⟩
+
+def matNeg (u : Mat2) : Mat2 :=
+  ⟨-u.a, -u.b, -u.c, -u.d⟩
+
+structure GaussianMat2 where
+  re : Mat2
+  im : Mat2
+  deriving DecidableEq, Repr
+
+def gMul (u v : GaussianMat2) : GaussianMat2 :=
+  ⟨matAdd (mul u.re v.re) (matNeg (mul u.im v.im)),
+   matAdd (mul u.re v.im) (mul u.im v.re)⟩
+
+def gI : GaussianMat2 := ⟨I, zeroMatrix⟩
+def gNegI : GaussianMat2 := ⟨matNeg I, zeroMatrix⟩
+def iM : GaussianMat2 := ⟨zeroMatrix, M⟩
+
+theorem lift_two_steps : gMul iM iM = gNegI := by decide
+theorem lift_four_steps : gMul (gMul iM iM) (gMul iM iM) = gI := by decide
+
+-- Zeno's exact finite identity in homogeneous integer coordinates.
+-- q=2^n yields the n-th dichotomy stage: (q-1)/q = 1-2^(-n).
+-- The map acts on the source [1-q:1], producing [- (q-1):-q].
+theorem zeno_each_stage (q : Int) :
+    act M ⟨1 - q, 1⟩ = scale (-1) ⟨q - 1, q⟩ := by
+  simp [act, M, scale]
+  omega
+
+-- Indexing the occurrence preserves the difference between address
+-- returning and the number of executed steps advancing.
+def occurrenceStep (p : Vec2 × Nat) : Vec2 × Nat :=
+  (act M p.1, p.2 + 1)
+
+theorem infinity_occurrence_return (t : Nat) :
+    (occurrenceStep (occurrenceStep (infinity, t))).1 = infinity := by
+  simp [occurrenceStep, act, M, infinity]
+
+theorem infinity_occurrence_advances (t : Nat) :
+    (occurrenceStep (occurrenceStep (infinity, t))).2 = t + 2 := by
+  simp [occurrenceStep]
+  omega
+
 end ProjectiveReturn

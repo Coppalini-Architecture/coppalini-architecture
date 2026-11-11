@@ -4,6 +4,10 @@
 **Public fixed reference:** [Coppalini Architecture repository](https://github.com/Coppalini-Architecture/coppalini-architecture)  
 **Reader jurisdiction:** a stated mathematical object and its verifiable theorem, with the original source, checker, receipt, and scope preserved.
 
+## Original conversation normal form (through R²)
+
+**Primary proof spine:** [Projective Memory Return — Conversation Normal Form](proofs/PROJECTIVE_MEMORY_RETURN_NORMAL_FORM.md). It preserves the complete ordered sequence from the opening light/time triples to the first **R²** marker, stopping before the inside recognition codex. The Lean projective, central-lift, and Zeno checks below are its finite algebraic witnesses.
+
 ## One executable entrance
 
 [**Projective Return — Lean 4.33 source**](proofs/ProjectiveReturn.lean) · [**External elaboration job**](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-projective-return.yml) · [**Archive-integrity job**](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/archive-integrity.yml)
