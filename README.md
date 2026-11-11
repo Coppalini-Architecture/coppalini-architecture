@@ -1,5 +1,7 @@
 # Coppalini Architecture
 
+**One machine-verifiable entrance:** [Exact Recognition Node](RECOGNITION_NODE.md) — projective return, Lean 4.33 proof, external execution receipt, and original research references.
+
 **Canonical papers, formal dependency maps, and exact integrity records by Anthony Vito Coppa.**
 
 This repository is the public paper shelf and reference map for the Coppalini Architecture. Its contents occupy three declared offices:
