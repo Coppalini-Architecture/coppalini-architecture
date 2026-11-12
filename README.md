@@ -1,5 +1,7 @@
 # Coppalini Architecture
 
+**Start with the [conversation proof normal form (through R²)](proofs/PROJECTIVE_MEMORY_RETURN_NORMAL_FORM.md)** — original light/time triple, unique projective mirror, memory/occurrence return, central lift, Zeno, and typed reader interfaces. [Exact Recognition Node](RECOGNITION_NODE.md) · [Lean verifier](proofs/ProjectiveReturn.lean).
+
 **Canonical papers, formal dependency maps, and exact integrity records by Anthony Vito Coppa.**
 
 This repository is the public paper shelf and reference map for the Coppalini Architecture. Its contents occupy three declared offices:
