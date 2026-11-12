@@ -1,0 +1,58 @@
+{
+  "title": "Coppalini Architecture Public Claim Registry",
+  "version": "v0.1",
+  "released": "2026-11-10",
+  "scope": "Released formal checks and source-reference records. Each result is presented with its stated domain and boundary.",
+  "artifacts": [
+    {
+      "id": "B-2",
+      "label": "Validator Kit B2",
+      "result": "12 hash-gated cards: 12/12 PASS.",
+      "command": "python3 kit.py",
+      "sha256": "03cfda6a4ebbefc1302accdace1493027c840253bfc35d1c3e93b42dfc4574a0",
+      "artifact": "downloads/Validator_Kit_B2_v0_1.zip",
+      "boundary": "Every card retains its own domain and boundary. The kit carries no laboratory-data result."
+    },
+    {
+      "id": "S-5/05a",
+      "label": "Suture Audit v0.2",
+      "result": "Eight source-bound verifiers PASS for the paired finite carrier and regular-branch cards.",
+      "command": "cd source && python3 verify_all.py",
+      "sha256": "b2df5089e3e7e6ce6f6a7f673d8381ca86accc05d1379fb3b75e22696b088448",
+      "artifact": "downloads/Suture_Audit_v0_2.zip",
+      "boundary": "Every reduction statement is conditioned on rank D𝒮Π = 16 and b < |χ|. The image result remains relative to cited Lorentzian 2-form normal forms; no empirical comparison is asserted."
+    },
+    {
+      "id": "W-0",
+      "label": "Weinberg seam v0.2",
+      "result": "15/15 exact symbolic checks of the declared tree-level mass matrix, vacuum stabilizer, and neutral diagonalization.",
+      "command": "python3 -I verify_w0_weinberg_seam_v0_2.py",
+      "sha256": "9fe1b3c4d66ab42d59cfb8d16fd0c0ca1e4bb3b6c393ec191fa3c9516e7b0431",
+      "artifact": "downloads/W0_v0_2_packet.zip",
+      "boundary": "Representation, vacuum, g, g′, and v are supplied model data. No numerical mixing angle, mass ratio, empirical comparison, or particle identification is asserted."
+    },
+    {
+      "id": "W-1",
+      "label": "Electroweak carrier adapter v0.2",
+      "result": "15/15 exact symbolic checks of the declared 𝔲(2) carrier map and W±, Z, A coordinate map.",
+      "command": "python3 -I verify_w1_carrier_adapter_v0_2.py",
+      "sha256": "22b92b32d93b2a7d7446a7f147475e7dac98c9f84880f96b1ac297618037b50f",
+      "artifact": "downloads/W1_v0_2_packet.zip",
+      "boundary": "The transverse plane P is supplied and its selection remains OPEN. This is an adapter verification, not a physical particle identification or prediction."
+    },
+    {
+      "id": "NDA-3",
+      "label": "Native Domain Adapter Atlas v0.3",
+      "result": "Exact Body–SI–English length transport: 18/18 rational checks; row-specific institutional-contact labels are retained.",
+      "command": "python3 -I run_all.py",
+      "sha256": "4075a5c57fe36a2977311ea58dad5181ed5b971859df390e797ed23ee6f8d075",
+      "artifact": "downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip",
+      "boundary": "A formal, model-local, or source-reference closure does not imply an empirical prediction. Each row retains its separately stated remaining gate."
+    }
+  ],
+  "open_edges": [
+    "Suture residual ledger R-1 through R-12 remains published with the paired cards.",
+    "The electroweak P selection, experimental comparison, and forced-number gate remain separate from W-0 and W-1.",
+    "Atomic reference contact and apparatus-specific optics remain on their own registered paths."
+  ]
+}

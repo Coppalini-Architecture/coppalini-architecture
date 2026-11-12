@@ -1,0 +1,76 @@
+# Coppalini Architecture
+
+> A source-indexed exact-reader by Anthony Vito Coppa. Each released record links its stated carrier or object, executable verifier or retained receipt, declared scope, and next record.
+
+## Start here
+
+- [Recompute Kernel v0.2](https://eulershiddenl.ink/exact/recompute-kernel/): one atom registry, exact-integer runner, generated ledger, machine manifest, and SHA-256-bound packet.
+- [Home](https://eulershiddenl.ink/): project overview and released research paths.
+- [Author record](https://eulershiddenl.ink/anthony-vito-coppa): Anthony Vito Coppa.
+- [Audit Register](https://eulershiddenl.ink/verify): released hash-bound verification records.
+- [Verification manifest](https://eulershiddenl.ink/research/verification-manifest-v0.3.json): stable machine map for the released audit records.
+- [Exact Reader](https://eulershiddenl.ink/exact/): source-indexed deterministic record interface.
+- [Research library](https://eulershiddenl.ink/library): papers, source files where supplied, executable audits, and model records.
+
+## Recompute Kernel v0.2
+
+- [Public recomputation record](https://eulershiddenl.ink/exact/recompute-kernel/): command, atom table, result fingerprints, and declared finite ranges.
+- [Packet](https://eulershiddenl.ink/downloads/Coppalini_Recompute_Kernel_v0_2.zip): SHA-256 `f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60`.
+- [Runner](https://eulershiddenl.ink/exact/recompute-kernel/run_all.py), [ledger](https://eulershiddenl.ink/exact/recompute-kernel/ledger.md), and [manifest](https://eulershiddenl.ink/exact/recompute-kernel/manifest.json).
+
+The core tier reports A01–A10 using Python standard-library integer arithmetic; K01–K02 are expected-false controls. A05–A06 retain n = 1..40 and A10 retains m = 1..3000.
+
+## Four Dual Forms
+
+- [Gravity Light](https://eulershiddenl.ink/papers/four-dual-forms/gravity-light): metric invariance and fixed null directions.
+- [Memory Motion](https://eulershiddenl.ink/papers/four-dual-forms/memory-motion): inverse transport and quotient return.
+- [Time Scope](https://eulershiddenl.ink/papers/four-dual-forms/time-scope): local phase and projective return.
+- [Horizon Silence](https://eulershiddenl.ink/papers/four-dual-forms/horizon-silence): viability boundary and zero-residual potential reconstruction.
+
+The four paper records share the released Zenodo record DOI 10.5281/zenodo.24073596 and expose each PDF, source, finite verifier, recorded receipt, and stated boundary.
+
+## Reading rule
+
+Read a result with its source, command or receipt, scope, and next record. Do not infer a stronger claim than the released record states; do not weaken a verified relation because a distinct later record exists.
+
+## Released verification records
+
+- B-2: 12 hash-gated validator cards, 12/12 PASS.
+- S-5/05a: eight source-bound finite-carrier and regular-branch verifiers.
+- W-0: declared tree-level electroweak mass-matrix and vacuum checks.
+- W-1: declared u(2) carrier and W+, W-, Z, A coordinate checks.
+- NDA-3: Body–SI–English length transport, 18 exact rational checks.
+
+For commands, SHA-256 values, receipts, scope, and next records, use the verification manifest rather than a prose summary.
+
+## Source registry index
+
+https://eulershiddenl.ink/research/registry-index.json identifies each current or historical registry, its schema, version, and path base. Declared output, retained verification, and a browser execution keep separate evidence fields.
+
+## NOP Return / Memory Workbench v0.2.0
+
+- [Browser instrument](https://eulershiddenl.ink/nop/): local exact audit of declared oxygen and positive paired assay readings.
+- [Formal note](https://eulershiddenl.ink/nop/docs/Formal_Note.pdf): reversible coordinates, Metric Mirror conjugacy, and exact adaptation theorem.
+- [Empirical reference map](https://eulershiddenl.ink/nop/docs/Empirical_Reference_Map.json): source, assay, compartment, units, sampling, access, and unresolved fields.
+- [Release record](https://eulershiddenl.ink/nop/release.json): sources, verification, and precise scope.
+
+All bundled observations are synthetic. Participant-level fitting and the ROS–HIF causal law remain open.
+
+## Infinity One Zero Lift — v0.2
+
+- [Paper record](https://eulershiddenl.ink/papers/infinity-one-zero-lift): The Normal Form of Projective Memory.
+- [Paper PDF](https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2.pdf): the 15-page working edition 0.2 dated 11 November 2026.
+- [Source + verification](https://eulershiddenl.ink/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip): the manuscript source, retained geometry audit, manuscript checks, and finite Lean source.
+- [Publication/source record](https://eulershiddenl.ink/research/infinity-one-zero-lift-v0.2.json): exact file hashes, retained receipts, and stated evidence scope.
+
+- [Zenodo record](https://zenodo.org/records/24150613): DOI 10.5281/zenodo.24150613.
+
+The normal form retains phase, cycle address, agreement, and signed comparison record. Its inverse is explicit on the stated image. Recorded verification comprises 73 geometry checks, 31 supplementary checks, and the preserved finite Lean execution receipt.
+
+Edition 0.2 completes the four direct bibliography DOI links; mathematical text and verifier scope are unchanged.
+- [Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture](https://zenodo.org/records/24150517): 10.5281/zenodo.24150517.
+- [Mirror Escapement Time Lift](https://zenodo.org/records/24150565): 10.5281/zenodo.24150565.
+- [Occurrence and the Twenty-Eight-Seam Reader: Finite Addressing, Pairwise Difference, and a Complete 7 × 4 Scan](https://zenodo.org/records/24150567): 10.5281/zenodo.24150567.
+- [Mirror Recognition: The Minimum Symmetric Field Closure](https://zenodo.org/records/24150572): 10.5281/zenodo.24150572.
+- [Original edition 0.1](https://zenodo.org/records/24150161): original paper and source package retained.
+- [Edition 0.2 citation receipt](https://eulershiddenl.ink/verification/infinity-one-zero-lift-v0.2/citation-completion.json): source custody and citation-only revision.

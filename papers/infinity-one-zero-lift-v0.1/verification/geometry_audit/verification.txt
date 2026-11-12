@@ -1,0 +1,76 @@
+PASS Q recurrence
+PASS root quarter-turn
+PASS G root
+PASS welded mirrors
+PASS axial square
+PASS axial signed metric
+PASS axial reversal
+PASS golden chart dilation
+PASS projective mirror
+PASS new change of basis P H P^-1 = M
+PASS new conjugated carriage reverses
+PASS central lift
+PASS carry identity p=0, n mod4=0
+PASS carry identity p=0, n mod4=1
+PASS carry identity p=0, n mod4=2
+PASS carry identity p=0, n mod4=3
+PASS carry identity p=1, n mod4=0
+PASS carry identity p=1, n mod4=1
+PASS carry identity p=1, n mod4=2
+PASS carry identity p=1, n mod4=3
+PASS carry identity p=2, n mod4=0
+PASS carry identity p=2, n mod4=1
+PASS carry identity p=2, n mod4=2
+PASS carry identity p=2, n mod4=3
+PASS carry identity p=3, n mod4=0
+PASS carry identity p=3, n mod4=1
+PASS carry identity p=3, n mod4=2
+PASS carry identity p=3, n mod4=3
+PASS four-step lift as source-defined carry
+PASS eight occurrence addresses
+PASS all unordered pairs
+PASS every occurrence degree seven
+PASS two-cycle decomposition — [6, 16, 6]
+PASS seven complete matchings
+PASS matching partition equals K8
+PASS CRT scanner bijection
+PASS CRT inverse
+PASS potential difference rank
+PASS triangle constraint rank
+PASS triangle telescoping
+PASS triangle-potential dimensions
+PASS declared 3D display affine rank
+PASS 2D display keeps eight vertices
+PASS no vertex lies inside an unrelated edge — []
+PASS published SVG matching for edge (0, 7)
+PASS published SVG matching for edge (1, 6)
+PASS published SVG matching for edge (2, 5)
+PASS published SVG matching for edge (3, 4)
+PASS published SVG matching for edge (1, 7)
+PASS published SVG matching for edge (0, 2)
+PASS published SVG matching for edge (3, 6)
+PASS published SVG matching for edge (4, 5)
+PASS published SVG matching for edge (2, 7)
+PASS published SVG matching for edge (1, 3)
+PASS published SVG matching for edge (0, 4)
+PASS published SVG matching for edge (5, 6)
+PASS published SVG matching for edge (3, 7)
+PASS published SVG matching for edge (2, 4)
+PASS published SVG matching for edge (1, 5)
+PASS published SVG matching for edge (0, 6)
+PASS published SVG matching for edge (4, 7)
+PASS published SVG matching for edge (3, 5)
+PASS published SVG matching for edge (2, 6)
+PASS published SVG matching for edge (0, 1)
+PASS published SVG matching for edge (5, 7)
+PASS published SVG matching for edge (4, 6)
+PASS published SVG matching for edge (0, 3)
+PASS published SVG matching for edge (1, 2)
+PASS published SVG matching for edge (6, 7)
+PASS published SVG matching for edge (0, 5)
+PASS published SVG matching for edge (1, 4)
+PASS published SVG matching for edge (2, 3)
+PASS published cover edge set
+
+ALL 73 CHECKS PASS
+No Lean certification asserted for this new audit.

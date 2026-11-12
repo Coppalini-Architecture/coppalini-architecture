@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-einstein-title"><title id="lineage-einstein-title">Albert Einstein — Geometric field. Matter and geometry meet through a field equation. The Einstein tensor equals eight pi Newton&#x27;s gravitational constant over c to the fourth times the stress-energy tensor.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#719483" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,42h18 M758,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M33,1008h18 M42,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,1008h18 M758,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><text x="76" y="92" font-size="18" fill="#719483" text-anchor="start" font-family="monospace" >15</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1915 AD</text><text x="400" y="145" font-size="17" fill="#719483" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">GEOMETRIC FIELD</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Albert Einstein</text><path d="M320,249H480" stroke="#719483"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#719483"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Matter and geometry meet through a field</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >equation.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M180,454 Q400,448 620,454" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M208,420 Q148,565 208,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,491 Q400,455 620,491" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M272,420 Q232,565 272,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,528 Q400,474 620,528" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M336,420 Q316,565 336,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,565 Q400,505 620,565" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M400,420 Q400,565 400,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,602 Q400,548 620,602" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M464,420 Q484,565 464,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,639 Q400,603 620,639" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M528,420 Q568,565 528,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,676 Q400,670 620,676" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M592,420 Q652,565 592,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M186,640 Q390,453 618,493" stroke="#719483" stroke-width="5" fill="none" /><circle cx="400" cy="540" r="7" stroke="#c98b57" fill="#c98b57" stroke-width="3"/><text x="400" y="407" fill="#243d40" font-size="22" text-anchor="middle" font-family="Georgia,serif">geometry ↔ source</text></g><g transform="translate(226.313 766.000) scale(1.81890)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="einstein-figure_1">
+  <g id="einstein-patch_1">
+   <path d="M 0 50.58 
+L 190.98 50.58 
+L 190.98 0 
+L 0 0 
+L 0 50.58 
+z
+" style="fill: none"/>
+  </g>
+  <g id="einstein-text_1">
+   <!-- $G_{\mu\nu}=\frac{8\pi G_{\rm N}}{c^4}T_{\mu\nu}$ -->
+   <g style="fill: #243d40" transform="translate(1.44 33.84) scale(0.3 -0.3)">
+    <defs>
+     <path id="einstein-DejaVuSans-Oblique-47" d="M 3494 697 
+L 3738 1919 
+L 2700 1919 
+L 2797 2438 
+L 4453 2438 
+L 4050 384 
+Q 3634 156 3143 32 
+Q 2653 -91 2156 -91 
+Q 1278 -91 783 396 
+Q 288 884 288 1753 
+Q 288 2475 589 3126 
+Q 891 3778 1422 4213 
+Q 1756 4484 2153 4617 
+Q 2550 4750 3034 4750 
+Q 3472 4750 3873 4639 
+Q 4275 4528 4641 4306 
+L 4513 3634 
+Q 4231 3928 3853 4083 
+Q 3475 4238 3047 4238 
+Q 2550 4238 2172 4048 
+Q 1794 3859 1497 3463 
+Q 1244 3125 1098 2667 
+Q 953 2209 953 1734 
+Q 953 1081 1287 751 
+Q 1622 422 2284 422 
+Q 2616 422 2925 492 
+Q 3234 563 3494 697 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-Oblique-3bc" d="M -84 -1331 
+L 856 3500 
+L 1434 3500 
+L 1009 1322 
+Q 997 1256 987 1175 
+Q 978 1094 978 1013 
+Q 978 722 1161 565 
+Q 1344 409 1684 409 
+Q 2147 409 2431 671 
+Q 2716 934 2816 1459 
+L 3213 3500 
+L 3788 3500 
+L 3266 809 
+Q 3253 750 3248 706 
+Q 3244 663 3244 628 
+Q 3244 531 3283 486 
+Q 3322 441 3406 441 
+Q 3438 441 3492 456 
+Q 3547 472 3647 513 
+L 3559 50 
+Q 3422 -19 3297 -55 
+Q 3172 -91 3053 -91 
+Q 2847 -91 2730 40 
+Q 2613 172 2613 403 
+Q 2438 153 2195 31 
+Q 1953 -91 1625 -91 
+Q 1334 -91 1117 43 
+Q 900 178 831 397 
+L 494 -1331 
+L -84 -1331 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-Oblique-3bd" d="M 959 0 
+L 572 3500 
+L 1191 3500 
+L 1522 563 
+Q 1972 950 2391 1488 
+Q 2706 1891 2788 2241 
+Q 2825 2406 2809 2719 
+Q 2794 3091 2544 3500 
+L 3125 3500 
+L 3125 3500 
+Q 3288 3222 3353 2834 
+Q 3416 2478 3369 2234 
+Q 3250 1622 2719 1075 
+Q 2025 363 1572 0 
+L 959 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-38" d="M 2034 2216 
+Q 1584 2216 1326 1975 
+Q 1069 1734 1069 1313 
+Q 1069 891 1326 650 
+Q 1584 409 2034 409 
+Q 2484 409 2743 651 
+Q 3003 894 3003 1313 
+Q 3003 1734 2745 1975 
+Q 2488 2216 2034 2216 
+z
+M 1403 2484 
+Q 997 2584 770 2862 
+Q 544 3141 544 3541 
+Q 544 4100 942 4425 
+Q 1341 4750 2034 4750 
+Q 2731 4750 3128 4425 
+Q 3525 4100 3525 3541 
+Q 3525 3141 3298 2862 
+Q 3072 2584 2669 2484 
+Q 3125 2378 3379 2068 
+Q 3634 1759 3634 1313 
+Q 3634 634 3220 271 
+Q 2806 -91 2034 -91 
+Q 1263 -91 848 271 
+Q 434 634 434 1313 
+Q 434 1759 690 2068 
+Q 947 2378 1403 2484 
+z
+M 1172 3481 
+Q 1172 3119 1398 2916 
+Q 1625 2713 2034 2713 
+Q 2441 2713 2670 2916 
+Q 2900 3119 2900 3481 
+Q 2900 3844 2670 4047 
+Q 2441 4250 2034 4250 
+Q 1625 4250 1398 4047 
+Q 1172 3844 1172 3481 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-Oblique-3c0" d="M 584 3500 
+L 3938 3500 
+L 3825 2925 
+L 3384 2925 
+L 2966 775 
+Q 2922 550 2981 450 
+Q 3038 353 3209 353 
+Q 3256 353 3325 363 
+Q 3397 369 3419 372 
+L 3338 -44 
+Q 3222 -84 3103 -103 
+Q 2981 -122 2866 -122 
+Q 2491 -122 2388 81 
+Q 2284 288 2391 838 
+L 2797 2925 
+L 1506 2925 
+L 938 0 
+L 350 0 
+L 919 2925 
+L 472 2925 
+L 584 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-4e" d="M 628 4666 
+L 1478 4666 
+L 3547 763 
+L 3547 4666 
+L 4159 4666 
+L 4159 0 
+L 3309 0 
+L 1241 3903 
+L 1241 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-Oblique-63" d="M 3431 3366 
+L 3316 2797 
+Q 3109 2947 2876 3022 
+Q 2644 3097 2394 3097 
+Q 2119 3097 1870 3000 
+Q 1622 2903 1453 2725 
+Q 1184 2453 1037 2087 
+Q 891 1722 891 1331 
+Q 891 859 1127 628 
+Q 1363 397 1844 397 
+Q 2081 397 2348 469 
+Q 2616 541 2906 684 
+L 2797 116 
+Q 2547 13 2283 -39 
+Q 2019 -91 1741 -91 
+Q 1044 -91 669 257 
+Q 294 606 294 1253 
+Q 294 1797 489 2255 
+Q 684 2713 1069 3078 
+Q 1331 3328 1684 3456 
+Q 2038 3584 2456 3584 
+Q 2700 3584 2940 3529 
+Q 3181 3475 3431 3366 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-34" d="M 2419 4116 
+L 825 1625 
+L 2419 1625 
+L 2419 4116 
+z
+M 2253 4666 
+L 3047 4666 
+L 3047 1625 
+L 3713 1625 
+L 3713 1100 
+L 3047 1100 
+L 3047 0 
+L 2419 0 
+L 2419 1100 
+L 313 1100 
+L 313 1709 
+L 2253 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="einstein-DejaVuSans-Oblique-54" d="M 378 4666 
+L 4325 4666 
+L 4225 4134 
+L 2559 4134 
+L 1759 0 
+L 1125 0 
+L 1925 4134 
+L 275 4134 
+L 378 4666 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-47" transform="translate(0 0.765625)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-3bc" transform="translate(77.490234 -15.640625) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-3bd" transform="translate(122.026367 -15.640625) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-3d" transform="translate(183.344727 0.765625)"/>
+    <use xlink:href="#einstein-DejaVuSans-38" transform="translate(286.616211 56.046875) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-3c0" transform="translate(331.152344 56.046875) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-47" transform="translate(373.295898 56.046875) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-4e" transform="translate(427.539062 44.5625) scale(0.49)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-63" transform="translate(338.616211 -49.208438) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-34" transform="translate(380.357466 -22.411563) scale(0.49)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-54" transform="translate(478.607422 0.765625)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-3bc" transform="translate(539.691406 -15.640625) scale(0.7)"/>
+    <use xlink:href="#einstein-DejaVuSans-Oblique-3bd" transform="translate(584.227539 -15.640625) scale(0.7)"/>
+    <path d="M 286.616211 19.5625 
+L 286.616211 25.8125 
+L 466.107422 25.8125 
+L 466.107422 19.5625 
+L 286.616211 19.5625 
+z
+"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >General relativity · native field equation</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

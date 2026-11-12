@@ -1,0 +1,1 @@
+run_id,arm,sample_id,occurrence,time_min,is_baseline,fio2,pressure_kpa,oxygen,oxygen_low,oxygen_high,ros,ros_low,ros_high,scavenger,scavenger_low,scavenger_high,endpoint,endpoint_low,endpoint_high,phase_event

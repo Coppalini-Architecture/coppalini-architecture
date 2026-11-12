@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1",
+  "tool_version": "0.2.0",
+  "edition": "browser",
+  "dataset_id": "NOP_return_memory_synthetic_v0.1",
+  "data_origin": "synthetic",
+  "status": "validated_paired_data",
+  "counts": {
+    "rows": 34,
+    "runs": 4,
+    "baselines": 4,
+    "followup_rows": 30,
+    "endpoint_rows": 0,
+    "tied_clock_rows": 4,
+    "warnings": 2,
+    "relationships": {
+      "baseline_record": 4,
+      "changed_read": 5,
+      "returned_read_with_redox_difference": 10,
+      "exact_read_return_without_resolved_redox_difference": 15
+    }
+  },
+  "provenance": {
+    "metadata": {
+      "name": "metadata.json",
+      "source_kind": "selected_file",
+      "bytes": 1461,
+      "status": "computed_in_browser",
+      "sha256": "4b3964064ea23fdc3a1512f5697484ce1466a56c9e4441a1357267ea7e177260"
+    },
+    "data": {
+      "name": "synthetic.csv",
+      "source_kind": "selected_file",
+      "bytes": 2983,
+      "status": "computed_in_browser",
+      "sha256": "c07139ffdb876f8990138cac84bf7306a848aae5d75f39aefdafdf09b758df81"
+    },
+    "code": {
+      "edition": "browser",
+      "kernel": "NOPAudit",
+      "version": "0.2.0",
+      "status": "not_measured_in_browser",
+      "sha256": null
+    }
+  },
+  "outputs": {
+    "audit.json": {
+      "status": "computed_in_browser",
+      "sha256": "e5ee47688ff23094d59c38c2897b7189a53224819e9260bbeb1ba6be23a06ec9"
+    },
+    "derived.csv": {
+      "status": "computed_in_browser",
+      "sha256": "704d020adeb74d3a45056ff62192d79d4eb0de9531c7ca08989e5b9ac14f0bbc"
+    }
+  },
+  "scope": "Browser-kernel execution, input validation, exact arithmetic, and available byte hashes. This receipt does not execute or attest the Python kernel, verify assay validity, or establish a biological mechanism."
+}

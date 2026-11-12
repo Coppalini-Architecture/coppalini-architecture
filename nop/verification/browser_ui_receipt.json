@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "date": "2026-11-12",
+  "environment": "Managed Chrome desktop; Sites local preview",
+  "tool_version": "0.2.0",
+  "checks": {
+    "homepage_entry_links_to_workbench": true,
+    "embedded_demo_34_records_4_runs": true,
+    "file_import_34_records": true,
+    "return_sample_a_31_over_16_q_16_over_31": true,
+    "common_mode_r_2_a_2_q_1_scale_squared_4": true,
+    "audit_csv_receipt_downloads": true,
+    "browser_input_sha256_matches_original_files": true,
+    "browser_output_sha256_matches_downloaded_bytes": true,
+    "exported_exact_csv_fields_and_decoded_extras_match_python": true,
+    "summary_origin_rejected_and_stale_results_hidden": true,
+    "successful_demo_recovery_after_rejection": true
+  },
+  "eta_display_max_absolute_difference": 5.551115123125783e-17,
+  "csv_serialization": "Exact fields match. JSON spacing, line endings, and explicitly approximate eta string formatting can differ; each receipt hashes its actual exported bytes.",
+  "limits": "Desktop workflow visually checked. Responsive CSS is supplied; this receipt does not claim a physical-phone test. Browser kernel bytes are not attested by the page receipt; the release manifest binds source bytes.",
+  "web_files_sha256": {
+    "README.md": "976d26ca428a02aa7bafa67f1b4cbf5f61247b9275108fb05f25fb59c0d96595",
+    "app.js": "b10f66051d3e53f15c3a6326e2ab7989ba750900faecbf177a6405a29475f05f",
+    "index.html": "69022b8769802857664730d2cb6075301e86eb6411eb9070c814ed984c4158ac",
+    "demo.js": "f2b5ab613d1a7f795df394d9d06a1577a6a265538ec4dbab9d01b3a6f80b3098",
+    "style.css": "f50ee681edb99ec4cbd6053f8145798d93464f2eb3c221e41880b0088333982e",
+    "kernel.js": "915231b055a734b2acf95c2f15eda92e319a4e30e65e472aa40fbe29de7cf7f5"
+  }
+}

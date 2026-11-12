@@ -1,0 +1,14 @@
+{
+  "release": "R57",
+  "status": "candidate",
+  "base_release": "R56",
+  "scope": [
+    "seam-matrix favicon and web manifest",
+    "homepage title and heading text separation",
+    "concise author provenance and plain-language homepage summary",
+    "custom 404 recovery page",
+    "responsive WebP delivery for the largest live portrait and cover"
+  ],
+  "verifier": "tools/verify_r57_discovery_finish.py",
+  "verification": "R57 PASS"
+}

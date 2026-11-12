@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title description">
+  <title id="title">Minimum Enduring Complexity</title>
+  <desc id="description">A nested carrier holds a stable central relation while the surrounding form develops in stages.</desc>
+  <rect width="800" height="1050" fill="#faf8f3"/>
+  <rect x="30" y="28" width="740" height="994" fill="none" stroke="#b38d4e" stroke-width="1" opacity=".72"/>
+  <text x="400" y="139" text-anchor="middle" fill="#262522" font-family="Georgia, Times New Roman, serif" font-size="37"><tspan x="400">Minimum Enduring</tspan><tspan x="400" dy="45">Complexity</tspan></text>
+  <text x="400" y="220" text-anchor="middle" fill="#777065" font-family="Georgia, Times New Roman, serif" font-size="12" letter-spacing=".35">A staged carrier for typed zero, memory return, and continuity</text>
+  <line x1="214" y1="242" x2="586" y2="242" stroke="#b38d4e" stroke-width="1"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="400" cy="545" r="176" stroke="#b38d4e" stroke-width="1.2"/>
+    <circle cx="400" cy="545" r="142" stroke="#a2b4cd" stroke-width="1.6"/>
+    <circle cx="400" cy="545" r="105" stroke="#b9a8bf" stroke-width="1.6"/>
+    <circle cx="400" cy="545" r="68" stroke="#d8a6a3" stroke-width="1.6"/>
+    <circle cx="400" cy="545" r="31" stroke="#d9d09e" stroke-width="1.8"/>
+    <path d="M224 545H576M400 369V721" stroke="#d8d0c2" stroke-width="1"/>
+    <path d="M275 665C340 605 359 510 400 545C441 580 460 485 525 425" stroke="#526f7b" stroke-width="2.2"/>
+    <circle cx="400" cy="545" r="5" fill="#262522" stroke="none"/>
+    <text x="400" y="353" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="14">carrier</text>
+    <text x="591" y="550" text-anchor="start" fill="#262522" font-family="Georgia,serif" font-size="14">return</text>
+    <text x="400" y="746" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="14">receipt</text>
+    <text x="209" y="550" text-anchor="end" fill="#262522" font-family="Georgia,serif" font-size="14">scope</text>
+  </g>
+  <line x1="154" y1="835" x2="646" y2="835" stroke="#b38d4e" stroke-width="1"/>
+  <text x="400" y="872" text-anchor="middle" fill="#262522" font-family="Georgia, Times New Roman, serif" font-size="19">K = (J, Γ, A, E, ρ, R, θ, Θ)</text>
+  <text x="400" y="934" text-anchor="middle" fill="#777065" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2.2">ANTHONY VITO COPPA</text>
+  <text x="400" y="956" text-anchor="middle" fill="#777065" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.7">COPPALINI ARCHITECTURE</text>
+</svg>

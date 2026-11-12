@@ -1,0 +1,6 @@
+K8 gate exact witness
+PASS K8.1  eight addressed vertices
+PASS K8.2  twenty-eight unordered pairs
+PASS K8.3  seven perfect matchings
+PASS K8.4  matching factorization partitions E(K8)
+ALL K8 GATE CHECKS PASSED

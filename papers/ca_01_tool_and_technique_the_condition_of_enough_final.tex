@@ -1,0 +1,354 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[letterpaper,top=0.80in,bottom=0.78in,left=0.82in,right=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,microtype}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{newtxmath}
+\usepackage{booktabs,array,enumitem,tabularx}
+\usepackage{fancyhdr,titlesec,hyperref}
+\hypersetup{hidelinks,pdfauthor={Anthony Vito Coppa},pdftitle={Tool and Technique: The Condition of Enough},pdfsubject={Minimum Action and the Mechanical Stopping Point}}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{0pt}
+\setlength{\headheight}{14pt}
+\setlength{\footskip}{22pt}
+\linespread{1.045}
+\frenchspacing
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\scshape Tool \& Technique}
+\fancyhead[R]{\small A. V. Coppa}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\thesection}{\Roman{section}}
+\titleformat{\section}[hang]{\normalsize\scshape}{\thesection.}{0.6em}{}
+\titleformat{\subsection}[hang]{\normalsize\itshape}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.46em}
+\titlespacing*{\subsection}{0pt}{0.75em}{0.32em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}\newtheorem{definition}{Definition}
+\newcommand{\Fit}{\operatorname{Fit}}
+\newcommand{\Enough}{\operatorname{Enough}}
+\newcommand{\Stop}{\operatorname{Stop}}
+\newcommand{\Gate}{\operatorname{Gate}}
+\newcommand{\Cert}{\operatorname{Cert}}
+\newcommand{\Safe}{\operatorname{SafeStop}}
+\newcommand{\Act}{\mathcal A}
+\newcommand{\Lag}{\mathscr L}
+\newcommand{\evidence}{\mathsf{Evidence}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\snoc}{\operatorname{snoc}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Adm}{\mathsf{Ad}}
+\begin{document}
+\begin{center}
+{\fontsize{17}{20}\selectfont\scshape Tool \& Technique}\par
+\vspace{0.2em}
+{\fontsize{12.5}{15}\selectfont The Condition of Enough}\par
+\vspace{0.12em}
+{\normalsize Minimum Action and the Mechanical Stopping Point}\par
+\vspace{0.65em}
+{\normalsize Anthony Vito Coppa}\par
+{\small Independent Research}\par
+{\small 30 October 2026}
+\end{center}
+\vspace{0.15em}\hrule\vspace{0.44em}
+\noindent\textbf{Abstract.}
+Work begins with a purpose, a reference, and a difference that matters to the intended use. A tool makes that difference readable; a gauge compares the reading with an admissible region; a certificate records the result. This paper defines the \emph{Condition of Enough} as the conjunction of verified Fit, adequate evidence, admissible release, and a safe stopping hand-off. It fixes the corresponding mechanical stopping point and separates two mathematical questions: when a given course of work can stop, and which of all admissible courses reaches completion with minimum action. A nonnegative craft-action Lagrangian measures effort and active time. The prefix theorem proves that a completed stopping prefix is action-minimal among its eligible extensions. A direct-method criterion states sufficient conditions for global attainment. An exact one-dimensional model derives the minimum action, optimal duration, velocity, and associated Bellman equation; a calibrated interval reader gives the corresponding tolerance rule with measurement uncertainty. A receipt theorem identifies when a separate history record is required to recover distinctions promised by the work. The construction is governed throughout by declared function, jurisdiction, and evidence. Its result is a precise craft principle: \emph{when the required relation Fits and the completed result can be safely released, stop the present work.}
+\begin{equation}\label{eq:spine}
+\boxed{\text{Reference}\longrightarrow\text{Difference}\longrightarrow\text{Scope}
+\longrightarrow\text{Gauge}\longrightarrow\text{Fit}\longrightarrow\text{Function}.}
+\end{equation}
+
+\section{The question and the craft condition}
+A machinist can continue cutting after a part fits its mate. A mathematician can continue deriving after the posed proposition has been proved. An experimenter can continue measuring after the prescribed decision has been certified. In each case additional work has a cost, and the decision to continue requires a relation that the current task still needs. The criterion for completion therefore belongs to the \emph{work} and to its declared use.
+
+A datum is the reference against which a workpiece is measured. A function is the use the completed work must support. Difference is what can change that use. Scope is the selected region of relevant difference. A tool makes a comparison possible; a gauge makes it decidable under a stated tolerance. These elementary distinctions have the same practical force whether the workpiece is a physical part, an algorithm, an image, a written statement, or a formal proof. Euclid's construction-and-comparison discipline is the historical coordinate for a fixed geometrical relation \cite{euclid}; dimensional and metrological applications supply their own instruments and units \cite{gum,conformity}.
+
+\begin{equation}\label{eq:craft}
+\boxed{\text{Form declares.}\qquad\text{Fit admits.}\qquad\text{Function carries.}}
+\end{equation}
+The purpose of the present construction is to make the point at which this work is \emph{enough} explicit, reproducible, and compatible with further lawful use. The condition is local to the stated task. A later task can reopen the work under a newly declared reference, receiving condition, or tolerance.
+
+\section{Jurisdiction, reference, and measurable fit}
+Fix a jurisdiction
+\begin{equation}\label{eq:jurisdiction}
+J=(X,Z,U,Y,E,K,\rho,\mathcal G,\mathcal P),
+\end{equation}
+where $X$ is the workpiece-state space, $Z$ the receiving-condition space, $U$ the intended-use space, $Y$ the readable-result space, $E$ the admitted perturbation class, $K\subseteq Y$ the acceptance region, $\rho$ the promised resolution, $\mathcal G$ the permitted calibrated gauges, and $\mathcal P$ the permitted actions, safety obligations, and hand-off conditions. The datum and the version of every component are fixed during one test. For $z\in Z$, $u\in U$, and $\eta\in E$, let
+\begin{equation}\label{eq:read}
+I_\eta:X\times Z\times U\longrightarrow Y
+\end{equation}
+be the exact interface reading where it is available. A calibrated gauge $\Gamma\in\mathcal G$ may instead return a nonempty \emph{enclosure} $C_{\Gamma,\eta}(x;z,u)\subseteq Y$ for the interface value. A sound deterministic enclosure obeys
+\begin{equation}\label{eq:sound}
+I_\eta(x,z,u)\in C_{\Gamma,\eta}(x;z,u).
+\end{equation}
+A statistical reader assigns a stated coverage or decision risk instead of claiming deterministic enclosure; its certificate retains that qualification \cite{gum,conformity}.
+
+\begin{definition}[Certified uniform Fit]\label{def:fit}
+A workpiece $x$ Fits the declared receiving condition and use when
+\begin{equation}\label{eq:fit}
+\boxed{\Fit_J(x;z,u,\Gamma)\iff
+E\ne\emptyset\ \land\
+\forall\eta\in E:\ C_{\Gamma,\eta}(x;z,u)\subseteq K.}
+\end{equation}
+The gauge is calibrated for the promised resolution and its reading supports the displayed inclusion. The acceptance region is discriminating for the work: the declared class of readable outcomes includes passing and failing cases whenever the task requires their distinction.
+\end{definition}
+The nonempty perturbation condition prevents a vacuous pass. The enclosure inclusion makes the confidence of the read explicit. In the exact-reader case $C_{\Gamma,\eta}=\{I_\eta\}$, this is the ordinary uniform test $I_\eta\in K$ for every admitted perturbation.
+
+For a scalar datum $x_0$ and absolute tolerance $\varepsilon\ge0$, take
+\begin{equation}\label{eq:scalar}
+K=[x_0-\varepsilon,x_0+\varepsilon],\qquad
+\delta=y-x_0.
+\end{equation}
+Passing this tolerance certifies the selected use with residual $\delta$ still recorded. An instrumental reading may contain more detail than the acceptance decision uses. The retained residual is available for another declared function.
+
+A data set can be used to construct a reference before the tolerance is applied. For observations $y_1,\ldots,y_N$ and positive weights $w_i$, the least-squares objective
+\[
+S(a)=\sum_{i=1}^N w_i(y_i-a)^2
+\]
+has the unique minimum $a_*=(\sum_i w_i y_i)/(\sum_i w_i)$, since $S'(a_*)=0$ and $S''(a)=2\sum_i w_i>0$. This is a rule for selecting an estimate; the resulting workpiece still receives its own Fit verdict under $K$. Legendre's 1805 construction and Gauss's 1809 treatment supply the historical least-squares coordinate \cite{legendre,gauss}.
+
+\section{The Condition of Enough}
+Let $h$ be the operation's history, and let $\sigma_J(h)$ be a receipt preserving every distinction promised by the task. Define $\Cert_J(x,\sigma_J(h))$ to mean that all required tests, their source and calibration, their uncertainty or error claims, and their verdict have been retained at the strength actually earned. Let $\Gate_J(x,h)=\mathsf{can}$ assert admissible completion under the declared constraint. Let $\Safe_J(x,h)$ assert that release of the active operation preserves the required safety, holding, and hand-off relations.
+
+\begin{definition}[Condition of Enough]\label{def:enough}
+The present task is sufficiently completed at $(x,h)$ exactly when
+\begin{equation}\label{eq:enough}
+\boxed{\begin{aligned}
+\Enough_J(x,h)\iff {}&\Fit_J(x;z,u,\Gamma)\\
+&\land\Cert_J(x,\sigma_J(h))\\
+&\land(\Gate_J(x,h)=\mathsf{can})\\
+&\land\Safe_J(x,h).
+\end{aligned}}
+\end{equation}
+A completed Fit, as distinct from its dimensional subtest, is the conjunction in \eqref{eq:enough}. The stopping rule is
+\begin{equation}\label{eq:stoprule}
+\boxed{\Enough_J(x,h)\ \Longrightarrow\ \Stop_J(\text{present operation}).}
+\end{equation}
+\end{definition}
+
+The four conjuncts are independently testable duties. Fit concerns the work's receiving condition. Certificate concerns what has actually been demonstrated. Gate concerns the permitted use. Safe stopping concerns the state left behind when active work ceases. Their conjunction fixes an achieved condition, rather than a demand for unlimited precision or a speculative claim that all possible future questions have been answered.
+
+For a symbolic workpiece, the certificate may explicitly preserve three distinct requirements: every promised relation survives, every introduced relation has authority, and every claim retains its earned strength. These can be represented by the conditions
+\begin{equation}\label{eq:residuals}
+\varepsilon_{\rm drop}=0,\quad
+\varepsilon_{\rm add}=0,\quad
+\varepsilon_{\rm strength}=0.
+\end{equation}
+A physical dimensional tolerance is measured by its calibrated gauge; the three formal residuals are separate proof obligations, not substitute units for a physical measurement.
+
+\section{Tools, resolution, and the sufficient gauge}
+The eye, conditioned eye, rule, calipers, fixture, go/no-go gauge, fixed-angle blade, microscope, telescope, and computer are instruments of comparison. Their common office is to return an identified distinction at a declared resolution. Their capabilities are specific: a rule carries length, a caliper supports dimensional comparison, a go/no-go gauge evaluates an acceptance interval, and a computer executes formal rules on a typed record. A trained hand or eye may serve as a reader when its comparison, calibration, and publicly retained result are specified.
+
+For gauges of the same task, write $\Gamma_1\preceq_J\Gamma_2$ when the second resolves every distinction the first is required to resolve, with a stated adapter between their readings. A gauge is \emph{sufficient} if its outputs can decide all the required Fit clauses. If the admissible set has a least sufficient gauge, that gauge is the \emph{minimum sufficient instrument}. If the tool order has incomparable sufficient elements, each may be minimal without being the unique minimum.
+
+Selection of the gauge and completion of the task are different optimizations. The former asks how much resolving power is needed. The latter asks when the work has acquired the required certified relation. Additional precision can be valuable; it enters the same task exactly when it bears on a required clause. Thus:
+\begin{equation}\label{eq:resolution}
+\boxed{\text{Resolution serves Function.}}
+\end{equation}
+
+\section{A mechanical Lagrangian for work}
+Let $q:[0,T]\to\mathbb R^d$ describe the workpiece state, $a(t)\in A_J$ the selected control, and $\dot q=f_J(q,a,t)$ the declared admissible dynamics. The action must price the relevant work, time, tool use, and adjustments in consistent units. A sufficiently general nonnegative quadratic instance is
+\begin{equation}\label{eq:lagrangian}
+\boxed{\Lag_J(q,\dot q,a,t)=
+\tfrac12\dot q^{\mathsf T}M_J(q)\dot q+
+\tfrac12a^{\mathsf T}W_J(q)a+c_J(q,t),}
+\end{equation}
+where $M_J,W_J$ are positive semidefinite and $c_J\ge0$. These coefficients are chosen and calibrated for the task, and the resulting $\Lag_J$ is a \emph{craft running cost}. Its integral is
+\begin{equation}\label{eq:action}
+\boxed{\Act_J[q,a;T]=\int_0^T\Lag_J(q,\dot q,a,t)\,dt.}
+\end{equation}
+The model allows other nonnegative cost functions with the integrability and compositional properties used below.
+
+The variational tradition of Euler, Lagrange, and Hamilton supplies the mathematical grammar for selecting paths by an action functional \cite{euler,lagrange,hamilton}. The distinction matters: physical Hamiltonian action can be signed, and Hamilton's principle requires stationary variation. The task cost in \eqref{eq:lagrangian} is deliberately nonnegative, so continuation on a fixed path has the order property needed for a stopping theorem. Stationarity of a path, completion of its purpose, and attainment of a global minimum are three different verdicts.
+
+For a smooth unconstrained path with fixed endpoints and final time, an interior stationary point obeys the Euler--Lagrange equation
+\begin{equation}\label{eq:EL}
+\frac{d}{dt}\frac{\partial\Lag_J}{\partial\dot q}
+=\frac{\partial\Lag_J}{\partial q}.
+\end{equation}
+Under controlled dynamics and terminal constraints, the relevant necessary conditions instead involve the control Hamiltonian and transversality, as in Pontryagin's theory \cite{pontryagin}. The derivation of a necessary condition does not itself certify a global minimum or the terminal Condition of Enough; those remain independent tests \cite{weierstrass,bolza,tonelli}.
+
+\section{The mechanical stopping point}
+For an admissible evolving workpiece and receipt $(q(t),h_t)$, define the first attained Enough time by
+\begin{equation}\label{eq:tau}
+\boxed{\tau_J=\min\{t\ge0:\Enough_J(q(t),h_t)\},}
+\end{equation}
+provided that the set contains an earliest member. An open acceptance boundary or an incomplete certificate may leave the minimum unattained. In a discrete sequence of inspections $n=0,1,\ldots$, when Enough is determined from the evidence available by step $n$, the event $\{\tau_J\le n\}$ is determined by that same evidence: the first-hit index is a legitimate stopping time in the ordinary sequential-decision sense \cite{wald}.
+
+\begin{theorem}[Prefix stopping and action]\label{thm:prefix}
+Let a fixed admissible trajectory $(q,a,h)$ satisfy $\Enough_J(q(\tau),h_\tau)$ at an attained $\tau\ge0$. Suppose the completed certificate can be safely released at $\tau$, and the active cost satisfies $\Lag_J\ge0$. For every $T>\tau$ on the same admissible extension,
+\begin{equation}\label{eq:prefix}
+\boxed{\Act_J[q,a;T]=\Act_J[q,a;\tau]+\int_{\tau}^T\Lag_J\,dt\ \ge\ \Act_J[q,a;\tau].}
+\end{equation}
+Equality holds exactly when the added interval has zero integrated action. If every nonempty interval of continued active work carries positive integrated cost, stopping is strictly cheaper than continuing that same work path.
+\end{theorem}
+\begin{proof}
+The action is an integral over a concatenated path. Additivity of the integral gives the equality. Nonnegativity yields the inequality and identifies the equality case. The Enough and safe-release hypotheses make the prefix an eligible completed operation.
+\end{proof}
+
+The theorem is exact at its jurisdiction: the first attained sufficient prefix is minimum-cost among its own eligible extensions. Another admissible path may arrive at Enough with less total expenditure, or may require more time while consuming less action. Finding a globally least-cost path is an additional optimization.
+
+\section{The global minimum-action problem}
+Let $\mathcal P_J$ be the class of path/control/duration triples obeying the task's dynamics, safety, boundary and receipt conditions, with $\Enough_J(q(T),h_T)$ certified at their terminal time. The optimal task cost is
+\begin{equation}\label{eq:opt}
+\boxed{V_J=\inf_{(q,a,T)\in\mathcal P_J}\Act_J[q,a;T].}
+\end{equation}
+This optimization is over completed feasible work. The feasible set may be empty; its infimum may be approached by paths without being attained. The classical direct method supplies a clean conditional existence criterion \cite{tonelli,rockafellar}.
+
+Finite-dimensional endpoint inequalities are a different part of the same constraint discipline. At a regular local minimum of a smooth function $f(x)$ subject to $g_i(x)\le0$, the Kuhn--Tucker necessary conditions take the form
+\[
+\nabla f(x)+\sum_i\lambda_i\nabla g_i(x)=0,\qquad
+\lambda_i\ge0,\qquad \lambda_i g_i(x)=0,
+\]
+under an appropriate constraint qualification. They identify active boundaries rather than replace a global minimality proof \cite{kuhntucker}.
+
+\begin{proposition}[Attainment under compactness]\label{prop:attain}
+Suppose $\mathcal P_J$ is nonempty and sequentially compact in a declared topology, and $\Act_J$ is lower semicontinuous there with finite infimum. Then there exists an eligible triple $(q_*,a_*,T_*)$ satisfying
+\[
+\Act_J[q_*,a_*;T_*]=V_J.
+\]
+\end{proposition}
+\begin{proof}
+Choose a sequence of feasible triples whose action tends to $V_J$. By sequential compactness a subsequence converges to an eligible limit. Lower semicontinuity gives action at the limit no greater than the liminf, which equals $V_J$. Minimality of the infimum gives equality.
+\end{proof}
+
+Thus a theorem about an attained global optimum requires explicit compactness, coercivity, or another existence argument. The next model provides such an optimum directly by inequality, without assuming a general compactness theorem.
+
+\section{Exact minimum action to a measured tolerance}
+Take a scalar workpiece coordinate $q(t)$ with control $a(t)=\dot q(t)$. Fix an initial reading $q_0\in\mathbb R$, a target datum $x_0$, an absolute tolerance $\varepsilon\ge0$, and the accepted interval
+\begin{equation}\label{eq:K}
+K=[x_0-\varepsilon,x_0+\varepsilon],\qquad
+D=\dist(q_0,K)=\max\{|q_0-x_0|-\varepsilon,0\}.
+\end{equation}
+Let $m,c>0$ be calibrated cost coefficients and let
+\begin{equation}\label{eq:modelL}
+\Lag(a)=\tfrac m2a^2+c.
+\end{equation}
+Here $m$ is a work-cost coefficient (rather than a physical mass unless separately calibrated), and $c$ prices the duration of active work. Assume the terminal Fit certificate and safe hand-off are available at the accepted boundary with zero additional modeled action. Paths are absolutely continuous with $\dot q\in L^2$, $q(0)=q_0$, and $q(T)\in K$.
+
+\begin{theorem}[Exact mechanical stopping point]\label{thm:caliper}
+If $D>0$, the global minimum of $\int_0^T(\tfrac m2\dot q^2+c)\,dt$ over all admissible durations $T>0$ and terminal points in $K$ is attained by the constant-speed path to the nearest accepted endpoint. Its duration, speed and action are
+\begin{equation}\label{eq:scalarresult}
+\boxed{T_*=D\sqrt{\frac{m}{2c}},\qquad
+|a_*|=\sqrt{\frac{2c}{m}},\qquad
+\Act_*=D\sqrt{2mc}.}
+\end{equation}
+The optimal endpoint is the nearest point of $K$ and the tool stops there. If $D=0$ and all required evidence is already available, $T_*=0$ and $\Act_*=0$.
+\end{theorem}
+\begin{proof}
+For any eligible terminal point, $|q(T)-q_0|\ge D$. The integral Cauchy--Bunyakovsky--Schwarz inequality \cite{cauchy,bunyakovsky} yields
+\[
+\int_0^T\dot q(t)^2dt\ge\frac{(\int_0^T\dot q(t)dt)^2}{T}
+=\frac{(q(T)-q_0)^2}{T}\ge\frac{D^2}{T}.
+\]
+Consequently, by the arithmetic--geometric mean inequality,
+\begin{equation}\label{eq:AMGM}
+\Act\ge\frac{mD^2}{2T}+cT\ge D\sqrt{2mc}.
+\end{equation}
+Equality in the first inequality requires constant velocity; equality in the second requires $T=D\sqrt{m/(2c)}$. The straight path to the nearest endpoint attains both conditions and supplies the stated solution. When $D=0$ with its certificate available, immediate stop is eligible and has zero action.
+\end{proof}
+
+The same result has two complementary formal readings. For fixed duration and endpoints, the Euler--Lagrange equation gives $m\ddot q=0$, hence constant velocity. For free terminal time the controlled Hamiltonian $H=p a-\Lag=\tfrac m2a^2-c$ vanishes at the regular optimum, giving $|a_*|=\sqrt{2c/m}$, consistent with \eqref{eq:scalarresult}. These are necessary-condition checks; the preceding inequality proves the global bound \cite{lagrange,hamilton,pontryagin}.
+
+The Bellman reading is equally exact. The minimum remaining action from a scalar state is
+\begin{equation}\label{eq:value}
+V(q)=\sqrt{2mc}\,\dist(q,K).
+\end{equation}
+For $q$ outside $K$, $V$ is differentiable and satisfies the stationary optimal-control equation
+\begin{equation}\label{eq:hjb}
+\boxed{0=\min_{a\in\mathbb R}\left\{\frac m2a^2+c+aV'(q)\right\},\quad
+V(q)=0\ \text{for }q\in K.}
+\end{equation}
+Indeed the minimizing feedback is $a_*(q)=-V'(q)/m$, and substitution gives zero because $|V'|=\sqrt{2mc}$. This connects the exact craft construction to Bellman's principle of optimal continuation and stopping \cite{bellman}. Within $K$, certified Enough supplies the zero-cost stop option. Its actual use remains conditioned on the required receipt and safe hand-off.
+
+\section{The calibrated reading and the acceptance boundary}
+The same nominal dimensional reading can carry an uncertainty enclosure. Suppose the gauge reports center $y$ with a justified deterministic half-width $r\ge0$:
+\[
+C_\Gamma(y)=[y-r,y+r].
+\]
+For target $x_0$ and tolerance $\varepsilon$, the exact inclusion of the whole enclosure in the accepted interval is
+\begin{equation}\label{eq:certtol}
+\boxed{C_\Gamma(y)\subseteq K\iff|y-x_0|+r\le\varepsilon.}
+\end{equation}
+For example, with $x_0=10.00\,\mathrm{mm}$, $\varepsilon=0.10\,\mathrm{mm}$ and justified $r=0.02\,\mathrm{mm}$, the reading $y=10.07\,\mathrm{mm}$ certifies Fit because $0.07+0.02\le0.10$. The reading $y=10.09\,\mathrm{mm}$ has an enclosure extending beyond tolerance and therefore calls for further evidence or adjustment. The decision follows the retained uncertainty and conformity policy, rather than the nominal center alone \cite{gum,conformity}.
+
+If the same deterministic half-width $r\le\varepsilon$ applies throughout a controllable scalar reading $y=q$, the accepted set for a sound certificate contracts to
+\[
+K_{\rm cert}=[x_0-(\varepsilon-r),x_0+(\varepsilon-r)].
+\]
+Theorem~\ref{thm:caliper} then applies with $D_{\rm cert}=\dist(q_0,K_{\rm cert})$ in place of $D$, provided its terminal certification and hand-off assumptions hold. Measurement effort and delay can instead be included directly in $\Lag_J$ when the task charges them. This is the exact relation among gauge quality, tolerance, and the action needed to stop.
+
+\section{Receipts, history, and the finished object}
+A craft operation changes a workpiece while generating a separate record of what was compared, measured, and done. Let $\mathcal H_J$ be histories and $\sim_J$ the equivalence relation of distinctions promised by the task. Let $p_J:\mathcal H_J\to\mathcal H_J/\!\sim_J$ be their promised history read, and $T:\mathcal H_J\to X$ the terminal workpiece map.
+
+\begin{lemma}[Terminal-form reconstruction]\label{lem:history}
+If $T(h_1)=T(h_2)$ while $p_J(h_1)\ne p_J(h_2)$, there exists no decoder $D:X\to\mathcal H_J/\!\sim_J$ with $D\circ T=p_J$ on both histories.
+\end{lemma}
+\begin{proof}
+Functional evaluation at the equal terminal states gives $D(T(h_1))=D(T(h_2))$, while the required outputs $p_J(h_1)$ and $p_J(h_2)$ are distinct. One decoder value cannot equal both.
+\end{proof}
+
+Hence a result claiming its path, proof, calibration, or repair history retains a sufficient separate receipt. With operation $a_n$, read $y_n$, and verdict $v_n$, an append-only ledger is
+\begin{equation}\label{eq:snoc}
+\boxed{R_{n+1}=\snoc(R_n,(a_n,y_n,v_n)).}
+\end{equation}
+The record's promised equivalence determines how much detail is actually required. A verified result can be reused at its earned strength, while a changed datum, use, tolerance, tool calibration or new task receives a new comparison address.
+
+\section{The Rubicon and the stopping discipline}
+A passing Fit is defined by the present certificate. A stronger question asks whether further admitted refinement of the same task would preserve that verdict. Let $\Gamma'\succeq_J\Gamma$ range over gauges with declared comparison adapters and the same acceptance contract. Define
+\begin{equation}\label{eq:rubicon}
+\boxed{\operatorname{Rubicon}_{J,\Gamma}(x,h)\iff
+\Enough_J(x,h)\ \land\
+\forall\Gamma'\succeq_J\Gamma:\Fit_J(x;\Gamma').}
+\end{equation}
+This is an optional refinement-stability property. The domain of its universal quantifier must be declared; a finite sample of finer tools verifies only that finite set. Because Fit is a predicate, stability is an equality of certified verdicts rather than a derivative of a Boolean value.
+
+The Condition of Enough already authorizes a safe local stopping point. The Rubicon can be required where a task expressly includes robustness under a family of finer readers. This difference is the mathematical form of competent restraint: greater possible resolution and greater present responsibility have separate scopes.
+
+The decisive craft sentences remain:
+\begin{equation}\label{eq:carry}
+\boxed{\text{You keep what you carry; you carry what you keep.}}
+\end{equation}
+\begin{equation}\label{eq:blade}
+\boxed{\text{When it Fits, stop cutting.}}
+\end{equation}
+The first means that every promised relation and its evidence remain recoverable. The second applies after the full Condition of Enough, with the instrument safely released and the completion receipt retained. An added task opens a further jurisdiction while the completed one remains usable.
+
+\section{Meaning and formal boundary}
+Enough is an achieved relation between form, receiving condition, use, evidence, and release. The first attained stopping point and the least-action completed trajectory are separately defined. Both can be computed in the simple tolerance model; in more complex tasks, they require declared controls, constraints, costs, measurement policies and existence hypotheses. The method therefore has the same precision in a shop, a laboratory, a proof, or a program: its reader and acceptance rule are selected for the function they actually serve.
+
+The formal contributions are the definitions of certified Fit and Enough, the minimum-action work objective, the prefix theorem, the conditional existence theorem, the exact scalar optimum and value function, and the receipt reconstruction lemma. Established variational, optimal-control, sequential-decision, and measurement theories supply their specific methods without losing their own theorem conditions. Herbert Simon's analysis of bounded decision-making supplies an adjacent interpretation of task-sufficient choice: a declared satisfactory condition can govern release even where the wider search for an absolute optimum remains expensive \cite{simon}. The present result adds a formal completion predicate and a conditional global work-cost calculation; it is not a theorem asserting a universal human objective function.
+
+\begin{center}\vspace{0.5em}
+\fbox{\parbox{0.81\linewidth}{\centering\vspace{0.3em}\textsc{The present work returns with its required relation held.}\\[2pt]
+\textsc{Its receipt survives. Another admissible use remains available.}\vspace{0.3em}}}
+\end{center}
+
+\section*{Reference coordinates and formal sources}
+The cited works are arranged by their exact contribution to the construction, rather than as a history of the entire fields they represent. The measurement line fixes datum, error, and conformity; the variational line distinguishes stationary action from minimization; the control line addresses action selection and optimal continuation; and the memory line establishes the burden carried by a receipt. This paper reproduces the required elementary proofs in place.
+
+\begin{thebibliography}{99}\setlength{\itemsep}{0.12em}
+\bibitem{euclid} Euclid, \emph{Elements}, Book I, Common Notions and the geometry of construction and comparison, c.~300 BCE; English edition T.~L.~Heath, \emph{The Thirteen Books of Euclid's Elements}, Cambridge University Press, 1908.
+\bibitem{legendre} A.-M. Legendre, \emph{Nouvelles m\'ethodes pour la d\'etermination des orbites des com\`etes}, F.~Didot, Paris, 1805, esp.~pp.~72--75 (least-squares method). \url{https://doi.org/10.3931/e-rara-35115}.
+\bibitem{gauss} C. F. Gauss, \emph{Theoria motus corporum coelestium in sectionibus conicis solem ambientium}, Perthes and Besser, Hamburg, 1809 (observation fitting and least squares). \url{https://doi.org/10.3931/e-rara-522}.
+\bibitem{gum} Joint Committee for Guides in Metrology, \emph{Evaluation of Measurement Data---Guide to the Expression of Uncertainty in Measurement}, JCGM 100:2008(E). \url{https://doi.org/10.59161/JCGM100-2008E}.
+\bibitem{conformity} Joint Committee for Guides in Metrology, \emph{Evaluation of Measurement Data---The Role of Measurement Uncertainty in Conformity Assessment}, JCGM 106:2012. \url{https://doi.org/10.59161/JCGM106-2012}.
+\bibitem{euler} L. Euler, \emph{Methodus inveniendi lineas curvas maximi minimive proprietate gaudentes}, Bousquet, Lausanne and Geneva, 1744 (Enestr\"om E65). \url{https://doi.org/10.3931/e-rara-1490}.
+\bibitem{lagrange} J.-L. Lagrange, \emph{M\'echanique analitique}, Veuve Desaint, Paris, 1788. Biblioth\`eque nationale de France, record ark:/12148/cb307191158. \url{https://catalogue.bnf.fr/ark:/12148/cb307191158}.
+\bibitem{hamilton} W. R. Hamilton, ``On a General Method in Dynamics,'' \emph{Philosophical Transactions of the Royal Society of London} \textbf{124} (1834), 247--308. \url{https://doi.org/10.1098/rstl.1834.0017}.
+\bibitem{cauchy} A.-L. Cauchy, \emph{Cours d'analyse de l'\'Ecole royale polytechnique}, Debure, Paris, 1821 (sum inequality). 
+\bibitem{bunyakovsky} V. Ya. Bunyakovsky, \emph{Sur quelques in\'egalit\'es concernant les int\'egrales ordinaires et les int\'egrales aux diff\'erences finies}, M\'emoires de l'Acad\'emie imp\'eriale des sciences de St.-P\'etersbourg, 1859.
+\bibitem{weierstrass} K. Weierstrass, \emph{Vorlesungen \"uber Variationsrechnung}, \emph{Mathematische Werke}, vol.~7, Mayer \& M\"uller, Berlin, 1927 (published lectures, including the 1879 course on sufficiency and strong extrema).
+\bibitem{bolza} O. Bolza, \emph{Lectures on the Calculus of Variations}, University of Chicago Press, 1904 (Weierstrass conditions, weak and strong extrema, sufficiency).
+\bibitem{tonelli} L. Tonelli, \emph{Fondamenti di calcolo delle variazioni}, 2 vols., Zanichelli, Bologna, 1921--1923 (lower semicontinuity and the direct method).
+\bibitem{wald} A. Wald, \emph{Sequential Analysis}, John Wiley \& Sons, New York, 1947 (observation-dependent stopping and sequential testing).
+\bibitem{simon} H. A. Simon, ``A Behavioral Model of Rational Choice,'' \emph{Quarterly Journal of Economics} \textbf{69} (1955), no.~1, 99--118. \url{https://doi.org/10.2307/1884852}.
+\bibitem{pontryagin} L. S. Pontryagin, V. G. Boltyanskii, R. V. Gamkrelidze, and E. F. Mishchenko, \emph{The Mathematical Theory of Optimal Processes}, Interscience/Wiley, New York, 1962 (controlled dynamics, maximum principle and terminal conditions).
+\bibitem{bellman} R. Bellman, ``On the Theory of Dynamic Programming,'' \emph{Proceedings of the National Academy of Sciences USA} \textbf{38} (1952), no.~8, 716--719. \url{https://doi.org/10.1073/pnas.38.8.716}. See also \emph{Dynamic Programming}, Princeton University Press, 1957.
+\bibitem{rockafellar} R. T. Rockafellar and R. J.-B. Wets, \emph{Variational Analysis}, Springer, Berlin, 1998, Grundlehren 317 (lower semicontinuity, set constraints and existence tools). \url{https://doi.org/10.1007/978-3-642-02431-3}.
+\bibitem{kuhntucker} H. W. Kuhn and A. W. Tucker, ``Nonlinear Programming,'' in \emph{Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability}, University of California Press, 1951, pp.~481--492 (constrained optimality). \url{https://digicoll.lib.berkeley.edu/record/112776}.
+\end{thebibliography}
+\end{document}

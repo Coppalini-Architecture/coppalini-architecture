@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">The Dihedral Phase Constraint</title><desc id="desc">A regular nonagon realizes F as a rotation by 2π/9 and Π as reflection about the marked axis. The two highlighted edges show opposite continuations from the fixed vertex. This is the finite D₉ instance of the stated inversion relation. It does not identify the finite wheel with the paper’s infinite-order carriage or SU(2) lift.</desc><defs><marker id="flow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">LANGUAGE MECHANICS / 009</text><text x="400" y="149" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >The Dihedral</text><text x="400" y="198" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >Phase Constraint</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linejoin="miter"><path d="M400,382 L507.98832,421.30453 L565.4477,520.82711 L545.49227,634 L457.45938,707.86836 L342.54062,707.86836 L254.50773,634 L234.5523,520.82711 L292.01168,421.30453 Z" opacity=".65"/><path d="M400,346 L400,744" stroke-dasharray="3 6" opacity=".5"/><path d="M410.79883,385.93045 L497.18949,417.37408" marker-end="url(#flow)" stroke="#a2b4cd" stroke-width="2.5"/><path d="M389.20117,385.93045 L302.81051,417.37408" marker-end="url(#flow)" stroke="#d8a6a3" stroke-width="2.5"/><circle cx="400" cy="382" r="5" fill="#faf8f3" /><circle cx="507.98832" cy="421.30453" r="4" fill="#a2b4cd" /><circle cx="292.01168" cy="421.30453" r="4" fill="#d8a6a3" /><text x="480" y="390" font-family="Georgia, Times New Roman, serif" font-size="19" fill="#262522" stroke="none" text-anchor="middle" >F⁻¹</text><text x="316" y="390" font-family="Georgia, Times New Roman, serif" font-size="19" fill="#262522" stroke="none" text-anchor="middle" >F</text><text x="421" y="557" font-family="Georgia, Times New Roman, serif" font-size="24" fill="#262522" stroke="none" text-anchor="middle" >Π</text></g><svg x="280.9498" y="821.2382" width="238.1004" height="29.5236" viewBox="0 0 201.78 25.02">
+ <title>\Pi F\Pi=F^{-1},\qquad \Pi^2=I</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>\Pi F\Pi=F^{-1},\qquad \Pi^2=I</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.02 
+L 201.78 25.02 
+L 201.78 -0 
+L 0 -0 
+L 0 25.02 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\Pi F\Pi=F^{-1},\qquad \Pi^2=I$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 18.036563) scale(0.18 -0.18)">
+    <defs>
+     <path id="DejaVuSerif-3a0" d="M 5228 4666 
+L 5228 4331 
+L 4634 4331 
+L 4634 331 
+L 5228 331 
+L 5228 0 
+L 3406 0 
+L 3406 331 
+L 4000 331 
+L 4000 4281 
+L 1581 4281 
+L 1581 331 
+L 2175 331 
+L 2175 0 
+L 353 0 
+L 353 331 
+L 947 331 
+L 947 4331 
+L 353 4331 
+L 353 4666 
+L 5228 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-46" d="M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 4628 4666 
+L 4428 3628 
+L 4044 3628 
+L 4169 4281 
+L 1963 4281 
+L 1659 2719 
+L 3253 2719 
+L 3366 3303 
+L 3750 3303 
+L 3450 1753 
+L 3066 1753 
+L 3178 2338 
+L 1584 2338 
+L 1194 331 
+L 1941 331 
+L 1878 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3d" d="M 678 2894 
+L 4684 2894 
+L 4684 2394 
+L 678 2394 
+L 678 2894 
+z
+M 678 1619 
+L 4684 1619 
+L 4684 1119 
+L 678 1119 
+L 678 1619 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-2212" d="M 678 2259 
+L 4684 2259 
+L 4684 1753 
+L 678 1753 
+L 678 2259 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-31" d="M 909 0 
+L 909 331 
+L 1722 331 
+L 1722 4213 
+L 781 3603 
+L 781 4013 
+L 1919 4750 
+L 2350 4750 
+L 2350 331 
+L 3163 331 
+L 3163 0 
+L 909 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-2c" d="M 231 -622 
+Q 525 -406 662 -114 
+Q 800 178 800 594 
+L 800 709 
+L 1416 709 
+Q 1391 175 1164 -208 
+Q 938 -591 481 -872 
+L 231 -622 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-32" d="M 819 3553 
+L 469 3553 
+L 469 4384 
+Q 803 4563 1142 4656 
+Q 1481 4750 1806 4750 
+Q 2534 4750 2956 4397 
+Q 3378 4044 3378 3438 
+Q 3378 2753 2422 1800 
+Q 2347 1728 2309 1691 
+L 1131 513 
+L 3078 513 
+L 3078 1088 
+L 3444 1088 
+L 3444 0 
+L 434 0 
+L 434 341 
+L 1850 1753 
+Q 2319 2222 2519 2614 
+Q 2719 3006 2719 3438 
+Q 2719 3909 2473 4175 
+Q 2228 4441 1797 4441 
+Q 1350 4441 1106 4219 
+Q 863 3997 819 3553 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-49" d="M 1194 331 
+L 1788 331 
+L 1725 0 
+L -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 2631 4666 
+L 2566 4331 
+L 1972 4331 
+L 1194 331 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#DejaVuSerif-3a0" transform="translate(0 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-46" transform="translate(87.207031 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-3a0" transform="translate(156.591797 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(262.763672 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-46" transform="translate(365.517578 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-2212" transform="translate(442.081354 37.046875) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-31" transform="translate(500.733698 37.046875) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-2c" transform="translate(547.865143 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-3a0" transform="translate(788.265534 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-32" transform="translate(876.380924 37.046875) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(942.477214 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-49" transform="translate(1045.23112 0.7125)"/>
+   </g>
+  </g>
+ </g>
+</svg><text x="400" y="932" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></svg>

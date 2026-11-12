@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">Minimum Root Algebra</title><desc id="desc">Two exact G-null directions are drawn from the source vectors vΦ=(Φ,1) and vΨ=(Ψ,1). Their common coordinate scale is retained; their alternating pairing is printed beneath. The decagon is the edition frame. The vector calculation belongs to the declared real 2×2 root algebra; the drawing does not assert a physical angle or transport a numerical constant across domains.</desc><defs><marker id="flow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">LANGUAGE MECHANICS / 010</text><text x="400" y="149" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >Minimum Root Algebra</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linejoin="miter"><path d="M400,376 L502.27463,409.23104 L565.48383,496.23104 L565.48383,603.76896 L502.27463,690.76896 L400,724 L297.72537,690.76896 L234.51617,603.76896 L234.51617,496.23104 L297.72537,409.23104 Z" opacity=".58"/><path d="M242,562 L558,562" opacity=".3"/><path d="M400,414 L400,710" opacity=".3"/><path d="M275.80498,638.75674 L524.19502,485.24326" stroke="#a2b4cd" stroke-width="1.6"/><path d="M400,562 L505.17221,497" marker-end="url(#flow)" stroke="#a2b4cd" stroke-width="2.4"/><path d="M476.75674,686.19502 L323.24326,437.80498" stroke="#a6a4c5" stroke-width="1.6"/><path d="M400,562 L359.82779,497" marker-end="url(#flow)" stroke="#a6a4c5" stroke-width="2.4"/><circle cx="400" cy="562" r="3" fill="#faf8f3" /><text x="530" y="489" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#262522" stroke="none" text-anchor="middle">v<tspan baseline-shift="sub" font-size="12.6">Φ</tspan></text><text x="340" y="478" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#262522" stroke="none" text-anchor="middle">v<tspan baseline-shift="sub" font-size="12.6">Ψ</tspan></text><text x="400" y="679" font-family="Georgia, Times New Roman, serif" font-size="15" fill="#262522" stroke="none" text-anchor="middle" >G-null</text></g><svg x="333.4126" y="817.7336" width="133.1748" height="36.5328" viewBox="0 0 112.86 30.96">
+ <title>v_\Phi^{\mathsf T}\Omega v_\Psi=\sqrt{5}</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>v_\Phi^{\mathsf T}\Omega v_\Psi=\sqrt{5}</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 30.96 
+L 112.86 30.96 
+L 112.86 -0 
+L 0 -0 
+L 0 30.96 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $v_\Phi^{\mathsf{T}}\Omega v_\Psi=\sqrt{5}$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 23.04) scale(0.18 -0.18)">
+    <defs>
+     <path id="DejaVuSerif-Italic-76" d="M 1681 0 
+L 1259 0 
+L 619 2988 
+L 241 2988 
+L 303 3322 
+L 1163 3322 
+L 1725 703 
+Q 2084 1016 2325 1413 
+Q 2825 2238 3003 2988 
+L 2622 2988 
+L 2688 3322 
+L 3547 3322 
+Q 3206 2034 2775 1313 
+Q 2400 688 1681 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSans-54" d="M -19 4666 
+L 3928 4666 
+L 3928 4134 
+L 2272 4134 
+L 2272 0 
+L 1638 0 
+L 1638 4134 
+L -19 4134 
+L -19 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3a6" d="M 4203 3594 
+Q 4553 3347 4723 3036 
+Q 4894 2725 4894 2328 
+Q 4894 1931 4723 1622 
+Q 4553 1313 4203 1066 
+Q 3891 847 3500 744 
+Q 3188 666 2944 634 
+L 2944 331 
+L 3538 331 
+L 3538 0 
+L 1716 0 
+L 1716 331 
+L 2309 331 
+L 2309 634 
+Q 2066 666 1750 744 
+Q 1363 847 1050 1066 
+Q 700 1313 529 1622 
+Q 359 1931 359 2328 
+Q 359 2725 529 3036 
+Q 700 3347 1050 3594 
+Q 1372 3819 1750 3916 
+Q 1956 3969 2309 4019 
+L 2309 4331 
+L 1716 4331 
+L 1716 4666 
+L 3538 4666 
+L 3538 4331 
+L 2944 4331 
+L 2944 4019 
+Q 3297 3969 3503 3916 
+Q 3881 3819 4203 3594 
+z
+M 2944 888 
+Q 3488 956 3788 1238 
+Q 4178 1606 4178 2328 
+Q 4178 3081 3788 3422 
+Q 3478 3691 2944 3778 
+L 2944 888 
+z
+M 2309 888 
+L 2309 3778 
+Q 1775 3691 1466 3422 
+Q 1075 3081 1075 2328 
+Q 1075 1606 1466 1238 
+Q 1766 956 2309 888 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3a9" d="M 3500 513 
+L 4550 513 
+L 4550 941 
+L 4916 941 
+L 4916 0 
+L 3066 0 
+L 3066 569 
+Q 3628 788 3917 1273 
+Q 4206 1759 4206 2484 
+Q 4206 3356 3778 3886 
+Q 3350 4416 2656 4416 
+Q 1963 4416 1534 3886 
+Q 1106 3356 1106 2484 
+Q 1106 1756 1393 1272 
+Q 1681 788 2241 569 
+L 2241 0 
+L 397 0 
+L 397 941 
+L 763 941 
+L 763 513 
+L 1806 513 
+Q 1153 784 772 1334 
+Q 391 1884 391 2553 
+Q 391 3025 570 3434 
+Q 750 3844 1094 4166 
+Q 1403 4450 1803 4600 
+Q 2203 4750 2656 4750 
+Q 3109 4750 3506 4601 
+Q 3903 4453 4213 4166 
+Q 4559 3844 4740 3433 
+Q 4922 3022 4922 2553 
+Q 4922 1888 4539 1336 
+Q 4156 784 3500 513 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3a8" d="M 4138 2850 
+L 4138 3756 
+Q 4134 4666 4738 4666 
+L 5366 4666 
+L 5366 4331 
+L 5047 4331 
+Q 4763 4331 4769 3756 
+L 4769 2797 
+Q 4769 1906 4350 1534 
+Q 3988 1206 3150 1159 
+L 3150 331 
+L 3744 331 
+L 3744 0 
+L 1922 0 
+L 1922 331 
+L 2516 331 
+L 2516 1159 
+Q 1656 1206 1313 1534 
+Q 894 1928 897 2797 
+L 897 3756 
+Q 903 4331 619 4331 
+L 300 4331 
+L 300 4666 
+L 928 4666 
+Q 1531 4666 1528 3756 
+L 1528 2850 
+Q 1525 2100 1819 1803 
+Q 2025 1597 2516 1519 
+L 2516 4331 
+L 1922 4331 
+L 1922 4666 
+L 3744 4666 
+L 3744 4331 
+L 3150 4331 
+L 3150 1519 
+Q 3638 1594 3844 1803 
+Q 4138 2100 4138 2850 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3d" d="M 678 2894 
+L 4684 2894 
+L 4684 2394 
+L 678 2394 
+L 678 2894 
+z
+M 678 1619 
+L 4684 1619 
+L 4684 1119 
+L 678 1119 
+L 678 1619 
+z
+" transform="scale(0.015625)"/>
+     <path id="STIXSizeOneSym-Regular-221a" d="M 6970 9933 
+L 3373 -1888 
+L 3104 -1888 
+L 1626 2918 
+Q 1555 3149 1465 3251 
+Q 1376 3354 1229 3354 
+Q 1011 3354 794 3181 
+L 717 3309 
+L 1766 4115 
+L 1926 4115 
+L 3379 -602 
+L 3405 -602 
+L 6605 9933 
+L 6970 9933 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-35" d="M 3219 4666 
+L 3219 4153 
+L 1081 4153 
+L 1081 2816 
+Q 1244 2928 1461 2984 
+Q 1678 3041 1947 3041 
+Q 2703 3041 3140 2622 
+Q 3578 2203 3578 1478 
+Q 3578 738 3136 323 
+Q 2694 -91 1894 -91 
+Q 1572 -91 1234 -12 
+Q 897 66 544 225 
+L 544 1131 
+L 897 1131 
+Q 925 688 1179 453 
+Q 1434 219 1894 219 
+Q 2388 219 2653 544 
+Q 2919 869 2919 1478 
+Q 2919 2084 2655 2407 
+Q 2391 2731 1894 2731 
+Q 1613 2731 1398 2631 
+Q 1184 2531 1019 2322 
+L 750 2322 
+L 750 4666 
+L 3219 4666 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#DejaVuSerif-Italic-76" transform="translate(0 0.140625)"/>
+    <use xlink:href="#DejaVuSans-54" transform="translate(60.733151 37.721875) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3a6" transform="translate(56.494141 -25.8125) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3a9" transform="translate(116.477148 0.140625)"/>
+    <use xlink:href="#DejaVuSerif-Italic-76" transform="translate(199.387305 0.140625)"/>
+    <use xlink:href="#DejaVuSerif-3a8" transform="translate(255.881445 -15.43125) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(338.82832 0.140625)"/>
+    <use xlink:href="#STIXSizeOneSym-Regular-221a" transform="translate(441.582227 15.53125) scale(0.57161)"/>
+    <use xlink:href="#DejaVuSerif-35" transform="translate(514.463345 -0.15625)"/>
+    <path d="M 501.963345 97.5 
+L 501.963345 103.75 
+L 590.586392 103.75 
+L 590.586392 97.5 
+L 501.963345 97.5 
+z
+"/>
+   </g>
+  </g>
+ </g>
+</svg><text x="400" y="932" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></svg>

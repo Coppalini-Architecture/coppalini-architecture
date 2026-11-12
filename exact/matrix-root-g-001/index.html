@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CA-ALG-001: direct integer calculation of the stated finite matrix root.">
+  <link rel="canonical" href="https://eulershiddenl.ink/exact/matrix-root-g-001/">
+  <link rel="describedby" type="application/json" href="../read-registry.json">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../exact-reader.css">
+  <script defer src="../exact-reader.js"></script>
+  <title>CA-ALG-001 · Exact Reader</title>
+</head>
+<body class="exact-page">
+  <a class="skip-link" href="/exact/matrix-root-g-001/#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture">Constructions</a><a href="/formalism">Basis</a></nav></div></header>
+  <main id="main">
+    <p class="exact-crumb"><a href="/exact/">Exact Reader</a> / CA-ALG-001</p>
+    <section class="exact-hero" aria-labelledby="record-title">
+      <p class="eyebrow">Exact theorem · real 2×2 matrices</p>
+      <h1 id="record-title">Finite matrix root</h1>
+      <p class="deck">Direct integer multiplication for the declared commutator G = [Q, Ω].</p>
+      <p class="summary">This record is a reproducible calculation on the displayed inputs. It preserves the scope of CA-ALG-001 in the public claim register.</p>
+      <nav class="exact-actions" aria-label="Matrix root sources"><a href="../../research/claims.json">Historical claim source</a><a href="../../papers/theory-of-everything-contact-record-r27.pdf">Source edition</a><a href="../read-registry.json">Registry JSON</a></nav>
+    </section>
+    <section class="section" aria-labelledby="calculation-title">
+      <div class="exact-section-title"><p class="eyebrow">Deterministic check</p><h2 id="calculation-title">Declared input and output</h2><p>The declared result is shown below. Run the check to reproduce it locally in the browser.</p></div>
+      <div class="exact-calculator exact-calculator-grid">
+        <div class="exact-declared">
+          <p class="exact-tag">Declared input</p>
+          <div class="exact-matrices">
+            <div class="exact-matrix"><strong>Q</strong><pre data-input-q>[[1, 1], [1, 0]]</pre></div>
+            <div class="exact-matrix"><strong>Ω</strong><pre data-input-omega>[[0, 1], [-1, 0]]</pre></div>
+          </div>
+          <p class="exact-tag">Declared result</p>
+          <pre class="exact-expected" data-exact-expected>G = [Q, Ω] = [[-2, 1], [1, 2]]
+G² = [[5, 0], [0, 5]]
+tr(G) = 0
+det(G) = -5</pre>
+          <p class="exact-method">Method: form QΩ − ΩQ, square G, then compute its trace and determinant.</p>
+        </div>
+        <div class="exact-execution">
+          <p class="exact-tag">Browser execution</p>
+          <h3>Recompute this record</h3>
+          <p>Run the integer calculation and compare its output with the declared result.</p>
+          <button type="button" data-exact-recompute>Run exact check</button>
+          <output class="exact-output" data-exact-output aria-live="polite">Ready to recompute.</output>
+          <p class="exact-run-status" data-exact-status aria-live="polite">Execution status: ready.</p>
+          <noscript><p>Enable JavaScript to run the browser check. The inputs, declared result, and source links remain available above.</p></noscript>
+        </div>
+      </div>
+      <table class="exact-spec"><tbody><tr><th scope="row">Procedure</th><td>Compute QΩ − ΩQ; square the resulting matrix; compute trace and determinant.</td></tr><tr><th scope="row">Expected output</th><td>G = [[−2, 1], [1, 2]], G² = 5I, tr(G) = 0, det(G) = −5.</td></tr><tr><th scope="row">Receipt</th><td><a href="../read-registry.json">Declared input and result</a>; execution output appears after running the check above.</td></tr><tr><th scope="row">Boundary</th><td>Displayed real 2×2 matrices and their direct algebraic consequences.</td></tr></tbody></table>
+      <p class="exact-boundary"><strong>Boundary.</strong> The calculation establishes the stated finite matrix identities. Physical applications retain their own equations, parameters, observables, calibration, and evidence path.</p>
+    </section>
+  </main>
+  <footer class="site-footer">Coppalini Architecture · Exact Reader record CA-ALG-001</footer>
+</body>
+</html>

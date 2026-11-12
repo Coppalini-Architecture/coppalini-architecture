@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-grassmann-title"><title id="lineage-grassmann-title">H. Grassmann — Oriented area. Exchange two directions and reverse their oriented area. u wedge v equals minus v wedge u.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#bf6f70" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M749,42h18 M758,33v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M33,1008h18 M42,999v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M749,1008h18 M758,999v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#bf6f70"/><text x="76" y="92" font-size="18" fill="#bf6f70" text-anchor="start" font-family="monospace" >08</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1844 AD</text><text x="400" y="145" font-size="17" fill="#bf6f70" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">ORIENTED AREA</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >H. Grassmann</text><path d="M320,249H480" stroke="#bf6f70"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#bf6f70"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Exchange two directions and reverse their</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >oriented area.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M185.00,625.00 L295.00,600.00 L330.00,470.00 L220.00,495.00 Z" stroke="#bf6f70" stroke-width="2" fill="#bf6f70" fill-opacity="0.08235294117647059" /><path d="M185,625 L295,600" stroke="#6d9fbd" stroke-width="3" fill="none" /><path d="M285.47,607.30 L295,600 L283.26,597.54" stroke="#6d9fbd" stroke-width="3" fill="none" /><path d="M185,625 L220,495" stroke="#c98b57" stroke-width="3" fill="none" /><path d="M221.99,506.83 L220,495 L212.33,504.23" stroke="#c98b57" stroke-width="3" fill="none" /><text x="255" y="675" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">u ∧ v</text><text x="265" y="555" fill="#243d40" font-size="40" text-anchor="middle" font-family="Georgia,serif">+</text><path d="M465.00,625.00 L575.00,600.00 L610.00,470.00 L500.00,495.00 Z" stroke="#bf6f70" stroke-width="2" fill="#bf6f70" fill-opacity="0.08235294117647059" /><path d="M465,625 L575,600" stroke="#6d9fbd" stroke-width="3" fill="none" /><path d="M565.47,607.30 L575,600 L563.26,597.54" stroke="#6d9fbd" stroke-width="3" fill="none" /><path d="M465,625 L500,495" stroke="#c98b57" stroke-width="3" fill="none" /><path d="M501.99,506.83 L500,495 L492.33,504.23" stroke="#c98b57" stroke-width="3" fill="none" /><text x="535" y="675" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">v ∧ u</text><text x="545" y="555" fill="#243d40" font-size="40" text-anchor="middle" font-family="Georgia,serif">−</text></g><g transform="translate(103.542 766.000) scale(2.88271)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="grassmann-figure_1">
+  <g id="grassmann-patch_1">
+   <path d="M 0 31.914375 
+L 205.68 31.914375 
+L 205.68 0 
+L 0 0 
+L 0 31.914375 
+z
+" style="fill: none"/>
+  </g>
+  <g id="grassmann-text_1">
+   <!-- $u\wedge v=-v\wedge u$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.235312) scale(0.3 -0.3)">
+    <defs>
+     <path id="grassmann-DejaVuSans-Oblique-75" d="M 428 1388 
+L 838 3500 
+L 1416 3500 
+L 1006 1409 
+Q 975 1256 961 1147 
+Q 947 1038 947 966 
+Q 947 700 1109 554 
+Q 1272 409 1569 409 
+Q 2031 409 2368 721 
+Q 2706 1034 2809 1563 
+L 3194 3500 
+L 3769 3500 
+L 3091 0 
+L 2516 0 
+L 2631 550 
+Q 2388 244 2052 76 
+Q 1716 -91 1338 -91 
+Q 878 -91 622 161 
+Q 366 413 366 863 
+Q 366 956 381 1097 
+Q 397 1238 428 1388 
+z
+" transform="scale(0.015625)"/>
+     <path id="grassmann-DejaVuSans-2227" d="M 825 0 
+L 1953 3706 
+L 2734 3706 
+L 3859 0 
+L 3250 0 
+L 2344 2938 
+L 1434 0 
+L 825 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="grassmann-DejaVuSans-Oblique-76" d="M 459 3500 
+L 1069 3500 
+L 1581 525 
+L 3256 3500 
+L 3866 3500 
+L 1875 0 
+L 1100 0 
+L 459 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="grassmann-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="grassmann-DejaVuSans-2212" d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#grassmann-DejaVuSans-Oblique-75" transform="translate(0 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-2227" transform="translate(82.861328 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-Oblique-76" transform="translate(175.537109 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-3d" transform="translate(254.199219 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-2212" transform="translate(357.470703 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-Oblique-76" transform="translate(441.259766 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-2227" transform="translate(519.921875 0.09375)"/>
+    <use xlink:href="#grassmann-DejaVuSans-Oblique-75" transform="translate(612.597656 0.09375)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Exterior product · ordered directions</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

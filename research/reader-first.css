@@ -1,0 +1,10 @@
+/* Reader-first metadata strip; scoped to avoid changes elsewhere in the site. */
+.ca-reader-first { box-sizing: border-box; max-width: 1160px; margin: 22px auto 10px; padding: 17px 20px; border: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 16%, transparent); border-radius: 6px; background: color-mix(in srgb, currentColor 2%, transparent); }
+.ca-reader-first * { box-sizing: border-box; }
+.ca-reader-first__tag { margin: 0 0 7px; font: 600 10px/1.6 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .14em; opacity: .75; }
+.ca-reader-first__heading { margin: 0 0 7px; font: 600 clamp(17px,2.2vw,22px)/1.25 system-ui,sans-serif; }
+.ca-reader-first__body { max-width: 90ch; margin: 0 0 9px; font: 400 13px/1.65 system-ui,sans-serif; }
+.ca-reader-first__path { margin: 0 0 12px; font: 500 12px/1.65 system-ui,sans-serif; letter-spacing: .01em; }
+.ca-reader-first__links { display: flex; flex-wrap: wrap; gap: 10px 16px; font: 600 12px/1.5 system-ui,sans-serif; }
+.ca-reader-first__links a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 780px) { .ca-reader-first { margin: 14px 18px 6px; padding: 15px; } }

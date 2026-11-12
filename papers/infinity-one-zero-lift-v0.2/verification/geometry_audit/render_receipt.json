@@ -1,0 +1,22 @@
+{
+  "published_reference_frames_checked": 5,
+  "identical_thin_arc_element_prefixes": 4,
+  "frame_elements_per_standard_prefix": 41,
+  "equation_center": [
+    400,
+    836
+  ],
+  "rendered_graph_edge_elements": 28,
+  "rendered_graph_vertex_elements": 8,
+  "rendered_graph_matching_sizes": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "computed_matrix_drawn_without_manual_vertex_edits": true,
+  "new_cover_emitted": false
+}

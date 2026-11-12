@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Minimum Endurance Delta cover</title>
+  <desc id="desc">A quiet sevenfold circular diagram: a heptagon carries the matching partition around a central delta.</desc>
+  <rect width="800" height="1050" fill="#faf8f3"/>
+  <text x="400" y="140" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">Minimum</text>
+  <text x="400" y="191" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">Endurance Δ</text>
+
+  <g stroke-linecap="round">
+    <circle cx="400" cy="555" r="204" fill="none" stroke="#d5c9b3" stroke-width="1.4"/>
+    <circle cx="400" cy="555" r="187" fill="none" stroke="#d6b07a" stroke-width="1.2"/>
+    <circle cx="400" cy="555" r="156" fill="#faf8f3" stroke="#ebe4d7" stroke-width="1.2"/>
+    <polygon points="400,405 517.3,461.5 546.2,588.4 465.1,690.2 334.9,690.2 253.8,588.4 282.7,461.5" fill="#d6a9a6" opacity=".53" stroke="#a5adc8" stroke-width="2"/>
+    <path d="M400 555L400 405M400 555L517.3 461.5M400 555L546.2 588.4M400 555L465.1 690.2M400 555L334.9 690.2M400 555L253.8 588.4M400 555L282.7 461.5" fill="none" stroke="#b8c3ba" stroke-width="1.3"/>
+    <path d="M400 479L464 591H336Z" fill="#faf8f3" stroke="#d6b07a" stroke-width="2.2"/>
+    <text x="400" y="567" text-anchor="middle" fill="#4a4741" font-family="Georgia, 'Times New Roman', serif" font-size="42">Δ</text>
+    <g fill="#faf8f3" stroke="#d6b07a" stroke-width="1.6">
+      <circle cx="400" cy="405" r="4.5"/><circle cx="517.3" cy="461.5" r="4.5"/><circle cx="546.2" cy="588.4" r="4.5"/>
+      <circle cx="465.1" cy="690.2" r="4.5"/><circle cx="334.9" cy="690.2" r="4.5"/><circle cx="253.8" cy="588.4" r="4.5"/><circle cx="282.7" cy="461.5" r="4.5"/>
+    </g>
+    <g stroke="#d6b07a" stroke-width="1.2">
+      <path d="M400 334V345"/><path d="M510 363l-5.5 9.5"/><path d="M591 444l-9.5 5.5"/>
+      <path d="M621 555h-11"/><path d="M591 666l-9.5-5.5"/><path d="M510 747l-5.5-9.5"/>
+      <path d="M400 776v-11"/><path d="M290 747l5.5-9.5"/><path d="M209 666l9.5-5.5"/>
+      <path d="M179 555h11"/><path d="M209 444l9.5 5.5"/><path d="M290 363l5.5 9.5"/>
+    </g>
+  </g>
+
+  <text x="400" y="833" text-anchor="middle" fill="#4a4741" font-family="Georgia, 'Times New Roman', serif" font-size="29">28 = 7 × 4</text>
+  <text x="400" y="928" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="3.2">ANTHONY VITO COPPA</text>
+  <text x="400" y="954" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="2.5">COPPALINI ARCHITECTURE</text>
+</svg>

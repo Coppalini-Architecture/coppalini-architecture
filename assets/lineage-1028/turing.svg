@@ -1,0 +1,303 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-turing-title"><title id="lineage-turing-title">Alan Turing — Decision limit. No total algorithm decides every computation&#x27;s termination. The halting language is not decidable.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#b79d47" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,42h18 M758,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M33,1008h18 M42,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,1008h18 M758,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><text x="76" y="92" font-size="18" fill="#b79d47" text-anchor="start" font-family="monospace" >20</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1936 / 1937 AD</text><text x="400" y="145" font-size="17" fill="#b79d47" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">DECISION LIMIT</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Alan Turing</text><path d="M320,249H480" stroke="#b79d47"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#b79d47"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >No total algorithm decides every</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >computation&#x27;s termination.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M176.00,510.00 L240.00,510.00 L240.00,574.00 L176.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="208" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">0</text><path d="M240.00,510.00 L304.00,510.00 L304.00,574.00 L240.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="272" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">1</text><path d="M304.00,510.00 L368.00,510.00 L368.00,574.00 L304.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="336" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">0</text><path d="M368.00,510.00 L432.00,510.00 L432.00,574.00 L368.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="400" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">1</text><path d="M432.00,510.00 L496.00,510.00 L496.00,574.00 L432.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="464" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">0</text><path d="M496.00,510.00 L560.00,510.00 L560.00,574.00 L496.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="528" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">1</text><path d="M560.00,510.00 L624.00,510.00 L624.00,574.00 L560.00,574.00 Z" stroke="#b7bdb0" stroke-width="1.5" fill="none" /><text x="592" y="552" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">0</text><path d="M370.00,592.00 L430.00,592.00 L400.00,567.00 Z" stroke="#b79d47" stroke-width="3" fill="#b79d47" fill-opacity="0.08235294117647059" /><path d="M400,592 L400,637" stroke="#b79d47" stroke-width="3" fill="none" /><path d="M400,637 L290,688 M400,637 L510,688" stroke="#b79d47" stroke-width="2" fill="none" /><text x="290" y="718" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">halt?</text><text x="510" y="718" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">run?</text></g><g transform="translate(95.000 775.356) scale(2.27036)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="turing-figure_1">
+  <g id="turing-patch_1">
+   <path d="M 0 32.28 
+L 268.68 32.28 
+L 268.68 0 
+L 0 0 
+L 0 32.28 
+z
+" style="fill: none"/>
+  </g>
+  <g id="turing-text_1">
+   <!-- $\mathrm{HALT}\notin\mathrm{Decidable}$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.600937) scale(0.3 -0.3)">
+    <defs>
+     <path id="turing-DejaVuSans-48" d="M 628 4666 
+L 1259 4666 
+L 1259 2753 
+L 3553 2753 
+L 3553 4666 
+L 4184 4666 
+L 4184 0 
+L 3553 0 
+L 3553 2222 
+L 1259 2222 
+L 1259 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-41" d="M 2188 4044 
+L 1331 1722 
+L 3047 1722 
+L 2188 4044 
+z
+M 1831 4666 
+L 2547 4666 
+L 4325 0 
+L 3669 0 
+L 3244 1197 
+L 1141 1197 
+L 716 0 
+L 50 0 
+L 1831 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-4c" d="M 628 4666 
+L 1259 4666 
+L 1259 531 
+L 3531 531 
+L 3531 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-54" d="M -19 4666 
+L 3928 4666 
+L 3928 4134 
+L 2272 4134 
+L 2272 0 
+L 1638 0 
+L 1638 4134 
+L -19 4134 
+L -19 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-2209" d="M 3875 5347 
+L 4344 5175 
+L 4116 4544 
+L 5028 4544 
+L 5028 4047 
+L 3934 4047 
+L 3356 2459 
+L 5028 2459 
+L 5028 1959 
+L 3175 1959 
+L 2625 450 
+Q 2738 434 2850 434 
+L 5028 434 
+L 5028 -63 
+L 2850 -63 
+Q 2647 -63 2450 -28 
+L 2138 -884 
+L 1669 -713 
+L 1969 113 
+Q 1831 172 1694 247 
+Q 1141 556 844 1106 
+Q 547 1656 547 2241 
+Q 547 2819 844 3369 
+Q 1141 3919 1695 4231 
+Q 2250 4544 2850 4544 
+L 3581 4544 
+L 3875 5347 
+z
+M 1072 1959 
+Q 1072 1728 1291 1353 
+Q 1556 900 1959 675 
+Q 2050 625 2141 584 
+L 2641 1959 
+L 1072 1959 
+z
+M 2825 2459 
+L 3400 4047 
+L 2850 4047 
+Q 2391 4047 1959 3803 
+Q 1569 3581 1291 3125 
+Q 1063 2750 1063 2459 
+L 2825 2459 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-44" d="M 1259 4147 
+L 1259 519 
+L 2022 519 
+Q 2988 519 3436 956 
+Q 3884 1394 3884 2338 
+Q 3884 3275 3436 3711 
+Q 2988 4147 2022 4147 
+L 1259 4147 
+z
+M 628 4666 
+L 1925 4666 
+Q 3281 4666 3915 4102 
+Q 4550 3538 4550 2338 
+Q 4550 1131 3912 565 
+Q 3275 0 1925 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-65" d="M 3597 1894 
+L 3597 1613 
+L 953 1613 
+Q 991 1019 1311 708 
+Q 1631 397 2203 397 
+Q 2534 397 2845 478 
+Q 3156 559 3463 722 
+L 3463 178 
+Q 3153 47 2828 -22 
+Q 2503 -91 2169 -91 
+Q 1331 -91 842 396 
+Q 353 884 353 1716 
+Q 353 2575 817 3079 
+Q 1281 3584 2069 3584 
+Q 2775 3584 3186 3129 
+Q 3597 2675 3597 1894 
+z
+M 3022 2063 
+Q 3016 2534 2758 2815 
+Q 2500 3097 2075 3097 
+Q 1594 3097 1305 2825 
+Q 1016 2553 972 2059 
+L 3022 2063 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-63" d="M 3122 3366 
+L 3122 2828 
+Q 2878 2963 2633 3030 
+Q 2388 3097 2138 3097 
+Q 1578 3097 1268 2742 
+Q 959 2388 959 1747 
+Q 959 1106 1268 751 
+Q 1578 397 2138 397 
+Q 2388 397 2633 464 
+Q 2878 531 3122 666 
+L 3122 134 
+Q 2881 22 2623 -34 
+Q 2366 -91 2075 -91 
+Q 1284 -91 818 406 
+Q 353 903 353 1747 
+Q 353 2603 823 3093 
+Q 1294 3584 2113 3584 
+Q 2378 3584 2631 3529 
+Q 2884 3475 3122 3366 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-69" d="M 603 3500 
+L 1178 3500 
+L 1178 0 
+L 603 0 
+L 603 3500 
+z
+M 603 4863 
+L 1178 4863 
+L 1178 4134 
+L 603 4134 
+L 603 4863 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-64" d="M 2906 2969 
+L 2906 4863 
+L 3481 4863 
+L 3481 0 
+L 2906 0 
+L 2906 525 
+Q 2725 213 2448 61 
+Q 2172 -91 1784 -91 
+Q 1150 -91 751 415 
+Q 353 922 353 1747 
+Q 353 2572 751 3078 
+Q 1150 3584 1784 3584 
+Q 2172 3584 2448 3432 
+Q 2725 3281 2906 2969 
+z
+M 947 1747 
+Q 947 1113 1208 752 
+Q 1469 391 1925 391 
+Q 2381 391 2643 752 
+Q 2906 1113 2906 1747 
+Q 2906 2381 2643 2742 
+Q 2381 3103 1925 3103 
+Q 1469 3103 1208 2742 
+Q 947 2381 947 1747 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-61" d="M 2194 1759 
+Q 1497 1759 1228 1600 
+Q 959 1441 959 1056 
+Q 959 750 1161 570 
+Q 1363 391 1709 391 
+Q 2188 391 2477 730 
+Q 2766 1069 2766 1631 
+L 2766 1759 
+L 2194 1759 
+z
+M 3341 1997 
+L 3341 0 
+L 2766 0 
+L 2766 531 
+Q 2569 213 2275 61 
+Q 1981 -91 1556 -91 
+Q 1019 -91 701 211 
+Q 384 513 384 1019 
+Q 384 1609 779 1909 
+Q 1175 2209 1959 2209 
+L 2766 2209 
+L 2766 2266 
+Q 2766 2663 2505 2880 
+Q 2244 3097 1772 3097 
+Q 1472 3097 1187 3025 
+Q 903 2953 641 2809 
+L 641 3341 
+Q 956 3463 1253 3523 
+Q 1550 3584 1831 3584 
+Q 2591 3584 2966 3190 
+Q 3341 2797 3341 1997 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-62" d="M 3116 1747 
+Q 3116 2381 2855 2742 
+Q 2594 3103 2138 3103 
+Q 1681 3103 1420 2742 
+Q 1159 2381 1159 1747 
+Q 1159 1113 1420 752 
+Q 1681 391 2138 391 
+Q 2594 391 2855 752 
+Q 3116 1113 3116 1747 
+z
+M 1159 2969 
+Q 1341 3281 1617 3432 
+Q 1894 3584 2278 3584 
+Q 2916 3584 3314 3078 
+Q 3713 2572 3713 1747 
+Q 3713 922 3314 415 
+Q 2916 -91 2278 -91 
+Q 1894 -91 1617 61 
+Q 1341 213 1159 525 
+L 1159 0 
+L 581 0 
+L 581 4863 
+L 1159 4863 
+L 1159 2969 
+z
+" transform="scale(0.015625)"/>
+     <path id="turing-DejaVuSans-6c" d="M 603 4863 
+L 1178 4863 
+L 1178 0 
+L 603 0 
+L 603 4863 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#turing-DejaVuSans-48" transform="translate(0 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-41" transform="translate(75.195312 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-4c" transform="translate(143.603516 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-54" transform="translate(199.316406 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-2209" transform="translate(279.882812 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-44" transform="translate(386.474609 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-65" transform="translate(463.476562 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-63" transform="translate(525 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-69" transform="translate(579.980469 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-64" transform="translate(607.763672 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-61" transform="translate(671.240234 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-62" transform="translate(732.519531 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-6c" transform="translate(795.996094 0.453125)"/>
+    <use xlink:href="#turing-DejaVuSans-65" transform="translate(823.779297 0.453125)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >All programs and inputs · total decision</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

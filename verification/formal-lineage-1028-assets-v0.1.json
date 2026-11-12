@@ -1,0 +1,155 @@
+{
+  "status": "passed",
+  "scope": "Formal Lineage card-art presence, SVG type, and manifest hash verification.",
+  "source": "assets/lineage-1028/lineage-data.json",
+  "data_sha256": "2edcff5c71a3b48b6aec9faaed1c5e7f4e7ace155ca9167fcdad1bc7b76f7b5f",
+  "cards": 24,
+  "plates_verified": 24,
+  "errors": [],
+  "plates": [
+    {
+      "id": "euclid",
+      "path": "assets/lineage-1028/euclid.svg",
+      "sha256": "85f8fa111ec179e17da9097da3c40052924eeb9b97afac5143224c1e3756de35",
+      "svg": true
+    },
+    {
+      "id": "brahmagupta",
+      "path": "assets/lineage-1028/brahmagupta.svg",
+      "sha256": "ea368dce20dfad1882fde20c4fae0cc6622d83e5dd3c5148e20c112be2e722e2",
+      "svg": true
+    },
+    {
+      "id": "fibonacci",
+      "path": "assets/lineage-1028/fibonacci.svg",
+      "sha256": "7e688a9b7a494297da51e1dd731920968822b43f56c3c928ce585e4bf0233149",
+      "svg": true
+    },
+    {
+      "id": "newton",
+      "path": "assets/lineage-1028/newton.svg",
+      "sha256": "1a82b3de44ee7447c88b28b7ed69a1942da54fc81faa0d051edce6434413e68b",
+      "svg": true
+    },
+    {
+      "id": "euler",
+      "path": "assets/lineage-1028/euler.svg",
+      "sha256": "0a5a168e0c93b18d697f28c77243886993d497ae40927e2270e66042405d50fe",
+      "svg": true
+    },
+    {
+      "id": "lagrange",
+      "path": "assets/lineage-1028/lagrange.svg",
+      "sha256": "2f1c22a0fba9120d8f29cd8394182bdf5622a8a3ad54004b96dde5b42e687a1a",
+      "svg": true
+    },
+    {
+      "id": "gauss",
+      "path": "assets/lineage-1028/gauss.svg",
+      "sha256": "fb571b9d8f5b43f5b5f4338bbd42c49403a06630644ba4da7938218410318a58",
+      "svg": true
+    },
+    {
+      "id": "grassmann",
+      "path": "assets/lineage-1028/grassmann.svg",
+      "sha256": "13317c13dd533e25aebe04767d843a0b5242e1899a49493a7b192e018a212829",
+      "svg": true
+    },
+    {
+      "id": "riemann",
+      "path": "assets/lineage-1028/riemann.svg",
+      "sha256": "8d3e608cf8c3f1179a00428a92cafcfc717e99c82106f7d31daba44cdc8bc8d4",
+      "svg": true
+    },
+    {
+      "id": "cayley",
+      "path": "assets/lineage-1028/cayley.svg",
+      "sha256": "1faf1a96010d4cee131c072853dee5b1117c6d4b308f359eaf7f4ea4fc366f3b",
+      "svg": true
+    },
+    {
+      "id": "maxwell",
+      "path": "assets/lineage-1028/maxwell.svg",
+      "sha256": "65c631a17d8dcec716b0fd9399ad6f0edaa1c189046bdf16f5e8dc1071a8959d",
+      "svg": true
+    },
+    {
+      "id": "mendel",
+      "path": "assets/lineage-1028/mendel.svg",
+      "sha256": "e4d6bae0b2613abb911276e1323f6b0b5dc80db2827048f8d20607ea27696304",
+      "svg": true
+    },
+    {
+      "id": "boltzmann",
+      "path": "assets/lineage-1028/boltzmann.svg",
+      "sha256": "8bd2d2408618600a1f768df1ab43698e4454aaa51268e6cca0587e89f1b472da",
+      "svg": true
+    },
+    {
+      "id": "poincare",
+      "path": "assets/lineage-1028/poincare.svg",
+      "sha256": "0ac6ad75e9a221bdcc091a564c898d4aff3919e981479b51e24d4aa0ecc438c5",
+      "svg": true
+    },
+    {
+      "id": "einstein",
+      "path": "assets/lineage-1028/einstein.svg",
+      "sha256": "6fbb17e3734f34ccca3b93efa08144e3c6e1e614efd6352b40b8d48c2c1f25fe",
+      "svg": true
+    },
+    {
+      "id": "noether",
+      "path": "assets/lineage-1028/noether.svg",
+      "sha256": "4b38b518b9f9058e054aa9208fc55b36ba4bf6ecbc8c1c7e447cba8b9613ae9e",
+      "svg": true
+    },
+    {
+      "id": "schrodinger",
+      "path": "assets/lineage-1028/schrodinger.svg",
+      "sha256": "5629bbdd616b86cbfe62f09fad4e2310a213fb2566dd0e94914267b6eed691fc",
+      "svg": true
+    },
+    {
+      "id": "dirac",
+      "path": "assets/lineage-1028/dirac.svg",
+      "sha256": "fbf2b35a95ef90d71efea2d4e4eded139b4a4561af7bd005cf2dd4594aa32b91",
+      "svg": true
+    },
+    {
+      "id": "godel-rosser",
+      "path": "assets/lineage-1028/godel-rosser.svg",
+      "sha256": "9129fe30d0738a6560111597a2fb7c35d2a0372a052bfad14c6f5a5d914a0238",
+      "svg": true
+    },
+    {
+      "id": "turing",
+      "path": "assets/lineage-1028/turing.svg",
+      "sha256": "5eeaaf5ca43f79f5946d4c7b5f32880a06a33f9d078ab7afd4705866e43c36ed",
+      "svg": true
+    },
+    {
+      "id": "hodge",
+      "path": "assets/lineage-1028/hodge.svg",
+      "sha256": "844b33eaa01f586a81d8420bbc670129d697d4545fb5482beadd77b4f7adff67",
+      "svg": true
+    },
+    {
+      "id": "shannon",
+      "path": "assets/lineage-1028/shannon.svg",
+      "sha256": "45668d56fe555d04e80418f05135f8de2279fc7abbbedc24506f333d22baaf65",
+      "svg": true
+    },
+    {
+      "id": "aharonov-bohm",
+      "path": "assets/lineage-1028/aharonov-bohm.svg",
+      "sha256": "c722dea5c091ae19dce4cba467bae33b7059c22ce4e6c44ecf6ad8b7f6f47a04",
+      "svg": true
+    },
+    {
+      "id": "simon-berry",
+      "path": "assets/lineage-1028/simon-berry.svg",
+      "sha256": "38dbf1d60d4303de3b3b8cd347a501f182c1bc38e2fa4355251c477e14c329bc",
+      "svg": true
+    }
+  ]
+}

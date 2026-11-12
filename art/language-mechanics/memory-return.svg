@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">Memory Return</title><desc id="desc">The heptagonal base loop closes at one marked vertex. A separate lifted interval has two distinct endpoints projecting to that vertex. Declared illustrative regular cover p:ℝ→∂P₇, p(t)=the constant-speed polygonal boundary point at t mod 1. The chosen lift t↦t runs from 0 to 1, so the deck defect is translation +1. Base closure does not identify lifted endpoints. This is a cover-space witness, not a general definition of memory.</desc><defs><marker id="flow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">LANGUAGE MECHANICS / 007</text><text x="400" y="149" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >Memory Return</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linejoin="miter"><path d="M400,630 L306.18022,584.81878 L283.00865,483.29749 L347.93395,401.88374 L452.06605,401.88374 L516.99135,483.29749 L493.81978,584.81878 Z" opacity=".8"/><path d="M516.99135,483.29749 L493.81978,584.81878 L400,630" stroke="#a2b4cd" stroke-width="2"/><circle cx="400" cy="630" r="5" fill="#faf8f3" /><text x="548" y="638" font-family="Georgia, Times New Roman, serif" font-size="17" fill="#262522" stroke="none" text-anchor="middle" >γ(0) = γ(1)</text><path d="M285,710 L400,630" stroke-dasharray="3 6" opacity=".5"/><path d="M515,710 L400,630" stroke-dasharray="3 6" opacity=".5"/><path d="M285,710 L515,710" marker-end="url(#flow)" stroke="#a6a4c5" stroke-width="1.7"/><circle cx="285" cy="710" r="5" fill="#a2b4cd" /><circle cx="515" cy="710" r="5" fill="#d8a6a3" /><text x="285" y="744" font-family="Georgia, Times New Roman, serif" font-size="19" fill="#262522" stroke="none" text-anchor="middle" >γ̃(0)</text><text x="515" y="744" font-family="Georgia, Times New Roman, serif" font-size="19" fill="#262522" stroke="none" text-anchor="middle" >γ̃(1)</text><text x="400" y="699" font-family="Georgia, Times New Roman, serif" font-size="20" fill="#262522" stroke="none" text-anchor="middle" >ε</text><text x="400" y="366" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">BASE LOOP</text></g><svg x="327.0406" y="821.7692" width="145.9188" height="28.4616" viewBox="0 0 123.66 24.12">
+ <title>\widetilde{\gamma}(1)=\varepsilon\cdot\widetilde{\gamma}(0)</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>\widetilde{\gamma}(1)=\varepsilon\cdot\widetilde{\gamma}(0)</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 24.12 
+L 123.66 24.12 
+L 123.66 0 
+L 0 0 
+L 0 24.12 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\widetilde{\gamma}(1)=\varepsilon\cdot\widetilde{\gamma}(0)$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 16.92) scale(0.18 -0.18)">
+    <defs>
+     <path id="STIXSizeTwoSym-Regular-303" d="M -1274 4864 
+L -1107 4864 
+Q -1280 3891 -2560 3891 
+Q -2861 3891 -3097 3916 
+Q -3334 3942 -3484 3974 
+Q -3635 4006 -4044 4102 
+Q -4454 4198 -4806 4275 
+Q -5741 4474 -6093 4474 
+Q -7021 4474 -7206 3891 
+L -7373 3891 
+Q -7200 4864 -5997 4864 
+Q -5414 4864 -3718 4474 
+Q -2842 4269 -2400 4269 
+Q -1421 4269 -1274 4864 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-3b3" d="M 2069 188 
+Q 2084 -725 1838 -1063 
+Q 1638 -1331 1422 -1338 
+Q 1091 -1347 1009 -1025 
+Q 916 -663 1488 50 
+L 1169 2988 
+L 619 2988 
+L 684 3322 
+L 1747 3322 
+L 2031 622 
+Q 2925 1575 3138 2231 
+Q 3238 2541 3200 2750 
+Q 3141 3084 3000 3138 
+L 3038 3322 
+L 3388 3322 
+Q 3706 3103 3759 2919 
+Q 3831 2656 3800 2491 
+Q 3741 2188 3303 1588 
+Q 3134 1353 2069 188 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-28" d="M 2041 -997 
+Q 1281 -656 893 83 
+Q 506 822 506 1931 
+Q 506 3044 893 3783 
+Q 1281 4522 2041 4863 
+L 2041 4556 
+Q 1559 4225 1350 3623 
+Q 1141 3022 1141 1931 
+Q 1141 844 1350 242 
+Q 1559 -359 2041 -691 
+L 2041 -997 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-31" d="M 909 0 
+L 909 331 
+L 1722 331 
+L 1722 4213 
+L 781 3603 
+L 781 4013 
+L 1919 4750 
+L 2350 4750 
+L 2350 331 
+L 3163 331 
+L 3163 0 
+L 909 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-29" d="M 453 -997 
+L 453 -691 
+Q 934 -359 1145 242 
+Q 1356 844 1356 1931 
+Q 1356 3022 1145 3623 
+Q 934 4225 453 4556 
+L 453 4863 
+Q 1216 4522 1603 3783 
+Q 1991 3044 1991 1931 
+Q 1991 822 1603 83 
+Q 1216 -656 453 -997 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3d" d="M 678 2894 
+L 4684 2894 
+L 4684 2394 
+L 678 2394 
+L 678 2894 
+z
+M 678 1619 
+L 4684 1619 
+L 4684 1119 
+L 678 1119 
+L 678 1619 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-3b5" d="M 3191 3156 
+L 3069 2541 
+L 2719 2463 
+Q 2734 2741 2538 2884 
+Q 2341 3025 2047 3025 
+Q 1753 3025 1506 2872 
+Q 1256 2716 1216 2503 
+Q 1163 2228 1394 2069 
+Q 1628 1906 2044 1906 
+L 2194 1906 
+L 2131 1578 
+L 1844 1578 
+Q 1425 1578 1113 1378 
+Q 797 1175 731 834 
+Q 681 572 909 375 
+Q 1138 175 1484 175 
+Q 1847 175 2142 340 
+Q 2438 506 2531 825 
+L 2853 747 
+L 2728 103 
+Q 2375 -9 2025 -66 
+Q 1681 -122 1441 -122 
+Q 825 -122 447 125 
+Q 75 375 166 841 
+Q 259 1331 609 1572 
+Q 794 1694 1269 1756 
+L 828 2003 
+Q 597 2134 675 2531 
+Q 753 2934 1100 3147 
+Q 1447 3356 2059 3356 
+Q 2228 3356 2544 3306 
+Q 2859 3253 3191 3156 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-22c5" d="M 678 2222 
+Q 678 2397 798 2517 
+Q 919 2638 1097 2638 
+Q 1269 2638 1391 2516 
+Q 1513 2394 1513 2222 
+Q 1513 2047 1391 1926 
+Q 1269 1806 1097 1806 
+Q 919 1806 798 1925 
+Q 678 2044 678 2222 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-30" d="M 2034 219 
+Q 2513 219 2750 744 
+Q 2988 1269 2988 2328 
+Q 2988 3391 2750 3916 
+Q 2513 4441 2034 4441 
+Q 1556 4441 1318 3916 
+Q 1081 3391 1081 2328 
+Q 1081 1269 1318 744 
+Q 1556 219 2034 219 
+z
+M 2034 -91 
+Q 1275 -91 848 546 
+Q 422 1184 422 2328 
+Q 422 3475 848 4112 
+Q 1275 4750 2034 4750 
+Q 2797 4750 3222 4112 
+Q 3647 3475 3647 2328 
+Q 3647 1184 3222 546 
+Q 2797 -91 2034 -91 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#STIXSizeTwoSym-Regular-303" transform="translate(78.207031 27.328125) scale(0.610437)"/>
+    <use xlink:href="#DejaVuSerif-Italic-3b3" transform="translate(0 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-28" transform="translate(59.765625 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-31" transform="translate(98.779297 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-29" transform="translate(162.402344 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(220.380859 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-Italic-3b5" transform="translate(323.134766 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-22c5" transform="translate(395.761719 0.015625)"/>
+    <use xlink:href="#STIXSizeTwoSym-Regular-303" transform="translate(527.162109 27.328125) scale(0.610437)"/>
+    <use xlink:href="#DejaVuSerif-Italic-3b3" transform="translate(448.955078 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-28" transform="translate(508.720703 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-30" transform="translate(547.734375 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-29" transform="translate(611.357422 0.015625)"/>
+   </g>
+  </g>
+ </g>
+</svg><text x="400" y="932" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></svg>

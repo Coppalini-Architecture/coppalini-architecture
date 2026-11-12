@@ -1,0 +1,42 @@
+{
+  "counts": {
+    "baselines": 4,
+    "endpoint_rows": 0,
+    "followup_rows": 30,
+    "relationships": {
+      "baseline_record": 4,
+      "changed_read": 5,
+      "exact_read_return_without_resolved_redox_difference": 15,
+      "returned_read_with_redox_difference": 10
+    },
+    "rows": 34,
+    "runs": 4,
+    "tied_clock_rows": 4,
+    "warnings": 2
+  },
+  "data_origin": "synthetic",
+  "dataset_id": "NOP_return_memory_synthetic_v0.1",
+  "output_sha256": {
+    "audit.json": "3f988c0e4d7c4bafc1a6f9ad33f71c2b4993a9b1baf9f06915bcd33cd5b3d238",
+    "derived.csv": "fd69ec6dd8641eb1e7b6a4c2d07113395387c8c2372f8445b9e1dbcb52ab3130"
+  },
+  "provenance": {
+    "code": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/nop_audit.py",
+      "sha256": "eaf00fc019e2e741cc8a679b97360fda506f67c99828f3a5e8fd521440205149",
+      "version": "0.2.0"
+    },
+    "data": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/examples/synthetic.csv",
+      "sha256": "c07139ffdb876f8990138cac84bf7306a848aae5d75f39aefdafdf09b758df81"
+    },
+    "metadata": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/examples/metadata.json",
+      "sha256": "4b3964064ea23fdc3a1512f5697484ce1466a56c9e4441a1357267ea7e177260"
+    }
+  },
+  "schema_version": "0.1",
+  "scope": "Input and code identity, input validation, exact arithmetic, and output identity. Receipt hashes do not certify a biological mechanism.",
+  "status": "validated_paired_data",
+  "tool_version": "0.2.0"
+}

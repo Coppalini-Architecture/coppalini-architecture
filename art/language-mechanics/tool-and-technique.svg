@@ -1,0 +1,323 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">Tool &amp; Technique</title><desc id="desc">A single measured read sits inside a declared tolerance interval. A fine terminal bar marks the point where this task stops. Illustrative scalar gauge: r−R_J=0.35ε_J with ε_J>0. The stopping rule is local to the fixed task, jurisdiction, and required function; it grants no universal sufficiency.</desc><defs><marker id="flow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">LANGUAGE MECHANICS / CA-03</text><text x="400" y="149" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >Tool &amp; Technique</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linejoin="miter"><path d="M218,550 L582,550" opacity=".5"/><path d="M257,550 L543,550" stroke="#a4bfae" stroke-width="17" opacity=".3"/><path d="M257,541 L257,559" opacity=".5"/><path d="M285.6,541 L285.6,559" opacity=".5"/><path d="M314.2,541 L314.2,559" opacity=".5"/><path d="M342.8,541 L342.8,559" opacity=".5"/><path d="M371.4,541 L371.4,559" opacity=".5"/><path d="M400,541 L400,559" opacity=".5"/><path d="M428.6,541 L428.6,559" opacity=".5"/><path d="M457.2,541 L457.2,559" opacity=".5"/><path d="M485.8,541 L485.8,559" opacity=".5"/><path d="M514.4,541 L514.4,559" opacity=".5"/><path d="M543,541 L543,559" opacity=".5"/><path d="M257,530 L257,570" /><path d="M543,530 L543,570" /><circle cx="450.05" cy="550" r="5" fill="#a2b4cd" /><path d="M450.05,590 L450.05,637" stroke-width="1.8"/><path d="M439.05,637 L461.05,637" stroke-width="2"/><text x="257" y="512" font-family="Georgia, Times New Roman, serif" font-size="17" fill="#262522" stroke="none" text-anchor="middle">−ε<tspan baseline-shift="sub" font-size="11.899999999999999">J</tspan></text><text x="543" y="512" font-family="Georgia, Times New Roman, serif" font-size="17" fill="#262522" stroke="none" text-anchor="middle">ε<tspan baseline-shift="sub" font-size="11.899999999999999">J</tspan></text><text x="450.05" y="521" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#262522" stroke="none" text-anchor="middle">r − R<tspan baseline-shift="sub" font-size="12.6">J</tspan></text><text x="450.05" y="662" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">STOP</text><text x="400" y="718" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.5">DECLARED TOLERANCE</text></g><svg x="294.0124" y="820.8134" width="211.9752" height="30.3732" viewBox="0 0 179.64 25.74">
+ <title>\operatorname{Fit}_J(r)=1\Longrightarrow\operatorname{Stop}_J</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>\operatorname{Fit}_J(r)=1\Longrightarrow\operatorname{Stop}_J</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.74 
+L 179.64 25.74 
+L 179.64 0 
+L 0 0 
+L 0 25.74 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\operatorname{Fit}_J(r)=1\Longrightarrow\operatorname{Stop}_J$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 16.92) scale(0.18 -0.18)">
+    <defs>
+     <path id="DejaVuSerif-46" d="M 353 0 
+L 353 331 
+L 947 331 
+L 947 4331 
+L 353 4331 
+L 353 4666 
+L 4172 4666 
+L 4172 3628 
+L 3788 3628 
+L 3788 4281 
+L 1581 4281 
+L 1581 2719 
+L 3175 2719 
+L 3175 3303 
+L 3559 3303 
+L 3559 1753 
+L 3175 1753 
+L 3175 2338 
+L 1581 2338 
+L 1581 331 
+L 2328 331 
+L 2328 0 
+L 353 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-69" d="M 622 4353 
+Q 622 4497 726 4603 
+Q 831 4709 978 4709 
+Q 1122 4709 1226 4603 
+Q 1331 4497 1331 4353 
+Q 1331 4206 1228 4103 
+Q 1125 4000 978 4000 
+Q 831 4000 726 4103 
+Q 622 4206 622 4353 
+z
+M 1356 331 
+L 1900 331 
+L 1900 0 
+L 231 0 
+L 231 331 
+L 781 331 
+L 781 2988 
+L 231 2988 
+L 231 3322 
+L 1356 3322 
+L 1356 331 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-74" d="M 691 2988 
+L 184 2988 
+L 184 3322 
+L 691 3322 
+L 691 4353 
+L 1269 4353 
+L 1269 3322 
+L 2350 3322 
+L 2350 2988 
+L 1269 2988 
+L 1269 878 
+Q 1269 456 1350 337 
+Q 1431 219 1650 219 
+Q 1875 219 1978 351 
+Q 2081 484 2088 781 
+L 2522 781 
+Q 2497 328 2275 118 
+Q 2053 -91 1600 -91 
+Q 1103 -91 897 129 
+Q 691 350 691 878 
+L 691 2988 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-4a" d="M -1075 -1119 
+L -934 -384 
+L -578 -384 
+Q -628 -694 -520 -845 
+Q -413 -997 -138 -997 
+Q 234 -997 426 -762 
+Q 619 -528 753 153 
+L 1566 4331 
+L 841 4331 
+L 906 4666 
+L 2859 4666 
+L 2794 4331 
+L 2200 4331 
+L 1381 128 
+Q 1231 -644 854 -987 
+Q 478 -1331 -209 -1331 
+Q -431 -1331 -650 -1278 
+Q -869 -1225 -1075 -1119 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-28" d="M 2041 -997 
+Q 1281 -656 893 83 
+Q 506 822 506 1931 
+Q 506 3044 893 3783 
+Q 1281 4522 2041 4863 
+L 2041 4556 
+Q 1559 4225 1350 3623 
+Q 1141 3022 1141 1931 
+Q 1141 844 1350 242 
+Q 1559 -359 2041 -691 
+L 2041 -997 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-72" d="M 3375 3328 
+L 3213 2497 
+L 2881 2497 
+Q 2891 2559 2891 2613 
+Q 2891 2775 2816 2866 
+Q 2719 2988 2484 2988 
+Q 2059 2988 1775 2694 
+Q 1491 2400 1384 1850 
+L 1025 0 
+L 450 0 
+L 1031 2994 
+L 481 2994 
+L 544 3322 
+L 1669 3322 
+L 1556 2731 
+Q 1791 3078 2089 3245 
+Q 2388 3413 2769 3413 
+Q 2909 3413 3059 3391 
+Q 3209 3369 3375 3328 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-29" d="M 453 -997 
+L 453 -691 
+Q 934 -359 1145 242 
+Q 1356 844 1356 1931 
+Q 1356 3022 1145 3623 
+Q 934 4225 453 4556 
+L 453 4863 
+Q 1216 4522 1603 3783 
+Q 1991 3044 1991 1931 
+Q 1991 822 1603 83 
+Q 1216 -656 453 -997 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3d" d="M 678 2894 
+L 4684 2894 
+L 4684 2394 
+L 678 2394 
+L 678 2894 
+z
+M 678 1619 
+L 4684 1619 
+L 4684 1119 
+L 678 1119 
+L 678 1619 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-31" d="M 909 0 
+L 909 331 
+L 1722 331 
+L 1722 4213 
+L 781 3603 
+L 781 4013 
+L 1919 4750 
+L 2350 4750 
+L 2350 331 
+L 3163 331 
+L 3163 0 
+L 909 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-27f9" d="M 7600 3375 
+L 7634 3375 
+L 8938 2084 
+L 8938 2053 
+L 7634 763 
+L 7600 763 
+L 7878 1269 
+L 366 1269 
+L 366 1775 
+L 8156 1775 
+L 8316 2069 
+L 8156 2363 
+L 366 2363 
+L 366 2869 
+L 7878 2869 
+L 7600 3375 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-53" d="M 594 225 
+L 594 1288 
+L 953 1284 
+Q 969 753 1261 498 
+Q 1553 244 2150 244 
+Q 2706 244 2998 464 
+Q 3291 684 3291 1106 
+Q 3291 1444 3114 1625 
+Q 2938 1806 2369 1978 
+L 1753 2163 
+Q 1084 2366 811 2669 
+Q 538 2972 538 3500 
+Q 538 4094 959 4422 
+Q 1381 4750 2144 4750 
+Q 2469 4750 2856 4679 
+Q 3244 4609 3681 4475 
+L 3681 3481 
+L 3328 3481 
+Q 3275 3975 2998 4195 
+Q 2722 4416 2156 4416 
+Q 1663 4416 1405 4214 
+Q 1147 4013 1147 3628 
+Q 1147 3294 1340 3103 
+Q 1534 2913 2163 2725 
+L 2741 2553 
+Q 3375 2363 3645 2067 
+Q 3916 1772 3916 1275 
+Q 3916 597 3481 253 
+Q 3047 -91 2188 -91 
+Q 1803 -91 1404 -12 
+Q 1006 66 594 225 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-6f" d="M 1925 219 
+Q 2388 219 2623 584 
+Q 2859 950 2859 1663 
+Q 2859 2375 2623 2739 
+Q 2388 3103 1925 3103 
+Q 1463 3103 1227 2739 
+Q 991 2375 991 1663 
+Q 991 950 1228 584 
+Q 1466 219 1925 219 
+z
+M 1925 -91 
+Q 1200 -91 759 389 
+Q 319 869 319 1663 
+Q 319 2456 758 2934 
+Q 1197 3413 1925 3413 
+Q 2653 3413 3092 2934 
+Q 3531 2456 3531 1663 
+Q 3531 869 3092 389 
+Q 2653 -91 1925 -91 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-70" d="M 1313 1825 
+L 1313 1497 
+Q 1313 897 1542 583 
+Q 1772 269 2209 269 
+Q 2650 269 2876 622 
+Q 3103 975 3103 1663 
+Q 3103 2353 2876 2703 
+Q 2650 3053 2209 3053 
+Q 1772 3053 1542 2737 
+Q 1313 2422 1313 1825 
+z
+M 738 2988 
+L 184 2988 
+L 184 3322 
+L 1313 3322 
+L 1313 2803 
+Q 1481 3116 1742 3264 
+Q 2003 3413 2388 3413 
+Q 3000 3413 3387 2928 
+Q 3775 2444 3775 1663 
+Q 3775 881 3387 395 
+Q 3000 -91 2388 -91 
+Q 2003 -91 1742 57 
+Q 1481 206 1313 519 
+L 1313 -997 
+L 1856 -997 
+L 1856 -1331 
+L 184 -1331 
+L 184 -997 
+L 738 -997 
+L 738 2988 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#DejaVuSerif-46" transform="translate(0 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-69" transform="translate(69.384766 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-74" transform="translate(101.367188 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-Italic-4a" transform="translate(142.461094 -15.55625) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-28" transform="translate(188.922282 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-Italic-72" transform="translate(227.935954 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-29" transform="translate(275.738688 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(333.717204 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-31" transform="translate(436.47111 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-27f9" transform="translate(519.059001 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-53" transform="translate(681.38322 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-74" transform="translate(749.889079 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-6f" transform="translate(790.074626 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-70" transform="translate(850.279704 0.015625)"/>
+    <use xlink:href="#DejaVuSerif-Italic-4a" transform="translate(915.201735 -15.55625) scale(0.7)"/>
+   </g>
+  </g>
+ </g>
+</svg><text x="400" y="932" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></svg>

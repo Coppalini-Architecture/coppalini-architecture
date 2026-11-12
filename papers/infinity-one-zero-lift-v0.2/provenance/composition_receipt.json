@@ -1,0 +1,14 @@
+{
+  "title": "Infinity One Zero Lift",
+  "subtitle": "The Normal Form of Projective Memory",
+  "edition": "0.1",
+  "date": "2026-11-11",
+  "geometry_checks": 73,
+  "supplement_checks": 31,
+  "all_checks_pass": true,
+  "original_lean_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+  "new_lean_run": false,
+  "external_publication_performed": false,
+  "cover_authority": "Five user-supplied published SVGs in geometry_audit/references",
+  "public_record_cutoff": "First R\u00b2 marker"
+}

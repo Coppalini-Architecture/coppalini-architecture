@@ -6,6 +6,7 @@
 \newcommand{\hatrho}{\widehat\varrho}
 \newcommand{\hatH}{\widehat H}
 \newcommand{\Fsol}{\mathcal F_{\rm sol}}
+\newcommand{\Ubar}{\overline{\mathsf U}}
 \begin{document}
 \papertitle{Suture Field}{Solder flux and metric $g$}
 
@@ -42,10 +43,10 @@ Equivalently, at every address $x\in M$,
 g_x(u,v)=\hateta_x(\Pi_xu,\Pi_xv).
 \tag{SF.1}
 \]
-Put $L:=\im\Pi\subset E$. The rank and signature conditions make $L$ a
+Put $L_\Pi:=\im\Pi\subset E$. The rank and signature conditions make $L_\Pi$ a
 Lorentzian rank-four subbundle and give a fiberwise isometry
 \[
-\Pi:TM\xrightarrow{\ \cong\ }L.
+\Pi:TM\xrightarrow{\ \cong\ }L_\Pi.
 \tag{SF.2}
 \]
 Thus $\Pi$ is an extended solder coframe. The word \emph{suture} names the
@@ -53,15 +54,16 @@ same coframe together with its four internal transverse address directions.
 
 \section{Eight-address carrier}
 
+\sharedmatching
+
 Let
 \[
-\mathcal A_8=\{\infty\}\sqcup\ZZ_7,
-\qquad
 \mathcal V_8:=\RR[\mathcal A_8],
 \qquad
 \tau e_\infty=e_\infty,\quad \tau e_k=e_{k+1}.
 \tag{SF.3}
 \]
+The shift permutes the matchings: $\tau\mathsf M_r=\mathsf M_{r+1}$.
 The cyclic action is read in the real Fourier decomposition of
 $\mathcal V_8$. Let
 \[
@@ -79,14 +81,14 @@ s_j&=\sqrt{\frac27}\sum_{k=0}^{6}
 \]
 Then
 \[
-\mathcal V_8=Span(e_\infty,u_0)\oplus
+\mathcal V_8=\Span(e_\infty,u_0)\oplus
 \bigoplus_{j=1}^{3}\Span(c_j,s_j).
 \tag{SF.5}
 \]
-Writing $R_\alpha=e^{\alpha C}$, the address action becomes
+Writing $U_\alpha=e^{\alpha C}$, the address action becomes
 \[
-\hatrho(\tau^r)=I_2\oplus R_{2\pi r/7}\oplus
-R_{4\pi r/7}\oplus R_{6\pi r/7},
+\hatrho(\tau^r)=I_2\oplus U_{2\pi r/7}\oplus
+U_{4\pi r/7}\oplus U_{6\pi r/7},
 \qquad r\in\ZZ_7.
 \tag{SF.6}
 \]
@@ -108,9 +110,12 @@ and, with $D=\diag(1,-1)$,
 \hatH:=H\oplus D\oplus D\oplus D.
 \tag{SF.8}
 \]
-The symmetric form has signature $(7,1)$. The first summand is the
-gravity--light split carrier; the remaining three planes carry the nontrivial
-real Fourier weights of the sevenfold address cycle.
+The symmetric form has signature $(7,1)$. The first summand
+$\Span(e_\infty,u_0)$ is the $\mathsf{Gr}$--$\Ubar$ carrier: gravity
+$e_\infty=\mathsf{Gr}$ and the cycle mean $\Ubar:=u_0$. The address
+$e_0=\mathsf{Li}$ has weight $1/7$ on $u_0$ and $6/7$ on the transverse planes,
+so $\mathsf{Li}$ is not a summand of its own. The remaining three planes carry
+the nontrivial real Fourier weights of the sevenfold address cycle.
 
 \begin{theorem}[Cyclic and mirror invariance]
 For every $r\in\ZZ_7$,
@@ -137,9 +142,9 @@ and
 The three transverse blocks have eigenvalues
 $e^{\pm2\pi i r/7}$, $e^{\pm4\pi i r/7}$, and
 $e^{\pm6\pi i r/7}$, while the root block is fixed. Thus seven cyclic
-steps give $I_8$. Every $R_\alpha$ preserves both $I_2$ and $C$.
+steps give $I_8$. Every $U_\alpha$ preserves both $I_2$ and $C$.
 The shared root gives $H^{\mathsf T}GH=G$ and $HCH=-C$; each $D$ gives
-$D^{\mathsf T}I_2D=I_2$ and $DCD=-C$. Finally, $DR_\alpha D=R_{-\alpha}$.
+$D^{\mathsf T}I_2D=I_2$ and $DCD=-C$. Finally, $DU_\alpha D=U_{-\alpha}$.
 Taking direct sums gives SF.9--SF.10.
 \end{proof}
 
@@ -160,10 +165,23 @@ g^{(r)}_{\mu\nu}
 \end{aligned}
 \tag{SF.12}
 \]
-The mirror field $\Pi^\mu:=\hatH\Pi$ likewise satisfies
+The mirror does not commute with the cyclic action. By SF.10,
+$\hatH\hatrho(\tau^w)=\hatrho(\tau^{-w})\hatH$, so $\hatH$ intertwines $\hatrho$
+with $\hatrho\circ\sigma$. In the gauged case of \S6 (principal $\ZZ_7$-bundle
+$P\to M$, $E=P\times_{\hatrho}\mathcal V_8$), set
 \[
-g(\Pi^\mu)=g(\Pi).
+\sigma(\tau^w)=\tau^{-w},\qquad
+E^\sigma:=P\times_{\hatrho\circ\sigma}\mathcal V_8,\qquad
+\bar\Pi:=\hatH\Pi\in\Omega^1(M,E^\sigma),\qquad
+\bar\Pi^{(w)}=\hatrho(\tau^{-w})\bar\Pi=\hatH\Pi^{(w)}.
 \tag{SF.13}
+\]
+Both bundles carry the same $\hateta$ and $\hatC$, and
+$\hatH:(E,\hateta,\hatC)\to(E^\sigma,\hateta,-\hatC)$ is an isometry that
+reverses $\hatC$. In particular
+\[
+g(\bar\Pi)=g(\Pi).
+\tag{SF.13a}
 \]
 The Levi--Civita connection and curvature are therefore determined by the
 suture metric:
@@ -196,7 +214,7 @@ mirror reverses its orientation:
 \[
 \Fsol(\Pi^{(r)})=\Fsol(\Pi),
 \qquad
-\Fsol(\Pi^\mu)=-\Fsol(\Pi).
+\Fsol(\bar\Pi)=-\Fsol(\Pi).
 \tag{SF.17}
 \]
 Metric and flux thus arise at the same address from the symmetric and
@@ -214,7 +232,7 @@ when it satisfies
 \[
 dF_{\rm em}=0,
 \qquad
-d\star_gF_{\rm em}=\mu_0\star_gJ.
+d\star_gF_{\rm em}=\mu_0\star_gJ_{\rm em}.
 \tag{SF.19}
 \]
 On a contractible region, the first condition gives a potential
@@ -253,6 +271,8 @@ $\tau^{w_\gamma}$, $w_\gamma\in\ZZ_7$, its internal holonomy is
 W^{(7)}_\gamma=\hatrho(\tau^{w_\gamma}).
 \tag{SF.23}
 \]
+The mirror field $\bar\Pi$ of SF.13 is a section of $E^\sigma$; its holonomy
+around $\gamma$ is $\hatrho(\tau^{-w_\gamma})$.
 The three nontrivial Fourier planes read its phase as
 \[
 \exp\!\left(\frac{2\pi i j w_\gamma}{7}\right),
@@ -269,14 +289,14 @@ observable relate $W^{(7)}_\gamma$ to $F_{\rm em}$ at the same address.
 
 For $J=\mathsf{SF}$, take the state coordinates to include
 \[
-x_n=(\Pi_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_n,W^{(7)}_{\gamma,n}),
+x_n=(\Pi_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_{{\rm em},n},W^{(7)}_{\gamma,n}),
 \tag{SF.27}
 \]
 whenever the Maxwell conditions in SF.19 have been supplied. The suture
 projection is
 \[
 \operatorname{pr}_{\rm SF}(\mathsf{Occ}_{\mathsf{SF},n})
-=(\Theta_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_n,
+=(\Theta_n,g_n,(\Fsol)_n,F_{{\rm em},n},J_{{\rm em},n},
 W^{(7)}_{\gamma,n},O_n,\kappa_n,\boldsymbol\varepsilon_n).
 \tag{SF.28}
 \]
@@ -299,7 +319,7 @@ g=\Pi^*\hateta,\;
 Here the first pullback is symmetric and the second is antisymmetric:
 \[
 \begin{array}{rcl}
-\text{Suture Field }\Pi&:&TM\xrightarrow{\ \cong\ }L\subset E,\\[2pt]
+\text{Suture Field }\Pi&:&TM\xrightarrow{\ \cong\ }L_\Pi\subset E,\\[2pt]
 \text{Metric }g&:&\text{interval, connection, and curvature},\\[2pt]
 \text{Solder Flux }\Fsol&:&\text{oriented surface relation and loop phase}.
 \end{array}

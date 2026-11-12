@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formal construction cards for Coppalini Architecture: addresses, witnesses, dependent constructions, field instances, and lineage sources.">
+  <title>Construction Cards — Coppalini Architecture</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://eulershiddenl.ink/ledger">
+</head>
+<body>
+  <a class="skip-link" href="/ledger#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">Coppalini Architecture</a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/library">Library</a>
+        <a href="/verify">Verify</a>
+        <a href="/architecture">Constructions</a>
+        <a href="/formalism">Basis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero ledger-hero" aria-labelledby="page-title">
+      <h1 id="page-title">Construction cards</h1>
+      <div class="ledger-index" aria-label="Construction card index">
+        <a href="/ledger#address"><span>A.01</span>Address</a>
+        <a href="/ledger#gate"><span>G.01</span>Gate</a>
+        <a href="/ledger#carrier"><span>C.01</span>Carrier</a>
+        <a href="/ledger#boundary"><span>B.01</span>Boundary</a>
+        <a href="/ledger#contact"><span>Π.01</span>Contact</a>
+      </div>
+    </section>
+
+    <section class="section ledger-section" aria-labelledby="office-cards-title">
+      <h2 id="office-cards-title">Five offices</h2>
+
+      <article class="record-card record-blue" id="address">
+        <header class="record-card-head">
+          <div><p class="record-code">A.01 · Address</p><h2>Prime-word evaluation</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">Ev : P* → (N&gt;0, ×)</p>
+        <p class="record-read">Ordered prime words carry a distinct address through commutative evaluation.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Exact monoid relation.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>V8 word-versus-winding witness; V10 receipt-state implementation; Memory Return.</p></section>
+          <section><p class="record-label">Native instance</p><p>The verifier reads <span class="mono">Ev(2,3)=Ev(3,2)=6</span> while preserving their distinct ordered words.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/formalism#formal-lineage">Euclid</a> · <a href="/formalism#formal-lineage">Brahmagupta</a> · <a href="/formalism#formal-lineage">Fibonacci</a> · <a href="/formalism#formal-lineage">Turing</a></p></section>
+        </div>
+        <footer class="record-links"><a href="papers/physical-reality-inside-constraint.pdf">Audited paper</a><a href="verification/verify_physical_reality_final.py">V8 / V10 witness</a><a href="papers/memory-return-007-v0.2.pdf">Memory Return</a><a href="/references#ref-19">Source ledger</a></footer>
+      </article>
+
+      <article class="record-card record-violet" id="gate">
+        <header class="record-card-head">
+          <div><p class="record-code">G.01 · Gate</p><h2>K8 address ledger</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">K₈ = (V₈, E₈); |V₈| = 8; |E₈| = 28</p>
+        <p class="record-read">Eight addresses generate twenty-eight pairwise relations. Seven perfect matchings partition the complete relation set.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Exact finite-graph witness.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>K8 gate check; twenty-eight-seam reader; finite public relation ledger.</p></section>
+          <section><p class="record-label">Native instance</p><p>The K8 verifier enumerates every unordered pair and checks the seven-matching factorization.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/formalism#formal-lineage">Euclid</a> · <a href="/references#ref-30">Poincaré</a> · <a href="/formalism#formal-lineage">Turing</a></p></section>
+        </div>
+        <footer class="record-links"><a href="verification/k8_gate_check.py">K8 witness</a><a href="verification/k8_gate_check_out.txt">Passing receipt</a><a href="papers/occurrence-twenty-eight-seam-reader-011-v0.2.pdf">Twenty-eight-seam reader</a><a href="/diagrams/lm-occurrence-seam-reader">Plate</a></footer>
+      </article>
+
+      <article class="record-card record-blue" id="carrier">
+        <header class="record-card-head">
+          <div><p class="record-code">C.01 · Carrier</p><h2>Mirror normal form</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">G = [[−2,1],[1,2]]; G² = 5I</p>
+        <p class="record-read">The root carrier has split signature and a stated null-coordinate normal form.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Exact two-by-two algebra.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>V1 root-carrier identity; V2 null-coordinate congruence; V3 signature distinction.</p></section>
+          <section><p class="record-label">Native instance</p><p>The Structure of Survival places the metric carrier beside the native proper-time and null-signal read used by GPS.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/formalism#formal-lineage">Fibonacci</a> · <a href="/formalism#formal-lineage">Euler</a> · <a href="/references#ref-27">Cayley</a> · <a href="/formalism#formal-lineage">Einstein</a></p></section>
+        </div>
+        <footer class="record-links"><a href="papers/physical-reality-inside-constraint.pdf">Audited paper</a><a href="verification/verify_physical_reality_final.py">V1–V3 witness</a><a href="papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf">Metric Mirror Symmetry</a><a href="papers/The_Structure_of_Survival_v66.pdf">Structure of Survival</a></footer>
+      </article>
+
+      <article class="record-card record-green" id="boundary">
+        <header class="record-card-head">
+          <div><p class="record-code">B.01 · Boundary</p><h2>Future admission</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">K̂ = K ∪ {F}</p>
+        <p class="record-read">The historical record and an incoming occurrence keep distinct addresses at admission.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Declared admission structure.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>V10 receipt-state implementation; checksum ledger; versioned audit record.</p></section>
+          <section><p class="record-label">Native instance</p><p>Paper, source, verifier, passing output, and file-identity receipt form one publicly inspectable occurrence record.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/references#ref-03">Peano</a> · <a href="/references#ref-31">Gödel</a> · <a href="/formalism#formal-lineage">Turing</a> · <a href="/formalism#formal-lineage">Shannon</a></p></section>
+        </div>
+        <footer class="record-links"><a href="verification/verify_physical_reality_final.py">V10 witness</a><a href="verification/physical-reality-inside-constraint.sha256">Checksum ledger</a><a href="papers/memory-return-007-v0.2.pdf">Memory Return</a><a href="/references#ref-33">Source ledger</a></footer>
+      </article>
+
+      <article class="record-card record-red" id="contact">
+        <header class="record-card-head">
+          <div><p class="record-code">Π.01 · Contact</p><h2>Contact relation</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">G_embodied = e; Π(e, ℓ) = c = (e, ℓ, w, r)</p>
+        <p class="record-read">Embodied carrier, light, ordered address, and receipt form one contact record.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Declared contact record.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>Contact Recognition; Scope Recognition; receipt-bearing formal record.</p></section>
+          <section><p class="record-label">Native instance</p><p>GPS compares clock proper time and null electromagnetic signals inside a stated physical metric.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/references#ref-09">Maxwell</a> · <a href="/formalism#formal-lineage">Einstein</a> · <a href="/formalism#formal-lineage">Shannon</a></p></section>
+        </div>
+        <footer class="record-links"><a href="papers/Contact_Recognition_Continuum.pdf">Contact Recognition</a><a href="papers/scope_recognition_metric_minimum.pdf">Scope Recognition</a><a href="papers/The_Structure_of_Survival_v66.pdf">GPS metric read</a><a href="/references#ref-11">Source ledger</a></footer>
+      </article>
+
+      <article class="record-card record-violet" id="inputs">
+        <header class="record-card-head">
+          <div><p class="record-code">I.01 · Inputs</p><h2>Declared inputs</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">I₂ extension; t = Φ²; admission policy</p>
+        <p class="record-read">Each supplied structure enters at its named interface with its own stated office.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Supplied structure.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>V3 signature distinction; V5 pp-wave relation; reduced Burau specialization.</p></section>
+          <section><p class="record-label">Native instance</p><p>The transverse block, profile, source, and gauge data remain visible at the pp-wave interface.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/references#ref-26">Riemann</a> · <a href="/references#ref-27">Cayley</a> · <a href="/formalism#formal-lineage">Einstein</a></p></section>
+        </div>
+        <footer class="record-links"><a href="papers/physical-reality-inside-constraint.pdf">Audited paper</a><a href="verification/verify_physical_reality_final.py">V3 / V5 / V6 witness</a><a href="/architecture#interfaces">Field interface</a><a href="/references#ref-26">Source ledger</a></footer>
+      </article>
+    </section>
+
+    <section class="section ledger-section" aria-labelledby="derived-cards-title">
+      <h2 id="derived-cards-title">Derived relations</h2>
+
+      <article class="record-card record-blue" id="inertia">
+        <header class="record-card-head">
+          <div><p class="record-code">C.02 · Carrier distinction</p><h2>Resolved inertia</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">inertia(Q ⊗ Q) = (2,2); inertia(G ⊕ I₂) = (3,1)</p>
+        <p class="record-read">The tensor carrier and the supplied Lorentzian extension occupy distinct signature classes.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Exact signature calculation.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>V3 spectrum and signatures; V4 rejected diagonal transition; V5 pp-wave relation.</p></section>
+          <section><p class="record-label">Native instance</p><p>The pp-wave interface carries its own metric, source, and curvature data through the supplied Lorentzian extension.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/references#ref-27">Cayley</a> · <a href="/references#ref-26">Riemann</a> · <a href="/formalism#formal-lineage">Einstein</a></p></section>
+        </div>
+        <footer class="record-links"><a href="verification/verify_physical_reality_final.py">V3–V5 witness</a><a href="papers/physical-reality-inside-constraint.pdf">Audited paper</a><a href="/architecture#interfaces">Geometry and gravitation</a><a href="/references#ref-11">Source ledger</a></footer>
+      </article>
+
+      <article class="record-card record-violet" id="central-lift">
+        <header class="record-card-head">
+          <div><p class="record-code">L.01 · Lift</p><h2>Central return in SU(2)</h2></div>
+          <span class="phase-mark" aria-label="Information phase">i</span>
+        </header>
+        <p class="record-form mono">q² = −I; q⁴ = I</p>
+        <p class="record-read">A returned visible form can carry a central difference in its lift.</p>
+        <div class="record-grid">
+          <section><p class="record-label">Status</p><p>Exact group relation.</p></section>
+          <section><p class="record-label">Certified dependents</p><p>Time Evolution; Mirror Recognition; lift-bearing occurrence record.</p></section>
+          <section><p class="record-label">Native instance</p><p>Spinorial phase transport gives the named quantum interface its own state, symmetry, and measurement conditions.</p></section>
+          <section><p class="record-label">Lineage</p><p><a href="/formalism#formal-lineage">Euler</a> · <a href="/references#ref-14">Dirac</a> · <a href="/references#ref-18">Berry</a></p></section>
+        </div>
+        <footer class="record-links"><a href="papers/time_evolution_0_6.pdf">Time Evolution</a><a href="papers/mirror-recognition-v1.0.pdf">Mirror Recognition</a><a href="/architecture#interfaces">Field interface</a><a href="/references#ref-14">Source ledger</a></footer>
+      </article>
+    </section>
+
+    <section class="section ledger-next" aria-labelledby="ledger-next-title">
+      <h2 id="ledger-next-title">Sources and records</h2>
+      <div class="path-grid">
+        <article class="path-card"><span class="tag">Sources</span><h3>Reference ledger</h3><p>Named source coordinates and their paper relations.</p><p><a href="/references">Source ledger</a></p></article>
+        <article class="path-card"><span class="tag">Maps</span><h3>Archive records</h3><p>Nineteen source and dependency maps held beside the paper shelf.</p><p><a href="/library-archive#records">Archive records</a></p></article>
+        <article class="path-card"><span class="tag">Papers</span><h3>Library</h3><p>Formal editions, visual plates, sources, and audit materials.</p><p><a href="/library">Library</a></p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2026 Anthony Vito Coppa · Coppalini Architecture</div>
+    <nav aria-label="Footer"><a href="/provenance">Home</a><a href="/library">Library</a><a href="/architecture">Constructions</a><a href="/formalism">Formal Basis</a><a href="/references">Source ledger</a></nav>
+  </footer>
+</body>
+</html>

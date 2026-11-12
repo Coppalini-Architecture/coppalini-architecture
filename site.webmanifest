@@ -1,0 +1,13 @@
+{
+  "name": "Coppalini Architecture",
+  "short_name": "Coppalini",
+  "description": "Source-indexed mathematical records, executable verifiers, retained receipts, and declared scope.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3eb",
+  "theme_color": "#f7f3eb",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/coppalini-seam-matrix-favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

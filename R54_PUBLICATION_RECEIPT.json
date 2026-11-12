@@ -1,0 +1,690 @@
+{
+  "website_release": "R54",
+  "status": "READY_FOR_PUBLICATION_REVIEW",
+  "base_production_deploy": "6af5273ab3d0f94e084b68e8",
+  "base_archive_sha256": "a1da6ee7442dfb106c391cac07d4787c23def56affe635931fa9038abd34423d",
+  "base_files": 449,
+  "changed_existing_files": [
+    "architecture.html",
+    "architecture/index.html",
+    "index.html",
+    "library.html",
+    "llms-full.txt",
+    "llms.txt",
+    "papers/infinity-one-zero-lift.html",
+    "sitemap.xml"
+  ],
+  "added_files": [
+    "R54_PUBLICATION_RECEIPT.json",
+    "R54_SHA256SUMS",
+    "art/covers/infinity-one-zero-lift-v0.2.svg",
+    "downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+    "papers/infinity-one-zero-lift-v0.2.pdf",
+    "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.md",
+    "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.pdf",
+    "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+    "papers/infinity-one-zero-lift-v0.2/README.md",
+    "papers/infinity-one-zero-lift-v0.2/SHA256SUMS",
+    "papers/infinity-one-zero-lift-v0.2/assets/cover.pdf",
+    "papers/infinity-one-zero-lift-v0.2/assets/cover.png",
+    "papers/infinity-one-zero-lift-v0.2/assets/cover.svg",
+    "papers/infinity-one-zero-lift-v0.2/assets/incidence.pdf",
+    "papers/infinity-one-zero-lift-v0.2/assets/incidence.svg",
+    "papers/infinity-one-zero-lift-v0.2/build_cover.py",
+    "papers/infinity-one-zero-lift-v0.2/provenance/citation_edition_v0_2_receipt.json",
+    "papers/infinity-one-zero-lift-v0.2/provenance/composition_receipt.json",
+    "papers/infinity-one-zero-lift-v0.2/provenance/edition_0_1_SHA256SUMS.txt",
+    "papers/infinity-one-zero-lift-v0.2/provenance/geometry_audit_original.zip",
+    "papers/infinity-one-zero-lift-v0.2/provenance/lean_execution_receipt.json",
+    "papers/infinity-one-zero-lift-v0.2/provenance/original_geometry_SHA256SUMS.txt",
+    "papers/infinity-one-zero-lift-v0.2/provenance/pdf_preflight.json",
+    "papers/infinity-one-zero-lift-v0.2/provenance/pdf_preflight_v0_2.json",
+    "papers/infinity-one-zero-lift-v0.2/requirements.txt",
+    "papers/infinity-one-zero-lift-v0.2/verification/ProjectiveReturn.lean",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/AUDIT.md",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/COPPALINI_COVER_FRAME.svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/COPPALINI_COVER_STYLE_LOCK.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/COPPALINI_COVER_STYLE_REFERENCE.md",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/README.md",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/build_graph.py",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/edge_ledger.csv",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/graph_coordinates.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/incidence_reader.html",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/linear_infinity_28_seam_graph.pdf",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/linear_infinity_28_seam_graph.png",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/linear_infinity_28_seam_graph.svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/references/complete-operator-algebra(2).svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/references/four-phase-eight-state(2).svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/references/independent-tunability(2).svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/references/mirror-recognition(2).svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/references/the-exact-reader(2).svg",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/render_receipt.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/requirements.txt",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/source_custody.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/style_measurements.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verification.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verification.txt",
+    "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verify_graph.py",
+    "papers/infinity-one-zero-lift-v0.2/verification/manuscript_checks.json",
+    "papers/infinity-one-zero-lift-v0.2/verification/manuscript_checks.txt",
+    "papers/infinity-one-zero-lift-v0.2/verification/verify_manuscript.py",
+    "research/infinity-one-zero-lift-v0.2.json",
+    "verification/infinity-one-zero-lift-v0.2/citation-completion.json"
+  ],
+  "deleted_files": [],
+  "unchanged_base_files": 441,
+  "changed_file_hashes": {
+    "architecture.html": {
+      "base_sha256": "72f149cb14b67b143b53cd2d4d6df75a5ff139accfdd1587eb3bb1a70a0b1888",
+      "candidate_sha256": "e0e72948398fd2a4216a1be6fcea603da4d1f0fd37d5de6296ab5de61119b44d"
+    },
+    "architecture/index.html": {
+      "base_sha256": "e2c945d489578717fd3a4ac14b4ce56e303bb37fa5aa61a78ce8f508908b02fb",
+      "candidate_sha256": "05ace7b5c6af5c835c29cfb6762a513f3d18e9ec3ad250014d833e3064b7aeec"
+    },
+    "index.html": {
+      "base_sha256": "2358618431b9ea4272cc3d7df405ae2166979a6a86d78a2e194f79f6670ec1f0",
+      "candidate_sha256": "3a65a8dd02afdd09815fd8e5e3ad1b71a8ffc7fd3931b5448bb3c6575ccde99a"
+    },
+    "library.html": {
+      "base_sha256": "ba25fa215f2f9a066eb6c28414bb9dddae73e34e8392590b2257d08aa6d08ec3",
+      "candidate_sha256": "443ba51f967ffec756e3539c7b26cf1d8a0a466e98abf14c50a036af7c7c205c"
+    },
+    "llms-full.txt": {
+      "base_sha256": "756356d00d70789d2777ec186a17c8314c5815bbd1d287778025d18ddd65610c",
+      "candidate_sha256": "b592b5ead740d19ab6fbe6178ff6255adb5fee059b7127a40d8f7f2af1ca6935"
+    },
+    "llms.txt": {
+      "base_sha256": "51272294827560864fddc9a9a101b0607d92d260c54983bde299324385cecac9",
+      "candidate_sha256": "78b3cd2ff0c19f0479248aa9fdeff295ab7c9099d7d1cf491d7aec61f5ea3524"
+    },
+    "papers/infinity-one-zero-lift.html": {
+      "base_sha256": "a9d32c083ee8bf1359ca2679b73ad6a4734d4c696cfd279d0daadf222527cce5",
+      "candidate_sha256": "231fd1a564fa0a6663d0e00dbf1e0b9e161b9da03336ff080cfbdfb1a5aad11a"
+    },
+    "sitemap.xml": {
+      "base_sha256": "a87bf141a7f1d3fe92c4dd9c6ba6cf52c22a042fe96d9667658061929e9061b9",
+      "candidate_sha256": "f2b564a91bb00a6d39df2a8165b687551a006feae30ef8c834e66ae91223989c"
+    }
+  },
+  "nop_move": {
+    "component": "R54 NOP presentation move",
+    "status": "NOP_PLACEMENT_COMPONENT_COMPLETE",
+    "changed_existing_files": [
+      "architecture.html",
+      "architecture/index.html",
+      "index.html"
+    ],
+    "added_site_files": [],
+    "deleted_site_files": [],
+    "homepage_removed_block_sha256": "489218721c256cdd91f947cbb7be7a95a1c19430ae108f234d6df4d84bd6dd6b",
+    "architecture_card_sha256": "3d2f6704aaffd060712ebec8069da419970ca7c0a5f0cfe90c016c9a2176ebc0",
+    "resource_links_retained": [
+      "/nop/",
+      "/nop/docs/Formal_Note.pdf",
+      "/nop/docs/User_Manual.pdf",
+      "/nop/docs/Research_Briefing.pdf",
+      "/nop/downloads/NOP_Return_Memory_Workbench_v0_2_0.zip"
+    ],
+    "review_credit": {
+      "label": "Salvagno et al. (2023)",
+      "url": "https://doi.org/10.3390/ijms24010082",
+      "prefix": "Source review",
+      "presentation": "Complete credit inside one DOI link, without outer text or punctuation."
+    },
+    "iozl_home_feature_byte_identical": true,
+    "library_byte_identical": true,
+    "all_nop_files_byte_identical": true,
+    "unrelated_baseline_files_byte_identical": 446,
+    "hashes": {
+      "architecture.html": {
+        "before": "72f149cb14b67b143b53cd2d4d6df75a5ff139accfdd1587eb3bb1a70a0b1888",
+        "after": "e0e72948398fd2a4216a1be6fcea603da4d1f0fd37d5de6296ab5de61119b44d"
+      },
+      "architecture/index.html": {
+        "before": "e2c945d489578717fd3a4ac14b4ce56e303bb37fa5aa61a78ce8f508908b02fb",
+        "after": "05ace7b5c6af5c835c29cfb6762a513f3d18e9ec3ad250014d833e3064b7aeec"
+      },
+      "index.html": {
+        "before": "2358618431b9ea4272cc3d7df405ae2166979a6a86d78a2e194f79f6670ec1f0",
+        "after": "9294f592036df3707fcf4064cce4ea2f1fcaa232d7f34eb223d89d9a636c6dbf"
+      }
+    },
+    "existing_css_reused": [
+      "architecture-programs.css: program-action-row",
+      "architecture-programs.css: program-source-note",
+      "architecture-programs.css: program-catalog-grid"
+    ],
+    "final_archive_created": false,
+    "external_actions": [],
+    "scope": "The NOP placement component is checked before the separate IOZL and citation metadata changes recorded in this release."
+  },
+  "iozl": {
+    "version": "0.2",
+    "doi": "10.5281/zenodo.24150613",
+    "concept_doi": "10.5281/zenodo.24150160",
+    "record_url": "https://zenodo.org/records/24150613",
+    "pdf_sha256": "48e8d5147b688d9e2b5b8dd5e6305909d86358f9739c2ef6fe734fe9a82cac0e",
+    "zip_sha256": "4a8af589be23efc3d923af477d68a424d0f3d02e6be9b8d8e098dfeb96c86268",
+    "package_files": 48,
+    "package_members_match_original_zip": true,
+    "prior_edition_files_preserved": [
+      "research/infinity-one-zero-lift-v0.1.json",
+      "papers/infinity-one-zero-lift-v0.1.pdf",
+      "verification/infinity-one-zero-lift-v0.1/publication-recheck.json",
+      "art/covers/infinity-one-zero-lift-v0.1.svg",
+      "papers/infinity-one-zero-lift-v0.1/build_cover.py",
+      "papers/infinity-one-zero-lift-v0.1/README.md",
+      "papers/infinity-one-zero-lift-v0.1/Infinity_One_Zero_Lift.pdf",
+      "papers/infinity-one-zero-lift-v0.1/requirements.txt",
+      "papers/infinity-one-zero-lift-v0.1/SHA256SUMS",
+      "papers/infinity-one-zero-lift-v0.1/Infinity_One_Zero_Lift.md",
+      "papers/infinity-one-zero-lift-v0.1/Infinity_One_Zero_Lift.tex",
+      "papers/infinity-one-zero-lift-v0.1/verification/verify_manuscript.py",
+      "papers/infinity-one-zero-lift-v0.1/verification/ProjectiveReturn.lean",
+      "papers/infinity-one-zero-lift-v0.1/verification/manuscript_checks.txt",
+      "papers/infinity-one-zero-lift-v0.1/verification/manuscript_checks.json",
+      "papers/infinity-one-zero-lift-v0.1/provenance/geometry_audit_original.zip",
+      "papers/infinity-one-zero-lift-v0.1/provenance/pdf_preflight.json",
+      "papers/infinity-one-zero-lift-v0.1/provenance/original_geometry_SHA256SUMS.txt",
+      "papers/infinity-one-zero-lift-v0.1/provenance/composition_receipt.json",
+      "papers/infinity-one-zero-lift-v0.1/provenance/lean_execution_receipt.json",
+      "papers/infinity-one-zero-lift-v0.1/assets/incidence.pdf",
+      "papers/infinity-one-zero-lift-v0.1/assets/incidence.svg",
+      "papers/infinity-one-zero-lift-v0.1/assets/cover.png",
+      "papers/infinity-one-zero-lift-v0.1/assets/cover.pdf",
+      "papers/infinity-one-zero-lift-v0.1/assets/cover.svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/COPPALINI_COVER_STYLE_LOCK.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/README.md",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/build_graph.py",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/requirements.txt",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/verification.txt",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/AUDIT.md",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/linear_infinity_28_seam_graph.svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/source_custody.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/edge_ledger.csv",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/verification.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/incidence_reader.html",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/graph_coordinates.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/style_measurements.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/render_receipt.json",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/COPPALINI_COVER_STYLE_REFERENCE.md",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/linear_infinity_28_seam_graph.png",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/COPPALINI_COVER_FRAME.svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/linear_infinity_28_seam_graph.pdf",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/verify_graph.py",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/references/independent-tunability(2).svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/references/the-exact-reader(2).svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/references/mirror-recognition(2).svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/references/four-phase-eight-state(2).svg",
+      "papers/infinity-one-zero-lift-v0.1/verification/geometry_audit/references/complete-operator-algebra(2).svg"
+    ],
+    "citation_receipt_sha256": "266ae1f9ede084f64f394e984dfbf6400bd9b6bfec013fa0687cfd74bcef9d59",
+    "unchanged_evidence_files": [
+      "verification/ProjectiveReturn.lean",
+      "verification/verify_manuscript.py",
+      "verification/geometry_audit/verify_graph.py",
+      "provenance/lean_execution_receipt.json",
+      "verification/manuscript_checks.json",
+      "verification/geometry_audit/verification.json",
+      "assets/cover.svg",
+      "assets/cover.png",
+      "assets/cover.pdf",
+      "assets/incidence.svg",
+      "assets/incidence.pdf"
+    ]
+  },
+  "dependencies": [
+    {
+      "source_key": "LI",
+      "full_title": "Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture",
+      "version": "0.1",
+      "edition_date": "2026-08-13",
+      "zenodo_doi": "10.5281/zenodo.24150517",
+      "zenodo_record_url": "https://zenodo.org/records/24150517",
+      "pdf_sha256": "16b6bd00db89619dc0212c41727b4dd535ec9f6c085ce4a86eaed6f66fa07825"
+    },
+    {
+      "source_key": "METL",
+      "full_title": "Mirror Escapement Time Lift",
+      "version": "0.1",
+      "edition_date": "2026-08-22",
+      "zenodo_doi": "10.5281/zenodo.24150565",
+      "zenodo_record_url": "https://zenodo.org/records/24150565",
+      "pdf_sha256": "02eebc067efa30693ffd47bec6ef082ba068ba7fdeedec5a2ceeace0a78c61a4"
+    },
+    {
+      "source_key": "LM11",
+      "full_title": "Occurrence and the Twenty-Eight-Seam Reader: Finite Addressing, Pairwise Difference, and a Complete 7 × 4 Scan",
+      "version": "0.2",
+      "edition_date": "2026-08-29",
+      "zenodo_doi": "10.5281/zenodo.24150567",
+      "zenodo_record_url": "https://zenodo.org/records/24150567",
+      "pdf_sha256": "a5e6bccecf2dcf239c1832ce7248265ed4bae0f8153ef7969a2104fcae113292"
+    },
+    {
+      "source_key": "MR",
+      "full_title": "Mirror Recognition: The Minimum Symmetric Field Closure",
+      "version": "1.0",
+      "edition_date": "2026-09-11",
+      "zenodo_doi": "10.5281/zenodo.24150572",
+      "zenodo_record_url": "https://zenodo.org/records/24150572",
+      "pdf_sha256": "9728df5b483a3ccea53b9f7155b684a0c18859276fc6a162394cd0d25efdcf10"
+    }
+  ],
+  "discovery": {
+    "library_cards": 51,
+    "dependency_zenodo_links_added": 4,
+    "sitemap_urls": 118,
+    "iozl_home_feature_retained": true,
+    "nop_home_feature_removed": true,
+    "nop_architecture_aliases_updated": 2
+  },
+  "focused_checks": {
+    "new_links": [
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://eulershiddenl.ink/papers/infinity-one-zero-lift",
+        "target": "papers/infinity-one-zero-lift.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/research/infinity-one-zero-lift-v0.2.json",
+        "target": "research/infinity-one-zero-lift-v0.2.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/four-dual-forms/four-dual-forms.css",
+        "target": "papers/four-dual-forms/four-dual-forms.css",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/",
+        "target": "index.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/",
+        "target": "index.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/library",
+        "target": "library.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/verify",
+        "target": "verify.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/architecture",
+        "target": "architecture.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/formalism",
+        "target": "formalism.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150613",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/art/covers/infinity-one-zero-lift-v0.2.svg",
+        "target": "art/covers/infinity-one-zero-lift-v0.2.svg",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2.pdf",
+        "target": "papers/infinity-one-zero-lift-v0.2.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "target": "downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+        "target": "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150613",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/verification/verify_manuscript.py",
+        "target": "papers/infinity-one-zero-lift-v0.2/verification/verify_manuscript.py",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/verification/manuscript_checks.json",
+        "target": "papers/infinity-one-zero-lift-v0.2/verification/manuscript_checks.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verify_graph.py",
+        "target": "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verify_graph.py",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verification.json",
+        "target": "papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verification.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/verification/ProjectiveReturn.lean",
+        "target": "papers/infinity-one-zero-lift-v0.2/verification/ProjectiveReturn.lean",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/provenance/lean_execution_receipt.json",
+        "target": "papers/infinity-one-zero-lift-v0.2/provenance/lean_execution_receipt.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/provenance/composition_receipt.json",
+        "target": "papers/infinity-one-zero-lift-v0.2/provenance/composition_receipt.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/SHA256SUMS",
+        "target": "papers/infinity-one-zero-lift-v0.2/SHA256SUMS",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/README.md",
+        "target": "papers/infinity-one-zero-lift-v0.2/README.md",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/verification/infinity-one-zero-lift-v0.1/publication-recheck.json",
+        "target": "verification/infinity-one-zero-lift-v0.1/publication-recheck.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/verification/infinity-one-zero-lift-v0.2/citation-completion.json",
+        "target": "verification/infinity-one-zero-lift-v0.2/citation-completion.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/research/infinity-one-zero-lift-v0.2.json",
+        "target": "research/infinity-one-zero-lift-v0.2.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150517",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://doi.org/10.5281/zenodo.24150517",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150565",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://doi.org/10.5281/zenodo.24150565",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150567",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://doi.org/10.5281/zenodo.24150567",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150572",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://doi.org/10.5281/zenodo.24150572",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "https://zenodo.org/records/24150161",
+        "kind": "external_reference"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/infinity-one-zero-lift-v0.1.pdf",
+        "target": "papers/infinity-one-zero-lift-v0.1.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/research/infinity-one-zero-lift-v0.1.json",
+        "target": "research/infinity-one-zero-lift-v0.1.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/nop/",
+        "target": "nop/index.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/nop/docs/formal_note.pdf",
+        "target": "nop/docs/formal_note.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/linear_infinity_canonical_v0_1.pdf",
+        "target": "papers/linear_infinity_canonical_v0_1.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/mirror-escapement-time-lift.pdf",
+        "target": "papers/mirror-escapement-time-lift.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/papers/mirror-recognition-v1.0.pdf",
+        "target": "papers/mirror-recognition-v1.0.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/library",
+        "target": "library.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "papers/infinity-one-zero-lift.html",
+        "href": "/nop/",
+        "target": "nop/index.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/papers/infinity-one-zero-lift",
+        "target": "papers/infinity-one-zero-lift.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/art/covers/infinity-one-zero-lift-v0.2.svg",
+        "target": "art/covers/infinity-one-zero-lift-v0.2.svg",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/papers/infinity-one-zero-lift",
+        "target": "papers/infinity-one-zero-lift.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2.pdf",
+        "target": "papers/infinity-one-zero-lift-v0.2.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "target": "downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "/verification/infinity-one-zero-lift-v0.2/citation-completion.json",
+        "target": "verification/infinity-one-zero-lift-v0.2/citation-completion.json",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "index.html",
+        "href": "https://zenodo.org/records/24150613",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "/papers/infinity-one-zero-lift",
+        "target": "papers/infinity-one-zero-lift.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "/art/covers/infinity-one-zero-lift-v0.2.svg",
+        "target": "art/covers/infinity-one-zero-lift-v0.2.svg",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "/papers/infinity-one-zero-lift",
+        "target": "papers/infinity-one-zero-lift.html",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2.pdf",
+        "target": "papers/infinity-one-zero-lift-v0.2.pdf",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "/papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+        "target": "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "target": "downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+        "kind": "local_target_present"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150613",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150161",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150517",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150565",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150567",
+        "kind": "external_reference"
+      },
+      {
+        "source": "library.html",
+        "href": "https://zenodo.org/records/24150572",
+        "kind": "external_reference"
+      }
+    ],
+    "all_new_local_targets_present": true,
+    "all_nop_payloads_unchanged": true,
+    "all_existing_receipts_and_manifests_unchanged": true,
+    "new_scientific_verifiers_run_by_site_build": false
+  },
+  "external_actions_performed": [],
+  "first_deployment": {
+    "deployment_id": "6af533118a74f4c5a454e115",
+    "archive_sha256": "427df722d39a1995c420734695637d7058692547a1554a8a08ebb69cde00ce0c"
+  },
+  "rendering_repair": {
+    "kind": "Architecture source-review credit layout",
+    "baseline_deployment": "6af533118a74f4c5a454e115",
+    "baseline_archive_sha256": "427df722d39a1995c420734695637d7058692547a1554a8a08ebb69cde00ce0c",
+    "observed_issue": "Existing card link CSS split the credit into label, link, and stranded punctuation.",
+    "change": "Place the complete credit inside its existing DOI link and remove the outer punctuation.",
+    "changed_content_files": [
+      "architecture.html",
+      "architecture/index.html"
+    ],
+    "old_fragment": "<p class=\"program-source-note\">Source review: <a href=\"https://doi.org/10.3390/ijms24010082\" target=\"_blank\" rel=\"noopener\">Salvagno et al. (2023)</a>.</p>",
+    "new_fragment": "<p class=\"program-source-note\"><a href=\"https://doi.org/10.3390/ijms24010082\" target=\"_blank\" rel=\"noopener\">Source review: Salvagno et al. (2023)</a></p>",
+    "exact_fragment_replacements": 2,
+    "all_other_content_files_byte_identical": true,
+    "unchanged_files_excluding_receipt_and_manifest": 500,
+    "content_hashes": {
+      "architecture.html": {
+        "before": "a7e8f2c0686f7bab7da0c67509f21e07def4e4e10392ef2e3c13890c3071f145",
+        "after": "e0e72948398fd2a4216a1be6fcea603da4d1f0fd37d5de6296ab5de61119b44d"
+      },
+      "architecture/index.html": {
+        "before": "451d6b6323180fcfced4d26f6f0a8cd8d67bc7ffb762a8db7b181cb8f55e8081",
+        "after": "05ace7b5c6af5c835c29cfb6762a513f3d18e9ec3ad250014d833e3064b7aeec"
+      }
+    },
+    "scientific_verifiers_rerun": false,
+    "external_actions_performed_by_this_repair": []
+  }
+}

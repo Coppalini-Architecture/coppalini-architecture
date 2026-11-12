@@ -1,0 +1,41 @@
+{
+  "title": "Four Dual Forms: physical claim register",
+  "edition": "v0.3",
+  "claims": [
+    {
+      "id": "4DF-ROOT-001",
+      "status": "exact",
+      "claim": "The four published physical forms are derived from the shared exact algebraic root Q² = Q + I, C = −Ω, C² = −I, G = [Q, Ω], G² = 5I, H = G/√5, S = (2Q − I)/√5, LₛᵀGLₛ = G, and HLₛH = L₋ₛ; M₀ gives their canonical four-pair placement in E(K₈).",
+      "boundary": "Exact shared root and matching identity as stated in all four sources; each paper retains its stated physical equation and domain.",
+      "sources": ["papers/four-dual-forms/source/common.tex", "papers/four-dual-forms/source/01_gravity_light.tex", "papers/four-dual-forms/source/02_memory_motion.tex", "papers/four-dual-forms/source/03_time_scope.tex", "papers/four-dual-forms/source/04_horizon_silence.tex", "papers/four-dual-forms/source/verify_four_papers_v0_3.py", "verification/four-dual-forms/verify_four_papers_v0_3.out"]
+    },
+    {
+      "id": "4DF-ALG-001",
+      "status": "exact",
+      "claim": "Gravity–Light: Aₗₒᵣᵀη₁,₁Aₗₒᵣ = G = [Q, Ω] is an exact normal form of the local Lorentzian metric interval, and zᵀGz = 0 gives its two null directions.",
+      "boundary": "Exact local two-plane normal form under the stated isometric inclusion into a Lorentzian spacetime metric.",
+      "sources": ["papers/four-dual-forms/source/common.tex", "papers/four-dual-forms/source/verify_four_papers_v0_3.py", "verification/four-dual-forms/verify_four_papers_v0_3.out"]
+    },
+    {
+      "id": "4DF-MM-001",
+      "status": "exact",
+      "claim": "Memory–Motion: Tₐ←ᵦTᵦ←ₐ = I; the axial transport advances ξₗᵢ𝒻ₜ by 2 log φ while qₐₓ returns the quotient read.",
+      "boundary": "Exact invertible transport and quotient-lift identity on the declared axial carrier X.",
+      "sources": ["papers/four-dual-forms/source/02_memory_motion.tex", "papers/four-dual-forms/source/verify_four_papers_v0_3.py", "verification/four-dual-forms/verify_four_papers_v0_3.out"]
+    },
+    {
+      "id": "4DF-SCOPE-001",
+      "status": "exact",
+      "claim": "Time–Scope: Uπz = −z preserves projective scope, and electromagnetic polarization and a Pauli two-level state have the shared doubled-angle read (cos 2α, sin 2α).",
+      "boundary": "Exact phase and projective-scope relation on V× = ℝ² ∖ {0}, with the stated optical and two-level realizations.",
+      "sources": ["papers/four-dual-forms/source/03_time_scope.tex", "papers/four-dual-forms/source/verify_four_papers_v0_3.py", "verification/four-dual-forms/verify_four_papers_v0_3.out"]
+    },
+    {
+      "id": "4DF-K8-001",
+      "status": "exact",
+      "claim": "Horizon–Silence: the first and second laws type viable thermodynamic motion; hᵢⱼₖ = 0 exactly reconstructs dᵢⱼ = sⱼ − sᵢ on the eight-address field, whose seven matchings partition E(K₈).",
+      "boundary": "Exact potential-reconstruction and matching factorization on A₈ = {∞} ⊔ ℤ₇, together with the declared thermodynamic state equations.",
+      "sources": ["papers/four-dual-forms/source/04_horizon_silence.tex", "papers/four-dual-forms/source/verify_four_papers_v0_3.py", "verification/four-dual-forms/verify_four_papers_v0_3.out"]
+    }
+  ]
+}

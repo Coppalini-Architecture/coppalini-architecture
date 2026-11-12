@@ -1,0 +1,18 @@
+{
+  "base_release": "R57",
+  "public_registry_sha256": "609913e16314dd3afdcdc75a780a5224a2b0b8cffd61eb2b73ca91ed93569af8",
+  "release": "R58",
+  "scope": [
+    "Suture Audit v0.3 public artifact and current paper/source",
+    "regular-isotropy counterexample receipt",
+    "explicit auxiliary Dirac reduction",
+    "released registry and manifest v0.3 pointers"
+  ],
+  "source_base": "R57 ZIP SHA-256 44b0fcb9c3238696aaa12ebee6d443f268c6ec2feab6df12cca77b442418c19a",
+  "status": "candidate",
+  "suture_artifact_sha256": "7f48d8a1e4bf515a400eb0953c8c7e67026e6e9e7d1b94d903e902179e5d7a3e",
+  "suture_ledger_sha256": "c2012aa79dd153b3863cffe1e9226a272929267bed917ecbf0d5d7071fb22f28",
+  "verification": "R58 PASS",
+  "verification_manifest_sha256": "7abfa810c253115bf47b75542e05fdd4ff027a16d76149e73b66e80c80178f01",
+  "verifier": "tools/verify_r58_suture_v03.py"
+}

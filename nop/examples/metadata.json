@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "dataset_id": "NOP_return_memory_synthetic_v0.1",
+  "data_origin": "synthetic",
+  "source_refs": [
+    "Constructed finite adaptation example; no participant data or fitted biological parameters."
+  ],
+  "oxygen_read": {
+    "kind": "dry_inspired_po2",
+    "unit": "kPa",
+    "compartment": "delivered dry gas",
+    "assay": "nominal FiO2 times ambient pressure; tissue oxygen unmeasured"
+  },
+  "ros": {
+    "unit": "synthetic assay unit",
+    "compartment": "synthetic cell compartment",
+    "assay": "constructed oxidant index"
+  },
+  "scavenger": {
+    "unit": "synthetic assay unit",
+    "compartment": "synthetic cell compartment",
+    "assay": "constructed scavenging index"
+  },
+  "model": {
+    "name": "one-state adaptation with instantaneous oxidant-drive return",
+    "retention": "1/2",
+    "oxidant_drive_during_pulse": "2",
+    "exposure_steps": 4,
+    "recovery_steps": 8,
+    "step_duration_min": "1",
+    "oxygen_to_ros_transfer": "unassigned; independent synthetic input choices",
+    "hif_transfer": "unassigned; no HIF or EPO values are synthesized",
+    "bounds_semantics": "synthetic interval bounds; no probabilistic coverage claim"
+  },
+  "limitations": [
+    "Delivered-gas return does not establish tissue-oxygen return.",
+    "A recorded redox difference is a descriptive contrast, not causal identification.",
+    "Exact arithmetic preserves entered values; assay uncertainty remains explicit."
+  ]
+}

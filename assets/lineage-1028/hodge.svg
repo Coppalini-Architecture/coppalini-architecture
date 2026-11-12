@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-hodge-title"><title id="lineage-hodge-title">W. V. D. Hodge — Metric duality. Metric and orientation determine a form&#x27;s dual. Alpha wedge Hodge star beta equals the metric inner product of alpha and beta times the metric volume form.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#bf6f70" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M749,42h18 M758,33v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M33,1008h18 M42,999v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#bf6f70"/><path d="M749,1008h18 M758,999v18" stroke="#bf6f70" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#bf6f70"/><text x="76" y="92" font-size="18" fill="#bf6f70" text-anchor="start" font-family="monospace" >21</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1941 AD</text><text x="400" y="145" font-size="17" fill="#bf6f70" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">METRIC DUALITY</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >W. V. D. Hodge</text><path d="M320,249H480" stroke="#bf6f70"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#bf6f70"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Metric and orientation determine a form&#x27;s</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >dual.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M230.00,615.00 L465.00,650.00 L585.00,515.00 L350.00,480.00 Z" stroke="#bf6f70" stroke-width="2" fill="#bf6f70" fill-opacity="0.09019607843137255" /><path d="M405,567 L405,410" stroke="#6d9fbd" stroke-width="4" fill="none" /><path d="M410.00,420.91 L405,410 L400.00,420.91" stroke="#6d9fbd" stroke-width="4" fill="none" /><text x="435" y="430" fill="#243d40" font-size="28" text-anchor="middle" font-family="Georgia,serif">α</text><text x="540" y="613" fill="#243d40" font-size="28" text-anchor="middle" font-family="Georgia,serif">⋆α</text><circle cx="405" cy="567" r="6" stroke="#243d40" fill="#243d40" stroke-width="3"/></g><g transform="translate(95.000 775.973) scale(2.04232)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="hodge-figure_1">
+  <g id="hodge-patch_1">
+   <path d="M 0 35.28 
+L 298.68 35.28 
+L 298.68 0 
+L 0 0 
+L 0 35.28 
+z
+" style="fill: none"/>
+  </g>
+  <g id="hodge-text_1">
+   <!-- $\alpha\wedge\star\beta=\langle\alpha,\beta\rangle_g\,\mathrm{vol}_g$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.54) scale(0.3 -0.3)">
+    <defs>
+     <path id="hodge-DejaVuSans-Oblique-3b1" d="M 2619 1628 
+L 2622 2350 
+Q 2625 3088 2069 3091 
+Q 1653 3094 1394 2747 
+Q 1069 2319 959 1747 
+Q 825 1059 994 731 
+Q 1169 397 1547 397 
+Q 1966 397 2319 1063 
+L 2619 1628 
+z
+M 2166 3578 
+Q 3141 3594 3128 2584 
+Q 3128 2584 3616 3500 
+L 4128 3500 
+L 3119 1603 
+L 3109 919 
+Q 3109 766 3194 638 
+Q 3291 488 3391 488 
+L 3669 488 
+L 3575 0 
+L 3228 0 
+Q 2934 0 2722 263 
+Q 2622 394 2619 669 
+Q 2416 334 2066 50 
+Q 1900 -81 1453 -78 
+Q 722 -72 456 397 
+Q 184 884 353 1747 
+Q 534 2675 1009 3097 
+Q 1544 3569 2166 3578 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-2227" d="M 825 0 
+L 1953 3706 
+L 2734 3706 
+L 3859 0 
+L 3250 0 
+L 2344 2938 
+L 1434 0 
+L 825 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-22c6" d="M 778 2391 
+L 1713 2391 
+L 2003 3278 
+L 2297 2391 
+L 3228 2391 
+L 2472 1841 
+L 2766 953 
+L 2003 1503 
+L 1244 953 
+L 1534 1841 
+L 778 2391 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-Oblique-3b2" d="M 872 216 
+L 572 -1331 
+L -6 -1331 
+L 928 3478 
+Q 1206 4903 2538 4903 
+Q 3888 4903 3659 3700 
+Q 3503 2844 2894 2531 
+Q 3713 2250 3553 1416 
+Q 3272 -69 1759 -66 
+Q 1097 -63 872 216 
+z
+M 1019 966 
+Q 1259 422 1875 425 
+Q 2775 425 2966 1406 
+Q 3138 2288 1675 2219 
+L 1778 2750 
+Q 2909 2731 3106 3750 
+Q 3241 4438 2509 4434 
+Q 1691 4434 1503 3459 
+L 1019 966 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-27e8" d="M 572 2006 
+L 1453 4856 
+L 1984 4856 
+L 1103 2006 
+L 1984 -844 
+L 1453 -844 
+L 572 2006 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-2c" d="M 750 794 
+L 1409 794 
+L 1409 256 
+L 897 -744 
+L 494 -744 
+L 750 256 
+L 750 794 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-27e9" d="M 1925 2006 
+L 1044 -844 
+L 513 -844 
+L 1394 2006 
+L 513 4856 
+L 1044 4856 
+L 1925 2006 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-Oblique-67" d="M 3816 3500 
+L 3219 434 
+Q 3047 -456 2561 -893 
+Q 2075 -1331 1253 -1331 
+Q 950 -1331 690 -1286 
+Q 431 -1241 206 -1147 
+L 313 -588 
+Q 525 -725 762 -790 
+Q 1000 -856 1269 -856 
+Q 1816 -856 2167 -557 
+Q 2519 -259 2631 300 
+L 2681 563 
+Q 2441 288 2122 144 
+Q 1803 0 1434 0 
+Q 903 0 598 351 
+Q 294 703 294 1319 
+Q 294 1803 478 2267 
+Q 663 2731 997 3091 
+Q 1219 3328 1514 3456 
+Q 1809 3584 2131 3584 
+Q 2484 3584 2746 3420 
+Q 3009 3256 3138 2956 
+L 3238 3500 
+L 3816 3500 
+z
+M 2950 2216 
+Q 2950 2641 2750 2872 
+Q 2550 3103 2181 3103 
+Q 1953 3103 1747 3012 
+Q 1541 2922 1394 2759 
+Q 1156 2491 1023 2127 
+Q 891 1763 891 1375 
+Q 891 944 1092 712 
+Q 1294 481 1672 481 
+Q 2219 481 2584 976 
+Q 2950 1472 2950 2216 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-76" d="M 191 3500 
+L 800 3500 
+L 1894 563 
+L 2988 3500 
+L 3597 3500 
+L 2284 0 
+L 1503 0 
+L 191 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-6f" d="M 1959 3097 
+Q 1497 3097 1228 2736 
+Q 959 2375 959 1747 
+Q 959 1119 1226 758 
+Q 1494 397 1959 397 
+Q 2419 397 2687 759 
+Q 2956 1122 2956 1747 
+Q 2956 2369 2687 2733 
+Q 2419 3097 1959 3097 
+z
+M 1959 3584 
+Q 2709 3584 3137 3096 
+Q 3566 2609 3566 1747 
+Q 3566 888 3137 398 
+Q 2709 -91 1959 -91 
+Q 1206 -91 779 398 
+Q 353 888 353 1747 
+Q 353 2609 779 3096 
+Q 1206 3584 1959 3584 
+z
+" transform="scale(0.015625)"/>
+     <path id="hodge-DejaVuSans-6c" d="M 603 4863 
+L 1178 4863 
+L 1178 0 
+L 603 0 
+L 603 4863 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-3b1" transform="translate(0 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-2227" transform="translate(85.400391 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-22c6" transform="translate(197.558594 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-3b2" transform="translate(279.638672 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-3d" transform="translate(362.939453 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-27e8" transform="translate(466.210938 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-3b1" transform="translate(505.224609 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-2c" transform="translate(571.142578 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-3b2" transform="translate(622.412109 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-27e9" transform="translate(686.230469 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-67" transform="translate(726.201172 -16.015625) scale(0.7)"/>
+    <use xlink:href="#hodge-DejaVuSans-76" transform="translate(789.604817 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-6f" transform="translate(848.784504 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-6c" transform="translate(909.966145 0.390625)"/>
+    <use xlink:href="#hodge-DejaVuSans-Oblique-67" transform="translate(938.706379 -16.015625) scale(0.7)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Equal-degree forms · oriented metric</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

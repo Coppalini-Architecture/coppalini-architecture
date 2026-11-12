@@ -1,0 +1,540 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clear Onyx — Kernel laboratory</title><meta name="description" content="Inspectable Atomic Music, Water and Higgs-compatible readers with exact addresses, retained receipts and source checks."><style>:root{color-scheme:dark;--bg:#0b1117;--panel:#101b24;--line:#2c3c46;--ink:#e5eceb;--muted:#a0b1b8;--blue:#9fc7dc;--gold:#e1c68d;--pink:#d0a8bb;--green:#aed0bb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 Arial,Helvetica,sans-serif}main{max-width:1320px;margin:auto;padding:34px 42px 20px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.2}h1{font-size:34px;margin:4px 0 12px;color:var(--gold)}h1 span{font:12px/1.5 Arial,sans-serif;margin-left:15px;color:var(--muted)}h2{font-size:30px;margin:7px 0 12px}h3{font:11px/1.5 ui-monospace,monospace;color:var(--blue);letter-spacing:.04em;margin:10px 0}.overline{font:9px/1.6 ui-monospace,monospace;letter-spacing:.1em;color:var(--muted);margin:0}.masthead{display:flex;justify-content:space-between;align-items:center;gap:20px}.deck{font-size:13px;color:var(--muted);margin:0}.build{display:grid;gap:13px;justify-items:end}.badge{font:9px/1.6 ui-monospace,monospace;letter-spacing:.06em;color:var(--green)}.tabs{display:flex;gap:4px;margin:28px 0 0;border-bottom:1px solid var(--line)}button,select,input{font:12px/1.4 Arial,sans-serif;color:var(--ink);background:#15232e;border:1px solid #3b5260;border-radius:3px;padding:10px 12px}button{cursor:pointer;min-height:38px}button:hover{border-color:var(--gold)}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}.tabs button{border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);border-radius:0;padding:13px 20px}.tabs button[aria-pressed=true]{color:var(--gold);border-color:var(--gold)}button[aria-pressed=true]{color:var(--gold)}.intro{display:flex;gap:28px;justify-content:space-between;align-items:center;padding:29px 0 21px}.intro>div{max-width:710px}.intro p:not(.overline){color:var(--muted);font-size:13px;margin-bottom:0}.intro .equation{font:12px/1.8 ui-monospace,monospace;color:var(--blue);white-space:nowrap}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 20px}.controls .quiet{background:transparent;color:var(--muted)}label{display:inline-flex;gap:7px;align-items:center;font:11px/1.5 Arial,sans-serif;color:var(--muted)}label select{padding:9px 8px}input[type=number]{width:78px;padding:8px}input[type=range]{accent-color:var(--blue);padding:0;min-width:80px;max-width:160px}.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,1fr);gap:24px;align-items:start}.stage{min-width:0}.stage>canvas{display:block;width:100%;height:auto;background:#0e1821;border:1px solid var(--line);border-radius:5px}.caption{font:10px/1.6 ui-monospace,monospace;color:var(--muted);margin:10px 0}.note,.boundary{font:11px/1.65 Arial,sans-serif;color:var(--muted)}.boundary{border-top:1px solid var(--line);padding-top:14px;margin-top:25px;max-width:950px}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:23px}.stat{border:1px solid var(--line);background:var(--panel);padding:12px;min-width:0}.stat small{display:block;font:9px/1.6 ui-monospace,monospace;color:var(--muted);margin-bottom:4px}.stat strong{font:22px/1.4 ui-monospace,monospace;color:var(--gold);overflow-wrap:anywhere}.descriptor{font:20px/1.5 Georgia,serif;margin:10px 0 17px}.descriptor small{display:block;font:11px/1.6 Arial,sans-serif;color:var(--muted);margin-top:5px}.readout{font:11px/1.8 ui-monospace,monospace;overflow-wrap:anywhere}.readout>div{display:flex;justify-content:space-between;gap:15px;padding:5px 0;border-bottom:1px solid var(--line)}.readout span{color:var(--muted)}.readout b{font-weight:400;color:var(--green);text-align:right}.ruled{border-top:1px solid var(--line);padding-top:18px;margin-top:23px}.history{padding-left:24px;max-height:160px;overflow:auto;scrollbar-width:thin;font:10px/1.9 ui-monospace,monospace;color:var(--muted)}.history li:last-child{color:var(--gold)}details{margin:17px 0}summary{cursor:pointer;font:11px/1.5 ui-monospace,monospace;color:var(--blue);padding:8px 0}table{width:100%;border-collapse:collapse;font:10px/1.7 ui-monospace,monospace}td,th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);font-weight:400}th{color:var(--muted)}tr.active{color:var(--gold);background:#1b2c36}.probe-controls{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.interpolation{flex-wrap:wrap}output{font:10px ui-monospace,monospace;min-width:35px}.bands{display:grid;gap:7px;margin:16px 0}.band{display:grid;grid-template-columns:34px minmax(0,1fr) 65px;gap:10px;align-items:center;font:10px ui-monospace,monospace;color:var(--muted)}.band-track{height:7px;background:#24343f}.band-fill{height:7px;background:var(--blue);min-width:0}.band:first-child .band-fill{background:var(--gold)}.frame-select{display:flex;justify-content:space-between;margin:20px 0 10px}.wide{border-top:1px solid var(--line);margin-top:25px}.table-scroll{max-height:310px;overflow:auto}.table-scroll thead{position:sticky;top:0;background:var(--bg)}pre{font:11px/1.8 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.matrix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.matrix-grid>div{border-top:1px solid var(--line);padding-top:8px}.source-note{border-top:1px solid var(--line);margin-top:38px;padding-top:13px;max-width:950px}.source-note p{color:var(--muted);font-size:12px}.source-note code{font:11px ui-monospace,monospace}footer{display:flex;justify-content:space-between;gap:20px;padding-top:25px;margin-top:30px;border-top:1px solid var(--line);font:9px/1.6 ui-monospace,monospace;color:var(--muted)}.status{font:11px ui-monospace,monospace;color:var(--green);min-height:15px}.skip{position:absolute;top:-80px;left:10px;color:var(--ink);background:var(--panel);padding:10px;z-index:5}.skip:focus{top:8px}[hidden]{display:none!important}@media(max-width:960px){main{padding:24px}.layout{grid-template-columns:minmax(0,1fr) minmax(260px,.95fr);gap:20px}.intro{gap:20px}.intro .equation{font-size:11px}}@media(max-width:700px){main{padding:21px 16px}.masthead{align-items:flex-start;gap:8px}.overline{font-size:8px}h1{font-size:29px}h1 span{display:block;margin:8px 0 0;font-size:11px}.deck{font-size:12px}.build{padding-top:5px}.build button{font-size:10px;padding:8px}.badge{font-size:8px;white-space:nowrap}.tabs{margin-top:22px}.tabs button{padding:12px 9px;font-size:11px;flex:1}.intro{display:block;padding-top:25px}h2{font-size:27px}.intro .equation{white-space:normal;border-left:2px solid var(--line);padding-left:12px;margin-top:16px}.layout{grid-template-columns:1fr}.controls{gap:7px}.controls button{font-size:11px;padding:9px 10px}.stats{margin-top:6px}.stat strong{font-size:21px}footer{display:block}footer span{display:block;margin:4px 0}.table-scroll table{min-width:430px}}
+
+dialog{width:min(900px,calc(100% - 28px));max-height:90vh;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:24px}dialog::backdrop{background:#02070bd9}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.dialog-heading h2{font-size:24px;margin:0}#receipt-json{display:block;width:100%;height:55vh;resize:vertical;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:14px;font:11px/1.7 ui-monospace,monospace;white-space:pre}.download-receipt{display:inline-block;color:var(--gold);margin-top:15px;font-size:12px;cursor:pointer}
+</style>  <link rel="canonical" href="https://eulershiddenl.ink/models/view/clear-onyx-lab-v0.3">
+</head><body>
+<a class="skip" href="/models/view/clear-onyx-lab-v0.3#workspace">Skip to instrument</a>
+<main><header class="masthead"><div><p class="overline">COPPALINI ARCHITECTURE / COMPUTATIONAL INSTRUMENTS</p><h1>Clear Onyx <span>Kernel laboratory</span></h1><p class="deck">A state can change while its readout returns. Keep both in view.</p></div><div class="build"><span class="badge">0.3 / REVIEW BUILD</span><button id="export">Export receipt ↓</button></div></header>
+<nav class="tabs" aria-label="Laboratory instruments"><button data-tab="atomic" aria-pressed="true" aria-controls="atomic">Atomic Music</button><button data-tab="water" aria-pressed="false" aria-controls="water">Water</button><button data-tab="higgs" aria-pressed="false" aria-controls="higgs">Higgs scope</button><button data-tab="root" aria-pressed="false" aria-controls="root">Root kernel</button></nav>
+<div id="workspace" tabindex="-1">
+<section id="atomic" class="instrument"><div class="intro"><div><p class="overline">01 / EXACT DESCRIPTOR ACTION</p><h2>Return, with the traversal retained.</h2><p>F advances one place in the declared seven-cycle. R reflects it. The integer lift records the path through repeated cycles.</p></div><p class="equation">F(k) = k + 1<br>R(k) = 5 − k<br>N = 4k mod 7</p></div>
+<div class="controls"><button data-atomic="F">F · forward</button><button data-atomic="F⁻¹">F⁻¹ · backward</button><button data-atomic="R">R · mirror</button><button id="seven">Seven F steps</button><button data-atomic="Origin" class="quiet">Return to origin</button></div>
+<div class="layout"><div class="stage"><canvas id="atomic-wheel" width="600" height="600" role="img" aria-label="Seven-state descriptor wheel with traversal and reflection"></canvas><p class="caption">Gold marks the present descriptor; blue chords show the reflection pairs. Color carries the display read.</p></div><aside><div class="stats" id="atomic-stats"></div><h3>Native descriptor</h3><div id="descriptor" class="descriptor"></div><details><summary>All seven addresses</summary><table><thead><tr><th>N</th><th>Atom</th><th>Configuration</th><th>Term</th></tr></thead><tbody id="atomic-table"></tbody></table></details><details><summary>Finite action / exact audit</summary><div id="atomic-audit" class="readout"></div></details><h3 class="ruled">Retained operation record</h3><ol class="history" id="atomic-history"></ol><p class="note">The lift is an integer covering coordinate for this finite action. A musical pitch or physical transition requires its own adapter.</p></aside></div></section>
+<section id="water" class="instrument" hidden><div class="intro"><div><p class="overline">02 / NATIVE TWO-CENTER FIELD</p><h2>One field. Every channel inspectable.</h2><p>The original four Hydrogen components at each fixed center. A cached spatial basis makes the changing phase read inexpensive.</p></div><p class="equation">Ψ = Σ uⱼ<br>Δₐᵦ = Im(ūₐuᵦ)<br>108 addresses / 28 seams</p></div>
+<div class="controls"><button id="water-play" aria-pressed="false">Play</button><button data-beats="1">+1 beat</button><button data-beats="4">+4</button><button data-beats="27">+27</button><button data-beats="108">Full 108-beat return</button><label>Read <select id="field-mode" aria-label="Field read"><option value="total">Total density</option><option value="bond">Symmetric channel</option><option value="node">Antisymmetric channel</option><option value="contrast">Signed contrast</option><option value="current">Probability current</option><option value="seams">28 seams</option></select></label><label>Grid <select id="resolution" aria-label="Field resolution"><option>128</option><option selected>192</option><option>256</option></select></label></div>
+<div class="layout"><div class="stage"><canvas id="water-field" width="576" height="576" role="img" aria-label="Two-center density field with marked probe"></canvas><p class="caption" id="field-caption"></p><div class="probe-controls"><label>Probe x <input id="probe-x" type="number" min="-8" max="8" step="0.1" value="0"></label><label>z <input id="probe-z" type="number" min="-8" max="8" step="0.1" value="-1.6"></label><label class="interpolation">Within-beat preview <input id="alpha" type="range" min="0" max="0.999" step="0.001" value="0"><output id="alpha-read">0.000</output></label></div><p class="note">Play requests four exact beat steps per second of display time. The slider previews the native phase between beats; the committed address changes only on a beat.</p></div><aside><div class="stats" id="water-stats"></div><h3>Seven difference bands + alignment</h3><div id="bands" class="bands"></div><div id="water-residuals" class="readout"></div><label class="frame-select">Probe frame <select id="frame" aria-label="Probe frame"><option value="I">Native / I</option><option value="Q">Q / determinant −1</option><option value="H">H / determinant −1</option><option value="Lax">Lₐₓ / determinant +1</option></select></label><div id="frame-read" class="readout"></div><p class="note">Frame operations act on the probe’s two real rows. The field continues to use its native equations.</p></aside></div>
+<details class="wide"><summary>All 28 signed seams at this probe</summary><div class="table-scroll"><table><thead><tr><th>Pair</th><th>Δ = Im(ūₐuᵦ)</th><th>ρ²</th><th>Band</th><th>Return period</th></tr></thead><tbody id="seam-table"></tbody></table></div></details><p class="boundary">Two-center Hydrogen construction at empirical 104.52° / 0.9572 Å geometry. The field calculation has a finite carrier; correlated molecular spectra and nuclear dynamics retain their own governing models.</p></section>
+<section id="higgs" class="instrument" hidden><div class="intro"><div><p class="overline">03 / COMPLEX-DOUBLET READER</p><h2>Radius, orientation, projective direction.</h2><p>Recover the archived Higgs-compatible scope, with each source coordinate and each central phase step visible.</p></div><p class="equation">B(h) = (Ωh*, h) = ρU<br>U ∈ SU(2) / h ≠ 0<br>h → ih → −h → −ih → h</p></div>
+<div class="controls"><label>Source <select id="higgs-source" aria-label="Doublet source"><option value="water">Current Water probe</option><option value="manual">Editable doublet</option></select></label><button id="central">Apply i</button><button id="central-four">Four i steps</button><button id="zero">Zero doublet</button></div><div id="manual" class="controls" hidden><label>Re h₁ <input data-component="0" type="number" value="1" step="0.1"></label><label>Im h₁ <input data-component="1" type="number" value="0" step="0.1"></label><label>Re h₂ <input data-component="2" type="number" value="0" step="0.1"></label><label>Im h₂ <input data-component="3" type="number" value="1" step="0.1"></label></div>
+<div class="layout"><div class="stage"><canvas id="higgs-view" width="600" height="600" role="img" aria-label="Projective direction and declared radial potential"></canvas><p class="caption">Upper: Bloch direction, viewed in projection. Lower: V(ρ) = λ(ρ² − ρ₀²)², a declared radial potential in dimensionless units.</p><div class="controls"><label>ρ₀ <input id="rho0" type="number" min="0.01" max="10" step="0.1" value="1"></label><label>λ <input id="lambda" type="number" min="0.01" max="10" step="0.1" value="1"></label></div></div><aside><div class="stats" id="higgs-stats"></div><h3>Separate readers</h3><div id="higgs-read" class="readout"></div><h3 class="ruled">U — numerical matrix read</h3><pre id="polar-matrix"></pre><p id="polar-state" class="note"></p><h3 class="ruled">Central phase record</h3><ol id="higgs-history" class="history"></ol></aside></div><p class="boundary">The polar and projective identities apply to a nonzero complex doublet. Water supplies a probe input. A physical Higgs field requires its separately specified Standard Model representation, action, couplings and evidence.</p></section>
+<section id="root" class="instrument" hidden><div class="intro"><div><p class="overline">04 / EXACT ROOT IN Q(√5)</p><h2>The kernel, open to inspection.</h2><p>Rational coefficients and √5 are retained exactly with BigInt arithmetic. The plotted coordinates are a numerical read of that state.</p></div><p class="equation">G = [Q, Ω]<br>Lₐₓ = (2I + Q) / √5<br>F⁴(r,z) = (r,Lₐₓz)</p></div><div class="controls"><button id="root-step">Quarter step</button><button id="root-four">Four quarter steps</button></div><div class="layout"><div class="stage"><canvas id="root-view" width="600" height="500" role="img" aria-label="Four phase addresses with separate retained axial lift"></canvas><div class="matrix-grid"><div><h3>Q</h3><pre>[ 1  1 ]
+[ 1  0 ]</pre></div><div><h3>Ω</h3><pre>[ 0  1 ]
+[−1  0 ]</pre></div><div><h3>G</h3><pre>[−2  1 ]
+[ 1  2 ]</pre></div></div></div><aside><div class="stats" id="root-stats"></div><h3>Executable identities</h3><div id="root-checks" class="readout"></div><h3 class="ruled">Exact carried state</h3><pre id="root-state"></pre><p class="note">Seed z₀ = (1,2) has both golden eigenline coefficients nonzero. Every fourth step applies Lₐₓ; the quotient returns while λ advances by ϖ = 2 log Φ.</p></aside></div></section>
+</div>
+<details class="source-note"><summary>Sources, changes, and verification</summary><p>The reference inputs are the unchanged Clear Onyx repository at commit <code>5d763095</code>, the archived Higgs Mirror Scope v0.1, Higgs Reader Connection (5 September 2026), and the v66 algebraic proof. This candidate adds exact occurrence records, exposed reader relations, numerical edge handling, and a cached rendering path.</p><p>The source package contains original files, their hashes, extracted native modules, the new adapters, reproducible tests, and a comparison report. Formal identities, numerical residuals, declared displays, and physical interpretations keep their separate evidence.</p><p>Hydrogen, Helium, Tourbillon and Mechanical Eye remain in the published suite. This laboratory develops the requested Atomic Music, Water and Higgs readers.</p></details><footer><span>ANTHONY VITO COPPA / COPPALINI ARCHITECTURE</span><span id="build-status">Source-backed candidate · local computation</span></footer><p id="status" role="status" class="status" aria-live="polite"></p></main>
+<dialog id="receipt-dialog" aria-labelledby="receipt-title"><div class="dialog-heading"><h2 id="receipt-title">Inspect the receipt</h2><button id="receipt-close">Close</button></div><p class="note">Current reads, source hashes, ordered commands, and retained operation records.</p><textarea id="receipt-json" aria-label="Receipt JSON" readonly spellcheck="false"></textarea><a id="receipt-download" class="download-receipt" download="clear-onyx-receipt.json">Download JSON ↓</a></dialog><script>
+(function (root) {
+  "use strict";
+"use strict";
+// architecture-of-silence.hydrogen-general-orbitals/v3
+//
+// Every constant below was derived, not remembered, and every solid
+// harmonic below was generated directly from its symbolic derivation
+// (sympy code-generation into JS, no hand re-transcription) to
+// eliminate copy/arithmetic error as a failure mode:
+//  - the radial normalization N_nl was obtained by direct symbolic
+//    integration of R_nl(x)^2 x^2 over [0, inf), independently for
+//    nine (n,l) pairs, and matched to the closed form used here;
+//  - the associated-Laguerre recursion was checked against a reference
+//    symbolic implementation for 36 (k, alpha) combinations plus 30
+//    random floating-point spot checks;
+//  - all thirty-six real solid harmonics (l=0..5) were derived from the
+//    Rodrigues formula for associated Legendre functions, verified
+//    normalized and mutually orthogonal by symbolic integration over
+//    the sphere and by independent numeric quadrature, then emitted
+//    as JS source directly from the verified symbolic expression;
+//  - full 3D orbitals (radial x angular together) were additionally
+//    checked end-to-end by importance-sampled Monte Carlo integration
+//    for normalization, orthogonality, and exact radial node counts.
+//
+// This covers every (n,l,m) bound state of hydrogen through n=6 with a
+// real, signed wavefunction -- the actual named orbital shapes, not an
+// approximation of them.
+
+function assert(cond, msg) { if (!cond) throw new TypeError(msg); }
+
+function factorial(k) {
+  let r = 1;
+  for (let i = 2; i <= k; i++) r *= i;
+  return r;
+}
+
+// Verified 3-term recursion for the associated Laguerre polynomial L_k^alpha(x).
+function laguerre(k, alpha, x) {
+  assert(Number.isInteger(k) && k >= 0, "Laguerre degree must be a nonnegative integer.");
+  if (k === 0) return 1;
+  let Lkm2 = 1;
+  let Lkm1 = 1 + alpha - x;
+  if (k === 1) return Lkm1;
+  let Lk = Lkm1;
+  for (let kk = 2; kk <= k; kk++) {
+    Lk = ((2 * kk - 1 + alpha - x) * Lkm1 - (kk - 1 + alpha) * Lkm2) / kk;
+    Lkm2 = Lkm1;
+    Lkm1 = Lk;
+  }
+  return Lk;
+}
+
+// Verified closed form: N_nl = 2^(l+1) / n^(l+2) * sqrt((n-l-1)! / (n+l)!)
+function radialNormalization(n, l) {
+  assert(Number.isInteger(n) && n >= 1, "n must be a positive integer.");
+  assert(Number.isInteger(l) && l >= 0 && l <= n - 1, "l must satisfy 0 <= l <= n-1.");
+  return Math.pow(2, l + 1) / Math.pow(n, l + 2) * Math.sqrt(factorial(n - l - 1) / factorial(n + l));
+}
+
+// R_nl(x), x = r / a_H (dimensionless), normalized so that
+// integral_0^inf R_nl(x)^2 x^2 dx = 1.
+function radialFunction(n, l, x) {
+  const N = radialNormalization(n, l);
+  const k = n - l - 1;
+  const alpha = 2 * l + 1;
+  return N * Math.exp(-x / n) * laguerre(k, alpha, 2 * x / n);
+}
+
+function radialNodeCount(n, l) { return n - l - 1; }
+function angularNodeCount(l) { return l; }
+
+// Real solid harmonics S_lm(x,y,z) = r^l * Y_lm(theta,phi), generated
+// directly from the verified symbolic derivation. Homogeneous degree-l
+// polynomials in x,y,z -- no division, no singularity at r=0.
+function solidHarmonic(l, m, x, y, z) {
+  if (l === 0) {
+    if (m === 0) return (1.0/2.0)/Math.sqrt(Math.PI);
+  }
+  if (l === 1) {
+    if (m === -1) return -1.0/2.0*Math.sqrt(3)*y/Math.sqrt(Math.PI);
+    if (m === 0) return (1.0/2.0)*Math.sqrt(3)*z/Math.sqrt(Math.PI);
+    if (m === 1) return -1.0/2.0*Math.sqrt(3)*x/Math.sqrt(Math.PI);
+  }
+  if (l === 2) {
+    if (m === -2) return (1.0/2.0)*Math.sqrt(15)*x*y/Math.sqrt(Math.PI);
+    if (m === -1) return -1.0/2.0*Math.sqrt(15)*y*z/Math.sqrt(Math.PI);
+    if (m === 0) return -1.0/4.0*Math.sqrt(5)*(x)*(x)/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(5)*(y)*(y)/Math.sqrt(Math.PI) + (1.0/2.0)*Math.sqrt(5)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 1) return -1.0/2.0*Math.sqrt(15)*x*z/Math.sqrt(Math.PI);
+    if (m === 2) return (1.0/4.0)*Math.sqrt(15)*(x)*(x)/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(15)*(y)*(y)/Math.sqrt(Math.PI);
+  }
+  if (l === 3) {
+    if (m === -3) return -3.0/8.0*Math.sqrt(70)*(x)*(x)*y/Math.sqrt(Math.PI) + (1.0/8.0)*Math.sqrt(70)*(y)*(y)*(y)/Math.sqrt(Math.PI);
+    if (m === -2) return (1.0/2.0)*Math.sqrt(105)*x*y*z/Math.sqrt(Math.PI);
+    if (m === -1) return (1.0/8.0)*Math.sqrt(42)*(x)*(x)*y/Math.sqrt(Math.PI) + (1.0/8.0)*Math.sqrt(42)*(y)*(y)*(y)/Math.sqrt(Math.PI) - 1.0/2.0*Math.sqrt(42)*y*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 0) return -3.0/4.0*Math.sqrt(7)*(x)*(x)*z/Math.sqrt(Math.PI) - 3.0/4.0*Math.sqrt(7)*(y)*(y)*z/Math.sqrt(Math.PI) + (1.0/2.0)*Math.sqrt(7)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 1) return (1.0/8.0)*Math.sqrt(42)*(x)*(x)*(x)/Math.sqrt(Math.PI) + (1.0/8.0)*Math.sqrt(42)*x*(y)*(y)/Math.sqrt(Math.PI) - 1.0/2.0*Math.sqrt(42)*x*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 2) return (1.0/4.0)*Math.sqrt(105)*(x)*(x)*z/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(105)*(y)*(y)*z/Math.sqrt(Math.PI);
+    if (m === 3) return -1.0/8.0*Math.sqrt(70)*(x)*(x)*(x)/Math.sqrt(Math.PI) + (3.0/8.0)*Math.sqrt(70)*x*(y)*(y)/Math.sqrt(Math.PI);
+  }
+  if (l === 4) {
+    if (m === -4) return (3.0/4.0)*Math.sqrt(35)*(x)*(x)*(x)*y/Math.sqrt(Math.PI) - 3.0/4.0*Math.sqrt(35)*x*(y)*(y)*(y)/Math.sqrt(Math.PI);
+    if (m === -3) return -9.0/8.0*Math.sqrt(70)*(x)*(x)*y*z/Math.sqrt(Math.PI) + (3.0/8.0)*Math.sqrt(70)*(y)*(y)*(y)*z/Math.sqrt(Math.PI);
+    if (m === -2) return -3.0/4.0*Math.sqrt(5)*(x)*(x)*(x)*y/Math.sqrt(Math.PI) - 3.0/4.0*Math.sqrt(5)*x*(y)*(y)*(y)/Math.sqrt(Math.PI) + (9.0/2.0)*Math.sqrt(5)*x*y*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === -1) return (9.0/8.0)*Math.sqrt(10)*(x)*(x)*y*z/Math.sqrt(Math.PI) + (9.0/8.0)*Math.sqrt(10)*(y)*(y)*(y)*z/Math.sqrt(Math.PI) - 3.0/2.0*Math.sqrt(10)*y*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 0) return (9.0/16.0)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) + (9.0/8.0)*(x)*(x)*(y)*(y)/Math.sqrt(Math.PI) - 9.0/2.0*(x)*(x)*(z)*(z)/Math.sqrt(Math.PI) + (9.0/16.0)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) - 9.0/2.0*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI) + (3.0/2.0)*(z)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 1) return (9.0/8.0)*Math.sqrt(10)*(x)*(x)*(x)*z/Math.sqrt(Math.PI) + (9.0/8.0)*Math.sqrt(10)*x*(y)*(y)*z/Math.sqrt(Math.PI) - 3.0/2.0*Math.sqrt(10)*x*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 2) return -3.0/8.0*Math.sqrt(5)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) + (9.0/4.0)*Math.sqrt(5)*(x)*(x)*(z)*(z)/Math.sqrt(Math.PI) + (3.0/8.0)*Math.sqrt(5)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) - 9.0/4.0*Math.sqrt(5)*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 3) return -3.0/8.0*Math.sqrt(70)*(x)*(x)*(x)*z/Math.sqrt(Math.PI) + (9.0/8.0)*Math.sqrt(70)*x*(y)*(y)*z/Math.sqrt(Math.PI);
+    if (m === 4) return (3.0/16.0)*Math.sqrt(35)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) - 9.0/8.0*Math.sqrt(35)*(x)*(x)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/16.0)*Math.sqrt(35)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI);
+  }
+  if (l === 5) {
+    if (m === -5) return -15.0/32.0*Math.sqrt(154)*(x)*(x)*(x)*(x)*y/Math.sqrt(Math.PI) + (15.0/16.0)*Math.sqrt(154)*(x)*(x)*(y)*(y)*(y)/Math.sqrt(Math.PI) - 3.0/32.0*Math.sqrt(154)*(y)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI);
+    if (m === -4) return (3.0/4.0)*Math.sqrt(385)*(x)*(x)*(x)*y*z/Math.sqrt(Math.PI) - 3.0/4.0*Math.sqrt(385)*x*(y)*(y)*(y)*z/Math.sqrt(Math.PI);
+    if (m === -3) return (3.0/32.0)*Math.sqrt(770)*(x)*(x)*(x)*(x)*y/Math.sqrt(Math.PI) + (1.0/16.0)*Math.sqrt(770)*(x)*(x)*(y)*(y)*(y)/Math.sqrt(Math.PI) - 3.0/4.0*Math.sqrt(770)*(x)*(x)*y*(z)*(z)/Math.sqrt(Math.PI) - 1.0/32.0*Math.sqrt(770)*(y)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) + (1.0/4.0)*Math.sqrt(770)*(y)*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === -2) return -1.0/4.0*Math.sqrt(1155)*(x)*(x)*(x)*y*z/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(1155)*x*(y)*(y)*(y)*z/Math.sqrt(Math.PI) + (1.0/2.0)*Math.sqrt(1155)*x*y*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === -1) return -1.0/16.0*Math.sqrt(165)*(x)*(x)*(x)*(x)*y/Math.sqrt(Math.PI) - 1.0/8.0*Math.sqrt(165)*(x)*(x)*(y)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/4.0)*Math.sqrt(165)*(x)*(x)*y*(z)*(z)/Math.sqrt(Math.PI) - 1.0/16.0*Math.sqrt(165)*(y)*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/4.0)*Math.sqrt(165)*(y)*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI) - 1.0/2.0*Math.sqrt(165)*y*(z)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 0) return (15.0/16.0)*Math.sqrt(11)*(x)*(x)*(x)*(x)*z/Math.sqrt(Math.PI) + (15.0/8.0)*Math.sqrt(11)*(x)*(x)*(y)*(y)*z/Math.sqrt(Math.PI) - 5.0/2.0*Math.sqrt(11)*(x)*(x)*(z)*(z)*(z)/Math.sqrt(Math.PI) + (15.0/16.0)*Math.sqrt(11)*(y)*(y)*(y)*(y)*z/Math.sqrt(Math.PI) - 5.0/2.0*Math.sqrt(11)*(y)*(y)*(z)*(z)*(z)/Math.sqrt(Math.PI) + (1.0/2.0)*Math.sqrt(11)*(z)*(z)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 1) return -1.0/16.0*Math.sqrt(165)*(x)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) - 1.0/8.0*Math.sqrt(165)*(x)*(x)*(x)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/4.0)*Math.sqrt(165)*(x)*(x)*(x)*(z)*(z)/Math.sqrt(Math.PI) - 1.0/16.0*Math.sqrt(165)*x*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/4.0)*Math.sqrt(165)*x*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI) - 1.0/2.0*Math.sqrt(165)*x*(z)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 2) return -1.0/8.0*Math.sqrt(1155)*(x)*(x)*(x)*(x)*z/Math.sqrt(Math.PI) + (1.0/4.0)*Math.sqrt(1155)*(x)*(x)*(z)*(z)*(z)/Math.sqrt(Math.PI) + (1.0/8.0)*Math.sqrt(1155)*(y)*(y)*(y)*(y)*z/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(1155)*(y)*(y)*(z)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 3) return (1.0/32.0)*Math.sqrt(770)*(x)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) - 1.0/16.0*Math.sqrt(770)*(x)*(x)*(x)*(y)*(y)/Math.sqrt(Math.PI) - 1.0/4.0*Math.sqrt(770)*(x)*(x)*(x)*(z)*(z)/Math.sqrt(Math.PI) - 3.0/32.0*Math.sqrt(770)*x*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI) + (3.0/4.0)*Math.sqrt(770)*x*(y)*(y)*(z)*(z)/Math.sqrt(Math.PI);
+    if (m === 4) return (3.0/16.0)*Math.sqrt(385)*(x)*(x)*(x)*(x)*z/Math.sqrt(Math.PI) - 9.0/8.0*Math.sqrt(385)*(x)*(x)*(y)*(y)*z/Math.sqrt(Math.PI) + (3.0/16.0)*Math.sqrt(385)*(y)*(y)*(y)*(y)*z/Math.sqrt(Math.PI);
+    if (m === 5) return -3.0/32.0*Math.sqrt(154)*(x)*(x)*(x)*(x)*(x)/Math.sqrt(Math.PI) + (15.0/16.0)*Math.sqrt(154)*(x)*(x)*(x)*(y)*(y)/Math.sqrt(Math.PI) - 15.0/32.0*Math.sqrt(154)*x*(y)*(y)*(y)*(y)/Math.sqrt(Math.PI);
+  }
+  throw new TypeError("Unhandled (l=" + l + ", m=" + m + ") in solid harmonic dispatch.");
+}
+
+// Full normalized real orbital value at Cartesian point (x,y,z), x,y,z in
+// units of a_H.
+function orbitalValue(n, l, m, x, y, z) {
+  assert(l >= 0 && l <= 5, "This module supports l=0..5 (s,p,d,f,g,h).");
+  assert(m >= -l && m <= l, "m must satisfy -l <= m <= l.");
+  const r = Math.hypot(x, y, z);
+  return radialFunction(n, l, r) * solidHarmonic(l, m, x, y, z);
+}
+
+const LETTERS = ["s", "p", "d", "f", "g", "h"];
+const CHEMIST_NAMES = {
+  "0,0": "s",
+  "1,-1": "p_y", "1,0": "p_z", "1,1": "p_x",
+  "2,-2": "d_xy", "2,-1": "d_yz", "2,0": "d_z2", "2,1": "d_xz", "2,2": "d_x2-y2",
+  "3,-3": "f_y(3x2-y2)", "3,-2": "f_xyz", "3,-1": "f_yz2", "3,0": "f_z3",
+  "3,1": "f_xz2", "3,2": "f_z(x2-y2)", "3,3": "f_x(x2-3y2)"
+};
+function orbitalLabel(l, m) {
+  const key = l + "," + m;
+  if (CHEMIST_NAMES[key]) return CHEMIST_NAMES[key];
+  return LETTERS[l] + " (m=" + (m > 0 ? "+" + m : m) + ")";
+}
+
+const API = {
+  laguerre, radialNormalization, radialFunction, radialNodeCount,
+  angularNodeCount, solidHarmonic, orbitalValue, orbitalLabel, LETTERS
+};
+  root.HydrogenOrbitals = API;
+})(typeof globalThis !== "undefined" ? globalThis : this);
+</script><script>
+(function (root) {
+  "use strict";
+"use strict";
+// ClearOnyxWaterFieldV01 -- core physics (no DOM). Tested standalone.
+
+function assert(cond, msg) { if (!cond) throw new TypeError(msg); }
+function cmul(a, b) { return { re: a.re * b.re - a.im * b.im, im: a.re * b.im + a.im * b.re }; }
+function cadd(a, b) { return { re: a.re + b.re, im: a.im + b.im }; }
+function csub(a, b) { return { re: a.re - b.re, im: a.im - b.im }; }
+function conj(a) { return { re: a.re, im: -a.im }; }
+function cabs2(a) { return a.re * a.re + a.im * a.im; }
+function cscale(a, s) { return { re: a.re * s, im: a.im * s }; }
+
+function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { [a, b] = [b, a % b]; } return a; }
+function reduceFraction(n, d) { const g = gcd(n, d) || 1; return { n: n / g, d: d / g }; }
+// Verified relative-energy fraction (E1-En)/(E1-E2) = 4(n^2-1)/(3n^2).
+function energyPhaseFraction(n) {
+  const f = reduceFraction(4 * (n * n - 1), 3 * n * n);
+  return { numerator: f.n, denominator: f.d };
+}
+
+// The exact period (in base-beats) at which the RELATIVE phase between two
+// channels' underlying n-values returns to its starting value: the
+// denominator of the reduced difference of their phase fractions.
+function seamPeriod(nA, nB) {
+  const ra = reduceFraction(energyPhaseFraction(nA).numerator, energyPhaseFraction(nA).denominator);
+  const rb = reduceFraction(energyPhaseFraction(nB).numerator, energyPhaseFraction(nB).denominator);
+  const num = ra.n * rb.d - rb.n * ra.d;
+  const den = ra.d * rb.d;
+  return reduceFraction(num, den).d;
+}
+
+// Verified once, on load: 108-address endpoint residues after one completed
+// base beat, and the exact 8/8/8/4 seam-period census. If either check ever
+// fails (e.g. someone changes CHANNEL_STATES), this throws rather than
+// silently rendering a wrong census.
+const EXPECTED_RESIDUES = [0, 0, 20, 27];
+const EXPECTED_PERIOD_CENSUS = { 1: 8, 4: 8, 27: 8, 108: 4 };
+function verifyRecurrenceCensus() {
+  const residues = [1, 2, 3, 4].map(n => {
+    const f = energyPhaseFraction(n);
+    return Math.round((f.numerator * (108 / f.denominator)) % 108);
+  });
+  for (let i = 0; i < 4; i++) {
+    assert(residues[i] === EXPECTED_RESIDUES[i], "108-address residue mismatch at n=" + (i + 1));
+  }
+  const channelN = [1, 2, 3, 4, 1, 2, 3, 4];
+  const census = {};
+  let seamCount = 0;
+  for (let a = 0; a < 8; a++) for (let b = a + 1; b < 8; b++) {
+    const period = seamPeriod(channelN[a], channelN[b]);
+    census[period] = (census[period] || 0) + 1;
+    seamCount++;
+  }
+  assert(seamCount === 28, "Expected exactly 28 pairwise seams.");
+  for (const key of Object.keys(EXPECTED_PERIOD_CENSUS)) {
+    assert(census[key] === EXPECTED_PERIOD_CENSUS[key], "Seam period census mismatch at period " + key + ": got " + census[key]);
+  }
+  return { residues, census, seamCount };
+}
+const RECURRENCE_CENSUS = verifyRecurrenceCensus();
+
+// The four channel assignment per center -- same convention already used and
+// verified in tonight's Superposition Generator (real, axial, m=0 states).
+const CHANNEL_STATES = [
+  { n: 1, l: 0, m: 0 },
+  { n: 2, l: 1, m: 0 },
+  { n: 3, l: 2, m: 0 },
+  { n: 4, l: 3, m: 0 }
+];
+
+function makeWaterField(K, geometry) {
+  // geometry: { bondLengthAH, bondAngleRad } in a_H units / radians
+  const half = geometry.bondAngleRad / 2;
+  const leftCenter = { x: -geometry.bondLengthAH * Math.sin(half), y: 0, z: -geometry.bondLengthAH * Math.cos(half) };
+  const rightCenter = { x: geometry.bondLengthAH * Math.sin(half), y: 0, z: -geometry.bondLengthAH * Math.cos(half) };
+
+  function channelAmplitude(center, state, x, y, z, basePhase) {
+    const lx = x - center.x, ly = y - center.y, lz = z - center.z;
+    const psi = K.orbitalValue(state.n, state.l, state.m, lx, ly, lz);
+    const frac = energyPhaseFraction(state.n);
+    const angle = -(frac.numerator / frac.denominator) * basePhase;
+    return cscale({ re: Math.cos(angle), im: Math.sin(angle) }, 0.5 * psi);
+  }
+
+  // Full eight-channel sample at one point and time. Returns everything
+  // downstream modes need, plus reconstruction residuals computed live
+  // (not asserted -- checked, every call).
+  function sample(x, y, z, basePhase) {
+    const u = new Array(8);
+    for (let i = 0; i < 4; i++) u[i] = channelAmplitude(leftCenter, CHANNEL_STATES[i], x, y, z, basePhase);
+    for (let i = 0; i < 4; i++) u[4 + i] = channelAmplitude(rightCenter, CHANNEL_STATES[i], x, y, z, basePhase);
+
+    let psiL = { re: 0, im: 0 }, psiR = { re: 0, im: 0 };
+    for (let i = 0; i < 4; i++) psiL = cadd(psiL, u[i]);
+    for (let i = 4; i < 8; i++) psiR = cadd(psiR, u[i]);
+    // RAW_CONSTRUCTIVE / RAW_NODAL: valid raw symmetry reads of the two-center
+    // field, not a claim of a computed molecular orbital.
+    const rawConstructive = cscale(cadd(psiL, psiR), Math.SQRT1_2);
+    const rawNodal = cscale(csub(psiL, psiR), Math.SQRT1_2);
+    const bondDensity = cabs2(rawConstructive);
+    const nodeDensity = cabs2(rawNodal);
+    const totalDensityIncoherent = cabs2(psiL) + cabs2(psiR);
+
+    // 28 pairwise seams: block (left-internal / right-internal / cross) AND
+    // exact recurrence period (1, 4, 27, or 108 base-beats), both tagged on
+    // every term, computed once.
+    const channelN = [1, 2, 3, 4, 1, 2, 3, 4];
+    const seams = [];
+    let diagonalSum = 0;
+    for (let i = 0; i < 8; i++) diagonalSum += cabs2(u[i]);
+    let coherentReconstruction = diagonalSum;
+    let crossReSum = 0;
+    const periodCounts = {};
+    for (let a = 0; a < 8; a++) {
+      for (let b = a + 1; b < 8; b++) {
+        const s = cmul(u[a], conj(u[b]));
+        const block = a < 4 && b < 4 ? "leftInternal" : (a >= 4 && b >= 4 ? "rightInternal" : "cross");
+        const period = seamPeriod(channelN[a], channelN[b]);
+        seams.push({ a, b, block, period, re: s.re, im: s.im, magnitude: Math.hypot(s.re, s.im), phase: Math.atan2(s.im, s.re) });
+        coherentReconstruction += 2 * s.re;
+        if (block === "cross") crossReSum += 2 * s.re;
+        periodCounts[period] = (periodCounts[period] || 0) + 1;
+      }
+    }
+    assert(seams.length === 28, "Expected exactly 28 pairwise seams.");
+
+    let sumU = { re: 0, im: 0 };
+    for (const a of u) sumU = cadd(sumU, a);
+    const totalCoherentDensity = cabs2(sumU);
+    const totalCoherentResidual = Math.abs(totalCoherentDensity - coherentReconstruction);
+    const bondNodeContrastDirect = bondDensity - nodeDensity;
+    const bondNodeReconstructionResidual = Math.abs(bondNodeContrastDirect - crossReSum);
+
+    return {
+      u, psiL, psiR,
+      rawConstructive, rawNodal,
+      rawConstructiveLabel: "RAW_CONSTRUCTIVE", rawNodalLabel: "RAW_NODAL",
+      bondDensity, nodeDensity, totalDensityIncoherent, totalCoherentDensity,
+      bondNodeContrast: bondNodeContrastDirect,
+      seams,
+      audit: {
+        seamCount: seams.length,
+        leftInternalCount: seams.filter(s => s.block === "leftInternal").length,
+        rightInternalCount: seams.filter(s => s.block === "rightInternal").length,
+        crossCount: seams.filter(s => s.block === "cross").length,
+        periodCounts,
+        totalCoherentResidual,
+        bondNodeReconstructionResidual
+      }
+    };
+  }
+
+  // Numerically differentiated probability current (Im(psi* grad psi)),
+  // labeled as numerical, not analytic -- honest about method.
+  function current(psiFn, x, y, z, h) {
+    const c0 = psiFn(x, y, z);
+    const dx = cscale(csub(psiFn(x + h, y, z), psiFn(x - h, y, z)), 1 / (2 * h));
+    const dy = cscale(csub(psiFn(x, y + h, z), psiFn(x, y - h, z)), 1 / (2 * h));
+    const dz = cscale(csub(psiFn(x, y, z + h), psiFn(x, y, z - h)), 1 / (2 * h));
+    function comp(d) { return c0.re * d.im - c0.im * d.re; }
+    return { x: comp(dx), y: comp(dy), z: comp(dz) };
+  }
+
+  // Canonical complex-doublet polar chart: Theta = (Omega Xi*, Xi) = rho * U.
+  // Same construction already verified earlier tonight; general for ANY
+  // nonzero doublet -- that generality is exactly why it is tiered as
+  // "structural", never as evidence of a physical Higgs identity.
+  function custodialPolarChart(psiL, psiR) {
+    const rhoSquared = cabs2(psiL) + cabs2(psiR);
+    const rho = Math.sqrt(rhoSquared);
+    if (rho < 1e-12) return { available: false, rho: 0, label: "CANONICAL_COMPLEX_DOUBLET_POLAR_COORDINATE" };
+    // Theta columns: (Omega Xi*, Xi), Omega = [[0,1],[-1,0]], Xi = (psiL, psiR)
+    // => Htilde = Omega * conj(Xi) = (conj(psiR), -conj(psiL))
+    const hTilde0 = conj(psiR), hTilde1 = cscale(conj(psiL), -1);
+    // U = Theta / rho
+    const u00 = cscale(hTilde0, 1 / rho), u10 = cscale(hTilde1, 1 / rho);
+    const u01 = cscale(psiL, 1 / rho), u11 = cscale(psiR, 1 / rho);
+    const relativePhase = Math.atan2(psiL.im, psiL.re) - Math.atan2(psiR.im, psiR.re);
+
+    // Explicit numerical residuals, recomputed every call -- never assumed.
+    const col0Norm = cabs2(u00) + cabs2(u10);
+    const col1Norm = cabs2(u01) + cabs2(u11);
+    const crossTerm = cadd(cmul(conj(u00), u01), cmul(conj(u10), u11));
+    const det = csub(cmul(u00, u11), cmul(u10, u01));
+    const residuals = {
+      column0NormResidual: Math.abs(col0Norm - 1),
+      column1NormResidual: Math.abs(col1Norm - 1),
+      columnOrthogonalityResidual: Math.hypot(crossTerm.re, crossTerm.im),
+      determinantResidual: Math.hypot(det.re - 1, det.im)
+    };
+
+    return {
+      available: true,
+      label: "CANONICAL_COMPLEX_DOUBLET_POLAR_COORDINATE",
+      rho,
+      relativePhase,
+      matrix: { u00, u10, u01, u11 },
+      residuals
+    };
+  }
+
+  return { leftCenter, rightCenter, sample, current, custodialPolarChart, seamPeriod, RECURRENCE_CENSUS, CHANNEL_STATES, energyPhaseFraction };
+}
+  root.ClearOnyxWaterFieldV01 = { makeWaterField, cmul, cadd, csub, conj, cabs2, cscale, energyPhaseFraction };
+})(typeof globalThis !== "undefined" ? globalThis : this);
+</script><script>/* Clear Onyx candidate: exact root and occurrence protocols. No DOM or clock. */
+(function(root){
+'use strict';
+const mod=(n,m)=>((n%m)+m)%m;
+const gcd=(a,b)=>{a=a<0n?-a:a;b=b<0n?-b:b;while(b){[a,b]=[b,a%b];}return a;};
+class Quad {
+ constructor(p=0n,q=0n,d=1n){p=BigInt(p);q=BigInt(q);d=BigInt(d);if(!d)throw Error('zero denominator');if(d<0n){p=-p;q=-q;d=-d;}const g=gcd(gcd(p,q),d);this.p=p/g;this.q=q/g;this.d=d/g;Object.freeze(this);}
+ add(b){b=Qd(b);return new Quad(this.p*b.d+b.p*this.d,this.q*b.d+b.q*this.d,this.d*b.d);}
+ neg(){return new Quad(-this.p,-this.q,this.d);}
+ sub(b){return this.add(Qd(b).neg());}
+ mul(b){b=Qd(b);return new Quad(this.p*b.p+5n*this.q*b.q,this.p*b.q+this.q*b.p,this.d*b.d);}
+ inv(){return new Quad(this.d*this.p,-this.d*this.q,this.p*this.p-5n*this.q*this.q);}
+ eq(b){b=Qd(b);return this.p===b.p&&this.q===b.q&&this.d===b.d;}
+ number(){return (Number(this.p)+Number(this.q)*Math.sqrt(5))/Number(this.d);}
+ toString(){return `(${this.p}${this.q<0n?'':'+'}${this.q}√5)/${this.d}`;}
+ toJSON(){return {p:String(this.p),q:String(this.q),d:String(this.d)};}
+}
+const Qd=v=>v instanceof Quad?v:new Quad(v);
+const mat=v=>v.map(row=>row.map(Qd));
+const mul=(a,b)=>mat([[0,0],[0,0]]).map((row,i)=>row.map((_,j)=>a[i][0].mul(b[0][j]).add(a[i][1].mul(b[1][j]))));
+const add=(a,b)=>a.map((row,i)=>row.map((x,j)=>x.add(b[i][j])));
+const scale=(a,s)=>a.map(row=>row.map(x=>x.mul(s)));
+const transpose=a=>[[a[0][0],a[1][0]],[a[0][1],a[1][1]]];
+const equal=(a,b)=>a.every((row,i)=>row.every((x,j)=>x.eq(b[i][j])));
+const det=a=>a[0][0].mul(a[1][1]).sub(a[0][1].mul(a[1][0]));
+const I=mat([[1,0],[0,1]]),Q=mat([[1,1],[1,0]]),Omega=mat([[0,1],[-1,0]]);
+const G=add(mul(Q,Omega),scale(mul(Omega,Q),-1));
+const H=scale(G,new Quad(0,1,5)),S=scale(add(scale(Q,2),scale(I,-1)),new Quad(0,1,5));
+const Lax=scale(add(scale(I,2),Q),new Quad(0,1,5));
+function power(a,n){n=BigInt(n);if(n<0n)throw Error('negative matrix power');let r=I;while(n){if(n&1n)r=mul(r,a);a=mul(a,a);n>>=1n;}return r;}
+function rootChecks(){return {Qrecurrence:equal(mul(Q,Q),add(Q,I)),Gsquare:equal(mul(G,G),scale(I,5)),Hsquare:equal(mul(H,H),I),Ssquare:equal(mul(S,S),I),generatorFit:equal(add(mul(transpose(S),G),mul(G,S)),scale(I,0)),axialFit:equal(mul(mul(transpose(Lax),G),Lax),G),mirrorInverse:equal(mul(mul(mul(H,Lax),H),Lax),I),axialSquare:equal(mul(Lax,Lax),mul(Q,Q))};}
+const frozenCopy=v=>Array.isArray(v)?Object.freeze(v.map(frozenCopy)):v&&typeof v==='object'?Object.freeze(Object.fromEntries(Object.entries(v).map(([k,x])=>[k,frozenCopy(x)]))):v;
+function ledger(){const entries=[];return {append(type,before,after,details={}){const e=frozenCopy({sequence:entries.length+1,type,before,after,details});entries.push(e);return e;},get length(){return entries.length;},get entries(){return entries.slice();}};}
+function atomic(){let k=0n;const log=ledger();const snapshot=(occurrence=log.length)=>({address:String(k),descriptor:Number(mod(4n*k,7n)),cyclePosition:Number(mod(k,7n)),register:String((k-mod(k,7n))/7n),occurrence});return {snapshot,log,apply(op){if(!['F','F⁻¹','R','Origin'].includes(op))throw Error('unknown atomic operation');const before=snapshot();k=op==='F'?k+1n:op==='F⁻¹'?k-1n:op==='R'?5n-k:0n;log.append(op,before,snapshot(log.length+1));return snapshot();}};}
+const steps=[0n,0n,20n,27n,0n,0n,20n,27n];
+function atomicChecks(){const id=[0,1,2,3,4,5,6],f=id.map(n=>(n+4)%7),r=id.map(n=>6-n),compose=(a,b)=>b.map(n=>a[n]),key=p=>p.join(','),eq=(a,b)=>key(a)===key(b);let f7=id,r2=compose(r,r);for(let i=0;i<7;i++)f7=compose(f,f7);const inverse=id.map(n=>(n+3)%7),seen=new Map([[key(id),id]]),queue=[id];while(queue.length){const p=queue.shift();for(const g of [f,r]){const q=compose(g,p);if(!seen.has(key(q))){seen.set(key(q),q);queue.push(q);}}}return {F7:eq(f7,id),R2:eq(r2,id),RFR:eq(compose(r,compose(f,r)),inverse),groupOrder:seen.size};}
+function water(){let beat=0n;const log=ledger();const snapshot=()=>({beat:String(beat),phase108:Number(beat%108n),fullReturns:String(beat/108n),residues:steps.map(s=>Number(mod(-s*beat,108n)))});return {snapshot,log,advance(count=1){if(!Number.isSafeInteger(count)||count<1||count>108)throw Error('advance must be 1..108 exact beats');for(let i=0;i<count;i++){const before=snapshot();beat++;log.append('WATER_BEAT',before,snapshot(),{fullReturn:beat%108n===0n});}return snapshot();}};}
+const pairList=[];for(let a=0;a<8;a++)for(let b=a+1;b<8;b++)pairList.push([a,b]);
+const matchings=Array.from({length:7},(_,a)=>[[7,a],...Array.from({length:3},(_,j)=>[mod(a+j+1,7),mod(a-j-1,7)])].map(p=>p.sort((x,y)=>x-y)));
+function seams(u){if(u.length!==8)throw Error('eight channels required');const m=u.map(z=>z.re),r=u.map(z=>z.im),normM=m.reduce((s,x)=>s+x*x,0),normR=r.reduce((s,x)=>s+x*x,0),dot=m.reduce((s,x,j)=>s+x*r[j],0);const pairs=pairList.map(([a,b])=>({a,b,delta:m[a]*r[b]-m[b]*r[a],radiusSquared:m[a]**2+r[a]**2+m[b]**2+r[b]**2,band:matchings.findIndex(edges=>edges.some(p=>p[0]===a&&p[1]===b))}));const bands=Array(7).fill(0);for(const p of pairs)bands[p.band]+=p.delta*p.delta;const wedge=bands.reduce((a,b)=>a+b,0);const positive=normM+normR;return {pairs,bands,dot,normM,normR,wedge,positive,alignmentSquare:dot*dot,lagrangeResidual:Math.abs(dot*dot+wedge-normM*normR),radialIncidenceResidual:Math.abs(pairs.reduce((s,p)=>s+p.radiusSquared,0)-7*positive)};}
+function rowAction(u,a){const n=a.map(row=>row.map(v=>v instanceof Quad?v.number():v));return u.map(z=>({re:n[0][0]*z.re+n[0][1]*z.im,im:n[1][0]*z.re+n[1][1]*z.im}));}
+for(const matrix of [I,Q,Omega,G,H,S,Lax]){matrix.forEach(Object.freeze);Object.freeze(matrix);}
+Object.freeze(steps);pairList.forEach(Object.freeze);Object.freeze(pairList);matchings.forEach(m=>{m.forEach(Object.freeze);Object.freeze(m);});Object.freeze(matchings);
+const api={Quad,Qd,mod,mat,mul,add,scale,transpose,equal,det,power,I,Q,Omega,G,H,S,Lax,rootChecks,ledger,atomic,atomicChecks,water,steps,pairList,matchings,seams,rowAction};
+root.ClearOnyxNext=Object.freeze(api);
+if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* Numeric adapters. Spatial functions are imported, byte unchanged, from native source. */
+(function(root){
+'use strict';
+const N=root.ClearOnyxNext,K=root.HydrogenOrbitals,TAU=2*Math.PI;
+const geometry=Object.freeze({bondLengthAH:0.9572/0.529177,bondAngleRad:104.52*Math.PI/180});
+const half=geometry.bondAngleRad/2,centers=[[-geometry.bondLengthAH*Math.sin(half),-geometry.bondLengthAH*Math.cos(half)],[geometry.bondLengthAH*Math.sin(half),-geometry.bondLengthAH*Math.cos(half)]];
+const ratios=[0,1,32/27,5/4,0,1,32/27,5/4];
+function basis(x,z){return Array.from({length:8},(_,j)=>{const c=centers[j<4?0:1],l=j%4;return .5*K.orbitalValue(l+1,l,0,x-c[0],0,z-c[1]);});}
+function phases(beat,alpha=0){beat=BigInt(beat);if(beat<0n||!Number.isFinite(alpha)||alpha<0||alpha>1)throw Error('nonnegative beat and interpolation 0..1 required');return N.steps.map((s,j)=>{const angle=-TAU*(Number((s*beat)%108n)/108+ratios[j]*alpha);return {re:Math.cos(angle),im:Math.sin(angle)};});}
+function amplitudes(b,ph){return b.map((x,j)=>({re:x*ph[j].re,im:x*ph[j].im}));}
+const abs2=z=>z.re*z.re+z.im*z.im;
+function decompose(u){const L={re:0,im:0},R={re:0,im:0};u.forEach((z,j)=>{const p=j<4?L:R;p.re+=z.re;p.im+=z.im;});const sum={re:L.re+R.re,im:L.im+R.im},difference={re:L.re-R.re,im:L.im-R.im};return {u,L,R,total:abs2(sum),bond:.5*abs2(sum),node:.5*abs2(difference),contrast:2*(L.re*R.re+L.im*R.im)};}
+function sample(x,z,beat,alpha=0){return decompose(amplitudes(basis(x,z),phases(beat,alpha)));}
+function compileGrid(size=192){const horizon=geometry.bondLengthAH*2.6,b=new Float64Array(size*size*8);for(let py=0;py<size;py++)for(let px=0;px<size;px++){const values=basis(((px+.5)/size*2-1)*horizon,(1-(py+.5)/size*2)*horizon);b.set(values,(py*size+px)*8);}return {size,horizon,b};}
+function renderGrid(grid,beat,alpha,mode,out){const ph=phases(beat,alpha);out=out||new Float64Array(grid.size**2);for(let i=0;i<out.length;i++){let lr=0,li=0,rr=0,ri=0;for(let j=0;j<8;j++){const v=grid.b[i*8+j];if(j<4){lr+=v*ph[j].re;li+=v*ph[j].im;}else{rr+=v*ph[j].re;ri+=v*ph[j].im;}}const sum=(lr+rr)**2+(li+ri)**2;out[i]=mode==='bond'?.5*sum:mode==='node'?.5*((lr-rr)**2+(li-ri)**2):mode==='contrast'?2*(lr*rr+li*ri):sum;}return out;}
+function current(x,z,beat,alpha=0,h=1e-4){const sum=(x,z)=>{const s=sample(x,z,beat,alpha);return {re:s.L.re+s.R.re,im:s.L.im+s.R.im};},s=sum(x,z),xp=sum(x+h,z),xm=sum(x-h,z),zp=sum(x,z+h),zm=sum(x,z-h);return {x:(s.re*(xp.im-xm.im)-s.im*(xp.re-xm.re))/(2*h),z:(s.re*(zp.im-zm.im)-s.im*(zp.re-zm.re))/(2*h)};}
+function polar(h){if(h.length!==2||h.some(z=>!Number.isFinite(z.re)||!Number.isFinite(z.im)))return {available:false,reason:'NONFINITE_INPUT'};const rho=Math.hypot(h[0].re,h[0].im,h[1].re,h[1].im);if(rho===0)return {available:false,reason:'ZERO_DOUBLET',rho:0};if(!Number.isFinite(rho))return {available:false,reason:'NORM_OUT_OF_RANGE'};const [a,b]=h.map(z=>({re:z.re/rho,im:z.im/rho})),conj=z=>({re:z.re,im:-z.im}),U=[[conj(b),a],[{re:-a.re,im:a.im},b]],overlap={re:a.re*b.re+a.im*b.im,im:a.re*b.im-a.im*b.re},n={x:2*overlap.re,y:2*overlap.im,z:abs2(a)-abs2(b)};const norm=abs2(a)+abs2(b);return {available:true,rho,q:rho*rho,U,n,residual:Math.abs(norm-1),blochResidual:Math.abs(n.x*n.x+n.y*n.y+n.z*n.z-1),underflow:rho*rho===0};}
+function central(h,k){const phases=[{re:1,im:0},{re:0,im:1},{re:-1,im:0},{re:0,im:-1}],p=phases[Number(N.mod(BigInt(k),4n))];return h.map(z=>({re:z.re*p.re-z.im*p.im,im:z.re*p.im+z.im*p.re}));}
+function integrateCoherences(points,beat,alpha=0){if(!points.length)throw Error('nonempty quadrature required');const gamma=Array.from({length:8},()=>Array.from({length:8},()=>({re:0,im:0})));for(const p of points){const u=sample(p.x,p.z,beat,alpha).u;for(let a=0;a<8;a++)for(let b=0;b<8;b++){gamma[a][b].re+=(u[a].re*u[b].re+u[a].im*u[b].im)/points.length;gamma[a][b].im+=(u[a].im*u[b].re-u[a].re*u[b].im)/points.length;}}return gamma;}
+const api={geometry,centers,ratios,basis,phases,amplitudes,decompose,sample,compileGrid,renderGrid,current,polar,central,integrateCoherences};root.ClearOnyxField=Object.freeze(api);if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* UI owns scheduling and drawing. Kernels own state; render never advances it. */
+(()=>{'use strict';
+const N=ClearOnyxNext,F=ClearOnyxField,$=id=>document.getElementById(id),TAU=2*Math.PI;
+const atomic=N.atomic(),water=N.water(),higgsLog=N.ledger(),rootLog=N.ledger();
+let receiptUrl=null;
+let active='atomic',alpha=0,centralStep=0n,rootStep=0n,playing=false,timer=null,queued=false,grid=null,raw=null,lastFieldMs=0;
+const sourceField=ClearOnyxWaterFieldV01.makeWaterField(HydrogenOrbitals,F.geometry);
+const colors={bg:'#0e1821',line:'#304652',gold:'#e1c68d',blue:'#9fc7dc',pink:'#d0a8bb',ink:'#e5eceb',muted:'#a0b1b8',green:'#aed0bb'};
+const states=[['Be','2p⁰','¹S₀','+'],['B','2p¹','²P°₁⁄₂','−'],['C','2p²','³P₀','+'],['N','2p³','⁴S°₃⁄₂','−'],['O','2p⁴','³P₂','+'],['F','2p⁵','²P°₃⁄₂','−'],['Ne','2p⁶','¹S₀','+']];
+const cycle=[0,4,1,5,2,6,3],labels=['L1','L2','L3','L4','R1','R2','R3','R4'];
+const fmt=x=>Number.isFinite(x)?(Math.abs(x)<1e-3&&x!==0?x.toExponential(3):x.toFixed(4)):'outside numeric range';
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const stat=(label,value)=>`<div class="stat"><small>${esc(label)}</small><strong>${esc(value)}</strong></div>`;
+const rows=(id,values)=>{$(id).innerHTML=values.map(([a,b])=>`<div><span>${esc(a)}</span><b>${esc(b)}</b></div>`).join('');};
+function history(id,entries,format){$(id).innerHTML=entries.slice(-40).map(e=>`<li>${esc(e.sequence+' · '+format(e))}</li>`).join('');$(id).scrollTop=$(id).scrollHeight;}
+function context(id){const canvas=$(id),c=canvas.getContext('2d');c.clearRect(0,0,canvas.width,canvas.height);c.fillStyle=colors.bg;c.fillRect(0,0,canvas.width,canvas.height);return c;}
+function text(c,s,x,y,size=13,color='muted'){c.font=size+'px ui-monospace,monospace';c.fillStyle=colors[color];c.textAlign='center';c.fillText(s,x,y);}
+function queue(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;try{render();$('status').textContent='';}catch(e){$('status').textContent=e.message;}});}
+function stop(){playing=false;clearTimeout(timer);timer=null;$('water-play').textContent='Play';$('water-play').setAttribute('aria-pressed','false');}
+function beat(count){water.advance(count);alpha=0;$('alpha').value=0;$('alpha-read').textContent='0.000';queue();}
+function playTick(){if(!playing)return;beat(1);stamp('SCHEDULED_BEAT',{cadence:'requested 4Hz display scheduler'});timer=setTimeout(playTick,250);}
+function probe(){const x=Number($('probe-x').value),z=Number($('probe-z').value);if(!Number.isFinite(x)||!Number.isFinite(z)||Math.abs(x)>8||Math.abs(z)>8)throw Error('Probe coordinates must lie in [−8,8].');return {x,z,...F.sample(x,z,water.snapshot().beat,alpha)};}
+function renderAtomic(){const s=atomic.snapshot(),current=s.descriptor,c=context('atomic-wheel'),pos=i=>({x:300+213*Math.cos(-Math.PI/2+i*TAU/7),y:280+213*Math.sin(-Math.PI/2+i*TAU/7)});
+ c.strokeStyle=colors.line;c.lineWidth=1;c.beginPath();for(let i=0;i<7;i++){const p=pos(i);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y);}c.closePath();c.stroke();
+ for(let n=0;n<3;n++){const a=pos(cycle.indexOf(n)),b=pos(cycle.indexOf(6-n));c.strokeStyle=colors.blue;c.globalAlpha=.36;c.setLineDash([5,7]);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke();}c.globalAlpha=1;c.setLineDash([]);
+ cycle.forEach((n,i)=>{const p=pos(i);c.beginPath();c.arc(p.x,p.y,32,0,TAU);c.fillStyle=n===current?colors.gold:'#172733';c.fill();c.strokeStyle=n===current?colors.gold:colors.line;c.stroke();text(c,states[n][0],p.x,p.y+2,17,n===current?'bg':'ink');text(c,'N '+n,p.x,p.y+52,10);});
+ text(c,'DESCRIPTOR RETURN',300,251,10);text(c,'N = '+current,300,294,32,'gold');text(c,'lift k = '+s.address,300,327,13,'blue');text(c,'F⁷ returns N; k advances by 7.',300,554,12);
+ $('atomic-stats').innerHTML=stat('FINITE DESCRIPTOR N',s.descriptor)+stat('LIFTED ADDRESS k',s.address)+stat('7-STEP REGISTER',s.register)+stat('OCCURRENCE',s.occurrence);
+ const d=states[current];$('descriptor').innerHTML=esc(d[0]+' · '+d[1]+' · '+d[2])+`<small>Parity ${d[3]} · reflected descriptor ${states[6-current][0]}</small>`;
+ $('atomic-table').innerHTML=states.map((d,i)=>`<tr${i===current?' class="active"':''}><td>${i}</td>${d.slice(0,3).map(x=>'<td>'+esc(x)+'</td>').join('')}</tr>`).join('');
+ rows('atomic-audit',Object.entries(N.atomicChecks()).map(([k,v])=>[k,typeof v==='boolean'?(v?'EXACT PASS':'FAIL'):String(v)]));
+ history('atomic-history',atomic.log.entries,e=>`k ${e.before.address} → ${e.type} → ${e.after.address}; N ${e.after.descriptor}`);
+}
+const lut={};function makeLut(signed){const key=String(signed);if(lut[key])return lut[key];const table=Array.from({length:signed?2:1},(_,sign)=>Array.from({length:1024},(_,i)=>{const t=Math.pow(i/1023,.42),low=[14,24,33],high=signed?(sign?[153,185,225]:[228,193,126]):[190,171,220];return low.map((v,j)=>Math.round(v+(high[j]-v)*t));}));return lut[key]=table;}
+function renderWater(){const start=performance.now(),s=water.snapshot(),p=probe(),frame=N[$('frame').value],u=N.rowAction(p.u,frame),packet=N.seams(u),native=N.seams(p.u),mode=$('field-mode').value,c=context('water-field');
+ const size=Number($('resolution').value);if(!grid||grid.size!==size){grid=F.compileGrid(size);raw=new Float64Array(size*size);}
+ if(mode==='seams'){drawSeams(c,packet);}else if(mode==='current'){drawCurrent(c,s.beat);}else{
+  F.renderGrid(grid,s.beat,alpha,mode,raw);let scale=1e-300;for(const v of raw)scale=Math.max(scale,Math.abs(v));
+  const image=new ImageData(grid.size,grid.size),signed=mode==='contrast',table=makeLut(signed);for(let i=0;i<raw.length;i++){const v=raw[i],rgb=table[signed&&v<0?1:0][Math.min(1023,Math.round(Math.abs(v)/scale*1023))];const j=i*4;image.data[j]=rgb[0];image.data[j+1]=rgb[1];image.data[j+2]=rgb[2];image.data[j+3]=255;}const buffer=document.createElement('canvas');buffer.width=buffer.height=grid.size;buffer.getContext('2d').putImageData(image,0,0);c.drawImage(buffer,0,0,576,576);text(c,'max '+fmt(scale),288,556,10);
+ }
+ if(mode!=='seams'){const h=grid.horizon,px=(p.x/h+1)*288,py=(1-p.z/h)*288;c.strokeStyle=colors.gold;c.lineWidth=1.5;c.beginPath();c.moveTo(px-8,py);c.lineTo(px+8,py);c.moveTo(px,py-8);c.lineTo(px,py+8);c.stroke();F.centers.forEach((v,j)=>{text(c,j?'Hᵣ':'Hₗ',(v[0]/h+1)*288,(1-v[1]/h)*288-10,11,'gold');});}
+ lastFieldMs=performance.now()-start;$('water-stats').innerHTML=stat('COMMITTED BEAT',s.beat)+stat('ADDRESS / 108',s.phase108)+stat('FULL RETURNS',s.fullReturns)+stat('FIELD COMPUTE / ms',lastFieldMs.toFixed(1));
+ const denom=packet.normM*packet.normR,bandValues=[packet.alignmentSquare,...packet.bands];$('bands').innerHTML=bandValues.map((v,j)=>{const fraction=denom?v/denom:0;return `<div class="band"><span>${j?'B'+(j-1):'A²'}</span><div class="band-track"><div class="band-fill" style="width:${Math.min(100,Math.max(0,100*fraction))}%"></div></div><span>${(100*fraction).toFixed(2)}%</span></div>`;}).join('');
+ rows('water-residuals',[['Lagrange residual',fmt(packet.lagrangeResidual)],['Sevenfold radial residual',fmt(packet.radialIncidenceResidual)],['Band denominator ‖m‖²‖r‖²',fmt(denom)],['Completed phase residues',s.residues.join(' / ')]]);
+ const determinant=N.det(frame).number();let seamResidual=0;packet.pairs.forEach((pair,j)=>{seamResidual=Math.max(seamResidual,Math.abs(pair.delta-determinant*native.pairs[j].delta));});
+ rows('frame-read',[['Active raw frame',$('frame').value],['Δ(AX) = det(A) Δ(X)',fmt(seamResidual)],['Positive norm, native → frame',fmt(native.positive)+' → '+fmt(packet.positive)]]);
+ $('seam-table').innerHTML=packet.pairs.map(({a,b,delta,radiusSquared,band})=>{const ns=[1,2,3,4,1,2,3,4];return `<tr><td>${labels[a]} / ${labels[b]}</td><td>${fmt(delta)}</td><td>${fmt(radiusSquared)}</td><td>${band}</td><td>${sourceField.seamPeriod(ns[a],ns[b])}</td></tr>`;}).join('');
+ $('field-caption').textContent=mode==='seams'?'28 probe seams, grouped into seven perfect matchings. Thickness reads |Δ|; gold/blue read its sign.':mode==='current'?'Probability current Im(Ψ*∇Ψ), centered finite differences at h = 10⁻⁴ aH. Arrow lengths use one common scale.':`${mode.toUpperCase()} / x,z plane in aH / y = 0 / peak-normalized display / α = ${alpha.toFixed(3)}. Probe marked in gold.`;
+}
+function drawSeams(c,packet){const pos=i=>({x:288+216*Math.cos(-Math.PI/2+i*TAU/8),y:278+216*Math.sin(-Math.PI/2+i*TAU/8)}),max=Math.max(1e-300,...packet.pairs.map(p=>Math.abs(p.delta)));for(const pair of packet.pairs){const a=pos(pair.a),b=pos(pair.b),t=Math.abs(pair.delta)/max;c.strokeStyle=pair.delta>=0?colors.gold:colors.blue;c.globalAlpha=.08+.8*t;c.lineWidth=.5+3*t;c.beginPath();c.moveTo(a.x,a.y);c.quadraticCurveTo(288+(pair.band-3)*15,278,b.x,b.y);c.stroke();}c.globalAlpha=1;labels.forEach((label,i)=>{const p=pos(i);c.fillStyle=i<4?colors.gold:colors.blue;c.beginPath();c.arc(p.x,p.y,5,0,TAU);c.fill();text(c,label,288+(p.x-288)*1.13,278+(p.y-278)*1.13+4,11);});}
+function drawCurrent(c,beat){const arrows=[],h=grid.horizon;let max=1e-300;for(let y=0;y<15;y++)for(let x=0;x<15;x++){const px=(x+.5)/15,pz=(y+.5)/15,j=F.current((px*2-1)*h,(1-pz*2)*h,beat,alpha),m=Math.hypot(j.x,j.z);max=Math.max(max,m);arrows.push({px,pz,j,m});}for(const a of arrows){const x=a.px*576,y=a.pz*576,dx=22*a.j.x/max,dy=-22*a.j.z/max;c.strokeStyle=colors.blue;c.globalAlpha=.1+.9*a.m/max;c.beginPath();c.moveTo(x,y);c.lineTo(x+dx,y+dy);c.stroke();const angle=Math.atan2(dy,dx);c.beginPath();c.moveTo(x+dx-4*Math.cos(angle-.5),y+dy-4*Math.sin(angle-.5));c.lineTo(x+dx,y+dy);c.lineTo(x+dx-4*Math.cos(angle+.5),y+dy-4*Math.sin(angle+.5));c.stroke();}c.globalAlpha=1;}
+function sourceDoublet(){if($('higgs-source').value==='manual'){const v=[...document.querySelectorAll('[data-component]')].map(el=>Number(el.value));if(v.some(x=>!Number.isFinite(x)))throw Error('Four finite doublet components required.');return [{re:v[0],im:v[1]},{re:v[2],im:v[3]}];}const p=probe();return [p.L,p.R];}
+function renderHiggs(){const initial=sourceDoublet(),h=F.central(initial,centralStep),p=F.polar(h),base=F.polar(initial),c=context('higgs-view'),rho0=Number($('rho0').value),lambda=Number($('lambda').value);if(!(rho0>0&&rho0<=10&&lambda>0&&lambda<=10))throw Error('Potential parameters must be positive and at most 10.');
+ $('manual').hidden=$('higgs-source').value!=='manual';$('higgs-stats').innerHTML=stat('RADIUS ρ',p.available?fmt(p.rho):p.rho===0?'0':'unavailable')+stat('CENTRAL PHASE / 4',Number(N.mod(centralStep,4n)))+stat('i-STEP OCCURRENCE',centralStep.toString())+stat('WATER SOURCE BEAT',water.snapshot().beat);
+ c.strokeStyle=colors.line;c.lineWidth=1;c.beginPath();c.arc(300,175,125,0,TAU);c.stroke();c.setLineDash([4,5]);c.beginPath();c.ellipse(300,175,125,38,0,0,TAU);c.stroke();c.setLineDash([]);text(c,'PROJECTIVE DIRECTION',300,29,10);
+ if(p.available){const x=300+108*(p.n.x+.35*p.n.z),y=175-108*(p.n.y+.2*p.n.z);c.strokeStyle=colors.blue;c.lineWidth=2;c.beginPath();c.moveTo(300,175);c.lineTo(x,y);c.stroke();c.fillStyle=colors.gold;c.beginPath();c.arc(x,y,6,0,TAU);c.fill();text(c,`n = (${fmt(p.n.x)}, ${fmt(p.n.y)}, ${fmt(p.n.z)})`,300,325,10,'blue');}else{text(c,p.reason==='ZERO_DOUBLET'?'ρ = 0 · orientation unavailable':p.reason,300,175,12,'gold');}
+ for(let k=0;k<4;k++){text(c,['h','ih','−h','−ih'][k],120+k*120,370,15,k===Number(N.mod(centralStep,4n))?'gold':'muted');}
+ const plot={x:70,y:425,w:460,h:115},maxV=9*lambda*rho0**4;c.strokeStyle=colors.line;c.beginPath();c.moveTo(plot.x,plot.y);c.lineTo(plot.x,plot.y+plot.h);c.lineTo(plot.x+plot.w,plot.y+plot.h);c.stroke();c.strokeStyle=colors.pink;c.lineWidth=2;c.beginPath();for(let i=0;i<=150;i++){const r=2*rho0*i/150,v=lambda*(r*r-rho0*rho0)**2,x=plot.x+i/150*plot.w,y=plot.y+plot.h-v/maxV*plot.h;i?c.lineTo(x,y):c.moveTo(x,y);}c.stroke();text(c,'ρ₀ = '+rho0,300,567,10);if(p.available){const r=Math.min(2*rho0,p.rho),v=lambda*(r*r-rho0*rho0)**2;c.fillStyle=colors.gold;c.beginPath();c.arc(plot.x+r/(2*rho0)*plot.w,plot.y+plot.h-v/maxV*plot.h,5,0,TAU);c.fill();if(p.rho>2*rho0)text(c,'ρ beyond plotted interval →',425,408,10,'gold');}
+ if(p.available){const deviation=base.available?Math.hypot(p.n.x-base.n.x,p.n.y-base.n.y,p.n.z-base.n.z):NaN;rows('higgs-read',[['h₁',complex(h[0])],['h₂',complex(h[1])],['Positive squared radius',p.underflow?'underflow; ρ remains nonzero':fmt(p.q)],['Projective change under i',fmt(deviation)],['‖h/ρ‖² − 1 / residual',fmt(p.residual)],['‖n‖² − 1 / residual',fmt(p.blochResidual)],['Declared V(ρ)',fmt(lambda*(p.q-rho0*rho0)**2)]]);$('polar-matrix').textContent=p.U.map(row=>row.map(complex).join('   ')).join('\n');$('polar-state').textContent='For a fixed source, U changes sign after two i steps and returns after four. The projective direction returns at each common-phase step.';}else{rows('higgs-read',[['Polar status',p.reason],['Radius',p.rho===0?'0':'unavailable']]);$('polar-matrix').textContent='Orientation unavailable';$('polar-state').textContent='At the zero doublet, no unique polar or projective orientation is assigned.';}
+ history('higgs-history',higgsLog.entries,e=>`${e.type}; source ${e.details.source}; i-address ${e.after.central}`);
+}
+function complex(z){return fmt(z.re)+(z.im<0?' − ':' + ')+fmt(Math.abs(z.im))+'i';}
+function renderRoot(){const lift=rootStep/4n,phase=Number(rootStep%4n),A=N.power(N.Lax,lift),z=A.map(row=>row[0].add(row[1].mul(2))),c=context('root-view');for(let i=0;i<4;i++){const a=-Math.PI/2+i*TAU/4,x=300+160*Math.cos(a),y=220+160*Math.sin(a);c.beginPath();c.arc(x,y,28,0,TAU);c.fillStyle=i===phase?colors.gold:'#182a36';c.fill();text(c,['1','i','−1','−i'][i],x,y+5,18,i===phase?'bg':'ink');}text(c,'PHASE RETURNS',300,203,11);text(c,'LIFT '+lift,300,243,25,'blue');text(c,'four releases → one axial carriage',300,432,12);$('root-stats').innerHTML=stat('PHASE / 4',phase)+stat('AXIAL LIFT',String(lift))+stat('λ / ϖ',String(lift))+stat('OCCURRENCE',String(rootStep));rows('root-checks',Object.entries(N.rootChecks()).map(([a,b])=>[a,b?'EXACT PASS':'FAIL']));$('root-state').textContent='z₁ = '+z[0]+'\nz₂ = '+z[1]+'\nzᵀGz = '+z[0].mul(z[0]).mul(-2).add(z[0].mul(z[1]).mul(2)).add(z[1].mul(z[1]).mul(2));}
+function render(){if(active==='atomic')renderAtomic();if(active==='water')renderWater();if(active==='higgs')renderHiggs();if(active==='root')renderRoot();}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{stop();active=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));document.querySelectorAll('.instrument').forEach(el=>el.hidden=el.id!==active);$('status').textContent='';queue();}));
+document.querySelectorAll('[data-atomic]').forEach(b=>b.addEventListener('click',()=>{atomic.apply(b.dataset.atomic);queue();}));$('seven').addEventListener('click',()=>{for(let i=0;i<7;i++)atomic.apply('F');queue();});
+document.querySelectorAll('[data-beats]').forEach(b=>b.addEventListener('click',()=>{stop();beat(Number(b.dataset.beats));}));$('water-play').addEventListener('click',()=>{if(playing)stop();else{playing=true;$('water-play').textContent='Pause';$('water-play').setAttribute('aria-pressed','true');timer=setTimeout(playTick,250);}});
+for(const id of ['field-mode','resolution','frame','probe-x','probe-z','higgs-source','rho0','lambda'])$(id).addEventListener('change',()=>{stop();queue();});
+document.querySelectorAll('[data-component],#probe-x,#probe-z,#rho0,#lambda').forEach(el=>el.addEventListener('input',()=>{stop();queue();}));$('alpha').addEventListener('input',()=>{stop();alpha=Number($('alpha').value);$('alpha-read').textContent=alpha.toFixed(3);queue();});
+function iStep(){const doublet=sourceDoublet(),before={central:String(centralStep)};centralStep++;higgsLog.append('CENTRAL_i',before,{central:String(centralStep)},{source:$('higgs-source').value,waterBeat:water.snapshot().beat,doublet,alpha});queue();}
+$('zero').addEventListener('click',()=>{$('higgs-source').value='manual';document.querySelectorAll('[data-component]').forEach(el=>el.value='0');higgsLog.append('PREPARE_ZERO',{central:String(centralStep)},{central:String(centralStep)},{source:'manual'});queue();});$('central').addEventListener('click',iStep);$('central-four').addEventListener('click',()=>{for(let i=0;i<4;i++)iStep();});
+function rootAdvance(){const before={address:String(rootStep)};rootStep++;rootLog.append('ROOT_QUARTER',before,{address:String(rootStep),phase:Number(rootStep%4n),lift:String(rootStep/4n)});queue();}$('root-step').addEventListener('click',rootAdvance);$('root-four').addEventListener('click',()=>{for(let i=0;i<4;i++)rootAdvance();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing){stop();stamp('VISIBILITY_HOLD',{});}});
+const journal=N.ledger();
+const fullSnapshot=()=>({active,atomic:atomic.snapshot(),water:water.snapshot(),centralStep:String(centralStep),rootStep:String(rootStep),playing,alpha,controls:Object.fromEntries([...document.querySelectorAll('input,select')].map(el=>[el.id||'component-'+el.dataset.component,el.value]))});
+let previousSnapshot=fullSnapshot();
+function stamp(type,details){const after=fullSnapshot();journal.append(type,previousSnapshot,after,details);previousSnapshot=after;}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.id!=='export')stamp('COMMAND',{control:b.id||b.dataset.tab||b.dataset.atomic||'beat-'+b.dataset.beats,label:b.textContent});});
+for(const event of ['change','input'])document.addEventListener(event,e=>{if(e.target.matches('input,select'))stamp('VIEW_UPDATE',{control:e.target.id||'component-'+e.target.dataset.component,event,value:e.target.value});});
+$('export').addEventListener('click',()=>{stop();let source;try{source=sourceDoublet();}catch(e){source={error:e.message};}const out={schema:'clear-onyx-lab.receipt-v0.3',sourceManifest:JSON.parse($('source-manifest')?.textContent||'{}'),journal:journal.entries,atomic:{state:atomic.snapshot(),checks:N.atomicChecks(),receipts:atomic.log.entries},water:{state:water.snapshot(),previewAlpha:alpha,probe:{x:$('probe-x').value,z:$('probe-z').value},frame:$('frame').value,receipts:water.log.entries},higgs:{source:$('higgs-source').value,doublet:source,centralStep:String(centralStep),rho0:$('rho0').value,lambda:$('lambda').value,receipts:higgsLog.entries},root:{address:String(rootStep),checks:N.rootChecks(),receipts:rootLog.entries}};const json=JSON.stringify(out,null,2);$('receipt-json').value=json;if(receiptUrl)URL.revokeObjectURL(receiptUrl);receiptUrl=URL.createObjectURL(new Blob([json],{type:'application/json'}));$('receipt-download').href=receiptUrl;$('receipt-dialog').showModal();});
+$('receipt-close').addEventListener('click',()=>$('receipt-dialog').close());
+queue();
+})();
+</script><script id="source-manifest" type="application/json">{"repository": "lotuslift/clear_onyx", "commit": "5d7630957027d2d424164351f9b59de9cdc9efd4", "sources": [{"file": "source/water-v01.html", "sha256": "26a2cd5fe416531d08fa15bc497cff82044ed5cd6eab9fef029614e01c26c9e1", "scriptSha256": ["3d74f88c1ee4c1b6f92ee833c6c672e4ed017046ac1bbb3d1f1e78ce4eb7d3f4", "4374cc459fcf242b686355d99e62b2435fc2dab45d082879b9594c9614b0ad8f", "e7f9d55091004d1cd39842c8a526d3e9ee7789e5e0f27f6b28c7dce476663480"]}, {"file": "source/atomic-music-v01.html", "sha256": "a22eb3c9d598be7d0f9313b26cfa609085f3060a7f1ec8922a11b581fbd0d9a2", "scriptSha256": ["a3b6df29a161fc8562b9ddf2802cdcae96891f4a96c1315c0bcb612cef0d2930"]}, {"file": "source/higgs-mirror-scope-v01.html", "sha256": "9a869c646fe52e0cd626659712ed24c9823b5ad76c11d39626af32417aeac07c", "scriptSha256": ["9d3283430240a03ab6ec13a7268f76f44b641507f85feba412fc00b966915dfd", "7fbdd03973cfb04962fbd621800b091e960db2dd876c9214c0cda6014cd57254", "2e8f5f151f827b8d6371b002e6bb4dd197f845aa3c58f566cb10f42d532cd055", "b390f5472ac18771351160a611c75fec96d40d4f722919b09499a041b0be8d9a"]}]}</script></body></html>

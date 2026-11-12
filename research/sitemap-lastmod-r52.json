@@ -1,0 +1,15 @@
+{
+  "edition": "R52",
+  "issued": "2026-11-12",
+  "policy": "A lastmod value appears only when this release creates or changes the indexed HTML document named by the route.",
+  "routes": {
+    "/": "2026-11-12",
+    "/anthony-vito-coppa": "2026-11-12",
+    "/library": "2026-11-12",
+    "/verify": "2026-11-12",
+    "/papers/four-dual-forms/gravity-light": "2026-11-12",
+    "/papers/four-dual-forms/memory-motion": "2026-11-12",
+    "/papers/four-dual-forms/time-scope": "2026-11-12",
+    "/papers/four-dual-forms/horizon-silence": "2026-11-12"
+  }
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Color Meaning Memory Motion // Path Zeta Pyramid v0.1</title>
+<style>
+:root{
+  --bg:#080a0e;--panel:#10141b;--panel2:#151a22;--line:#29313d;
+  --text:#e9e5d8;--muted:#929aa7;--gold:#d8b46d;--cool:#7fa6c6;
+  --green:#9bc5a3;--violet:#b69bd2;--red:#d58989;--hold:#d0aa72;
+  --color:#72a9c9;--meaning:#b69bd2;--memory:#d8b46d;--motion:#92bf9b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{padding:18px;background:radial-gradient(circle at 50% -18%,rgba(216,180,109,.09),transparent 43%),var(--bg)}
+main{width:min(1260px,100%);margin:auto}
+header{display:flex;justify-content:space-between;align-items:end;gap:18px;flex-wrap:wrap;margin-bottom:13px}
+h1{font-size:19px;margin:0 0 6px;letter-spacing:.045em}.gold{color:var(--gold)}
+.sub{font-size:11px;color:var(--muted);line-height:1.65;max-width:820px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--muted);font-size:9px;white-space:nowrap}
+.pill::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:7px;box-shadow:0 0 11px rgba(216,180,109,.5)}
+.panel{border:1px solid var(--line);border-radius:15px;background:rgba(16,20,27,.96);padding:14px;margin-bottom:12px;box-shadow:0 14px 36px rgba(0,0,0,.21)}
+.panelTitle{display:flex;justify-content:space-between;gap:12px;margin:0 0 10px;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.note{border:1px solid rgba(208,170,114,.34);background:rgba(208,170,114,.055);border-radius:10px;padding:9px 12px;color:var(--hold);font-size:10px;line-height:1.65;margin-bottom:12px}.note b{color:var(--gold)}
+.layout{display:grid;grid-template-columns:minmax(500px,1.16fr) minmax(340px,.84fr);gap:12px}@media(max-width:960px){.layout{grid-template-columns:1fr}}
+.stage{height:590px;border:1px solid #1d232c;border-radius:12px;background:#05070a;position:relative;overflow:hidden}
+svg{width:100%;height:100%;display:block}
+.face{stroke-width:1.5;cursor:pointer;transition:opacity .16s,stroke-width .16s}.face:hover,.face.selected{opacity:.72;stroke-width:3}.face:not(.selected){opacity:.28}
+.spoke{stroke:#77808c;stroke-width:1.2;stroke-dasharray:3 4;pointer-events:none}.baseEdge{fill:none;stroke:#d8b46d;stroke-width:1.6;opacity:.82;marker-end:url(color-meaning-memory-motion-v0.1.html)}
+.node circle{fill:#0e1218;stroke:#5c6674;stroke-width:1.7}.node text{fill:var(--text);font-size:12px;text-anchor:middle}.node .small{font-size:8px;fill:var(--muted)}
+.node.phase circle{stroke:var(--gold);stroke-width:3;filter:drop-shadow(0 0 5px rgba(216,180,109,.45))}
+.apex circle{fill:#111821;stroke:var(--cool);stroke-width:2.4;filter:drop-shadow(0 0 7px rgba(127,166,198,.35))}
+.faceLabel{font-size:14px;text-anchor:middle;font-weight:600;letter-spacing:.1em;pointer-events:none}.faceSub{font-size:8px;text-anchor:middle;fill:#b7bec8;pointer-events:none}
+.stageNote{position:absolute;left:10px;bottom:8px;font-size:8px;color:#596270;line-height:1.5}
+.status{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:8px;letter-spacing:.04em}.cert{color:var(--green);border-color:rgba(155,197,163,.38)}.partial{color:var(--hold);border-color:rgba(208,170,114,.42)}.open{color:var(--red);border-color:rgba(213,137,137,.4)}
+.detailHead{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-bottom:9px}.detailHead h2{font-size:16px;margin:0 0 4px}.officeEdge{font-size:10px;color:var(--gold)}
+.summary{font-size:11px;line-height:1.68;color:var(--muted);margin-bottom:10px}.summary b{color:var(--text)}
+.codebox{border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:10px 11px;font-family:Cambria Math,STIX Two Math,serif;font-size:13px;line-height:1.65;overflow:auto;margin-bottom:9px}
+.facts{display:grid;gap:7px}.fact{border-left:2px solid #46505d;padding:4px 0 4px 9px;font-size:10px;line-height:1.55;color:var(--muted)}.fact b{color:var(--text)}
+.ioGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px}.io{border:1px solid var(--line);border-radius:7px;padding:7px 8px;background:#0d1117;font-size:9px;line-height:1.45;color:var(--muted)}.io b{display:block;color:var(--cool);font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.cutbox{margin-top:9px;border:1px dashed rgba(213,137,137,.4);border-radius:9px;padding:9px 10px;color:#c89a9a;font-size:10px;line-height:1.55}
+.machineGrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.78fr);gap:12px}@media(max-width:900px){.machineGrid{grid-template-columns:1fr}}
+.controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}button{background:var(--panel2);border:1px solid var(--line);color:var(--text);font:inherit;font-size:9px;border-radius:8px;padding:8px 10px;cursor:pointer}button:hover{border-color:var(--gold)}button:disabled{opacity:.4;cursor:not-allowed}
+.phaseTrack{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}.phaseCell{border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center;font-size:9px;color:var(--muted)}.phaseCell.active{border-color:var(--gold);color:var(--gold);background:rgba(216,180,109,.06)}
+.readout{min-height:83px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);padding:9px 11px;font-size:10px;line-height:1.62;color:var(--muted)}.readout .ok{color:var(--green)}.readout .hold{color:var(--hold)}.readout .bad{color:var(--red)}
+.gateList{display:grid;gap:6px}.gate{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;border-bottom:1px dashed rgba(255,255,255,.06);padding:6px 0;font-size:9px;color:var(--muted)}.gate code{color:var(--cool)}
+.typeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}@media(max-width:800px){.typeGrid{grid-template-columns:1fr}}
+.typeCard{border:1px solid var(--line);border-radius:9px;background:var(--panel2);padding:10px;font-size:10px;line-height:1.58;color:var(--muted)}.typeCard b{display:block;color:var(--gold);margin-bottom:4px}.typeCard code{color:var(--cool)}
+.lock{border-left:3px solid var(--green);padding:9px 11px;background:rgba(155,197,163,.045);font-size:10px;line-height:1.65;color:var(--muted);margin-top:10px}.lock b{color:var(--green)}
+footer{font-size:8px;color:#596270;text-align:center;line-height:1.6;margin-top:8px}
+</style>
+  <link rel="canonical" href="https://eulershiddenl.ink/models/view/color-meaning-memory-motion-v0.1">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1><span class="gold">COLOR MEANING MEMORY MOTION</span></h1>
+      <div class="sub">Path ζ square-pyramid architecture · v0.1. GRAVITY LIGHT MEMORY MOTION forms the inner controller boundary. Color Meaning Memory Motion names the four typed faces read through Path ζ.</div>
+    </div>
+    <span class="pill">ARCHITECTURE · PARTIALLY INSTANTIATED · SHELL OPEN</span>
+  </header>
+
+  <div class="note"><b>Construction status.</b> This is the planar incidence view of <span style="font-family:serif">Cone<sub>ζpath</sub>(C<sub>Φ</sub>)</span>, not a physical embedding of the periodic table. Path ζ reads completed controller paths; it does not advance the controller, certify the shell, or make four face realizations identical.</div>
+
+  <div class="layout">
+    <section class="panel">
+      <div class="panelTitle"><span>Square-pyramid incidence</span><span>select a face</span></div>
+      <div class="stage">
+        <svg viewBox="0 0 1000 620" role="img" aria-label="Color Meaning Memory Motion square pyramid">
+          <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d8b46d"/></marker></defs>
+
+          <polygon class="face selected" data-face="color" points="500,310 500,72 884,310" fill="#72a9c9" stroke="#72a9c9"/>
+          <polygon class="face" data-face="meaning" points="500,310 884,310 500,548" fill="#b69bd2" stroke="#b69bd2"/>
+          <polygon class="face" data-face="memory" points="500,310 500,548 116,310" fill="#d8b46d" stroke="#d8b46d"/>
+          <polygon class="face" data-face="motion" points="500,310 116,310 500,72" fill="#92bf9b" stroke="#92bf9b"/>
+
+          <line class="spoke" x1="500" y1="310" x2="500" y2="72"/><line class="spoke" x1="500" y1="310" x2="884" y2="310"/>
+          <line class="spoke" x1="500" y1="310" x2="500" y2="548"/><line class="spoke" x1="500" y1="310" x2="116" y2="310"/>
+
+          <path class="baseEdge" d="M 514 81 Q 720 150 872 296"/><path class="baseEdge" d="M 872 324 Q 720 470 514 539"/>
+          <path class="baseEdge" d="M 486 539 Q 280 470 128 324"/><path class="baseEdge" d="M 128 296 Q 280 150 486 81"/>
+          <text class="faceSub" x="297" y="485" fill="#d8b46d">Memory Return · local Mem–Mot interface</text>
+
+          <text class="faceLabel" x="660" y="184" fill="#a9d5ee">COLOR</text><text class="faceSub" x="660" y="200">atomic structure · spectral occurrence</text>
+          <text class="faceLabel" x="660" y="432" fill="#dcc8ef">MEANING</text><text class="faceSub" x="660" y="448">reader · reference · recognition candidate</text>
+          <text class="faceLabel" x="340" y="432" fill="#edd29b">MEMORY</text><text class="faceSub" x="340" y="448">Fibonacci companion · retained return</text>
+          <text class="faceLabel" x="340" y="184" fill="#c4e0c9">MOTION</text><text class="faceSub" x="340" y="200">Difference · transport · return</text>
+
+          <g class="node apex" transform="translate(500 310)"><circle r="50"/><text y="-5">Path ζ</text><text class="small" y="12">reader / compiler</text></g>
+          <g class="node" data-office="G" transform="translate(500 72)"><circle r="38"/><text y="-3">Gravity</text><text class="small" y="13">GΦ</text></g>
+          <g class="node" data-office="L" transform="translate(884 310)"><circle r="38"/><text y="-3">Light</text><text class="small" y="13">LΦ</text></g>
+          <g class="node" data-office="Mem" transform="translate(500 548)"><circle r="38"/><text y="-3">Memory</text><text class="small" y="13">MemΦ</text></g>
+          <g class="node phase" data-office="Mot" transform="translate(116 310)"><circle r="38"/><text y="-3">Motion</text><text class="small" y="13">MotΦ</text></g>
+        </svg>
+        <div class="stageNote">Outer words name 2-faces. Inner words name controller positions.<br>No face or interior phase certifies the whole shell.</div>
+      </div>
+    </section>
+
+    <section class="panel" id="detailPanel">
+      <div class="panelTitle"><span>Selected face</span><span id="faceIndex">FζGL</span></div>
+      <div class="detailHead"><div><h2 id="faceTitle">Color</h2><div id="officeEdge" class="officeEdge">Gravity · Path ζ · Light</div></div><span id="faceStatus" class="status partial">CALIBRATED / PARTIAL BRIDGE</span></div>
+      <div id="faceSummary" class="summary"></div>
+      <div id="faceCode" class="codebox"></div>
+      <div id="faceIO" class="ioGrid"></div>
+      <div id="faceFacts" class="facts"></div>
+      <div id="faceCut" class="cutbox"></div>
+    </section>
+  </div>
+
+  <div class="machineGrid">
+    <section class="panel">
+      <div class="panelTitle"><span>Controller and Path ζ return reader</span><span id="cycleCount">0 / 4 edges carried</span></div>
+      <div class="phaseTrack">
+        <div class="phaseCell active" data-phase="Mot">Motion</div><div class="phaseCell" data-phase="G">Gravity</div><div class="phaseCell" data-phase="L">Light</div><div class="phaseCell" data-phase="Mem">Memory</div>
+      </div>
+      <div class="controls">
+        <button id="nextOffice">Next controller office</button>
+        <button id="readPath" disabled>Read returned path with ζ</button>
+        <button id="runCut" disabled>Apply admissibility cut</button>
+        <button id="recognize" disabled>Recognize at πRec</button>
+        <button id="resetMachine">Reset</button>
+      </div>
+      <div class="readout" id="machineReadout"><span class="hold">HOLD.</span> Controller installed at Motion. Path ζ has no completed boundary return to read.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panelTitle"><span>Global gate ledger</span><span id="shellStatus" class="status open">SHELL OPEN</span></div>
+      <div class="gateList">
+        <div class="gate"><span>Color</span><code>FζGL</code><span class="status partial">CERT CARRIER</span></div>
+        <div class="gate"><span>Meaning</span><code>FζLMem</code><span class="status partial">KERNEL WITNESS</span></div>
+        <div class="gate"><span>Memory</span><code>FζMemMot</code><span class="status partial">FORMAL / ζ OPEN</span></div>
+        <div class="gate"><span>Motion</span><code>FζMotG</code><span class="status partial">SCOPE-BOUND</span></div>
+        <div class="gate"><span>Intertwiner</span><code>ιspec</code><span class="status partial">PARTIAL</span></div>
+        <div class="gate"><span>Certificate</span><code>ιrec</code><span class="status open">OPEN</span></div>
+      </div>
+      <div class="lock"><b>Shell law.</b> A returned controller cycle admits a Path ζ read. It does not emit Endurance until every required intertwiner is typed and an independent shell check returns Cert.</div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="panelTitle"><span>Formal package</span><span>collision-safe tags</span></div>
+    <div class="typeGrid">
+      <div class="typeCard"><b>Architecture</b><code>CMMMᵢ = (CΦ, ζpath, {FColor,FMeaning,FMemory,FMotion}, {ρf}, Cut, RecπRec, Receipt)</code></div>
+      <div class="typeCard"><b>Reader protocol</b><code>ζpath : Σf ReturnedPathf(Xf) → Σf Candf</code><br>Face tags and codomains remain attached.</div>
+      <div class="typeCard"><b>Reader order</b><code>returned path → ζpath read → Adm(Cand)=Admitted ⊔ Refusal → RecπRec → 𝓔</code></div>
+      <div class="typeCard"><b>Face compatibility</b><code>Rb ∘ Tab = Zab ∘ Ra</code><br>Equality of composites, not resemblance of vocabulary.</div>
+      <div class="typeCard"><b>Φ tags</b><code>Φoffice</code> = four-office interface.<br><code>φFib</code> = golden eigenvalue.</div>
+      <div class="typeCard"><b>ζ / J tags</b><code>ζpath</code> = reader interface.<br><code>ζRiem</code> = Riemann function.<br><code>JFE(s)=1−s</code> and <code>Jcrit(z)=1−z̄</code> remain distinct.</div>
+      <div class="typeCard"><b>Phase tags</b><code>πRec</code> = controller/recognition phase.<br><code>θphys</code> = physical angle.<br><code>αtop=θphys/2</code> = covering angle.</div>
+      <div class="typeCard"><b>Covering return</b><code>θphys=2π ⇔ αtop=π ⇔ Utop(π)=−I</code><br><code>θphys=4π</code> gives the blank central return.</div>
+    </div>
+  </section>
+
+  <footer>COLOR MEANING MEMORY MOTION · architecture build v0.1 · the pyramid is an explicit typed organizational cone, not an inferred atomic shape.</footer>
+</main>
+
+<script>
+const FACE_DATA={
+ color:{index:'FζGL',title:'Color',edge:'Gravity · Path ζ · Light',status:'CERT CARRIER / OPEN SPECTRAL INTERTWINER',statusClass:'partial',
+  summary:'<b>Color is the Gravity–Light face.</b> Atomic structure constrains which physical states and transitions exist; Light makes their spectral Difference readable. Color is therefore a typed occurrence produced through a mechanism, never a scalar assigned to an element.',
+  code:'Xₛ={(n,r)}; &nbsp; G₆=P₆ □ K₂<br>Readerₐ={q<sub>occ</sub>, ℓ<sub>I</sub>, R<sub>ρ₀</sub>, z<sub>2π</sub>}<br>ι<sub>spec</sub>:(state,mechanism) ⇀ S(λ)',
+  io:{Domain:'tagged atomic carriers and checked mechanisms',Input:'AtomicState × Mechanism',Output:'descriptor read or SpectralRecord',Preserves:'state, mechanism, reader tag, provenance',Forgets:'reader-specific; never silently combined',Residual:'declared companion reader or source record'},
+  facts:[['Carrier','The six-layer s-block ladder and p-block fold remain calibrated carriers, not physical trajectories.'],['Read families','Occupation, radial, and central-character reads remain non-coercible.'],['Color channel','Checked atomic line records instantiate ιspec only on a declared partial domain.']],
+  cut:'Open edge: no carrier-wide state → spectrum constructor has been built. The face may consume checked spectral records; it may not forecast an unmeasured atomic spectrum.'},
+ meaning:{index:'FζLMem',title:'Meaning',edge:'Light · Path ζ · Memory',status:'CERT KERNEL WITNESS / MEANING+REC OPEN',statusClass:'partial',
+  summary:'<b>Meaning is the Light–Memory face.</b> A spectral record is projected through a declared observer; Memory retains the source and the residual cut by the read. Meaning begins as an oriented, reusable read against a reference—not as a swatch or a word alone.',
+  code:'C(S)=(∫Sc<sub>L</sub>,∫Sc<sub>M</sub>,∫Sc<sub>S</sub>)<br>S₁ ~<sub>C</sub> S₂ ⇔ C(S₁)=C(S₂)<br>S₁−S₂ ∈ ker C &nbsp; (linear model)',
+  io:{Domain:'SpectralRecord × Observer × Context',Input:'S(λ) with source receipt',Output:'ConeRead × Receipt = MeaningCand',Preserves:'source spectrum, observer tag, context',Forgets:'cone projection cuts spectral dimensions',Residual:'r ∈ ker C retained beside the read'},
+  facts:[['Exact recognition','Distinct spectra can share one cone response: a genuine reader/fiber identification.'],['Receipt','The spectrum remains beside the perceptual read; the swatch never replaces its source. A retained residual is not automatically the Memory office.'],['Scope','Color response, Meaning, and Recognition remain three types. The cone reader shares reader/kernel structure with other quotients but is not the Haar Recognition operator.']],
+  cut:'Open edge: ιrec from a retained, context-bearing color read to RecπRec has not been constructed. MeaningCand is typed; Endurance is not emitted.'},
+ memory:{index:'FζMemMot',title:'Memory',edge:'Memory · Path ζ · Motion',status:'FORMAL REALIZATION / ζ BRIDGE OPEN',statusClass:'partial',
+  summary:'<b>Memory is the Memory–Motion face.</b> Ordered refinement carries a companion direction rather than quotienting it away. Fibonacci recurrence is the exact iteration law on this declared algebraic subtype.',
+  code:'Q=M<sub>J</sub>C₁; &nbsp; T=ℙ(Q)=J<sub>ℙ</sub>∘σ<br>Qⁿ=[[F<sub>n+1</sub>,F<sub>n</sub>],[F<sub>n</sub>,F<sub>n−1</sub>]]<br>φ<sub>Fib</sub>=(1+√5)/2; &nbsp; φ′<sub>Fib</sub>=−1/φ<sub>Fib</sub>',
+  io:{Domain:'declared Q-refinement carrier',Input:'(v,Q,n) with companion coordinate',Output:'Qⁿv × refinement receipt',Preserves:'whole/remainder recurrence and order',Forgets:'no loss claimed for the full companion package',Residual:'φ′Fib companion direction'},
+  facts:[['Generator','Q is the drivetrain; φFib is its dominant eigenvalue, not the Φoffice interface.'],['Path realization','Jℙ is a candidate face-specific projective mirror realization; its intertwiner with ζpath remains open.'],['Companion memory','The conjugate direction is retained as the lossless companion of refinement.'],['Memory Return','The scoped return receipt belongs to the Mem–Mot base interface or this adjacent face—not to the geometric ζ–Mot hinge.']],
+  cut:'Closed only on the stated refinement/eigenline construction. No identification with atomic periodicity, biological growth, or Riemann ζ follows.'},
+ motion:{index:'FζMotG',title:'Motion',edge:'Motion · Path ζ · Gravity',status:'FORMAL RETURN LAW / G INTERFACE SCOPE-BOUND',statusClass:'partial',
+  summary:'<b>Motion is the Motion–Gravity face.</b> Transport carries Difference; a declared constraint tests its return against the reference. Difference & Motion does not by itself certify that constraint as the full Gravity office.',
+  code:'U(θ)=e<sup>θC</sup> ∈ SO(2); &nbsp; D<sub>θ</sub>=U(θ)−I<br>Φ<sub>V</sub>(θ;q)=(G(q),L(U(θ)q),D<sub>θ</sub>q,U(θ)q)<br>G(q)=qᵀq; &nbsp; L(q)=[q]',
+  io:{Domain:'V=ℝ² with held SO(2) transport',Input:'(q,θ,γ) with transport defined',Output:'endpoint × Difference × projective read',Preserves:'norm/reference and lifted path receipt',Forgets:'projective Light read cuts vector sign',Residual:'Dθq and the carried path'},
+  facts:[['Difference','Residue is downstream; represented Difference is primitive.'],['Planar return','For the declared SO(2) model, θ=π gives U(θ)=−I and an active projective return. This is not the spinor central-return convention.'],['Memory Return','The endpoint observable is consumed only by a separately typed lift/receipt construction on the Mem–Mot interface. Neither substitutes for the other.']],
+  cut:'Covering convention remains typed: θphys=2π corresponds to αtop=π and Utop(π)=−I; θphys=4π gives the blank central return. πRec remains distinct unless an intertwiner is proved.'}
+};
+
+let selected='color';
+function selectFace(name){selected=name;document.querySelectorAll('.face').forEach(x=>x.classList.toggle('selected',x.dataset.face===name));const d=FACE_DATA[name];
+ document.getElementById('faceIndex').textContent=d.index;document.getElementById('faceTitle').textContent=d.title;document.getElementById('officeEdge').textContent=d.edge;
+ const s=document.getElementById('faceStatus');s.textContent=d.status;s.className='status '+d.statusClass;document.getElementById('faceSummary').innerHTML=d.summary;document.getElementById('faceCode').innerHTML=d.code;
+ document.getElementById('faceIO').innerHTML=Object.entries(d.io).map(([k,v])=>'<div class="io"><b>'+k+'</b>'+v+'</div>').join('');document.getElementById('faceFacts').innerHTML=d.facts.map(([k,v])=>'<div class="fact"><b>'+k+'.</b> '+v+'</div>').join('');document.getElementById('faceCut').textContent=d.cut;
+}
+document.querySelectorAll('.face').forEach(x=>x.addEventListener('click',()=>selectFace(x.dataset.face)));selectFace('color');
+
+const offices=['Mot','G','L','Mem'];let phase=0,steps=0,readReady=false,cutApplied=false;
+function renderPhase(){document.querySelectorAll('[data-phase]').forEach(x=>x.classList.toggle('active',x.dataset.phase===offices[phase]));document.querySelectorAll('[data-office]').forEach(x=>x.classList.toggle('phase',x.dataset.office===offices[phase]));document.getElementById('cycleCount').textContent=Math.min(steps,4)+' / 4 edges carried';document.getElementById('readPath').disabled=steps<4;}
+document.getElementById('nextOffice').addEventListener('click',()=>{phase=(phase+1)%4;steps++;renderPhase();const r=document.getElementById('machineReadout');if(steps<4)r.innerHTML='<span class="hold">CARRY.</span> Controller advanced to '+offices[phase]+'. Path ζ observes the trace but does not advance the clock.';else{r.innerHTML='<span class="ok">ITINERARY CLOSED.</span> Mot → G → L → Mem → Mot has returned to its controller position. No identity composite is asserted; the receipt may retain holonomy or residue.';document.getElementById('nextOffice').disabled=true;}});
+document.getElementById('readPath').addEventListener('click',()=>{readReady=true;document.getElementById('runCut').disabled=false;document.getElementById('machineReadout').innerHTML='<span class="ok">PATH ζ READ.</span> Tagged ReadCand = (face, reference, represented endpoint, represented Difference, lifted path receipt). No face tag or residual has been discarded; no certification has been claimed.';});
+document.getElementById('runCut').addEventListener('click',()=>{if(!readReady)return;cutApplied=true;document.getElementById('recognize').disabled=false;document.getElementById('machineReadout').innerHTML='<span class="hold">CUT HOLDS.</span> The returned packet remains comparable and its receipt is retained. ιspec is partial and ιrec remains open, so the packet does not enter the shell-certificate domain.';});
+document.getElementById('recognize').addEventListener('click',()=>{if(!cutApplied)return;document.getElementById('machineReadout').innerHTML='<span class="bad">RECOGNITION DOMAIN NOT ENTERED.</span> RecπRec remains partial. The architecture retains ReadCand and its cut receipt; no Endurance certificate is emitted and no phase read certifies the shell.';});
+document.getElementById('resetMachine').addEventListener('click',()=>{phase=0;steps=0;readReady=false;cutApplied=false;document.getElementById('nextOffice').disabled=false;document.getElementById('readPath').disabled=true;document.getElementById('runCut').disabled=true;document.getElementById('recognize').disabled=true;document.getElementById('machineReadout').innerHTML='<span class="hold">HOLD.</span> Controller installed at Motion. Path ζ has no completed boundary return to read.';renderPhase();});
+renderPhase();
+</script>
+</body>
+</html>

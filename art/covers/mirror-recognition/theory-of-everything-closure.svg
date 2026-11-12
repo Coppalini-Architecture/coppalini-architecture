@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc">
+  <title id="title">The Theory of Everything cover</title>
+  <desc id="desc">A quiet circular Lorentzian mirror diagram: two null directions meet at the center and a vertical axis carries the involution.</desc>
+  <rect width="800" height="1050" fill="#faf8f3"/>
+  <text x="400" y="140" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">The Theory</text>
+  <text x="400" y="191" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">of Everything</text>
+
+  <g stroke-linecap="round">
+    <circle cx="400" cy="555" r="204" fill="none" stroke="#d5c9b3" stroke-width="1.4"/>
+    <circle cx="400" cy="555" r="187" fill="none" stroke="#d6b07a" stroke-width="1.2"/>
+    <circle cx="400" cy="555" r="156" fill="#faf8f3" stroke="#ebe4d7" stroke-width="1.2"/>
+    <path d="M400 555L289 444A156 156 0 0 1 511 444Z" fill="#b8c3ba" opacity=".36"/>
+    <path d="M400 555L511 666A156 156 0 0 1 289 666Z" fill="#a5adc8" opacity=".36"/>
+    <g stroke="#d6b07a" stroke-width="1.2">
+      <path d="M400 334V345"/><path d="M510 363l-5.5 9.5"/><path d="M591 444l-9.5 5.5"/>
+      <path d="M621 555h-11"/><path d="M591 666l-9.5-5.5"/><path d="M510 747l-5.5-9.5"/>
+      <path d="M400 776v-11"/><path d="M290 747l5.5-9.5"/><path d="M209 666l9.5-5.5"/>
+      <path d="M179 555h11"/><path d="M209 444l9.5 5.5"/><path d="M290 363l5.5 9.5"/>
+    </g>
+    <path d="M289 444L511 666M511 444L289 666" fill="none" stroke="#a5adc8" stroke-width="2.4"/>
+    <path d="M400 380V730" fill="none" stroke="#b8c3ba" stroke-width="2.4"/>
+    <path d="M289 444L400 555L511 444" fill="none" stroke="#b8c3ba" stroke-width="1.5"/>
+    <path d="M289 666L400 555L511 666" fill="none" stroke="#b8c3ba" stroke-width="1.5"/>
+    <circle cx="400" cy="555" r="5.5" fill="#faf8f3" stroke="#d6b07a" stroke-width="1.8"/>
+  </g>
+
+  <text x="400" y="833" text-anchor="middle" fill="#4a4741" font-family="Georgia, 'Times New Roman', serif" font-size="29">H = [Q, Ω] / √5, H² = I</text>
+  <text x="400" y="928" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="3.2">ANTHONY VITO COPPA</text>
+  <text x="400" y="954" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="2.5">COPPALINI ARCHITECTURE</text>
+</svg>

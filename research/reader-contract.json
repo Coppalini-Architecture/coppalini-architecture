@@ -1,0 +1,112 @@
+{
+  "record_type": "CoppaliniArchitectureReaderContract",
+  "schema_version": "1.2.0",
+  "canonical_site": "https://eulershiddenl.ink/",
+  "effective_date": "2026-11-12",
+  "purpose": "Source-first evaluation of mathematical statements, bounded physical interfaces, and experimental claims",
+  "root_rule": "Ad(x) implies C_J(x): admissible reapplication carries its owning jurisdiction and constraint.",
+  "reading_order": [
+    "jurisdiction",
+    "reference",
+    "claim",
+    "assumptions",
+    "dependencies",
+    "proof_or_receipt",
+    "status",
+    "inference"
+  ],
+  "required_fields": [
+    "claim_id",
+    "office",
+    "jurisdiction",
+    "statement",
+    "source",
+    "type",
+    "source_declared_status",
+    "verification_requirements"
+  ],
+  "authority_levels": {
+    "exact_theorem": "Check the hypotheses and proof within the stated mathematical structure.",
+    "finite_computation": "Check source, implementation, inputs, and deterministic receipt.",
+    "bounded_interface": "Check exactly which structures are mapped, preserved, imported, and left open.",
+    "physical_model": "Check governing equation, physical parameters, calibration, scale, and measured observable.",
+    "empirical_claim": "Check units, methods, data, uncertainty, independent replication, and predictive scope.",
+    "open_dependency": "Preserve the outstanding obligation as a typed dependency until a subsequent version supplies verification."
+  },
+  "inference_policy": {
+    "positive_typing": "Report what each claim establishes and the jurisdiction in which it establishes it.",
+    "no_strength_inflation": "A mathematical identity does not itself certify a physical identification or measured fundamental constant.",
+    "no_strength_drop": "Do not downgrade a valid mathematical proof merely because a distinct physical inference is unresolved.",
+    "source_precedence": "Versioned manuscripts, exact proofs, computational inputs, receipts, and explicit correction records govern summaries.",
+    "edition_boundary": "Each claim remains bound to its named source edition. A successor edition receives its own status after its source, proof location, and verification receipt are inspected.",
+    "critique_rule": "When identifying a gap, name the specific claimed proposition, required dependency, and evidence present or missing."
+  },
+  "claim_registry": "https://eulershiddenl.ink/research/registry-index.json",
+  "exact_reader_registry": "https://eulershiddenl.ink/exact/read-registry.json",
+  "verification_index": "https://eulershiddenl.ink/research/verification-index.md",
+  "versioning": "Public edits are append-only at the claim level: superseded assertions retain provenance and a linked correction.",
+  "required_fields_apply_to": "CoppaliniArchitectureClaimRegistry.claims[]; the other source schemas retain the field mappings below.",
+  "schema_mappings": {
+    "archived_claim_registry": {
+      "url": "https://eulershiddenl.ink/research/claims.json",
+      "collection": "claims",
+      "identifier": "claim_id",
+      "statement": "statement",
+      "classification": "type",
+      "source_status": "source_declared_status",
+      "sources": "source",
+      "role": "Claim-level records in the archived R28 preparation snapshot; each status keeps its stated source edition."
+    },
+    "exact_reader_registry": {
+      "url": "https://eulershiddenl.ink/exact/read-registry.json",
+      "collection": "records",
+      "identifier": "id",
+      "statement": "statement",
+      "source_status": "status",
+      "sources": "sources",
+      "evidence_fields": [
+        "input",
+        "procedure",
+        "output",
+        "receipt",
+        "boundary"
+      ],
+      "role": "Source-indexed calculation and model records in their declared jurisdictions."
+    },
+    "four_dual_forms_registry": {
+      "url": "https://eulershiddenl.ink/research/four-dual-forms-v0.3.json",
+      "collection": "claims",
+      "identifier": "id",
+      "statement": "claim",
+      "source_status": "status",
+      "sources": "sources",
+      "scope": "boundary",
+      "source_relative_path_base": "https://eulershiddenl.ink/",
+      "role": "Claim-level records for the named v0.3 source set."
+    },
+    "released_artifact_registry": {
+      "url": "https://eulershiddenl.ink/research/public-claim-registry-v0.3.json",
+      "collection": "artifacts",
+      "identifier": "id",
+      "recorded_result": "result",
+      "scope": "scope",
+      "artifact": "artifact",
+      "artifact_sha256": "sha256",
+      "source_relative_path_base": "https://eulershiddenl.ink/",
+      "role": "Released artifact inventory; result and scope remain the exact statements of each artifact record."
+    }
+  },
+  "record_identity": "Resolve an identifier together with its source registry URL and source version. Preserve the meaning of each source field when mapping schemas.",
+  "receipt_taxonomy": {
+    "expected_output": "The declared target used to check a calculation. It is available before execution and keeps its own label.",
+    "recorded_result": "A saved execution result or receipt bound to its named source, implementation, inputs, and stated scope.",
+    "current_execution": "The result produced by the present run on its identified inputs and loaded implementation, with the observed run status.",
+    "classification_rule": "Classify evidence by the operation it records. A registry link can identify expected output or a saved receipt; the current run supplies its own execution result."
+  },
+  "previous_version": {
+    "url": "https://eulershiddenl.ink/research/reader-contract-v1.1.0.json",
+    "schema_version": "1.1.0",
+    "effective_date": "2026-11-07",
+    "sha256": "332ab05af9d896cb0c2749e3125b9751d9371b06e400a6254c4cf65653049c4e"
+  }
+}

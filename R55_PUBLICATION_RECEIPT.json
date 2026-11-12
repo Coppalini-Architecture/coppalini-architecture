@@ -1,0 +1,74 @@
+{
+  "website_release": "R55",
+  "status": "CANDIDATE_READY_FOR_PUBLICATION",
+  "base_production_deploy": "6af5343c2539335a4ac24ff8",
+  "base_artifact": {
+    "name": "Coppalini_R54_IOZL_v0_2_Website.zip",
+    "sha256": "3ec7d95f6f518de950a9f7206aa3108d5aba85d4e2f001135bbc8829abdce0b3"
+  },
+  "release_scope": {
+    "author_record": "Long-form author and field-investigation overview, portrait, short byline, and one-to-one inline source links.",
+    "recompute_kernel": "Public Exact Reader record, raw source mirror, machine manifest, generated ledger, download packet, and crawler map entry.",
+    "social_preview": "Homepage Open Graph and Twitter preview bound to the I, Q, Ω, G root-matrix wheel."
+  },
+  "changed_existing_files": [
+    "anthony-vito-coppa.html",
+    "exact/exact-reader.css",
+    "exact/index.html",
+    "exact/read-registry.json",
+    "index.html",
+    "llms-full.txt",
+    "llms.txt",
+    "research/registry-index.json",
+    "sitemap.xml"
+  ],
+  "added_files": [
+    "author-page.css",
+    "assets/authors/anthony-vito-coppa-fieldwork.jpeg",
+    "assets/social/root-matrices-link-card.jpg",
+    "downloads/Coppalini_Recompute_Kernel_v0_2.zip",
+    "exact/read-registry-v1.1.0.json",
+    "exact/recompute-kernel/README.md",
+    "exact/recompute-kernel/SHA256SUMS",
+    "exact/recompute-kernel/index.html",
+    "exact/recompute-kernel/ledger.md",
+    "exact/recompute-kernel/manifest.json",
+    "exact/recompute-kernel/run_all.py",
+    "tools/verify_r55_author_recompute.py"
+  ],
+  "recompute_kernel": {
+    "version": "v0.2",
+    "packet_sha256": "f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60",
+    "runner_sha256": "4e3c70c74ec35c4d6bba5e87cdfa0cd1e74f5f1184c4680ebc290d7ec2eba9a5",
+    "core_table_sha256": "d8a27ca8e1344ab2e3583b300b505ef1d0536aebfa6df3e7cc415529509daa4b",
+    "ledger_sha256": "101b97c8c71e5246cbfb91a339d0fca1eadc8e45615c375420dcf37b8ddbdf00",
+    "public_record": "/exact/recompute-kernel/",
+    "download": "/downloads/Coppalini_Recompute_Kernel_v0_2.zip",
+    "core_contract": "A01–A10 use exact standard-library integer arithmetic; K01–K02 are expected-false controls; S01 is optional symbolic verification. A05–A06 retain n=1..40 and A10 retains m=1..3000."
+  },
+  "author_record": {
+    "route": "/anthony-vito-coppa",
+    "portrait": "/assets/authors/anthony-vito-coppa-fieldwork.jpeg",
+    "source_coordinate_count": 22,
+    "authorized_removed_placeholder": "Color Meaning Memory Motion"
+  },
+  "social_preview": {
+    "route": "/",
+    "asset": "/assets/social/root-matrices-link-card.jpg",
+    "sha256": "ce9e32697bad38eda1eee909fb466f01ee83e3f0aa0e6360ff7ef5bcd34c87ca",
+    "dimensions": "1200x630",
+    "alt": "The four 2×2 root matrices I, Q, Ω, and G = [Q, Ω] arranged inside a colored spectral wheel."
+  },
+  "verification": {
+    "command": "python3 -I tools/verify_r55_author_recompute.py",
+    "result": "PASS",
+    "checks": [
+      "author protected wording, portrait, short byline, and inline source map",
+      "Recompute Kernel packet SHA-256 and raw file bindings",
+      "A01–A10 execution, K01–K02 expected-false controls, ledger synchronization, manifest, and identical core fingerprint without SymPy",
+      "Exact Reader, registry index, sitemap, machine-reading maps, and root-matrix social preview"
+    ]
+  },
+  "external_actions": [],
+  "publication_target": "https://eulershiddenl.ink"
+}

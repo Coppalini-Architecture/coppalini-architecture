@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Local research audit of paired oxygen and redox observations, with exact rational arithmetic and explicit assay bounds.">
+  <title>NOP Return / Memory Workbench · Coppalini Architecture</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="kernel.js"></script>
+  <script defer src="demo.js"></script>
+  <script defer src="app.js"></script>
+  <meta name="author" content="Anthony Vito Coppa">
+  <link rel="canonical" href="https://eulershiddenl.ink/nop/">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to audit</a>
+  <header class="site-header">
+    <a class="brand" href="/">Coppalini Architecture<span>Research instruments</span></a>
+    <nav aria-label="Main navigation"><a href="/">Home</a><a href="/architecture">Constructions</a><a href="#documents">Documents</a></nav>
+  </header>
+  <main id="main">
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow">NOP RESEARCH TOOL <span>Browser edition · 0.2.0</span></p>
+        <h1>NOP Return /<br>Memory Workbench</h1>
+        <p class="lead">Oxygen–redox paired audit</p>
+        <p>Compare each declared oxygen reading and two assay indices with their own run’s baseline. Exact arithmetic preserves the entered values; recorded bounds preserve the measurement uncertainty.</p>
+        <p class="local"><span aria-hidden="true">●</span> Runs locally in this browser. Selected data are never uploaded.</p>
+      </div>
+      <div class="formula-grid" aria-label="Four normalized quantities">
+        <div><span>ROS index</span><strong>r = R / R₀</strong></div>
+        <div><span>Scavenger index</span><strong>a = A / A₀</strong></div>
+        <div><span>Relative balance</span><strong>q = r / a</strong></div>
+        <div><span>Common scale</span><strong>scale² = r × a</strong></div>
+        <p>A balance of one can coexist with changed assay indices. The audit retains both coordinates.</p>
+      </div>
+    </section>
+    <section class="panel input-panel" aria-labelledby="input-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / INPUT</p><h2 id="input-title">Declare the readings</h2></div><button id="demo" type="button" class="secondary">Load synthetic demo</button></div>
+      <form id="audit-form">
+        <div class="input-grid">
+          <div><label class="file-label" for="metadata-file">Metadata JSON<span>Assay, compartment, units, and source</span></label><input id="metadata-file" type="file" accept=".json,application/json"><p id="metadata-file-name" class="file-note">No file selected</p><details><summary>Paste or inspect metadata</summary><label class="sr-only" for="metadata-text">Metadata JSON text</label><textarea id="metadata-text" spellcheck="false" placeholder='{"schema_version":"0.1", ...}'></textarea></details></div>
+          <div><label class="file-label" for="data-file">Paired observations CSV<span>One first baseline per run; submitted order retained</span></label><input id="data-file" type="file" accept=".csv,text/csv"><p id="data-file-name" class="file-note">No file selected</p><details><summary>Paste or inspect observations</summary><label class="sr-only" for="data-text">Observations CSV text</label><textarea id="data-text" spellcheck="false" placeholder="run_id,arm,sample_id,occurrence,time_min,…"></textarea></details></div>
+        </div>
+        <div class="action-row"><button type="submit" id="run">Validate &amp; audit</button><p>Decimal and rational inputs are accepted. FiO₂ is a fraction from 0 to 1; absolute pressure is in kPa.</p></div>
+      </form>
+      <p id="status" role="status" aria-live="polite">Begin with the synthetic demo or select your two input files.</p>
+      <div id="error" role="alert" hidden></div>
+    </section>
+    <section id="results" class="panel" aria-labelledby="results-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">02 / AUDIT</p><h2 id="results-title">Paired results</h2><p id="dataset"></p></div><span id="origin" class="pill"></span></div>
+      <div id="summary" class="summary-grid"></div>
+      <details id="warnings-box" class="notice" hidden><summary id="warnings-title">Recorded qualifications</summary><ul id="warnings"></ul></details>
+      <div class="table-toolbar"><label for="run-filter">Run <select id="run-filter"><option value="">All runs</option></select></label><p>Exact values · same-run baseline = 1</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable exact results table">
+        <table><caption class="sr-only">Normalized assay values and conservative interval bounds, in submitted order. Select a sample for all exact fields.</caption><thead><tr><th scope="col">Run / sample</th><th scope="col">Occurrence<br><span>Time · min</span></th><th scope="col">Oxygen<br><span>kPa</span></th><th scope="col">r</th><th scope="col">a</th><th scope="col">q</th><th scope="col">scale²</th><th scope="col">Return verdict</th></tr></thead><tbody id="result-rows"></tbody></table>
+      </div>
+      <div class="page-controls"><button id="previous" type="button" class="secondary">Previous</button><span id="page-info"></span><button id="next" type="button" class="secondary">Next</button></div>
+      <p class="help">Bracketed ranges are recorded or propagated bounds. A range overlapping one remains unresolved. Missing bounds mean “point as entered,” with no biological certainty implied. Select a sample to inspect its full receipt row, endpoint, and exact status identifiers.</p>
+      <details class="metadata-details"><summary>Measurement declarations and source references</summary><pre id="metadata-view"></pre></details>
+      <div class="export"><div><p class="eyebrow">03 / RETAIN</p><h3>Keep the calculation and its inputs’ identity</h3><p id="hash-status"></p></div><div class="export-buttons"><button id="export-audit" type="button" class="secondary">Audit JSON</button><button id="export-csv" type="button" class="secondary">Derived CSV</button><button id="export-receipt" type="button" class="secondary">Receipt JSON</button></div></div>
+    </section>
+    <section id="documents" class="resources" aria-labelledby="documents-title"><div><p class="eyebrow">REFERENCE</p><h2 id="documents-title">Method and boundaries</h2><p>This is a descriptive research audit. HIF transfer remains unassigned; an optional endpoint retains its declared assay and isoform. No medical recommendations are generated.</p></div><div class="document-links"><a href="docs/User_Manual.pdf">User manual <span>PDF ↗</span></a><a href="docs/Research_Briefing.pdf">Research briefing <span>PDF ↗</span></a><a href="docs/Formal_Note.pdf">Formal note <span>PDF ↗</span></a><a href="/papers/infinity-one-zero-lift">Infinity One Zero Lift <span>Formal note [2] ↗</span></a><a href="docs/Empirical_Reference_Map.json">Empirical reference map <span>JSON ↗</span></a><a href="/nop/demonstration">Demonstration report <span>HTML ↗</span></a><a href="downloads/NOP_Return_Memory_Workbench_v0_2_0.zip">Source + verification <span>ZIP ↓</span></a></div></section>
+    <details class="limits"><summary>Browser limits and receipt scope</summary><p>Browser inputs are limited to 2 MiB per file and 5,000 data records. Numeric CSV fields allow up to 4,096 characters and scientific exponents of magnitude at most 10,000. Metadata JSON integers must fit the browser’s safe integer range; use quoted decimal or rational strings for exact large parameters. Nonzero metadata numbers that underflow to zero are rejected. Pressure must be positive in absolute kPa; no upper pressure threshold is imposed. These resource limits do not change arithmetic within the accepted range.</p><p>All fractions, bounds, and verdicts use exact BigInt arithmetic. Eta is an approximate display value. WebCrypto hashes bind the bytes selected or entered when available; unavailability is recorded explicitly. The browser receipt identifies this browser kernel and does not claim to execute or hash the Python kernel. Unedited files retain their original byte hashes, including line endings and any UTF-8 byte-order mark. Files edited in the text boxes receive hashes of their edited UTF-8 text.</p><p>Extra source columns are retained as text in the extra-fields record. Spreadsheet software may interpret imported text beginning with formula characters; inspect CSV as text when source fields are untrusted.</p></details>
+  </main>
+  <footer><span>Coppalini Architecture</span><span>Exact computation. Declared measurement bounds. Retained provenance.</span></footer>
+  <dialog id="row-dialog" aria-labelledby="row-title"><div class="section-heading"><h2 id="row-title">Exact sample record</h2><button id="close-dialog" type="button" class="secondary">Close</button></div><pre id="row-json"></pre></dialog>
+</body>
+</html>

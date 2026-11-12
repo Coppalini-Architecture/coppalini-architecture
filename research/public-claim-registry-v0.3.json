@@ -1,0 +1,58 @@
+{
+  "title": "Coppalini Architecture Public Claim Registry",
+  "version": "v0.3",
+  "released": "2026-11-12",
+  "scope": "Released, hash-bound relations in their declared native domains. A named later calibration, apparatus receipt, or new-number comparison adds a new record; it does not withdraw the physical office of a released relation.",
+  "artifacts": [
+    {
+      "id": "B-2",
+      "label": "Validator Kit B2",
+      "result": "12 hash-gated cards: 12/12 PASS.",
+      "command": "python3 kit.py",
+      "sha256": "03cfda6a4ebbefc1302accdace1493027c840253bfc35d1c3e93b42dfc4574a0",
+      "artifact": "downloads/Validator_Kit_B2_v0_1.zip",
+      "scope": "Each card retains its own domain and stated scope. The kit certifies declared mathematical and native-domain relations; laboratory records, where relevant, remain retained in their own named receipts."
+    },
+    {
+      "id": "S-5/05a",
+      "label": "Suture Audit v0.3",
+      "result": "Eight source-bound verifiers PASS. The regular-isotropy counterexample is incorporated; R-1, R-2 and R-3 are closed by the explicit auxiliary Dirac reduction and isotropy receipt.",
+      "command": "cd source && python3 verify_all.py",
+      "sha256": "7f48d8a1e4bf515a400eb0953c8c7e67026e6e9e7d1b94d903e902179e5d7a3e",
+      "artifact": "downloads/Suture_Audit_v0_3.zip",
+      "scope": "The regular-domain conditions rank D𝒮Π = 16 and b < |χ| qualify the reduction. Whole-branch freeness of 𝔨 is false at the exact regular point Π_iso and is no longer assumed. Cited Lorentzian 2-form normal forms remain a named dependency; χ calibration and empirical comparison remain separate records."
+    },
+    {
+      "id": "W-0",
+      "label": "Weinberg seam v0.2",
+      "result": "15/15 exact symbolic checks of the declared tree-level mass matrix, vacuum stabilizer, and neutral diagonalization.",
+      "command": "python3 -I verify_w0_weinberg_seam_v0_2.py",
+      "sha256": "9fe1b3c4d66ab42d59cfb8d16fd0c0ca1e4bb3b6c393ec191fa3c9516e7b0431",
+      "artifact": "downloads/W0_v0_2_packet.zip",
+      "scope": "The standard electroweak representation, vacuum, g, g′, and v are the declared native reference. The card verifies their tree-level mass relation; a new numerical or running-parameter result would require its own record."
+    },
+    {
+      "id": "W-1",
+      "label": "Electroweak carrier adapter v0.2",
+      "result": "15/15 exact symbolic checks of the declared 𝔲(2) carrier map and W±, Z, A coordinate map.",
+      "command": "python3 -I verify_w1_carrier_adapter_v0_2.py",
+      "sha256": "22b92b32d93b2a7d7446a7f147475e7dac98c9f84880f96b1ac297618037b50f",
+      "artifact": "downloads/W1_v0_2_packet.zip",
+      "scope": "The declared plane P realizes the stated carrier and coordinate map. Its provenance remains a selection record; it does not make the verified map provisional. The card introduces no new particle parameter."
+    },
+    {
+      "id": "NDA-3",
+      "label": "Native Domain Adapter Atlas v0.3",
+      "result": "Exact Body–SI–English length transport: 18/18 rational checks; row-specific institutional-contact labels are retained.",
+      "command": "python3 -I run_all.py",
+      "sha256": "4075a5c57fe36a2977311ea58dad5181ed5b971859df390e797ed23ee6f8d075",
+      "artifact": "downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip",
+      "scope": "The stated Body–SI–English transport is closed by the 18 rational checks. A later metrology result is a separate reference receipt for a new statement, not a condition on the conversion itself."
+    }
+  ],
+  "next_records": [
+    "Suture Audit v0.3 closes R-1, R-2 and R-3; residual ledger v0.3 retains R-4 through R-12 as carried or open edges.",
+    "Electroweak provenance and any new-number comparison extend W-0 and W-1 without undoing their verified native-domain relation.",
+    "Atomic reference and apparatus records bind future readings to named editions and instruments while retaining their disclosed model realizations."
+  ]
+}

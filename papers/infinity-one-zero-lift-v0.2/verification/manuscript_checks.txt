@@ -1,0 +1,33 @@
+PASS [exact symbolic identity] M determinant and involution
+PASS [exact symbolic identity] complete homogeneous fixed-point polynomial
+PASS [exact symbolic identity] complex phase adapter
+PASS [exact symbolic identity] Hermitian metric from adapter
+PASS [exact finite arithmetic] positive metric leading minors
+PASS [exact symbolic identity] lift preserves Hermitian metric
+PASS [exact symbolic identity] lift determinant and exact order four
+PASS [exact symbolic identity] real mirror adapter
+PASS [exact symbolic identity] printed transported metric
+PASS [exact symbolic identity] transported metric invariance
+PASS [exact symbolic identity] transported mirror invariance
+PASS [exact symbolic identity] all-integer Zeno homogeneous identity
+PASS [exact symbolic identity] thin-lens polynomial normalization
+PASS [exact symbolic identity] signed matrix alternation
+PASS [exact symbolic identity] generic decoder before unit normalization
+PASS [exact symbolic identity] Lagrange exterior-product identity
+PASS [exact symbolic identity] uniform reference normalized
+PASS [exact symbolic identity] uniform-reference edge differences
+PASS [exact symbolic identity] uniform-reference decoder
+PASS [exhaustive finite calculation] all seven projector dimensions
+PASS [exhaustive finite calculation] all 49 projector products
+PASS [exhaustive finite calculation] projector sum identity
+PASS [exact symbolic identity] seven-band norm partition
+PASS [finite illustrative examples] normal-form normalized state examples
+PASS [finite illustrative examples; universal proof in manuscript] Euclidean address example range
+PASS [exact symbolic identity] Noether momentum differentiation
+PASS [exact SVG inspection] cover eight occurrences
+PASS [exact SVG inspection] cover full edge identity
+PASS [exact SVG inspection] cover matching assignments
+PASS [exact SVG inspection] cover eight unique projected positions
+PASS [exact SVG inspection] source style ground and canvas
+
+ALL 31 MANUSCRIPT CHECKS PASS

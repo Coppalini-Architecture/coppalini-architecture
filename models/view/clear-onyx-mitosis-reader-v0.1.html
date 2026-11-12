@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Clear Onyx Mitosis Reader: an inspectable deterministic teaching model of semiconservative DNA copying, checkpoint gates, mitosis, and daughter-cell receipts.">
+  <title>Clear Onyx — Mitosis Reader v0.1</title>
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#080f15;--panel:#101c25;--panel2:#142733;--line:#2a424f;
+      --ink:#e8efeb;--muted:#a5b5b8;--blue:#9ccbe1;--gold:#e4c98b;
+      --green:#a9d4b7;--violet:#c0afe8;--pink:#e2a0b2;--red:#dd8b91;
+      --orange:#e5af7b;--cyan:#8ed6d2;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg)}
+    body{margin:0;background:radial-gradient(ellipse at 50% 0,#17323c 0,var(--bg) 62%);color:var(--ink);font:14px/1.58 Arial,Helvetica,sans-serif}
+    main{max-width:1440px;margin:auto;padding:34px 42px 28px}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.15}
+    h1{margin:4px 0 9px;color:var(--gold);font-size:clamp(32px,5vw,48px);letter-spacing:-.025em}
+    h1 span{display:inline-block;margin-left:13px;color:var(--muted);font:12px/1.45 Arial,Helvetica,sans-serif;letter-spacing:0}
+    h2{margin:5px 0 10px;font-size:27px;color:var(--gold)}
+    h3{margin:0 0 8px;font-size:18px}
+    .overline,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.07em}
+    .overline{margin:0;color:var(--muted);font-size:10px}
+    .masthead{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+    .deck{max-width:790px;margin:0;color:var(--muted);font-size:13px}
+    .build{display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap}
+    .badge{color:var(--green);font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.09em}
+    .boundary{max-width:1080px;margin:27px 0 24px;padding:10px 0 10px 15px;border-left:2px solid var(--gold);color:var(--muted);font-size:12px}
+    .boundary strong{color:var(--ink);font-weight:400}
+    button,input,select,textarea{font:12px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);background:#142430;border:1px solid #426071;border-radius:3px}
+    button{min-height:37px;padding:9px 11px;cursor:pointer}
+    button:hover:not(:disabled){border-color:var(--gold)}
+    button:disabled{opacity:.44;cursor:not-allowed}
+    button.quiet{background:transparent;color:var(--muted)}
+    button.warn{color:var(--pink)}
+    button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+    .controls{display:grid;grid-template-columns:1.1fr 1.25fr .9fr;gap:18px;margin:0 0 25px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .control-block{min-width:0}
+    .control-block h3,.mini-heading{margin:0 0 8px;color:var(--blue);font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em}
+    .control-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .control-row+.control-row{margin-top:8px}
+    label{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:var(--muted);font-size:11px}
+    select{min-height:34px;padding:6px 8px}
+    .status{min-height:22px;margin:8px 0 16px;color:var(--green);font:11px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .status.hold{color:var(--pink)}
+    .layout{display:grid;grid-template-columns:minmax(500px,1.52fr) minmax(320px,.85fr);gap:26px;align-items:start}
+    .scope-wrap,.genome-wrap{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#0c1820}
+    canvas{display:block;width:100%;height:auto}
+    .scope-caption,.caption{margin:9px 0 0;color:var(--muted);font:10px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .readers{display:grid;gap:16px}
+    .panel{padding-top:14px;border-top:1px solid var(--line)}
+    .panel:first-child{padding-top:0;border-top:0}
+    .panel .note{margin:0;color:var(--muted);font-size:11px}
+    .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .stat{min-width:0;padding:10px;border:1px solid var(--line);background:var(--panel)}
+    .stat small{display:block;margin-bottom:3px;color:var(--muted);font:9px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em}
+    .stat strong{display:block;overflow-wrap:anywhere;color:var(--gold);font:15px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:400}
+    .stat strong.good{color:var(--green)} .stat strong.hold{color:var(--pink)} .stat strong.blue{color:var(--blue)}
+    .cycle{display:grid;grid-template-columns:minmax(0,1fr) 100px;gap:12px;align-items:center}
+    .cycle canvas{border:1px solid var(--line);border-radius:5px;background:#0d1921}
+    .readout{font:10px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .readout>div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+    .readout span{color:var(--muted)} .readout b{color:var(--green);font-weight:400;text-align:right}
+    .audit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+    .audit{min-height:50px;padding:7px;border:1px solid var(--line);background:var(--panel);font:9px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--muted)}
+    .audit b{display:block;margin-top:3px;font-weight:400;color:var(--green)} .audit.hold b{color:var(--pink)} .audit.wait b{color:var(--blue)}
+    .history{max-height:177px;margin:0;padding-left:22px;overflow:auto;color:var(--muted);font:10px/1.72 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;scrollbar-width:thin}
+    .history li:last-child{color:var(--gold)}
+    .genome-section{margin-top:26px;padding-top:19px;border-top:1px solid var(--line)}
+    .section-heading{display:flex;justify-content:space-between;gap:25px;align-items:flex-end;margin-bottom:13px}
+    .section-heading p{max-width:620px;margin:0;color:var(--muted);font-size:12px}
+    .wide{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+    .wide p{margin:0 0 9px;color:var(--muted);font-size:12px}
+    .wide code{color:var(--blue);font:10px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+    .mapping{display:grid;grid-template-columns:136px 1fr;gap:0;border-top:1px solid var(--line);font-size:11px}
+    .mapping div{padding:8px 8px;border-bottom:1px solid var(--line)}
+    .mapping div:nth-child(odd){color:var(--blue);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px}
+    details{margin-top:20px;padding-top:9px;border-top:1px solid var(--line)}
+    summary{cursor:pointer;color:var(--blue);font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em}
+    pre{margin:12px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);font:10px/1.62 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    footer{display:flex;justify-content:space-between;gap:20px;margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:9px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    dialog{width:min(920px,calc(100% - 28px));max-height:90vh;padding:22px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px}
+    dialog::backdrop{background:#02070bd9}
+    .dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.dialog-heading h2{margin:0;font-size:23px}
+    textarea{display:block;width:100%;height:52vh;margin-top:13px;padding:12px;resize:vertical;background:var(--bg);font:10px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+    .receipt-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.receipt-actions a{color:var(--gold);font-size:12px}
+    .skip{position:absolute;top:-80px;left:8px;z-index:4;padding:8px;color:var(--ink);background:var(--panel)}.skip:focus{top:8px}
+    @media(max-width:1060px){main{padding:28px 24px}.controls{grid-template-columns:1fr 1fr}.controls .receipt-block{grid-column:1/-1}.layout{grid-template-columns:minmax(0,1fr) minmax(285px,.77fr)}}
+    @media(max-width:760px){main{padding:20px 14px}.masthead{display:block}.build{align-items:flex-start;margin-top:11px}h1 span{display:block;margin:7px 0 0}.controls,.layout,.wide{grid-template-columns:1fr;gap:18px}.controls .receipt-block{grid-column:auto}.section-heading{display:block}.section-heading p{margin-top:9px}.wide{gap:20px}.cycle{grid-template-columns:minmax(0,1fr) 92px}footer{display:block}footer span{display:block;margin:4px 0}}
+  </style>
+  <link rel="canonical" href="https://eulershiddenl.ink/models/view/clear-onyx-mitosis-reader-v0.1">
+</head>
+<body>
+<a class="skip" href="/models/view/clear-onyx-mitosis-reader-v0.1#cell-canvas">Skip to cell reader</a>
+<main>
+  <header class="masthead">
+    <div>
+      <p class="overline">CLEAR ONYX · DNA REPLICATION + MITOSIS · REVIEW BUILD 0.1</p>
+      <h1>Mitosis Reader <span>one cell · one copying cycle · two daughter receipts</span></h1>
+      <p class="deck">A deterministic teaching instrument for semiconservative DNA copying, repair and spindle checkpoints, chromatid separation, and equal daughter-cell allocation.</p>
+    </div>
+    <div class="build">
+      <span class="badge">OFFLINE · DETERMINISTIC · REPLAYABLE</span>
+      <button id="view-receipt" type="button" class="quiet">View receipt</button>
+    </div>
+  </header>
+
+  <section class="boundary" aria-label="Model boundary">
+    <strong>Declared boundary.</strong> This is a finite, inspectable teaching model of a toy diploid genome with three homologous pairs. It represents semiconservative copying, checkpoints, spindle allocation, and retained event history. Molecular forces, protein structures, gene expression, metabolism, developmental signaling, disease, and clinical prediction remain outside this model's carrier.
+  </section>
+
+  <section class="controls" aria-label="Mitosis Reader controls">
+    <div class="control-block">
+      <h3>CELL-CYCLE CARRIAGE</h3>
+      <div class="control-row">
+        <button id="advance" type="button">Advance</button>
+        <button id="play" type="button">Play</button>
+        <button id="pause" type="button" class="quiet">Pause</button>
+        <button id="reset" type="button" class="warn">Return G1</button>
+      </div>
+      <div class="control-row">
+        <label for="speed">Tempo <select id="speed"><option value="1050">Slow</option><option value="620" selected>Read</option><option value="310">Fast</option></select></label>
+        <span id="gate-chip" class="badge">G1 / S GATE · READY</span>
+      </div>
+    </div>
+
+    <div class="control-block">
+      <h3>CHECKPOINT STUDY</h3>
+      <div class="control-row">
+        <button id="inject" type="button" class="warn">Introduce mismatch</button>
+        <button id="repair" type="button">Repair mismatch</button>
+      </div>
+      <div class="control-row">
+        <button id="misalign" type="button" class="warn">Misalign spindle</button>
+        <button id="align" type="button">Align spindle</button>
+      </div>
+    </div>
+
+    <div class="control-block receipt-block">
+      <h3>RECEIPT</h3>
+      <div class="control-row"><button id="export-receipt" type="button">Export JSON</button></div>
+      <p class="caption">The receipt contains only declared toy-genome events and deterministic snapshots. A replay establishes model consistency.</p>
+    </div>
+  </section>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section class="layout">
+    <div class="stage">
+      <div class="scope-wrap"><canvas id="cell-canvas" width="900" height="690" aria-label="Cell-cycle reader showing a toy cell, DNA copying, mitosis, and daughter cells."></canvas></div>
+      <p id="scope-caption" class="scope-caption">Gold marks carried parental template strands; violet marks newly synthesized complement strands; pink marks a declared unresolved mismatch. Geometry is schematic and phase-indexed.</p>
+    </div>
+    <aside class="readers" aria-label="Reader panels">
+      <section class="panel"><h3>CYCLE READ</h3><div id="stats" class="stats"></div></section>
+      <section class="panel">
+        <h3>NINE-PHASE CELL CLOCK</h3>
+        <div class="cycle"><canvas id="clock-canvas" width="360" height="240" aria-label="Nine-phase cell cycle clock."></canvas><div id="clock-readout" class="readout"></div></div>
+      </section>
+      <section class="panel"><h3>GATES + AUDITS</h3><div id="audits" class="audit-grid"></div></section>
+      <section class="panel"><h3>EVENT RECEIPT</h3><ol id="history" class="history"></ol></section>
+    </aside>
+  </section>
+
+  <section class="genome-section" aria-label="Genome reader">
+    <div class="section-heading">
+      <div><p class="overline">TOY 2n = 6 GENOME</p><h2>Parental strands, new complements, and copied loci</h2></div>
+      <p>Each row is one toy chromosome. During S phase, the bright copying frontier advances across all six templates. Once copying completes, each sister chromatid holds one retained parental strand and one new complement strand.</p>
+    </div>
+    <div class="genome-wrap"><canvas id="genome-canvas" width="1300" height="490" aria-label="DNA sequence and copying-reader panel."></canvas></div>
+    <p class="caption">Base letters form a fixed illustrative genome. The model derives complements with A↔T and C↔G; it does not claim to render a natural organism's genome.</p>
+  </section>
+
+  <section class="wide">
+    <div>
+      <p class="overline">BIOLOGICAL CARRIER</p><h2>What the model performs</h2>
+      <p>G1 contains six unreplicated toy chromosomes. S phase copies every locus once. G2 admits the cell only when the copy is complete and complementarity is restored. Mitosis separates sister chromatids; cytokinesis closes two equally provisioned daughter-cell records.</p>
+      <div class="mapping" aria-label="Structural reading map">
+        <div>Parental template</div><div>Retained molecular sequence available for copying.</div>
+        <div>Copy difference</div><div>Uncopied loci or a declared mismatch.</div>
+        <div>Transport</div><div>Replication completion and spindle-directed chromatid movement.</div>
+        <div>Comparison</div><div>Complementarity, copy-once, and alignment checks.</div>
+        <div>Return</div><div>One complete chromosome set in each daughter cell.</div>
+        <div>Receipt</div><div>Append-only event history plus deterministic replay.</div>
+      </div>
+    </div>
+    <div>
+      <p class="overline">SOURCE-BOUND INTERPRETATION</p><h2>What remains open</h2>
+      <p>The reader is a formal teaching construction with native biological rules. Its structural lens describes retained form through division; it does not derive DNA chemistry from the Clear Onyx carrier or substitute its display for empirical measurement.</p>
+      <p>The biology anchors are semiconservative replication, once-per-cycle genome copying, checkpoint control, chromatid segregation, and cytokinesis. Meiosis, recombination, fertilization, development, and gene regulation belong in later, separately bounded instruments.</p>
+      <details><summary>BIOLOGICAL REFERENCE NOTE</summary><pre>[1] Meselson, M. & Stahl, F. W. (1958). The Replication of DNA in Escherichia coli. Proceedings of the National Academy of Sciences 44, 671–682. doi:10.1073/pnas.44.7.671. The model's one-parental/one-new-strand teaching rule is bounded by this semiconservative result.
+
+[2] National Human Genome Research Institute. DNA Replication; Cell Cycle; Mitosis. These reference pages supply the ordinary cell-cycle distinction used here: S phase copies DNA, and mitosis distributes a copy of each chromosome to each daughter cell.
+
+The displayed genome, timing, checkpoint thresholds, colours, and geometry are declared illustrative choices of this instrument.</pre></details>
+      <details><summary>EXACT TOY-GENOME DECLARATION</summary><pre id="genome-declaration"></pre></details>
+      <details><summary>MODEL + REPLAY DECLARATION</summary><pre id="model-declaration"></pre></details>
+    </div>
+  </section>
+
+  <footer><span>Anthony Vito Coppa / Coppalini Architecture · Clear Onyx</span><span>v0.1 · a bounded DNA-copying and mitosis teaching reader</span></footer>
+</main>
+
+<dialog id="receipt-dialog" aria-labelledby="receipt-title">
+  <div class="dialog-heading"><h2 id="receipt-title">Mitosis Reader receipt</h2><button id="close-receipt" type="button" class="quiet">Close</button></div>
+  <textarea id="receipt-json" readonly aria-label="Current receipt JSON"></textarea>
+  <div class="receipt-actions"><button id="download-receipt" type="button">Download JSON</button><span id="receipt-verdict" class="badge"></span></div>
+</dialog>
+
+<script id="cell-division-core">
+'use strict';
+/* Clear Onyx Mitosis Reader v0.1
+ *
+ * This browser- and Node-compatible core is intentionally finite:
+ * a toy diploid 2n=6 genome, semiconservative copying, three gates,
+ * deterministic sister allocation, append-only events, and receipt replay.
+ */
+const CellDivisionCore = (() => {
+  const VERSION = '0.1.0';
+  const SCHEMA = 'clear-onyx-mitosis-reader.receipt-v0.1';
+  const PHASES = Object.freeze(['G1','S','G2','Prophase','Metaphase','Anaphase','Telophase','Cytokinesis','Daughters']);
+  const COPY_BATCH = 12;
+  const COMPLEMENT = Object.freeze({A:'T',T:'A',C:'G',G:'C'});
+  const SPECS = Object.freeze([
+    Object.freeze({id:'1m',pair:1,origin:'maternal',sequence:'ATGCCATGTCGATACGTT'}),
+    Object.freeze({id:'1p',pair:1,origin:'paternal',sequence:'CGTAATCGGATCCGTAAC'}),
+    Object.freeze({id:'2m',pair:2,origin:'maternal',sequence:'GGCATATCCGTTAGCAAT'}),
+    Object.freeze({id:'2p',pair:2,origin:'paternal',sequence:'TACGCGATTAACGGTCCA'}),
+    Object.freeze({id:'3m',pair:3,origin:'maternal',sequence:'CCATGGTATCGACCTGAA'}),
+    Object.freeze({id:'3p',pair:3,origin:'paternal',sequence:'AGTCCGTAATGGCATCGA'})
+  ]);
+  const TOTAL_BASES = SPECS.reduce((n,s) => n + s.sequence.length, 0);
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const equal = (a,b) => JSON.stringify(a) === JSON.stringify(b);
+  const complement = sequence => [...sequence].map(base => COMPLEMENT[base]).join('');
+  const phaseIndex = phase => PHASES.indexOf(phase);
+  const phaseAtLeast = (state, phase) => phaseIndex(state.phase) >= phaseIndex(phase);
+  const localCopied = (state, chromosomeIndex) => Math.max(0, Math.min(SPECS[chromosomeIndex].sequence.length, state.copyCursor - SPECS.slice(0,chromosomeIndex).reduce((n,s) => n + s.sequence.length, 0)));
+  const noOp = state => clone(state);
+
+  function initialSnapshot(){
+    return {toyGenome:'2n=6, 3 homologous pairs, 18 bases/chromosome',copyBatch:COPY_BATCH};
+  }
+  function createState(){
+    return {
+      version:VERSION,
+      phase:'G1',
+      copyCursor:0,
+      replicationComplete:false,
+      mismatches:[],
+      spindleAligned:true,
+      segregation:null,
+      tick:0,
+      occurrence:0,
+      ledger:[]
+    };
+  }
+  function snapshot(state){
+    const daughters = state.segregation ? {
+      A:state.segregation.A.map(item => ({chromosome:item.chromosome,chromatid:item.chromatid,parentalStrand:item.parentalStrand})),
+      B:state.segregation.B.map(item => ({chromosome:item.chromosome,chromatid:item.chromatid,parentalStrand:item.parentalStrand}))
+    } : null;
+    return {
+      phase:state.phase,
+      phaseIndex:phaseIndex(state.phase),
+      copyCursor:state.copyCursor,
+      copyTotal:TOTAL_BASES,
+      replicationComplete:state.replicationComplete,
+      mismatchCount:state.mismatches.length,
+      mismatches:clone(state.mismatches),
+      spindleAligned:state.spindleAligned,
+      segregation:daughters,
+      tick:state.tick,
+      occurrence:state.occurrence
+    };
+  }
+  function makeEvent(state,type,payload,before){
+    return Object.freeze({sequence:state.ledger.length + 1,occurrence:state.occurrence,type,payload:clone(payload),before,after:snapshot(state)});
+  }
+  function mutate(state,type,payload,fn,options={}){
+    const next = clone(state);
+    const before = snapshot(state);
+    fn(next);
+    next.tick += 1;
+    next.occurrence += 1;
+    if(options.record !== false) next.ledger.push(makeEvent(next,type,payload,before));
+    return next;
+  }
+  function chromosomeStart(index){
+    let start=0;
+    for(let i=0;i<index;i+=1) start += SPECS[i].sequence.length;
+    return start;
+  }
+  function chooseMismatchTarget(state,target){
+    if(target && SPECS.some(spec => spec.id === target.chromosome) && Number.isInteger(target.index)) return target;
+    const eligible = SPECS.map((spec,index) => ({spec,index,copied:localCopied(state,index)})).find(item => item.copied > 0);
+    if(!eligible) return null;
+    const index = Math.max(0, eligible.copied - 1);
+    const expected = COMPLEMENT[eligible.spec.sequence[index]];
+    const observed = Object.keys(COMPLEMENT).find(base => base !== expected) || 'A';
+    return {chromosome:eligible.spec.id,chromatid:'A',strand:'new-complement',index,expected,observed};
+  }
+  function advance(state,options={}){
+    if(state.phase === 'Daughters') return mutate(state,'TERMINAL_HOLD',{phase:'Daughters'},noOp,options);
+    if(state.phase === 'G1') return mutate(state,'ENTER_S',{from:'G1',to:'S'},next => { next.phase='S'; },options);
+    if(state.phase === 'S'){
+      const remaining = TOTAL_BASES - state.copyCursor;
+      const added = Math.min(COPY_BATCH,remaining);
+      if(added <= 0) return mutate(state,'S_PHASE_HOLD',{reason:'copy cursor complete'},noOp,options);
+      const nextCursor = state.copyCursor + added;
+      const completes = nextCursor === TOTAL_BASES;
+      return mutate(state,completes ? 'S_COMPLETE' : 'S_COPY',{from:state.copyCursor,to:nextCursor,added},next => {
+        next.copyCursor=nextCursor;
+        if(completes){ next.replicationComplete=true; next.phase='G2'; }
+      },options);
+    }
+    if(state.phase === 'G2'){
+      const reason = !state.replicationComplete ? 'copy incomplete' : state.mismatches.length ? 'unresolved mismatch' : null;
+      if(reason) return mutate(state,'G2_CHECKPOINT_HOLD',{reason},noOp,options);
+      return mutate(state,'ENTER_PROPHASE',{from:'G2',to:'Prophase'},next => { next.phase='Prophase'; },options);
+    }
+    if(state.phase === 'Prophase') return mutate(state,'ENTER_METAPHASE',{from:'Prophase',to:'Metaphase'},next => { next.phase='Metaphase'; },options);
+    if(state.phase === 'Metaphase'){
+      if(!state.spindleAligned) return mutate(state,'SPINDLE_CHECKPOINT_HOLD',{reason:'spindle misaligned'},noOp,options);
+      return mutate(state,'ENTER_ANAPHASE',{from:'Metaphase',to:'Anaphase'},next => { next.phase='Anaphase'; next.segregation=makeSegregation(); },options);
+    }
+    if(state.phase === 'Anaphase') return mutate(state,'ENTER_TELOPHASE',{from:'Anaphase',to:'Telophase'},next => { next.phase='Telophase'; },options);
+    if(state.phase === 'Telophase') return mutate(state,'ENTER_CYTOKINESIS',{from:'Telophase',to:'Cytokinesis'},next => { next.phase='Cytokinesis'; },options);
+    if(state.phase === 'Cytokinesis'){
+      if(!segregationPasses(state.segregation)) return mutate(state,'CYTOKINESIS_HOLD',{reason:'daughter allocation incomplete'},noOp,options);
+      return mutate(state,'DAUGHTER_RECEIPT',{from:'Cytokinesis',to:'Daughters'},next => { next.phase='Daughters'; },options);
+    }
+    return mutate(state,'UNKNOWN_PHASE_HOLD',{phase:state.phase},noOp,options);
+  }
+  function injectMismatch(state,target,options={}){
+    const allowed = state.phase === 'S' || state.phase === 'G2';
+    const selected = allowed ? chooseMismatchTarget(state,target) : null;
+    if(!selected) return mutate(state,'REFUSED_MISMATCH',{reason:allowed ? 'no copied locus available' : 'S or G2 required'},noOp,options);
+    const exists = state.mismatches.some(item => item.chromosome===selected.chromosome && item.index===selected.index && item.chromatid===selected.chromatid);
+    if(exists) return mutate(state,'REFUSED_MISMATCH',{reason:'target already carries declared mismatch',target:selected},noOp,options);
+    return mutate(state,'INJECT_MISMATCH',{target:selected},next => { next.mismatches.push(selected); },options);
+  }
+  function repairMismatch(state,target,options={}){
+    const selected = target || state.mismatches[0] || null;
+    if(!selected) return mutate(state,'REPAIR_HOLD',{reason:'no declared mismatch'},noOp,options);
+    const found = state.mismatches.find(item => item.chromosome===selected.chromosome && item.index===selected.index && item.chromatid===selected.chromatid);
+    if(!found) return mutate(state,'REPAIR_HOLD',{reason:'target absent',target:selected},noOp,options);
+    return mutate(state,'REPAIR_MISMATCH',{target:found},next => { next.mismatches=next.mismatches.filter(item => !(item.chromosome===found.chromosome && item.index===found.index && item.chromatid===found.chromatid)); },options);
+  }
+  function setSpindle(state,aligned,options={}){
+    const nextAligned = Boolean(aligned);
+    return mutate(state,nextAligned ? 'SPINDLE_ALIGNED' : 'SPINDLE_MISALIGNED',{aligned:nextAligned},next => { next.spindleAligned=nextAligned; },options);
+  }
+  function makeSegregation(){
+    const A=[],B=[];
+    SPECS.forEach((spec,index) => {
+      const a = {chromosome:spec.id,chromatid:'A',parentalStrand:'top'};
+      const b = {chromosome:spec.id,chromatid:'B',parentalStrand:'bottom'};
+      if(index % 2 === 0){A.push(a);B.push(b);}else{A.push(b);B.push(a);}
+    });
+    return {A,B};
+  }
+  function segregationPasses(segregation){
+    if(!segregation || !Array.isArray(segregation.A) || !Array.isArray(segregation.B)) return false;
+    if(segregation.A.length !== SPECS.length || segregation.B.length !== SPECS.length) return false;
+    return SPECS.every(spec => {
+      const a=segregation.A.find(item => item.chromosome===spec.id);
+      const b=segregation.B.find(item => item.chromosome===spec.id);
+      return Boolean(a && b && a.chromatid !== b.chromatid);
+    });
+  }
+  function chromosomeRows(state){
+    return SPECS.map((spec,index) => {
+      const copied=localCopied(state,index);
+      const mismatches=state.mismatches.filter(item => item.chromosome===spec.id);
+      return {
+        ...spec,
+        complement:complement(spec.sequence),
+        copied,
+        length:spec.sequence.length,
+        replicated:state.replicationComplete,
+        mismatches,
+        sisterA:{parental:'top',new:'bottom'},
+        sisterB:{parental:'bottom',new:'top'}
+      };
+    });
+  }
+  function gateRead(state){
+    if(state.phase==='G1') return {label:'G1 / S',verdict:'READY',pass:true};
+    if(state.phase==='S') return {label:'S phase',verdict:`${state.copyCursor}/${TOTAL_BASES}`,pass:true};
+    if(state.phase==='G2') return state.mismatches.length ? {label:'G2 repair',verdict:'HOLD',pass:false} : {label:'G2 / M',verdict:'READY',pass:true};
+    if(state.phase==='Metaphase') return state.spindleAligned ? {label:'Spindle',verdict:'READY',pass:true} : {label:'Spindle',verdict:'HOLD',pass:false};
+    if(state.phase==='Cytokinesis') return {label:'Daughter allocation',verdict:segregationPasses(state.segregation)?'READY':'HOLD',pass:segregationPasses(state.segregation)};
+    if(state.phase==='Daughters') return {label:'Receipt',verdict:'PASS',pass:true};
+    return {label:state.phase,verdict:'READY',pass:true};
+  }
+  function audits(state){
+    const copyStatus = state.phase==='G1' ? 'WAIT' : state.copyCursor <= TOTAL_BASES ? 'PASS' : 'HOLD';
+    const complementStatus = state.mismatches.length ? 'HOLD' : phaseAtLeast(state,'G2') ? 'PASS' : 'WAIT';
+    const spindleStatus = phaseAtLeast(state,'Metaphase') ? (state.spindleAligned ? 'PASS':'HOLD') : 'WAIT';
+    const daughterStatus = state.phase==='Daughters' ? (segregationPasses(state.segregation) ? 'PASS':'HOLD') : 'WAIT';
+    return [
+      {id:'copy-once',label:'COPY ONCE',value:copyStatus,detail:`${state.copyCursor}/${TOTAL_BASES} loci`},
+      {id:'complement',label:'COMPLEMENT',value:complementStatus,detail:state.mismatches.length ? `${state.mismatches.length} mismatch` : 'A↔T · C↔G'},
+      {id:'spindle',label:'SPINDLE',value:spindleStatus,detail:state.spindleAligned ? 'aligned' : 'misaligned'},
+      {id:'daughter',label:'DAUGHTERS',value:daughterStatus,detail:state.segregation ? `${state.segregation.A.length}/${state.segregation.B.length}` : 'awaits separation'}
+    ];
+  }
+  function declaration(){
+    return {
+      model:'Finite deterministic teaching reader for semiconservative DNA copying and mitosis.',
+      boundary:'Toy 2n=6 genome; no molecular dynamics, medical inference, or organism-specific genomic claim.',
+      bases:'Fixed illustrative bases; complement C(A)=T, C(T)=A, C(C)=G, C(G)=C.',
+      cycle:'G1 → S → G2 → Prophase → Metaphase → Anaphase → Telophase → Cytokinesis → Daughters.',
+      gates:'G2 requires complete copy and zero unresolved mismatches; metaphase requires spindle alignment; cytokinesis requires equal sister allocation.',
+      receipt:'Append-only event ledger; deterministic replay validates internal consistency only.'
+    };
+  }
+  function exportReceipt(state){
+    return {schema:SCHEMA,version:VERSION,declaration:declaration(),initial:initialSnapshot(),events:state.ledger.map(clone),final:snapshot(state)};
+  }
+  function replayStep(state,event,options={}){
+    const replayOptions={record:options.record===true};
+    let produced;
+    if(event.type==='ENTER_S'||event.type==='S_COPY'||event.type==='S_COMPLETE'||event.type==='G2_CHECKPOINT_HOLD'||event.type==='ENTER_PROPHASE'||event.type==='ENTER_METAPHASE'||event.type==='SPINDLE_CHECKPOINT_HOLD'||event.type==='ENTER_ANAPHASE'||event.type==='ENTER_TELOPHASE'||event.type==='ENTER_CYTOKINESIS'||event.type==='DAUGHTER_RECEIPT'||event.type==='CYTOKINESIS_HOLD'||event.type==='TERMINAL_HOLD'||event.type==='UNKNOWN_PHASE_HOLD'||event.type==='S_PHASE_HOLD') produced=advance(state,replayOptions);
+    else if(event.type==='INJECT_MISMATCH'||event.type==='REFUSED_MISMATCH') produced=injectMismatch(state,event.payload.target,replayOptions);
+    else if(event.type==='REPAIR_MISMATCH'||event.type==='REPAIR_HOLD') produced=repairMismatch(state,event.payload.target,replayOptions);
+    else if(event.type==='SPINDLE_ALIGNED'||event.type==='SPINDLE_MISALIGNED') produced=setSpindle(state,event.payload.aligned,replayOptions);
+    else throw Error(`unknown receipt event ${event.type}`);
+    return produced;
+  }
+  function replayReceipt(receipt){
+    if(!receipt || receipt.schema !== SCHEMA) throw Error('unrecognized mitosis-reader receipt');
+    if(!Array.isArray(receipt.events) || receipt.events.length > 1024) throw Error('invalid event ledger');
+    let state=createState();
+    for(const event of receipt.events){
+      const produced=replayStep(state,event,{record:true});
+      const generated=produced.ledger[produced.ledger.length-1];
+      if(!equal(generated,event)) throw Error(`receipt mismatch at sequence ${event.sequence}`);
+      state=produced;
+    }
+    if(!equal(snapshot(state),receipt.final)) throw Error('final snapshot mismatch');
+    return state;
+  }
+  function verifyReceipt(receipt){
+    try{const state=replayReceipt(receipt);return {pass:true,events:state.ledger.length,final:snapshot(state)};}catch(error){return {pass:false,error:error.message};}
+  }
+  function runToTerminal(state,maxSteps=256){
+    let next=state;
+    for(let n=0;n<maxSteps && next.phase!=='Daughters';n+=1){
+      const before=next.tick;
+      next=advance(next);
+      if(next.tick===before) break;
+      const last=next.ledger[next.ledger.length-1];
+      if(last && /HOLD/.test(last.type)) break;
+    }
+    return next;
+  }
+  function assertModel(){
+    if(SPECS.length!==6 || TOTAL_BASES!==108) throw Error('toy genome declaration changed');
+    for(const spec of SPECS) if(complement(complement(spec.sequence))!==spec.sequence) throw Error(`complement involution failed for ${spec.id}`);
+    const terminal=runToTerminal(createState());
+    if(terminal.phase!=='Daughters' || !segregationPasses(terminal.segregation)) throw Error('clean cycle did not close');
+    if(!verifyReceipt(exportReceipt(terminal)).pass) throw Error('clean receipt does not replay');
+    return true;
+  }
+  return Object.freeze({VERSION,SCHEMA,PHASES,SPECS,TOTAL_BASES,COPY_BATCH,COMPLEMENT,complement,createState,snapshot,advance,injectMismatch,repairMismatch,setSpindle,chromosomeRows,audits,gateRead,segregationPasses,declaration,exportReceipt,replayReceipt,verifyReceipt,runToTerminal,assertModel});
+})();
+if(typeof globalThis!=='undefined') globalThis.CellDivisionCore=CellDivisionCore;
+</script>
+
+<script>
+(() => {
+  'use strict';
+  const Core=window.CellDivisionCore;
+  const $=id=>document.getElementById(id);
+  const elements={
+    cell:$('cell-canvas'), genome:$('genome-canvas'), clock:$('clock-canvas'), stats:$('stats'),audits:$('audits'),history:$('history'),
+    status:$('status'),scopeCaption:$('scope-caption'),gateChip:$('gate-chip'),advance:$('advance'),play:$('play'),pause:$('pause'),reset:$('reset'),
+    inject:$('inject'),repair:$('repair'),misalign:$('misalign'),align:$('align'),speed:$('speed'),viewReceipt:$('view-receipt'),exportReceipt:$('export-receipt'),
+    dialog:$('receipt-dialog'),closeReceipt:$('close-receipt'),receiptJSON:$('receipt-json'),downloadReceipt:$('download-receipt'),receiptVerdict:$('receipt-verdict'),
+    genomeDeclaration:$('genome-declaration'),modelDeclaration:$('model-declaration')
+  };
+  let state=Core.createState();
+  let timer=null;
+  let lastMessage='G1 prepared: six unreplicated toy chromosomes await S phase.';
+  const ctx=elements.cell.getContext('2d');
+  const genomeCtx=elements.genome.getContext('2d');
+  const clockCtx=elements.clock.getContext('2d');
+  const colors={bg:'#0c1820',panel:'#101c25',line:'#2a424f',ink:'#e8efeb',muted:'#a5b5b8',blue:'#9ccbe1',gold:'#e4c98b',violet:'#c0afe8',pink:'#e2a0b2',green:'#a9d4b7',cyan:'#8ed6d2',orange:'#e5af7b'};
+  const phaseIndex=phase=>Core.PHASES.indexOf(phase);
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const clean=(context,canvas)=>{context.clearRect(0,0,canvas.width,canvas.height);context.fillStyle=colors.bg;context.fillRect(0,0,canvas.width,canvas.height);};
+  const phasePast=phase=>phaseIndex(state.phase)>=phaseIndex(phase);
+  function setMessage(message,hold=false){lastMessage=message;elements.status.textContent=message;elements.status.classList.toggle('hold',hold);}
+  function latest(){return state.ledger[state.ledger.length-1]||null;}
+  function action(next,message,hold=false){state=next;setMessage(message,hold);render();}
+  function tick(){
+    const before=state;
+    const next=Core.advance(state);
+    const event=next.ledger[next.ledger.length-1];
+    action(next,eventLabel(event),/HOLD/.test(event.type));
+    if(next.phase==='Daughters'||/HOLD/.test(event.type)||next.tick===before.tick) pause();
+  }
+  function play(){if(timer!==null) return;timer=window.setInterval(tick,Number(elements.speed.value));setMessage('Cycle carriage playing at the selected virtual tempo.');render();}
+  function pause(){if(timer!==null){window.clearInterval(timer);timer=null;}render();}
+  function reset(){pause();state=Core.createState();setMessage('Returned to G1 with a fresh, empty event receipt.');render();}
+  function eventLabel(event){
+    if(!event) return lastMessage;
+    const map={
+      ENTER_S:'Entered S phase. The copying frontier begins at the first locus.',
+      S_COPY:`Copied loci ${event.payload.from + 1}–${event.payload.to}.`,
+      S_COMPLETE:'S phase complete. Every toy-genome locus now has a sister copy.',
+      G2_CHECKPOINT_HOLD:'G2 checkpoint holds this cell until copying and repair pass.',
+      ENTER_PROPHASE:'G2 admission passed. Sister chromatids condense in prophase.',
+      ENTER_METAPHASE:'Chromosomes entered the metaphase alignment plane.',
+      SPINDLE_CHECKPOINT_HOLD:'Spindle checkpoint holds this cell until alignment is restored.',
+      ENTER_ANAPHASE:'Spindle gate passed. Sister chromatids separate into two allocations.',
+      ENTER_TELOPHASE:'Daughter nuclei form around the separated chromosome sets.',
+      ENTER_CYTOKINESIS:'Cytokinesis begins across the daughter boundary.',
+      DAUGHTER_RECEIPT:'Cytokinesis closed. Both daughter-cell receipts are complete.',
+      INJECT_MISMATCH:'A declared mismatch entered the new complement strand.',
+      REPAIR_MISMATCH:'Mismatch repaired to the declared base complement.',
+      REFUSED_MISMATCH:'Mismatch intervention is not admitted at this phase.',
+      REPAIR_HOLD:'No declared mismatch is available for repair.',
+      SPINDLE_MISALIGNED:'Spindle alignment was deliberately released for checkpoint study.',
+      SPINDLE_ALIGNED:'Spindle alignment returned to the declared metaphase plane.',
+      TERMINAL_HOLD:'Two daughter receipts already close this cycle.'
+    };
+    return map[event.type]||event.type;
+  }
+  function drawText(context,text,x,y,options={}){
+    context.save();context.font=options.font||'12px ui-monospace, monospace';context.fillStyle=options.color||colors.ink;context.textAlign=options.align||'left';context.textBaseline=options.baseline||'alphabetic';context.fillText(text,x,y);context.restore();
+  }
+  function line(context,x1,y1,x2,y2,color,width=1,alpha=1){context.save();context.globalAlpha=alpha;context.strokeStyle=color;context.lineWidth=width;context.beginPath();context.moveTo(x1,y1);context.lineTo(x2,y2);context.stroke();context.restore();}
+  function circle(context,x,y,r,stroke,fill=null,width=1,alpha=1){context.save();context.globalAlpha=alpha;context.lineWidth=width;context.strokeStyle=stroke;context.beginPath();context.arc(x,y,r,0,Math.PI*2);if(fill){context.fillStyle=fill;context.fill();}context.stroke();context.restore();}
+  function roundRect(context,x,y,w,h,r,stroke,fill){context.beginPath();context.roundRect(x,y,w,h,r);if(fill){context.fillStyle=fill;context.fill();}if(stroke){context.strokeStyle=stroke;context.stroke();}}
+  function drawHelix(context,x,y,length,progress=1,scale=1,flip=false){
+    context.save();context.lineWidth=2*scale;
+    for(let n=0;n<18;n+=1){
+      const t=n/17;const yy=y+(t-.5)*length;const phase=t*Math.PI*4;const dx=Math.sin(phase)*14*scale;const done=t<=progress;
+      line(context,x-dx,yy,x+dx,yy,done?colors.gold:colors.line,1.1*scale,.8);
+      if(n<17){const nextT=(n+1)/17;const nextY=y+(nextT-.5)*length;const nextDx=Math.sin(nextT*Math.PI*4)*14*scale;line(context,x-dx,yy,x-nextDx,nextY,colors.gold,2*scale,done?.9:.28);line(context,x+dx,yy,x+nextDx,nextY,colors.violet,2*scale,done?.85:.22);}
+    }
+    context.restore();
+  }
+  function drawChromosome(context,x,y,size,options={}){
+    const alpha=options.alpha===undefined?1:options.alpha; const separated=options.separated||0; const error=options.error;
+    context.save();context.globalAlpha=alpha;context.lineCap='round';context.lineWidth=Math.max(2,size*.1);
+    const dx=size*.27; const dy=size*.42;
+    line(context,x-dx-separated,y-dy,x+dx-separated,y+dy,colors.gold,Math.max(3,size*.11));
+    line(context,x+dx-separated,y-dy,x-dx-separated,y+dy,colors.violet,Math.max(3,size*.11));
+    if(options.replicated){
+      line(context,x-dx+separated,y-dy,x+dx+separated,y+dy,colors.violet,Math.max(3,size*.11));
+      line(context,x+dx+separated,y-dy,x-dx+separated,y+dy,colors.gold,Math.max(3,size*.11));
+    }
+    context.fillStyle=colors.orange;context.beginPath();context.arc(x-separated,y,Math.max(2,size*.10),0,Math.PI*2);context.fill();
+    if(options.replicated){context.beginPath();context.arc(x+separated,y,Math.max(2,size*.10),0,Math.PI*2);context.fill();}
+    if(error){context.fillStyle=colors.pink;context.beginPath();context.arc(x+size*.38,y-size*.38,Math.max(4,size*.12),0,Math.PI*2);context.fill();}
+    context.restore();
+  }
+  function drawNucleus(x,y,r,alpha=1){circle(ctx,x,y,r,colors.blue,'#0d1a23',2,alpha);circle(ctx,x,y,r*.82,colors.line,null,1,alpha);}
+  function drawCellOutline(x,y,r,alpha=1){circle(ctx,x,y,r,colors.cyan,'#0a171e',3,alpha);circle(ctx,x,y,r*.95,colors.line,null,1,alpha);}
+  function chromosomePositions(cx,cy,r){return Core.SPECS.map((spec,index)=>{const a=-Math.PI/2+index*Math.PI*2/Core.SPECS.length;return {x:cx+Math.cos(a)*r,y:cy+Math.sin(a)*r};});}
+  function drawCell(){
+    clean(ctx,elements.cell);const W=elements.cell.width,H=elements.cell.height;const phase=state.phase; const p=phaseIndex(phase);
+    const gradient=ctx.createRadialGradient(W*.5,H*.44,20,W*.5,H*.44,W*.58);gradient.addColorStop(0,'#17323d');gradient.addColorStop(1,'#0a151c');ctx.fillStyle=gradient;ctx.fillRect(0,0,W,H);
+    drawText(ctx,'CELL-LEVEL READER',26,31,{color:colors.muted,font:'11px ui-monospace, monospace'});
+    drawText(ctx,`${phase.toUpperCase()} · occurrence ${state.occurrence}`,W-26,31,{color:colors.green,align:'right',font:'11px ui-monospace, monospace'});
+    const center={x:W*.5,y:H*.5};const r=Math.min(W,H)*.32;
+    const rows=Core.chromosomeRows(state);
+    if(['G1','S','G2','Prophase'].includes(phase)){
+      drawCellOutline(center.x,center.y,r);drawNucleus(center.x,center.y,r*.66);
+      const positions=chromosomePositions(center.x,center.y,r*.43);
+      rows.forEach((row,index)=>{
+        const progress=phase==='G1'?0:row.copied/row.length;
+        if(phase==='S') drawHelix(ctx,positions[index].x,positions[index].y,r*.34,progress,.72);
+        else if(phase==='G1') drawHelix(ctx,positions[index].x,positions[index].y,r*.28,1,.55);
+        else drawChromosome(ctx,positions[index].x,positions[index].y,r*.24,{replicated:true,error:row.mismatches.length>0});
+        drawText(ctx,row.id.toUpperCase(),positions[index].x,positions[index].y+r*.22,{color:colors.muted,align:'center',font:'9px ui-monospace, monospace'});
+      });
+      if(phase==='S'){
+        const percent=Math.round(state.copyCursor/Core.TOTAL_BASES*100);drawText(ctx,`S phase · ${state.copyCursor}/${Core.TOTAL_BASES} loci · ${percent}%`,center.x,center.y+r*.88,{color:colors.gold,align:'center',font:'12px ui-monospace, monospace'});
+      }
+    }else if(['Metaphase','Anaphase','Telophase','Cytokinesis','Daughters'].includes(phase)){
+      const leftPole={x:center.x-r*.78,y:center.y},rightPole={x:center.x+r*.78,y:center.y};
+      if(phase==='Daughters'){
+        const left={x:center.x-r*.72,y:center.y},right={x:center.x+r*.72,y:center.y};
+        drawCellOutline(left.x,left.y,r*.69);drawCellOutline(right.x,right.y,r*.69);drawNucleus(left.x,left.y,r*.43);drawNucleus(right.x,right.y,r*.43);
+        rows.forEach((row,index)=>{
+          const col=index%3,rowY=Math.floor(index/3);const a={x:left.x+(col-1)*r*.28,y:left.y+(rowY-.5)*r*.28};const b={x:right.x+(col-1)*r*.28,y:right.y+(rowY-.5)*r*.28};
+          drawChromosome(ctx,a.x,a.y,r*.16,{replicated:false,error:row.mismatches.length>0});drawChromosome(ctx,b.x,b.y,r*.16,{replicated:false,error:row.mismatches.length>0});
+        });
+        drawText(ctx,'DAUGHTER A · 6 chromosomes',left.x,left.y+r*.88,{color:colors.green,align:'center',font:'10px ui-monospace, monospace'});
+        drawText(ctx,'DAUGHTER B · 6 chromosomes',right.x,right.y+r*.88,{color:colors.green,align:'center',font:'10px ui-monospace, monospace'});
+      }else{
+        if(phase==='Cytokinesis'){
+          ctx.save();ctx.strokeStyle=colors.cyan;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(center.x-r,center.y-r*.7);ctx.bezierCurveTo(center.x-r*.2,center.y-r,center.x-r*.2,center.y+r,center.x-r,center.y+r*.7);ctx.moveTo(center.x+r,center.y-r*.7);ctx.bezierCurveTo(center.x+r*.2,center.y-r,center.x+r*.2,center.y+r,center.x+r,center.y+r*.7);ctx.stroke();ctx.restore();
+        }else drawCellOutline(center.x,center.y,r);
+        circle(ctx,leftPole.x,leftPole.y,r*.09,colors.orange,colors.orange,1);circle(ctx,rightPole.x,rightPole.y,r*.09,colors.orange,colors.orange,1);
+        const separation=phase==='Metaphase'?0:phase==='Anaphase'?r*.42:phase==='Telophase'||phase==='Cytokinesis'?r*.58:0;
+        rows.forEach((row,index)=>{
+          const y=center.y+(index-2.5)*r*.24;
+          line(ctx,leftPole.x,leftPole.y,center.x-separation,y,colors.line,1,.8);line(ctx,rightPole.x,rightPole.y,center.x+separation,y,colors.line,1,.8);
+          drawChromosome(ctx,center.x,y,r*.19,{replicated:true,separated:separation,error:row.mismatches.length>0});
+        });
+        if(phase==='Telophase'||phase==='Cytokinesis'){drawNucleus(center.x-r*.57,center.y,r*.38,.72);drawNucleus(center.x+r*.57,center.y,r*.38,.72);}
+        if(phase==='Metaphase'&&!state.spindleAligned){line(ctx,center.x,center.y-r*.78,center.x,center.y+r*.78,colors.pink,3);drawText(ctx,'ALIGNMENT HOLD',center.x,center.y-r*.9,{color:colors.pink,align:'center',font:'11px ui-monospace, monospace'});}
+      }
+    }
+    drawLegend(ctx,W,H);
+  }
+  function drawLegend(context,W,H){
+    const items=[[colors.gold,'carried template'],[colors.violet,'new complement'],[colors.pink,'unresolved mismatch'],[colors.orange,'centromere / spindle pole']];let x=28;const y=H-25;
+    items.forEach(([color,label])=>{context.fillStyle=color;context.fillRect(x,y-8,9,9);drawText(context,label,x+14,y,{color:colors.muted,font:'10px Arial'});x+=context.measureText(label).width+42;});
+  }
+  function drawGenome(){
+    clean(genomeCtx,elements.genome);const W=elements.genome.width,H=elements.genome.height;const rows=Core.chromosomeRows(state);const baseX=205,baseW=32,top=84,rowH=60;
+    drawText(genomeCtx,'SEQUENCE READER · fixed illustrative 18-base chromosome templates',26,31,{color:colors.muted,font:'11px ui-monospace, monospace'});
+    drawText(genomeCtx,`copy frontier ${state.copyCursor}/${Core.TOTAL_BASES}`,W-25,31,{color:colors.green,align:'right',font:'11px ui-monospace, monospace'});
+    drawText(genomeCtx,'chromosome',26,61,{color:colors.blue,font:'10px ui-monospace, monospace'});drawText(genomeCtx,'parental top strand',baseX,61,{color:colors.gold,font:'10px ui-monospace, monospace'});drawText(genomeCtx,'complement / new strand',baseX+baseW*19.4,61,{color:colors.violet,font:'10px ui-monospace, monospace'});
+    rows.forEach((row,rowIndex)=>{
+      const y=top+rowIndex*rowH; const errorAt=new Set(row.mismatches.map(item=>item.index));
+      drawText(genomeCtx,`${row.id.toUpperCase()} · ${row.origin}`,26,y+17,{color:colors.ink,font:'11px ui-monospace, monospace'});drawText(genomeCtx,`pair ${row.pair}`,26,y+34,{color:colors.muted,font:'9px ui-monospace, monospace'});
+      for(let index=0;index<row.length;index+=1){
+        const x=baseX+index*baseW;const copied=index<row.copied;const active=state.phase==='S' && index===row.copied && row.copied<row.length;const fill=copied||phasePast('G2')? '#1e3a45':'#13222c';
+        roundRect(genomeCtx,x,y,baseW-3,20,3,active?colors.gold:colors.line,fill);roundRect(genomeCtx,x,y+25,baseW-3,20,3,errorAt.has(index)?colors.pink:(copied||phasePast('G2')?colors.violet:colors.line),errorAt.has(index)?'#4a2634':'#13222c');
+        drawText(genomeCtx,row.sequence[index],x+(baseW-3)/2,y+14,{color:colors.gold,align:'center',font:'12px ui-monospace, monospace'});
+        const lower=errorAt.has(index)?row.mismatches.find(item=>item.index===index).observed:row.complement[index];drawText(genomeCtx,lower,x+(baseW-3)/2,y+40,{color:errorAt.has(index)?colors.pink:colors.violet,align:'center',font:'12px ui-monospace, monospace'});
+      }
+      const tag=state.replicationComplete?'two sister chromatids':'one parental duplex';drawText(genomeCtx,tag,baseX+baseW*18.4,y+17,{color:state.replicationComplete?colors.green:colors.muted,font:'10px ui-monospace, monospace'});
+      if(state.replicationComplete) drawText(genomeCtx,'A: old top + new bottom · B: new top + old bottom',baseX+baseW*18.4,y+34,{color:colors.muted,font:'9px ui-monospace, monospace'});
+    });
+    if(state.phase==='S'){
+      const copiedRows=rows.filter(row=>row.copied===row.length).length;drawText(genomeCtx,`${copiedRows}/6 templates completed; the visible frontier is a logical copying marker, not a molecular-time measurement.`,26,H-24,{color:colors.muted,font:'10px ui-monospace, monospace'});
+    } else drawText(genomeCtx,'Semiconservative read: every completed sister chromatid retains one parental strand and one newly synthesized complement.',26,H-24,{color:colors.muted,font:'10px ui-monospace, monospace'});
+  }
+  function drawClock(){
+    clean(clockCtx,elements.clock);const W=elements.clock.width,H=elements.clock.height;const cx=W*.5,cy=H*.51,r=70;const current=phaseIndex(state.phase);
+    for(let i=0;i<Core.PHASES.length;i+=1){const a=-Math.PI/2+i*Math.PI*2/Core.PHASES.length;const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;const active=i===current;const past=i<current;circle(clockCtx,x,y,active?12:8,active?colors.gold:past?colors.green:colors.line,active?colors.gold:past?'#16362e':'#142430',active?2:1);drawText(clockCtx,Core.PHASES[i][0],x,y+3,{color:active?'#13212a':past?colors.green:colors.muted,align:'center',font:active?'11px ui-monospace, monospace':'9px ui-monospace, monospace'});}
+    circle(clockCtx,cx,cy,33,colors.line,'#101c25',1);drawText(clockCtx,state.phase.toUpperCase(),cx,cy-2,{color:colors.gold,align:'center',font:'10px ui-monospace, monospace'});drawText(clockCtx,`${current+1}/9`,cx,cy+15,{color:colors.green,align:'center',font:'10px ui-monospace, monospace'});
+    const a=-Math.PI/2+current*Math.PI*2/Core.PHASES.length;line(clockCtx,cx,cy,cx+Math.cos(a)*r*.72,cy+Math.sin(a)*r*.72,colors.gold,2);
+  }
+  function renderStats(){
+    const gate=Core.gateRead(state);const rowCount=state.segregation?`${state.segregation.A.length} / ${state.segregation.B.length}`:'—';
+    const values=[
+      ['CURRENT PHASE',state.phase.toUpperCase(),'good'],
+      ['COPY FRONTIER',`${state.copyCursor} / ${Core.TOTAL_BASES}`,'blue'],
+      ['MISMATCHES',state.mismatches.length?String(state.mismatches.length):'0',state.mismatches.length?'hold':'good'],
+      ['SPINDLE',state.spindleAligned?'ALIGNED':'HOLD',state.spindleAligned?'good':'hold'],
+      ['DAUGHTER SETS',rowCount,state.segregation?'good':'blue'],
+      ['GATE',gate.verdict,gate.pass?'good':'hold']
+    ];
+    elements.stats.innerHTML=values.map(([label,value,klass])=>`<div class="stat"><small>${label}</small><strong class="${klass}">${value}</strong></div>`).join('');
+    elements.gateChip.textContent=`${gate.label.toUpperCase()} GATE · ${gate.verdict}`;
+    elements.gateChip.style.color=gate.pass?colors.green:colors.pink;
+  }
+  function renderAudits(){elements.audits.innerHTML=Core.audits(state).map(audit=>`<div class="audit ${audit.value==='HOLD'?'hold':audit.value==='WAIT'?'wait':''}">${audit.label}<b>${audit.value}</b><span>${audit.detail}</span></div>`).join('');}
+  function renderHistory(){
+    const events=state.ledger.slice(-8);elements.history.innerHTML=events.length?events.map(event=>`<li><span>${String(event.sequence).padStart(2,'0')}</span> · ${event.type.replaceAll('_',' ').toLowerCase()}</li>`).join(''):'<li>No events yet; G1 is the declared initial state.</li>';
+  }
+  function renderControls(){
+    const inS=(state.phase==='S'&&state.copyCursor>0)||state.phase==='G2';const canRepair=state.mismatches.length>0;const inSpindleWindow=['Prophase','Metaphase'].includes(state.phase);
+    elements.advance.disabled=false;elements.play.disabled=timer!==null||state.phase==='Daughters';elements.pause.disabled=timer===null;
+    elements.inject.disabled=!inS;elements.repair.disabled=!canRepair;elements.misalign.disabled=!inSpindleWindow;elements.align.disabled=!inSpindleWindow;
+  }
+  function render(){
+    drawCell();drawGenome();drawClock();renderStats();renderAudits();renderHistory();renderControls();
+    elements.genomeDeclaration.textContent=JSON.stringify({chromosomes:Core.SPECS.map(({id,pair,origin,sequence})=>({id,pair,origin,top:sequence,bottom:Core.complement(sequence)})),baseComplement:'A↔T · C↔G'},null,2);
+    elements.modelDeclaration.textContent=JSON.stringify(Core.declaration(),null,2);
+    const receipt=Core.exportReceipt(state);const verdict=Core.verifyReceipt(receipt);elements.receiptJSON.value=JSON.stringify(receipt,null,2);elements.receiptVerdict.textContent=verdict.pass?`REPLAY PASS · ${verdict.events} EVENTS`:`REPLAY HOLD · ${verdict.error}`;elements.receiptVerdict.style.color=verdict.pass?colors.green:colors.pink;
+  }
+  function openReceipt(){elements.dialog.showModal();}
+  function downloadReceipt(){
+    const receipt=Core.exportReceipt(state);const blob=new Blob([JSON.stringify(receipt,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='clear-onyx-mitosis-reader-v0.1-receipt.json';document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setMessage('Receipt exported with the declared state, events, and deterministic final snapshot.');
+  }
+  elements.advance.addEventListener('click',tick);elements.play.addEventListener('click',play);elements.pause.addEventListener('click',()=>{pause();setMessage('Cycle carriage paused at its retained occurrence.');});elements.reset.addEventListener('click',reset);
+  elements.inject.addEventListener('click',()=>{const next=Core.injectMismatch(state);const event=next.ledger[next.ledger.length-1];action(next,eventLabel(event),event.type!=='INJECT_MISMATCH');});
+  elements.repair.addEventListener('click',()=>{const next=Core.repairMismatch(state);const event=next.ledger[next.ledger.length-1];action(next,eventLabel(event),event.type!=='REPAIR_MISMATCH');});
+  elements.misalign.addEventListener('click',()=>{const next=Core.setSpindle(state,false);action(next,eventLabel(next.ledger[next.ledger.length-1]));});
+  elements.align.addEventListener('click',()=>{const next=Core.setSpindle(state,true);action(next,eventLabel(next.ledger[next.ledger.length-1]));});
+  elements.speed.addEventListener('change',()=>{if(timer!==null){pause();play();}setMessage(`Virtual carriage tempo set to ${elements.speed.selectedOptions[0].text.toLowerCase()}.`);});
+  elements.viewReceipt.addEventListener('click',openReceipt);elements.exportReceipt.addEventListener('click',downloadReceipt);elements.closeReceipt.addEventListener('click',()=>elements.dialog.close());elements.downloadReceipt.addEventListener('click',downloadReceipt);
+  window.addEventListener('beforeunload',pause);
+  const check=Core.assertModel();setMessage(check?lastMessage:'Model assertion requires attention.');render();
+})();
+</script>
+</body>
+</html>

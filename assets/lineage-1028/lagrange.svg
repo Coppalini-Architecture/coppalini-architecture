@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-lagrange-title"><title id="lineage-lagrange-title">J.-L. Lagrange — Stationary action. Motion makes the action stationary. The time derivative of partial L by partial q dot, minus partial L by partial q, equals zero.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#b79d47" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,42h18 M758,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M33,1008h18 M42,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,1008h18 M758,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><text x="76" y="92" font-size="18" fill="#b79d47" text-anchor="start" font-family="monospace" >06</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1788 AD</text><text x="400" y="145" font-size="17" fill="#b79d47" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">STATIONARY ACTION</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >J.-L. Lagrange</text><path d="M320,249H480" stroke="#b79d47"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#b79d47"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Motion makes the action stationary.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M190,622 C330,370 480,440 610,622" stroke="#b7bdb0" stroke-width="2" fill="none" /><path d="M190,622 C310,690 480,380 610,622" stroke="#b7bdb0" stroke-width="2" fill="none" /><path d="M190,622 C310,585 490,585 610,622" stroke="#b7bdb0" stroke-width="2" fill="none" /><path d="M190,622 C320,485 480,485 610,622" stroke="#b79d47" stroke-width="5" fill="none" /><circle cx="190" cy="622" r="6" stroke="#b79d47" fill="#b79d47" stroke-width="3"/><circle cx="610" cy="622" r="6" stroke="#b79d47" fill="#b79d47" stroke-width="3"/><text x="190" y="665" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">q₀</text><text x="610" y="665" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">q₁</text><text x="400" y="453" fill="#243d40" font-size="25" text-anchor="middle" font-family="Georgia,serif">δS = 0</text></g><g transform="translate(241.949 766.000) scale(1.78710)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="lagrange-figure_1">
+  <g id="lagrange-patch_1">
+   <path d="M 0 51.48 
+L 176.88 51.48 
+L 176.88 0 
+L 0 0 
+L 0 51.48 
+z
+" style="fill: none"/>
+  </g>
+  <g id="lagrange-text_1">
+   <!-- $\frac{d}{dt}\frac{\partial L}{\partial\dot q}-\frac{\partial L}{\partial q}=0$ -->
+   <g style="fill: #243d40" transform="translate(1.44 30.84) scale(0.3 -0.3)">
+    <defs>
+     <path id="lagrange-DejaVuSans-Oblique-64" d="M 2675 525 
+Q 2444 222 2128 65 
+Q 1813 -91 1428 -91 
+Q 903 -91 598 267 
+Q 294 625 294 1247 
+Q 294 1766 478 2236 
+Q 663 2706 1013 3078 
+Q 1244 3325 1534 3454 
+Q 1825 3584 2144 3584 
+Q 2481 3584 2739 3421 
+Q 2997 3259 3138 2956 
+L 3513 4863 
+L 4091 4863 
+L 3144 0 
+L 2566 0 
+L 2675 525 
+z
+M 891 1350 
+Q 891 897 1095 644 
+Q 1300 391 1663 391 
+Q 1931 391 2161 520 
+Q 2391 650 2566 903 
+Q 2750 1166 2856 1509 
+Q 2963 1853 2963 2188 
+Q 2963 2622 2758 2865 
+Q 2553 3109 2194 3109 
+Q 1922 3109 1687 2981 
+Q 1453 2853 1288 2613 
+Q 1106 2353 998 2009 
+Q 891 1666 891 1350 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-Oblique-74" d="M 2706 3500 
+L 2619 3053 
+L 1472 3053 
+L 1100 1153 
+Q 1081 1047 1072 975 
+Q 1063 903 1063 863 
+Q 1063 663 1183 572 
+Q 1303 481 1569 481 
+L 2150 481 
+L 2053 0 
+L 1503 0 
+Q 991 0 739 200 
+Q 488 400 488 806 
+Q 488 878 497 964 
+Q 506 1050 525 1153 
+L 897 3053 
+L 409 3053 
+L 500 3500 
+L 978 3500 
+L 1172 4494 
+L 1747 4494 
+L 1556 3500 
+L 2706 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-2202" d="M 1366 -91 
+Q 925 -91 638 175 
+Q 297 491 297 1063 
+Q 297 1656 597 2119 
+Q 906 2594 1463 2594 
+Q 1828 2594 2116 2366 
+Q 2284 2231 2400 2006 
+Q 2441 2259 2441 2547 
+Q 2441 2969 2341 3213 
+Q 2119 3753 1531 3753 
+Q 1309 3753 966 3616 
+L 966 4141 
+Q 1328 4238 1653 4238 
+Q 2491 4238 2847 3469 
+Q 3013 3106 3013 2566 
+Q 3013 2213 2934 1803 
+Q 2738 778 2228 291 
+Q 1828 -91 1366 -91 
+z
+M 831 969 
+Q 831 656 969 488 
+Q 1116 309 1341 309 
+Q 1541 309 1700 450 
+Q 1925 644 2091 959 
+Q 2228 1219 2297 1497 
+Q 2019 2169 1538 2169 
+Q 1125 2169 944 1625 
+Q 831 1288 831 969 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-Oblique-4c" d="M 1075 4666 
+L 1709 4666 
+L 909 525 
+L 3181 525 
+L 3078 0 
+L 172 0 
+L 1075 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-307" d="M -1894 4863 
+L -1319 4863 
+L -1319 4134 
+L -1894 4134 
+L -1894 4863 
+z
+M -1600 3584 
+L -1600 3584 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-Oblique-71" d="M 2669 525 
+Q 2438 222 2123 65 
+Q 1809 -91 1428 -91 
+Q 897 -91 595 267 
+Q 294 625 294 1253 
+Q 294 1759 480 2231 
+Q 666 2703 1013 3078 
+Q 1238 3322 1530 3453 
+Q 1822 3584 2144 3584 
+Q 2531 3584 2781 3431 
+Q 3031 3278 3144 2969 
+L 3244 3494 
+L 3822 3494 
+L 2888 -1319 
+L 2309 -1319 
+L 2669 525 
+z
+M 891 1338 
+Q 891 875 1084 633 
+Q 1278 391 1644 391 
+Q 2188 391 2572 911 
+Q 2956 1431 2956 2175 
+Q 2956 2625 2757 2864 
+Q 2559 3103 2188 3103 
+Q 1916 3103 1684 2976 
+Q 1453 2850 1281 2606 
+Q 1100 2350 995 2006 
+Q 891 1663 891 1338 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-2212" d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="lagrange-DejaVuSans-30" d="M 2034 4250 
+Q 1547 4250 1301 3770 
+Q 1056 3291 1056 2328 
+Q 1056 1369 1301 889 
+Q 1547 409 2034 409 
+Q 2525 409 2770 889 
+Q 3016 1369 3016 2328 
+Q 3016 3291 2770 3770 
+Q 2525 4250 2034 4250 
+z
+M 2034 4750 
+Q 2819 4750 3233 4129 
+Q 3647 3509 3647 2328 
+Q 3647 1150 3233 529 
+Q 2819 -91 2034 -91 
+Q 1250 -91 836 529 
+Q 422 1150 422 2328 
+Q 422 3509 836 4129 
+Q 1250 4750 2034 4750 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-64" transform="translate(14 44.810938) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-64" transform="translate(0 -40.623437) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-74" transform="translate(44.433594 -40.623437) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-2202" transform="translate(87.379883 44.810938) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-4c" transform="translate(123.576172 44.810938) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-2202" transform="translate(84.379883 -49.373437) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-307" transform="translate(161.941797 -40.626562) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-71" transform="translate(120.576172 -49.373437) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-2212" transform="translate(196.992188 0.01875)"/>
+    <use xlink:href="#lagrange-DejaVuSans-2202" transform="translate(303.263672 44.810938) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-4c" transform="translate(339.459961 44.810938) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-2202" transform="translate(300.263672 -33.7875) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-Oblique-71" transform="translate(336.459961 -33.7875) scale(0.7)"/>
+    <use xlink:href="#lagrange-DejaVuSans-3d" transform="translate(412.875977 0.01875)"/>
+    <use xlink:href="#lagrange-DejaVuSans-30" transform="translate(516.147461 0.01875)"/>
+    <path d="M 0 18.815625 
+L 0 25.065625 
+L 71.879883 25.065625 
+L 71.879883 18.815625 
+L 0 18.815625 
+z
+"/>
+    <path d="M 84.379883 18.815625 
+L 84.379883 25.065625 
+L 165.009766 25.065625 
+L 165.009766 18.815625 
+L 84.379883 18.815625 
+z
+"/>
+    <path d="M 300.263672 18.815625 
+L 300.263672 25.065625 
+L 380.893555 25.065625 
+L 380.893555 18.815625 
+L 300.263672 18.815625 
+z
+"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Fixed endpoints · admissible variations</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

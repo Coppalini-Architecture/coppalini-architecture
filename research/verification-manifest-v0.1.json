@@ -1,0 +1,107 @@
+{
+  "record_type": "CoppaliniArchitectureVerificationManifest",
+  "version": "v0.1",
+  "issued": "2026-11-11",
+  "canonical_site": "https://eulershiddenl.ink/",
+  "publisher": {
+    "name": "Anthony Vito Coppa",
+    "url": "https://eulershiddenl.ink/anthony-vito-coppa.html"
+  },
+  "reading_order": "source → verifier → receipt → scope → next record",
+  "claim_registry": {
+    "url": "https://eulershiddenl.ink/research/public-claim-registry-v0.2.json",
+    "sha256": "6da82c78b9c4eb281b835d9c712366b83b9b7a030cc2adc2e5fec19c3e337003"
+  },
+  "reader_contract": {
+    "url": "https://eulershiddenl.ink/research/reader-contract.json",
+    "sha256": "332ab05af9d896cb0c2749e3125b9751d9371b06e400a6254c4cf65653049c4e"
+  },
+  "records": [
+    {
+      "id": "B-2",
+      "label": "Validator Kit B2",
+      "result": "12 hash-gated cards: 12/12 PASS.",
+      "command": "python3 kit.py",
+      "artifact": {
+        "url": "https://eulershiddenl.ink/downloads/Validator_Kit_B2_v0_1.zip",
+        "sha256": "03cfda6a4ebbefc1302accdace1493027c840253bfc35d1c3e93b42dfc4574a0"
+      },
+      "receipt": {
+        "url": "https://eulershiddenl.ink/research/audit/VALIDATOR_KIT_B2_RECEIPT.md",
+        "sha256": "7d998a50665308589c37c069eeeb88325277be4eab0cb013f73cdc209aaf0ebb",
+        "archive_member": "Validator_Kit_B2_v0_1/KIT_RECEIPT.md"
+      },
+      "scope": "Each card retains its own domain and stated scope. The kit certifies declared mathematical and native-domain relations; laboratory records, where relevant, remain retained in their own named receipts."
+    },
+    {
+      "id": "S-5/05a",
+      "label": "Suture Audit v0.2",
+      "result": "Eight source-bound verifiers PASS for the paired finite carrier and regular-branch cards.",
+      "command": "cd source && python3 verify_all.py",
+      "artifact": {
+        "url": "https://eulershiddenl.ink/downloads/Suture_Audit_v0_2.zip",
+        "sha256": "b2df5089e3e7e6ce6f6a7f673d8381ca86accc05d1379fb3b75e22696b088448"
+      },
+      "receipt": {
+        "url": "https://eulershiddenl.ink/research/suture-field/RESIDUAL_LEDGER_v0_2.md",
+        "sha256": "f2fe9d6769f38f0afe56663304dfd235c48b2d93e6b8294afc597de19278285e",
+        "archive_member": "Suture_Audit_v0_2/RESIDUAL_LEDGER_v0_2.md"
+      },
+      "scope": "The regular-domain conditions rank D𝒮Π = 16 and b < |χ| belong to the stated reduction; cited Lorentzian 2-form normal forms remain a named source dependency. A future apparatus comparison would be a measurement record, not a condition on the released Einstein–Maxwell reduction."
+    },
+    {
+      "id": "W-0",
+      "label": "Weinberg seam v0.2",
+      "result": "15/15 exact symbolic checks of the declared tree-level mass matrix, vacuum stabilizer, and neutral diagonalization.",
+      "command": "python3 -I verify_w0_weinberg_seam_v0_2.py",
+      "artifact": {
+        "url": "https://eulershiddenl.ink/downloads/W0_v0_2_packet.zip",
+        "sha256": "9fe1b3c4d66ab42d59cfb8d16fd0c0ca1e4bb3b6c393ec191fa3c9516e7b0431"
+      },
+      "receipt": {
+        "url": "https://eulershiddenl.ink/research/audit/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt",
+        "sha256": "5977b5bff0d73f75c81645b3654a7ff4412f700932372313dcd62e53fdee5e43",
+        "archive_member": "W0_v0_2_packet/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt"
+      },
+      "scope": "The standard electroweak representation, vacuum, g, g′, and v are the declared native reference. The card verifies their tree-level mass relation; a new numerical or running-parameter result would require its own record."
+    },
+    {
+      "id": "W-1",
+      "label": "Electroweak carrier adapter v0.2",
+      "result": "15/15 exact symbolic checks of the declared 𝔲(2) carrier map and W±, Z, A coordinate map.",
+      "command": "python3 -I verify_w1_carrier_adapter_v0_2.py",
+      "artifact": {
+        "url": "https://eulershiddenl.ink/downloads/W1_v0_2_packet.zip",
+        "sha256": "22b92b32d93b2a7d7446a7f147475e7dac98c9f84880f96b1ac297618037b50f"
+      },
+      "receipt": {
+        "url": "https://eulershiddenl.ink/research/audit/W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt",
+        "sha256": "6a3321e8dc4cf44c6aed8649faf35148ef25cc4af57e0b878e6f55600a059ebc",
+        "archive_member": "W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt"
+      },
+      "scope": "The declared plane P realizes the stated carrier and coordinate map. Its provenance remains a selection record; it does not make the verified map provisional. The card introduces no new particle parameter."
+    },
+    {
+      "id": "NDA-3",
+      "label": "Native Domain Adapter Atlas v0.3",
+      "result": "Exact Body–SI–English length transport: 18/18 rational checks; row-specific institutional-contact labels are retained.",
+      "command": "python3 -I run_all.py",
+      "artifact": {
+        "url": "https://eulershiddenl.ink/downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip",
+        "sha256": "4075a5c57fe36a2977311ea58dad5181ed5b971859df390e797ed23ee6f8d075"
+      },
+      "receipt": {
+        "url": "https://eulershiddenl.ink/research/audit/NATIVE_DOMAIN_ADAPTER_ATLAS_RECEIPT_v0_3.txt",
+        "sha256": "bf4e97d517679a7ab51c192995cfe2b09b1b399b86aece53ebbfe98f8626992d",
+        "archive_member": "NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3/ATLAS_RECEIPT_v0_3.txt"
+      },
+      "scope": "The stated Body–SI–English transport is closed by the 18 rational checks. A later metrology result is a separate reference receipt for a new statement, not a condition on the conversion itself."
+    }
+  ],
+  "next_records": [
+    "Suture residual ledger R-1 through R-12 retains derivation-level precision and remains published with the paired cards.",
+    "Electroweak provenance and any new-number comparison extend W-0 and W-1 without undoing their verified native-domain relation.",
+    "Atomic reference and apparatus records bind future readings to named editions and instruments while retaining their disclosed model realizations."
+  ],
+  "policy": "This manifest identifies released artifacts and their stated results and scope. It does not alter the claim strength of any underlying record."
+}

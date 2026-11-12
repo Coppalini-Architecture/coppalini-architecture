@@ -1,0 +1,396 @@
+{
+  "schema": "local_publication_validation/1",
+  "created_utc": "2026-11-12T02:28:06.040984+00:00",
+  "source_package": "/workspace/scratch/327a49fb9250/infinity_publication_sources/package/Infinity_One_Zero_Lift_v0_1",
+  "isolated_copy": "/workspace/scratch/327a49fb9250/infinity_validation/Infinity_One_Zero_Lift_v0_1",
+  "scope": "Hash and source-receipt integrity; rerun of the two supplied Python suites only. No new proof scope, no Lean rerun, no network calls, and no source-package edits.",
+  "status": "PASS",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "sympy": "1.14.0"
+  },
+  "sha256sums": {
+    "manifest_sha256": "fc3f33416383a48a5057b3e2878396b235e80e33196833a6cd6740f60dcae87b",
+    "entries": 44,
+    "passed": 44,
+    "payload_files": 44,
+    "unlisted_payload_files": [],
+    "entries_verified": [
+      {
+        "path": "Infinity_One_Zero_Lift.md",
+        "expected_sha256": "b8bbcb6f463c2d43b850d051cf81f441e6d1565758efce00662c21ed88243821",
+        "actual_sha256": "b8bbcb6f463c2d43b850d051cf81f441e6d1565758efce00662c21ed88243821",
+        "match": true
+      },
+      {
+        "path": "Infinity_One_Zero_Lift.pdf",
+        "expected_sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa",
+        "actual_sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa",
+        "match": true
+      },
+      {
+        "path": "Infinity_One_Zero_Lift.tex",
+        "expected_sha256": "01e35a9d483e4dc1734825f7d8020bed9c4b6d793b79900baa33fc5b3d21e617",
+        "actual_sha256": "01e35a9d483e4dc1734825f7d8020bed9c4b6d793b79900baa33fc5b3d21e617",
+        "match": true
+      },
+      {
+        "path": "README.md",
+        "expected_sha256": "feb0801ad9999233f00b4e47ae9d55a07056dc530ff68333d0d8c77b09fc2a9b",
+        "actual_sha256": "feb0801ad9999233f00b4e47ae9d55a07056dc530ff68333d0d8c77b09fc2a9b",
+        "match": true
+      },
+      {
+        "path": "assets/cover.pdf",
+        "expected_sha256": "3fb4599f3b561563e668dc7e15bb85963e1320805ea8e6997bd36a9fe4232140",
+        "actual_sha256": "3fb4599f3b561563e668dc7e15bb85963e1320805ea8e6997bd36a9fe4232140",
+        "match": true
+      },
+      {
+        "path": "assets/cover.png",
+        "expected_sha256": "fb588415acc26c53b6745fef4a4a68a3b88646dcfdef7ce7cdebed47224a735f",
+        "actual_sha256": "fb588415acc26c53b6745fef4a4a68a3b88646dcfdef7ce7cdebed47224a735f",
+        "match": true
+      },
+      {
+        "path": "assets/cover.svg",
+        "expected_sha256": "f7709382feb0f18975d96de4bd563ab8e93dae7dacbd9ae9bdf05219071ab3d6",
+        "actual_sha256": "f7709382feb0f18975d96de4bd563ab8e93dae7dacbd9ae9bdf05219071ab3d6",
+        "match": true
+      },
+      {
+        "path": "assets/incidence.pdf",
+        "expected_sha256": "c841d9fd52585a6ad97da6c485a66348eabbc893f39abc863d4e7bd83b8440f2",
+        "actual_sha256": "c841d9fd52585a6ad97da6c485a66348eabbc893f39abc863d4e7bd83b8440f2",
+        "match": true
+      },
+      {
+        "path": "assets/incidence.svg",
+        "expected_sha256": "7823ef138f2bf8d69e3d10ee51aa554965e86b21af7956c96aa102002ebcc97c",
+        "actual_sha256": "7823ef138f2bf8d69e3d10ee51aa554965e86b21af7956c96aa102002ebcc97c",
+        "match": true
+      },
+      {
+        "path": "build_cover.py",
+        "expected_sha256": "5fccbed112630f15f120758d6af29f48efdfe7235e0f2e59072fc536841d0f22",
+        "actual_sha256": "5fccbed112630f15f120758d6af29f48efdfe7235e0f2e59072fc536841d0f22",
+        "match": true
+      },
+      {
+        "path": "provenance/composition_receipt.json",
+        "expected_sha256": "39c69a898a6e1f3e229ec36311b430d3b0c6f9a525bf2dd45041f768f445c0cb",
+        "actual_sha256": "39c69a898a6e1f3e229ec36311b430d3b0c6f9a525bf2dd45041f768f445c0cb",
+        "match": true
+      },
+      {
+        "path": "provenance/geometry_audit_original.zip",
+        "expected_sha256": "ac0c6c1364351d3c5bd1b907a87230efd13c9255195600dc103c70f2a1ff3b75",
+        "actual_sha256": "ac0c6c1364351d3c5bd1b907a87230efd13c9255195600dc103c70f2a1ff3b75",
+        "match": true
+      },
+      {
+        "path": "provenance/lean_execution_receipt.json",
+        "expected_sha256": "bd934e3f882227924a11c7ea4e10d8b46e6da64be854961fd16654578a3c5c41",
+        "actual_sha256": "bd934e3f882227924a11c7ea4e10d8b46e6da64be854961fd16654578a3c5c41",
+        "match": true
+      },
+      {
+        "path": "provenance/original_geometry_SHA256SUMS.txt",
+        "expected_sha256": "b4b03e71327f0d9f3ef483e31d78aa61d8cbe779c2527e8ec3dbf27edbd0a419",
+        "actual_sha256": "b4b03e71327f0d9f3ef483e31d78aa61d8cbe779c2527e8ec3dbf27edbd0a419",
+        "match": true
+      },
+      {
+        "path": "provenance/pdf_preflight.json",
+        "expected_sha256": "9db10da7087018379872161cb5ae2e8b6cf3e3925016943618a3d31aa206b56f",
+        "actual_sha256": "9db10da7087018379872161cb5ae2e8b6cf3e3925016943618a3d31aa206b56f",
+        "match": true
+      },
+      {
+        "path": "requirements.txt",
+        "expected_sha256": "27bb02e7a27e5f647d82159b6b680ac594b20685be2e13682b4cb72bc0422fe3",
+        "actual_sha256": "27bb02e7a27e5f647d82159b6b680ac594b20685be2e13682b4cb72bc0422fe3",
+        "match": true
+      },
+      {
+        "path": "verification/ProjectiveReturn.lean",
+        "expected_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+        "actual_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/AUDIT.md",
+        "expected_sha256": "c508b46b1baeb36d1660d22cef635406b4419a273775416fdb0ec6d5138658ac",
+        "actual_sha256": "c508b46b1baeb36d1660d22cef635406b4419a273775416fdb0ec6d5138658ac",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/COPPALINI_COVER_FRAME.svg",
+        "expected_sha256": "cca541de2294366cf1e9790d3a465be81d1ee2bd08d153d5990950eaffa03a6b",
+        "actual_sha256": "cca541de2294366cf1e9790d3a465be81d1ee2bd08d153d5990950eaffa03a6b",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/COPPALINI_COVER_STYLE_LOCK.json",
+        "expected_sha256": "0d3eeabe76c1db3a18b73c72cfebccdf908f70452b2fa0cb85443696a6565966",
+        "actual_sha256": "0d3eeabe76c1db3a18b73c72cfebccdf908f70452b2fa0cb85443696a6565966",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/COPPALINI_COVER_STYLE_REFERENCE.md",
+        "expected_sha256": "117476ad53c353dbfdee4b8b86646bf0fc4ae7ffa6cc2da3d18e31d1b33411d6",
+        "actual_sha256": "117476ad53c353dbfdee4b8b86646bf0fc4ae7ffa6cc2da3d18e31d1b33411d6",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/README.md",
+        "expected_sha256": "2a2e2d969a6cb81f032a732e1cb03e8ef5b2c8a611e104860efdf9a930a9ac3c",
+        "actual_sha256": "2a2e2d969a6cb81f032a732e1cb03e8ef5b2c8a611e104860efdf9a930a9ac3c",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/build_graph.py",
+        "expected_sha256": "b46d33aba953c4adbfe58310bcfc3d6138e20d90c7fc62609f5f62e375dc9aaa",
+        "actual_sha256": "b46d33aba953c4adbfe58310bcfc3d6138e20d90c7fc62609f5f62e375dc9aaa",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/edge_ledger.csv",
+        "expected_sha256": "00acfd78fc805f4112026f528dade1f8f738496672f7ec1c99f12508965375b5",
+        "actual_sha256": "00acfd78fc805f4112026f528dade1f8f738496672f7ec1c99f12508965375b5",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/graph_coordinates.json",
+        "expected_sha256": "593cfd43d13abd6f3a9f661836ecc890ceedf499c9ff0ecb9d14b8c254868b91",
+        "actual_sha256": "593cfd43d13abd6f3a9f661836ecc890ceedf499c9ff0ecb9d14b8c254868b91",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/incidence_reader.html",
+        "expected_sha256": "61f624f8a8d50895d2813d480708fad3f8b044d4d89a24c407bc36cf0e31502d",
+        "actual_sha256": "61f624f8a8d50895d2813d480708fad3f8b044d4d89a24c407bc36cf0e31502d",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/linear_infinity_28_seam_graph.pdf",
+        "expected_sha256": "b80882d4ff92c469b439f79f36fe1e05d230a824736a4a45e197faeba8ffed40",
+        "actual_sha256": "b80882d4ff92c469b439f79f36fe1e05d230a824736a4a45e197faeba8ffed40",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/linear_infinity_28_seam_graph.png",
+        "expected_sha256": "262dc5694841233794af7ad966efeb8910347cf67f78830391a85e04e7993ddb",
+        "actual_sha256": "262dc5694841233794af7ad966efeb8910347cf67f78830391a85e04e7993ddb",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/linear_infinity_28_seam_graph.svg",
+        "expected_sha256": "de5f7ed4b85a9b44785916fa2f8349baf4be4390ce6b45b944bbac61d4bf5139",
+        "actual_sha256": "de5f7ed4b85a9b44785916fa2f8349baf4be4390ce6b45b944bbac61d4bf5139",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/references/complete-operator-algebra(2).svg",
+        "expected_sha256": "dc1f0f07e821db30a34d76d685cb9b8bc0f1f554b3a7d69bdc36d86625204834",
+        "actual_sha256": "dc1f0f07e821db30a34d76d685cb9b8bc0f1f554b3a7d69bdc36d86625204834",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/references/four-phase-eight-state(2).svg",
+        "expected_sha256": "a71009b00728fab6782b02a198bccb0b223dce1bbf1a00b3eb5ac3fc3daddbe6",
+        "actual_sha256": "a71009b00728fab6782b02a198bccb0b223dce1bbf1a00b3eb5ac3fc3daddbe6",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/references/independent-tunability(2).svg",
+        "expected_sha256": "a6dc275164a5c96024fb504d25c224d3846ded04fa14092c10eec0a29be674d9",
+        "actual_sha256": "a6dc275164a5c96024fb504d25c224d3846ded04fa14092c10eec0a29be674d9",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/references/mirror-recognition(2).svg",
+        "expected_sha256": "c6e6a843a7ab07d24781dd44ac36f9a0f8fd502ca4919a929f3878a09685186d",
+        "actual_sha256": "c6e6a843a7ab07d24781dd44ac36f9a0f8fd502ca4919a929f3878a09685186d",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/references/the-exact-reader(2).svg",
+        "expected_sha256": "d8d6be1cc831e4d49d72d87d075f2ce40c57cd59b7ef1735fe3b36cbbcb05ca7",
+        "actual_sha256": "d8d6be1cc831e4d49d72d87d075f2ce40c57cd59b7ef1735fe3b36cbbcb05ca7",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/render_receipt.json",
+        "expected_sha256": "1e8b59e6ba0badfff871e9b09bb677099e772d8d533d08db00f371f50e7d29d6",
+        "actual_sha256": "1e8b59e6ba0badfff871e9b09bb677099e772d8d533d08db00f371f50e7d29d6",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/requirements.txt",
+        "expected_sha256": "cd0e99fc56571a5b31be812561f841058a54fd193783b56849dd46dfad2a0c89",
+        "actual_sha256": "cd0e99fc56571a5b31be812561f841058a54fd193783b56849dd46dfad2a0c89",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/source_custody.json",
+        "expected_sha256": "b2c3125399d29ef6560d0cf7ea46a4ae0383231a7adbc8b63ea9f5aba18e2366",
+        "actual_sha256": "b2c3125399d29ef6560d0cf7ea46a4ae0383231a7adbc8b63ea9f5aba18e2366",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/style_measurements.json",
+        "expected_sha256": "a7ddb1f483cf7fbad1a150696e7f1fb28d05c8cb9cf8f8897c515bb2eacf6541",
+        "actual_sha256": "a7ddb1f483cf7fbad1a150696e7f1fb28d05c8cb9cf8f8897c515bb2eacf6541",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/verification.json",
+        "expected_sha256": "9360775522897c50c6a8da971bab240de92430303310a44639bae679231932bc",
+        "actual_sha256": "9360775522897c50c6a8da971bab240de92430303310a44639bae679231932bc",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/verification.txt",
+        "expected_sha256": "98061e51b87bdfb9769911d4f50caa502b3f056d4e88be502d07d64b93287971",
+        "actual_sha256": "98061e51b87bdfb9769911d4f50caa502b3f056d4e88be502d07d64b93287971",
+        "match": true
+      },
+      {
+        "path": "verification/geometry_audit/verify_graph.py",
+        "expected_sha256": "9be5236dbf03a45cd5f078b08bf66ccba78158ee67e2bc9b5f2d6852237d3965",
+        "actual_sha256": "9be5236dbf03a45cd5f078b08bf66ccba78158ee67e2bc9b5f2d6852237d3965",
+        "match": true
+      },
+      {
+        "path": "verification/manuscript_checks.json",
+        "expected_sha256": "675705d8f81e7e0afc55d3ce0b2811936c28cb3e4aaf7563dc1888577875ae1b",
+        "actual_sha256": "675705d8f81e7e0afc55d3ce0b2811936c28cb3e4aaf7563dc1888577875ae1b",
+        "match": true
+      },
+      {
+        "path": "verification/manuscript_checks.txt",
+        "expected_sha256": "78afd6de825095f3976156038c131e1886c0cbeaa499e2bac3942b77a21ef9bc",
+        "actual_sha256": "78afd6de825095f3976156038c131e1886c0cbeaa499e2bac3942b77a21ef9bc",
+        "match": true
+      },
+      {
+        "path": "verification/verify_manuscript.py",
+        "expected_sha256": "d35dbc95a5e968cd365330f9f1f7d2f254e9294cdf0c56ace3f7ab6a52e83b2b",
+        "actual_sha256": "d35dbc95a5e968cd365330f9f1f7d2f254e9294cdf0c56ace3f7ab6a52e83b2b",
+        "match": true
+      }
+    ]
+  },
+  "pdf": {
+    "standalone_path": "/workspace/scratch/327a49fb9250/infinity_publication_sources/Infinity_One_Zero_Lift_v0_1.pdf",
+    "bundled_path": "Infinity_One_Zero_Lift.pdf",
+    "byte_identical": true,
+    "bytes": 305916,
+    "sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa",
+    "retained_preflight_hash_matches": true,
+    "retained_preflight_pages": 15,
+    "visual_preflight_is_retained_evidence": true
+  },
+  "original_geometry_archive": {
+    "path": "provenance/geometry_audit_original.zip",
+    "sha256": "ac0c6c1364351d3c5bd1b907a87230efd13c9255195600dc103c70f2a1ff3b75",
+    "zip_crc_pass": true,
+    "original_manifest_entries": 24,
+    "original_manifest_passed": 24
+  },
+  "reruns": [
+    {
+      "suite": "geometry",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "verification/geometry_audit/verify_graph.py"
+      ],
+      "started_utc": "2026-11-12T02:28:03.999242+00:00",
+      "completed_utc": "2026-11-12T02:28:04.698514+00:00",
+      "exit_code": 0,
+      "checks": 73,
+      "passed": 73,
+      "stderr_empty": true,
+      "checker_sha256": "9be5236dbf03a45cd5f078b08bf66ccba78158ee67e2bc9b5f2d6852237d3965",
+      "retained_receipt_path": "verification/geometry_audit/verification.json",
+      "rerun_receipt_sha256": "9360775522897c50c6a8da971bab240de92430303310a44639bae679231932bc",
+      "receipt_byte_identical_to_retained": true,
+      "stdout_file": "/workspace/scratch/327a49fb9250/infinity_validation/geometry_stdout.txt",
+      "stderr_file": "/workspace/scratch/327a49fb9250/infinity_validation/geometry_stderr.txt"
+    },
+    {
+      "suite": "manuscript",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "verification/verify_manuscript.py"
+      ],
+      "started_utc": "2026-11-12T02:28:04.698877+00:00",
+      "completed_utc": "2026-11-12T02:28:06.032040+00:00",
+      "exit_code": 0,
+      "checks": 31,
+      "passed": 31,
+      "stderr_empty": true,
+      "checker_sha256": "d35dbc95a5e968cd365330f9f1f7d2f254e9294cdf0c56ace3f7ab6a52e83b2b",
+      "retained_receipt_path": "verification/manuscript_checks.json",
+      "rerun_receipt_sha256": "675705d8f81e7e0afc55d3ce0b2811936c28cb3e4aaf7563dc1888577875ae1b",
+      "receipt_byte_identical_to_retained": true,
+      "stdout_file": "/workspace/scratch/327a49fb9250/infinity_validation/manuscript_stdout.txt",
+      "stderr_file": "/workspace/scratch/327a49fb9250/infinity_validation/manuscript_stderr.txt"
+    }
+  ],
+  "rerun_copy_changed_files": [],
+  "declared_scopes": {
+    "geometry": "Executable checks plus source proofs; this audit has not been run through Lean.",
+    "geometry_basis_change": "Exact matrix conjugacy; separately derived here.",
+    "manuscript": "Exact supplementary identities, exhaustive finite relations, and separately labeled examples. Not a new Lean or empirical certificate.",
+    "manuscript_check_kinds": {
+      "exact symbolic identity": 20,
+      "exact finite arithmetic": 1,
+      "exhaustive finite calculation": 3,
+      "finite illustrative examples": 1,
+      "finite illustrative examples; universal proof in manuscript": 1,
+      "exact SVG inspection": 5
+    }
+  },
+  "lean_retained_receipt": {
+    "source_commit": "43073ed248bad45c94dd12aaa0dbc00a3ec64875",
+    "source_path": "proofs/ProjectiveReturn.lean",
+    "source_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+    "toolchain": "leanprover/lean4:v4.33.0",
+    "run_id": 43033661694,
+    "job_id": 130566797599,
+    "status": "completed",
+    "conclusion": "success",
+    "completed_at": "2026-11-11T13:56:31Z",
+    "receipt_rechecked_via": "connected GitHub API",
+    "run_url": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43033661694",
+    "scope": "The exact unmodified finite source only; new manuscript additions retain their Python and written-proof status.",
+    "local_source_hash_matches": true,
+    "local_theorem_declarations": [
+      "involution",
+      "infinity_to_one",
+      "one_to_infinity",
+      "zero_fixed_projectively",
+      "two_fixed",
+      "infinity_return",
+      "one_return",
+      "zero_return",
+      "light_to_time",
+      "time_to_light",
+      "determinant_is_minus_one",
+      "lift_two_steps",
+      "lift_four_steps",
+      "zeno_each_stage",
+      "infinity_occurrence_return",
+      "infinity_occurrence_advances"
+    ],
+    "rerun_here": false,
+    "remote_status_requeried_here": false
+  },
+  "source_package_unchanged": true,
+  "discrepancies": []
+}

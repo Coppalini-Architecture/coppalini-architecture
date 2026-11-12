@@ -1,0 +1,612 @@
+{
+  "version": 1,
+  "title": "A lineage of operations",
+  "ordering": "Historical dates of selected cited constructions; individual hypotheses remain local to each result.",
+  "cards": [
+    {
+      "id": "euclid",
+      "name": "Euclid",
+      "date": "c. 300 BC",
+      "year": -300,
+      "operation": "Common reference",
+      "sentence": "Compare like quantities against the same reference.",
+      "equation": "(a=c\\;\\wedge\\;b=c)\\;\\Rightarrow\\;a=b",
+      "equationText": "If a equals c and b equals c, then a equals b.",
+      "foot": "Like magnitudes · Common Notion 1",
+      "tone": "center",
+      "drawing": "reference",
+      "construction": "Three magnitudes are compared against one fixed reference. Equality is stated under the same kind of comparison.",
+      "scope": "A modern symbolic restatement of Common Notion 1 for magnitudes of the same kind.",
+      "sources": [
+        {
+          "label": "Elements · Common Notions",
+          "url": "https://aleph0.clarku.edu/~djoyce/elements/bookI/cn.html"
+        }
+      ],
+      "ordinal": 1,
+      "art": "assets/lineage-1028/euclid.svg",
+      "artSha256": "85f8fa111ec179e17da9097da3c40052924eeb9b97afac5143224c1e3756de35"
+    },
+    {
+      "id": "brahmagupta",
+      "name": "Brahmagupta",
+      "date": "628 AD",
+      "year": 628,
+      "operation": "Zero",
+      "sentence": "Subtract equal quantities to obtain zero.",
+      "equation": "a-a=0",
+      "equationText": "a minus a equals zero.",
+      "foot": "Signed arithmetic · additive zero",
+      "tone": "center",
+      "drawing": "zero",
+      "construction": "Equal opposed displacements cancel at the selected origin. The origin is a declared additive zero.",
+      "scope": "Ordinary signed arithmetic. The card concerns additive cancellation.",
+      "sources": [
+        {
+          "label": "Brāhmasphuṭasiddhānta · translated arithmetic",
+          "url": "https://zenodo.org/records/7882650"
+        }
+      ],
+      "ordinal": 2,
+      "art": "assets/lineage-1028/brahmagupta.svg",
+      "artSha256": "ea368dce20dfad1882fde20c4fae0cc6622d83e5dd3c5148e20c112be2e722e2"
+    },
+    {
+      "id": "fibonacci",
+      "name": "Fibonacci",
+      "fullName": "Leonardo of Pisa (Fibonacci)",
+      "date": "1202 AD",
+      "year": 1202,
+      "operation": "Recurrence",
+      "sentence": "Carry the previous two terms into the next.",
+      "equation": "F_{n+2}=F_{n+1}+F_n",
+      "equationText": "F n plus 2 equals F n plus 1 plus F n.",
+      "foot": "F₀ = 0 · F₁ = 1",
+      "tone": "timing",
+      "drawing": "recurrence",
+      "construction": "The squares have side lengths 1, 1, 2, 3, 5 and 8. Each new side length is the sum of the preceding two.",
+      "scope": "Modern indexing uses F₀=0 and F₁=1. The original rabbit problem supplies the recurrence tradition.",
+      "sources": [
+        {
+          "label": "Liber Abaci · rabbit passage and translation",
+          "url": "https://www.math.utah.edu/~beebe/software/java/fibonacci/liber-abaci.html"
+        }
+      ],
+      "ordinal": 3,
+      "art": "assets/lineage-1028/fibonacci.svg",
+      "artSha256": "7e688a9b7a494297da51e1dd731920968822b43f56c3c928ce585e4bf0233149"
+    },
+    {
+      "id": "newton",
+      "name": "Isaac Newton",
+      "date": "1687 AD",
+      "year": 1687,
+      "operation": "Momentum",
+      "sentence": "Applied force changes momentum.",
+      "equation": "\\mathbf F=\\frac{d\\mathbf p}{dt}",
+      "equationText": "Force equals the time derivative of momentum.",
+      "foot": "Classical motion · inertial frame",
+      "tone": "motion",
+      "drawing": "momentum",
+      "construction": "The two momentum vectors share an origin. Their vector difference records the change produced by the applied force.",
+      "scope": "Modern differential notation for Newton's second law in an inertial frame. F=ma is its constant-mass specialization.",
+      "sources": [
+        {
+          "label": "Principia · original edition",
+          "url": "https://www.loc.gov/item/28020872/"
+        }
+      ],
+      "ordinal": 4,
+      "art": "assets/lineage-1028/newton.svg",
+      "artSha256": "1a82b3de44ee7447c88b28b7ed69a1942da54fc81faa0d051edce6434413e68b"
+    },
+    {
+      "id": "euler",
+      "name": "Leonhard Euler",
+      "date": "1748 AD",
+      "year": 1748,
+      "operation": "Phase",
+      "sentence": "A full turn returns the represented phase.",
+      "equation": "e^{i\\theta}=\\cos\\theta+i\\sin\\theta",
+      "equationText": "e to the i theta equals cosine theta plus i sine theta.",
+      "foot": "Unit circle · real phase parameter",
+      "tone": "lift",
+      "drawing": "phase",
+      "construction": "The phase point moves around the unit circle. Adding 2π returns the point; the real phase parameter retains the completed turn.",
+      "scope": "Euler's exponential–trigonometric relation. Phase equality and a retained winding count are separate coordinates.",
+      "sources": [
+        {
+          "label": "Introductio in analysin infinitorum · volume I",
+          "url": "https://scholarlycommons.pacific.edu/euler-works/101/"
+        }
+      ],
+      "ordinal": 5,
+      "art": "assets/lineage-1028/euler.svg",
+      "artSha256": "0a5a168e0c93b18d697f28c77243886993d497ae40927e2270e66042405d50fe"
+    },
+    {
+      "id": "lagrange",
+      "name": "J.-L. Lagrange",
+      "fullName": "Joseph-Louis Lagrange",
+      "date": "1788 AD",
+      "year": 1788,
+      "operation": "Stationary action",
+      "sentence": "Motion makes the action stationary.",
+      "equation": "\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot q}-\\frac{\\partial L}{\\partial q}=0",
+      "equationText": "The time derivative of partial L by partial q dot, minus partial L by partial q, equals zero.",
+      "foot": "Fixed endpoints · admissible variations",
+      "tone": "survival",
+      "drawing": "action",
+      "construction": "Neighboring trial paths share two endpoints. The selected path is stationary for the declared action under admissible variations.",
+      "scope": "A differentiable Lagrangian and the stated variational conditions are required. Stationary action need not be a minimum. The date refers to the book; the Euler–Lagrange equation has an earlier joint lineage.",
+      "sources": [
+        {
+          "label": "Méchanique analitique · 1788",
+          "url": "https://gallica.bnf.fr/ark:/12148/bpt6k862625"
+        }
+      ],
+      "ordinal": 6,
+      "art": "assets/lineage-1028/lagrange.svg",
+      "artSha256": "2f1c22a0fba9120d8f29cd8394182bdf5622a8a3ad54004b96dde5b42e687a1a"
+    },
+    {
+      "id": "gauss",
+      "name": "C. F. Gauss",
+      "fullName": "Carl Friedrich Gauss",
+      "date": "1811 AD",
+      "year": 1811,
+      "operation": "Quadratic phase",
+      "sentence": "Quadratic phases sum to an exact root.",
+      "equation": "\\sum_{k=0}^{4}e^{2\\pi i k^2/5}=\\sqrt{5}",
+      "equationText": "The sum from k equals zero to four of e to the two pi i k squared over five equals square root five.",
+      "foot": "Oriented fifth roots · positive √5",
+      "tone": "lift",
+      "drawing": "gauss",
+      "construction": "Five unit phasors are added in their quadratic order. The partial sums end on the positive real axis at √5.",
+      "scope": "The sign follows the displayed exponential convention. The cited work was presented in 1808 and published in 1811.",
+      "sources": [
+        {
+          "label": "Summatio quarumdam serierum singularium",
+          "url": "https://gdz.sub.uni-goettingen.de/id/PPN602151724"
+        }
+      ],
+      "ordinal": 7,
+      "art": "assets/lineage-1028/gauss.svg",
+      "artSha256": "fb571b9d8f5b43f5b5f4338bbd42c49403a06630644ba4da7938218410318a58"
+    },
+    {
+      "id": "grassmann",
+      "name": "H. Grassmann",
+      "fullName": "Hermann Grassmann",
+      "date": "1844 AD",
+      "year": 1844,
+      "operation": "Oriented area",
+      "sentence": "Exchange two directions and reverse their oriented area.",
+      "equation": "u\\wedge v=-v\\wedge u",
+      "equationText": "u wedge v equals minus v wedge u.",
+      "foot": "Exterior product · ordered directions",
+      "tone": "mirror",
+      "drawing": "wedge",
+      "construction": "Two parallelograms use the same spanning vectors in opposite orders. Their oriented areas differ by a sign.",
+      "scope": "The alternating exterior product is used here in modern notation.",
+      "sources": [
+        {
+          "label": "Die lineale Ausdehnungslehre · 1844",
+          "url": "https://doi.org/10.3931/e-rara-3783"
+        }
+      ],
+      "ordinal": 8,
+      "art": "assets/lineage-1028/grassmann.svg",
+      "artSha256": "13317c13dd533e25aebe04767d843a0b5242e1899a49493a7b192e018a212829"
+    },
+    {
+      "id": "riemann",
+      "name": "B. Riemann",
+      "fullName": "Bernhard Riemann",
+      "date": "1854 / 1868 AD",
+      "year": 1854,
+      "operation": "Metric",
+      "sentence": "The metric declares how displacement is measured.",
+      "equation": "ds^2=g_{ij}\\,dx^i dx^j",
+      "equationText": "The squared line element equals g i j d x i d x j.",
+      "foot": "Local metric · tangent displacement",
+      "tone": "center",
+      "drawing": "metric",
+      "construction": "A coordinate grid and a tangent ellipse distinguish the chart from the metric that measures a local displacement.",
+      "scope": "The lecture was delivered in 1854 and published in 1868. Its original setting is Riemannian geometry.",
+      "sources": [
+        {
+          "label": "On the hypotheses underlying geometry · translation",
+          "url": "https://doi.org/10.5281/zenodo.7035861"
+        }
+      ],
+      "ordinal": 9,
+      "art": "assets/lineage-1028/riemann.svg",
+      "artSha256": "8d3e608cf8c3f1179a00428a92cafcfc717e99c82106f7d31daba44cdc8bc8d4"
+    },
+    {
+      "id": "cayley",
+      "name": "Arthur Cayley",
+      "date": "1858 AD",
+      "year": 1858,
+      "operation": "Composition",
+      "sentence": "Compose operations in their declared order.",
+      "equation": "(AB)v=A(Bv)",
+      "equationText": "A B applied to v equals A applied to B applied to v.",
+      "foot": "Compatible domains · right factor first",
+      "tone": "motion",
+      "drawing": "compose",
+      "construction": "The first arrow applies B to the vector. The second applies A to that result. The composed operation is AB.",
+      "scope": "Modern matrix and action notation. Matrix dimensions and domains must permit both compositions.",
+      "sources": [
+        {
+          "label": "A Memoir on the Theory of Matrices",
+          "url": "https://doi.org/10.1098/rstl.1858.0002"
+        }
+      ],
+      "ordinal": 10,
+      "art": "assets/lineage-1028/cayley.svg",
+      "artSha256": "1faf1a96010d4cee131c072853dee5b1117c6d4b308f359eaf7f4ea4fc366f3b"
+    },
+    {
+      "id": "maxwell",
+      "name": "J. C. Maxwell",
+      "fullName": "James Clerk Maxwell",
+      "date": "1865 AD",
+      "year": 1865,
+      "operation": "Field relation",
+      "sentence": "Electric and magnetic fields obey one field law.",
+      "equation": "dF=0,\\qquad d\\star_g F=0",
+      "equationText": "d F equals zero and d Hodge star g F equals zero.",
+      "foot": "Source-free field · modern form",
+      "tone": "motion",
+      "drawing": "field",
+      "construction": "The transverse electric and magnetic wave components share a propagation direction. The drawing is a plane-wave schematic.",
+      "scope": "The differential-form pair is the source-free vacuum formulation on the declared oriented metric spacetime. It is modern notation for the field lineage; Heaviside's later vector formulation is part of that history.",
+      "sources": [
+        {
+          "label": "A Dynamical Theory of the Electromagnetic Field",
+          "url": "https://doi.org/10.1098/rstl.1865.0008"
+        }
+      ],
+      "ordinal": 11,
+      "art": "assets/lineage-1028/maxwell.svg",
+      "artSha256": "65c631a17d8dcec716b0fd9399ad6f0edaa1c189046bdf16f5e8dc1071a8959d"
+    },
+    {
+      "id": "mendel",
+      "name": "Gregor Mendel",
+      "date": "1866 AD",
+      "year": 1866,
+      "operation": "Admissible difference",
+      "sentence": "Inherited difference follows the conditions of the cross.",
+      "equation": "P(\\mathrm{yellow},\\mathrm{green})=\\left(\\frac34,\\frac14\\right)",
+      "equationText": "Under the stated single-locus cross and complete dominance, yellow has probability three quarters and green one quarter.",
+      "foot": "One locus · equal transmission · complete dominance",
+      "tone": "meaning",
+      "drawing": "inheritance",
+      "construction": "Condition: cross two heterozygous pea plants at one seed-color locus. Constraint: equal allele transmission, random pairing, complete dominance of yellow, and no viability bias. The four equally weighted combinations yield three yellow outcomes and one green outcome. Color makes the phenotype read visible; the genotype record remains in this note.",
+      "scope": "The displayed 3:1 ratio is a model probability under these conditions. The underlying AA:Aa:aa probabilities are 1:2:1.",
+      "sources": [
+        {
+          "label": "Experiments in Plant Hybridisation · original and translations",
+          "url": "https://cs.brown.edu/people/rblumber/MendelWeb/MWarchive.html"
+        }
+      ],
+      "ordinal": 12,
+      "art": "assets/lineage-1028/mendel.svg",
+      "artSha256": "e4d6bae0b2613abb911276e1323f6b0b5dc80db2827048f8d20607ea27696304"
+    },
+    {
+      "id": "boltzmann",
+      "name": "L. Boltzmann",
+      "fullName": "Ludwig Boltzmann",
+      "date": "1877 AD",
+      "year": 1877,
+      "operation": "Multiplicity",
+      "sentence": "Count the microstates admitted by a macrostate.",
+      "equation": "S=k_{\\rm B}\\ln W",
+      "equationText": "Entropy equals Boltzmann's constant times the natural logarithm of multiplicity.",
+      "foot": "Equiprobable microstates · equilibrium",
+      "tone": "survival",
+      "drawing": "multiplicity",
+      "construction": "Six distinct arrangements place two occupants among four labeled positions. They share the same selected occupancy count.",
+      "scope": "The equation uses equiprobable microstates in the microcanonical setting and the familiar modern normalization. The schematic has W=6.",
+      "sources": [
+        {
+          "label": "1877 statistical paper · complete translation",
+          "url": "https://doi.org/10.3390/e17041971"
+        }
+      ],
+      "ordinal": 13,
+      "art": "assets/lineage-1028/boltzmann.svg",
+      "artSha256": "8bd2d2408618600a1f768df1ab43698e4454aaa51268e6cca0587e89f1b472da"
+    },
+    {
+      "id": "poincare",
+      "name": "Henri Poincaré",
+      "date": "1895 AD",
+      "year": 1895,
+      "operation": "Winding class",
+      "sentence": "A closed loop retains its winding class.",
+      "equation": "\\pi_1(S^1)\\cong\\mathbb{Z}",
+      "equationText": "The fundamental group of the circle is isomorphic to the integers.",
+      "foot": "Based loops · integer winding",
+      "tone": "timing",
+      "drawing": "winding",
+      "construction": "A marked basepoint returns after each circuit. The integer records the loop's winding class under based homotopy.",
+      "scope": "This is a modern representative construction in the fundamental-group lineage. A loop class and a particular traversal record are distinct data.",
+      "sources": [
+        {
+          "label": "Analysis situs · original scan",
+          "url": "https://gallica.bnf.fr/ark:/12148/bpt6k4337198/f7"
+        }
+      ],
+      "ordinal": 14,
+      "art": "assets/lineage-1028/poincare.svg",
+      "artSha256": "0ac6ad75e9a221bdcc091a564c898d4aff3919e981479b51e24d4aa0ecc438c5"
+    },
+    {
+      "id": "einstein",
+      "name": "Albert Einstein",
+      "date": "1915 AD",
+      "year": 1915,
+      "operation": "Geometric field",
+      "sentence": "Matter and geometry meet through a field equation.",
+      "equation": "G_{\\mu\\nu}=\\frac{8\\pi G_{\\rm N}}{c^4}T_{\\mu\\nu}",
+      "equationText": "The Einstein tensor equals eight pi Newton's gravitational constant over c to the fourth times the stress-energy tensor.",
+      "foot": "General relativity · native field equation",
+      "tone": "center",
+      "drawing": "gravity",
+      "construction": "A curved metric grid carries a geodesic. The field equation relates its spacetime geometry to the specified stress-energy source.",
+      "scope": "The 1915 equation is shown without a cosmological term. The diagram is schematic. This is the native general-relativistic law, with its own geometric and physical hypotheses.",
+      "sources": [
+        {
+          "label": "Die Feldgleichungen der Gravitation · source record",
+          "url": "https://cds.cern.ch/record/632320"
+        }
+      ],
+      "ordinal": 15,
+      "art": "assets/lineage-1028/einstein.svg",
+      "artSha256": "6fbb17e3734f34ccca3b93efa08144e3c6e1e614efd6352b40b8d48c2c1f25fe"
+    },
+    {
+      "id": "noether",
+      "name": "Emmy Noether",
+      "date": "1918 AD",
+      "year": 1918,
+      "operation": "Conserved charge",
+      "sentence": "Continuous action symmetry gives a conserved charge.",
+      "equation": "\\frac{dJ}{dt}=0",
+      "equationText": "The time derivative of the Noether charge J equals zero.",
+      "foot": "Variational symmetry · on solutions",
+      "tone": "center",
+      "drawing": "charge",
+      "construction": "Successive positions on a symmetry orbit carry the same charge value. The orbit changes position while the selected charge is constant.",
+      "scope": "A continuous variational symmetry and the Euler–Lagrange or field equations are required. J denotes the source-qualified Noether charge.",
+      "sources": [
+        {
+          "label": "Invariante Variationsprobleme · English translation",
+          "url": "https://arxiv.org/abs/physics/0503066"
+        }
+      ],
+      "ordinal": 16,
+      "art": "assets/lineage-1028/noether.svg",
+      "artSha256": "4b38b518b9f9058e054aa9208fc55b36ba4bf6ecbc8c1c7e447cba8b9613ae9e"
+    },
+    {
+      "id": "schrodinger",
+      "name": "E. Schrödinger",
+      "fullName": "Erwin Schrödinger",
+      "date": "1926 AD",
+      "year": 1926,
+      "operation": "State evolution",
+      "sentence": "The Hamiltonian generates quantum state evolution.",
+      "equation": "i\\hbar\\,\\partial_t\\psi=\\hat H\\psi",
+      "equationText": "i h bar times the time derivative of psi equals the Hamiltonian applied to psi.",
+      "foot": "Specified Hamiltonian · stated domain",
+      "tone": "motion",
+      "drawing": "wave",
+      "construction": "A signed wave is drawn in two inks, with a second outline showing a changed phase. The illustration represents the real part of a wavefunction.",
+      "scope": "The Hamiltonian, state space and operator domain must be specified. Unitary evolution requires the appropriate self-adjoint Hamiltonian conditions.",
+      "sources": [
+        {
+          "label": "An Undulatory Theory of the Mechanics of Atoms and Molecules",
+          "url": "https://doi.org/10.1103/PhysRev.28.1049"
+        }
+      ],
+      "ordinal": 17,
+      "art": "assets/lineage-1028/schrodinger.svg",
+      "artSha256": "5629bbdd616b86cbfe62f09fad4e2310a213fb2566dd0e94914267b6eed691fc"
+    },
+    {
+      "id": "dirac",
+      "name": "Paul Dirac",
+      "fullName": "Paul A. M. Dirac",
+      "date": "1928 AD",
+      "year": 1928,
+      "operation": "Matrix constraint",
+      "sentence": "Matrix relations carry relativistic spin structure.",
+      "equation": "\\gamma^\\mu\\gamma^\\nu+\\gamma^\\nu\\gamma^\\mu=2\\eta^{\\mu\\nu}I",
+      "equationText": "Gamma mu gamma nu plus gamma nu gamma mu equals two eta mu nu times the identity.",
+      "foot": "Clifford relation · η = diag(1,−1,−1,−1)",
+      "tone": "mirror",
+      "drawing": "anticommute",
+      "construction": "For two distinct spatial directions, exchanging the order of their Clifford generators reverses the sign. The two operator routes are drawn separately.",
+      "scope": "The metric convention is η=diag(1,−1,−1,−1), with compatible gamma matrices. Clifford algebra predates Dirac; this card credits its relativistic wave-equation use.",
+      "sources": [
+        {
+          "label": "The Quantum Theory of the Electron",
+          "url": "https://doi.org/10.1098/rspa.1928.0023"
+        }
+      ],
+      "ordinal": 18,
+      "art": "assets/lineage-1028/dirac.svg",
+      "artSha256": "fbf2b35a95ef90d71efea2d4e4eded139b4a4561af7bd005cf2dd4594aa32b91"
+    },
+    {
+      "id": "godel-rosser",
+      "name": "Gödel · Rosser",
+      "fullName": "Kurt Gödel / J. Barkley Rosser",
+      "date": "1931 / 1936 AD",
+      "year": 1931,
+      "operation": "Formal limit",
+      "sentence": "Consistent effective arithmetic leaves a sentence undecided.",
+      "equation": "T\\nvdash R_T\\quad\\wedge\\quad T\\nvdash\\neg R_T",
+      "equationText": "T proves neither its Rosser sentence R T nor the negation of R T.",
+      "foot": "Consistency · effective arithmetic",
+      "tone": "survival",
+      "drawing": "proof",
+      "construction": "A schematic proof frame leaves two named conclusions open. The theorem supplies the undecidability statement; the finite drawing is not itself a proof.",
+      "scope": "T must be consistent, effectively axiomatized and sufficiently strong for arithmetic. The displayed consistency-only hypothesis uses Rosser's strengthening of Gödel's incompleteness result.",
+      "sources": [
+        {
+          "label": "Gödel · 1931",
+          "url": "https://doi.org/10.1007/BF01700692"
+        },
+        {
+          "label": "Rosser · 1936",
+          "url": "https://www.jstor.org/stable/2269028"
+        }
+      ],
+      "ordinal": 19,
+      "art": "assets/lineage-1028/godel-rosser.svg",
+      "artSha256": "9129fe30d0738a6560111597a2fb7c35d2a0372a052bfad14c6f5a5d914a0238"
+    },
+    {
+      "id": "turing",
+      "name": "Alan Turing",
+      "date": "1936 / 1937 AD",
+      "year": 1936,
+      "operation": "Decision limit",
+      "sentence": "No total algorithm decides every computation's termination.",
+      "equation": "\\mathrm{HALT}\\notin\\mathrm{Decidable}",
+      "equationText": "The halting language is not decidable.",
+      "foot": "All programs and inputs · total decision",
+      "tone": "survival",
+      "drawing": "tape",
+      "construction": "A tape and reader head stage a computation. The two outcome branches indicate the decision question posed to a proposed universal halting decider.",
+      "scope": "The modern halting formulation concerns a total Boolean algorithm deciding termination for every encoded machine and input. Turing's original paper states related machine-decision problems in its own notation.",
+      "sources": [
+        {
+          "label": "On Computable Numbers, with an Application to the Entscheidungsproblem",
+          "url": "https://doi.org/10.1112/plms/s2-42.1.230"
+        }
+      ],
+      "ordinal": 20,
+      "art": "assets/lineage-1028/turing.svg",
+      "artSha256": "5eeaaf5ca43f79f5946d4c7b5f32880a06a33f9d078ab7afd4705866e43c36ed"
+    },
+    {
+      "id": "hodge",
+      "name": "W. V. D. Hodge",
+      "fullName": "William Vallance Douglas Hodge",
+      "date": "1941 AD",
+      "year": 1941,
+      "operation": "Metric duality",
+      "sentence": "Metric and orientation determine a form's dual.",
+      "equation": "\\alpha\\wedge\\star\\beta=\\langle\\alpha,\\beta\\rangle_g\\,\\mathrm{vol}_g",
+      "equationText": "Alpha wedge Hodge star beta equals the metric inner product of alpha and beta times the metric volume form.",
+      "foot": "Equal-degree forms · oriented metric",
+      "tone": "mirror",
+      "drawing": "dual",
+      "construction": "A one-form direction and its complementary oriented plane illustrate metric duality in Euclidean three-space.",
+      "scope": "The defining identity uses equal-degree forms and an oriented nondegenerate metric.",
+      "sources": [
+        {
+          "label": "The Theory and Applications of Harmonic Integrals · publisher record",
+          "url": "https://assets.cambridge.org/97805213/58811/frontmatter/9780521358811_frontmatter.pdf"
+        }
+      ],
+      "ordinal": 21,
+      "art": "assets/lineage-1028/hodge.svg",
+      "artSha256": "844b33eaa01f586a81d8420bbc670129d697d4545fb5482beadd77b4f7adff67"
+    },
+    {
+      "id": "shannon",
+      "name": "Claude Shannon",
+      "date": "1948 AD",
+      "year": 1948,
+      "operation": "Uncertainty",
+      "sentence": "A probability law gives average uncertainty.",
+      "equation": "H(X)=-\\sum_x p(x)\\log_2p(x)",
+      "equationText": "Shannon entropy is minus the sum over x of p x times log base two of p x.",
+      "foot": "Discrete probabilities · 0 log 0 = 0",
+      "tone": "meaning",
+      "drawing": "information",
+      "construction": "Four probability branches enter a symbol register. Their widths and bars represent a normalized distribution.",
+      "scope": "A finite discrete alphabet is used, with 0 log 0=0. This is statistical uncertainty under the declared probability model.",
+      "sources": [
+        {
+          "label": "A Mathematical Theory of Communication · Part I",
+          "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
+        }
+      ],
+      "ordinal": 22,
+      "art": "assets/lineage-1028/shannon.svg",
+      "artSha256": "45668d56fe555d04e80418f05135f8de2279fc7abbbedc24506f333d22baaf65"
+    },
+    {
+      "id": "aharonov-bohm",
+      "name": "Aharonov · Bohm",
+      "fullName": "Yakir Aharonov / David Bohm",
+      "date": "1959 AD",
+      "year": 1959,
+      "operation": "Loop phase",
+      "sentence": "A closed path can retain an enclosed-flux phase.",
+      "equation": "\\Delta\\phi=\\frac{q}{\\hbar}\\oint\\mathbf A\\cdot d\\mathbf l\\pmod{2\\pi}",
+      "equationText": "The phase difference equals charge over h bar times the closed line integral of the vector potential, modulo two pi.",
+      "foot": "Coherent paths · oriented enclosed flux",
+      "tone": "meaning",
+      "drawing": "flux",
+      "construction": "Two coherent paths surround a shielded flux region and rejoin. The acquired relative phase is drawn as an outcome of the enclosed flux.",
+      "scope": "The charged-particle paths, coherence and orientation convention are fixed. The earlier Ehrenberg–Siday result (1949) belongs to this provenance.",
+      "sources": [
+        {
+          "label": "Significance of Electromagnetic Potentials in the Quantum Theory",
+          "url": "https://doi.org/10.1103/PhysRev.115.485"
+        },
+        {
+          "label": "Ehrenberg–Siday · 1949 precursor",
+          "url": "https://doi.org/10.1088/0370-1301/62/1/303"
+        }
+      ],
+      "ordinal": 23,
+      "art": "assets/lineage-1028/aharonov-bohm.svg",
+      "artSha256": "c722dea5c091ae19dce4cba467bae33b7059c22ce4e6c44ecf6ad8b7f6f47a04"
+    },
+    {
+      "id": "simon-berry",
+      "name": "Simon · Berry",
+      "fullName": "Barry Simon / Michael Berry",
+      "date": "1983 / 1984 AD",
+      "year": 1983,
+      "operation": "Geometric phase",
+      "sentence": "A closed parameter circuit can return a ray with phase.",
+      "equation": "\\gamma(C)=i\\oint_C\\langle n\\mid dn\\rangle\\pmod{2\\pi}",
+      "equationText": "The geometric phase equals i times the loop integral of n bra d n ket, modulo two pi.",
+      "foot": "Adiabatic circuit · dynamical phase removed",
+      "tone": "meaning",
+      "drawing": "holonomy",
+      "construction": "A closed path in parameter space is shown beside its separate phase-circle readout. The phase can change even when the parameter point returns.",
+      "scope": "A normalized smooth nondegenerate instantaneous eigenstate and an adiabatic closed circuit are assumed, with dynamical phase removed. Pancharatnam (1956) is an earlier phase reference. Publication order alone does not assign priority between Simon and Berry.",
+      "sources": [
+        {
+          "label": "Simon · Holonomy, the Quantum Adiabatic Theorem, and Berry's Phase",
+          "url": "https://doi.org/10.1103/PhysRevLett.51.2167"
+        },
+        {
+          "label": "Berry · Quantal Phase Factors Accompanying Adiabatic Changes",
+          "url": "https://doi.org/10.1098/rspa.1984.0023"
+        },
+        {
+          "label": "Pancharatnam · 1956 precursor",
+          "url": "https://doi.org/10.1007/BF03046050"
+        }
+      ],
+      "ordinal": 24,
+      "art": "assets/lineage-1028/simon-berry.svg",
+      "artSha256": "38dbf1d60d4303de3b3b8cd347a501f182c1bc38e2fa4355251c477e14c329bc"
+    }
+  ]
+}

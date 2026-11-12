@@ -1,0 +1,99 @@
+{
+  "record_type": "CoppaliniArchitectureExactReaderRegistry",
+  "schema_version": "1.0.0",
+  "canonical_url": "https://eulershiddenl.ink/exact/",
+  "updated": "2026-11-07",
+  "reading_rule": "Read each record as address, declared input, deterministic procedure, output, receipt, and boundary. The result carries only its declared scope.",
+  "records": [
+    {
+      "id": "CA-ALG-001",
+      "title": "Finite matrix root",
+      "record_url": "https://eulershiddenl.ink/exact/matrix-root-g-001/",
+      "status": "exact_theorem",
+      "jurisdiction": "Real 2x2 matrices over the displayed exact integer data.",
+      "statement": "For Q=[[1,1],[1,0]], Omega=[[0,1],[-1,0]], and G=Q Omega-Omega Q, direct multiplication gives G=[[-2,1],[1,2]], G^2=5I, trace(G)=0, and determinant(G)=-5.",
+      "input": {
+        "Q": [[1, 1], [1, 0]],
+        "Omega": [[0, 1], [-1, 0]]
+      },
+      "procedure": {
+        "name": "Direct browser integer matrix multiplication",
+        "implementation_url": "https://eulershiddenl.ink/exact/exact-reader.js",
+        "implementation_sha256": "b067469e535dbb9ad8b02bb5710f9093a24c4e75b448520a0138a8270b4b31e6"
+      },
+      "output": {
+        "G": [[-2, 1], [1, 2]],
+        "G_squared": [[5, 0], [0, 5]],
+        "trace_G": 0,
+        "determinant_G": -5
+      },
+      "sources": [
+        "https://eulershiddenl.ink/research/claims.json",
+        "https://eulershiddenl.ink/papers/theory-of-everything-contact-record-r27.pdf"
+      ],
+      "receipt": "https://eulershiddenl.ink/exact/matrix-root-g-001/",
+      "boundary": "The record checks only the stated finite matrix identities. Physical applications retain their own equations, parameters, observables, calibration, and evidence path."
+    },
+    {
+      "id": "COT-001",
+      "title": "The Condition Of Trust",
+      "record_url": "https://eulershiddenl.ink/exact/condition-of-trust-001/",
+      "status": "finite_computation",
+      "jurisdiction": "The declared finite reference, reader, decision, receipt, and stopping conditions in the matching 7 November 2026 edition.",
+      "statement": "The accompanying program checks the displayed finite matrix identities and the stated reader/decision, receipt, and stopping witnesses.",
+      "input": {
+        "source_url": "https://eulershiddenl.ink/papers/the-condition-of-trust.tex",
+        "source_sha256": "790eff76fe201ce5edc963d0bf50c5f87651ffacdbe921ef66afb9b213a71ff2"
+      },
+      "procedure": {
+        "name": "Python finite verifier",
+        "implementation_url": "https://eulershiddenl.ink/verification/the-condition-of-trust/condition_of_trust_verify.py",
+        "implementation_sha256": "21b6b9bb9b97f50994aaa01dc160d7f432ce31e39577f91334204e1bb55daada"
+      },
+      "output": {
+        "result": "All exact finite checks passed.",
+        "receipt_url": "https://eulershiddenl.ink/verification/the-condition-of-trust/verification-output.txt",
+        "receipt_sha256": "09cc5ea58187c4f2477f536c897ae30b25e08588e5e00d3d126a15640f4a33f2"
+      },
+      "sources": [
+        "https://eulershiddenl.ink/papers/the-condition-of-trust.pdf",
+        "https://eulershiddenl.ink/papers/the-condition-of-trust.tex",
+        "https://eulershiddenl.ink/verification/the-condition-of-trust/condition_of_trust_receipt.md"
+      ],
+      "receipt": "https://eulershiddenl.ink/verification/the-condition-of-trust/verification-output.txt",
+      "boundary": "The construction is an inspectable hand-off discipline for its declared use. Field applications retain their own observable, calibration, authority, and evidence path."
+    },
+    {
+      "id": "TBM-001",
+      "title": "The 3 Body Mirror",
+      "record_url": "https://eulershiddenl.ink/exact/three-body-mirror-001/",
+      "status": "bounded_model_with_independent_audit",
+      "jurisdiction": "Local fixed-angular-momentum equal-mass Euler model on the stated selected hyperbolic branch.",
+      "statement": "The symbolic and independent procedures reproduce the stated nonzero fourth-order coefficient and the local analytic linearization obstruction.",
+      "input": {
+        "source_url": "https://eulershiddenl.ink/papers/the-3-body-mirror.tex",
+        "source_sha256": "ef85b5a1c1aadb703ef8f4cb6286591cf34ddeefb3847ea62e125cead3e5221d"
+      },
+      "procedure": {
+        "symbolic_verifier_url": "https://eulershiddenl.ink/verification/the-3-body-mirror/verify_euler_birkhoff_c1.py",
+        "symbolic_verifier_sha256": "7d731c22fabbdafa67397e132855f1a267b57cca0b13cea118b11bcf4289f4af",
+        "independent_audit_url": "https://eulershiddenl.ink/verification/the-3-body-mirror/audit_c1.py",
+        "independent_audit_sha256": "54836066904cd36d55ef058b751dba613cfb0e2f679096824cb31172eb472af8"
+      },
+      "output": {
+        "symbolic_result": "c1 != 0; the hyperbolic saddle normal form has a nonzero analytic linearization obstruction.",
+        "symbolic_receipt_url": "https://eulershiddenl.ink/verification/the-3-body-mirror/verification-symbolic.txt",
+        "symbolic_receipt_sha256": "75d20539013c5245ff643dbc69bb9eceba19fc85a4b7d066e4a74dae6347a767",
+        "independent_receipt_url": "https://eulershiddenl.ink/verification/the-3-body-mirror/verification-independent.txt",
+        "independent_receipt_sha256": "afc92b89b54e425357adb82906e49781eb20db7d3fc4bdc41a89fec0488002df"
+      },
+      "sources": [
+        "https://eulershiddenl.ink/papers/the-3-body-mirror.pdf",
+        "https://eulershiddenl.ink/papers/the-3-body-mirror.tex",
+        "https://eulershiddenl.ink/verification/the-3-body-mirror/README.md"
+      ],
+      "receipt": "https://eulershiddenl.ink/verification/the-3-body-mirror/verification-independent.txt",
+      "boundary": "This record is local to the declared equal-mass Euler model. Astronomical and biological identifications remain outside its scope."
+    }
+  ]
+}

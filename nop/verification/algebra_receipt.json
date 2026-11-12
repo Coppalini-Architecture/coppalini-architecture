@@ -1,0 +1,195 @@
+{
+  "schema_version": "0.1",
+  "tool_version": "0.2.0",
+  "status": "PASS",
+  "scope": "Exact construction checks; biological mechanism and parameter identification remain open.",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "code_sha256": "920341dfe8294e6873273152a4ef2baa08bb5ec9c313334098b8d816ae7527d4",
+  "dependency_sha256": {
+    "model.py": "e27ced943f56f76cb823d585520cdb2f92355f17bdf6a0378a9b7a46e9d1039c"
+  },
+  "checks_passed": 36,
+  "checks": [
+    {
+      "name": "root_G_commutator",
+      "passed": true,
+      "scope": "retained root algebra"
+    },
+    {
+      "name": "root_Q_polynomial",
+      "passed": true,
+      "scope": "retained root algebra"
+    },
+    {
+      "name": "mirror_involution",
+      "passed": true,
+      "scope": "retained root algebra"
+    },
+    {
+      "name": "axial_involution",
+      "passed": true,
+      "scope": "retained root algebra"
+    },
+    {
+      "name": "mirror_axial_anticommutation",
+      "passed": true,
+      "scope": "retained root algebra"
+    },
+    {
+      "name": "adapter_invertible",
+      "passed": true,
+      "scope": "new explicit redox adapter"
+    },
+    {
+      "name": "adapter_S_diagonal",
+      "passed": true,
+      "scope": "new explicit redox adapter"
+    },
+    {
+      "name": "adapter_H_exchange",
+      "passed": true,
+      "scope": "new explicit redox adapter"
+    },
+    {
+      "name": "signed_metric_pullback",
+      "passed": true,
+      "scope": "new explicit redox adapter"
+    },
+    {
+      "name": "golden_step_diagonal",
+      "passed": true,
+      "scope": "retained step in new coordinates"
+    },
+    {
+      "name": "mirror_reverses_axial_flow",
+      "passed": true,
+      "scope": "all real s"
+    },
+    {
+      "name": "axial_preserves_G",
+      "passed": true,
+      "scope": "all real s"
+    },
+    {
+      "name": "physical_state_pullback",
+      "passed": true,
+      "scope": "positive assay indices, signed form"
+    },
+    {
+      "name": "ratio_mirror_inversion",
+      "passed": true,
+      "scope": "positive assay indices"
+    },
+    {
+      "name": "rational_boost_ratio",
+      "passed": true,
+      "scope": "positive rational boost representative"
+    },
+    {
+      "name": "rational_boost_product",
+      "passed": true,
+      "scope": "coordinate boost only"
+    },
+    {
+      "name": "coordinate_reconstruction_r",
+      "passed": true,
+      "scope": "positive branch"
+    },
+    {
+      "name": "coordinate_reconstruction_a",
+      "passed": true,
+      "scope": "positive branch"
+    },
+    {
+      "name": "ratio_unit_invariance",
+      "passed": true,
+      "scope": "multiplicative unit changes"
+    },
+    {
+      "name": "product_unit_invariance",
+      "passed": true,
+      "scope": "multiplicative unit changes"
+    },
+    {
+      "name": "pulse_closed_form_base",
+      "passed": true,
+      "scope": "adaptation model"
+    },
+    {
+      "name": "pulse_closed_form_recurrence",
+      "passed": true,
+      "scope": "adaptation model"
+    },
+    {
+      "name": "recovery_closed_form_base",
+      "passed": true,
+      "scope": "adaptation model"
+    },
+    {
+      "name": "recovery_closed_form_recurrence",
+      "passed": true,
+      "scope": "adaptation model"
+    },
+    {
+      "name": "baseline_fixed",
+      "passed": true,
+      "scope": "exact finite example"
+    },
+    {
+      "name": "finite_timescale_rejects_zero_retention",
+      "passed": true,
+      "scope": "finite positive tau domain"
+    },
+    {
+      "name": "pulse_four_intervals_31_over_16",
+      "passed": true,
+      "scope": "synthetic fixture"
+    },
+    {
+      "name": "returned_ratio_16_over_31",
+      "passed": true,
+      "scope": "synthetic fixture"
+    },
+    {
+      "name": "first_recovery_47_over_32",
+      "passed": true,
+      "scope": "synthetic fixture"
+    },
+    {
+      "name": "positive_states_in_fixture",
+      "passed": true,
+      "scope": "synthetic fixture"
+    },
+    {
+      "name": "finite_recovery_below_ratio_one",
+      "passed": true,
+      "scope": "synthetic fixture"
+    },
+    {
+      "name": "constant_input_interval_composition",
+      "passed": true,
+      "scope": "same input, combined retention equals product"
+    },
+    {
+      "name": "history_collision_retains_record_requirement",
+      "passed": true,
+      "scope": "different two-interval histories; identical state on return"
+    },
+    {
+      "name": "ratio_alone_loses_common_mode",
+      "passed": true,
+      "scope": "coordinate completeness"
+    },
+    {
+      "name": "uncertainty_fixture_contains_one",
+      "passed": true,
+      "scope": "entered bounds, no coverage claim"
+    },
+    {
+      "name": "biochemical_update_is_not_assumed_mirror_symmetry",
+      "passed": true,
+      "scope": "negative control for false dynamics claim"
+    }
+  ]
+}

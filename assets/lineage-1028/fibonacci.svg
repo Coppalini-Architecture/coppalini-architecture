@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-fibonacci-title"><title id="lineage-fibonacci-title">Fibonacci — Recurrence. Carry the previous two terms into the next. F n plus 2 equals F n plus 1 plus F n.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#c98b57" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#c98b57" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#c98b57"/><path d="M749,42h18 M758,33v18" stroke="#c98b57" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#c98b57"/><path d="M33,1008h18 M42,999v18" stroke="#c98b57" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#c98b57"/><path d="M749,1008h18 M758,999v18" stroke="#c98b57" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#c98b57"/><text x="76" y="92" font-size="18" fill="#c98b57" text-anchor="start" font-family="monospace" >03</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1202 AD</text><text x="400" y="145" font-size="17" fill="#c98b57" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">RECURRENCE</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Fibonacci</text><path d="M320,249H480" stroke="#c98b57"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#c98b57"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Carry the previous two terms into the next.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M319.00,562.00 L342.00,562.00 L342.00,585.00 L319.00,585.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="330.5" y="578.5" fill="#243d40" font-size="15" text-anchor="middle" font-family="Georgia,serif">1</text><path d="M342.00,562.00 L365.00,562.00 L365.00,585.00 L342.00,585.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="353.5" y="578.5" fill="#243d40" font-size="15" text-anchor="middle" font-family="Georgia,serif">1</text><path d="M319.00,585.00 L365.00,585.00 L365.00,631.00 L319.00,631.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="342.0" y="613.0" fill="#243d40" font-size="15" text-anchor="middle" font-family="Georgia,serif">2</text><path d="M250.00,562.00 L319.00,562.00 L319.00,631.00 L250.00,631.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="284.5" y="601.5" fill="#243d40" font-size="25" text-anchor="middle" font-family="Georgia,serif">3</text><path d="M250.00,447.00 L365.00,447.00 L365.00,562.00 L250.00,562.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="307.5" y="509.5" fill="#243d40" font-size="25" text-anchor="middle" font-family="Georgia,serif">5</text><path d="M365.00,447.00 L549.00,447.00 L549.00,631.00 L365.00,631.00 Z" stroke="#c98b57" stroke-width="2" fill="#c98b57" fill-opacity="0.0392156862745098" /><text x="457.0" y="544.0" fill="#243d40" font-size="25" text-anchor="middle" font-family="Georgia,serif">8</text></g><g transform="translate(95.000 772.936) scale(2.44803)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="fibonacci-figure_1">
+  <g id="fibonacci-patch_1">
+   <path d="M 0 31.914375 
+L 249.18 31.914375 
+L 249.18 0 
+L 0 0 
+L 0 31.914375 
+z
+" style="fill: none"/>
+  </g>
+  <g id="fibonacci-text_1">
+   <!-- $F_{n+2}=F_{n+1}+F_n$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.235312) scale(0.3 -0.3)">
+    <defs>
+     <path id="fibonacci-DejaVuSans-Oblique-46" d="M 1081 4666 
+L 3756 4666 
+L 3653 4134 
+L 1606 4134 
+L 1338 2759 
+L 3188 2759 
+L 3084 2228 
+L 1234 2228 
+L 800 0 
+L 172 0 
+L 1081 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="fibonacci-DejaVuSans-Oblique-6e" d="M 3566 2113 
+L 3156 0 
+L 2578 0 
+L 2988 2091 
+Q 3016 2238 3031 2350 
+Q 3047 2463 3047 2528 
+Q 3047 2791 2881 2937 
+Q 2716 3084 2419 3084 
+Q 1956 3084 1622 2776 
+Q 1288 2469 1184 1941 
+L 800 0 
+L 225 0 
+L 903 3500 
+L 1478 3500 
+L 1363 2950 
+Q 1603 3253 1940 3418 
+Q 2278 3584 2650 3584 
+Q 3113 3584 3367 3334 
+Q 3622 3084 3622 2631 
+Q 3622 2519 3608 2391 
+Q 3594 2263 3566 2113 
+z
+" transform="scale(0.015625)"/>
+     <path id="fibonacci-DejaVuSans-2b" d="M 2944 4013 
+L 2944 2272 
+L 4684 2272 
+L 4684 1741 
+L 2944 1741 
+L 2944 0 
+L 2419 0 
+L 2419 1741 
+L 678 1741 
+L 678 2272 
+L 2419 2272 
+L 2419 4013 
+L 2944 4013 
+z
+" transform="scale(0.015625)"/>
+     <path id="fibonacci-DejaVuSans-32" d="M 1228 531 
+L 3431 531 
+L 3431 0 
+L 469 0 
+L 469 531 
+Q 828 903 1448 1529 
+Q 2069 2156 2228 2338 
+Q 2531 2678 2651 2914 
+Q 2772 3150 2772 3378 
+Q 2772 3750 2511 3984 
+Q 2250 4219 1831 4219 
+Q 1534 4219 1204 4116 
+Q 875 4013 500 3803 
+L 500 4441 
+Q 881 4594 1212 4672 
+Q 1544 4750 1819 4750 
+Q 2544 4750 2975 4387 
+Q 3406 4025 3406 3419 
+Q 3406 3131 3298 2873 
+Q 3191 2616 2906 2266 
+Q 2828 2175 2409 1742 
+Q 1991 1309 1228 531 
+z
+" transform="scale(0.015625)"/>
+     <path id="fibonacci-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="fibonacci-DejaVuSans-31" d="M 794 531 
+L 1825 531 
+L 1825 4091 
+L 703 3866 
+L 703 4441 
+L 1819 4666 
+L 2450 4666 
+L 2450 531 
+L 3481 531 
+L 3481 0 
+L 794 0 
+L 794 531 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-46" transform="translate(0 0.09375)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-6e" transform="translate(57.519531 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-2b" transform="translate(115.522461 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-32" transform="translate(187.8125 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-3d" transform="translate(254.56543 0.09375)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-46" transform="translate(357.836914 0.09375)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-6e" transform="translate(415.356445 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-2b" transform="translate(473.359375 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-31" transform="translate(545.649414 -16.3125) scale(0.7)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-2b" transform="translate(612.402344 0.09375)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-46" transform="translate(715.673828 0.09375)"/>
+    <use xlink:href="#fibonacci-DejaVuSans-Oblique-6e" transform="translate(773.193359 -16.3125) scale(0.7)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >F₀ = 0 · F₁ = 1</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

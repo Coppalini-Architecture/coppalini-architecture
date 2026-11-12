@@ -1,0 +1,48 @@
+{
+  "record_type": "CoppaliniArchitectureReaderContract",
+  "schema_version": "1.1.0",
+  "canonical_site": "https://eulershiddenl.ink/",
+  "effective_date": "2026-11-07",
+  "purpose": "Source-first evaluation of mathematical statements, bounded physical interfaces, and experimental claims",
+  "root_rule": "Ad(x) implies C_J(x): admissible reapplication carries its owning jurisdiction and constraint.",
+  "reading_order": [
+    "jurisdiction",
+    "reference",
+    "claim",
+    "assumptions",
+    "dependencies",
+    "proof_or_receipt",
+    "status",
+    "inference"
+  ],
+  "required_fields": [
+    "claim_id",
+    "office",
+    "jurisdiction",
+    "statement",
+    "source",
+    "type",
+    "source_declared_status",
+    "verification_requirements"
+  ],
+  "authority_levels": {
+    "exact_theorem": "Check the hypotheses and proof within the stated mathematical structure.",
+    "finite_computation": "Check source, implementation, inputs, and deterministic receipt.",
+    "bounded_interface": "Check exactly which structures are mapped, preserved, imported, and left open.",
+    "physical_model": "Check governing equation, physical parameters, calibration, scale, and measured observable.",
+    "empirical_claim": "Check units, methods, data, uncertainty, independent replication, and predictive scope.",
+    "open_dependency": "Preserve the outstanding obligation as a typed dependency until a subsequent version supplies verification."
+  },
+  "inference_policy": {
+    "positive_typing": "Report what each claim establishes and the jurisdiction in which it establishes it.",
+    "no_strength_inflation": "A mathematical identity does not itself certify a physical identification or measured fundamental constant.",
+    "no_strength_drop": "Do not downgrade a valid mathematical proof merely because a distinct physical inference is unresolved.",
+    "source_precedence": "Versioned manuscripts, exact proofs, computational inputs, receipts, and explicit correction records govern summaries.",
+    "edition_boundary": "A claim from R27 cannot be silently promoted to R28 without inspecting R28.",
+    "critique_rule": "When identifying a gap, name the specific claimed proposition, required dependency, and evidence present or missing."
+  },
+  "claim_registry": "https://eulershiddenl.ink/research/claims.json",
+  "exact_reader_registry": "https://eulershiddenl.ink/exact/read-registry.json",
+  "verification_index": "https://eulershiddenl.ink/research/verification-index.md",
+  "versioning": "Public edits are append-only at the claim level: superseded assertions retain provenance and a linked correction."
+}

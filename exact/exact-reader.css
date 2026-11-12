@@ -1,0 +1,105 @@
+:root { --exact-blue: #164b78; --exact-green: #3f6b50; }
+.exact-page .site-header { position: sticky; top: 0; }
+.exact-hero { padding: clamp(3.25rem, 8vw, 6rem) 0 clamp(2.5rem, 6vw, 4.5rem); border-bottom: 1px solid var(--line); }
+.exact-hero h1 { max-width: 15ch; }
+.exact-hero .deck { max-width: 44rem; }
+.exact-hero .summary { max-width: 50rem; }
+.exact-actions { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.5rem; font-size: .84rem; font-weight: 700; }
+.exact-rule { margin: 1.75rem 0 0; color: var(--muted); font: .79rem/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.exact-section-title { display: grid; gap: .55rem; max-width: 48rem; }
+.exact-section-title h2 { margin: 0; }
+.exact-section-title p { margin: 0; color: var(--muted); }
+.exact-protocol { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .55rem; margin-top: 1.5rem; }
+.exact-protocol span { min-height: 4.35rem; padding: .75rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 700 .65rem/1.42 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .045em; text-transform: uppercase; }
+.exact-protocol small { display: block; margin-top: .28rem; color: var(--muted); font: .64rem/1.35 ui-sans-serif, system-ui, sans-serif; letter-spacing: 0; text-transform: none; }
+.exact-calculator { margin-top: 1.6rem; padding: clamp(1.1rem, 3vw, 1.75rem); border: 1px solid var(--ink); background: var(--surface); }
+.exact-calculator-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; flex-wrap: wrap; }
+.exact-calculator h3 { margin: 0; }
+.exact-calculator p { max-width: 43rem; margin: .55rem 0 0; color: var(--muted); }
+.exact-tag { display: inline-block; color: var(--exact-blue); font: 700 .65rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.exact-matrices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.3rem 0; }
+.exact-matrix { padding: 1rem; border: 1px solid var(--line); background: var(--paper); }
+.exact-matrix strong { display: block; color: var(--muted); font: 700 .66rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .07em; text-transform: uppercase; }
+.exact-matrix pre, .exact-output { overflow-x: auto; margin: .55rem 0 0; color: var(--ink); font: .94rem/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; }
+.exact-output-wrap { display: grid; gap: .7rem; margin-top: 1.2rem; padding-top: 1.15rem; border-top: 1px solid var(--line); }
+.exact-output-wrap button { justify-self: start; border: 1px solid var(--ink); padding: .65rem .8rem; color: var(--surface); background: var(--ink); font: 700 .72rem/1.25 ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.exact-output-wrap button:hover { background: var(--exact-blue); }
+.exact-output-wrap button:focus-visible { outline: 3px solid var(--exact-blue); outline-offset: 3px; }
+.exact-pass { color: var(--exact-green); font-weight: 800; }
+.exact-records { display: grid; gap: 0; margin-top: 1.5rem; border-top: 1px solid var(--line); }
+.exact-record { display: grid; grid-template-columns: minmax(13rem, .45fr) minmax(0, 1fr) minmax(11rem, .34fr); gap: 1.25rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+.exact-record h3 { margin: .45rem 0 0; }
+.exact-record p { margin: 0; color: var(--muted); font-size: .92rem; }
+.exact-record-links { display: grid; align-content: start; gap: .45rem; font-size: .82rem; font-weight: 700; }
+.exact-record-links a { color: var(--exact-blue); }
+.exact-meta { color: var(--muted); font: .67rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .045em; text-transform: uppercase; }
+.exact-spec { margin: 1.4rem 0 0; }
+.exact-spec th { width: 18%; }
+.exact-spec td { color: var(--muted); }
+.exact-spec a { color: var(--exact-blue); }
+.exact-boundary { max-width: 52rem; margin: 1.4rem 0 0; padding: .9rem 1rem; border-left: .25rem solid var(--red); background: color-mix(in srgb, var(--surface) 80%, var(--paper)); color: var(--muted); font-size: .9rem; }
+.exact-footer { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; margin-top: 1.5rem; font-size: .83rem; }
+.exact-crumb { margin: 1.2rem 0 0; font-size: .84rem; color: var(--muted); }
+.exact-crumb a { color: var(--exact-blue); }
+.exact-status { margin: .95rem 0 0; color: var(--exact-green); font-weight: 750; }
+@media (max-width: 56rem) { .exact-protocol { grid-template-columns: repeat(3, minmax(0, 1fr)); } .exact-record { grid-template-columns: 1fr; gap: .7rem; } .exact-record-links { display: flex; flex-wrap: wrap; gap: .55rem 1rem; } }
+@media (max-width: 38rem) { .exact-protocol, .exact-matrices { grid-template-columns: 1fr; } .exact-protocol span { min-height: auto; } .exact-spec th { width: 35%; } }
+
+/* R51: declared results and current execution retain separate visible fields. */
+.exact-page .site-header { z-index: 5; }
+.exact-page .exact-hero { padding: clamp(2.5rem, 6vw, 4rem) 0 2.5rem; }
+.exact-hero .summary { max-width: 47rem; }
+.exact-evidence-key { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.exact-evidence-key dt { font-size: .83rem; font-weight: 750; }
+.exact-evidence-key dd { margin: .25rem 0 0; color: var(--muted); font-size: .84rem; }
+.exact-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; }
+.exact-section-heading > a { white-space: nowrap; color: var(--exact-blue); font-size: .85rem; font-weight: 700; }
+.exact-calculator-grid { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 2rem; }
+.exact-calculator-grid .exact-matrices { margin: .5rem 0 1.25rem; gap: .65rem; }
+.exact-calculator-grid .exact-matrix { padding: .8rem; }
+.exact-calculator-grid .exact-matrix pre { font-size: .85rem; }
+.exact-expected { margin: .5rem 0 0; font: .91rem/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.exact-calculator .exact-method { font-size: .8rem; margin-top: 1rem; }
+.exact-execution { padding-left: 2rem; border-left: 1px solid var(--line); min-width: 0; }
+.exact-execution h3 { margin: .5rem 0; font-size: 1.5rem; }
+.exact-execution p { font-size: .86rem; }
+.exact-execution button { display: block; margin: 1.25rem 0; border: 1px solid var(--ink); padding: .8rem 1.1rem; background: var(--ink); color: var(--surface); font: 700 .82rem/1.25 ui-sans-serif,system-ui,sans-serif; cursor: pointer; }
+.exact-execution button:hover { background: var(--exact-blue); }
+.exact-page a:focus-visible, .exact-execution button:focus-visible, .exact-history summary:focus-visible { outline: 3px solid var(--exact-blue); outline-offset: 4px; }
+.exact-output { display: block; min-height: 7rem; padding: 1rem; border: 1px solid var(--line); background: var(--paper); font-size: .84rem; overflow-wrap: anywhere; }
+.exact-calculator .exact-run-status { font-size: .8rem; }
+.exact-calculator .exact-pass { color: var(--exact-green); }
+.exact-calculator .exact-fail { color: var(--red); }
+.exact-record .exact-record-scope { margin-top: .5rem; font-size: .82rem; }
+.exact-register-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.exact-register { padding: 1.5rem; border: 1px solid var(--line); background: var(--surface); }
+.exact-register h3 { margin: .6rem 0 .7rem; font-size: 1.65rem; }
+.exact-register > p:not(.exact-meta) { color: var(--muted); font-size: .9rem; }
+.exact-register .exact-record-links { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin-top: 1.2rem; }
+.exact-history { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: .88rem; }
+.exact-history summary { cursor: pointer; color: var(--ink); font-weight: 700; }
+.exact-history p { max-width: 48rem; }
+.exact-downloads { padding: 2.5rem 0; }
+.exact-downloads h2 { font-size: 1.55rem; }
+.exact-downloads .exact-actions { margin-top: 1rem; }
+@media (max-width: 48rem) { .exact-calculator-grid,.exact-register-grid { grid-template-columns: 1fr; } .exact-execution { padding: 1.5rem 0 0; border-left: 0; border-top: 1px solid var(--line); } .exact-section-heading { align-items: start; flex-direction: column; gap: .8rem; } }
+@media (max-width: 38rem) { .exact-evidence-key { grid-template-columns: 1fr; gap: .85rem; } .exact-calculator-grid .exact-matrices { grid-template-columns: repeat(2,minmax(0,1fr)); } .exact-calculator-grid .exact-matrix pre { font-size: .73rem; } .exact-register { padding: 1.1rem; } }
+
+/* Recompute Kernel v0.2 */
+.recompute-hero h1 { max-width: 12ch; }
+.recompute-command-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.6rem; }
+.recompute-command { min-width: 0; padding: 1.1rem; border: 1px solid var(--line); background: var(--surface); }
+.recompute-command p { margin: 0 0 .7rem; }
+.recompute-command pre { overflow-x: auto; margin: 0; color: var(--ink); font: .85rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space: pre-wrap; }
+.recompute-fingerprint { display: grid; gap: .7rem; margin-top: 1.25rem; padding: 1.05rem 1.1rem; border-left: .28rem solid var(--green); background: color-mix(in srgb, var(--surface) 85%, var(--paper)); }
+.recompute-fingerprint p { display: grid; grid-template-columns: minmax(11rem, .35fr) minmax(0,1fr); gap: 1rem; margin: 0; color: var(--muted); font-size: .85rem; }
+.recompute-fingerprint strong { color: var(--ink); }
+.recompute-fingerprint code { overflow-wrap: anywhere; color: var(--exact-blue); font-size: .78rem; }
+.recompute-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--line); }
+.recompute-table { min-width: 43rem; margin: 0; }
+.recompute-table th { color: var(--ink); }
+.recompute-table tbody th { color: var(--exact-blue); font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.recompute-table td:last-child { color: var(--muted); font-size: .82rem; }
+.recompute-controls { max-width: 55rem; margin: 1.1rem 0 0; color: var(--muted); font-size: .88rem; }
+.recompute-controls code { color: var(--exact-blue); }
+@media (max-width: 48rem) { .recompute-command-grid { grid-template-columns: 1fr; } .recompute-fingerprint p { grid-template-columns: 1fr; gap: .25rem; } }

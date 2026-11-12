@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recompute Kernel v0.2: a small public exact-integer reading surface for the Coppalini Architecture 2×2 root algebra.">
+  <meta name="author" content="Anthony Vito Coppa">
+  <link rel="canonical" href="https://eulershiddenl.ink/exact/recompute-kernel/">
+  <link rel="describedby" type="application/json" href="/exact/recompute-kernel/manifest.json">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/exact/exact-reader.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "@id": "https://eulershiddenl.ink/exact/recompute-kernel/#software",
+  "name": "Coppalini Recompute Kernel v0.2",
+  "version": "0.2",
+  "description": "One atom registry generates the executable results, Markdown ledger, and machine-readable manifest for the stated 2×2 root algebra.",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3 standard library; optional SymPy for S01",
+  "url": "https://eulershiddenl.ink/exact/recompute-kernel/",
+  "codeRepository": "https://eulershiddenl.ink/exact/recompute-kernel/run_all.py",
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "application/zip",
+    "contentUrl": "https://eulershiddenl.ink/downloads/Coppalini_Recompute_Kernel_v0_2.zip",
+    "sha256": "f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60"
+  },
+  "author": {"@type": "Person", "@id": "https://eulershiddenl.ink/#anthony-vito-coppa", "name": "Anthony Vito Coppa"}
+}
+  </script>
+  <title>Recompute Kernel v0.2 · Exact Reader</title>
+</head>
+<body class="exact-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture">Constructions</a><a href="/formalism">Basis</a></nav></div></header>
+
+  <main id="main">
+    <section class="exact-hero recompute-hero" aria-labelledby="recompute-title">
+      <p class="eyebrow">Exact Reader · public recomputation surface</p>
+      <h1 id="recompute-title">Recompute Kernel<br>v0.2</h1>
+      <p class="deck">One atom registry. Ten core exact-integer atoms. One reproducible table.</p>
+      <p class="summary">The stated inputs, executable checks, Markdown ledger, machine record, and result fingerprints travel in one packet. The core run uses only Python’s standard library; SymPy is optional for S01.</p>
+      <nav class="exact-actions" aria-label="Recompute Kernel resources"><a href="/downloads/Coppalini_Recompute_Kernel_v0_2.zip">Download packet</a><a href="/exact/recompute-kernel/run_all.py">Read runner</a><a href="/exact/recompute-kernel/ledger.md">Read atom ledger</a><a href="/exact/recompute-kernel/manifest.json">Machine manifest</a></nav>
+      <p class="exact-rule">input → atom registry → executable result → ledger → manifest → SHA-256</p>
+    </section>
+
+    <section class="section" aria-labelledby="recompute-run-title">
+      <div class="exact-section-title"><p class="eyebrow">Run one command</p><h2 id="recompute-run-title">The shortest path is the calculation.</h2><p>Unzip the packet, verify its contents, and run the same registry that generated the readable ledger and JSON record.</p></div>
+      <div class="recompute-command-grid">
+        <div class="recompute-command"><p class="exact-tag">1 · verify the packet</p><pre>sha256sum -c SHA256SUMS</pre></div>
+        <div class="recompute-command"><p class="exact-tag">2 · run all core atoms</p><pre>python3 -I run_all.py</pre></div>
+        <div class="recompute-command"><p class="exact-tag">3 · verify the ledger sync</p><pre>python3 -I run_all.py --check-ledger ledger.md</pre></div>
+      </div>
+      <div class="recompute-fingerprint" aria-label="Expected result fingerprints">
+        <p><strong>Core table SHA-256</strong><code>d8a27ca8e1344ab2e3583b300b505ef1d0536aebfa6df3e7cc415529509daa4b</code></p>
+        <p><strong>Ledger SHA-256</strong><code>101b97c8c71e5246cbfb91a339d0fca1eadc8e45615c375420dcf37b8ddbdf00</code></p>
+        <p><strong>Packet SHA-256</strong><code>f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60</code></p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="atom-register-title">
+      <div class="exact-section-title"><p class="eyebrow">A01–A10 · declared atoms</p><h2 id="atom-register-title">The core table.</h2><p>Every line below is generated from the same registry used by the runner, ledger, and manifest.</p></div>
+      <div class="recompute-table-wrap"><table class="recompute-table"><thead><tr><th scope="col">Atom</th><th scope="col">Declared result</th><th scope="col">Check kind</th></tr></thead><tbody>
+        <tr><th scope="row">A01</th><td>G = [Q, Ω] = [C1, Q] = [[−2, 1], [1, 2]]</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A02</th><td>G² = 5I and det G = −5</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A03</th><td>C1² = −I, C1⁴ = I, Ω = −C1</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A04</th><td>Q² = Q + I and det Q = −1</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A05</th><td>Qⁿ = FₙQ + Fₙ₋₁I for n = 1…40</td><td>Exact finite range</td></tr>
+        <tr><th scope="row">A06</th><td>Cassini identity for n = 1…40</td><td>Exact finite range</td></tr>
+        <tr><th scope="row">A07</th><td>T = GC1 is symmetric; T² = 5I; S = T/√5 has S² = I</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A08</th><td>TG + GT = 0 and GTG = −5T</td><td>Exact integer</td></tr>
+        <tr><th scope="row">A09</th><td>⟨C1, Π⟩ is an 8-element dihedral matrix realization</td><td>Exhaustive closure</td></tr>
+        <tr><th scope="row">A10</th><td>m = 4 is unique on 1…3000 for both stated 137 identities</td><td>Exact finite range</td></tr>
+      </tbody></table></div>
+      <p class="recompute-controls"><strong>Controls:</strong> K01 and K02 carry deliberately false relations and must print <code>EXPECTED_FALSE</code>. S01 is an optional symbolic check of L(s)ᵀGL(s) = G and HL(s)H = L(−s); it reports <code>SKIP</code> only when SymPy is unavailable.</p>
+    </section>
+
+    <section class="section" aria-labelledby="recompute-integrity-title">
+      <div class="exact-section-title"><p class="eyebrow">One released object</p><h2 id="recompute-integrity-title">The statement stays with its record.</h2><p>The source bundle exposes its runner, generated ledger, manifest, and SHA-256 file map as direct public files.</p></div>
+      <div class="exact-register-grid">
+        <article class="exact-register"><p class="exact-meta">Direct source</p><h3>Read and recompute</h3><p>The core tier uses exact standard-library integer arithmetic. A changed relation causes a nonzero exit; a changed generated ledger fails byte-for-byte synchronization.</p><nav class="exact-record-links" aria-label="Recompute source links"><a href="/exact/recompute-kernel/run_all.py">run_all.py</a><a href="/exact/recompute-kernel/ledger.md">ledger.md</a><a href="/exact/recompute-kernel/manifest.json">manifest.json</a><a href="/exact/recompute-kernel/SHA256SUMS">SHA256SUMS</a></nav></article>
+        <article class="exact-register"><p class="exact-meta">Declared scope</p><h3>Keep the interval visible.</h3><p>A05 and A06 name n = 1…40; A10 names m = 1…3000. The packet preserves those finite domains in the statement rather than enlarging them in prose.</p><nav class="exact-record-links" aria-label="Recompute scope links"><a href="/exact/recompute-kernel/ledger.md">Atom boundaries</a><a href="/exact/recompute-kernel/manifest.json">Machine record</a><a href="/exact/">Exact Reader</a></nav></article>
+      </div>
+      <p class="exact-boundary"><strong>Claim scope.</strong> This packet recomputes the stated matrix identities, finite searches, and optional symbolic identities from its declared inputs. Each subsequent field construction carries its own equations, parameters, and receipt.</p>
+    </section>
+  </main>
+  <footer class="site-footer">Anthony Vito Coppa · Coppalini Architecture · <a href="/exact/">Exact Reader</a></footer>
+</body>
+</html>

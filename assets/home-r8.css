@@ -1,0 +1,225 @@
+.architecture-home .landing {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(17rem, .75fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  min-height: min(44rem, 76vh);
+  padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 7vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-home .landing h1 {
+  max-width: 13ch;
+  font-size: clamp(3.25rem, 8vw, 6.7rem);
+  line-height: .96;
+}
+
+.architecture-home .landing .deck {
+  max-width: 39rem;
+  margin-top: 1.8rem;
+  font-size: clamp(1.28rem, 2.4vw, 1.82rem);
+}
+
+.architecture-home .landing .summary {
+  max-width: 42rem;
+  margin-top: 1.35rem;
+}
+
+.landing-record {
+  align-self: stretch;
+  display: grid;
+  align-content: end;
+  gap: 1.2rem;
+  padding: 1.55rem;
+  border: 1px solid var(--ink);
+  background: linear-gradient(135deg, rgba(47, 94, 153, .09), rgba(255, 253, 248, .94) 54%), var(--surface);
+}
+
+.landing-record p { margin: 0; }
+.landing-record .record-label,
+.dependency-kicker,
+.condition-index,
+.audit-label {
+  color: var(--red);
+  font-size: .68rem;
+  font-weight: 780;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.landing-record h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.landing-record .mono {
+  color: var(--blue);
+  font-size: .82rem;
+}
+
+.architecture-home .section {
+  padding: clamp(3.75rem, 8vw, 6.8rem) 0;
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: 1.25rem 3rem;
+  align-items: end;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-intro h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2rem, 4.6vw, 3.45rem);
+}
+
+.section-intro p {
+  max-width: 47rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.03rem;
+}
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.condition {
+  min-width: 0;
+  min-height: 14.5rem;
+  padding: 1.2rem 1.15rem 1.3rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.condition:nth-child(1) { border-top: .28rem solid var(--blue); }
+.condition:nth-child(2) { border-top: .28rem solid var(--red); }
+.condition:nth-child(3) { border-top: .28rem solid var(--violet); }
+.condition:nth-child(4) { border-top: .28rem solid var(--green); }
+.condition:nth-child(5) { border-top: .28rem solid var(--gold); }
+.condition h3 { margin: .8rem 0 .65rem; font-size: 1.35rem; }
+.condition p { margin: 0; color: var(--muted); font-size: .91rem; }
+.condition p + p { margin-top: .85rem; }
+.condition .native { color: var(--ink); font-size: .8rem; }
+
+.field-table-wrap { margin-top: 2.4rem; overflow-x: auto; }
+.field-table { min-width: 720px; margin: 0; }
+.field-table th,
+.field-table td { width: auto; padding: .94rem .8rem; font-size: .82rem; line-height: 1.5; }
+.field-table th { color: var(--ink); background: rgba(255, 253, 248, .55); }
+.field-table td { color: var(--muted); }
+.field-table td:first-child { color: var(--ink); font-weight: 700; }
+.field-table caption {
+  caption-side: top;
+  padding: 0 0 .8rem;
+  color: var(--muted);
+  text-align: left;
+  font-size: .79rem;
+}
+
+.architecture-home .lineage {
+  margin: 0;
+  padding: clamp(3.75rem, 8vw, 6.8rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-home .lineage-heading { margin-bottom: 1.3rem; }
+.architecture-home .lineage-heading h2 { font-size: clamp(2rem, 4.6vw, 3.45rem); }
+.architecture-home .lineage-heading > p { max-width: 24rem; }
+
+.architecture-home button.lineage-card {
+  width: 100%;
+  padding: 0;
+  color: inherit;
+  border: 1px solid #d3d0c2;
+  border-radius: 0;
+  background: #faf8f0;
+  box-shadow: 0 2px 4px #243d4007;
+  text-align: left;
+  cursor: pointer;
+}
+
+.architecture-home button.lineage-card:hover {
+  color: inherit;
+  background: #faf8f0;
+}
+
+.architecture-home .lineage-card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 21;
+}
+
+.architecture-home .lineage-inspection-art > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lineage-equation {
+  margin: 0 0 .35rem;
+  color: var(--ink);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.lineage-equation-text { color: var(--muted); }
+.lineage-load-error { padding: 1rem; color: var(--muted); }
+
+.audit-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, .7fr);
+  gap: 2rem 4rem;
+  align-items: end;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(97, 71, 133, .07), transparent 55%), var(--surface);
+}
+
+.audit-strip h2 { max-width: 16ch; margin: .65rem 0 1rem; }
+.audit-strip p { max-width: 45rem; margin: 0; color: var(--muted); }
+.audit-strip .audit-facts { margin-top: 1rem; font-size: .89rem; }
+.audit-links { display: flex; flex-wrap: wrap; gap: .65rem; align-items: flex-end; }
+.audit-links a { font-size: .78rem; }
+
+.home-note {
+  max-width: 53rem;
+  margin: clamp(2.6rem, 6vw, 5rem) 0 0;
+  color: var(--muted);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  line-height: 1.55;
+}
+
+@media (max-width: 1000px) {
+  .condition-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .condition { min-height: 12.4rem; }
+}
+
+@media (max-width: 760px) {
+  .architecture-home .landing,
+  .section-intro,
+  .audit-strip { grid-template-columns: 1fr; }
+  .architecture-home .landing { min-height: 0; }
+  .section-intro h2 { max-width: none; }
+  .landing-record { min-height: 16rem; }
+  .condition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .condition { min-height: 0; }
+  .architecture-home .lineage-heading { display: block; }
+  .architecture-home .lineage-heading > p { max-width: 27rem; margin-top: .8rem; text-align: left; }
+}
+
+@media (max-width: 440px) {
+  .condition-grid { grid-template-columns: 1fr; }
+  .architecture-home .landing h1 { font-size: clamp(3.1rem, 16vw, 4.5rem); }
+}

@@ -1,6 +1,0 @@
-{
-  "browserBootstrap": {
-    "scripts": 3,
-    "sleepRemoved": true
-  }
-}

@@ -1,0 +1,258 @@
+[
+  {
+    "name": "mirror-recognition(2).svg",
+    "sha256": "c6e6a843a7ab07d24781dd44ac36f9a0f8fd502ca4919a929f3878a09685186d",
+    "root": {
+      "width": "800",
+      "height": "1050",
+      "viewBox": "0 0 800 1050",
+      "role": "img",
+      "aria-labelledby": "title desc"
+    },
+    "texts": [
+      {
+        "x": "400",
+        "y": "143",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "Mirror Recognition"
+      }
+    ],
+    "rings": [
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "202"
+      },
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "185",
+        "opacity": ".5"
+      }
+    ],
+    "equation_boxes": [
+      {
+        "x": "259.384",
+        "y": "801.5156",
+        "width": "281.232",
+        "height": "68.9688",
+        "viewBox": "0 0 226.8 55.62"
+      }
+    ]
+  },
+  {
+    "name": "complete-operator-algebra(2).svg",
+    "sha256": "dc1f0f07e821db30a34d76d685cb9b8bc0f1f554b3a7d69bdc36d86625204834",
+    "root": {
+      "width": "800",
+      "height": "1050",
+      "viewBox": "0 0 800 1050",
+      "role": "img",
+      "aria-labelledby": "title desc"
+    },
+    "texts": [
+      {
+        "x": "400",
+        "y": "143",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "A Complete 2×2"
+      },
+      {
+        "x": "400",
+        "y": "192",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "Operator Algebra"
+      }
+    ],
+    "rings": [
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "202"
+      },
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "185",
+        "opacity": ".5"
+      }
+    ],
+    "equation_boxes": [
+      {
+        "x": "252.13",
+        "y": "821.1572",
+        "width": "295.74",
+        "height": "29.6856",
+        "viewBox": "0 0 238.5 23.94"
+      }
+    ]
+  },
+  {
+    "name": "the-exact-reader(2).svg",
+    "sha256": "d8d6be1cc831e4d49d72d87d075f2ce40c57cd59b7ef1735fe3b36cbbcb05ca7",
+    "root": {
+      "width": "800",
+      "height": "1050",
+      "viewBox": "0 0 800 1050",
+      "role": "img",
+      "aria-labelledby": "title desc"
+    },
+    "texts": [
+      {
+        "x": "400",
+        "y": "143",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "The Exact Reader"
+      }
+    ],
+    "rings": [
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "202"
+      },
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "185",
+        "opacity": ".5"
+      }
+    ],
+    "equation_boxes": [
+      {
+        "x": "295.4308",
+        "y": "819.3716",
+        "width": "209.1384",
+        "height": "33.2568",
+        "viewBox": "0 0 168.66 26.82"
+      }
+    ]
+  },
+  {
+    "name": "four-phase-eight-state(2).svg",
+    "sha256": "a71009b00728fab6782b02a198bccb0b223dce1bbf1a00b3eb5ac3fc3daddbe6",
+    "root": {
+      "width": "800",
+      "height": "1050",
+      "viewBox": "0 0 800 1050",
+      "role": "img",
+      "aria-labelledby": "title desc"
+    },
+    "texts": [
+      {
+        "x": "400",
+        "y": "143",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "Four-Phase Addressing"
+      },
+      {
+        "x": "400",
+        "y": "192",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "37",
+        "text": "and Eight-State Relations"
+      }
+    ],
+    "rings": [
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "202"
+      },
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "185",
+        "opacity": ".5"
+      }
+    ],
+    "equation_boxes": [
+      {
+        "x": "262.3972",
+        "y": "817.2512",
+        "width": "275.2056",
+        "height": "37.4976",
+        "viewBox": "0 0 221.94 30.24"
+      }
+    ]
+  },
+  {
+    "name": "independent-tunability(2).svg",
+    "sha256": "a6dc275164a5c96024fb504d25c224d3846ded04fa14092c10eec0a29be674d9",
+    "root": {
+      "width": "800",
+      "height": "1050",
+      "viewBox": "0 0 800 1050",
+      "role": "img",
+      "aria-labelledby": "title desc"
+    },
+    "texts": [
+      {
+        "x": "400",
+        "y": "143",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "42",
+        "text": "Independent Tunability"
+      },
+      {
+        "x": "400",
+        "y": "191",
+        "fill": "#262522",
+        "stroke": "none",
+        "font-family": "Georgia, Times New Roman, serif",
+        "text-anchor": "middle",
+        "font-size": "18",
+        "opacity": ".65",
+        "text": "of Local Curvature and Global Holonomy"
+      }
+    ],
+    "rings": [
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "202"
+      },
+      {
+        "cx": "400",
+        "cy": "560",
+        "r": "185",
+        "opacity": ".5"
+      }
+    ],
+    "equation_boxes": [
+      {
+        "x": "232.1536",
+        "y": "818.9252",
+        "width": "335.6928",
+        "height": "34.1496",
+        "viewBox": "0 0 270.72 27.54"
+      }
+    ]
+  }
+]

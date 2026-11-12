@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800" role="img" aria-labelledby="title desc">
+  <title id="title">Suture Field Dynamics — cover</title>
+  <desc id="desc">A regular suture map between a coframe carrier, metric, and antisymmetric flux form.</desc>
+  <rect width="1200" height="1800" fill="#fbf8f1"/>
+  <g fill="#1d2633" text-anchor="middle">
+    <text x="600" y="170" font-family="Georgia, serif" font-size="53">Suture Field Dynamics</text>
+    <text x="600" y="220" font-family="Georgia, serif" font-size="23" fill="#746e64">Regular Hamiltonian reduction</text>
+  </g>
+  <g transform="translate(600 850)" fill="none" stroke-linecap="round">
+    <circle r="356" stroke="#d1ad78" stroke-width="2"/>
+    <circle r="332" stroke="#eadcc5" stroke-width="2"/>
+    <circle r="296" stroke="#e8dfcd" stroke-width="1.5" stroke-dasharray="2 15"/>
+    <path d="M-290 0H290 M0-290V290" stroke="#e0c090" stroke-width="2"/>
+    <rect x="-188" y="-188" width="376" height="376" rx="8" stroke="#87a797" stroke-width="4"/>
+    <path d="M-188-94H188M-188 0H188M-188 94H188M-94-188V188M0-188V188M94-188V188" stroke="#a8bbc9" stroke-width="2"/>
+    <path d="M-257-110L257 110M-257 110L257-110" stroke="#c2a6c4" stroke-width="6" opacity=".7"/>
+    <path d="M-290 0A290 290 0 0 1 -70-281" stroke="#e9df9d" stroke-width="15" opacity=".72"/>
+    <path d="M70 281A290 290 0 0 1 290 0" stroke="#c6b4d1" stroke-width="15" opacity=".72"/>
+    <path d="M-290 0A290 290 0 0 0 -70 281" stroke="#ddb0ae" stroke-width="15" opacity=".72"/>
+    <path d="M70-281A290 290 0 0 0 290 0" stroke="#acc0d3" stroke-width="15" opacity=".72"/>
+    <circle r="34" fill="#fbf8f1" stroke="#1d2633" stroke-width="2"/>
+    <circle r="8" fill="#1d2633"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="24" fill="#5f5b55" text-anchor="middle">
+    <text x="600" y="1260">rank D𝒮<tspan baseline-shift="sub" font-size="16">Π</tspan> = 16</text>
+    <text x="600" y="1310">(g, F) = 𝒮(Π)</text>
+  </g>
+  <line x1="280" x2="920" y1="1440" y2="1440" stroke="#d9c29b" stroke-width="2"/>
+  <g fill="#756f66" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">
+    <text x="600" y="1512">ANTHONY VITO COPPA</text>
+    <text x="600" y="1544">COPPALINI ARCHITECTURE</text>
+  </g>
+</svg>

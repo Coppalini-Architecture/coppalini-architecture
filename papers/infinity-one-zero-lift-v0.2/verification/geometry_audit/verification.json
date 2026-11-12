@@ -1,0 +1,396 @@
+{
+  "arithmetic": "exact integer, rational, and Q(sqrt(5)); SymPy 1.14.0",
+  "proof_status": "Executable checks plus source proofs; this audit has not been run through Lean.",
+  "tests": [
+    {
+      "test": "Q recurrence",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "root quarter-turn",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "G root",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "welded mirrors",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "axial square",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "axial signed metric",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "axial reversal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "golden chart dilation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "projective mirror",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "new change of basis P H P^-1 = M",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "new conjugated carriage reverses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "central lift",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=0, n mod4=0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=0, n mod4=1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=0, n mod4=2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=0, n mod4=3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=1, n mod4=0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=1, n mod4=1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=1, n mod4=2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=1, n mod4=3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=2, n mod4=0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=2, n mod4=1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=2, n mod4=2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=2, n mod4=3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=3, n mod4=0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=3, n mod4=1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=3, n mod4=2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "carry identity p=3, n mod4=3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "four-step lift as source-defined carry",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "eight occurrence addresses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "all unordered pairs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "every occurrence degree seven",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "two-cycle decomposition",
+      "status": "PASS",
+      "detail": "[6, 16, 6]"
+    },
+    {
+      "test": "seven complete matchings",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "matching partition equals K8",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "CRT scanner bijection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "CRT inverse",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "potential difference rank",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "triangle constraint rank",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "triangle telescoping",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "triangle-potential dimensions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "declared 3D display affine rank",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "2D display keeps eight vertices",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "no vertex lies inside an unrelated edge",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "test": "published SVG matching for edge (0, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (2, 5)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (3, 4)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 2)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (3, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (4, 5)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (2, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 3)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 4)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (5, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (3, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (2, 4)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 5)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (4, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (3, 5)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (2, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 1)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (5, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (4, 6)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 3)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 2)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (6, 7)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (0, 5)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (1, 4)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published SVG matching for edge (2, 3)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "published cover edge set",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "count": 73,
+  "summary": {
+    "vertices": 8,
+    "edges": 28,
+    "vertex_degree": 7,
+    "within_first_cycle": 6,
+    "cross_cycle": 16,
+    "within_second_cycle": 6,
+    "matching_dimensions": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "triangle_rank": 21,
+    "potential_rank": 7
+  },
+  "new_basis_change": {
+    "P": "Matrix([[1, 2 + sqrt(5)], [0, sqrt(5)]])",
+    "L_M": "Matrix([[1 + sqrt(5), -sqrt(5) - 2], [1, -1]])",
+    "scope": "Exact matrix conjugacy; separately derived here."
+  }
+}

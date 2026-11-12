@@ -1,0 +1,2622 @@
+{
+  "counts": {
+    "baselines": 4,
+    "endpoint_rows": 0,
+    "followup_rows": 30,
+    "relationships": {
+      "baseline_record": 4,
+      "changed_read": 5,
+      "exact_read_return_without_resolved_redox_difference": 15,
+      "returned_read_with_redox_difference": 10
+    },
+    "rows": 34,
+    "runs": 4,
+    "tied_clock_rows": 4,
+    "warnings": 2
+  },
+  "data_origin": "synthetic",
+  "dataset_id": "NOP_return_memory_synthetic_v0.1",
+  "interpretation": {
+    "baseline": "one first record per run; all ratios use that same run baseline",
+    "bounds": "Missing bounds denote a point as entered, not biological certainty. Propagated intervals are conservative; baseline self-ratios cancel exactly.",
+    "endpoint": "Optional endpoint normalization retains the single declared endpoint and the same run baseline; no causal attribution.",
+    "eta": "Approximate float display of 0.5 * log(q); exact classifications use rational bounds.",
+    "oxygen": "Comparisons concern the declared oxygen read, compartment, and assay. dry_inspired_po2 is the nominal dry-gas proxy fio2 * pressure_kpa.",
+    "row_order": "submitted order retained; runs may interleave; no sorting",
+    "scope": "Arithmetic paired-data audit. No inferred tissue, assay, HIF isoform, causal mechanism, or clinical equivalence; no fitted model or derivative from tied clock readings."
+  },
+  "metadata": {
+    "data_origin": "synthetic",
+    "dataset_id": "NOP_return_memory_synthetic_v0.1",
+    "limitations": [
+      "Delivered-gas return does not establish tissue-oxygen return.",
+      "A recorded redox difference is a descriptive contrast, not causal identification.",
+      "Exact arithmetic preserves entered values; assay uncertainty remains explicit."
+    ],
+    "model": {
+      "bounds_semantics": "synthetic interval bounds; no probabilistic coverage claim",
+      "exposure_steps": 4,
+      "hif_transfer": "unassigned; no HIF or EPO values are synthesized",
+      "name": "one-state adaptation with instantaneous oxidant-drive return",
+      "oxidant_drive_during_pulse": "2",
+      "oxygen_to_ros_transfer": "unassigned; independent synthetic input choices",
+      "recovery_steps": 8,
+      "retention": "1/2",
+      "step_duration_min": "1"
+    },
+    "oxygen_read": {
+      "assay": "nominal FiO2 times ambient pressure; tissue oxygen unmeasured",
+      "compartment": "delivered dry gas",
+      "kind": "dry_inspired_po2",
+      "unit": "kPa"
+    },
+    "ros": {
+      "assay": "constructed oxidant index",
+      "compartment": "synthetic cell compartment",
+      "unit": "synthetic assay unit"
+    },
+    "scavenger": {
+      "assay": "constructed scavenging index",
+      "compartment": "synthetic cell compartment",
+      "unit": "synthetic assay unit"
+    },
+    "schema_version": "0.1",
+    "source_refs": [
+      "Constructed finite adaptation example; no participant data or fitted biological parameters."
+    ]
+  },
+  "provenance": {
+    "code": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/nop_audit.py",
+      "sha256": "eaf00fc019e2e741cc8a679b97360fda506f67c99828f3a5e8fd521440205149",
+      "version": "0.2.0"
+    },
+    "data": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/examples/synthetic.csv",
+      "sha256": "c07139ffdb876f8990138cac84bf7306a848aae5d75f39aefdafdf09b758df81"
+    },
+    "metadata": {
+      "path": "/workspace/scratch/327a49fb9250/nop_release_v0_2/examples/metadata.json",
+      "sha256": "4b3964064ea23fdc3a1512f5697484ce1466a56c9e4441a1357267ea7e177260"
+    }
+  },
+  "rows": [
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "baseline"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": true,
+      "occurrence": "0",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "baseline_record",
+      "run_id": "lag",
+      "sample_id": "lag_00",
+      "source_row": 2,
+      "time_min": "-4"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.34657359027997264,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure_onset"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "3/10",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "12159/400",
+          "low": "12159/400",
+          "value": "12159/400"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "1",
+      "oxygen_comparison": "changed_read",
+      "redox_difference_resolved": true,
+      "relationship": "changed_read",
+      "run_id": "lag",
+      "sample_id": "lag_01",
+      "source_row": 3,
+      "time_min": "-4"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "3/2",
+          "low": "3/2",
+          "status": "above_baseline",
+          "value": "3/2"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "4/3",
+          "low": "4/3",
+          "status": "above_baseline",
+          "value": "4/3"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "3",
+          "low": "3",
+          "status": "above_baseline",
+          "value": "3"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.14384103622589045,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "3/10",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "12159/400",
+          "low": "12159/400",
+          "value": "12159/400"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "300",
+          "low": "300",
+          "value": "300"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "2",
+      "oxygen_comparison": "changed_read",
+      "redox_difference_resolved": true,
+      "relationship": "changed_read",
+      "run_id": "lag",
+      "sample_id": "lag_02",
+      "source_row": 4,
+      "time_min": "-3"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "7/4",
+          "low": "7/4",
+          "status": "above_baseline",
+          "value": "7/4"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "8/7",
+          "low": "8/7",
+          "status": "above_baseline",
+          "value": "8/7"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "7/2",
+          "low": "7/2",
+          "status": "above_baseline",
+          "value": "7/2"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.06676569631226131,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "3/10",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "12159/400",
+          "low": "12159/400",
+          "value": "12159/400"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "350",
+          "low": "350",
+          "value": "350"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "3",
+      "oxygen_comparison": "changed_read",
+      "redox_difference_resolved": true,
+      "relationship": "changed_read",
+      "run_id": "lag",
+      "sample_id": "lag_03",
+      "source_row": 5,
+      "time_min": "-2"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "15/8",
+          "low": "15/8",
+          "status": "above_baseline",
+          "value": "15/8"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "16/15",
+          "low": "16/15",
+          "status": "above_baseline",
+          "value": "16/15"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "15/4",
+          "low": "15/4",
+          "status": "above_baseline",
+          "value": "15/4"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.03226926056878558,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "3/10",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "12159/400",
+          "low": "12159/400",
+          "value": "12159/400"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "375",
+          "low": "375",
+          "value": "375"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "4",
+      "oxygen_comparison": "changed_read",
+      "redox_difference_resolved": true,
+      "relationship": "changed_read",
+      "run_id": "lag",
+      "sample_id": "lag_04",
+      "source_row": 6,
+      "time_min": "-1"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "31/16",
+          "low": "31/16",
+          "status": "above_baseline",
+          "value": "31/16"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "32/31",
+          "low": "32/31",
+          "status": "above_baseline",
+          "value": "32/31"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "31/8",
+          "low": "31/8",
+          "status": "above_baseline",
+          "value": "31/8"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.01587434915729015,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "3/10",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "12159/400",
+          "low": "12159/400",
+          "value": "12159/400"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "775/2",
+          "low": "775/2",
+          "value": "775/2"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "5",
+      "oxygen_comparison": "changed_read",
+      "redox_difference_resolved": true,
+      "relationship": "changed_read",
+      "run_id": "lag",
+      "sample_id": "lag_05",
+      "source_row": 7,
+      "time_min": "0"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "31/16",
+          "low": "31/16",
+          "status": "above_baseline",
+          "value": "31/16"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "16/31",
+          "low": "16/31",
+          "status": "below_baseline",
+          "value": "16/31"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "31/16",
+          "low": "31/16",
+          "status": "above_baseline",
+          "value": "31/16"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.3306992411226825,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "return_0_plus"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "775/2",
+          "low": "775/2",
+          "value": "775/2"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "6",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_06",
+      "source_row": 8,
+      "time_min": "0"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "47/32",
+          "low": "47/32",
+          "status": "above_baseline",
+          "value": "47/32"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "32/47",
+          "low": "32/47",
+          "status": "below_baseline",
+          "value": "32/47"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "47/32",
+          "low": "47/32",
+          "status": "above_baseline",
+          "value": "47/32"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.19220584945516603,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "1175/4",
+          "low": "1175/4",
+          "value": "1175/4"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "7",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_07",
+      "source_row": 9,
+      "time_min": "1"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "79/64",
+          "low": "79/64",
+          "status": "above_baseline",
+          "value": "79/64"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "64/79",
+          "low": "64/79",
+          "status": "below_baseline",
+          "value": "64/79"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "79/64",
+          "low": "79/64",
+          "status": "above_baseline",
+          "value": "79/64"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.10528238455367483,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "1975/8",
+          "low": "1975/8",
+          "value": "1975/8"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "8",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_08",
+      "source_row": 10,
+      "time_min": "2"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "143/128",
+          "low": "143/128",
+          "status": "above_baseline",
+          "value": "143/128"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "128/143",
+          "low": "128/143",
+          "status": "below_baseline",
+          "value": "128/143"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "143/128",
+          "low": "143/128",
+          "status": "above_baseline",
+          "value": "143/128"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.055407183170145057,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "3575/16",
+          "low": "3575/16",
+          "value": "3575/16"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "9",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_09",
+      "source_row": 11,
+      "time_min": "3"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "271/256",
+          "low": "271/256",
+          "status": "above_baseline",
+          "value": "271/256"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "256/271",
+          "low": "256/271",
+          "status": "below_baseline",
+          "value": "256/271"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "271/256",
+          "low": "271/256",
+          "status": "above_baseline",
+          "value": "271/256"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.028470688200069212,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "6775/32",
+          "low": "6775/32",
+          "value": "6775/32"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "10",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_10",
+      "source_row": 12,
+      "time_min": "4"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "527/512",
+          "low": "527/512",
+          "status": "above_baseline",
+          "value": "527/512"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "512/527",
+          "low": "512/527",
+          "status": "below_baseline",
+          "value": "512/527"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "527/512",
+          "low": "527/512",
+          "status": "above_baseline",
+          "value": "527/512"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.01443796175092727,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "13175/64",
+          "low": "13175/64",
+          "value": "13175/64"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "11",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_11",
+      "source_row": 13,
+      "time_min": "5"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1039/1024",
+          "low": "1039/1024",
+          "status": "above_baseline",
+          "value": "1039/1024"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1024/1039",
+          "low": "1024/1039",
+          "status": "below_baseline",
+          "value": "1024/1039"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1039/1024",
+          "low": "1039/1024",
+          "status": "above_baseline",
+          "value": "1039/1024"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.007271092749887149,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "25975/128",
+          "low": "25975/128",
+          "value": "25975/128"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "12",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_12",
+      "source_row": 14,
+      "time_min": "6"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2063/2048",
+          "low": "2063/2048",
+          "status": "above_baseline",
+          "value": "2063/2048"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2048/2063",
+          "low": "2048/2063",
+          "status": "below_baseline",
+          "value": "2048/2063"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2063/2048",
+          "low": "2063/2048",
+          "status": "above_baseline",
+          "value": "2063/2048"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.0036487634559267098,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "51575/256",
+          "low": "51575/256",
+          "value": "51575/256"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "13",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_13",
+      "source_row": 15,
+      "time_min": "7"
+    },
+    {
+      "arm": "lag",
+      "baseline_sample_id": "lag_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "4111/4096",
+          "low": "4111/4096",
+          "status": "above_baseline",
+          "value": "4111/4096"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "4096/4111",
+          "low": "4096/4111",
+          "status": "below_baseline",
+          "value": "4096/4111"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "4111/4096",
+          "low": "4111/4096",
+          "status": "above_baseline",
+          "value": "4111/4096"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.0018277100892673487,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "102775/512",
+          "low": "102775/512",
+          "value": "102775/512"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "14",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "lag",
+      "sample_id": "lag_14",
+      "source_row": 16,
+      "time_min": "8"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "baseline"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": true,
+      "occurrence": "0",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "baseline_record",
+      "run_id": "air_control",
+      "sample_id": "air_control_00",
+      "source_row": 17,
+      "time_min": "-4"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure_onset"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "1",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_01",
+      "source_row": 18,
+      "time_min": "-4"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "2",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_02",
+      "source_row": 19,
+      "time_min": "-3"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "3",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_03",
+      "source_row": 20,
+      "time_min": "-2"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "4",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_04",
+      "source_row": 21,
+      "time_min": "-1"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "exposure"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "5",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_05",
+      "source_row": 22,
+      "time_min": "0"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "return_0_plus"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "6",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_06",
+      "source_row": 23,
+      "time_min": "0"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "7",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_07",
+      "source_row": 24,
+      "time_min": "1"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "8",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_08",
+      "source_row": 25,
+      "time_min": "2"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "9",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_09",
+      "source_row": 26,
+      "time_min": "3"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "10",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_10",
+      "source_row": 27,
+      "time_min": "4"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "11",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_11",
+      "source_row": 28,
+      "time_min": "5"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "12",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_12",
+      "source_row": 29,
+      "time_min": "6"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "13",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_13",
+      "source_row": 30,
+      "time_min": "7"
+    },
+    {
+      "arm": "air_control",
+      "baseline_sample_id": "air_control_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "recovery"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "14",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "air_control",
+      "sample_id": "air_control_14",
+      "source_row": 31,
+      "time_min": "8"
+    },
+    {
+      "arm": "common_mode",
+      "baseline_sample_id": "common_mode_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "sample"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": true,
+      "occurrence": "0",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "baseline_record",
+      "run_id": "common_mode",
+      "sample_id": "common_mode_00",
+      "source_row": 32,
+      "time_min": "-1"
+    },
+    {
+      "arm": "common_mode",
+      "baseline_sample_id": "common_mode_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "2",
+          "low": "2",
+          "status": "above_baseline",
+          "value": "2"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "4",
+          "low": "4",
+          "status": "above_baseline",
+          "value": "4"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "sample"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "400",
+          "low": "400",
+          "value": "400"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "1",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": true,
+      "relationship": "returned_read_with_redox_difference",
+      "run_id": "common_mode",
+      "sample_id": "common_mode_01",
+      "source_row": 33,
+      "time_min": "0"
+    },
+    {
+      "arm": "uncertain",
+      "baseline_sample_id": "uncertain_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "r": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "baseline_self_cancellation",
+          "high": "1",
+          "low": "1",
+          "status": "baseline_exact_as_entered",
+          "value": "1"
+        }
+      },
+      "eta": {
+        "approximate_float": 0.0,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "sample"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "point_as_entered",
+          "high": "100",
+          "low": "100",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "point_as_entered",
+          "high": "200",
+          "low": "200",
+          "value": "200"
+        }
+      },
+      "is_baseline": true,
+      "occurrence": "0",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "baseline_record",
+      "run_id": "uncertain",
+      "sample_id": "uncertain_00",
+      "source_row": 34,
+      "time_min": "-1"
+    },
+    {
+      "arm": "uncertain",
+      "baseline_sample_id": "uncertain_00",
+      "derived": {
+        "a": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "7/5",
+          "low": "4/5",
+          "status": "unresolved_at_recorded_bounds",
+          "value": "11/10"
+        },
+        "endpoint_normalized": null,
+        "q": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "21/16",
+          "low": "19/28",
+          "status": "unresolved_at_recorded_bounds",
+          "value": "10/11"
+        },
+        "r": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "21/20",
+          "low": "19/20",
+          "status": "unresolved_at_recorded_bounds",
+          "value": "1"
+        },
+        "scale_squared": {
+          "bounds_basis": "conservative_interval_arithmetic",
+          "high": "147/100",
+          "low": "19/25",
+          "status": "unresolved_at_recorded_bounds",
+          "value": "11/10"
+        }
+      },
+      "eta": {
+        "approximate_float": -0.04765508990216243,
+        "display_only": true
+      },
+      "extra_fields": {
+        "phase_event": "sample"
+      },
+      "inputs": {
+        "endpoint": null,
+        "fio2": "21/100",
+        "oxygen": {
+          "bounds_kind": "point_as_entered",
+          "high": "85113/4000",
+          "low": "85113/4000",
+          "value": "85113/4000"
+        },
+        "pressure_kpa": "4053/40",
+        "ros": {
+          "bounds_kind": "recorded_interval",
+          "high": "105",
+          "low": "95",
+          "value": "100"
+        },
+        "scavenger": {
+          "bounds_kind": "recorded_interval",
+          "high": "280",
+          "low": "160",
+          "value": "220"
+        }
+      },
+      "is_baseline": false,
+      "occurrence": "1",
+      "oxygen_comparison": "exact_read_return",
+      "redox_difference_resolved": false,
+      "relationship": "exact_read_return_without_resolved_redox_difference",
+      "run_id": "uncertain",
+      "sample_id": "uncertain_01",
+      "source_row": 35,
+      "time_min": "0"
+    }
+  ],
+  "schema_version": "0.1",
+  "tool_version": "0.2.0",
+  "warnings": [
+    {
+      "code": "extra_csv_columns_preserved",
+      "columns": [
+        "phase_event"
+      ],
+      "message": "Additional columns are retained in each row's extra_fields and are not used for inference."
+    },
+    {
+      "code": "tied_clock_readings_ordered_by_occurrence",
+      "message": "Distinct occurrences share a recorded clock reading; submitted occurrence order is retained. Ties may represent finite clock resolution or left/right jump events. No derivative is inferred from tied timestamps.",
+      "source_rows": [
+        3,
+        8,
+        18,
+        23
+      ]
+    }
+  ]
+}

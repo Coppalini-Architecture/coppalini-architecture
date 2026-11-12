@@ -1,0 +1,20 @@
+PASS  diction gate rejects the former compressed word family
+PASS  paper keeps memory, return, receipt, and recognition as separate offices
+PASS  commutator G = [Q, Omega]
+PASS  B = Q^2
+PASS  G^2 = 5I
+PASS  det(G) = -5
+PASS  B preserves G
+PASS  B inverse is displayed correctly
+PASS  characteristic relation B^2 - 3B + I = 0
+PASS  trace(B) = 3 and det(B) = 1
+PASS  Fibonacci power law n=1..500
+PASS  infinite-order witness B^n != I for n=1..500
+PASS  G B G = 5 B^-1
+PASS  same-read / different-decision collision exists
+PASS  supplement separates every required decision difference
+PASS  supplement separates the collided pair
+PASS  H^2 = I after exact denominator clearing
+PASS  det(H) = -1 after exact denominator clearing
+
+All exact finite checks passed.

@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">Compatibility Without Flatness</title><desc id="desc">Three overlapping charts agree on one nonzero curvature profile. Source relation: \mathcal{F}_{\Lambda}=0,\qquad F\ne0. An explicit globally defined witness restricted to three charts. The chart borders are editorial windows; they are not physical boundaries or a spacetime diagram.</desc><defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="143" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="42" >Compatibility</text><text x="400" y="192" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="42" >Without Flatness</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"><circle cx="400" cy="560" r="202" /><circle cx="400" cy="560" r="185" opacity=".5"/><path d="M605,560 L616,560" opacity=".5"/><path d="M599.86022,605.61679 L604.73486,606.7294" opacity=".5"/><path d="M584.69862,648.94617 L589.20346,651.11559" opacity=".5"/><path d="M560.27545,687.81541 L564.18461,690.93286" opacity=".5"/><path d="M527.81541,720.27545 L530.93286,724.18461" opacity=".5"/><path d="M488.94617,744.69862 L491.11559,749.20346" opacity=".5"/><path d="M445.61679,759.86022 L446.7294,764.73486" opacity=".5"/><path d="M400,765 L400,776" opacity=".5"/><path d="M354.38321,759.86022 L353.2706,764.73486" opacity=".5"/><path d="M311.05383,744.69862 L308.88441,749.20346" opacity=".5"/><path d="M272.18459,720.27545 L269.06714,724.18461" opacity=".5"/><path d="M239.72455,687.81541 L235.81539,690.93286" opacity=".5"/><path d="M215.30138,648.94617 L210.79654,651.11559" opacity=".5"/><path d="M200.13978,605.61679 L195.26514,606.7294" opacity=".5"/><path d="M195,560 L184,560" opacity=".5"/><path d="M200.13978,514.38321 L195.26514,513.2706" opacity=".5"/><path d="M215.30138,471.05383 L210.79654,468.88441" opacity=".5"/><path d="M239.72455,432.18459 L235.81539,429.06714" opacity=".5"/><path d="M272.18459,399.72455 L269.06714,395.81539" opacity=".5"/><path d="M311.05383,375.30138 L308.88441,370.79654" opacity=".5"/><path d="M354.38321,360.13978 L353.2706,355.26514" opacity=".5"/><path d="M400,355 L400,344" opacity=".5"/><path d="M445.61679,360.13978 L446.7294,355.26514" opacity=".5"/><path d="M488.94617,375.30138 L491.11559,370.79654" opacity=".5"/><path d="M527.81541,399.72455 L530.93286,395.81539" opacity=".5"/><path d="M560.27545,432.18459 L564.18461,429.06714" opacity=".5"/><path d="M584.69862,471.05383 L589.20346,468.88441" opacity=".5"/><path d="M599.86022,514.38321 L604.73486,513.2706" opacity=".5"/><path d="M400,344 L400,375" opacity=".65"/><path d="M400,745 L400,776" opacity=".65"/><path d="M184,560 L215,560" opacity=".65"/><path d="M585,560 L616,560" opacity=".65"/><path d="M335.28415,397.40584 A175 175 0 0 1 464.71585,397.40584" stroke="#a4bfae" stroke-width="6" opacity=".7"/><path d="M486.77156,408.02732 A175 175 0 0 1 567.4709,509.22109" stroke="#a2b4cd" stroke-width="6" opacity=".7"/><path d="M572.91821,533.08732 A175 175 0 0 1 544.11695,659.27389" stroke="#a6a4c5" stroke-width="6" opacity=".7"/><path d="M528.85392,678.41312 A175 175 0 0 1 412.24,734.57143" stroke="#b9a8bf" stroke-width="6" opacity=".7"/><path d="M387.76,734.57143 A175 175 0 0 1 271.14608,678.41312" stroke="#d8a6a3" stroke-width="6" opacity=".7"/><path d="M255.88305,659.27389 A175 175 0 0 1 227.08179,533.08732" stroke="#e1bc9b" stroke-width="6" opacity=".7"/><path d="M232.5291,509.22109 A175 175 0 0 1 313.22844,408.02732" stroke="#d9d09e" stroke-width="6" opacity=".7"/><rect x="250" y="478" width="120" height="166" fill="#a4bfae" fill-opacity=".045" stroke-opacity=".45"/><text x="310" y="466" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="15">U<tspan font-size="10.799999999999999" baseline-shift="sub">1</tspan></text><rect x="340" y="478" width="120" height="166" fill="#a2b4cd" fill-opacity=".045" stroke-opacity=".45"/><text x="400" y="466" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="15">U<tspan font-size="10.799999999999999" baseline-shift="sub">2</tspan></text><rect x="430" y="478" width="120" height="166" fill="#a6a4c5" fill-opacity=".045" stroke-opacity=".45"/><text x="490" y="466" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="15">U<tspan font-size="10.799999999999999" baseline-shift="sub">3</tspan></text><path d="M250,560 L550,560" opacity=".4" stroke-dasharray="2 4"/><polyline points="250,605 251.25,604.98458 252.5,604.93833 253.75,604.86128 255,604.75349 256.25,604.61502 257.5,604.44598 258.75,604.24647 260,604.01664 261.25,603.75665 262.5,603.46666 263.75,603.14689 265,602.79754 266.25,602.41887 267.5,602.01112 268.75,601.57458 270,601.10955 271.25,600.61634 272.5,600.09529 273.75,599.54677 275,598.97114 276.25,598.36881 277.5,597.74018 278.75,597.08568 280,596.40576 281.25,595.7009 282.5,594.97157 283.75,594.21827 285,593.44152 286.25,592.64185 287.5,591.81981 288.75,590.97596 290,590.11088 291.25,589.22516 292.5,588.31942 293.75,587.39426 295,586.45034 296.25,585.48828 297.5,584.50876 298.75,583.51244 300,582.5 301.25,581.47214 302.5,580.42957 303.75,579.373 305,578.30315 306.25,577.22075 307.5,576.12656 308.75,575.02131 310,573.90576 311.25,572.78069 312.5,571.64686 313.75,570.50504 315,569.35603 316.25,568.2006 317.5,567.03955 318.75,565.87368 320,564.70378 321.25,563.53066 322.5,562.35512 323.75,561.17796 325,560 326.25,558.82204 327.5,557.64488 328.75,556.46934 330,555.29622 331.25,554.12632 332.5,552.96045 333.75,551.7994 335,550.64397 336.25,549.49496 337.5,548.35314 338.75,547.21931 340,546.09424 341.25,544.97869 342.5,543.87344 343.75,542.77925 345,541.69685 346.25,540.627 347.5,539.57043 348.75,538.52786 350,537.5 351.25,536.48756 352.5,535.49124 353.75,534.51172 355,533.54966 356.25,532.60574 357.5,531.68058 358.75,530.77484 360,529.88912 361.25,529.02404 362.5,528.18019 363.75,527.35815 365,526.55848 366.25,525.78173 367.5,525.02843 368.75,524.2991 370,523.59424 371.25,522.91432 372.5,522.25982 373.75,521.63119 375,521.02886 376.25,520.45323 377.5,519.90471 378.75,519.38366 380,518.89045 381.25,518.42542 382.5,517.98888 383.75,517.58113 385,517.20246 386.25,516.85311 387.5,516.53334 388.75,516.24335 390,515.98336 391.25,515.75353 392.5,515.55402 393.75,515.38498 395,515.24651 396.25,515.13872 397.5,515.06167 398.75,515.01542 400,515 401.25,515.01542 402.5,515.06167 403.75,515.13872 405,515.24651 406.25,515.38498 407.5,515.55402 408.75,515.75353 410,515.98336 411.25,516.24335 412.5,516.53334 413.75,516.85311 415,517.20246 416.25,517.58113 417.5,517.98888 418.75,518.42542 420,518.89045 421.25,519.38366 422.5,519.90471 423.75,520.45323 425,521.02886 426.25,521.63119 427.5,522.25982 428.75,522.91432 430,523.59424 431.25,524.2991 432.5,525.02843 433.75,525.78173 435,526.55848 436.25,527.35815 437.5,528.18019 438.75,529.02404 440,529.88912 441.25,530.77484 442.5,531.68058 443.75,532.60574 445,533.54966 446.25,534.51172 447.5,535.49124 448.75,536.48756 450,537.5 451.25,538.52786 452.5,539.57043 453.75,540.627 455,541.69685 456.25,542.77925 457.5,543.87344 458.75,544.97869 460,546.09424 461.25,547.21931 462.5,548.35314 463.75,549.49496 465,550.64397 466.25,551.7994 467.5,552.96045 468.75,554.12632 470,555.29622 471.25,556.46934 472.5,557.64488 473.75,558.82204 475,560 476.25,561.17796 477.5,562.35512 478.75,563.53066 480,564.70378 481.25,565.87368 482.5,567.03955 483.75,568.2006 485,569.35603 486.25,570.50504 487.5,571.64686 488.75,572.78069 490,573.90576 491.25,575.02131 492.5,576.12656 493.75,577.22075 495,578.30315 496.25,579.373 497.5,580.42957 498.75,581.47214 500,582.5 501.25,583.51244 502.5,584.50876 503.75,585.48828 505,586.45034 506.25,587.39426 507.5,588.31942 508.75,589.22516 510,590.11088 511.25,590.97596 512.5,591.81981 513.75,592.64185 515,593.44152 516.25,594.21827 517.5,594.97157 518.75,595.7009 520,596.40576 521.25,597.08568 522.5,597.74018 523.75,598.36881 525,598.97114 526.25,599.54677 527.5,600.09529 528.75,600.61634 530,601.10955 531.25,601.57458 532.5,602.01112 533.75,602.41887 535,602.79754 536.25,603.14689 537.5,603.46666 538.75,603.75665 540,604.01664 541.25,604.24647 542.5,604.44598 543.75,604.61502 545,604.75349 546.25,604.86128 547.5,604.93833 548.75,604.98458 550,605" stroke="#a2b4cd" stroke-width="2.2"/><text x="250" y="667" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="12" >−π</text><text x="400" y="667" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="12" >0</text><text x="550" y="667" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="12" >π</text><text x="400" y="426" fill="#262522" stroke="none" font-family="Georgia, Times New Roman, serif" text-anchor="middle" font-size="15">F<tspan font-size="10.799999999999999" baseline-shift="sub">ty</tspan></text></g><svg x="306.7024" y="821.18161" width="186.5952" height="29.63678" viewBox="0 0 150.48 23.900625">
+ <title>\mathcal{F}_{\Lambda}=0,\qquad F\ne0</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>\mathcal{F}_{\Lambda}=0,\qquad F\ne0</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 23.900625 
+L 150.48 23.900625 
+L 150.48 -0 
+L 0 -0 
+L 0 23.900625 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\mathcal{F}_{\Lambda}=0,\qquad F\ne0$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 16.917187) scale(0.18 -0.18)">
+    <defs>
+     <path id="STIXNonUnicode-Italic-e232" d="M 378 3418 
+L 275 3533 
+Q 730 3955 1174 4096 
+Q 1619 4237 2163 4237 
+Q 2714 4237 3110 4208 
+Q 3507 4179 3849 4099 
+Q 4192 4019 4368 3868 
+Q 4544 3718 4544 3488 
+Q 4544 3270 4429 3123 
+Q 4314 2976 4109 2976 
+Q 3962 2976 3853 3062 
+Q 3744 3149 3744 3277 
+Q 3744 3398 3792 3465 
+Q 3840 3533 3897 3549 
+Q 3955 3565 4000 3593 
+Q 4045 3622 4045 3680 
+Q 4045 3808 3696 3894 
+Q 3347 3981 2893 3981 
+Q 2694 3981 2608 3920 
+Q 2522 3859 2464 3667 
+L 2099 2413 
+L 3494 2413 
+L 3411 2157 
+L 2029 2157 
+L 1747 1203 
+Q 1626 787 1491 537 
+Q 1357 288 1174 173 
+Q 992 58 829 29 
+Q 666 0 384 0 
+L 435 154 
+Q 608 154 726 288 
+Q 845 422 934 742 
+L 1690 3334 
+Q 1754 3558 1754 3667 
+Q 1754 3776 1690 3827 
+Q 1626 3878 1459 3878 
+Q 858 3878 378 3418 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-39b" d="M 3506 331 
+L 2138 3909 
+L 763 331 
+L 1275 331 
+L 1275 0 
+L -38 0 
+L -38 331 
+L 372 331 
+L 2034 4666 
+L 2559 4666 
+L 4225 331 
+L 4684 331 
+L 4684 0 
+L 2988 0 
+L 2988 331 
+L 3506 331 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3d" d="M 678 2894 
+L 4684 2894 
+L 4684 2394 
+L 678 2394 
+L 678 2894 
+z
+M 678 1619 
+L 4684 1619 
+L 4684 1119 
+L 678 1119 
+L 678 1619 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-30" d="M 2034 219 
+Q 2513 219 2750 744 
+Q 2988 1269 2988 2328 
+Q 2988 3391 2750 3916 
+Q 2513 4441 2034 4441 
+Q 1556 4441 1318 3916 
+Q 1081 3391 1081 2328 
+Q 1081 1269 1318 744 
+Q 1556 219 2034 219 
+z
+M 2034 -91 
+Q 1275 -91 848 546 
+Q 422 1184 422 2328 
+Q 422 3475 848 4112 
+Q 1275 4750 2034 4750 
+Q 2797 4750 3222 4112 
+Q 3647 3475 3647 2328 
+Q 3647 1184 3222 546 
+Q 2797 -91 2034 -91 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-2c" d="M 231 -622 
+Q 525 -406 662 -114 
+Q 800 178 800 594 
+L 800 709 
+L 1416 709 
+Q 1391 175 1164 -208 
+Q 938 -591 481 -872 
+L 231 -622 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-46" d="M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 4628 4666 
+L 4428 3628 
+L 4044 3628 
+L 4169 4281 
+L 1963 4281 
+L 1659 2719 
+L 3253 2719 
+L 3366 3303 
+L 3750 3303 
+L 3450 1753 
+L 3066 1753 
+L 3178 2338 
+L 1584 2338 
+L 1194 331 
+L 1941 331 
+L 1878 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-2260" d="M 678 2894 
+L 3091 2894 
+L 3891 3891 
+L 4281 3572 
+L 3738 2894 
+L 4684 2894 
+L 4684 2394 
+L 3309 2394 
+L 2700 1619 
+L 4684 1619 
+L 4684 1119 
+L 2266 1119 
+L 1459 122 
+L 1069 441 
+L 1613 1119 
+L 678 1119 
+L 678 1619 
+L 2047 1619 
+L 2656 2394 
+L 678 2394 
+L 678 2894 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#STIXNonUnicode-Italic-e232" transform="translate(0 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-39b" transform="translate(66.108356 -14.790625) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3d" transform="translate(138.22027 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-30" transform="translate(240.974177 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-2c" transform="translate(304.597224 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-46" transform="translate(544.997614 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-2260" transform="translate(633.347224 0.78125)"/>
+    <use xlink:href="#DejaVuSerif-30" transform="translate(736.10113 0.78125)"/>
+   </g>
+  </g>
+ </g>
+</svg><g fill="#777065" font-family="Arial, Helvetica, sans-serif" text-anchor="middle"><text x="400" y="932" font-size="11" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-size="9" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></g></svg>

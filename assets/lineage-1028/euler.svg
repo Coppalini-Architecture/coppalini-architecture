@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-euler-title"><title id="lineage-euler-title">Leonhard Euler — Phase. A full turn returns the represented phase. e to the i theta equals cosine theta plus i sine theta.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#777da6" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#777da6" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#777da6"/><path d="M749,42h18 M758,33v18" stroke="#777da6" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#777da6"/><path d="M33,1008h18 M42,999v18" stroke="#777da6" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#777da6"/><path d="M749,1008h18 M758,999v18" stroke="#777da6" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#777da6"/><text x="76" y="92" font-size="18" fill="#777da6" text-anchor="start" font-family="monospace" >05</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1748 AD</text><text x="400" y="145" font-size="17" fill="#777da6" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">PHASE</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Leonhard Euler</text><path d="M320,249H480" stroke="#777da6"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#777da6"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >A full turn returns the represented phase.</text><g stroke-linecap="round" stroke-linejoin="round"><circle cx="400" cy="560" r="124" stroke="#777da6" fill="none" stroke-width="3"/><path d="M245,560 L555,560" stroke="#b7bdb0" stroke-width="1" fill="none" /><path d="M400,405 L400,715" stroke="#b7bdb0" stroke-width="1" fill="none" /><path d="M400,560 L481.83791008973776,466.8412297626037" stroke="#777da6" stroke-width="4" fill="none" /><path d="M478.40,478.34 L481.83791008973776,466.8412297626037 L470.88,471.73" stroke="#777da6" stroke-width="4" fill="none" /><path d="M452,560 A52,52 0 0 0 434,521" stroke="#c98b57" stroke-width="2" fill="none" /><text x="463" y="538" fill="#243d40" font-size="25" text-anchor="middle" font-family="Georgia,serif">θ</text><circle cx="481.83791008973776" cy="466.8412297626037" r="6" stroke="#777da6" fill="#777da6" stroke-width="3"/><text x="552" y="583" fill="#243d40" font-size="20" text-anchor="middle" font-family="Georgia,serif">1</text><text x="420" y="425" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">i</text></g><g transform="translate(95.000 775.154) scale(2.30903)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="euler-figure_1">
+  <g id="euler-patch_1">
+   <path d="M 0 31.914375 
+L 264.18 31.914375 
+L 264.18 0 
+L 0 0 
+L 0 31.914375 
+z
+" style="fill: none"/>
+  </g>
+  <g id="euler-text_1">
+   <!-- $e^{i\theta}=\cos\theta+i\sin\theta$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.235312) scale(0.3 -0.3)">
+    <defs>
+     <path id="euler-DejaVuSans-Oblique-65" d="M 3078 2063 
+Q 3088 2113 3092 2166 
+Q 3097 2219 3097 2272 
+Q 3097 2653 2873 2875 
+Q 2650 3097 2266 3097 
+Q 1838 3097 1509 2826 
+Q 1181 2556 1013 2059 
+L 3078 2063 
+z
+M 3578 1613 
+L 903 1613 
+Q 884 1494 878 1425 
+Q 872 1356 872 1306 
+Q 872 872 1139 634 
+Q 1406 397 1894 397 
+Q 2269 397 2603 481 
+Q 2938 566 3225 728 
+L 3116 159 
+Q 2806 34 2476 -28 
+Q 2147 -91 1806 -91 
+Q 1078 -91 686 257 
+Q 294 606 294 1247 
+Q 294 1794 489 2264 
+Q 684 2734 1063 3103 
+Q 1306 3334 1642 3459 
+Q 1978 3584 2356 3584 
+Q 2950 3584 3301 3228 
+Q 3653 2872 3653 2272 
+Q 3653 2128 3634 1964 
+Q 3616 1800 3578 1613 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-Oblique-69" d="M 1172 4863 
+L 1747 4863 
+L 1606 4134 
+L 1031 4134 
+L 1172 4863 
+z
+M 909 3500 
+L 1484 3500 
+L 800 0 
+L 225 0 
+L 909 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-Oblique-3b8" d="M 2913 2219 
+L 925 2219 
+Q 791 1284 928 888 
+Q 1100 400 1566 400 
+Q 2034 400 2391 891 
+Q 2703 1322 2913 2219 
+z
+M 3009 2750 
+Q 3094 3638 2984 3950 
+Q 2813 4444 2353 4444 
+Q 1875 4444 1525 3956 
+Q 1250 3563 1034 2750 
+L 3009 2750 
+z
+M 2444 4913 
+Q 3194 4913 3494 4250 
+Q 3794 3591 3566 2422 
+Q 3341 1256 2781 594 
+Q 2225 -72 1475 -72 
+Q 722 -72 425 594 
+Q 128 1256 353 2422 
+Q 581 3591 1134 4250 
+Q 1691 4913 2444 4913 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-63" d="M 3122 3366 
+L 3122 2828 
+Q 2878 2963 2633 3030 
+Q 2388 3097 2138 3097 
+Q 1578 3097 1268 2742 
+Q 959 2388 959 1747 
+Q 959 1106 1268 751 
+Q 1578 397 2138 397 
+Q 2388 397 2633 464 
+Q 2878 531 3122 666 
+L 3122 134 
+Q 2881 22 2623 -34 
+Q 2366 -91 2075 -91 
+Q 1284 -91 818 406 
+Q 353 903 353 1747 
+Q 353 2603 823 3093 
+Q 1294 3584 2113 3584 
+Q 2378 3584 2631 3529 
+Q 2884 3475 3122 3366 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-6f" d="M 1959 3097 
+Q 1497 3097 1228 2736 
+Q 959 2375 959 1747 
+Q 959 1119 1226 758 
+Q 1494 397 1959 397 
+Q 2419 397 2687 759 
+Q 2956 1122 2956 1747 
+Q 2956 2369 2687 2733 
+Q 2419 3097 1959 3097 
+z
+M 1959 3584 
+Q 2709 3584 3137 3096 
+Q 3566 2609 3566 1747 
+Q 3566 888 3137 398 
+Q 2709 -91 1959 -91 
+Q 1206 -91 779 398 
+Q 353 888 353 1747 
+Q 353 2609 779 3096 
+Q 1206 3584 1959 3584 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-73" d="M 2834 3397 
+L 2834 2853 
+Q 2591 2978 2328 3040 
+Q 2066 3103 1784 3103 
+Q 1356 3103 1142 2972 
+Q 928 2841 928 2578 
+Q 928 2378 1081 2264 
+Q 1234 2150 1697 2047 
+L 1894 2003 
+Q 2506 1872 2764 1633 
+Q 3022 1394 3022 966 
+Q 3022 478 2636 193 
+Q 2250 -91 1575 -91 
+Q 1294 -91 989 -36 
+Q 684 19 347 128 
+L 347 722 
+Q 666 556 975 473 
+Q 1284 391 1588 391 
+Q 1994 391 2212 530 
+Q 2431 669 2431 922 
+Q 2431 1156 2273 1281 
+Q 2116 1406 1581 1522 
+L 1381 1569 
+Q 847 1681 609 1914 
+Q 372 2147 372 2553 
+Q 372 3047 722 3315 
+Q 1072 3584 1716 3584 
+Q 2034 3584 2315 3537 
+Q 2597 3491 2834 3397 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-2b" d="M 2944 4013 
+L 2944 2272 
+L 4684 2272 
+L 4684 1741 
+L 2944 1741 
+L 2944 0 
+L 2419 0 
+L 2419 1741 
+L 678 1741 
+L 678 2272 
+L 2419 2272 
+L 2419 4013 
+L 2944 4013 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-69" d="M 603 3500 
+L 1178 3500 
+L 1178 0 
+L 603 0 
+L 603 3500 
+z
+M 603 4863 
+L 1178 4863 
+L 1178 4134 
+L 603 4134 
+L 603 4863 
+z
+" transform="scale(0.015625)"/>
+     <path id="euler-DejaVuSans-6e" d="M 3513 2113 
+L 3513 0 
+L 2938 0 
+L 2938 2094 
+Q 2938 2591 2744 2837 
+Q 2550 3084 2163 3084 
+Q 1697 3084 1428 2787 
+Q 1159 2491 1159 1978 
+L 1159 0 
+L 581 0 
+L 581 3500 
+L 1159 3500 
+L 1159 2956 
+Q 1366 3272 1645 3428 
+Q 1925 3584 2291 3584 
+Q 2894 3584 3203 3211 
+Q 3513 2838 3513 2113 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#euler-DejaVuSans-Oblique-65" transform="translate(0 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-Oblique-69" transform="translate(66.173333 39.264062) scale(0.7)"/>
+    <use xlink:href="#euler-DejaVuSans-Oblique-3b8" transform="translate(85.621576 39.264062) scale(0.7)"/>
+    <use xlink:href="#euler-DejaVuSans-3d" transform="translate(150.665521 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-63" transform="translate(253.937005 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-6f" transform="translate(308.917474 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-73" transform="translate(370.099115 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-Oblique-3b8" transform="translate(438.4344 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-2b" transform="translate(519.098463 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-Oblique-69" transform="translate(622.369947 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-73" transform="translate(650.15315 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-69" transform="translate(702.25276 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-6e" transform="translate(730.035963 0.982812)"/>
+    <use xlink:href="#euler-DejaVuSans-Oblique-3b8" transform="translate(809.650545 0.982812)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Unit circle · real phase parameter</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

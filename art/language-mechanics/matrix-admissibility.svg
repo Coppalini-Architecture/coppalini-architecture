@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc"><title id="title">Matrix Admissibility</title><desc id="desc">A five-sided series frame contains the four independently indexed table cells. Rows and columns are labeled A and B; no arrows or operations are drawn. The pentagon is the edition marker. The four-cell object is a lookup table only; the figure grants it no multiplication, transition, causal mechanism, or optimum.</desc><defs><marker id="flow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b38d4e" stroke-width="1"/></marker></defs><rect width="800" height="1050" fill="#faf8f3"/><text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2">LANGUAGE MECHANICS / 005</text><text x="400" y="149" font-family="Georgia, Times New Roman, serif" font-size="42" fill="#262522" stroke="none" text-anchor="middle" >Matrix Admissibility</text><g fill="none" stroke="#b38d4e" stroke-width="1" stroke-linejoin="miter"><path d="M400,376 L565.48383,496.23104 L502.27463,690.76896 L297.72537,690.76896 L234.51617,496.23104 Z" opacity=".58"/><rect x="310" y="473" width="90" height="90" fill="#a4bfae" fill-opacity=".18"/><text x="355" y="525" font-family="Georgia, Times New Roman, serif" font-size="20" fill="#262522" stroke="none" text-anchor="middle">L<tspan baseline-shift="sub" font-size="14">00</tspan></text><rect x="400" y="473" width="90" height="90" fill="#a2b4cd" fill-opacity=".18"/><text x="445" y="525" font-family="Georgia, Times New Roman, serif" font-size="20" fill="#262522" stroke="none" text-anchor="middle">L<tspan baseline-shift="sub" font-size="14">01</tspan></text><rect x="310" y="563" width="90" height="90" fill="#a6a4c5" fill-opacity=".18"/><text x="355" y="615" font-family="Georgia, Times New Roman, serif" font-size="20" fill="#262522" stroke="none" text-anchor="middle">L<tspan baseline-shift="sub" font-size="14">10</tspan></text><rect x="400" y="563" width="90" height="90" fill="#b9a8bf" fill-opacity=".18"/><text x="445" y="615" font-family="Georgia, Times New Roman, serif" font-size="20" fill="#262522" stroke="none" text-anchor="middle">L<tspan baseline-shift="sub" font-size="14">11</tspan></text><text x="400" y="430" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#262522" stroke="none" text-anchor="middle" >B</text><text x="264" y="568" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#262522" stroke="none" text-anchor="middle" >A</text><text x="355" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#777065" stroke="none" text-anchor="middle" >0</text><text x="293" y="525" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#777065" stroke="none" text-anchor="middle" >0</text><text x="445" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#777065" stroke="none" text-anchor="middle" >1</text><text x="293" y="615" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#777065" stroke="none" text-anchor="middle" >1</text></g><svg x="289.9768" y="819.9638" width="220.0464" height="32.0724" viewBox="0 0 186.48 27.18">
+ <title>M_{P;A,B}:\{0,1\}^2\longrightarrow L</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M_{P;A,B}:\{0,1\}^2\longrightarrow L</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 27.18 
+L 186.48 27.18 
+L 186.48 0 
+L 0 0 
+L 0 27.18 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $M_{P;A,B}:\{0,1\}^2\longrightarrow L$ -->
+   <g style="fill: #4d4940" transform="translate(3.24 19.26) scale(0.18 -0.18)">
+    <defs>
+     <path id="DejaVuSerif-Italic-4d" d="M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 709 4331 
+L 775 4666 
+L 2134 4666 
+L 3125 1344 
+L 5409 4666 
+L 6684 4666 
+L 6619 4331 
+L 5997 4331 
+L 5222 331 
+L 5816 331 
+L 5753 0 
+L 3928 0 
+L 3991 331 
+L 4584 331 
+L 5288 3938 
+L 3053 684 
+L 2613 684 
+L 1647 3938 
+L 944 331 
+L 1538 331 
+L 1475 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-50" d="M 1594 2375 
+L 2419 2375 
+Q 2884 2375 3176 2626 
+Q 3469 2878 3559 3353 
+Q 3653 3831 3458 4081 
+Q 3263 4331 2797 4331 
+L 1972 4331 
+L 1594 2375 
+z
+M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 3016 4666 
+Q 3716 4666 4056 4311 
+Q 4397 3956 4278 3353 
+Q 4163 2753 3684 2397 
+Q 3206 2041 2506 2041 
+L 1528 2041 
+L 1194 331 
+L 1916 331 
+L 1853 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3b" d="M 231 -622 
+Q 525 -406 662 -114 
+Q 800 178 800 594 
+L 800 709 
+L 1416 709 
+Q 1391 175 1164 -208 
+Q 938 -591 481 -872 
+L 231 -622 
+z
+M 678 2363 
+Q 678 2538 798 2658 
+Q 919 2778 1094 2778 
+Q 1269 2778 1389 2656 
+Q 1509 2534 1509 2363 
+Q 1509 2188 1389 2067 
+Q 1269 1947 1094 1947 
+Q 919 1947 798 2067 
+Q 678 2188 678 2363 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-41" d="M 1159 1691 
+L 2872 1691 
+L 2447 3909 
+L 1159 1691 
+z
+M -488 0 
+L -425 331 
+L -16 331 
+L 2491 4666 
+L 3016 4666 
+L 3841 331 
+L 4297 331 
+L 4234 0 
+L 2538 0 
+L 2600 331 
+L 3119 331 
+L 2928 1356 
+L 966 1356 
+L 375 331 
+L 888 331 
+L 825 0 
+L -488 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-2c" d="M 231 -622 
+Q 525 -406 662 -114 
+Q 800 178 800 594 
+L 800 709 
+L 1416 709 
+Q 1391 175 1164 -208 
+Q 938 -591 481 -872 
+L 231 -622 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-42" d="M 1194 331 
+L 2128 331 
+Q 2691 331 2998 575 
+Q 3306 819 3409 1350 
+Q 3513 1878 3302 2120 
+Q 3091 2363 2525 2363 
+L 1591 2363 
+L 1194 331 
+z
+M 1653 2694 
+L 2447 2694 
+Q 2959 2694 3234 2891 
+Q 3509 3088 3591 3513 
+Q 3675 3941 3476 4136 
+Q 3278 4331 2766 4331 
+L 1972 4331 
+L 1653 2694 
+z
+M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 3113 4666 
+Q 3819 4666 4120 4377 
+Q 4422 4088 4309 3513 
+Q 4231 3097 3934 2850 
+Q 3638 2603 3147 2547 
+Q 3728 2472 3976 2167 
+Q 4225 1863 4125 1350 
+Q 3991 656 3489 328 
+Q 2988 0 2059 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-3a" d="M 666 325 
+Q 666 500 786 622 
+Q 906 744 1081 744 
+Q 1256 744 1376 622 
+Q 1497 500 1497 325 
+Q 1497 150 1378 29 
+Q 1259 -91 1081 -91 
+Q 903 -91 784 29 
+Q 666 150 666 325 
+z
+M 666 2363 
+Q 666 2538 786 2658 
+Q 906 2778 1081 2778 
+Q 1259 2778 1378 2659 
+Q 1497 2541 1497 2363 
+Q 1497 2184 1378 2065 
+Q 1259 1947 1081 1947 
+Q 906 1947 786 2067 
+Q 666 2188 666 2363 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-7b" d="M 3272 -716 
+L 3272 -1044 
+L 3078 -1044 
+Q 2300 -1044 2036 -812 
+Q 1772 -581 1772 109 
+L 1772 916 
+Q 1772 1384 1603 1565 
+Q 1434 1747 991 1747 
+L 800 1747 
+L 800 2075 
+L 991 2075 
+Q 1434 2075 1603 2256 
+Q 1772 2438 1772 2906 
+L 1772 3713 
+Q 1772 4403 2036 4633 
+Q 2300 4863 3078 4863 
+L 3272 4863 
+L 3272 4538 
+L 3059 4538 
+Q 2619 4538 2484 4400 
+Q 2350 4263 2350 3822 
+L 2350 2925 
+Q 2350 2431 2194 2218 
+Q 2038 2006 1631 1913 
+Q 2044 1806 2197 1597 
+Q 2350 1388 2350 897 
+L 2350 0 
+Q 2350 -441 2484 -578 
+Q 2619 -716 3059 -716 
+L 3272 -716 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-30" d="M 2034 219 
+Q 2513 219 2750 744 
+Q 2988 1269 2988 2328 
+Q 2988 3391 2750 3916 
+Q 2513 4441 2034 4441 
+Q 1556 4441 1318 3916 
+Q 1081 3391 1081 2328 
+Q 1081 1269 1318 744 
+Q 1556 219 2034 219 
+z
+M 2034 -91 
+Q 1275 -91 848 546 
+Q 422 1184 422 2328 
+Q 422 3475 848 4112 
+Q 1275 4750 2034 4750 
+Q 2797 4750 3222 4112 
+Q 3647 3475 3647 2328 
+Q 3647 1184 3222 546 
+Q 2797 -91 2034 -91 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-31" d="M 909 0 
+L 909 331 
+L 1722 331 
+L 1722 4213 
+L 781 3603 
+L 781 4013 
+L 1919 4750 
+L 2350 4750 
+L 2350 331 
+L 3163 331 
+L 3163 0 
+L 909 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-7d" d="M 800 -716 
+L 1019 -716 
+Q 1456 -716 1589 -580 
+Q 1722 -444 1722 0 
+L 1722 897 
+Q 1722 1388 1875 1597 
+Q 2028 1806 2438 1913 
+Q 2031 2006 1876 2218 
+Q 1722 2431 1722 2925 
+L 1722 3822 
+Q 1722 4266 1589 4402 
+Q 1456 4538 1019 4538 
+L 800 4538 
+L 800 4863 
+L 997 4863 
+Q 1775 4863 2036 4633 
+Q 2297 4403 2297 3713 
+L 2297 2906 
+Q 2297 2438 2465 2256 
+Q 2634 2075 3078 2075 
+L 3272 2075 
+L 3272 1747 
+L 3078 1747 
+Q 2634 1747 2465 1565 
+Q 2297 1384 2297 916 
+L 2297 109 
+Q 2297 -581 2036 -812 
+Q 1775 -1044 997 -1044 
+L 800 -1044 
+L 800 -716 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-32" d="M 819 3553 
+L 469 3553 
+L 469 4384 
+Q 803 4563 1142 4656 
+Q 1481 4750 1806 4750 
+Q 2534 4750 2956 4397 
+Q 3378 4044 3378 3438 
+Q 3378 2753 2422 1800 
+Q 2347 1728 2309 1691 
+L 1131 513 
+L 3078 513 
+L 3078 1088 
+L 3444 1088 
+L 3444 0 
+L 434 0 
+L 434 341 
+L 1850 1753 
+Q 2319 2222 2519 2614 
+Q 2719 3006 2719 3438 
+Q 2719 3909 2473 4175 
+Q 2228 4441 1797 4441 
+Q 1350 4441 1106 4219 
+Q 863 3997 819 3553 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-27f6" d="M 366 2322 
+L 8203 2322 
+L 7600 3375 
+L 7634 3375 
+L 8938 2084 
+L 8938 2053 
+L 7634 763 
+L 7600 763 
+L 8203 1816 
+L 366 1816 
+L 366 2322 
+z
+" transform="scale(0.015625)"/>
+     <path id="DejaVuSerif-Italic-4c" d="M -97 0 
+L -34 331 
+L 559 331 
+L 1338 4331 
+L 744 4331 
+L 809 4666 
+L 2631 4666 
+L 2566 4331 
+L 1972 4331 
+L 1206 384 
+L 3338 384 
+L 3488 1166 
+L 3872 1166 
+L 3647 0 
+L -97 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#DejaVuSerif-Italic-4d" transform="translate(0 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-50" transform="translate(102.392578 -14.859375) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3b" transform="translate(149.492188 -14.859375) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-Italic-41" transform="translate(186.351562 -14.859375) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-2c" transform="translate(236.90332 -14.859375) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-Italic-42" transform="translate(272.429688 -14.859375) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-3a" transform="translate(345.430273 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-7b" transform="translate(398.086523 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-30" transform="translate(461.70957 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-2c" transform="translate(525.332617 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-31" transform="translate(576.08457 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-7d" transform="translate(639.707617 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-32" transform="translate(704.239023 37.046875) scale(0.7)"/>
+    <use xlink:href="#DejaVuSerif-27f6" transform="translate(770.335312 0.7125)"/>
+    <use xlink:href="#DejaVuSerif-Italic-4c" transform="translate(932.659531 0.7125)"/>
+   </g>
+  </g>
+ </g>
+</svg><text x="400" y="932" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="2.2">ANTHONY VITO COPPA</text><text x="400" y="956" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#777065" stroke="none" text-anchor="middle" letter-spacing="1.7">COPPALINI ARCHITECTURE</text></svg>

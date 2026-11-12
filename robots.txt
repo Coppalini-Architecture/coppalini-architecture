@@ -1,0 +1,10 @@
+# Coppalini Architecture public discovery policy.
+# OAI-SearchBot is the OpenAI search-discovery crawler. This release does not
+# change the separate GPTBot/training-use policy.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://eulershiddenl.ink/sitemap.xml

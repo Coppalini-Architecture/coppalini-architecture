@@ -1,0 +1,17 @@
+{
+  "schema": "coppalini-architecture/condition-constraint-integer-carrier-repair/1",
+  "status": "PASS",
+  "scope": "Runtime exact-integer admission for Scalar, GoldenLift, and PhaseISqrt7 candidates.",
+  "artifacts": {
+    "translator": {"path": "tools/condition_constraint_can_translator.py", "sha256": "61dcad69e2e7ae1fa979de02301e530f40f7b2e14caadde531c3c90d816d4f07"},
+    "audit": {"path": "tools/mirror_audit.py", "sha256": "33ad43608fccfdb4a30b815d7bc445ca401c4fa3d4e9369fae1d2c99f7d0f5fd"},
+    "r27_source_packet": {"path": "papers/theory-of-everything-contact-record-r27-source.zip", "sha256": "2571d3901707dd6d56008789725077c57d61ed2aa3439938ba6ec811a547b19a"}
+  },
+  "regressions": [
+    {"candidate": "Scalar(0.5)", "result": "Fold(untyped)"},
+    {"candidate": "Scalar(True)", "result": "Fold(untyped)"},
+    {"candidate": "GoldenLift(Mat2(1.0, 1.0, 1.0, 0.0))", "result": "Fold(untyped)"},
+    {"candidate": "PhaseISqrt7(Mat2(False, True, -1, False))", "result": "Fold(untyped)"}
+  ],
+  "boundary": "The C++ companion remains a closed compile-time receipt; this repair constrains Python runtime candidate admission."
+}

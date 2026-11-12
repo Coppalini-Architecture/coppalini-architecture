@@ -1,0 +1,43 @@
+/* Add after the shared site tokens and .shell rule. */
+:root {
+  --mirror-spectrum: linear-gradient(90deg, rgba(190,166,98,.32), rgba(111,151,126,.3), rgba(101,145,158,.29), rgba(101,124,157,.3), rgba(137,116,155,.29), rgba(177,119,128,.28), rgba(194,157,114,.27));
+}
+
+/* R49 integration: the preceding edition keeps its main-width container.
+   Scope the handoff's shell to this landing section without retyping any
+   established page layout. */
+.page-title .shell { width: 100%; margin-inline: auto; }
+
+.page-title { position: relative; display: grid; min-height: clamp(18rem, 32vw, 25rem); overflow: hidden; align-items: center; border-bottom: 1px solid var(--line); background: var(--paper); }
+.page-title::before { position: absolute; top: 0; right: 0; left: 0; height: clamp(2.8rem, 4.5vw, 3.5rem); border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent); background: var(--mirror-spectrum); content: ""; }
+.page-title .shell { position: relative; padding: clamp(4rem, 7vw, 6rem) 0 clamp(1.65rem, 3vw, 2.4rem); }
+.page-title h1 { max-width: 18ch; margin: 0; color: var(--ink); font: 400 clamp(2.4rem, 4.2vw, 4rem)/1.02 Georgia, Cambria, "Times New Roman", serif; letter-spacing: -.02em; }
+.page-title .title-line { display: block; }
+.page-title-deck { margin: 1.5rem 0 0; color: var(--ink); font: 400 clamp(.98rem, 1.25vw, 1.12rem)/1.55 Georgia, Cambria, "Times New Roman", serif; }
+.page-title-summary { max-width: 43rem; margin: .9rem 0 0; color: color-mix(in srgb, var(--ink) 77%, var(--paper)); font: 400 .9rem/1.55 Georgia, Cambria, "Times New Roman", serif; }
+.page-title-author { margin: .55rem 0 0; color: color-mix(in srgb, var(--ink) 70%, var(--paper)); font: 500 .76rem/1.35 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .04em; text-transform: uppercase; }
+.page-title-author a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); text-underline-offset: .16em; }
+
+.verification-band { width: 100%; margin-top: 1.6rem; padding-top: .75rem; border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+.verification-systems { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem clamp(2rem, 8vw, 8rem); max-width: 66rem; margin: 0; padding: 0; color: var(--muted); list-style: none; }
+.verification-systems li { min-width: 0; font: 400 .57rem/1.35 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .035em; }
+.verification-systems span,
+.verification-systems small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.verification-systems span { color: var(--ink); font: inherit; }
+.verification-systems small { margin-top: .1rem; color: var(--muted); font: 400 .49rem/1.35 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .015em; }
+.metric-rule { height: .72rem; margin-top: .55rem; border-bottom: 1px solid color-mix(in srgb, var(--ink) 26%, transparent); background-image: repeating-linear-gradient(to right, color-mix(in srgb, var(--ink) 21%, transparent) 0 1px, transparent 1px 8px), repeating-linear-gradient(to right, color-mix(in srgb, var(--ink) 34%, transparent) 0 1px, transparent 1px 40px); background-position: left bottom, left bottom; background-size: 8px 4px, 40px 8px; background-repeat: repeat-x; }
+.verification-spectrum { height: 4px; margin-top: 2px; background: var(--mirror-spectrum); opacity: .72; }
+
+/* Keep the transition into the existing first entry compact. */
+.four-forms { padding-top: clamp(1.8rem, 3vw, 2.8rem); }
+
+@media (max-width: 48rem) {
+  .page-title { min-height: 17rem; }
+  .page-title .shell { padding: 3.8rem 0 1.5rem; }
+  .page-title h1 { font-size: clamp(2.25rem, 10vw, 3rem); }
+  .page-title-deck { font-size: .98rem; }
+  .verification-systems { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: .6rem; }
+  .verification-systems li { font-size: .55rem; }
+  .verification-systems small { font-size: .47rem; }
+}
+

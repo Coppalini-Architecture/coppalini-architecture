@@ -1,0 +1,707 @@
+\documentclass[10pt]{article}
+\input{common}
+\hypersetup{pdftitle={Suture Field Dynamics: Regular Hamiltonian Reduction},pdfauthor={Anthony Vito Coppa},pdfsubject={Constrained action, regular suture reduction, and Einstein-Maxwell degrees of freedom}}
+\newcommand{\hateta}{\widehat\eta}
+\newcommand{\hatC}{\widehat C}
+\newcommand{\Fsol}{\mathcal F_{\rm sol}}
+\newcommand{\rankop}{\operatorname{rank}}
+\newcommand{\DoF}{\operatorname{DoF}}
+\begin{document}
+\papertitle{Suture Field Dynamics}{Regular Hamiltonian reduction}
+
+\begin{abstract}
+The suture field supplies an eight-dimensional internal carrier for a
+Lorentzian metric and an antisymmetric flux form. This note gives the exact
+condition under which its multiplier action has the same propagating content
+as Einstein--Maxwell theory. The condition is the rank-sixteen regularity of
+the pointwise suture map from the thirty-two coframe coordinates to the ten
+metric and six flux coordinates. On that branch the remaining sixteen coframe
+coordinates are vertical gauge coordinates; the multiplier sector is
+second-class; and the reduced Hamiltonian carries two gravitational and two
+electromagnetic polarizations. The reduced theory is Einstein--Maxwell on the
+domain where the rest-frame magnetic invariant of the flux is below the
+calibration, $b<|\chi|$; the electric invariant is unbounded.
+\end{abstract}
+
+\section{Constrained action}
+
+Let $\Pi^A{}_{\mu}$ be a rank-four $E$-valued coframe, with $A=1,\ldots,8$.
+Let $B^{\mu\nu}=-B^{\nu\mu}$ and
+$\lambda^{\mu\nu}=\lambda^{\nu\mu}$. Fix a nonzero constant calibration
+$\chi$. Define
+\[
+h_{\mu\nu}(\Pi):=\hateta_{AB}\Pi^A{}_{\mu}\Pi^B{}_{\nu},
+\qquad
+f_{\mu\nu}(\Pi):=\chi\hatC_{AB}\Pi^A{}_{\mu}\Pi^B{}_{\nu}.
+\tag{SD.0}
+\]
+The action is
+\[
+\begin{aligned}
+\mathcal S=\int_M\Bigg[&\frac{c^3}{16\pi G_N}(R(g)-2\Lambda)
+-\frac1{4\mu_0}F_{\mu\nu}F^{\mu\nu}\\
+&+\frac12B^{\mu\nu}\bigl(F_{\mu\nu}-f_{\mu\nu}(\Pi)\bigr)
++\lambda^{\mu\nu}\bigl(g_{\mu\nu}-h_{\mu\nu}(\Pi)\bigr)\Bigg]
+\sqrt{-g}\,d^4x,
+\qquad F_{\mu\nu}=2\partial_{[\mu}A_{\nu]}.
+\end{aligned}
+\tag{SD.1}
+\]
+Variation of the multipliers gives the two suture conditions
+\[
+F_{\mu\nu}=f_{\mu\nu}(\Pi),
+\qquad g_{\mu\nu}=h_{\mu\nu}(\Pi).
+\tag{SD.2}
+\]
+They are constraint equations. Their multiplier momenta belong to the
+canonical system and remain present until Dirac reduction.
+In particular, variation with respect to $B$ and $\lambda$ gives SD.2;
+it does not eliminate $B$ or $\lambda$. Their values can only be related to
+the other equations after the coupled Euler system has been imposed, and
+that later relation does not remove their primary momenta from the Dirac
+analysis.
+
+\section{The pointwise suture map}
+
+At one spacetime address, define
+\[
+\mathscr S:\operatorname{Hom}(\RR^4,\RR^8)_{\mathrm{rank}\,4}
+\longrightarrow \operatorname{Sym}^2(\RR^4)^*\oplus\Lambda^2(\RR^4)^*,
+\qquad
+\Pi\longmapsto(h(\Pi),f(\Pi)).
+\tag{SD.3}
+\]
+The domain has dimension $32$ and the target has dimension $10+6=16$. Its
+differential is
+\[
+\begin{aligned}
+(D\mathscr S_\Pi\,\delta\Pi)^{(g)}_{\mu\nu}
+&=\hateta_{AB}\bigl(\delta\Pi^A{}_{\mu}\Pi^B{}_{\nu}
++\Pi^A{}_{\mu}\delta\Pi^B{}_{\nu}\bigr),\\
+(D\mathscr S_\Pi\,\delta\Pi)^{(F)}_{\mu\nu}
+&=\chi\hatC_{AB}\bigl(\delta\Pi^A{}_{\mu}\Pi^B{}_{\nu}
++\Pi^A{}_{\mu}\delta\Pi^B{}_{\nu}\bigr).
+\end{aligned}
+\tag{SD.4}
+\]
+
+\begin{definition}[Regular suture branch]
+For the fixed $\chi\ne0$, the regular branch is the open locus on which
+\[
+\rankop D\mathscr S_\Pi=16.
+\tag{SD.5}
+\]
+\end{definition}
+
+An exact certificate that this locus is nonempty is
+\[
+\Pi_\star=
+\begin{pmatrix}
+-1&-2& 1& 0\\
+ 2&-1& 1& 0\\
+-1&-2& 1&-2\\
+-1& 1&-1& 0\\
+-1& 0& 0&-1\\
+ 0& 1& 1&-1\\
+ 2& 2& 1&-2\\
+-1&-1& 0&-1
+\end{pmatrix}.
+\tag{SD.6}
+\]
+For $\chi=1$, exact row reduction gives
+\[
+\rankop D\mathscr S_{\Pi_\star}=16,
+\qquad
+h(\Pi_\star)=
+\begin{pmatrix}
+10&-5& 9& 0\\
+-5& 9&-1& 0\\
+ 9&-1& 6&-5\\
+ 0& 0&-5&11
+\end{pmatrix}.
+\tag{SD.7}
+\]
+Its leading principal minors are
+\[
+10,\qquad65,\qquad-259,\qquad-4474,
+\tag{SD.8}
+\]
+so the $LDL^{\mathsf T}$ pivot signs are $+,+,-,+$ and
+$h(\Pi_\star)$ has Lorentzian signature $(3,1)$. The determinant of a
+nonzero $16\times16$ minor of $D\mathscr S$ remains nonzero on a
+neighborhood of $\Pi_\star$, which establishes the stated open regular
+branch.
+
+\section{Internal vertical directions}
+
+The linear internal stabilizer is
+\[
+\mathfrak k=
+\left\{X\in\mathfrak{gl}(8,\RR):
+X^{\mathsf T}\hateta+\hateta X=0,\quad
+X^{\mathsf T}\hatC+\hatC X=0\right\}.
+\tag{SD.9}
+\]
+Exact linear reduction gives
+\[
+\dim\mathfrak k=10,
+\qquad
+\mathfrak k\cong\mathfrak{so}(1,1)\oplus\mathfrak u(3).
+\tag{SD.10}
+\]
+Every $X\in\mathfrak k$ gives a vertical direction $\delta\Pi=X\Pi$ and
+therefore preserves both $h$ and $f$ to first order.  The infinitesimal orbit
+map $\alpha_\Pi:\mathfrak k\to\ker D\mathscr S_\Pi$, $X\mapsto X\Pi$, has
+point-dependent rank.  It has exact rank $10$ at $\Pi_\star$ and at
+$\Pi_{\rm vac}$ (SD.14a), but it is not free on the whole regular branch.
+Indeed, with columns
+\[
+\Pi_{\rm iso}=(\mathbf o_1,\ \mathbf o_2+\mathbf o_3,\ \mathbf o_4,\ \mathbf o_5)
+=
+\begin{pmatrix}
+1&0&0&0\\
+0&1&0&0\\
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0
+\end{pmatrix},
+\tag{SD.10a}
+\]
+one has
+\[
+\rankop D\mathscr S_{\Pi_{\rm iso}}=16,
+\qquad
+h(\Pi_{\rm iso})=
+\begin{pmatrix}-2&1\\1&3\end{pmatrix}\oplus I_2,
+\qquad
+\rankop\alpha_{\Pi_{\rm iso}}=9.
+\tag{SD.10b}
+\]
+The metric is Lorentzian because the displayed $2\times2$ block has negative
+determinant $-7$.  Moreover
+$X_{\rm iso}:=0_6\oplus C\in\mathfrak k$ is nonzero and
+$X_{\rm iso}\Pi_{\rm iso}=0$, which supplies the isotropy explicitly.
+
+On the regular branch,
+\[
+\dim\ker D\mathscr S_\Pi=32-16=16.
+\tag{SD.11}
+\]
+Thus the local fiber dimension is constant even though the
+$\mathfrak k$-orbit dimension need not be.  Any local complement
+$V_\Pi$ with
+$\ker D\mathscr S_\Pi=\im\alpha_\Pi\oplus V_\Pi$ has
+$\dim V_\Pi=16-\rankop\alpha_\Pi$: it has dimension $6$ at the two rank-ten
+certificates and dimension $7$ at $\Pi_{\rm iso}$.  The Hamiltonian reduction
+below uses the full sixteen-dimensional vertical fiber, not a constant-rank
+$\mathfrak k$-orbit.
+
+\section{Image of the suture map}
+
+For a Lorentzian $h$ and $f\in\Lambda^2(\RR^4)^*$, the endomorphism $h^{-1}f$
+is $h$-antisymmetric, so its spectrum is $\{\pm ib,\pm e\}$ with $b,e\ge0$:
+\[
+b(h,f),\ e(h,f)\ \text{are the rest-frame magnetic and electric invariants of }f.
+\tag{SD.11a}
+\]
+For $f=0$ and for null $f\ne0$, $b=e=0$.
+
+\begin{proposition}[Magnetic cap]
+Let $\Pi$ have rank four with $h=h(\Pi)$ Lorentzian, $f=f(\Pi)$, and $\chi\ne0$. Then
+\[
+(\chi^2-b^2)(\chi^2+e^2)=\chi^4\,\frac{\det\bigl(h+\tfrac{i}{\chi}f\bigr)}{\det h}\ \ge\ 0,
+\qquad b\le|\chi|.
+\tag{SD.11b}
+\]
+Equality $b=|\chi|$ holds only at critical points of $\mathscr S$; on the
+regular branch $b<|\chi|$.
+\end{proposition}
+
+\begin{proof}
+Put $F=\chi^{-1}f=\Pi^{\mathsf T}\hatC\Pi$ and $H_c:=\hateta+i\hatC$, a
+Hermitian matrix. Then $h+iF=\Pi^\dagger H_c\Pi$. On a Euclidean block
+$I_2+iC$ has eigenvalues $0,2$; on the root block $\det(G+iC)=-6$, so it has
+signature $(1,1)$. Hence $H_c$ has signature $(4,1)$ with a three-dimensional
+kernel, and its restriction to $\im\Pi\otimes\CC$ has at most one negative
+eigenvalue. A vector $w\in\RR^4$ with $h(w,w)<0$ gives
+$(\Pi w)^\dagger H_c\,\Pi w=h(w,w)<0$, because the $\hatC$ term vanishes by
+antisymmetry. So the restriction has exactly one, and $\det(h+iF)\le0$; also
+$\det h<0$. For the spectrum $\{\pm ib_F,\pm e_F\}$ of $h^{-1}F$,
+\[
+(1-b_F^2)(1+e_F^2)=\det(iI-h^{-1}F)=\frac{\det(ih-F)}{\det h}
+=\frac{\det(h+iF)}{\det h}\ \ge\ 0,
+\]
+since $ih-F=i(h+iF)$. With $b=|\chi|b_F$ and $e=|\chi|e_F$ this is SD.11b.
+Suppose $b=|\chi|$ at a regular $\Pi$. Then $\mathscr S$ is a submersion
+there, so $(h,(1+\varepsilon)f)$ lies in its image for small $\varepsilon$,
+with magnetic invariant $(1+\varepsilon)|\chi|>|\chi|$ for $\varepsilon>0$,
+contradicting the cap.
+\end{proof}
+
+Write $\mathbf o_1,\dots,\mathbf o_8$ for the basis in which
+$\hateta=G\oplus I_2\oplus I_2\oplus I_2$ and $\hatC=C\oplus C\oplus C\oplus C$:
+$\mathbf o_{1,2}$ span the root plane and $\mathbf o_{3,4}$,
+$\mathbf o_{5,6}$, $\mathbf o_{7,8}$ the transverse planes. Let $\pi_\mu$
+denote the $\mu$-th column of $\Pi$.
+
+\begin{proposition}[Regular family]
+For $a\in\RR$ and $c^2+s^2=1$ let
+\[
+\pi_0=x\,\mathbf o_1+a\,\mathbf o_7,\quad
+\pi_1=\mathbf o_8,\quad
+\pi_2=\mathbf o_3,\quad
+\pi_3=c\,\mathbf o_4+s\,\mathbf o_5,
+\qquad x=\sqrt{\tfrac{1+a^2}2}.
+\tag{SD.11c}
+\]
+Then $h=\diag(-1,1,1,1)$ and
+$f=-\chi\bigl(a\,\theta^0\wedge\theta^1+c\,\theta^2\wedge\theta^3\bigr)$, so
+$b=|\chi c|$ and $e=|\chi a|$. A $16\times16$ minor of $D\mathscr S$ on a fixed
+column set equals $-16\sqrt2\,\chi^{6}s^3(1+a^2)^{7/2}$; the family is regular iff
+$s\ne0$, that is, iff $b<|\chi|$.
+\end{proposition}
+
+\begin{proposition}[Null witness]
+With $x_0=\tfrac{\sqrt6}2$, $x_1=\tfrac{\sqrt6(4-\sqrt2)}{24}$,
+$y_1=-\tfrac{\sqrt3}6$, $\beta=\tfrac{\sqrt2}4$, let
+\[
+\pi_0=x_0\mathbf o_1+\mathbf o_4+\mathbf o_7,\quad
+\pi_1=x_1\mathbf o_1+y_1\mathbf o_2+\mathbf o_4+\beta\mathbf o_8,\quad
+\pi_2=\mathbf o_3,\quad
+\pi_3=\mathbf o_5.
+\tag{SD.11d}
+\]
+Then $h=\eta_4$, $f=\chi(\theta^0+\theta^1)\wedge\theta^2$ (null, nonzero), and
+$\rankop D\mathscr S_\Pi=16$ exactly in $\QQ(\sqrt2,\sqrt3)$.
+\end{proposition}
+
+\begin{theorem}[Image]
+\[
+\mathscr S(\text{regular branch})
+=\{(h,f):\ h\ \text{Lorentzian},\ b(h,f)<|\chi|\}.
+\tag{SD.11e}
+\]
+\end{theorem}
+
+\begin{proof}
+``$\subseteq$'' is SD.11b. For ``$\supseteq$'': for $A\in GL(4)$,
+$\mathscr S(\Pi A)=(A^{\mathsf T}hA,A^{\mathsf T}fA)$, and $D\mathscr S_{\Pi A}$
+has the rank of $D\mathscr S_\Pi$. By the standard normal forms of a 2-form
+relative to a Lorentzian metric, a non-null $f$ is congruent to
+$(\eta_4,\ \beta_0\theta^2\wedge\theta^3+\xi_0\theta^0\wedge\theta^1)$
+with $|\beta_0|=b$ and $|\xi_0|=e$; a null $f\ne0$ is congruent to
+$(\eta_4,\ k(\theta^0+\theta^1)\wedge\theta^2)$, where a boost sets $|k|=|\chi|$
+and a reflection its sign; and $f=0$ is congruent to $(\eta_4,0)$. SD.11c with
+$a=-\xi_0/\chi$, $c=-\beta_0/\chi$ and $s=\sqrt{1-c^2}>0$ covers the
+non-null case, SD.11d the null case, and $\Pi_{\rm vac}$ of SD.14a the case
+$f=0$.
+\end{proof}
+
+Consequently every solution of SD.1 on the regular branch satisfies
+$b(g,F)<|\chi|$ pointwise, every Einstein--Maxwell configuration with
+$b(g,F)<|\chi|$ lies in the image, and $e$ is unbounded.
+
+\begin{remark}
+The normal forms used in SD.11e are standard and are cited, not proved. The
+value of $\chi$ and the units of $b$ are fixed only by calibration: $|\chi|$
+must exceed the largest $b$ of the configurations the reduction is to cover.
+No empirical comparison is asserted.
+\end{remark}
+
+\section{The coframe bracket matrix}
+
+The primary coframe momenta are $P_A{}^\mu\approx0$. Their stabilization
+contains
+\[
+\Psi_A{}^\mu=\sqrt{-g}\left(
+2\lambda^{\mu\nu}\hateta_{AB}\Pi^B{}_{\nu}
++\chi B^{\mu\nu}\hatC_{AB}\Pi^B{}_{\nu}\right)\approx0.
+\tag{SD.12}
+\]
+With the canonical convention
+$\{\Pi^A{}_{\mu}(x),P_B{}^\nu(y)\}=\delta^A_B\delta_\mu^\nu
+\delta^3(x-y)$, the cross-bracket is
+\[
+\{P_A{}^\mu(x),\Psi_B{}^\nu(y)\}
+=-\Delta_{AB}{}^{\mu\nu}(x)\,\delta^3(x-y),
+\qquad
+\Delta_{AB}{}^{\mu\nu}
+=2\sqrt{-g}\left(
+\lambda^{\mu\nu}\hateta_{AB}
++\frac\chi2B^{\mu\nu}\hatC_{AB}\right).
+\tag{SD.13}
+\]
+Changing the Poisson-bracket ordering reverses this displayed overall sign;
+the rank statement is unchanged.
+At the vacuum multiplier point
+\[
+\lambda^{\mu\nu}=0,\qquad B^{\mu\nu}=0,
+\tag{SD.14}
+\]
+one has $\Delta=0$. Thus nondegeneracy of $\hateta$ and $\hatC$, and rank
+four of $\Pi$, do not establish invertibility of $\Delta$. The $32$ coframe
+primaries and $32$ displayed stabilizations therefore do not form a globally
+invertible second-class block.
+
+This point occurs on a Lorentzian suture vacuum. Let the four columns of
+$\Pi_{\rm vac}$ be the first coordinate vector of each $2\times2$ carrier
+block. Then
+\[
+h(\Pi_{\rm vac})=\diag(-2,1,1,1),
+\qquad
+f(\Pi_{\rm vac})=0.
+\tag{SD.14a}
+\]
+For $\Lambda=0$, the constant metric $g=h(\Pi_{\rm vac})$ and $A=0$ satisfy
+the vacuum Einstein--Maxwell equations with the multiplier values in SD.14.
+
+This is not an isolated point. By SD.12,
+$\Psi_A{}^\mu=\sqrt{-g}\,m_I\,\partial q^I/\partial\Pi^A{}_\mu$ with $m$ as in
+SD.17, and $D\mathscr S_\Pi$ has full row rank on the regular branch. So
+$\Psi\approx0$ forces $m=0$, that is
+\[
+\lambda^{\mu\nu}=B^{\mu\nu}=0,\qquad \Delta=0
+\quad\text{on the whole regular constraint surface,}
+\tag{SD.14b}
+\]
+and SD.15a gives $Y^{\mu\nu}=\mu_0^{-1}\mathcal F^{\mu\nu}$ there.
+
+\section{Regular multiplier reduction}
+
+For an unambiguous Legendre transform, introduce an independent antisymmetric
+field $\mathcal F_{\mu\nu}$ and an antisymmetric multiplier $Y^{\mu\nu}$:
+\[
+\begin{aligned}
+\mathcal S_{\rm fo}=\int_M\Bigg[&\frac{c^3}{16\pi G_N}(R-2\Lambda)
+-\frac1{4\mu_0}\mathcal F_{\mu\nu}\mathcal F^{\mu\nu}\\
+&+\frac12Y^{\mu\nu}\bigl(\mathcal F_{\mu\nu}-2\partial_{[\mu}A_{\nu]}\bigr)
++\frac12B^{\mu\nu}\bigl(\mathcal F_{\mu\nu}-f_{\mu\nu}(\Pi)\bigr)\\
+&+\lambda^{\mu\nu}\bigl(g_{\mu\nu}-h_{\mu\nu}(\Pi)\bigr)\Bigg]
+\sqrt{-g}\,d^4x.
+\end{aligned}
+\tag{SD.15}
+\]
+Variation of $Y$ returns $\mathcal F=dA$, so SD.15 is a first-order form of
+SD.1. Variation of $\mathcal F$ gives
+\[
+Y^{\mu\nu}+B^{\mu\nu}=\frac{1}{\mu_0}\mathcal F^{\mu\nu}.
+\tag{SD.15a}
+\]
+Thus $B$ remains an auxiliary multiplier variable through the canonical
+reduction; SD.15a is not a license to remove its primary constraint before
+that reduction.
+
+By the submersion theorem, local coordinates on the regular coframe carrier
+are
+\[
+\Pi\longleftrightarrow(q^I,\xi^a),
+\qquad
+q^I=\mathscr S^I(\Pi),
+\qquad I,a=1,\ldots,16.
+\tag{SD.16}
+\]
+In these coordinates, the multiplier sector has normal form
+\[
+\mathcal L_{\rm mult}=\sqrt{-g}\;m_I\bigl(X^I-q^I\bigr),
+\qquad
+X=(g,\mathcal F),
+\qquad
+m_{(\mu\nu)}=(2-\delta_{\mu\nu})\lambda^{\mu\nu},\quad
+m_{[\mu\nu]}=B^{\mu\nu}\ (\mu<\nu).
+\tag{SD.17}
+\]
+Here $I$ runs over the ten components $\mu\le\nu$ of the symmetric sector and
+the six components $\mu<\nu$ of the antisymmetric sector, so that
+$\sum_{\mu\nu}\lambda^{\mu\nu}(g-h)_{\mu\nu}
++\frac12\sum_{\mu\nu}B^{\mu\nu}(\mathcal F-f)_{\mu\nu}
+=\sum_I m_I(X^I-q^I)$.
+Its three Euler relations are
+\[
+X^I-q^I=0,
+\qquad m_I=0,
+\qquad \frac{\delta\mathcal L_{\rm mult}}{\delta\xi^a}=0.
+\tag{SD.18}
+\]
+The $\xi^a$ are vertical gauge coordinates. The remaining auxiliary
+constraints admit the local Darboux pairing
+\[
+(P_{qI},q^I-X^I),
+\qquad
+(P_{mI},m_I),
+\tag{SD.19}
+\]
+which gives $64$ second-class constraints. The $16$ constraints
+\[
+P_{\xi a}\approx0
+\tag{SD.20}
+\]
+are first class and generate vertical suture motions.
+
+More explicitly, write
+\[
+\mathcal C_I:=q^I-X^I.
+\tag{SD.20a}
+\]
+\par\noindent
+The auxiliary Hamiltonian has the local form
+\[
+H_{\rm aux}=\int d^3x\,
+\bigl(m_I\mathcal C_I
++u_m^IP_{mI}+u_q^IP_{qI}+u_\xi^aP_{\xi a}\bigr).
+\tag{SD.20b}
+\]
+\par\noindent
+Its primary stabilizations are
+\[
+\dot P_{mI}\approx0\Longrightarrow\mathcal C_I\approx0,
+\qquad
+\dot P_{qI}\approx0\Longrightarrow m_I\approx0,
+\qquad
+\dot P_{\xi a}\approx0\Longrightarrow0.
+\tag{SD.20c}
+\]
+\par\noindent
+With ordered constraint vector
+\[
+\boldsymbol\zeta=(P_q,\mathcal C;P_m,m),
+\tag{SD.20d}
+\]
+\par\noindent
+the second-class matrix is
+\[
+\{\boldsymbol\zeta(x),\boldsymbol\zeta(y)\}
+=
+\begin{pmatrix}
+0&-I_{16}&0&0\\
+I_{16}&0&0&0\\
+0&0&0&-I_{16}\\
+0&0&I_{16}&0
+\end{pmatrix}\delta^3(x-y).
+\tag{SD.20e}
+\]
+\par\noindent
+It is invertible. Stabilization of $\mathcal C_I$ and $m_I$ fixes
+$u_q^I$ and $u_m^I$; it creates no tertiary auxiliary constraint.
+
+\par\noindent
+\emph{Lapse and shift.} Because $N$ and $N^i$ are components of $g$, the
+primary constraints $\pi_a=(\pi_N,\pi_i)$ have nonzero brackets with the
+$g_{0\mu}$-components of $\mathcal C_I$:
+$\{\pi_a,\mathcal C_J\}=\partial X^J/\partial n^a$ with $n^a=(N,N^i)$. The
+combinations
+\[
+\tilde\pi_a:=\pi_a+\frac{\partial X^I}{\partial n^a}P_{qI}
+\tag{SD.20f}
+\]
+commute with every $\mathcal C_J$ and every $P_{qJ}$. The bracket matrix of
+$(\pi_a,P_q,\mathcal C;P_m,m)$ therefore has rank $64$ and a four-dimensional
+kernel spanned by the $\tilde\pi_a$, which replace $\pi_N,\pi_i$ in SD.24,
+SD.27 and SD.29. Write $K_a{}^I:=\partial X^I/\partial n^a$.  Since
+$\mathcal H_\perp$ and $\mathcal H_i$ contain neither $n^a$ nor the auxiliary
+coordinates $q^I$, one has
+\[
+\{\tilde\pi_a,\mathcal H_A\}
+=\{K_a{}^I,\mathcal H_A\}P_{qI}\approx0,
+\qquad A\in\{\perp,i\}.
+\tag{SD.20g}
+\]
+Thus the modified lapse--shift primaries are first class modulo the
+second-class surface.  Likewise, by definition of the submersion chart
+$q=\mathscr S(\Pi)$, neither $X$, $\mathcal C=q-X$, nor the physical
+Hamiltonian depends on $\xi$; hence
+\[
+\{P_{\xi a},H_{\rm phys}\}=0,
+\qquad
+\{P_{\xi a},\mathcal C_I\}=0,
+\qquad
+\{P_{\xi a},\mathcal H_A\}=0
+\tag{SD.20h}
+\]
+strongly.  The sixteen $P_{\xi a}$ therefore generate the full local vertical
+gauge fiber independently of the pointwise rank of the linear stabilizer
+orbit.
+
+\par\noindent
+\emph{Charts.} The pairing SD.19 is written for SD.15, where $\mathcal F$ is an
+independent field: phase-space dimension $148$, with $26$ first-class and $88$
+second-class constraints, and $\DoF=\frac12(148-2\cdot26-88)=4$. For the
+direct action SD.1 counted in SD.28, $F_{0i}$ is a velocity, and the same
+reduction holds with $F_{0i}$ expressed through the momentum of $A_i$ and
+$B^{0i}$: primary $5+32+6+10=53$, secondary $5+6+10+16=37$, total
+$90=26+64$.
+
+\begin{theorem}[Regular suture reduction]
+On the regular branch, Dirac reduction of SD.15 is locally equivalent, on the
+domain $b(g,F)<|\chi|$ of SD.11e, to
+\[
+\mathcal S_{\rm red}=\int_M\left[
+\frac{c^3}{16\pi G_N}(R-2\Lambda)
+-\frac1{4\mu_0}F_{\mu\nu}F^{\mu\nu}
+\right]\sqrt{-g}\,d^4x,
+\qquad F=dA.
+\tag{SD.21}
+\]
+\par\noindent
+\end{theorem}
+
+\begin{proof}
+Let $H_{\rm phys}$ denote the Einstein--Maxwell first-order Hamiltonian part
+of SD.15, including its spatial-derivative terms, and let the auxiliary part
+be SD.20b.  With the ordering SD.20d, the inverse of the second-class kernel
+SD.20e is
+\[
+C^{-1}(x,y)=
+\begin{pmatrix}
+0&I_{16}&0&0\\
+-I_{16}&0&0&0\\
+0&0&0&I_{16}\\
+0&0&-I_{16}&0
+\end{pmatrix}\delta^3(x-y).
+\tag{SD.21a}
+\]
+Accordingly, preservation of $\mathcal C_I$ gives
+\[
+\dot{\mathcal C}_I
+=\{\mathcal C_I,H_{\rm phys}\}+u_q^I\approx0,
+\qquad
+u_q^I=-\{\mathcal C_I,H_{\rm phys}\},
+\tag{SD.21b}
+\]
+while preservation of $m_I$ fixes $u_m^I$.  Thus any spatial derivatives in
+$H_{\rm phys}$ enter the value of the second-class multiplier; they do not
+supply an additional constraint.
+
+For any two physical functionals $A,B$ independent of
+$(q,P_q,m,P_m,\xi,P_\xi)$, the Dirac bracket is
+\[
+\{A,B\}_D=\{A,B\}
+-\iint d^3z\,d^3w\,
+\{A,\zeta_\alpha(z)\}C^{-1}_{\alpha\beta}(z,w)
+\{\zeta_\beta(w),B\}.
+\tag{SD.21c}
+\]
+Such functionals may have nonzero brackets with
+$\mathcal C=q-X$, but they commute with $P_q,P_m,m$.  In SD.21a the
+$\mathcal C\mathcal C$ block is zero and each $\mathcal C$ entry is paired
+only with $P_q$.  Therefore every correction term in SD.21c vanishes:
+\[
+\boxed{\{A,B\}_D=\{A,B\}}.
+\tag{SD.21d}
+\]
+Hence eliminating
+$P_q=0$, $\mathcal C=0$, $P_m=0$, and $m=0$ leaves the physical Poisson
+algebra unchanged.  Equation SD.20h quotients the remaining $\xi$ directions;
+no physical term depends on them.  Variation of $Y$ gives
+$\mathcal F=dA$, and imposing $q=X$ then removes the auxiliary copy of the
+suture coordinates.  Substitution yields exactly SD.21 on the image domain
+SD.11e.  Finally SD.20g shows that the lapse--shift primaries retain their
+first-class role after the second-class reduction.
+\end{proof}
+
+\section{ADM Hamiltonian and stabilization}
+
+Let
+\[
+K_{ij}=\frac1{2N}\bigl(\dot\gamma_{ij}-D_iN_j-D_jN_i\bigr),
+\qquad
+\pi^{ij}=\frac{c^3\sqrt\gamma}{16\pi G_N}
+\bigl(K^{ij}-\gamma^{ij}K\bigr),
+\tag{SD.22}
+\]
+\par\noindent
+and, after the multiplier reduction, let
+\[
+E^i=-\frac{\sqrt{-g}}{\mu_0}F^{0i}.
+\tag{SD.23}
+\]
+\par\noindent
+The reduced primary constraints are
+\[
+\pi_N\approx0,\qquad \pi_i\approx0,\qquad E^0\approx0.
+\tag{SD.24}
+\]
+\par\noindent
+The total Hamiltonian is
+\[
+H_T=\int d^3x\left(
+N\mathcal H_\perp+N^i\mathcal H_i+A_0\mathcal G
++u_N\pi_N+u^i\pi_i+u_0E^0\right),
+\tag{SD.25}
+\]
+\par\noindent
+where
+\[
+\begin{aligned}
+\mathcal H_\perp={}&
+\frac{16\pi G_N}{c^3\sqrt\gamma}
+\left(\pi^{ij}\pi_{ij}-\frac12\pi^2\right)
+-\frac{c^3\sqrt\gamma}{16\pi G_N}\bigl({}^{(3)}R-2\Lambda\bigr)\\
+&+\frac{\mu_0}{2\sqrt\gamma}\gamma_{ij}E^iE^j
++\frac{\sqrt\gamma}{4\mu_0}F_{ij}F^{ij},\\
+\mathcal H_i={}&-2\gamma_{ik}D_j\pi^{jk}+F_{ij}E^j,
+\qquad
+\mathcal G=-\partial_iE^i.
+\end{aligned}
+\tag{SD.26}
+\]
+\par\noindent
+Preservation of SD.24 gives
+\[
+\dot\pi_N\approx0\Longrightarrow\mathcal H_\perp\approx0,
+\qquad
+\dot\pi_i\approx0\Longrightarrow\mathcal H_i\approx0,
+\qquad
+\dot E^0\approx0\Longrightarrow\mathcal G\approx0.
+\tag{SD.27}
+\]
+\par\noindent
+The scalar, momentum, and Gauss constraints close under the standard
+hypersurface-deformation and $U(1)$ gauge algebra. Their stabilizations fix
+only the corresponding Dirac multipliers and produce no tertiary physical
+constraint.
+
+\section{Degree count}
+
+On the regular Darboux chart of the direct action SD.1, the phase-space
+dimensions per spatial address are:
+\[
+\begin{array}{c|c}
+\text{sector}&\text{phase-space dimension}\\ \hline
+(\gamma_{ij},N,N^i) &20\\
+A_\mu &8\\
+\Pi^A{}_{\mu}&64\\
+B^{\mu\nu}&12\\
+\lambda^{\mu\nu}&20\\ \hline
+\text{total}&124
+\end{array}
+\tag{SD.28}
+\]
+There are ten Einstein--Maxwell first-class constraints and sixteen vertical
+suture first-class constraints. The regular multiplier sector supplies sixty
+four second-class constraints. Therefore
+\[
+\DoF=
+\frac12\bigl(124-2(10+16)-64\bigr)=4.
+\tag{SD.29}
+\]
+Equivalently, after exact reduction the Einstein--Maxwell phase space has
+dimension $28$ and ten first-class constraints:
+\[
+\DoF_{\rm red}=\frac12\bigl(28-2\cdot10\bigr)=4.
+\tag{SD.30}
+\]
+The four propagating degrees of freedom are the two gravitational and two
+electromagnetic transverse polarizations.
+
+\section{Discrete carrier}
+
+The $\ZZ_7$ Fourier action of the suture carrier preserves $\hateta$ and
+$\hatC$. In SD.1 it is an algebraic fiber symmetry and contributes no new
+canonical pair. A local connection or a measured holonomy coupling enters
+only through an additional specified dynamical term and calibrated
+occurrence record.
+
+\end{document}

@@ -1,0 +1,196 @@
+{
+  "atoms": [
+    {
+      "claim": "G = [Q,Omega] = [C1,Q] = [[-2,1],[1,2]]",
+      "detail": "G=[[-2, 1], [1, 2]]",
+      "does_not_establish": "any physical meaning of G",
+      "establishes": "matrix equality from stated inputs",
+      "expectation": "true",
+      "id": "A01",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "G^2 = 5I and det G = -5",
+      "detail": "G^2=5I, det G=-5",
+      "does_not_establish": "any physical meaning of G",
+      "establishes": "matrix equality from stated inputs",
+      "expectation": "true",
+      "id": "A02",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "C1^2 = -I, C1^4 = I, Omega = -C1",
+      "detail": "C1^2=-I, C1^4=I",
+      "does_not_establish": "identification of C1 with any physical rotation",
+      "establishes": "matrix equality",
+      "expectation": "true",
+      "id": "A03",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "Q^2 = Q + I and det Q = -1",
+      "detail": "Q^2=Q+I, det Q=-1",
+      "does_not_establish": "role of Q beyond the algebra",
+      "establishes": "matrix equality",
+      "expectation": "true",
+      "id": "A04",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "Q^n = F_n Q + F_(n-1) I for n = 1..40",
+      "detail": "Q^n=F_n Q+F_(n-1) I, n=1..40",
+      "does_not_establish": "the identity for all n (standard induction, not run here)",
+      "establishes": "equality for n=1..40",
+      "expectation": "true",
+      "id": "A05",
+      "kind": "exact-finite-range",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "Cassini: F_(n+1)F_(n-1) - F_n^2 = (-1)^n for n = 1..40",
+      "detail": "Cassini, n=1..40",
+      "does_not_establish": "the identity for all n",
+      "establishes": "equality for n=1..40",
+      "expectation": "true",
+      "id": "A06",
+      "kind": "exact-finite-range",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "T = G*C1 satisfies T^2 = 5I and T symmetric; with S = T/sqrt5: S^2 = I",
+      "detail": "T=G*C1=[[1, 2], [2, -1]]; T^2=5I => S^2=I, S symmetric",
+      "does_not_establish": "anything outside this scaling",
+      "establishes": "matrix equality after removing sqrt5 by scaling",
+      "expectation": "true",
+      "id": "A07",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "TG + GT = 0 and GTG = -5T (equivalent to S G = -G S and H S H = -S)",
+      "detail": "TG+GT=0 and GTG=-5T",
+      "does_not_establish": "nothing further",
+      "establishes": "the two anticommutation identities used below",
+      "expectation": "true",
+      "id": "A08",
+      "kind": "exact-integer",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "<C1, Pi> is an 8-element dihedral matrix realization: Pi^2=I and Pi*C1*Pi=C1^(-1)",
+      "detail": "|<C1,Pi>|=8; Pi^2=I; Pi*C1*Pi=C1^(-1)",
+      "does_not_establish": "a physical rotation or symmetry identification",
+      "establishes": "the stated finite matrix-group relations and order by explicit generation",
+      "expectation": "true",
+      "id": "A09",
+      "kind": "exhaustive-closure",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "m = 4 is the only m in 1..3000 solving F_m+F_(2m-1)=m^2 and L_(m+1)^2+m^2=1+m*F_(2m+1); both sides give 137 at m=4",
+      "detail": "solutions m<=3000: [4],[4]; both sides at m=4: 137,137",
+      "does_not_establish": "uniqueness for all m (paper's growth-inequality argument, not run here)",
+      "establishes": "uniqueness on 1..3000; value at m=4",
+      "expectation": "true",
+      "id": "A10",
+      "kind": "exact-finite-range",
+      "status": "PASS",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "(optional, sympy) L(s)^T G L(s) = G and H L(s) H = L(-s) for symbolic s, L(s)=cosh(s) I + sinh(s) S",
+      "detail": "L(s)^T G L(s)=G and H L(s) H=L(-s), symbolic s",
+      "does_not_establish": "nothing further",
+      "establishes": "the identities for arbitrary real s",
+      "expectation": "true",
+      "id": "S01",
+      "kind": "exact-symbolic",
+      "status": "PASS",
+      "tier": "optional-symbolic"
+    },
+    {
+      "claim": "control, expected False: G^2 = 6I",
+      "detail": "control: G^2=6I",
+      "does_not_establish": "-",
+      "establishes": "that the runner reports False for a false relation",
+      "expectation": "false",
+      "id": "K01",
+      "kind": "exact-integer",
+      "status": "EXPECTED_FALSE",
+      "tier": "core-stdlib"
+    },
+    {
+      "claim": "control, expected False: det G = +5",
+      "detail": "control: det G=+5",
+      "does_not_establish": "-",
+      "establishes": "that the runner reports False for a false relation",
+      "expectation": "false",
+      "id": "K02",
+      "kind": "exact-integer",
+      "status": "EXPECTED_FALSE",
+      "tier": "core-stdlib"
+    }
+  ],
+  "core_table_sha256": "d8a27ca8e1344ab2e3583b300b505ef1d0536aebfa6df3e7cc415529509daa4b",
+  "declared_inputs": {
+    "C1": [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "Omega": [
+      [
+        0,
+        1
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "Pi": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "Q": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "entrypoint": "python3 -I run_all.py",
+  "ledger_sha256": "101b97c8c71e5246cbfb91a339d0fca1eadc8e45615c375420dcf37b8ddbdf00",
+  "result": "PASS",
+  "schema": "coppalini-recompute-kernel/v0.2",
+  "script_sha256": "4e3c70c74ec35c4d6bba5e87cdfa0cd1e74f5f1184c4680ebc290d7ec2eba9a5",
+  "version": "Recompute Kernel v0.2"
+}

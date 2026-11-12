@@ -1,0 +1,119 @@
+{
+  "title": {
+    "x": 400,
+    "baseline_y": 143,
+    "font_family": "Georgia, Times New Roman, serif",
+    "font_size": 42,
+    "fill": "#262522",
+    "anchor": "middle"
+  },
+  "authority": "Five original published SVGs supplied by the user, not generated proposals",
+  "source_files": [
+    {
+      "file": "mirror-recognition(2).svg",
+      "sha256": "c6e6a843a7ab07d24781dd44ac36f9a0f8fd502ca4919a929f3878a09685186d"
+    },
+    {
+      "file": "complete-operator-algebra(2).svg",
+      "sha256": "dc1f0f07e821db30a34d76d685cb9b8bc0f1f554b3a7d69bdc36d86625204834"
+    },
+    {
+      "file": "the-exact-reader(2).svg",
+      "sha256": "d8d6be1cc831e4d49d72d87d075f2ce40c57cd59b7ef1735fe3b36cbbcb05ca7"
+    },
+    {
+      "file": "four-phase-eight-state(2).svg",
+      "sha256": "a71009b00728fab6782b02a198bccb0b223dce1bbf1a00b3eb5ac3fc3daddbe6"
+    },
+    {
+      "file": "independent-tunability(2).svg",
+      "sha256": "a6dc275164a5c96024fb504d25c224d3846ded04fa14092c10eec0a29be674d9"
+    }
+  ],
+  "canvas": {
+    "width": 800,
+    "height": 1050,
+    "viewBox": "0 0 800 1050"
+  },
+  "background": "#faf8f3",
+  "subtitle_variant": {
+    "source": "independent-tunability(2).svg",
+    "baseline_y": 191,
+    "font_size": 18,
+    "opacity": 0.65
+  },
+  "second_title_line_variant": {
+    "baseline_y": 192,
+    "font_size": [
+      37,
+      42
+    ]
+  },
+  "diagram": {
+    "center": [
+      400,
+      560
+    ],
+    "outer_radius": 202,
+    "inner_radius": 185,
+    "stroke": "#b38d4e",
+    "stroke_width": 1,
+    "ticks": 28,
+    "cardinal_extensions": 4,
+    "standard_band_radius": 175,
+    "standard_band_width": 6,
+    "band_opacity": 0.7,
+    "band_order_clockwise_from_top": [
+      "#a4bfae",
+      "#a2b4cd",
+      "#a6a4c5",
+      "#b9a8bf",
+      "#d8a6a3",
+      "#e1bc9b",
+      "#d9d09e"
+    ],
+    "mirror_recognition_variant": "seven filled annular sectors, radius121 to169, subdivided into four slots"
+  },
+  "equation_center": [
+    400,
+    836
+  ],
+  "footer": {
+    "font_family": "Arial, Helvetica, sans-serif",
+    "fill": "#777065",
+    "author": {
+      "x": 400,
+      "y": 932,
+      "font_size": 11,
+      "letter_spacing": 2.2
+    },
+    "imprint": {
+      "x": 400,
+      "y": 956,
+      "font_size": 9,
+      "letter_spacing": 1.7
+    }
+  },
+  "constraints": [
+    "Use one centered, source-addressed diagram.",
+    "Preserve the spacious single-column hierarchy.",
+    "Use source-derived incidence and labeled maps.",
+    "A drawing crossing does not create a node.",
+    "A display radius, projection or angle is a declared layout convention, unless source-defined.",
+    "Keep the seven-band palette and source matching assignments when representing the reader.",
+    "Generated dark poster, R-series masthead, ring emblem, equation sidebar, extra seam slogan and topic list are not part of these five reference covers."
+  ],
+  "project": {
+    "title": "Infinity One Zero Lift",
+    "subtitle": "The Normal Form of Projective Memory",
+    "private_record_boundary": "End at the first R\u00b2; later private codex content is excluded."
+  },
+  "checks": {
+    "all_five_shared_frame_constants": "PASS",
+    "four_thin_arc_frames_exact_element_match": "PASS",
+    "all_five_equation_centers": [
+      400,
+      836
+    ]
+  }
+}

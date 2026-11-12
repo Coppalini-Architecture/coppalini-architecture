@@ -1,0 +1,66 @@
+{
+  "title": "Four Dual Forms",
+  "edition": "v0.3 · 10 November 2026",
+  "cards": [
+    {
+      "id": "gravity-light",
+      "title": "Gravity Light",
+      "operation": "Einstein metric normal form · local null light directions",
+      "art": "art/covers/four-dual-forms/gravity-light.svg",
+      "equation": "Aₗₒᵣᵀη₁,₁Aₗₒᵣ = G = [Q, Ω],  zᵀGz = 0",
+      "relation": "On every chosen Lorentzian two-plane (Pₓ, gₓ), Aₗₒᵣᵀη₁,₁Aₗₒᵣ = G = [Q, Ω] is an exact normal form of Einstein’s metric interval ds² = gμνdxμdxν, and zᵀGz = 0 gives its two local null light directions. [GL.0, GL.10–GL.11b]",
+      "result": "The root boost preserves this metric: LₛᵀGLₛ = G. Under the local inclusion, gₓ(ιₓℓ±, ιₓℓ±) = 0 gives the physical null directions.",
+      "links": [
+        {"label": "Paper record", "url": "papers/four-dual-forms/gravity-light"},
+        {"label": "Read PDF", "url": "papers/four-dual-forms/pdf/01_gravity_light.pdf"},
+        {"label": "Source", "url": "papers/four-dual-forms/source/01_gravity_light.tex"},
+        {"label": "Zenodo", "url": "https://zenodo.org/records/24073596/files/01_gravity_light.pdf"}
+      ]
+    },
+    {
+      "id": "memory-motion",
+      "title": "Memory Motion",
+      "operation": "Invertible transport · lifted quotient return",
+      "art": "art/covers/four-dual-forms/memory-motion.svg",
+      "equation": "Tₐ←ᵦTᵦ←ₐ = I,  ξₗᵢ𝒻ₜ(Lₐₓz) = ξₗᵢ𝒻ₜ(z) + 2 log φ",
+      "relation": "An invertible time-addressed transport obeys Tₐ←ᵦTᵦ←ₐ = I; the axial Lorentzian transport gives return without erasure because ξₗᵢ𝒻ₜ(Lₐₓz) = ξₗᵢ𝒻ₜ(z) + 2 log φ while qₐₓ(ξₗᵢ𝒻ₜ(Lₐₓz)) = qₐₓ(ξₗᵢ𝒻ₜ(z)). [MM.0b, MM.5–MM.8]",
+      "result": "One quotient reading returns across two distinct ordered lift coordinates. H Lₐₓ H = Lₐₓ⁻¹, and Rₙ₊₁ = snoc(Rₙ, rₙ₊₁) preserves every occurrence at its own address.",
+      "links": [
+        {"label": "Paper record", "url": "papers/four-dual-forms/memory-motion"},
+        {"label": "Read PDF", "url": "papers/four-dual-forms/pdf/02_memory_motion.pdf"},
+        {"label": "Source", "url": "papers/four-dual-forms/source/02_memory_motion.tex"},
+        {"label": "Zenodo", "url": "https://zenodo.org/records/24073596/files/02_memory_motion.pdf"}
+      ]
+    },
+    {
+      "id": "time-scope",
+      "title": "Time Scope",
+      "operation": "Electromagnetic polarization · Pauli double cover",
+      "art": "art/covers/four-dual-forms/time-scope.svg",
+      "equation": "Uπz = −z,  Scope(Uπz) = Scope(z),  Vα = e⁻ⁱασz",
+      "relation": "Linear electromagnetic polarization and a Pauli two-level state realize the same projective double cover: Uπz = −z while Scope(Uπz) = Scope(z), and Vα = e⁻ⁱασz reads (⟨σx⟩, ⟨σy⟩) = (cos 2α, sin 2α). [TS.5, TS.20–TS.22]",
+      "result": "The phase difference is Δα = ωΔt − k·Δx. A polarizer and Bloch read each return the projective direction while the local phase continues through the turn.",
+      "links": [
+        {"label": "Paper record", "url": "papers/four-dual-forms/time-scope"},
+        {"label": "Read PDF", "url": "papers/four-dual-forms/pdf/03_time_scope.pdf"},
+        {"label": "Source", "url": "papers/four-dual-forms/source/03_time_scope.tex"},
+        {"label": "Zenodo", "url": "https://zenodo.org/records/24073596/files/03_time_scope.pdf"}
+      ]
+    },
+    {
+      "id": "horizon-silence",
+      "title": "Horizon Silence",
+      "operation": "Thermodynamic viability · zero-residual potential closure",
+      "art": "art/covers/four-dual-forms/horizon-silence.svg",
+      "equation": "dUₜₕ = TₜₕdSₜₕ − p dV + ⋯,  hᵢⱼₖ = 0 ⇔ dᵢⱼ = sⱼ − sᵢ",
+      "relation": "A viable thermodynamic trajectory obeys dUₜₕ = TₜₕdSₜₕ − p dV + ⋯ and dᵢSₜₕ ≥ 0; its eight-address relation ledger closes exactly when hᵢⱼₖ = 0 ⇔ dᵢⱼ = sⱼ − sᵢ, with 21 independent triangle conditions. [HS.3–HS.4, HS.22–HS.23]",
+      "result": "The horizon is ℋₕₒᵣ = ∂𝒱; silence is a completed occurrence with zero residual. Seven matchings factor all 28 relations of K₈ into the common field.",
+      "links": [
+        {"label": "Paper record", "url": "papers/four-dual-forms/horizon-silence"},
+        {"label": "Read PDF", "url": "papers/four-dual-forms/pdf/04_horizon_silence.pdf"},
+        {"label": "Source", "url": "papers/four-dual-forms/source/04_horizon_silence.tex"},
+        {"label": "Zenodo", "url": "https://zenodo.org/records/24073596/files/04_horizon_silence.pdf"}
+      ]
+    }
+  ]
+}

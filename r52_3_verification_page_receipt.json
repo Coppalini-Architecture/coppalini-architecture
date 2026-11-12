@@ -1,0 +1,77 @@
+{
+  "release": "R52.3",
+  "result": "PASS",
+  "page": {
+    "url": "https://eulershiddenl.ink/verify",
+    "path": "verify.html",
+    "sha256": "c52d66b1b76938184dde39caf7410308cf2d34420e9306cc8e7f5503e8b270e9",
+    "canonical": "https://eulershiddenl.ink/verify"
+  },
+  "source": {
+    "path": "research/audit/verification-source-claude-v0.3.source",
+    "sha256": "a56dfb813f35e3ec2c93e6374e4d577a382dd85c293249207cdc78eda2a1c22c",
+    "role": "Supplied audit-page content, preserved as a non-indexed provenance source."
+  },
+  "release_bindings": {
+    "claim_registry": {
+      "path": "research/public-claim-registry-v0.2.json",
+      "sha256": "6da82c78b9c4eb281b835d9c712366b83b9b7a030cc2adc2e5fec19c3e337003"
+    },
+    "verification_manifest": {
+      "path": "research/verification-manifest-v0.2.json",
+      "sha256": "1c523aa03c527fe9a64b29f4b6aa8f624c88a614341d52c0d77dd7ee12cd4a9f"
+    },
+    "validator_kit": {
+      "path": "downloads/Validator_Kit_B2_v0_1.zip",
+      "sha256": "03cfda6a4ebbefc1302accdace1493027c840253bfc35d1c3e93b42dfc4574a0"
+    },
+    "record_receipts": {
+      "kit": {
+        "path": "research/audit/VALIDATOR_KIT_B2_RECEIPT.md",
+        "sha256": "7d998a50665308589c37c069eeeb88325277be4eab0cb013f73cdc209aaf0ebb",
+        "label": "Run receipt"
+      },
+      "suture": {
+        "path": "research/suture-field/RESIDUAL_LEDGER_v0_2.md",
+        "sha256": "f2fe9d6769f38f0afe56663304dfd235c48b2d93e6b8294afc597de19278285e",
+        "label": "Residual ledger"
+      },
+      "w0": {
+        "path": "research/audit/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt",
+        "sha256": "5977b5bff0d73f75c81645b3654a7ff4412f700932372313dcd62e53fdee5e43",
+        "label": "Run receipt"
+      },
+      "w1": {
+        "path": "research/audit/W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt",
+        "sha256": "6a3321e8dc4cf44c6aed8649faf35148ef25cc4af57e0b878e6f55600a059ebc",
+        "label": "Run receipt"
+      },
+      "nda": {
+        "path": "research/audit/NATIVE_DOMAIN_ADAPTER_ATLAS_RECEIPT_v0_3.txt",
+        "sha256": "bf4e97d517679a7ab51c192995cfe2b09b1b399b86aece53ebbfe98f8626992d",
+        "label": "Run receipt"
+      }
+    }
+  },
+  "presentation": {
+    "records": 5,
+    "cards": 12,
+    "columns_added_to_cards": [
+      "Native result (declared domain)",
+      "Formal provenance equations",
+      "Root closure at the seam"
+    ],
+    "crawler_contract": {
+      "canonical": "https://eulershiddenl.ink/verify",
+      "dataset_jsonld_content_urls": "absolute",
+      "sitemap_lastmod": "2026-11-12",
+      "robots_policy": "existing wildcard allow covers general crawlers, Claude-User, and Claude-SearchBot"
+    }
+  },
+  "corrections_to_supplied_layout": [
+    "Bound the page to the release's served v0.2 claim registry and Validator Kit B2 v0.1.",
+    "Preserved the shipped C-1 NumPy allclose basis instead of asserting an unshipped v0.2 tolerance declaration.",
+    "Replaced relative Dataset distribution URLs with absolute canonical URLs.",
+    "Added direct links and SHA-256 values for the five served record receipts, plus the maintained verification index."
+  ]
+}

@@ -1,0 +1,45 @@
+W-1 · Carrier adapter receipt · v0.2
+
+Carrier
+  c_W(P) = u(P) (+) 0_{P^perp} in u(3) in k = Stab(eta^, C^), dim_R 4; k = so(1,1) (+) u(3), dim 10.
+  P: supplied transverse complex 2-plane (blocks 1,2). Selection OPEN, shared with T1.
+
+Depends on
+  W-0 v0.2 (contract c8f03b36...c7ec, verifier 8e090c1c...1a8e); F5-L1-1 v0.1 (8378c686...53d1).
+
+Contract SHA-256
+  7e23aa4ba65151495b2943d97c94e2caf729453ec1a3445ea8dc550a915aad15
+
+Verifier SHA-256
+  6211cd25a771fcc06f682e2846c68bf088a95c712510b41d2d3ae6cfd4e6e634
+
+Command
+  python3 -I verify_w1_carrier_adapter_v0_2.py
+
+Arithmetic
+  exact symbolic SymPy; no floats; no empirical inputs; g, gprime, v symbolic.
+
+Delta from v0.1
+  text only: map direction stated as iota_P with alpha_P = iota_P^{-1}; W1-9 line; canonical filenames; no check changed.
+
+Result
+  W1-1  k = so(1,1)+u(3), dim 10; J = C^ complex structure          PASS
+  W1-2  c_W(P) in k, dim 4, zero on root block and P^perp            PASS
+  W1-3  iota_P: su(2)+u(1) -> c_W(P) bracket isomorphism (W-0 beta_EW);
+        alpha_P = iota_P^{-1}                                        PASS
+  W1-4  central line; central in c_W(P) only                         PASS
+  W1-5  normalized trace pairing; Q = T3 + Y = diag(1,0)             PASS
+  W1-6  metric offices separate (compact vs Lorentzian G)            PASS
+  W1-7  coordinate map into (W+,W-,Z,A) exact, unitary              PASS
+  W1-8  W-0 vacuum form pulled back: diagonal                        PASS
+  W1-9  plane non-uniqueness witness (selection OPEN)                PASS
+  N1-N6 bracket sign, central line, real form, dimension,
+        normalization, neutral rotation                              REJECTED as expected
+
+checks: 15/15 satisfied
+OVERALL: PASS
+
+Boundary
+  Adapter verification. No particle identification, numerical theta_W or mass,
+  empirical comparison, or prediction. Plane selection OPEN; Z7-su(3) route and
+  real-form adapter for the Lorentzian G carrier held.

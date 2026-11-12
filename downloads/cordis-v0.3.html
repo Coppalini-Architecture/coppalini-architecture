@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#030407">
+  <title>CORDIS / TRUE_MINIMUM</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f1eadc;
+      --muted: #8a8b91;
+      --line: rgba(241,234,220,.16);
+      --glass: rgba(5,7,12,.7);
+      --focus: #dec680;
+    }
+    * { box-sizing: border-box; }
+    html,body { width:100%; height:100%; margin:0; overflow:hidden; background:#030407; }
+    body {
+      color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      user-select:none;
+    }
+    button { font:inherit; }
+    #field { position:fixed; inset:0; width:100%; height:100%; display:block; }
+    .shade {
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 48%,transparent 38%,rgba(1,2,4,.1) 63%,rgba(1,2,4,.72) 100%),
+        linear-gradient(180deg,rgba(3,4,7,.4),transparent 18%,transparent 76%,rgba(3,4,7,.68));
+    }
+    header {
+      position:fixed;
+      z-index:2;
+      top:max(24px,env(safe-area-inset-top));
+      left:max(28px,env(safe-area-inset-left));
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      text-shadow:0 1px 18px rgba(0,0,0,.8);
+    }
+    .wordmark { font:14px Georgia,"Times New Roman",serif; letter-spacing:.24em; }
+    .edition { margin-top:7px; color:var(--muted); font-size:9px; letter-spacing:.22em; }
+    .readout {
+      position:fixed;
+      z-index:2;
+      top:max(25px,env(safe-area-inset-top));
+      right:max(28px,env(safe-area-inset-right));
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(241,234,220,.65);
+      font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .return-dot {
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:currentColor;
+      box-shadow:0 0 12px currentColor;
+    }
+    .controls {
+      position:fixed;
+      z-index:3;
+      left:50%;
+      bottom:max(25px,env(safe-area-inset-bottom));
+      transform:translateX(-50%);
+      display:flex;
+      align-items:center;
+      gap:3px;
+      padding:5px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--glass);
+      box-shadow:0 18px 70px rgba(0,0,0,.38);
+      backdrop-filter:blur(18px) saturate(120%);
+      -webkit-backdrop-filter:blur(18px) saturate(120%);
+    }
+    .controls button {
+      min-width:72px;
+      height:36px;
+      padding:0 13px;
+      border:0;
+      border-radius:999px;
+      background:transparent;
+      color:rgba(241,234,220,.62);
+      font-size:9px;
+      font-weight:600;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:color .2s ease,background .2s ease,transform .2s ease;
+    }
+    .controls button:hover { color:var(--ink); background:rgba(255,255,255,.06); }
+    .controls button:active { transform:scale(.96); }
+    .controls button:focus-visible { outline:1px solid var(--focus); outline-offset:2px; }
+    .controls button.primary { color:#17140d; background:rgba(235,217,166,.9); }
+    .controls button.primary:hover { background:#f0deb0; }
+    .controls button[disabled] { opacity:.35; cursor:default; }
+    .debug {
+      position:fixed;
+      z-index:5;
+      top:74px;
+      right:28px;
+      width:min(430px,calc(100vw - 56px));
+      max-height:calc(100dvh - 150px);
+      overflow:auto;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(4,6,10,.91);
+      color:rgba(241,234,220,.72);
+      font:10px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      white-space:pre-wrap;
+      backdrop-filter:blur(18px);
+    }
+    .debug[hidden] { display:none; }
+    .notice {
+      position:fixed;
+      inset:0;
+      display:none;
+      place-items:center;
+      padding:32px;
+      z-index:8;
+      color:var(--ink);
+      text-align:center;
+      background:#030407;
+    }
+    @media (max-width:680px) {
+      header { top:20px; left:20px; }
+      .readout { top:21px; right:20px; }
+      .controls { width:calc(100vw - 24px); justify-content:space-between; bottom:14px; }
+      .controls button { min-width:0; padding:0 9px; font-size:8px; letter-spacing:.1em; }
+    }
+    @media (prefers-reduced-motion:reduce) { .controls button { transition:none; } }
+  </style>
+  <link rel="canonical" href="https://eulershiddenl.ink/downloads/cordis-v0.3">
+</head>
+<body>
+  <canvas id="field" aria-label="The CORDIS silence rail carrying completed returns from the running i-wheel"></canvas>
+  <div class="shade" aria-hidden="true"></div>
+  <header>
+    <div class="wordmark">Cordis</div>
+    <div class="edition">True_Minimum · Silence Rail</div>
+  </header>
+  <div class="readout" aria-live="polite">
+    <span class="return-dot" id="returnDot"></span>
+    <span id="readout">i · return · 000000</span>
+  </div>
+  <nav class="controls" aria-label="Portal controls">
+    <button class="primary" id="begin">Begin</button>
+    <button id="lift" aria-label="Hold Lift to ride the silence rail">Lift</button>
+    <button id="return">Return</button>
+    <button id="home" disabled>Home</button>
+    <button id="pause">Pause</button>
+  </nav>
+  <pre class="debug" id="debug" hidden aria-label="Exact state debug panel"></pre>
+  <div class="notice" id="notice">This browser could not open a drawing surface.</div>
+
+  <script>
+  (() => {
+    "use strict";
+
+    /* KERNEL — the machine is the center; the display never depicts it. */
+    const I = [1n,0n,0n,1n];
+    const Q = [1n,1n,1n,0n];
+    const i = [0n,-1n,1n,0n];
+    const NEG_I = [-1n,0n,0n,-1n];
+    const M = 4;
+    const S = M + 1;
+    const R = 2*M + 1;
+    const SCOPE = 137;
+    const TAU = Math.PI*2;
+    const SQRT5 = Math.sqrt(5);
+    const PHI = (1+SQRT5)/2;
+    const ETA = Math.log(PHI);
+    const STROKE_RETURNS = S;
+    const HORIZON = .91;
+
+    /* Numeric projective frame offices. Word provenance remains separate. */
+    const I_N = [1,0,0,1];
+    const L = [3/SQRT5,1/SQRT5,1/SQRT5,2/SQRT5];
+    const L_INV = [2/SQRT5,-1/SQRT5,-1/SQRT5,3/SQRT5];
+    const J_L = [1/SQRT5,2/SQRT5,2/SQRT5,-1/SQRT5];
+    const H = [-2/SQRT5,1/SQRT5,1/SQRT5,2/SQRT5];
+
+    const mul = (a,b) => [
+      a[0]*b[0]+a[1]*b[2], a[0]*b[1]+a[1]*b[3],
+      a[2]*b[0]+a[3]*b[2], a[2]*b[1]+a[3]*b[3]
+    ];
+    const add = (a,b) => a.map((v,k)=>v+b[k]);
+    const sub = (a,b) => a.map((v,k)=>v-b[k]);
+    const same = (a,b) => a.every((v,k)=>v===b[k]);
+    const power = (a,n) => {
+      let out=I.slice(), base=a.slice();
+      for(let k=n;k>0;k>>=1){ if(k&1) out=mul(out,base); base=mul(base,base); }
+      return out;
+    };
+    const mulN = (a,b) => [
+      a[0]*b[0]+a[1]*b[2], a[0]*b[1]+a[1]*b[3],
+      a[2]*b[0]+a[3]*b[2], a[2]*b[1]+a[3]*b[3]
+    ];
+    const detN = a => a[0]*a[3]-a[1]*a[2];
+    const invN = a => {
+      const d=detN(a);
+      return [a[3]/d,-a[1]/d,-a[2]/d,a[0]/d];
+    };
+    const nearN = (a,b,epsilon=2e-12) => a.every((v,k)=>Math.abs(v-b[k])<epsilon);
+    const matrixTextN = a => `[[${a[0].toFixed(9)},${a[1].toFixed(9)}],[${a[2].toFixed(9)},${a[3].toFixed(9)}]]`;
+    const liftPower = signedProgress => {
+      const h=Math.cosh(signedProgress*ETA),s=Math.sinh(signedProgress*ETA);
+      return [h+s*J_L[0],s*J_L[1],s*J_L[2],h+s*J_L[3]];
+    };
+    const matrixText = a => `[[${a[0]},${a[1]}],[${a[2]},${a[3]}]]`;
+    const G = sub(mul(i,Q),mul(Q,i));
+
+    // Exact coordinates in {I,Q,Omega,G}, retained as numerators over 10.
+    const normalForm10 = a => {
+      const [aa,b,c,d]=a;
+      const x3=b+c-2n*aa+2n*d;
+      return [10n*d-2n*x3,2n*(2n*b+2n*c+aa-d),5n*(b-c),x3];
+    };
+    if(!same(mul(i,i),NEG_I)||!same(power(i,4),I)) throw new Error("i-wheel failed");
+    if(!same(mul(Q,Q),add(Q,I))) throw new Error("Q lift failed");
+    if(!same(G,[-2n,1n,1n,2n])) throw new Error("commutator failed");
+    if(!same(power(Q,5),[8n,5n,5n,3n])||!same(power(Q,9),[55n,34n,34n,21n])) throw new Error("lift read failed");
+    if(Math.abs(detN(L)-1)>2e-12||!nearN(mulN(L,L_INV),I_N)) throw new Error("L closure failed");
+    if(!nearN(mulN(J_L,J_L),I_N)||!nearN(liftPower(0),I_N)||!nearN(liftPower(1),L)) throw new Error("continuous L failed");
+    if(!nearN(mulN(mulN(H,L),H),L_INV)) throw new Error("fold conjugation failed");
+
+    /* STATE — one actual animation callback is one exact i turn. */
+    const state = {
+      identity:"i",
+      running:true,
+      operator:I.slice(),
+      turns:0n,
+      phase:0,
+      returns:0n,
+      carrier:[1,0],
+      address:1,
+      lastTurnAt:performance.now(),
+      lastReturnAt:performance.now(),
+      meanReturnMs:66,
+      frame:I_N.slice(),
+      frameWord:[],
+      pendingOffice:null,
+      stroke:null,
+      rideHeld:false,
+      returnRequested:false,
+      receipts:[],
+      motionReceipts:[]
+    };
+    const display = {
+      contactOpen:false,
+      contact:0,
+      previous:null,
+      current:null,
+      sampleAt:performance.now(),
+      sampleInterval:330,
+      seamPulse:0,
+      returnFocus:0,
+      renderer:"unbound"
+    };
+
+    const mod137 = n => ((n%SCOPE)+SCOPE)%SCOPE;
+    const qStep = v => [mod137(v[0]+v[1]),mod137(v[0])];
+    const addressOf = v => mod137(v[0]+4*v[1]);
+    const receipt = (now,interval,kind) => {
+      const item=Object.freeze({
+        kind,
+        identity:state.identity,
+        returnIndex:state.returns.toString(),
+        turnIndex:state.turns.toString(),
+        interval,
+        address:state.address,
+        carrier:[...state.carrier],
+        operator:matrixText(state.operator),
+        word:"i i i i",
+        normalForm10:normalForm10(state.operator).map(String),
+        clock:now
+      });
+      state.receipts.push(item);
+      return item;
+    };
+
+    const motionReceipt = data => {
+      const item=Object.freeze({...data});
+      state.motionReceipts.push(item);
+      return item;
+    };
+
+    const timingRead = receipts => {
+      const valid=receipts.filter(x=>x.interval>0);
+      if(!valid.length) return {mean:66,jitter:0,difference:0,coherence:1};
+      const mean=valid.reduce((s,x)=>s+x.interval,0)/valid.length;
+      const variance=valid.reduce((s,x)=>s+(x.interval-mean)**2,0)/valid.length;
+      const jitter=Math.sqrt(variance)/Math.max(mean,1);
+      const last=valid[valid.length-1];
+      const difference=Math.min(1,Math.abs(last.interval-mean)/Math.max(mean,1));
+      return {mean,jitter,difference,coherence:Math.exp(-3.5*jitter)};
+    };
+    const circularDifference = (a,b) => {
+      const d=Math.abs(a-b)%SCOPE;
+      return Math.min(d,SCOPE-d)/(SCOPE/2);
+    };
+
+    /* READER — returns new data; it never mutates the state it reads. */
+    const readReturnWindow = () => {
+      const window=state.receipts.slice(-R);
+      const last=window[window.length-1]||{address:0,carrier:[1,0],interval:66};
+      const retained=window[0]||last;
+      const timing=timingRead(window);
+      const addressDifference=circularDifference(last.address,retained.address);
+      return Object.freeze({
+        angle:TAU*last.address/SCOPE,
+        memoryAngle:TAU*retained.address/SCOPE,
+        carrierAngle:Math.atan2(last.carrier[1]-68,last.carrier[0]-68),
+        memoryCarrierAngle:Math.atan2(retained.carrier[1]-68,retained.carrier[0]-68),
+        difference:Math.min(1,.58*addressDifference+.42*timing.difference),
+        coherence:timing.coherence,
+        meanReturnMs:timing.mean,
+        jitter:timing.jitter,
+        returnIndex:Number(state.returns%BigInt(SCOPE)),
+        address:last.address
+      });
+    };
+    const initialRead=Object.freeze({
+      angle:0,memoryAngle:0,carrierAngle:0,memoryCarrierAngle:0,
+      difference:0,coherence:1,meanReturnMs:66,jitter:0,returnIndex:0,address:0
+    });
+    display.previous=initialRead;
+    display.current=initialRead;
+
+    const sat01 = x => Math.max(0,Math.min(1,x));
+    const complexDiv = (a,b) => {
+      const d=Math.max(1e-14,b[0]*b[0]+b[1]*b[1]);
+      return [(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d];
+    };
+    const goldenChart = (x,y) => {
+      const ux=x/HORIZON,uy=y/HORIZON;
+      const vx=uy,vy=-ux; // v=-iu; the golden rail is the real diameter in v.
+      const ratio=complexDiv([1+vx,vy],[1-vx,-vy]);
+      const xi=[-ratio[1],ratio[0]]; // xi=i(1+v)/(1-v), with xi(i)=i.
+      const magnitude=Math.max(1e-14,Math.hypot(xi[0],xi[1]));
+      const delta=Math.asinh(xi[0]/Math.max(1e-14,xi[1]));
+      return {xi,lambda:Math.log(magnitude),delta,rail:Math.abs(xi[1])/magnitude};
+    };
+    const applyGoldenLift = (x,y,liftAddress) => {
+      const chart=goldenChart(x,y);
+      const scale=Math.exp(-2*ETA*liftAddress); // pullback by L^-address
+      const xi=[chart.xi[0]*scale,chart.xi[1]*scale];
+      const v=complexDiv([xi[0],xi[1]-1],[xi[0],xi[1]+1]);
+      return [-HORIZON*v[1],HORIZON*v[0],chart.rail,chart.lambda,chart.delta];
+    };
+
+    const strokeProgress = now => {
+      if(!state.stroke)return 0;
+      const fraction=sat01((now-state.lastReturnAt)/Math.max(state.meanReturnMs,1));
+      return Math.min(1,(state.stroke.step+fraction)/STROKE_RETURNS);
+    };
+    const beginStroke = now => {
+      const queued=state.pendingOffice;
+      if(!queued)return;
+      state.stroke={
+        direction:queued.direction,
+        step:0,
+        fromFrame:state.frame.slice(),
+        inputAt:queued.inputAt,
+        appliedAt:now,
+        appliedReturn:state.returns.toString(),
+        source:queued.source
+      };
+      motionReceipt({
+        kind:"stroke-start",direction:queued.direction,inputAt:queued.inputAt,appliedAt:now,
+        inputTurn:queued.inputTurn,inputReturn:queued.inputReturn,appliedReturn:state.returns.toString(),
+        source:queued.source,frameWordBefore:state.frameWord.join(" ")||"I"
+      });
+      state.pendingOffice=null;
+      display.seamPulse=1;
+    };
+    const advanceStroke = now => {
+      if(!state.stroke)return;
+      const stroke=state.stroke;
+      stroke.step+=1;
+      if(stroke.step<STROKE_RETURNS)return;
+      state.frame=mulN(stroke.fromFrame,stroke.direction===1?L:L_INV);
+      if(stroke.direction===1)state.frameWord.push("L");
+      else state.frameWord.pop();
+      if(state.frameWord.length===0)state.frame=I_N.slice();
+      motionReceipt({
+        kind:"stroke-complete",direction:stroke.direction,inputAt:stroke.inputAt,appliedAt:stroke.appliedAt,
+        completedAt:now,completedReturn:state.returns.toString(),source:stroke.source,
+        frameWordAfter:state.frameWord.join(" ")||"I",frameValue:matrixTextN(state.frame)
+      });
+      state.stroke=null;
+      if(stroke.direction===1&&state.rideHeld){
+        state.pendingOffice={
+          direction:1,inputAt:now,inputTurn:state.turns.toString(),
+          inputReturn:state.returns.toString(),source:"rail-continuation"
+        };
+      }
+      display.returnFocus=1;
+      display.seamPulse=1;
+    };
+
+    const sampleReturn = now => {
+      display.previous=display.current;
+      display.current=readReturnWindow();
+      display.sampleInterval=Math.max(80,now-display.sampleAt);
+      display.sampleAt=now;
+      display.seamPulse=1;
+      if(state.returnRequested){
+        display.returnFocus=1;
+        display.contactOpen=true;
+        state.returnRequested=false;
+      }
+    };
+    const processTurn = now => {
+      const turnInterval=now-state.lastTurnAt;
+      state.lastTurnAt=now;
+      state.operator=mul(i,state.operator);
+      state.turns+=1n;
+      state.phase=Number(state.turns%BigInt(M));
+      if(state.phase!==0) return;
+      if(!same(state.operator,I)) throw new Error("return lost");
+
+      state.returns+=1n;
+      const returnInterval=now-state.lastReturnAt;
+      state.meanReturnMs=.82*state.meanReturnMs+.18*Math.max(1,returnInterval);
+      state.lastReturnAt=now;
+      state.carrier=qStep(state.carrier);
+      state.address=addressOf(state.carrier);
+      const kind=state.stroke?"stroke-return":(state.pendingOffice?"office-boundary":"return");
+      receipt(now,returnInterval,kind);
+
+      if(state.stroke)advanceStroke(now);
+      if(!state.stroke&&state.pendingOffice)beginStroke(now);
+
+      // Five retained returns form one observed contact sample.
+      if(state.returns%BigInt(S)===0n) sampleReturn(now);
+      void turnInterval;
+    };
+
+    const smooth01 = x => { const y=Math.max(0,Math.min(1,x)); return y*y*(3-2*y); };
+    const angleMix = (a,b,t) => {
+      let d=(b-a)%TAU;
+      if(d>Math.PI)d-=TAU;
+      if(d<-Math.PI)d+=TAU;
+      return a+d*t;
+    };
+    const displayRead = now => {
+      const blend=smooth01((now-display.sampleAt)/display.sampleInterval);
+      const a=display.previous,b=display.current;
+      const liftAddress=state.frameWord.length+(state.stroke?state.stroke.direction*strokeProgress(now):0);
+      return {
+        angle:angleMix(a.angle,b.angle,blend),
+        memoryAngle:angleMix(a.memoryAngle,b.memoryAngle,blend),
+        carrierAngle:angleMix(a.carrierAngle,b.carrierAngle,blend),
+        memoryCarrierAngle:angleMix(a.memoryCarrierAngle,b.memoryCarrierAngle,blend),
+        difference:a.difference+(b.difference-a.difference)*blend,
+        coherence:a.coherence+(b.coherence-a.coherence)*blend,
+        address:b.address,
+        contact:display.contact,
+        pulse:Math.max(display.seamPulse,display.returnFocus),
+        returnIndex:b.returnIndex,
+        liftAddress,
+        transport:Math.abs(liftAddress)>1e-12?1:0,
+        rideHeld:state.rideHeld
+      };
+    };
+
+    const begin=document.getElementById("begin");
+    const lift=document.getElementById("lift");
+    const returnButton=document.getElementById("return");
+    const home=document.getElementById("home");
+    const pause=document.getElementById("pause");
+    const debug=document.getElementById("debug");
+    const readout=document.getElementById("readout");
+    const returnDot=document.getElementById("returnDot");
+
+    const updateInterface = () => {
+      const motion=state.rideHeld?"ride":(state.stroke?(state.stroke.direction===1?"lift":"return"):"return");
+      readout.textContent=`${state.identity} · ${motion} · ${state.returns.toString().padStart(6,"0")}`;
+      pause.textContent=state.running?"Pause":"Resume";
+      begin.disabled=display.contactOpen;
+      home.disabled=!display.contactOpen;
+      lift.disabled=false;
+      lift.textContent=state.rideHeld?"Riding":(state.pendingOffice?.direction===1?"Queued":(state.stroke?.direction===1?"Lifting":"Lift"));
+      returnButton.disabled=!!state.pendingOffice||!!state.stroke;
+      returnButton.textContent=state.pendingOffice?.direction===-1?"Queued":(state.stroke?.direction===-1?"Returning":"Return");
+      const glow=8+22*Math.max(display.seamPulse,display.returnFocus);
+      returnDot.style.color=display.contactOpen?"#dfc787":"#8a8b91";
+      returnDot.style.boxShadow=`0 0 ${glow}px currentColor`;
+    };
+    const updateDebug = () => {
+      if(debug.hidden)return;
+      const read=readReturnWindow();
+      const rows=state.receipts.slice(-R).map((x,k)=>
+        `${String(k+1).padStart(2,"0")}  r${x.returnIndex.padStart(6," ")}  ${x.interval.toFixed(2).padStart(8," ")}ms  a${String(x.address).padStart(3,"0")}  ${x.kind}`
+      ).join("\n");
+      debug.textContent=[
+        "PROCESSOR = CENTER (NOT DISPLAYED)",
+        `IDENTITY = ${state.identity}`,
+        `clock=${display.renderer}/requestAnimationFrame`,
+        "",
+        `turns       ${state.turns}`,
+        `phase       ${state.identity}^${state.phase}`,
+        `operator    ${matrixText(state.operator)}`,
+        `NF / 10     [${normalForm10(state.operator).join(", ")}]`,
+        `returns     ${state.returns}`,
+        `carrier     [${state.carrier.join(", ")}] mod 137`,
+        `address     ${state.address}`,
+        `running     ${state.running}`,
+        "",
+        "MOVING FRAME",
+        `frame       ${matrixTextN(state.frame)}`,
+        `word        ${state.frameWord.join(" ")||"I"}`,
+        `pending     ${state.pendingOffice?(state.pendingOffice.direction===1?"L":"L^-1"):"none"}`,
+        `stroke      ${state.stroke?`${state.stroke.direction===1?"L":"L^-1"} ${state.stroke.step}/${STROKE_RETURNS}`:"none"}`,
+        `ride held   ${state.rideHeld}`,
+        `lambda step ${2*ETA}`,
+        `rail        delta=0 / sech(delta)`,
+        "",
+        "RETURN READER",
+        `mean        ${read.meanReturnMs.toFixed(3)} ms`,
+        `jitter      ${read.jitter.toFixed(6)}`,
+        `difference  ${read.difference.toFixed(6)}`,
+        `coherence   ${read.coherence.toFixed(6)}`,
+        `contact     ${display.contactOpen}`,
+        "",
+        `RETAINED RETURNS (${Math.min(R,state.receipts.length)}/${R})`,
+        rows,
+        "",
+        `receipts append-only: ${state.receipts.length}`,
+        `motion receipts: ${state.motionReceipts.length}`,
+        "press D to close"
+      ].join("\n");
+    };
+
+    begin.addEventListener("click",()=>{ display.contactOpen=true; updateInterface(); });
+    home.addEventListener("click",()=>{ display.contactOpen=false; display.returnFocus=0; updateInterface(); });
+    const queueOffice = (direction,source="contact") => {
+      if(state.pendingOffice||state.stroke)return;
+      const now=performance.now();
+      state.pendingOffice={
+        direction,inputAt:now,inputTurn:state.turns.toString(),
+        inputReturn:state.returns.toString(),source
+      };
+      motionReceipt({
+        kind:"office-contact",direction,inputAt:now,inputTurn:state.turns.toString(),
+        inputReturn:state.returns.toString(),source,
+        frameWordBefore:state.frameWord.join(" ")||"I"
+      });
+      display.contactOpen=true;
+      updateInterface();
+    };
+    const beginRide = event => {
+      if(event?.button!==undefined&&event.button!==0)return;
+      event?.preventDefault?.();
+      state.rideHeld=true;
+      queueOffice(1,"rail-contact");
+      updateInterface();
+    };
+    const endRide = () => {
+      state.rideHeld=false;
+      updateInterface();
+    };
+    lift.addEventListener("pointerdown",beginRide);
+    document.addEventListener("pointerup",endRide);
+    document.addEventListener("pointercancel",endRide);
+    lift.addEventListener("keydown",event=>{
+      if((event.code==="Space"||event.code==="Enter")&&!event.repeat){
+        event.preventDefault();
+        beginRide();
+      }
+    });
+    lift.addEventListener("keyup",event=>{
+      if(event.code==="Space"||event.code==="Enter")endRide();
+    });
+    returnButton.addEventListener("click",()=>{
+      display.contactOpen=true;
+      if(state.frameWord.length>0)queueOffice(-1,"return-contact");
+      else state.returnRequested=true;
+      updateInterface();
+    });
+    pause.addEventListener("click",()=>{
+      state.running=!state.running;
+      state.lastTurnAt=performance.now();
+      updateInterface();
+    });
+    document.addEventListener("keydown",event=>{
+      if(event.key.toLowerCase()==="d"){
+        debug.hidden=!debug.hidden;
+        updateDebug();
+      }
+      if(event.code==="Space"&&event.target===document.body){
+        event.preventDefault();
+        state.running=!state.running;
+        state.lastTurnAt=performance.now();
+        updateInterface();
+      }
+    });
+
+    const canvas=document.getElementById("field");
+    let draw;
+
+    const vertexSource=`
+      attribute vec2 a_position;
+      void main(){gl_Position=vec4(a_position,0.0,1.0);}
+    `;
+    const fragmentSource=`
+      precision highp float;
+      uniform vec2 u_resolution;
+      uniform float u_angle;
+      uniform float u_memoryAngle;
+      uniform float u_carrierAngle;
+      uniform float u_memoryCarrierAngle;
+      uniform float u_difference;
+      uniform float u_coherence;
+      uniform float u_contact;
+      uniform float u_pulse;
+      uniform float u_returnIndex;
+      uniform float u_liftAddress;
+      uniform float u_transport;
+      const float TAU=6.283185307179586;
+      float sat(float x){return clamp(x,0.0,1.0);}
+      float ridge(float x,float w){return exp(-abs(x)*w);}
+      vec2 cdiv(vec2 a,vec2 b){
+        float d=max(dot(b,b),1e-8);
+        return vec2(dot(a,b),a.y*b.x-a.x*b.y)/d;
+      }
+      vec3 goldenRead(vec2 p,float liftAddress,float horizon){
+        vec2 u=p/horizon;
+        vec2 v=vec2(u.y,-u.x);
+        vec2 ratio=cdiv(vec2(1.0+v.x,v.y),vec2(1.0-v.x,-v.y));
+        vec2 xi=vec2(-ratio.y,ratio.x);
+        float rail=abs(xi.y)/max(length(xi),1e-7);
+        xi*=exp(-2.0*.48121182505960347*liftAddress);
+        vec2 moved=cdiv(vec2(xi.x,xi.y-1.0),vec2(xi.x,xi.y+1.0));
+        return vec3(horizon*vec2(-moved.y,moved.x),rail);
+      }
+      void main(){
+        vec2 p=(2.0*gl_FragCoord.xy-u_resolution.xy)/min(u_resolution.x,u_resolution.y);
+        p.y-=.025;
+        float r=length(p);
+        float horizon=.91;
+        float disk=1.0-smoothstep(horizon-.025,horizon+.018,r);
+        vec3 golden=goldenRead(p,u_liftAddress,horizon);
+        vec2 q=p;
+        if(u_transport>.5)q=golden.xy;
+        float rail=golden.z;
+        float sampleRadius=length(q);
+        float softLog=log(sqrt(sampleRadius*sampleRadius+.052));
+        vec2 da=vec2(cos(u_carrierAngle),sin(u_carrierAngle));
+        vec2 db=vec2(cos(u_memoryCarrierAngle),sin(u_memoryCarrierAngle));
+        float scope=TAU*u_returnIndex/137.0;
+        float turn=(1.0+.28*u_difference)*softLog;
+        vec2 turnDirection=vec2(cos(turn),sin(turn));
+        float spiral=6.0*dot(q,turnDirection);
+        float a=spiral+5.0*dot(q,da)+u_angle+scope;
+        float b=-spiral+9.0*dot(q,db)+u_memoryAngle-scope;
+        float wa=sin(a)*cos(2.0*a-b);
+        float wb=sin(b)*cos(2.0*b-a);
+        float difference=sat(abs(wa-wb)*(.42+.58*u_difference));
+        float coherence=sat((.5+.5*cos(a-b))*(.36+.64*u_coherence));
+        float recurrence=sat(exp(-2.5*abs(wa-wb))*(.62+.38*cos(4.0*(a-b))));
+        float interference=.5+.5*sin(3.0*a+sin(5.0*b))*cos(2.0*b-wa);
+        difference+=.18*interference*u_difference;
+        coherence+=.13*interference*u_coherence;
+        recurrence+=.16*interference;
+        vec3 rgb=vec3(difference,coherence,recurrence)*vec3(1.08,.68,1.0);
+        rgb=1.0-exp(-rgb*1.58);
+        rgb=pow(max(rgb,0.0),vec3(.91,1.04,.88));
+        rgb*=rail;
+        float body=.16+.84*u_contact;
+        rgb*=body*(.84+.16*cos(3.14159265*sat(r/horizon)));
+        vec3 seamColor=vec3(.78,.55,.28)*(.18+.82*u_contact)+vec3(.18,.22,.4)*recurrence;
+        float seam=ridge((r-horizon)/.01,1.0)*(.34+.66*u_pulse);
+        vec3 background=vec3(.008,.011,.019);
+        vec3 color=mix(background,rgb,disk)+seamColor*seam;
+        color*=1.0-.24*smoothstep(.62,1.32,r);
+        gl_FragColor=vec4(max(color,0.0),1.0);
+      }
+    `;
+
+    const initWebGL = () => {
+      const gl=canvas.getContext("webgl",{alpha:false,antialias:false,preserveDrawingBuffer:false});
+      if(!gl)return null;
+      const compile=(type,source)=>{
+        const shader=gl.createShader(type);
+        gl.shaderSource(shader,source); gl.compileShader(shader);
+        if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader));
+        return shader;
+      };
+      const program=gl.createProgram();
+      gl.attachShader(program,compile(gl.VERTEX_SHADER,vertexSource));
+      gl.attachShader(program,compile(gl.FRAGMENT_SHADER,fragmentSource));
+      gl.linkProgram(program);
+      if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program));
+      gl.useProgram(program);
+      const buffer=gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
+      gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+      const pos=gl.getAttribLocation(program,"a_position");
+      gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+      const names=["resolution","angle","memoryAngle","carrierAngle","memoryCarrierAngle","difference","coherence","contact","pulse","returnIndex","liftAddress","transport"];
+      const u={}; names.forEach(name=>u[name]=gl.getUniformLocation(program,`u_${name}`));
+      display.renderer="WebGL";
+      return read=>{
+        const dpr=Math.min(devicePixelRatio||1,2);
+        const w=Math.max(1,Math.floor(innerWidth*dpr)),h=Math.max(1,Math.floor(innerHeight*dpr));
+        if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}
+        gl.uniform2f(u.resolution,w,h);
+        gl.uniform1f(u.angle,read.angle); gl.uniform1f(u.memoryAngle,read.memoryAngle);
+        gl.uniform1f(u.carrierAngle,read.carrierAngle); gl.uniform1f(u.memoryCarrierAngle,read.memoryCarrierAngle);
+        gl.uniform1f(u.difference,read.difference); gl.uniform1f(u.coherence,read.coherence);
+        gl.uniform1f(u.contact,read.contact); gl.uniform1f(u.pulse,read.pulse);
+        gl.uniform1f(u.returnIndex,read.returnIndex);
+        gl.uniform1f(u.liftAddress,read.liftAddress);
+        gl.uniform1f(u.transport,read.transport);
+        gl.drawArrays(gl.TRIANGLES,0,6);
+      };
+    };
+
+    const initCanvas2D = () => {
+      const ctx=canvas.getContext("2d",{alpha:false});
+      if(!ctx)return null;
+      let image=null,lastPaint=-Infinity;
+      const sat=x=>Math.max(0,Math.min(1,x));
+      const ridge=(x,w)=>Math.exp(-Math.abs(x)*w);
+      const resize=()=>{
+        const scale=Math.min(180/innerWidth,180/innerHeight,.34);
+        const w=Math.max(150,Math.floor(innerWidth*scale));
+        const h=Math.max(150,Math.floor(innerHeight*scale));
+        if(canvas.width!==w||canvas.height!==h){
+          canvas.width=w; canvas.height=h; image=ctx.createImageData(w,h); ctx.imageSmoothingEnabled=true;
+        }
+      };
+      display.renderer="Canvas2D";
+      return read=>{
+        const paintNow=performance.now();
+        if(paintNow-lastPaint<100)return;
+        lastPaint=paintNow;
+        resize();
+        const w=canvas.width,h=canvas.height,minSide=Math.min(w,h),data=image.data;
+        const dax=Math.cos(read.carrierAngle),day=Math.sin(read.carrierAngle);
+        const dbx=Math.cos(read.memoryCarrierAngle),dby=Math.sin(read.memoryCarrierAngle);
+        const scope=TAU*read.returnIndex/SCOPE;
+        let k=0;
+        for(let py=0;py<h;py++){
+          const y=(h-2*py)/minSide-.025;
+          for(let px=0;px<w;px++,k+=4){
+            const x=(2*px-w)/minSide,r=Math.hypot(x,y),horizon=.91;
+            const disk=1-sat((r-(horizon-.025))/.043);
+            const golden=applyGoldenLift(x,y,read.liftAddress);
+            const q=read.transport?golden:[x,y];
+            const rail=golden[2];
+            const qx=q[0],qy=q[1],sampleRadius=Math.hypot(qx,qy);
+            const softLog=Math.log(Math.sqrt(sampleRadius*sampleRadius+.052));
+            const turn=(1+.28*read.difference)*softLog;
+            const spiral=6*(qx*Math.cos(turn)+qy*Math.sin(turn));
+            const a=spiral+5*(qx*dax+qy*day)+read.angle+scope;
+            const b=-spiral+9*(qx*dbx+qy*dby)+read.memoryAngle-scope;
+            const wa=Math.sin(a)*Math.cos(2*a-b),wb=Math.sin(b)*Math.cos(2*b-a);
+            let difference=sat(Math.abs(wa-wb)*(.42+.58*read.difference));
+            let coherence=sat((.5+.5*Math.cos(a-b))*(.36+.64*read.coherence));
+            let recurrence=sat(Math.exp(-2.5*Math.abs(wa-wb))*(.62+.38*Math.cos(4*(a-b))));
+            const interference=.5+.5*Math.sin(3*a+Math.sin(5*b))*Math.cos(2*b-wa);
+            difference+=.18*interference*read.difference;
+            coherence+=.13*interference*read.coherence;
+            recurrence+=.16*interference;
+            let rr=Math.pow(1-Math.exp(-Math.max(0,difference*1.08)*1.58),.91);
+            let gg=Math.pow(1-Math.exp(-Math.max(0,coherence*.68)*1.58),1.04);
+            let bb=Math.pow(1-Math.exp(-Math.max(0,recurrence)*1.58),.88);
+            rr*=rail;gg*=rail;bb*=rail;
+            const body=(.16+.84*read.contact)*(.84+.16*Math.cos(Math.PI*sat(r/horizon)));
+            rr*=body;gg*=body;bb*=body;
+            const seam=ridge((r-horizon)/.01,1)*(.34+.66*read.pulse);
+            rr+=seam*(.78*(.18+.82*read.contact)+.18*recurrence);
+            gg+=seam*(.55*(.18+.82*read.contact)+.22*recurrence);
+            bb+=seam*(.28*(.18+.82*read.contact)+.4*recurrence);
+            const vignette=1-.24*sat((r-.62)/.7);
+            data[k]=Math.round(255*sat((.008*(1-disk)+rr*disk)*vignette));
+            data[k+1]=Math.round(255*sat((.011*(1-disk)+gg*disk)*vignette));
+            data[k+2]=Math.round(255*sat((.019*(1-disk)+bb*disk)*vignette));
+            data[k+3]=255;
+          }
+        }
+        ctx.putImageData(image,0,0);
+      };
+    };
+
+    try { draw=initWebGL()||initCanvas2D(); }
+    catch(error){ console.error(error); draw=null; }
+    if(!draw){ document.getElementById("notice").style.display="grid"; return; }
+
+    let lastFrame=performance.now(),lastInterface=0;
+    const loop=now=>{
+      const dt=Math.min(.08,(now-lastFrame)/1000);
+      lastFrame=now;
+      if(state.running)processTurn(now);
+      const target=display.contactOpen?1:0;
+      display.contact+= (target-display.contact)*Math.min(1,dt*2.3);
+      display.seamPulse=Math.max(0,display.seamPulse-dt*1.8);
+      display.returnFocus=Math.max(0,display.returnFocus-dt*.58);
+      draw(displayRead(now));
+      if(now-lastInterface>180){updateInterface();updateDebug();lastInterface=now;}
+      requestAnimationFrame(loop);
+    };
+
+    window.CORDIS=Object.freeze({
+      state:()=>Object.freeze({
+        identity:state.identity,turns:state.turns.toString(),phase:state.phase,
+        returns:state.returns.toString(),operator:matrixText(state.operator),
+        carrier:[...state.carrier],address:state.address,running:state.running,
+        frame:[...state.frame],frameWord:[...state.frameWord],
+        pendingOffice:state.pendingOffice?{...state.pendingOffice}:null,
+        stroke:state.stroke?{direction:state.stroke.direction,step:state.stroke.step}:null,
+        rideHeld:state.rideHeld
+      }),
+      receipts:()=>state.receipts.slice(),
+      motionReceipts:()=>state.motionReceipts.slice(),
+      golden:(x,y)=>Object.freeze({...goldenChart(x,y)}),
+      constants:{M,S,R,SCOPE,PHI,ETA,L:[...L],L_INV:[...L_INV]}
+    });
+    updateInterface();
+    requestAnimationFrame(loop);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete reference ledger for Language Mechanics: Axiomatic Closure.">
+  <meta name="author" content="Anthony Vito Coppa">
+  <title>Language Mechanics: Complete Reference Ledger — The Architecture of Silence</title>
+  <style>
+    :root{--paper:#faf8f0;--ink:#243d40;--muted:#56655e;--line:#c9c9b8;--wash:#f1f3ec;--accent:#2e5f59;--warm:#7a5b40}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 Georgia,"Times New Roman",serif}.frame{width:min(1160px,calc(100% - 32px));margin:24px auto;border:1px solid var(--line);background:var(--paper)}.titlebar{display:flex;gap:24px;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line);font:12px/1.4 Arial,Helvetica,sans-serif}.site-title{font-weight:600;letter-spacing:.02em}.portal-nav{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto}.portal-nav a,.page a{color:var(--accent);text-decoration:none}.portal-nav a:hover,.page a:hover{text-decoration:underline;text-underline-offset:4px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 245px}.page{max-width:860px;padding:59px 62px 76px}.sidebar{border-left:1px solid var(--line);padding:34px 24px;background:#f5f5ee;font:12px/1.58 Arial,Helvetica,sans-serif}.sidebar h2{font:600 11px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.09em;text-transform:uppercase;margin:0 0 13px}.sidebar a{display:block;padding:9px 0;border-top:1px solid var(--line);color:var(--muted);text-decoration:none}.sidebar a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}.eyebrow{margin:0 0 13px;color:var(--accent);font:600 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.15em}.page h1{font:400 clamp(38px,5vw,57px)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.042em;margin:0 0 16px}.deck{max-width:700px;margin:0;color:#3d5657;font-size:21px;line-height:1.49}.meta{display:grid;grid-template-columns:95px 1fr;gap:6px 16px;margin:29px 0 0;padding-top:20px;border-top:1px solid var(--line);font:11px/1.55 Arial,Helvetica,sans-serif}.meta dt{color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.meta dd{margin:0}.scope{margin:34px 0 43px;padding:22px 24px;border-left:3px solid #719483;background:var(--wash)}.scope h2{font:400 24px/1.24 Georgia,"Times New Roman",serif;margin:0 0 9px}.scope p{margin:0;font-size:15px;line-height:1.72}.page section{margin:45px 0}.page h2{font:400 30px/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.022em;margin:0 0 15px}.page p{max-width:750px;margin:0 0 18px}.ledger{margin:20px 0 0;padding:0;list-style:none;counter-reset:refs}.ledger li{position:relative;padding:20px 0 20px 49px;border-top:1px solid var(--line);counter-increment:refs}.ledger li::before{content:"[" counter(refs, decimal-leading-zero) "]";position:absolute;left:0;top:22px;color:var(--accent);font:600 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.05em}.citation{margin:0 0 8px}.citation em{font-style:italic}.role{margin:0;color:var(--muted);font:11px/1.55 Arial,Helvetica,sans-serif}.role strong{color:var(--ink);text-transform:uppercase;letter-spacing:.06em;font-size:10px}.external{font:10px/1.4 Arial,Helvetica,sans-serif;white-space:nowrap}.legend{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:20px 0}.legend>div{padding:16px;border:1px solid var(--line);background:#f8f8f1}.legend h3{margin:0 0 7px;font:600 11px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase}.legend p{margin:0;font:12px/1.6 Arial,Helvetica,sans-serif;color:var(--muted)}.footer{padding:18px 22px;border-top:1px solid var(--line);color:var(--muted);font:10px/1.6 Arial,Helvetica,sans-serif}.footer a{color:inherit}@media(max-width:860px){.workspace{display:block}.sidebar{border-left:0;border-top:1px solid var(--line);padding:27px 26px}.sidebar nav{columns:2;column-gap:20px}.sidebar a{break-inside:avoid}.page{max-width:none;padding:45px 38px 60px}}@media(max-width:560px){body{font-size:15px}.frame{width:calc(100% - 18px);margin:9px auto}.titlebar{align-items:flex-start;padding:13px 15px;gap:11px;flex-direction:column}.portal-nav{margin-left:0;gap:13px}.page{padding:35px 20px 48px}.page h1{font-size:39px}.deck{font-size:19px}.meta{grid-template-columns:74px 1fr}.scope{padding:19px 17px}.page h2{font-size:27px}.legend{grid-template-columns:1fr}.sidebar nav{columns:1}}@media print{.frame{width:100%;margin:0;border:0}.titlebar,.sidebar,.footer{display:none}.workspace{display:block}.page{max-width:none;padding:0}.page section,.ledger li{break-inside:avoid}}
+  </style>
+  <style>.ledger.start-09{counter-reset:refs 8}.ledger.start-19{counter-reset:refs 18}.ledger.start-28{counter-reset:refs 27}.ledger.start-36{counter-reset:refs 35}</style>
+  <link rel="canonical" href="https://eulershiddenl.ink/references">
+</head>
+<body>
+  <div class="frame">
+    <header class="titlebar">
+      <span class="site-title">Coppalini Architecture</span>
+      <nav aria-label="Primary" class="portal-nav">
+        <a href="/provenance">Home</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture">Constructions</a><a href="/formalism">Basis</a>
+      </nav>
+    </header>
+    <div class="workspace">
+      <main class="page" id="main">
+        <header>
+          <p class="eyebrow">LANGUAGE MECHANICS / REFERENCE LEDGER</p>
+          <h1>Complete reference ledger</h1>
+          <p class="deck">The named works, standards, and source coordinates carried into <em>Language Mechanics: Axiomatic Closure</em>.</p>
+          <dl class="meta">
+            <dt>Paper</dt><dd><a href="/papers/language-mechanics-axiomatic-closure">Language Mechanics: Axiomatic Closure</a></dd>
+            <dt>Scope</dt><dd>Every external source cited in that paper, including its declared historical coordinate.</dd>
+            <dt>Method</dt><dd>Original work where available; an identified translation or current standard where the paper requires one.</dd>
+          </dl>
+        </header>
+
+        <aside class="scope" aria-labelledby="scope-title">
+          <p class="eyebrow">SOURCE RELATION</p>
+          <h2 id="scope-title">A reference is a living address in the carriage of inquiry.</h2>
+          <p>This ledger is exhaustive for the dependency declared in the linked paper. Each entry supplies either a direct source for a stated formal or empirical relation, or a named historical coordinate that the paper explicitly credits. The source keeps its native office; the paper names the relation through which it enters the present reader.</p>
+        </aside>
+
+        <section id="reading" aria-labelledby="reading-title">
+          <h2 id="reading-title">How to read this ledger</h2>
+          <div class="legend">
+            <div><h3>Direct source</h3><p>Supports a definition, formal construction, measurement practice, or field adapter used in the paper.</p></div>
+            <div><h3>Historical coordinate</h3><p>Marks a named construction in the carried lineage and preserves its author, title, and publication address.</p></div>
+          </div>
+          <p>Bibliographic form follows the source language where practical. Translation details are named when an English edition is the access coordinate. Digital object identifiers and official publication pages are included when they provide a stable route back to the source.</p>
+        </section>
+
+        <section id="conditions" aria-labelledby="conditions-title">
+          <h2 id="conditions-title">A. Human conditions, language, and measurement</h2>
+          <ol class="ledger">
+            <li id="ref-01"><p class="citation">World Health Organization, United Nations Children&rsquo;s Fund, and World Bank Group. 2018. <em>Nurturing Care for Early Childhood Development: A Framework for Helping Children Survive and Thrive to Transform Health and Human Potential.</em> Geneva: World Health Organization. <a class="external" href="https://www.who.int/publications/i/item/9789241514064">Official record</a></p><p class="role"><strong>Paper relation:</strong> Direct context for the material conditions of early human carriage.</p></li>
+            <li id="ref-02"><p class="citation">Wittgenstein, Ludwig. 1953. <em>Philosophical Investigations.</em> Translated by G. E. M. Anscombe. Oxford: Basil Blackwell.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for the use of language in shared practices.</p></li>
+            <li id="ref-03"><p class="citation">Peano, Giuseppe. 1889. <em>Arithmetices principia, nova methodo exposita.</em> Turin: Fratres Bocca.</p><p class="role"><strong>Paper relation:</strong> Direct source coordinate for successor-based arithmetic and the displayed derivation of 1 + 1 = 2.</p></li>
+            <li id="ref-04"><p class="citation">Joint Committee for Guides in Metrology. 2012. <em>International Vocabulary of Metrology&mdash;Basic and General Concepts and Associated Terms (VIM).</em> 3rd ed. JCGM 200:2012. <a class="external" href="https://doi.org/10.59161/JCGM200-2012">doi:10.59161/JCGM200-2012</a></p><p class="role"><strong>Paper relation:</strong> Direct source for the vocabulary of measurement, reference, and comparison.</p></li>
+            <li id="ref-05"><p class="citation">Joint Committee for Guides in Metrology. 2008. <em>Evaluation of Measurement Data&mdash;Guide to the Expression of Uncertainty in Measurement.</em> JCGM 100:2008. <a class="external" href="https://doi.org/10.59161/JCGM100-2008E">doi:10.59161/JCGM100-2008E</a></p><p class="role"><strong>Paper relation:</strong> Direct source for stated uncertainty and empirical equality at declared resolution.</p></li>
+            <li id="ref-06"><p class="citation">Bureau International des Poids et Mesures. 2019. <em>The International System of Units (SI).</em> 9th ed. S&egrave;vres: BIPM. <a class="external" href="https://www.bipm.org/en/publications/si-brochure">Official record</a></p><p class="role"><strong>Paper relation:</strong> Direct source coordinate for standardized units and traceable comparison.</p></li>
+            <li id="ref-07"><p class="citation">International Commission on Illumination. 2019. <em>Colorimetry&mdash;Part 1: CIE Standard Colorimetric Observers.</em> ISO/CIE 11664-1:2019(E). Vienna: CIE. <a class="external" href="https://cie.co.at/publications/colorimetry-part-1-cie-standard-colorimetric-observers">Official record</a></p><p class="role"><strong>Paper relation:</strong> Direct source for declared color observer and colorimetric comparison.</p></li>
+            <li id="ref-08"><p class="citation">Newton, Isaac. 1704. <em>Opticks: Or, a Treatise of the Reflections, Refractions, Inflections and Colours of Light.</em> London: Sam. Smith and Benjamin Walford.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for optics and the rainbow example.</p></li>
+          </ol>
+        </section>
+
+        <section id="fields" aria-labelledby="fields-title">
+          <h2 id="fields-title">B. Field, symmetry, quantum state, and phase</h2>
+          <ol class="ledger start-09" start="9">
+            <li id="ref-09"><p class="citation">Maxwell, James Clerk. 1865. &ldquo;A Dynamical Theory of the Electromagnetic Field.&rdquo; <em>Philosophical Transactions of the Royal Society of London</em> 155: 459&ndash;512. <a class="external" href="https://doi.org/10.1098/rstl.1865.0008">doi:10.1098/rstl.1865.0008</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for field representation.</p></li>
+            <li id="ref-10"><p class="citation">Einstein, Albert. 1905. &ldquo;Zur Elektrodynamik bewegter K&ouml;rper.&rdquo; <em>Annalen der Physik</em> 17: 891&ndash;921. <a class="external" href="https://doi.org/10.1002/andp.19053221004">doi:10.1002/andp.19053221004</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for the relation of inertial frame and event.</p></li>
+            <li id="ref-11"><p class="citation">Einstein, Albert. 1916. &ldquo;Die Grundlage der allgemeinen Relativit&auml;tstheorie.&rdquo; <em>Annalen der Physik</em> 49: 769&ndash;822. <a class="external" href="https://doi.org/10.1002/andp.19163540702">doi:10.1002/andp.19163540702</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for geometric field formulation.</p></li>
+            <li id="ref-12"><p class="citation">Noether, Emmy. 1918. &ldquo;Invariante Variationsprobleme.&rdquo; <em>Nachrichten von der Gesellschaft der Wissenschaften zu G&ouml;ttingen, Mathematisch-Physikalische Klasse</em> 1918: 235&ndash;257.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for symmetry and conserved relation.</p></li>
+            <li id="ref-13"><p class="citation">Schr&ouml;dinger, Erwin. 1926. &ldquo;Quantisierung als Eigenwertproblem.&rdquo; <em>Annalen der Physik</em> 79: 361&ndash;376, 489&ndash;527; 80: 437&ndash;490; 81: 109&ndash;139. <a class="external" href="https://doi.org/10.1002/andp.19263840404">Part I DOI</a></p><p class="role"><strong>Paper relation:</strong> Direct historical coordinate for quantum evolution.</p></li>
+            <li id="ref-14"><p class="citation">Dirac, P. A. M. 1928. &ldquo;The Quantum Theory of the Electron.&rdquo; <em>Proceedings of the Royal Society A</em> 117 (778): 610&ndash;624. <a class="external" href="https://doi.org/10.1098/rspa.1928.0023">doi:10.1098/rspa.1928.0023</a></p><p class="role"><strong>Paper relation:</strong> Direct historical coordinate for quantum formalism.</p></li>
+            <li id="ref-15"><p class="citation">von Neumann, John. 1932. <em>Mathematische Grundlagen der Quantenmechanik.</em> Berlin: Julius Springer.</p><p class="role"><strong>Paper relation:</strong> Direct source coordinate for state, observable, and measurement reader.</p></li>
+            <li id="ref-16"><p class="citation">Aharonov, Yakir, and David Bohm. 1959. &ldquo;Significance of Electromagnetic Potentials in the Quantum Theory.&rdquo; <em>Physical Review</em> 115 (3): 485&ndash;491. <a class="external" href="https://doi.org/10.1103/PhysRev.115.485">doi:10.1103/PhysRev.115.485</a></p><p class="role"><strong>Paper relation:</strong> Direct historical coordinate for path-sensitive quantum comparison.</p></li>
+            <li id="ref-17"><p class="citation">Simon, Barry. 1983. &ldquo;Holonomy, the Quantum Adiabatic Theorem, and Berry&rsquo;s Phase.&rdquo; <em>Physical Review Letters</em> 51 (24): 2167&ndash;2170. <a class="external" href="https://doi.org/10.1103/PhysRevLett.51.2167">doi:10.1103/PhysRevLett.51.2167</a></p><p class="role"><strong>Paper relation:</strong> Direct source coordinate for holonomy and adiabatic return.</p></li>
+            <li id="ref-18"><p class="citation">Berry, M. V. 1984. &ldquo;Quantal Phase Factors Accompanying Adiabatic Changes.&rdquo; <em>Proceedings of the Royal Society A</em> 392: 45&ndash;57. <a class="external" href="https://doi.org/10.1098/rspa.1984.0023">doi:10.1098/rspa.1984.0023</a></p><p class="role"><strong>Paper relation:</strong> Direct source coordinate for geometric phase as a path-sensitive difference.</p></li>
+          </ol>
+        </section>
+
+        <section id="classical" aria-labelledby="classical-title">
+          <h2 id="classical-title">C. Classical construction and algebraic form</h2>
+          <ol class="ledger start-19" start="19">
+            <li id="ref-19"><p class="citation">Euclid. c. 300 BCE. <em>The Elements.</em> Translated by Thomas L. Heath. 3 vols. Cambridge: Cambridge University Press, 1908.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for construction, proof, and geometric relation.</p></li>
+            <li id="ref-20"><p class="citation">Brahmagupta. 628. <em>Br&amacr;hmasphu&#x1E6D;asiddh&amacr;nta.</em> In Henry Thomas Colebrooke, <em>Algebra, with Arithmetic and Mensuration, from the Sanscrit of Brahmegupta and Bh&aacute;scara</em>. London: John Murray, 1817.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for arithmetic operations and zero.</p></li>
+            <li id="ref-21"><p class="citation">Fibonacci, Leonardo. 1202. <em>Liber abaci.</em> English translation by Laurence E. Sigler, <em>Fibonacci&rsquo;s Liber Abaci: A Translation into Modern English of Leonardo Pisano&rsquo;s Book of Calculation</em>. New York: Springer, 2002.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for calculation and transmission.</p></li>
+            <li id="ref-22"><p class="citation">Euler, Leonhard. 1748. <em>Introductio in analysin infinitorum.</em> Lausanne: Marc-Michel Bousquet.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for analysis and functional representation.</p></li>
+            <li id="ref-23"><p class="citation">Lagrange, Joseph-Louis. 1788. <em>M&eacute;canique analytique.</em> Paris: Veuve Desaint.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for analytical mechanics.</p></li>
+            <li id="ref-24"><p class="citation">Gauss, Carl Friedrich. 1801. <em>Disquisitiones Arithmeticae.</em> Leipzig: Gerh. Fleischer jun.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for number-theoretic structure.</p></li>
+            <li id="ref-25"><p class="citation">Grassmann, Hermann. 1844. <em>Die lineale Ausdehnungslehre, ein neuer Zweig der Mathematik.</em> Leipzig: Otto Wigand.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for extension and algebraic space.</p></li>
+            <li id="ref-26"><p class="citation">Riemann, Bernhard. 1867. &ldquo;&Uuml;ber die Hypothesen, welche der Geometrie zu Grunde liegen.&rdquo; <em>Abhandlungen der K&ouml;niglichen Gesellschaft der Wissenschaften zu G&ouml;ttingen</em> 13: 1&ndash;20. (Habilitation lecture, 1854.)</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for manifold geometry.</p></li>
+            <li id="ref-27"><p class="citation">Cayley, Arthur. 1858. &ldquo;A Memoir on the Theory of Matrices.&rdquo; <em>Philosophical Transactions of the Royal Society of London</em> 148: 17&ndash;37. <a class="external" href="https://doi.org/10.1098/rstl.1858.0002">doi:10.1098/rstl.1858.0002</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for matrix operation.</p></li>
+          </ol>
+        </section>
+
+        <section id="lineage" aria-labelledby="lineage-title">
+          <h2 id="lineage-title">D. Inheritance, probability, topology, formal horizon, and transmission</h2>
+          <ol class="ledger start-28" start="28">
+            <li id="ref-28"><p class="citation">Mendel, Gregor. 1866. &ldquo;Versuche &uuml;ber Pflanzen-Hybriden.&rdquo; <em>Verhandlungen des naturforschenden Vereines in Br&uuml;nn</em> 4: 3&ndash;47.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for patterned inheritance.</p></li>
+            <li id="ref-29"><p class="citation">Boltzmann, Ludwig. 1877. &ldquo;&Uuml;ber die Beziehung zwischen dem zweiten Hauptsatze der mechanischen W&auml;rmetheorie und der Wahrscheinlichkeitsrechnung respektive den S&auml;tzen &uuml;ber das W&auml;rmegleichgewicht.&rdquo; <em>Sitzungsberichte der Kaiserlichen Akademie der Wissenschaften in Wien</em> 76: 373&ndash;435.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for probability, state, and coarse-grained description.</p></li>
+            <li id="ref-30"><p class="citation">Poincar&eacute;, Henri. 1895. &ldquo;Analysis Situs.&rdquo; <em>Journal de l&rsquo;&Eacute;cole polytechnique</em>, 2nd series, 1: 1&ndash;121.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for topology and invariant relation.</p></li>
+            <li id="ref-31"><p class="citation">G&ouml;del, Kurt. 1931. &ldquo;&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I.&rdquo; <em>Monatshefte f&uuml;r Mathematik und Physik</em> 38: 173&ndash;198. <a class="external" href="https://doi.org/10.1007/BF01700692">doi:10.1007/BF01700692</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for formal horizon and incompleteness.</p></li>
+            <li id="ref-32"><p class="citation">Rosser, J. Barkley. 1936. &ldquo;Extensions of Some Theorems of G&ouml;del and Church.&rdquo; <em>Journal of Symbolic Logic</em> 1 (3): 87&ndash;91. <a class="external" href="https://doi.org/10.2307/2269028">doi:10.2307/2269028</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for refinement of formal undecidability.</p></li>
+            <li id="ref-33"><p class="citation">Turing, Alan M. 1936. &ldquo;On Computable Numbers, with an Application to the Entscheidungsproblem.&rdquo; <em>Proceedings of the London Mathematical Society</em>, series 2, 42 (1): 230&ndash;265. <a class="external" href="https://doi.org/10.1112/plms/s2-42.1.230">doi:10.1112/plms/s2-42.1.230</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for computation and mechanical procedure.</p></li>
+            <li id="ref-34"><p class="citation">Hodge, W. V. D. 1941. <em>The Theory and Applications of Harmonic Integrals.</em> Cambridge: Cambridge University Press.</p><p class="role"><strong>Paper relation:</strong> Historical coordinate for harmonic form and geometric analysis.</p></li>
+            <li id="ref-35"><p class="citation">Shannon, Claude E. 1948. &ldquo;A Mathematical Theory of Communication.&rdquo; <em>Bell System Technical Journal</em> 27: 379&ndash;423, 623&ndash;656. <a class="external" href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x">Part I DOI</a></p><p class="role"><strong>Paper relation:</strong> Historical coordinate for transmission, signal, and stated channel relation.</p></li>
+          </ol>
+        </section>
+
+        <section id="internal" aria-labelledby="internal-title">
+          <h2 id="internal-title">E. Present corpus coordinate</h2>
+          <ol class="ledger start-36" start="36">
+            <li id="ref-36"><p class="citation">Coppa, Anthony Vito. 2026. <em>The Architecture of Silence: Formal Reference / Open Library.</em> Thirty-two-paper architecture and associated models. <a class='external' href="/provenance">Site library</a></p><p class="role"><strong>Paper relation:</strong> Present corpus coordinate. The Language Mechanics basis gives this paper its local architectural placement.</p></li>
+            <li id="ref-37"><p class="citation">Coppa, Anthony Vito. 2026. <em>Return Curvature &amp; Memory: A Minimal Translation Table for Existing Formalisms.</em> Working note, 24 January 2026. <a class="external" href="papers/return-curvature-memory.pdf">PDF</a></p><p class="role"><strong>Paper relation:</strong> Direct source for the return/accumulation translation table introduced on the Architecture page.</p></li>
+          </ol>
+        </section>
+      </main>
+      <aside class="sidebar" aria-label="Reference sections">
+        <h2>Ledger</h2>
+        <nav>
+          <a href="/references#reading">How to read</a>
+          <a href="/references#conditions">A. Conditions &amp; measurement</a>
+          <a href="/references#fields">B. Field &amp; quantum</a>
+          <a href="/references#classical">C. Classical construction</a>
+          <a href="/references#lineage">D. Formal horizon</a>
+          <a href="/references#internal">E. Present corpus</a>
+          <a href="/papers/language-mechanics-axiomatic-closure">Back to paper &rarr;</a>
+        </nav>
+      </aside>
+    </div>
+    <footer class="footer">Complete reference ledger for <a href="/papers/language-mechanics-axiomatic-closure">Language Mechanics: Axiomatic Closure</a> &middot; 31 October 2026</footer>
+  </div>
+</body>
+</html>

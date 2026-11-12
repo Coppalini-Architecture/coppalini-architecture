@@ -1,0 +1,621 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.88in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={An Exact Observation Interface for the Normobaric Oxygen Paradox},
+  pdfauthor={Anthony Vito Coppa},
+  pdfsubject={Metric Mirror Coordinates, Adaptation Memory, and Empirical Traceability}
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.12}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\pos}{\mathbb R_{>0}}
+\newcommand{\Id}{I}
+\newcommand{\Cr}{C_{\mathrm{redox}}}
+\newcommand{\code}[1]{\nolinkurl{#1}}
+\newcommand{\OPEN}{\textup{OPEN}}
+\title{\Large\bfseries An Exact Observation Interface\\
+for the Normobaric Oxygen Paradox\\[7pt]
+\normalsize\mdseries Metric Mirror Coordinates, Adaptation Memory,\\
+and Empirical Traceability}
+\author{Anthony Vito Coppa\\\small Coppalini Architecture}
+\date{Version 0.2.0 \quad 12 November 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1em}
+\begin{abstract}
+We construct an invertible interface from a declared pair of positive oxidant
+and antioxidant assay readings to the established Metric Mirror operators.
+With the paired baselines retained, contrast and magnitude recover both
+original numerical readings exactly. An explicit matrix intertwines exchange
+of the two normalized coordinates with the root mirror and converts their
+logarithmic contrast into the axial parameter. A sampled adaptation equation
+gives an exact return-with-memory theorem, including the input jump,
+interval composition, and finite recovery. Positive interval arithmetic carries
+the entered uncertainty through the same interface. The empirical connection
+is specified field by field for primary normobaric oxygen paradox studies.
+The completed result is a reproducible observation and model interface:
+its coordinate identities and adaptation theorem are proved here, while
+participant-level parameter identification and the ROS--HIF causal law remain
+\OPEN. All numerical demonstrations supplied with the workbench are synthetic.
+\end{abstract}
+
+\section{The observation and its owning reference}
+
+The normobaric oxygen paradox (NOP) literature studies responses after a
+hyperoxic exposure returns to a lower oxygen condition. The proposed
+ROS/scavenger mechanism invokes different recovery times; the linked review
+also records conflicting roles of ROS in HIF regulation \cite{review}.
+The present construction asks a directly testable question:
+\emph{when the declared oxygen read returns, which measured coordinates
+remain different, and what later outcome do they predict?}
+
+Fix a run, a baseline sample, and a measurement declaration \(\mathcal M\).
+The declaration assigns each quantity its assay, units, compartment,
+organism or preparation, clock convention, and source reference. Let
+\[
+ R_0,A_0\in\pos,\qquad R,A\in\pos
+\]
+be the baseline and current readings of the declared oxidant and antioxidant
+assays. Define
+\begin{equation}\label{eq:normalized}
+ r=\frac{R}{R_0},\qquad a=\frac{A}{A_0}.
+\end{equation}
+These are dimensionless, baseline-normalized assay indices. In particular,
+an assay of glutathione concentration retains that identity when it occupies
+the software field \code{scavenger}; the field name does not convert the assay
+into a measurement of total scavenging capacity.
+
+Write a numerical observation record as
+\begin{equation}\label{eq:record}
+ \mathcal R=(\mathcal M,\iota,n,t,O,R_0,A_0,R,A,\mathcal B,Y).
+\end{equation}
+Here \(\iota\) retains run, sample, and baseline identities; \(n\) is an
+occurrence address; \(t\) is the visible clock value; \(O\) is the declared
+oxygen read; \(\mathcal B\) retains entered bounds and other observations;
+and \(Y\) is an optional, separately identified endpoint. One endpoint
+definition belongs to one dataset. HIF isoforms, nuclear activity, serum EPO,
+reticulocytes, and hemoglobin keep their individual measurement identities.
+
+The implemented oxygen channel is one of nominal dry inspired partial
+pressure, arterial partial pressure, or tissue partial pressure. For the
+nominal dry-gas channel only, \(O=F_{\mathrm IO_2}P_{\mathrm{abs}}\).
+The inspired fraction and absolute pressure remain separate inputs.
+A return of this read is evaluated in its own compartment. The
+oxygen-to-oxidant transfer is an additional empirical or modeling relation;
+equation \eqref{eq:normalized} assigns none.
+
+\section{A one-to-one coordinate interface}
+
+\begin{theorem}[Positive assay-coordinate bijection]\label{thm:bijection}
+The map
+\[
+ T:\pos^2\longrightarrow\pos^2,\qquad
+ T(r,a)=(q,p)=\left(\frac r a,ra\right)
+\]
+is a bijection. Its inverse is
+\begin{equation}\label{eq:inverse}
+ r=\sqrt{pq},\qquad a=\sqrt{\frac p q},
+\end{equation}
+with the positive square roots. Consequently, for fixed positive \(R_0,A_0\),
+\[
+ (R,A)\longleftrightarrow(q,p)
+ \quad\hbox{has inverse}\quad
+ R=R_0\sqrt{pq},\qquad A=A_0\sqrt{p/q}.
+\]
+\end{theorem}
+\begin{proof}
+For a positive pair, \(pq=(ra)(r/a)=r^2\) and
+\(p/q=(ra)/(r/a)=a^2\), so \eqref{eq:inverse} recovers the original
+pair. Conversely, any \(p,q>0\) give positive values in
+\eqref{eq:inverse}; their ratio is \(q\) and their product is \(p\).
+Multiplication by the retained baselines recovers \(R,A\).
+\end{proof}
+
+The software name for \(p\) is \code{scale_squared}. Both coordinates
+are required. For example, \((r,a)=(1,1)\) and \((2,2)\) have \(q=1\),
+whereas their products are \(1\) and \(4\). An unchanged contrast admits
+a changed magnitude.
+
+\begin{corollary}[Reference-preserving record equivalence]\label{cor:record}
+Replace the numerical pair \(R,A\) in \eqref{eq:record} by \(q,p\), leaving
+every other component unchanged. This transformation is a bijection between
+the admitted numerical records and their transformed records. Applying it
+row by row, without reordering or discarding rows, is a bijection of finite
+record sequences.
+\end{corollary}
+\begin{proof}
+Use Theorem \ref{thm:bijection} independently at each row with its retained
+baseline. The identity map on the remaining fields preserves their references
+and order.
+\end{proof}
+
+This is the precise one-to-one claim. It concerns declared numerical records.
+The original CSV and metadata bytes are retained separately, since numerical
+parsing can identify different textual spellings of the same number.
+The workbench augments observations with derived coordinates and records
+input, code, and output hashes. A hash is an integrity reference to the
+retained file; the file supplies the original observations.
+
+\begin{proposition}[Units and changes of reference]\label{prop:units}
+Multiplying \(R,R_0\) by any \(u_R>0\), and independently \(A,A_0\) by
+\(u_A>0\), leaves \(r,a,q,p\) unchanged. If instead the baseline values
+are replaced by \(R'_0=c_RR_0\), \(A'_0=c_AA_0\), then
+\[
+ r'=\frac r{c_R},\quad a'=\frac a{c_A},\quad
+ q'=\frac{c_A}{c_R}q,\quad p'=\frac{p}{c_Rc_A}.
+\]
+\end{proposition}
+\begin{proof}
+Substitute in \eqref{eq:normalized} and \(T\).
+\end{proof}
+Multiplicative unit conversion preserves the read; a changed baseline is
+a recorded change of reference. Assay offsets, background subtraction,
+and censored readings require their declared measurement model.
+The positive-domain interface does not insert an artificial positive value
+for a zero or below-detection observation.
+
+\section{Exact transport to the Metric Mirror operators}
+
+Retain the root operators of Metric Mirror Symmetry \cite{metric}:
+\begin{equation}\label{eq:root}
+\begin{gathered}
+ Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad
+ C_1=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad
+ G=C_1Q-QC_1=\begin{pmatrix}-2&1\\1&2\end{pmatrix},\\
+ H=\frac G{\sqrt5},\qquad S=\frac{2Q-\Id}{\sqrt5},\qquad
+ \Phi=\frac{1+\sqrt5}{2}.
+\end{gathered}
+\end{equation}
+They satisfy \(H^2=S^2=\Id\) and \(HS=-SH\).
+Introduce the explicit assay adapter
+\begin{equation}\label{eq:C}
+ \Cr=\begin{pmatrix}\Phi&-1\\1&\Phi\end{pmatrix},
+ \quad J=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+ \quad D=\operatorname{diag}(1,-1),
+ \quad v=\Cr\begin{pmatrix}r\\a\end{pmatrix}.
+\end{equation}
+The subscript identifies the application coordinate map; it does not rename
+the established orientation operator \(C_1\).
+
+\begin{theorem}[Intertwining, mirror, and signed form]\label{thm:adapter}
+The matrix \(\Cr\) is invertible, and
+\begin{equation}\label{eq:conjugacies}
+ \Cr^{-1}H\Cr=J,\qquad \Cr^{-1}S\Cr=D,\qquad
+ \Cr^{T}G\Cr=\sqrt5(\Phi+2)J.
+\end{equation}
+For \(s\in\R\), let \(L_s=e^{sS}\). Then
+\begin{equation}\label{eq:flow}
+ L_s=\Cr\begin{pmatrix}e^s&0\\0&e^{-s}\end{pmatrix}\Cr^{-1},
+ \quad HL_sH=L_{-s}=L_s^{-1},\quad L_s^TGL_s=G.
+\end{equation}
+On positive assay coordinates the mirror exchanges \(r,a\), and hence
+maps \(q\) to \(q^{-1}\) while preserving \(p\).
+\end{theorem}
+\begin{proof}
+Use \(\Phi^2=\Phi+1\). Then
+\[
+ \det\Cr=\Phi^2+1=\Phi+2>0,\qquad
+ \Cr^{-1}=\frac1{\Phi+2}
+   \begin{pmatrix}\Phi&1\\-1&\Phi\end{pmatrix}.
+\]
+Direct multiplication gives \(H\Cr=\Cr J\), \(S\Cr=\Cr D\),
+and the last identity of \eqref{eq:conjugacies}.
+Exponentiating \(S\Cr=\Cr D\) gives the first identity in
+\eqref{eq:flow}. The equalities \(JDJ=-D\) and
+\(\operatorname{diag}(e^s,e^{-s})^T J
+\operatorname{diag}(e^s,e^{-s})=J\) give the other two.
+Finally \(J(r,a)^T=(a,r)^T\).
+\end{proof}
+
+The form \(G\) has signature \((1,1)\), since \(G^2=5\Id\) and
+\(\operatorname{tr}G=0\). On the admitted positive cone,
+\begin{equation}\label{eq:productmetric}
+ v^TGv=2\sqrt5(\Phi+2)ra.
+\end{equation}
+This is the pullback of a signed bilinear form. It assigns no physical
+energy or concentration unit to that form.
+
+\begin{theorem}[Magnitude times axial change]\label{thm:path}
+For \(r,a>0\), define \(\zeta=\sqrt{ra}\) and
+\(\eta=\tfrac12\log(r/a)\). Then
+\begin{equation}\label{eq:representation}
+ r=\zeta e^\eta,\quad a=\zeta e^{-\eta},\quad
+ v=\zeta L_\eta\Cr\begin{pmatrix}1\\1\end{pmatrix}.
+\end{equation}
+For any two positive observations, with no dynamical assumption,
+\begin{equation}\label{eq:path}
+ v'=\frac{\zeta'}{\zeta}L_{\eta'-\eta}v.
+\end{equation}
+The mirror sends \(\eta\) to \(-\eta\), and \(L_s\) sends it to
+\(\eta+s\) at fixed \(\zeta\).
+\end{theorem}
+\begin{proof}
+The first two identities follow from the definitions and positivity.
+Equation \eqref{eq:flow} gives \eqref{eq:representation}. Apply
+\(L_{\eta'-\eta}L_\eta=L_{\eta'}\) and multiply by
+\(\zeta'/\zeta\).
+\end{proof}
+
+The observations, or a separately declared model, supply
+\(\eta'-\eta\) and \(\zeta'/\zeta\). The established golden step
+\(L_{\log\Phi}=(Q+2\Id)/\sqrt5\) remains a coordinate step; it
+supplies no biological rate. Equation \eqref{eq:path} explicitly retains
+the magnitude change when \(ra\) changes.
+
+\section{Exact sampled adaptation and non-erasing return}
+
+Consider the declared adaptation model
+\begin{equation}\label{eq:ode}
+ \tau\frac{da}{dt}=r-a,\qquad \tau>0.
+\end{equation}
+Here \(r\) is a prescribed normalized oxidant drive. The equation is a
+testable model of a chosen assay index. A measured oxygen channel and
+a rule relating it to \(r\) retain their separate empirical assignments.
+
+\begin{proposition}[Sampling and interval composition]\label{prop:sample}
+If \(r\) is constant on an interval of length \(\Delta>0\), the exact
+sampled solution is
+\begin{equation}\label{eq:update}
+ A_{\lambda,r}(a)=\lambda a+(1-\lambda)r,\qquad
+ \lambda=e^{-\Delta/\tau}\in(0,1).
+\end{equation}
+It preserves positivity. For the same constant \(r\),
+\begin{equation}\label{eq:composition}
+ A_{\lambda_2,r}\circ A_{\lambda_1,r}
+       =A_{\lambda_1\lambda_2,r}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Solving \eqref{eq:ode} gives
+\(a(t+\Delta)=r+(a(t)-r)e^{-\Delta/\tau}\), which is
+\eqref{eq:update}. It is a convex combination of positive values.
+Composition gives
+\(\lambda_2\lambda_1a+(1-\lambda_2\lambda_1)r\).
+\end{proof}
+
+One may choose a rational \(\lambda\in(0,1)\) directly for exact finite
+arithmetic; its corresponding time constant is
+\(\tau=-\Delta/\log\lambda\). Rational inputs and rational \(\lambda\)
+give rational iterates. Combining \(m\) equal constant-input intervals
+uses \(\lambda^m\). If the drive changes within the combined interval,
+its segments must be retained. A change of time unit rescales
+\(\Delta\) and \(\tau\) together and leaves \(\lambda\) unchanged.
+
+\begin{theorem}[Pulse, jump, and finite recovery]\label{thm:return}
+Let \(a=1\) initially. Apply the constant drive \(r=k>1\) for an
+integer \(d\ge1\) intervals with \(0<\lambda<1\). Put removal of
+that drive at time \(t=0\). Then
+\begin{equation}\label{eq:pulse}
+ a_d=1+(k-1)(1-\lambda^d),\qquad 1<a_d<k.
+\end{equation}
+At the jump, \(r(0^-)=k\), \(r(0^+)=1\), and
+\(a(0^-)=a(0^+)=a_d\). After \(j\ge0\) recovery intervals,
+\begin{equation}\label{eq:recovery}
+ r_j=1,\qquad
+ a_j=1+(a_d-1)\lambda^j,\qquad
+ q_j=\frac1{1+(a_d-1)\lambda^j}<1.
+\end{equation}
+For every finite \(j\), the adaptation state differs from baseline.
+As \(j\) increases, \(a_j\) decreases to one and \(q_j\) increases to one.
+\end{theorem}
+\begin{proof}
+During the pulse, \(a_{n+1}-k=\lambda(a_n-k)\). Starting from
+\(a_0=1\) gives \eqref{eq:pulse}; its inequalities follow from
+\(0<\lambda^d<1\).
+The solution of \eqref{eq:ode} is continuous at a bounded input jump,
+so removal changes \(r\) and retains \(a_d\).
+During recovery, \(a_{j+1}-1=\lambda(a_j-1)\); induction gives
+\eqref{eq:recovery}. Its sign, monotonicity, and limit follow from
+\(a_d-1>0\) and \(0<\lambda<1\).
+\end{proof}
+
+For \(k=2,\lambda=1/2,d=4\), the exact values are
+\[
+ (r,a,q)_{0^-}=(2,31/16,32/31),\quad
+ (r,a,q)_{0^+}=(1,31/16,16/31),\quad
+ (r,a,q)_{j=1}=(1,47/32,32/47).
+\]
+The two records at clock time zero have distinct occurrence addresses.
+There is no elapsed adaptation interval between \(0^-\) and \(0^+\).
+
+\begin{corollary}[The instantaneous drive does not determine the state]
+\label{cor:nonfactor}
+On the model class containing an unexposed baseline and the recovery
+histories of Theorem \ref{thm:return}, there is no function \(f\) such
+that \(a=f(r)\) at every observation.
+\end{corollary}
+\begin{proof}
+The unexposed state has \(r=a=1\); a finite recovery state has \(r=1\)
+and \(a>1\). The same argument of \(f\) would require two values.
+\end{proof}
+This proves failure of instantaneous-read factorization in the model.
+The empirical question is whether specified measured records exhibit
+the corresponding retained difference under their uncertainty bounds.
+
+\section{History, uncertainty, and computational scope}
+
+\begin{proposition}[A state and count do not recover an arbitrary history]
+\label{prop:collision}
+For \(\lambda=1/2\) and initial \(a=1\), the two drive histories
+\((2,2)\) and \((3,3/2)\) both yield \(a=7/4\) after two intervals.
+Returning each drive to one produces the same current pair \((r,a)\)
+and the same interval count, while the histories are distinct.
+\end{proposition}
+\begin{proof}
+The first history gives \(1\mapsto3/2\mapsto7/4\); the second gives
+\(1\mapsto2\mapsto7/4\). Returning the drives changes both current
+values of \(r\) to one without changing their adaptation state.
+\end{proof}
+Accordingly the occurrence record retains the raw sequence. The
+read/state/occurrence distinction is inherited from Infinity One Zero
+Lift \cite{iozl}; no eight-coordinate biological state is assumed.
+The workbench creates a hashed snapshot. Retaining successive source
+snapshots preserves the study record; the current coordinate pair
+has the reconstruction scope of Theorem \ref{thm:bijection}.
+
+\begin{proposition}[Positive interval enclosure]\label{prop:interval}
+Suppose each of \(R,A,R_0,A_0\) belongs to its entered positive interval
+\([X_-,X_+]\). Valid enclosing intervals are
+\begin{align}
+ r&\in[R_-/R_{0+},\,R_+/R_{0-}],&
+ a&\in[A_-/A_{0+},\,A_+/A_{0-}],\label{eq:ra-bounds}\\
+ q&\in\left[\frac{R_-A_{0-}}{A_+R_{0+}},
+             \frac{R_+A_{0+}}{A_-R_{0-}}\right],&
+ p&\in\left[\frac{R_-A_-}{R_{0+}A_{0+}},
+             \frac{R_+A_+}{R_{0-}A_{0-}}\right].\label{eq:qp-bounds}
+\end{align}
+A baseline normalized by that identical baseline sample has the exact
+self-ratios \(r=a=q=p=1\).
+\end{proposition}
+\begin{proof}
+Each positive product or quotient increases in its numerator variables
+and decreases in its denominator variables; the endpoints enclose the
+rectangular domain. Additional dependence may narrow the attainable
+set, so the enclosure remains valid. For an identical baseline sample,
+numerator and denominator are the same variable and cancel.
+\end{proof}
+
+An interval excluding one resolves a change relative to the entered bounds.
+An interval containing one leaves that sign unresolved. Equal point-valued
+oxygen entries establish an exact return \emph{as entered}; overlapping
+oxygen intervals establish compatibility with return. These are arithmetic
+classifications. Probabilistic coverage requires its own measurement
+specification. Exact rational arithmetic preserves entered numbers; it does
+not remove assay uncertainty.
+
+The mirror also has a precise dynamical boundary. The adaptation update
+on pairs is \(\mathcal A_\lambda(r,a)=(r,\lambda a+(1-\lambda)r)\).
+For \(\lambda=1/2\) at \((2,1)\),
+\[
+ J\mathcal A_{1/2}(2,1)=(3/2,2),
+ \qquad \mathcal A_{1/2}J(2,1)=(1,3/2).
+\]
+Thus the coordinate mirror need not be a symmetry of the adaptation law.
+Equation \eqref{eq:flow} retains the exact symmetry of its declared axial
+family.
+
+\section{The empirical adapter: primary fields and missing links}
+
+An admitted empirical row needs a subject/run identity, its paired baseline,
+an ordered sample time, the declared oxygen channel, both positive assay
+readings, and their measurement descriptions. An endpoint is attached under
+its own declaration. Additional covariates remain in the source record.
+An available field maps to its named coordinate; an unmeasured field
+remains unmeasured.
+
+An endpoint acquired at a different time retains its own timed record,
+linked through the subject/run and sampling protocol. It is not copied
+into a redox row as if co-measured. The paired CSV interface requires
+both assay readings; endpoint-only observations remain in their linked
+source table until an explicit analysis defines the relevant cross-time
+relation.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}@{}}
+\toprule
+Primary reference & Reported observations & Interface assignment\\
+\midrule
+\endfirsthead
+\toprule
+Primary reference & Reported observations & Interface assignment\\
+\midrule
+\endhead
+Donati et al.\ (2017) \cite{donati}
+&
+Serum HPF-reactive oxidant signal (RFU) and reported GSH
+(\(\mu\mathrm M\)): baseline, end of two-hour exposure, and two hours
+after return to individual baseline inspired fraction. Serum EPO:
+baseline, 24 and 48 hours.
+&
+Same-sample oxidant and GSH readings can supply \code{ros} and
+\code{scavenger} with their serum assay identities. Paired participant
+values are required for \(q,p\); EPO is a separate later endpoint.\\[5pt]
+Fratantonio et al.\ (2021) \cite{fratantonio}
+&
+PBMC transcription-factor and reduced-glutathione measurements after
+a one-hour exposure; methods/figure times are 0.5, 3 and 24 hours.
+ROS was not directly measured.
+&
+GSH can supply the declared antioxidant index and HIF-\(1\alpha\)
+the specified endpoint. An observed paired ROS/GSH coordinate needs
+an additional ROS measurement. Source compartment and timing
+ambiguities stay attached to the import.\\[5pt]
+Khalife et al.\ (2021) \cite{khalife}
+&
+Postoperative EPO, reticulocyte, and hemoglobin outcomes under repeated
+oxygen variation and a comparison group with its own exposure history.
+&
+These supply separately identified outcomes and protocol context;
+paired oxidant/antioxidant observations are not supplied.
+Within-group and between-group contrasts retain separate estimands.\\
+\bottomrule
+\end{longtable}
+
+Donati et al.\ report a transient oxidant rise and later GSH rise, giving
+a direct empirical location for a retained-state comparison \cite{donati}.
+The HPF signal is an assay-specific oxidant proxy; reported GSH retains
+its concentration identity. Reduced-versus-total processing must be
+resolved from the laboratory record. Fratantonio et al.\ connect exposure
+to transcription-factor observations while leaving the paired oxidant
+coordinate unmeasured \cite{fratantonio}. These are complementary interfaces,
+not one merged participant trajectory.
+
+The source ledger retains pressure-unit and assay-compartment qualifications,
+and the 3-hour/4-hour wording discrepancy in Fratantonio et al.
+A measured import must resolve these or carry explicit uncertainty.
+The release contains no participant-level dataset from these studies.
+
+The empirical connection to the matrices is exact at this declared interface:
+\[
+ \text{identified assay pair}
+ \ \longleftrightarrow\ (r,a)
+ \ \longleftrightarrow\ (q,p)
+ \ \longleftrightarrow\ (\eta,\zeta)
+ \ \longleftrightarrow\ v,
+\]
+with baselines and raw references retained. The arrows are invertible
+coordinate maps on the positive domain. Oxygen-to-ROS transfer,
+ROS/scavenger-to-PHD/HIF coupling, and downstream EPO response each
+require their own observed relations.
+
+Mechanism discrimination requires participant-level pairing, appropriate
+oxygen and perfusion measurements, the declared assays, and time-resolved
+PHD/HIF observations. Prespecified current-oxygen and history-dependent
+models can be compared on held-out subjects or sequences. The HIF
+observation law retains its measured sign and lag.
+\textbf{Participant-level kinetic identification and ROS--HIF causation
+are \OPEN.} Theorems \ref{thm:bijection}--\ref{thm:return} retain
+their proved mathematical strength within their stated domains.
+
+\section{Proof and executable-check crosswalk}
+
+The proofs above establish the results on their declared domains.
+The existing \code{verify_algebra.py} checks symbolic identities and exact
+rational witnesses; \code{tests/test_audit.py} checks the observation adapter.
+A fixture check has the finite scope stated below.
+
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.70\linewidth}@{}}
+\toprule
+Result & Existing checks and scope\\
+\midrule
+\endfirsthead
+\toprule
+Result & Existing checks and scope\\
+\midrule
+\endhead
+Theorem \ref{thm:bijection}
+&
+\code{coordinate_reconstruction_r},
+\code{coordinate_reconstruction_a}: symbolic positive-branch inverses.
+\code{ratio_alone_loses_common_mode}: exact magnitude-loss witness.\\[3pt]
+Proposition \ref{prop:units}
+&
+\code{ratio_unit_invariance},
+\code{product_unit_invariance}: symbolic unit identities.
+Baseline covariance is proved by substitution above.\\[3pt]
+Theorem \ref{thm:adapter}
+&
+\code{adapter_invertible}, \code{adapter_S_diagonal},
+\code{adapter_H_exchange}, \code{signed_metric_pullback},
+\code{physical_state_pullback}: symbolic adapter identities.\\[3pt]
+Theorems \ref{thm:adapter}, \ref{thm:path}
+&
+\code{mirror_reverses_axial_flow}, \code{axial_preserves_G},
+\code{golden_step_diagonal}, \code{ratio_mirror_inversion},
+\code{rational_boost_ratio}, \code{rational_boost_product}.
+The full path identity is proved in Theorem \ref{thm:path}.\\[3pt]
+Proposition \ref{prop:sample}; Theorem \ref{thm:return}
+&
+\code{pulse_closed_form_base}, \code{pulse_closed_form_recurrence},
+\code{recovery_closed_form_base}, \code{recovery_closed_form_recurrence}:
+symbolic recurrence identities.
+\code{finite_timescale_rejects_zero_retention}: domain guard.\\[3pt]
+Composition and jump
+&
+\code{constant_input_interval_composition},
+\code{pulse_four_intervals_31_over_16},
+\code{returned_ratio_16_over_31},
+\code{first_recovery_47_over_32}: exact rational witnesses.
+\code{finite_recovery_below_ratio_one}: supplied finite fixture;
+the all-finite-time claim is proved in Theorem \ref{thm:return}.\\[3pt]
+Proposition \ref{prop:collision}
+&
+\code{history_collision_retains_record_requirement}: the exact
+two-history collision proved above.\\[3pt]
+Proposition \ref{prop:interval}; record order
+&
+\code{test_baseline_self_ratios_cancel_even_with_uncertainty},
+\code{test_uncertainty_overlap_remains_unresolved},
+\code{test_interleaved_runs_and_tied_clock_keep_occurrence_order},
+\code{test_assay_unit_conversion_preserves_all_normalized_quantities}:
+implementation examples of the record contract.\\[3pt]
+Dynamical boundary
+&
+\code{biochemical_update_is_not_assumed_mirror_symmetry}:
+exact counterexample to imposing the coordinate exchange on adaptation.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+The receipts bind the executed algebra checker and its model dependency;
+the data-audit receipt binds inputs, audit code, and output bytes.
+These certify the construction checks and identify their implementation.
+The empirical contract specifies how actual measurements enter the
+construction while retaining their references and earned claim strength.
+
+\begin{thebibliography}{9}
+\footnotesize
+\setlength{\itemsep}{1pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\bibitem{metric}
+A.~V. Coppa. \emph{Metric Mirror Symmetry: Riemann's \(i\) Machine}.
+Coppalini Architecture, 9 September 2026, Sections 1--7.
+\href{https://doi.org/10.5281/zenodo.23478606}{doi:10.5281/zenodo.23478606}.
+
+\bibitem{iozl}
+A.~V. Coppa. \emph{Infinity One Zero Lift: The Normal Form of Projective Memory}.
+Coppalini Architecture, working version 0.1, 11 November 2026.
+Retained source manuscript, Sections 4, 7 and 8.
+
+\bibitem{review}
+M. Salvagno et al.
+The Normobaric Oxygen Paradox---Hyperoxic Hypoxic Paradox:
+A Novel Expedient Strategy in Hematopoiesis Clinical Issues.
+\emph{International Journal of Molecular Sciences} 24(1), 82 (2023),
+Section 3.2.
+\href{https://doi.org/10.3390/ijms24010082}{doi:10.3390/ijms24010082}.
+
+\bibitem{donati}
+A. Donati et al.
+Effects of short-term hyperoxia on erythropoietin levels and microcirculation
+in critically ill patients: a prospective observational pilot study.
+\emph{BMC Anesthesiology} 17, 49 (2017).
+\href{https://doi.org/10.1186/s12871-017-0342-2}{doi:10.1186/s12871-017-0342-2}.
+
+\bibitem{fratantonio}
+D. Fratantonio et al.
+Increasing Oxygen Partial Pressures Induce a Distinct Transcriptional
+Response in Human PBMC: A Pilot Study on the Normobaric Oxygen Paradox.
+\emph{International Journal of Molecular Sciences} 22(1), 458 (2021).
+\href{https://doi.org/10.3390/ijms22010458}{doi:10.3390/ijms22010458}.
+
+\bibitem{khalife}
+M. Khalife et al.
+Physiological and Clinical Impact of Repeated Inhaled Oxygen Variation
+on Erythropoietin Levels in Patients After Surgery.
+\emph{Frontiers in Physiology} 12, 744074 (2021).
+\href{https://doi.org/10.3389/fphys.2021.744074}{doi:10.3389/fphys.2021.744074}.
+\end{thebibliography}
+\end{document}

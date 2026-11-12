@@ -1,0 +1,163 @@
+{
+  "sympy": "1.14.0",
+  "total": 31,
+  "checks": [
+    {
+      "name": "M determinant and involution",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "complete homogeneous fixed-point polynomial",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "complex phase adapter",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "Hermitian metric from adapter",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "positive metric leading minors",
+      "status": "PASS",
+      "kind": "exact finite arithmetic"
+    },
+    {
+      "name": "lift preserves Hermitian metric",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "lift determinant and exact order four",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "real mirror adapter",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "printed transported metric",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "transported metric invariance",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "transported mirror invariance",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "all-integer Zeno homogeneous identity",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "thin-lens polynomial normalization",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "signed matrix alternation",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "generic decoder before unit normalization",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "Lagrange exterior-product identity",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "uniform reference normalized",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "uniform-reference edge differences",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "uniform-reference decoder",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "all seven projector dimensions",
+      "status": "PASS",
+      "kind": "exhaustive finite calculation"
+    },
+    {
+      "name": "all 49 projector products",
+      "status": "PASS",
+      "kind": "exhaustive finite calculation"
+    },
+    {
+      "name": "projector sum identity",
+      "status": "PASS",
+      "kind": "exhaustive finite calculation"
+    },
+    {
+      "name": "seven-band norm partition",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "normal-form normalized state examples",
+      "status": "PASS",
+      "kind": "finite illustrative examples"
+    },
+    {
+      "name": "Euclidean address example range",
+      "status": "PASS",
+      "kind": "finite illustrative examples; universal proof in manuscript"
+    },
+    {
+      "name": "Noether momentum differentiation",
+      "status": "PASS",
+      "kind": "exact symbolic identity"
+    },
+    {
+      "name": "cover eight occurrences",
+      "status": "PASS",
+      "kind": "exact SVG inspection"
+    },
+    {
+      "name": "cover full edge identity",
+      "status": "PASS",
+      "kind": "exact SVG inspection"
+    },
+    {
+      "name": "cover matching assignments",
+      "status": "PASS",
+      "kind": "exact SVG inspection"
+    },
+    {
+      "name": "cover eight unique projected positions",
+      "status": "PASS",
+      "kind": "exact SVG inspection"
+    },
+    {
+      "name": "source style ground and canvas",
+      "status": "PASS",
+      "kind": "exact SVG inspection"
+    }
+  ],
+  "status": "PASS",
+  "scope": "Exact supplementary identities, exhaustive finite relations, and separately labeled examples. Not a new Lean or empirical certificate."
+}

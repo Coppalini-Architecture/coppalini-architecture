@@ -1,0 +1,125 @@
+{
+  "record_type": "CoppaliniArchitectureRegistryIndex",
+  "schema_version": "1.0.0",
+  "canonical_url": "https://eulershiddenl.ink/research/registry-index.json",
+  "canonicalBase": "https://eulershiddenl.ink/",
+  "updated": "2026-11-12",
+  "role": "Inventory of source registries, their versions, record identities, and evidence locations.",
+  "reading_rule": "Open the named source registry for its statements, hypotheses, results, status, and boundaries. This index preserves those source assignments.",
+  "reader_contract": "https://eulershiddenl.ink/research/reader-contract.json",
+  "verification_index": "https://eulershiddenl.ink/research/verification-index.md",
+  "registries": [
+    {
+      "id": "exact-reader",
+      "title": "Exact Reader",
+      "role": "Source-indexed calculation and model records",
+      "inventory_status": "current_source_registry",
+      "url": "https://eulershiddenl.ink/exact/read-registry.json",
+      "reader_url": "https://eulershiddenl.ink/exact/",
+      "source_version": {
+        "schema_version": "1.2.0",
+        "updated": "2026-11-12"
+      },
+      "collection": "records",
+      "identifier_field": "id",
+      "record_count": 4,
+      "record_ids": [
+        "CA-ALG-001",
+        "RK-v0.2",
+        "COT-001",
+        "TBM-001"
+      ],
+      "evidence_location": "Each source record identifies its procedure, output, receipt, and boundary."
+    },
+    {
+      "id": "four-dual-forms-v0.3",
+      "title": "Four Dual Forms: physical claim register",
+      "role": "Claim records for four papers and their shared root",
+      "inventory_status": "current_source_registry",
+      "url": "https://eulershiddenl.ink/research/four-dual-forms-v0.3.json",
+      "source_version": {
+        "edition": "v0.3"
+      },
+      "collection": "claims",
+      "identifier_field": "id",
+      "record_count": 5,
+      "record_ids": [
+        "4DF-ROOT-001",
+        "4DF-ALG-001",
+        "4DF-MM-001",
+        "4DF-SCOPE-001",
+        "4DF-K8-001"
+      ],
+      "source_relative_path_base": "https://eulershiddenl.ink/",
+      "verifier_url": "https://eulershiddenl.ink/papers/four-dual-forms/source/verify_four_papers_v0_3.py",
+      "recorded_result_url": "https://eulershiddenl.ink/verification/four-dual-forms/verify_four_papers_v0_3.out"
+    },
+    {
+      "id": "released-artifacts-v0.3",
+      "title": "Coppalini Architecture Public Claim Registry",
+      "role": "Released artifact inventory with source-bound results and scope",
+      "inventory_status": "current_source_registry",
+      "url": "https://eulershiddenl.ink/research/public-claim-registry-v0.3.json",
+      "reader_url": "https://eulershiddenl.ink/verify",
+      "source_version": {
+        "version": "v0.3",
+        "released": "2026-11-12"
+      },
+      "collection": "artifacts",
+      "identifier_field": "id",
+      "record_count": 5,
+      "record_ids": [
+        "B-2",
+        "S-5/05a",
+        "W-0",
+        "W-1",
+        "NDA-3"
+      ],
+      "source_relative_path_base": "https://eulershiddenl.ink/",
+      "verification_manifest_url": "https://eulershiddenl.ink/research/verification-manifest-v0.3.json"
+    },
+    {
+      "id": "r28-preparation-2026-11-05",
+      "title": "Archived R28 preparation metadata",
+      "role": "Historical claim records and source ownership for the R28 preparation snapshot",
+      "inventory_status": "archived_preparation_snapshot",
+      "url": "https://eulershiddenl.ink/research/claims.json",
+      "source_version": {
+        "schema_version": "1.0.0",
+        "registry_date": "2026-11-05",
+        "publication_target_edition": "R28"
+      },
+      "source_sha256": "50dabf46d14696c488dee17b0f25f5a917875d4d652c46405ffd6a6071814733",
+      "collection": "claims",
+      "identifier_field": "claim_id",
+      "record_count": 7,
+      "record_ids": [
+        "CA-ALG-001",
+        "CA-ALG-002",
+        "CA-GR-001",
+        "CA-SM-001",
+        "CA-ATOM-001",
+        "CA-QG-001",
+        "CA-RECORD-001"
+      ],
+      "edition_rule": "Each status remains attached to the source edition named in this historical snapshot. A successor source is read through its own versioned record.",
+      "historical_index_url": "https://eulershiddenl.ink/research/verification-index-r28-snapshot-2026-11-11.md"
+    }
+  ],
+  "historical_snapshots": [
+    {
+      "title": "Reader contract v1.1.0",
+      "url": "https://eulershiddenl.ink/research/reader-contract-v1.1.0.json",
+      "preserved_on": "2026-11-11",
+      "sha256": "332ab05af9d896cb0c2749e3125b9751d9371b06e400a6254c4cf65653049c4e"
+    },
+    {
+      "title": "R28 preparation verification index with its later additions",
+      "url": "https://eulershiddenl.ink/research/verification-index-r28-snapshot-2026-11-11.md",
+      "preserved_on": "2026-11-11",
+      "sha256": "aaae27032dc6ec977879f50fb4c48d5d0f5cbdc2cf565e7673064c3aa4583a9e",
+      "role": "Byte-preserved historical navigation and wording; current navigation is supplied by the dated verification index."
+    }
+  ],
+  "versioning": "Website release labels, registry schema versions, artifact versions, and manuscript editions identify their own objects. Source claims keep their original version and earned status."
+}

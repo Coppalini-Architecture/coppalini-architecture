@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc">
+  <title id="title">One Carrier, Three Geometries cover</title>
+  <desc id="desc">A single circular three-sector carrier diagram, representing alternating orientation, Lorentzian structure, and positive phase.</desc>
+  <rect width="800" height="1050" fill="#faf8f3"/>
+  <text x="400" y="140" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">One Carrier,</text>
+  <text x="400" y="191" text-anchor="middle" fill="#24211d" font-family="Georgia, 'Times New Roman', serif" font-size="43">Three Geometries</text>
+
+  <g stroke-linecap="round">
+    <circle cx="400" cy="555" r="204" fill="none" stroke="#d5c9b3" stroke-width="1.4"/>
+    <circle cx="400" cy="555" r="187" fill="none" stroke="#d6b07a" stroke-width="1.2"/>
+    <path d="M400 555L400 399A156 156 0 0 1 535.1 633Z" fill="#b8c3ba" opacity=".72"/>
+    <path d="M400 555L535.1 633A156 156 0 0 1 264.9 633Z" fill="#a5adc8" opacity=".72"/>
+    <path d="M400 555L264.9 633A156 156 0 0 1 400 399Z" fill="#d6a9a6" opacity=".72"/>
+    <circle cx="400" cy="555" r="156" fill="none" stroke="#ebe4d7" stroke-width="1.4"/>
+    <path d="M400 555V399M400 555L535.1 633M400 555L264.9 633" fill="none" stroke="#faf8f3" stroke-width="4.5"/>
+    <path d="M400 555V399M400 555L535.1 633M400 555L264.9 633" fill="none" stroke="#d6b07a" stroke-width="1.15"/>
+    <circle cx="400" cy="555" r="28" fill="#faf8f3" stroke="#d6b07a" stroke-width="1.7"/>
+    <text x="400" y="565" text-anchor="middle" fill="#4a4741" font-family="Georgia, 'Times New Roman', serif" font-size="29">Q</text>
+    <g stroke="#d6b07a" stroke-width="1.2">
+      <path d="M400 334V345"/><path d="M510 363l-5.5 9.5"/><path d="M591 444l-9.5 5.5"/>
+      <path d="M621 555h-11"/><path d="M591 666l-9.5-5.5"/><path d="M510 747l-5.5-9.5"/>
+      <path d="M400 776v-11"/><path d="M290 747l5.5-9.5"/><path d="M209 666l9.5-5.5"/>
+      <path d="M179 555h11"/><path d="M209 444l9.5 5.5"/><path d="M290 363l5.5 9.5"/>
+    </g>
+  </g>
+
+  <text x="400" y="833" text-anchor="middle" fill="#4a4741" font-family="Georgia, 'Times New Roman', serif" font-size="29">Ω, G = [Q, Ω], B = Q²</text>
+  <text x="400" y="928" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="3.2">ANTHONY VITO COPPA</text>
+  <text x="400" y="954" text-anchor="middle" fill="#676662" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="2.5">COPPALINI ARCHITECTURE</text>
+</svg>

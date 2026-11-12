@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-boltzmann-title"><title id="lineage-boltzmann-title">L. Boltzmann — Multiplicity. Count the microstates admitted by a macrostate. Entropy equals Boltzmann&#x27;s constant times the natural logarithm of multiplicity.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#b79d47" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,42h18 M758,33v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M33,1008h18 M42,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><path d="M749,1008h18 M758,999v18" stroke="#b79d47" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#b79d47"/><text x="76" y="92" font-size="18" fill="#b79d47" text-anchor="start" font-family="monospace" >13</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1877 AD</text><text x="400" y="145" font-size="17" fill="#b79d47" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">MULTIPLICITY</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >L. Boltzmann</text><path d="M320,249H480" stroke="#b79d47"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#b79d47"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Count the microstates admitted by a</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >macrostate.</text><g stroke-linecap="round" stroke-linejoin="round"><circle cx="230" cy="480" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="269" cy="480" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="230" cy="519" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="269" cy="519" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="400" cy="480" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="439" cy="480" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="400" cy="519" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="439" cy="519" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="570" cy="480" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="609" cy="480" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="570" cy="519" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="609" cy="519" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="230" cy="625" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="269" cy="625" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="230" cy="664" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="269" cy="664" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="400" cy="625" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="439" cy="625" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="400" cy="664" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="439" cy="664" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="570" cy="625" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="609" cy="625" r="10" stroke="#b79d47" fill="#faf8f0" stroke-width="2"/><circle cx="570" cy="664" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><circle cx="609" cy="664" r="10" stroke="#b79d47" fill="#b79d47" stroke-width="2"/><text x="400" y="710" fill="#243d40" font-size="23" text-anchor="middle" font-family="Georgia,serif">W = 6</text></g><g transform="translate(178.781 766.000) scale(2.88271)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="boltzmann-figure_1">
+  <g id="boltzmann-patch_1">
+   <path d="M 0 31.914375 
+L 153.48 31.914375 
+L 153.48 0 
+L 0 0 
+L 0 31.914375 
+z
+" style="fill: none"/>
+  </g>
+  <g id="boltzmann-text_1">
+   <!-- $S=k_{\rm B}\ln W$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.235312) scale(0.3 -0.3)">
+    <defs>
+     <path id="boltzmann-DejaVuSans-Oblique-53" d="M 3859 4513 
+L 3738 3897 
+Q 3422 4066 3111 4152 
+Q 2800 4238 2509 4238 
+Q 1944 4238 1609 3991 
+Q 1275 3744 1275 3334 
+Q 1275 3109 1398 2989 
+Q 1522 2869 2034 2731 
+L 2413 2638 
+Q 3053 2472 3303 2217 
+Q 3553 1963 3553 1503 
+Q 3553 797 2998 353 
+Q 2444 -91 1538 -91 
+Q 1166 -91 791 -17 
+Q 416 56 38 206 
+L 166 856 
+Q 513 641 861 531 
+Q 1209 422 1556 422 
+Q 2147 422 2503 684 
+Q 2859 947 2859 1369 
+Q 2859 1650 2717 1795 
+Q 2575 1941 2106 2059 
+L 1728 2156 
+Q 1081 2325 845 2545 
+Q 609 2766 609 3163 
+Q 609 3859 1145 4304 
+Q 1681 4750 2541 4750 
+Q 2875 4750 3203 4690 
+Q 3531 4631 3859 4513 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-Oblique-6b" d="M 1172 4863 
+L 1747 4863 
+L 1197 2028 
+L 3169 3500 
+L 3916 3500 
+L 1716 1825 
+L 3322 0 
+L 2625 0 
+L 1131 1709 
+L 800 0 
+L 225 0 
+L 1172 4863 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-42" d="M 1259 2228 
+L 1259 519 
+L 2272 519 
+Q 2781 519 3026 730 
+Q 3272 941 3272 1375 
+Q 3272 1813 3026 2020 
+Q 2781 2228 2272 2228 
+L 1259 2228 
+z
+M 1259 4147 
+L 1259 2741 
+L 2194 2741 
+Q 2656 2741 2882 2914 
+Q 3109 3088 3109 3444 
+Q 3109 3797 2882 3972 
+Q 2656 4147 2194 4147 
+L 1259 4147 
+z
+M 628 4666 
+L 2241 4666 
+Q 2963 4666 3353 4366 
+Q 3744 4066 3744 3513 
+Q 3744 3084 3544 2831 
+Q 3344 2578 2956 2516 
+Q 3422 2416 3680 2098 
+Q 3938 1781 3938 1306 
+Q 3938 681 3513 340 
+Q 3088 0 2303 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-6c" d="M 603 4863 
+L 1178 4863 
+L 1178 0 
+L 603 0 
+L 603 4863 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-6e" d="M 3513 2113 
+L 3513 0 
+L 2938 0 
+L 2938 2094 
+Q 2938 2591 2744 2837 
+Q 2550 3084 2163 3084 
+Q 1697 3084 1428 2787 
+Q 1159 2491 1159 1978 
+L 1159 0 
+L 581 0 
+L 581 3500 
+L 1159 3500 
+L 1159 2956 
+Q 1366 3272 1645 3428 
+Q 1925 3584 2291 3584 
+Q 2894 3584 3203 3211 
+Q 3513 2838 3513 2113 
+z
+" transform="scale(0.015625)"/>
+     <path id="boltzmann-DejaVuSans-Oblique-57" d="M 616 4666 
+L 1228 4666 
+L 1453 697 
+L 3213 4666 
+L 3916 4666 
+L 4147 697 
+L 5888 4666 
+L 6528 4666 
+L 4453 0 
+L 3659 0 
+L 3444 3891 
+L 1697 0 
+L 903 0 
+L 616 4666 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#boltzmann-DejaVuSans-Oblique-53" transform="translate(0 0.015625)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-3d" transform="translate(82.958984 0.015625)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-Oblique-6b" transform="translate(186.230469 0.015625)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-42" transform="translate(244.140625 -16.390625) scale(0.7)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-6c" transform="translate(294.897461 0.015625)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-6e" transform="translate(322.680664 0.015625)"/>
+    <use xlink:href="#boltzmann-DejaVuSans-Oblique-57" transform="translate(402.295247 0.015625)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Equiprobable microstates · equilibrium</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

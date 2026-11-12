@@ -1,5 +1,0 @@
-{
-  "version": "0.5.2",
-  "files": 19,
-  "entry": "clear-onyx-gauge-laboratory-v0.5.2.html"
-}

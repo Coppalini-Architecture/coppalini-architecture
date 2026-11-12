@@ -1,0 +1,258 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array,longtable}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black,pdftitle={Language Mechanics: Axiomatic Closure},pdfauthor={Anthony Vito Coppa}}
+\definecolor{ink}{HTML}{242522}
+\definecolor{muted}{HTML}{6D685F}
+\definecolor{rule}{HTML}{B9B1A4}
+\definecolor{wash}{HTML}{F5F1E9}
+\definecolor{accent}{HTML}{8A6935}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.58em}
+\setlength{\headheight}{22pt}
+\renewcommand{\arraystretch}{1.18}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\term}[1]{\textsc{#1}}
+\newcommand{\source}[1]{\textsuperscript{\scriptsize[#1]}}
+\newcommand{\scope}{\operatorname{Scope}}
+\newcommand{\readerread}{\operatorname{Read}}
+\newcommand{\snoc}{\operatorname{snoc}}
+\newcommand{\office}[1]{\ensuremath{\mathsf{#1}}}
+\titleformat{\section}{\large\scshape\color{ink}}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{ink}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.75em}{0.55em}
+\titlespacing*{\subsection}{0pt}{1.05em}{0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\scshape Language Mechanics / 012}
+\rhead{\footnotesize\scshape Axiomatic Closure}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{rule}\leaders\hrule height \headrulewidth\hfill}}
+
+\begin{document}
+\begin{center}
+{\small\scshape Coppalini Architecture \quad / \quad Language Mechanics 012}\\[2.3em]
+{\LARGE\bfseries Language Mechanics:\\[0.16em] Axiomatic Closure}\\[1em]
+{\large A formal account of written reference, embodied reading, return, and carried occurrence}\\[2em]
+\rule{0.8\textwidth}{0.45pt}\\[1.2em]
+{\small 1 November 2026 \quad \textbullet\quad Edition 1.0 \quad \textbullet\quad Formal-basis paper}
+\end{center}
+
+\vspace{1.2em}
+\begin{quote}\itshape
+A written mark becomes usable when a reader can orient it to a real relation and compare a later occurrence with an earlier one. Return keeps the relation through that difference. Motion is readable because memory carries a prior read into the next comparison.
+\end{quote}
+
+\section*{Abstract}
+This paper closes a minimum grammar for a usable written reference. A page is a two-dimensional arrangement of marks; a reader is a living or mechanical system situated in a changing three-dimensional field. The paper declares the terms required to connect those two conditions without identifying a returned reading with an unchanged event: reference, reader, carrier, invariant, resolution, residual, and receipt. It gives common-sense axioms, a finite eight-office relation schedule, a Greek field registry, and an English reader/action interface. The exact results are finite and inspectable: the declared offices, the $28$ unordered seams of $K_8$, the four perfect matchings per office, and the receipt rule. Field-specific adapters remain responsible for their native equations and measurements. The resulting form lets a sentence state what was read, under which conditions, at what resolution, with what difference carried into the next use.
+
+\section{The question and the answer}
+Two questions govern this series.
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2em,itemsep=.3em]
+\item What can a person actually know well enough to return to it, compare it, and use it again?
+\item How can a structure remain identifiable while the global conditions around it continue to change through time?
+\end{enumerate}
+
+The answer is not an object held still. It is a \emph{declared comparison}. A reader fixes a reference; a carrier brings an occurrence into address; a resolution states how fine the comparison is; a residual records the difference still open; and a receipt preserves the occurrence for later return. The system may move throughout. The comparison remains usable because its conditions are named.
+
+The formal packet is
+\begin{equation}
+\scope(q_n)=
+\bigl(\mathrm{reference},\ \mathrm{reader},\ \mathrm{carrier},\ \mathrm{invariant},\ \mathrm{resolution},\ \mathrm{residual},\ \mathrm{receipt}\bigr)_n.
+\label{eq:scope}
+\end{equation}
+It is deliberately ordinary: one needs to know \emph{what} is being compared, \emph{who or what} makes the read, \emph{how} the occurrence arrives, \emph{what is held fixed}, \emph{how finely} it is read, \emph{what remains to be corrected}, and \emph{where the result is recorded}.
+
+\section{The common-sense axioms}
+The following axioms state the minimum conditions of a readable comparison. They are not metaphors. Each identifies a role that can be checked in an actual report, experiment, map, proof, warning, or promise.
+
+\begin{longtable}{@{}p{.08\textwidth}p{.24\textwidth}p{.61\textwidth}@{}}
+\toprule
+\textbf{ID} & \textbf{Name} & \textbf{Requirement}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+A1 & Contact & A read occurs where some carrier meets a reader: light reaches an eye, a mark reaches a page, a signal reaches an instrument, or a body reaches a surface.\\
+A2 & Reference & A comparison begins from an addressable relation. Without a declared reference, ``same'' and ``different'' have no fixed target.\\
+A3 & Difference & A later occurrence may differ from the reference. The difference is recorded rather than erased by the label of return.\\
+A4 & Condition & The circumstances that make a read possible are named: position, scale, medium, timing, calibration, or another relevant limit.\\
+A5 & Constraint & A lawful comparison states what it may do and what it may not presume. The constraint is part of the result.\\
+A6 & Reader identity & A reader occupies a finite interface: it has a location, a range, a resolution, and a way of returning an output.\\
+A7 & Memory & A prior read remains addressable when the next read is made. Memory is the carried availability of the earlier comparison.\\
+A8 & Fit & A representation is useful where its declared form fits its declared use at its declared resolution.\\
+A9 & Survival & Continuation is the availability of another lawful read under the stated constraints.\\
+\end{longtable}
+
+\subsection{Motion needs memory}
+Motion is not a frozen property. To say that something moved is to compare a relation at more than one occurrence. Memory carries a prior relation into the comparison. In the smallest form,
+\begin{equation}
+T(x)\neq x,\qquad \rho(Tx)=\rho(x),\qquad
+R_{n+1}=\snoc(R_n,r_{n+1}).
+\label{eq:return}
+\end{equation}
+The first clause says the carried state changes. The second says a declared reader can recognize a returned form at the declared resolution. The third says each occurrence is appended to the record; recurrence does not overwrite history. Memory therefore makes difference available. It does not turn the later event into the earlier one.
+
+\section{Written form and embodied reading}
+A page is two-dimensional. It holds marks on a background. A map, equation, score, warning sign, or sentence becomes usable where a reader can orient those marks to a relation in the surrounding world. The page is therefore a carrier, neither the whole occurrence nor a replacement for it.
+
+The reader bridge has three stated parts:
+\begin{equation}
+\bigl(e,\ L,\ \rho\bigr).
+\label{eq:bridge}
+\end{equation}
+Here $e$ is an embedded surface or other inscription carrier, $L$ is the transport or illumination by which a mark becomes available, and $\rho$ is the reader that returns an output. A conventional plane turn such as $i=-\Omega$ is exact inside a two-dimensional operator calculus. It organizes orientation in the representation. The bridge to an embodied occurrence is supplied by the complete declared tuple in \eqref{eq:bridge}, together with the physical conditions of the reader.
+
+This distinction matters because written form and lived occurrence have different jobs. A diagram can make a relation inspectable. An eye, instrument, or person meets an event under particular conditions. The receipt joins the read to its occurrence without flattening one into the other.
+
+\section{Eight offices and the finite comparison schedule}
+The construction uses eight operational offices. They are a compact register for the roles that recur whenever a reader identifies a continuing relation.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l Y >{\bfseries}l Y@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Office}} & \multicolumn{2}{c}{\textbf{Office}}\\
+\midrule
+$\Pi$ & Contact: a carrier meets a reader. & $\pi$ & Light: a distinction becomes available to read.\\
+$\zeta$ & Memory: an earlier read remains addressable. & $-\Omega$ & Gravity: bounded, regulated relation in the experiential register.\\
+$\theta$ & Survival: another lawful continuation is available. & $\Theta$ & Timing: an occurrence is situated in its interval.\\
+$\Lambda$ & Meaning: a returned use holds through comparison. & $\Phi$ & Drift: a residual change remains to be accounted for.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+There are exactly
+\begin{equation}
+\binom{8}{2}=28
+\end{equation}
+unordered pairwise seams. A complete scan of this finite relation layer can therefore state which pairs have been addressed. The complete graph $K_8$ also has seven one-factorizations, each decomposing the eight offices into four disjoint pairwise seams:
+\begin{equation}
+28=7\times4,\qquad \binom{8}{3}=56.
+\end{equation}
+The first identity states the complete pairwise accounting; the second counts the possible three-office faces. These are finite combinatorial facts. They support an audit schedule. They do not substitute for a field's own measurement, equation, calibration, or empirical test.
+
+\subsection{A field is read by its relevant offices}
+The following table provides a plain-language orientation for four coupled roles. It is a reader grammar, not a redefinition of a physical discipline.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{.19\textwidth}Y Y@{}}
+\toprule
+\textbf{Field} & \textbf{Minimum relation} & \textbf{Plain reading}\\
+\midrule
+Motion & Orient $\rightarrow$ transport & A difference is carried from one comparison to another.\\
+Gravity & Bound $\rightarrow$ regulate & A reader operates inside a limited, weighted field of possible continuations.\\
+Light & Cut $\rightarrow$ read & A difference reaches the interface in a form that can be distinguished.\\
+Memory & Couple $\rightarrow$ return & A prior read remains available so a later occurrence can be compared with it.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+For a reader $J$ at an addressed occurrence $q$, the internal statement is
+\begin{equation}
+\readerread_J(q)\ \Longrightarrow\ \operatorname{Gravity}_J(q)
+=\bigl(\operatorname{Bound}_J(q),\operatorname{Regulate}_J(q)\bigr).
+\label{eq:readergravity}
+\end{equation}
+It says that any actual reader has limits and regulation: a range, a resolution, a contact condition, and an admissible output. A metric tensor or curvature measurement remains a native physical witness with its own equations and test conditions.
+
+\section{The alphabetic register}
+The Greek alphabet is used here as a direct field registry. One glyph carries one declared office in this edition. The registry is a typed vocabulary for the architecture, with every term available for inspection rather than left implicit.
+
+\begin{center}
+\begin{tabularx}{.88\textwidth}{@{}>{\bfseries}c Y >{\bfseries}c Y@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Greek field registry}} & \multicolumn{2}{c}{\textbf{Greek field registry}}\\
+\midrule
+$\alpha$ & Carriage & $\nu$ & Rhythm\\
+$\beta$ & Phase & $\xi$ & Contrast\\
+$\gamma$ & Path & $o$ & Occurrence\\
+$\delta$ & Change & $\pi$ & Light\\
+$\epsilon$ & Fit & $\rho$ & Read\\
+$\zeta$ & Memory & $\sigma$ & State\\
+$\eta$ & Trust & $\tau$ & Time\\
+$\theta$ & Survival & $\upsilon$ & Can\\
+$\iota$ & Archive & $\phi$ & Drift\\
+$\kappa$ & Tuning & $\chi$ & Form\\
+$\lambda$ & Meaning & $\psi$ & Mirror\\
+$\mu$ & Measure & $\omega$ & Closure\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Roman symbols keep their ordinary mathematical roles where those roles are used. The operator $i=-\Omega$ is the explicitly declared quarter-turn in the present two-dimensional carrier. It is recorded separately from the $24$ Greek field offices. The typed null is $\varnothing=\mathsf{UNTYPEABLE}$; it is distinct from the set-theoretic empty set $\emptyset_{\mathrm{set}}$ and from the decimal digit $0$.
+
+\section{Lineage and dependency}
+This work is carried by long-established practices: proof, measurement, formal definition, coordinate choice, calibration, archival record, and public correction. Its own construction depends on the following line of work.
+
+\begin{longtable}{p{.25\textwidth}p{.65\textwidth}}
+\toprule
+\textbf{Lineage} & \textbf{Dependency in this paper}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Euclid & Definitions, common notions, and propositions establish that a proof makes its starting conditions visible.\\
+Euler and modern algebra & Symbolic operations become reusable when their domains and compositions are stated.\\
+Riemann and Levi--Civita & A metric is a local rule for comparison; coordinates and physical geometry must remain distinguished.\\
+Noether & A stated invariance has consequences that can be traced through the permitted transformation.\\
+Maxwell and Einstein & Physical fields are expressed through equations, operational quantities, and conditions of measurement.\\
+CIE colorimetry & A human observer can be declared as a standard reader with explicit response functions.\\
+Wittgenstein and ordinary-language analysis & Use, rule-following, and shared criteria matter when a mark is said to mean something.\\
+Language Mechanics 000--011 & Condition, constraint, reference, memory return, persistence, phase, algebraic root, occurrence, and the $28$-seam reader supply the internal dependency chain.\\
+Scope Recognition: Metric Minimum & The report packet, detector-side read, field adapter, and numerical receipt give a physical realization with separately inspectable evidence.\\
+\end{longtable}
+
+\section{What this construction makes explicit}
+The novelty claimed here is structural and inspectable: a single written grammar places the mark, its carrier, the reader, the returned output, the residual, and the receipt in one finite account. It does not ask a later reader to infer the missing coordinate of the occurrence from the mark alone.
+
+Four consequences follow immediately.
+\begin{enumerate}[leftmargin=1.8em,itemsep=.45em]
+\item A repeated mark can be distinguished from a repeated event. The representation may recur while the occurrence record advances.
+\item Motion can be stated without false stasis. Return keeps the reference; the later comparison records a difference; both remain addressable.
+\item A reader is a formal variable. Its location, range, resolution, and interface are part of the scope rather than invisible background.
+\item A finite relation layer can be checked exhaustively. $K_8$ supplies $28$ seams, not an open-ended list of presumed connections.
+\end{enumerate}
+
+\section{Status of the closure}
+\term{Closure} here means that, at a stated scope and resolution, every required term of the comparison has been assigned a type, a role, and a receipt path. It is a closure of the declared reader grammar. It does not claim that every field has been reduced to a single equation or that future empirical work is unnecessary.
+
+The exact portion of this paper is the finite typed construction: the named packet in \eqref{eq:scope}, the append-only occurrence rule in \eqref{eq:return}, the $K_8$ counts, and the registered character roles. The physical portion is an adapter discipline: any field that enters the grammar carries its own equations, units, instruments, error model, and independent check. This is how the architecture can be strict about its own conditions while remaining useful across distinct formal domains.
+
+\vfill
+\begin{center}
+\rule{.75\textwidth}{0.45pt}\\[1em]
+\textit{Center returns. Form closes. Motion continues.}
+\end{center}
+
+\newpage
+\section*{References and internal records}
+\begin{enumerate}[leftmargin=1.8em,itemsep=.55em]
+\item Euclid. \textit{Elements}. Classical edition; definitions, common notions, and propositions.
+\item L. Euler. \textit{Introductio in analysin infinitorum}. 1748.
+\item B. Riemann. ``On the hypotheses which lie at the bases of geometry.'' 1854.
+\item T. Levi--Civita. ``Nozione di parallelismo in una variet\`a qualunque.'' 1917.
+\item E. Noether. ``Invariante Variationsprobleme.'' 1918.
+\item J. C. Maxwell. \textit{A Treatise on Electricity and Magnetism}. 1873.
+\item A. Einstein. ``Die Grundlage der allgemeinen Relativit\"atstheorie.'' 1916.
+\item Commission Internationale de l'\'Eclairage. \textit{CIE 1931 Standard Colorimetric Observer}.
+\item L. Wittgenstein. \textit{Philosophical Investigations}. 1953.
+\item Coppalini Architecture. \textit{Language Mechanics 000--011}; internal formal-basis series.
+\item Coppalini Architecture. \textit{Scope Recognition: Metric Minimum}; physical closure record and companion $P_2$ verification program, 31 October 2026.
+\end{enumerate}
+
+\vspace{1em}
+{\small\color{muted}Document receipt: LM 012 / Edition 1.0 / typeset 1 November 2026. The companion finite registry and checker are published as Language Mechanics 013.}
+\end{document}

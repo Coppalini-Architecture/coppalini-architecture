@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-riemann-title"><title id="lineage-riemann-title">B. Riemann — Metric. The metric declares how displacement is measured. The squared line element equals g i j d x i d x j.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#719483" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,42h18 M758,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M33,1008h18 M42,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,1008h18 M758,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><text x="76" y="92" font-size="18" fill="#719483" text-anchor="start" font-family="monospace" >09</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >1854 / 1868 AD</text><text x="400" y="145" font-size="17" fill="#719483" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">METRIC</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >B. Riemann</text><path d="M320,249H480" stroke="#719483"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#719483"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >The metric declares how displacement is</text><text x="400" y="342" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >measured.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M180,454 Q400,448 620,454" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M208,420 Q148,565 208,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,491 Q400,455 620,491" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M272,420 Q232,565 272,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,528 Q400,474 620,528" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M336,420 Q316,565 336,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,565 Q400,505 620,565" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M400,420 Q400,565 400,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,602 Q400,548 620,602" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M464,420 Q484,565 464,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,639 Q400,603 620,639" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M528,420 Q568,565 528,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M180,676 Q400,670 620,676" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><path d="M592,420 Q652,565 592,710" stroke="#b7bdb0" stroke-width="1.4" fill="none" /><ellipse cx="400" cy="556" rx="108" ry="63" transform="rotate(-22 400 556)" fill="#719483" fill-opacity="0.07058823529411765" stroke="#719483" stroke-width="3"/><path d="M400,556 L492,512" stroke="#719483" stroke-width="4" fill="none" /><path d="M484.32,521.22 L492,512 L480.00,512.19" stroke="#719483" stroke-width="4" fill="none" /><text x="530" y="494" fill="#243d40" font-size="24" text-anchor="middle" font-family="Georgia,serif">dx</text></g><g transform="translate(150.018 766.000) scale(2.31272)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="riemann-figure_1">
+  <g id="riemann-patch_1">
+   <path d="M 0 39.78 
+L 216.18 39.78 
+L 216.18 0 
+L 0 0 
+L 0 39.78 
+z
+" style="fill: none"/>
+  </g>
+  <g id="riemann-text_1">
+   <!-- $ds^2=g_{ij}\,dx^i dx^j$ -->
+   <g style="fill: #243d40" transform="translate(1.44 29.04) scale(0.3 -0.3)">
+    <defs>
+     <path id="riemann-DejaVuSans-Oblique-64" d="M 2675 525 
+Q 2444 222 2128 65 
+Q 1813 -91 1428 -91 
+Q 903 -91 598 267 
+Q 294 625 294 1247 
+Q 294 1766 478 2236 
+Q 663 2706 1013 3078 
+Q 1244 3325 1534 3454 
+Q 1825 3584 2144 3584 
+Q 2481 3584 2739 3421 
+Q 2997 3259 3138 2956 
+L 3513 4863 
+L 4091 4863 
+L 3144 0 
+L 2566 0 
+L 2675 525 
+z
+M 891 1350 
+Q 891 897 1095 644 
+Q 1300 391 1663 391 
+Q 1931 391 2161 520 
+Q 2391 650 2566 903 
+Q 2750 1166 2856 1509 
+Q 2963 1853 2963 2188 
+Q 2963 2622 2758 2865 
+Q 2553 3109 2194 3109 
+Q 1922 3109 1687 2981 
+Q 1453 2853 1288 2613 
+Q 1106 2353 998 2009 
+Q 891 1666 891 1350 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-Oblique-73" d="M 3200 3397 
+L 3091 2853 
+Q 2863 2978 2609 3040 
+Q 2356 3103 2088 3103 
+Q 1634 3103 1373 2948 
+Q 1113 2794 1113 2528 
+Q 1113 2219 1719 2053 
+Q 1766 2041 1788 2034 
+L 1972 1978 
+Q 2547 1819 2739 1644 
+Q 2931 1469 2931 1166 
+Q 2931 609 2489 259 
+Q 2047 -91 1331 -91 
+Q 1053 -91 747 -37 
+Q 441 16 72 128 
+L 184 722 
+Q 500 559 806 475 
+Q 1113 391 1394 391 
+Q 1816 391 2080 572 
+Q 2344 753 2344 1031 
+Q 2344 1331 1650 1516 
+L 1591 1531 
+L 1394 1581 
+Q 956 1697 753 1886 
+Q 550 2075 550 2369 
+Q 550 2928 970 3256 
+Q 1391 3584 2113 3584 
+Q 2397 3584 2667 3537 
+Q 2938 3491 3200 3397 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-32" d="M 1228 531 
+L 3431 531 
+L 3431 0 
+L 469 0 
+L 469 531 
+Q 828 903 1448 1529 
+Q 2069 2156 2228 2338 
+Q 2531 2678 2651 2914 
+Q 2772 3150 2772 3378 
+Q 2772 3750 2511 3984 
+Q 2250 4219 1831 4219 
+Q 1534 4219 1204 4116 
+Q 875 4013 500 3803 
+L 500 4441 
+Q 881 4594 1212 4672 
+Q 1544 4750 1819 4750 
+Q 2544 4750 2975 4387 
+Q 3406 4025 3406 3419 
+Q 3406 3131 3298 2873 
+Q 3191 2616 2906 2266 
+Q 2828 2175 2409 1742 
+Q 1991 1309 1228 531 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-Oblique-67" d="M 3816 3500 
+L 3219 434 
+Q 3047 -456 2561 -893 
+Q 2075 -1331 1253 -1331 
+Q 950 -1331 690 -1286 
+Q 431 -1241 206 -1147 
+L 313 -588 
+Q 525 -725 762 -790 
+Q 1000 -856 1269 -856 
+Q 1816 -856 2167 -557 
+Q 2519 -259 2631 300 
+L 2681 563 
+Q 2441 288 2122 144 
+Q 1803 0 1434 0 
+Q 903 0 598 351 
+Q 294 703 294 1319 
+Q 294 1803 478 2267 
+Q 663 2731 997 3091 
+Q 1219 3328 1514 3456 
+Q 1809 3584 2131 3584 
+Q 2484 3584 2746 3420 
+Q 3009 3256 3138 2956 
+L 3238 3500 
+L 3816 3500 
+z
+M 2950 2216 
+Q 2950 2641 2750 2872 
+Q 2550 3103 2181 3103 
+Q 1953 3103 1747 3012 
+Q 1541 2922 1394 2759 
+Q 1156 2491 1023 2127 
+Q 891 1763 891 1375 
+Q 891 944 1092 712 
+Q 1294 481 1672 481 
+Q 2219 481 2584 976 
+Q 2950 1472 2950 2216 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-Oblique-69" d="M 1172 4863 
+L 1747 4863 
+L 1606 4134 
+L 1031 4134 
+L 1172 4863 
+z
+M 909 3500 
+L 1484 3500 
+L 800 0 
+L 225 0 
+L 909 3500 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-Oblique-6a" d="M 928 3500 
+L 1503 3500 
+L 813 -63 
+L 809 -78 
+Q 694 -675 544 -897 
+Q 403 -1106 132 -1218 
+Q -138 -1331 -506 -1331 
+L -722 -1331 
+L -628 -844 
+L -481 -844 
+Q -144 -844 -1 -703 
+Q 141 -563 238 -63 
+L 928 3500 
+z
+M 1197 4863 
+L 1772 4863 
+L 1631 4134 
+L 1056 4134 
+L 1197 4863 
+z
+" transform="scale(0.015625)"/>
+     <path id="riemann-DejaVuSans-Oblique-78" d="M 3841 3500 
+L 2234 1784 
+L 3219 0 
+L 2559 0 
+L 1819 1388 
+L 531 0 
+L -166 0 
+L 1556 1844 
+L 641 3500 
+L 1300 3500 
+L 1972 2234 
+L 3144 3500 
+L 3841 3500 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-64" transform="translate(0 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-73" transform="translate(63.476562 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-32" transform="translate(120.226068 38.810937) scale(0.7)"/>
+    <use xlink:href="#riemann-DejaVuSans-3d" transform="translate(186.978997 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-67" transform="translate(290.250482 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-69" transform="translate(353.727044 -15.876563) scale(0.7)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-6a" transform="translate(373.175286 -15.876563) scale(0.7)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-64" transform="translate(411.59358 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-78" transform="translate(475.070142 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-69" transform="translate(538.715976 38.810937) scale(0.7)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-64" transform="translate(560.898593 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-78" transform="translate(624.375155 0.529687)"/>
+    <use xlink:href="#riemann-DejaVuSans-Oblique-6a" transform="translate(688.020989 38.810937) scale(0.7)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Local metric · tangent displacement</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

@@ -1,0 +1,101 @@
+{
+  "record_type": "CoppaliniArchitectureClaimRegistry",
+  "schema_version": "1.0.0",
+  "registry_date": "2026-11-05",
+  "publication_target": {
+    "work": "The Theory of Everything",
+    "edition": "R28",
+    "release_source_status": "awaiting_access_to_complete_R28_manuscript",
+    "adoption_rule": "The claims below are established archive/source references. R28 adoption and any stronger R28 results require an R28 text comparison and edition-specific proof record.",
+    "prior_edition_source": "https://eulershiddenl.ink/papers/theory-of-everything-contact-record-r27.pdf"
+  },
+  "reference_sources": {
+    "minimum_root": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/main/papers/02%20MINIMUM_ROOT_ALGEBRA_Source_Consolidation_Map_v0_1%20(1).md",
+    "gravity": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/main/papers/06%20RELATIVITY_GRAVITY_COSMOLOGY_Field_Source_Ownership_v0_2.md",
+    "standard_model": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/main/papers/09%20QFT_STANDARD_MODEL_ELECTROWEAK_QCD_Field_Source_Ownership_v0_1.md",
+    "atomic": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/main/papers/11%20ATOMIC_MOLECULAR_CHEMISTRY_Hamiltonian_Fibers_and_Minimum_Complex_Models_v0_1.md",
+    "uv_open": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/main/papers/Ultraviolet_Fixed_Point_Closure_Minimum_TT_Reader_v0_6%20(1).md",
+    "r27": "https://eulershiddenl.ink/papers/theory-of-everything-contact-record-r27.pdf"
+  },
+  "claims": [
+    {
+      "claim_id": "CA-ALG-001",
+      "office": "minimum_root_algebra",
+      "type": "exact_theorem",
+      "jurisdiction": "Real 2x2 matrices over the displayed exact integer data",
+      "statement": "For Q=[[1,1],[1,0]], Omega=[[0,1],[-1,0]], and G=Q Omega-Omega Q=[[-2,1],[1,2]], G squared equals 5I, trace(G)=0, determinant(G)=-5, and the signature is (1,1).",
+      "assumptions": ["The displayed definitions of Q and Omega"],
+      "source": ["minimum_root: sections IV-V and XIV", "r27: section III"],
+      "source_declared_status": "closed_in_exact_algebraic_scope",
+      "verification_requirements": ["Direct integer matrix multiplication"],
+      "physical_inference": "Any identification with a measured physical field requires its own adapter and physical evidence."
+    },
+    {
+      "claim_id": "CA-ALG-002",
+      "office": "metric_transport_and_mirror",
+      "type": "exact_theorem",
+      "jurisdiction": "The one-parameter transport L_s=exp(s(2Q-I)/sqrt(5)) in the real 2x2 root",
+      "statement": "L_s transpose G L_s=G and (G/sqrt(5)) L_s (G/sqrt(5))=L_-s. Q squared equals L_(2 log Phi) for Phi=(1+sqrt(5))/2.",
+      "assumptions": ["Q, G and Phi as explicitly defined in the root source"],
+      "source": ["minimum_root: sections IV-VI", "r27: section III"],
+      "source_declared_status": "closed_in_declared_transport_group",
+      "verification_requirements": ["Reproduce matrix exponential identities and golden-ratio specialization"],
+      "physical_inference": "Metric preservation in this representation has a defined mathematical jurisdiction."
+    },
+    {
+      "claim_id": "CA-GR-001",
+      "office": "root_to_general_relativity",
+      "type": "bounded_interface",
+      "jurisdiction": "The explicitly displayed root-to-Lorentzian-transport adapter",
+      "statement": "The root Lorentzian quotient realizes selected null, isometric-transport, quotient/lift, and holonomy duties. Einstein dynamics, stress-energy, gravitational coupling and measured radiation remain native GR obligations.",
+      "source": ["gravity: sections XIV-XV", "r27: section V"],
+      "source_declared_status": "typed_bounded_adapter",
+      "verification_requirements": ["Check transport property preservation", "Separately check the Einstein field equations for each proposed physical realization"],
+      "physical_inference": "An algebraic signature (3,1) extension alone does not establish physical 3+1-dimensional dynamics."
+    },
+    {
+      "claim_id": "CA-SM-001",
+      "office": "standard_model_coordinate_adapter",
+      "type": "bounded_interface",
+      "jurisdiction": "Lie-algebra embedding of explicitly selected compact root copies",
+      "statement": "The archived field map gives a seven-dimensional bracket-preserving coordinate entry into the twelve-dimensional Standard Model gauge algebra; the additional color directions and physical parameter selectors retain independent obligations.",
+      "source": ["standard_model: sections XXXIX-XLIV"],
+      "source_declared_status": "typed_coordinate_entry_with_open_parameter_origin",
+      "verification_requirements": ["Check specified embeddings and Lie brackets", "For full physical derivation, identify gauge/matter selectors, couplings, masses and their independence from measured inputs"],
+      "physical_inference": "A coordinate entry is a checkable algebraic interface; model selection and phenomenology have further proof burdens."
+    },
+    {
+      "claim_id": "CA-ATOM-001",
+      "office": "hydrogen_coulomb_model",
+      "type": "physical_model",
+      "jurisdiction": "Declared nonrelativistic Coulomb Hamiltonian",
+      "statement": "Analytic Hydrogen bound states are exact relative to the specified Coulomb Hamiltonian; a finite orbital atlas and spectral computations have separately stated verification scopes.",
+      "source": ["atomic: sections II-III and XXV-XXVII"],
+      "source_declared_status": "exact_inside_declared_model",
+      "verification_requirements": ["Record the Hamiltonian and imported physical constants", "Reproduce eigenvalue/eigenstate solutions", "Identify approximation and calibration whenever comparing with measured spectra"],
+      "physical_inference": "The Hamiltonian's parameter origin is a separate proposition from the solution's correctness."
+    },
+    {
+      "claim_id": "CA-QG-001",
+      "office": "ultraviolet_tt_reader",
+      "type": "open_dependency",
+      "jurisdiction": "The stated Gaussian carrier and boundary spin-two TT reader under the specified refinement and symmetry assumptions",
+      "statement": "The archival construction reports closure of the carrier and local TT reader, while the fixed-packet finite helicity overlap remains a pending matrix-element evaluation.",
+      "source": ["uv_open: sections 8-12"],
+      "source_declared_status": "carrier_and_local_reader_closed__finite_overlap_open",
+      "verification_requirements": ["Evaluate the specified graph-state overlap", "Check refinement and rotational-covariance hypotheses", "Reassess the status against any R28 successor theorem"],
+      "physical_inference": "This archived open dependency cannot determine the status of an uninspected later edition."
+    },
+    {
+      "claim_id": "CA-RECORD-001",
+      "office": "contact_reader_history",
+      "type": "exact_finite_construction_and_physical_interface",
+      "jurisdiction": "The declared finite transport and occurrence-record construction",
+      "statement": "The archived contact-record edition separately types reversible transport B, a reader quotient rho, and an append-only ordered receipt L.",
+      "source": ["r27: section XII"],
+      "source_declared_status": "construction_declared_in_r27__physical_use_requires_its_own_model",
+      "verification_requirements": ["Check the finite algebra and ledger update invariants", "For a physical realization, identify its interaction, detector, clock order, and calibration"],
+      "physical_inference": "The contact-record relation is an inspectable formal interface and does not by itself identify every physical mechanism."
+    }
+  ]
+}

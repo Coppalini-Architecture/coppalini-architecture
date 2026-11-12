@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Coppalini Architecture mirror lens</title>
+  <desc id="desc">A four-point gold field containing two mirrored blue lenses joined at a central seam.</desc>
+  <rect width="512" height="512" rx="96" fill="#f7f3eb"/>
+  <circle cx="256" cy="256" r="210" fill="#fbfaf5" stroke="#b9943a" stroke-width="8"/>
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#d7caa8" stroke-width="2"/>
+  <path d="M256 48 464 256 256 464 48 256Z" fill="none" stroke="#c69b32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M256 256C201 171 113 179 48 256c65 77 153 85 208 0Z" fill="#7291a8" fill-opacity=".87" stroke="#264b66" stroke-width="6"/>
+  <path d="M256 256c55-85 143-77 208 0-65 77-153 85-208 0Z" fill="#7291a8" fill-opacity=".87" stroke="#264b66" stroke-width="6"/>
+  <path d="M256 256C184 216 112 218 48 256M256 256C184 296 112 294 48 256M256 256c72-40 144-38 208 0M256 256c72 40 144 38 208 0" fill="none" stroke="#f7f3eb" stroke-opacity=".8" stroke-width="3"/>
+  <path d="M256 48 256 464M48 256h416" fill="none" stroke="#8aa0ad" stroke-opacity=".7" stroke-width="2"/>
+  <g fill="#f5c85d" stroke="#664b19" stroke-width="5"><circle cx="256" cy="48" r="12"/><circle cx="464" cy="256" r="12"/><circle cx="256" cy="464" r="12"/><circle cx="48" cy="256" r="12"/></g>
+  <circle cx="256" cy="256" r="12" fill="#1b3348" stroke="#f7f3eb" stroke-width="4"/>
+</svg>

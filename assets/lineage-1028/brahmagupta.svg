@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1050" viewBox="0 0 800 1050" role="img" aria-labelledby="lineage-brahmagupta-title"><title id="lineage-brahmagupta-title">Brahmagupta — Zero. Subtract equal quantities to obtain zero. a minus a equals zero.</title><rect width="800" height="1050" fill="#faf8f0"/><rect x="19" y="19" width="762" height="1012" rx="2" fill="none" stroke="#c9c9b8"/><rect x="42" y="42" width="716" height="966" fill="none" stroke="#719483" stroke-width="1.4"/><path d="M33,42h18 M42,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,42h18 M758,33v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="42" r="4" fill="#faf8f0" stroke="#719483"/><path d="M33,1008h18 M42,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="42" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><path d="M749,1008h18 M758,999v18" stroke="#719483" stroke-width="1.4"/><circle cx="758" cy="1008" r="4" fill="#faf8f0" stroke="#719483"/><text x="76" y="92" font-size="18" fill="#719483" text-anchor="start" font-family="monospace" >02</text><text x="724" y="92" font-size="17" fill="#243d40" text-anchor="end" font-family="monospace" >628 AD</text><text x="400" y="145" font-size="17" fill="#719483" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="3">ZERO</text><text x="400" y="214" font-size="42" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Brahmagupta</text><path d="M320,249H480" stroke="#719483"/><path d="M397,246l3,-3 3,3 -3,3z" fill="#719483"/><text x="400" y="306" font-size="25" fill="#243d40" text-anchor="middle" font-family="Georgia,serif" >Subtract equal quantities to obtain zero.</text><g stroke-linecap="round" stroke-linejoin="round"><path d="M180,565 L620,565" stroke="#b7bdb0" stroke-width="1" fill="none" /><path d="M220,545 L400,545" stroke="#c98b57" stroke-width="5" fill="none" /><path d="M389.09,550.00 L400,545 L389.09,540.00" stroke="#c98b57" stroke-width="5" fill="none" /><path d="M580,585 L400,585" stroke="#6d9fbd" stroke-width="5" fill="none" /><path d="M410.91,580.00 L400,585 L410.91,590.00" stroke="#6d9fbd" stroke-width="5" fill="none" /><circle cx="400" cy="565" r="8" stroke="#719483" fill="#faf8f0" stroke-width="3"/><text x="400" y="655" fill="#243d40" font-size="54" text-anchor="middle" font-family="Georgia,serif">0</text></g><g transform="translate(209.049 766.000) scale(2.88271)">
+ 
+ <defs>
+  
+ </defs>
+ <g id="brahmagupta-figure_1">
+  <g id="brahmagupta-patch_1">
+   <path d="M 0 31.914375 
+L 132.48 31.914375 
+L 132.48 0 
+L 0 0 
+L 0 31.914375 
+z
+" style="fill: none"/>
+  </g>
+  <g id="brahmagupta-text_1">
+   <!-- $a-a=0$ -->
+   <g style="fill: #243d40" transform="translate(1.44 24.235312) scale(0.3 -0.3)">
+    <defs>
+     <path id="brahmagupta-DejaVuSans-Oblique-61" d="M 3438 1997 
+L 3047 0 
+L 2472 0 
+L 2578 531 
+Q 2325 219 2001 64 
+Q 1678 -91 1281 -91 
+Q 834 -91 548 182 
+Q 263 456 263 884 
+Q 263 1497 752 1853 
+Q 1241 2209 2100 2209 
+L 2900 2209 
+L 2931 2363 
+Q 2938 2388 2941 2417 
+Q 2944 2447 2944 2509 
+Q 2944 2788 2717 2942 
+Q 2491 3097 2081 3097 
+Q 1800 3097 1504 3025 
+Q 1209 2953 897 2809 
+L 997 3341 
+Q 1322 3463 1633 3523 
+Q 1944 3584 2234 3584 
+Q 2853 3584 3176 3315 
+Q 3500 3047 3500 2534 
+Q 3500 2431 3484 2292 
+Q 3469 2153 3438 1997 
+z
+M 2816 1759 
+L 2241 1759 
+Q 1534 1759 1195 1570 
+Q 856 1381 856 984 
+Q 856 709 1029 553 
+Q 1203 397 1509 397 
+Q 1978 397 2328 733 
+Q 2678 1069 2791 1631 
+L 2816 1759 
+z
+" transform="scale(0.015625)"/>
+     <path id="brahmagupta-DejaVuSans-2212" d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+" transform="scale(0.015625)"/>
+     <path id="brahmagupta-DejaVuSans-3d" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+     <path id="brahmagupta-DejaVuSans-30" d="M 2034 4250 
+Q 1547 4250 1301 3770 
+Q 1056 3291 1056 2328 
+Q 1056 1369 1301 889 
+Q 1547 409 2034 409 
+Q 2525 409 2770 889 
+Q 3016 1369 3016 2328 
+Q 3016 3291 2770 3770 
+Q 2525 4250 2034 4250 
+z
+M 2034 4750 
+Q 2819 4750 3233 4129 
+Q 3647 3509 3647 2328 
+Q 3647 1150 3233 529 
+Q 2819 -91 2034 -91 
+Q 1250 -91 836 529 
+Q 422 1150 422 2328 
+Q 422 3509 836 4129 
+Q 1250 4750 2034 4750 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#brahmagupta-DejaVuSans-Oblique-61" transform="translate(0 0.78125)"/>
+    <use xlink:href="#brahmagupta-DejaVuSans-2212" transform="translate(80.761719 0.78125)"/>
+    <use xlink:href="#brahmagupta-DejaVuSans-Oblique-61" transform="translate(184.033203 0.78125)"/>
+    <use xlink:href="#brahmagupta-DejaVuSans-3d" transform="translate(264.794922 0.78125)"/>
+    <use xlink:href="#brahmagupta-DejaVuSans-30" transform="translate(368.066406 0.78125)"/>
+   </g>
+  </g>
+ </g>
+</g><path d="M110,882H690" stroke="#d8d8ca"/><text x="400" y="921" font-size="17" fill="#56655e" text-anchor="middle" font-family="Arial,sans-serif" >Signed arithmetic · additive zero</text><circle cx="352" cy="968" r="2.8" fill="#bf6f70"/><circle cx="368" cy="968" r="2.8" fill="#c98b57"/><circle cx="384" cy="968" r="2.8" fill="#b79d47"/><circle cx="400" cy="968" r="2.8" fill="#719483"/><circle cx="416" cy="968" r="2.8" fill="#6d9fbd"/><circle cx="432" cy="968" r="2.8" fill="#777da6"/><circle cx="448" cy="968" r="2.8" fill="#9b7d9e"/></svg>

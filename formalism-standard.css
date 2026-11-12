@@ -1,0 +1,85 @@
+/* R18: minimum metric standard before the formal lineage deck. */
+.minimum-standard { padding-top: clamp(3rem, 7vw, 5.75rem); }
+.minimum-standard-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(17rem, .9fr);
+  gap: clamp(1.6rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.minimum-standard h2 { max-width: 16ch; }
+.standard-lead { max-width: 50rem; margin: 0; color: var(--muted); font: 1.06rem/1.66 ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+.standard-kernel { padding: 1.15rem 1.2rem 1.2rem; border-top: .3rem solid var(--blue); background: rgba(255,253,248,.7); }
+.standard-kernel .field-label { display: block; margin-bottom: .75rem; }
+.kernel-equation { margin: .48rem 0; color: var(--ink); font: .91rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.kernel-caption { margin: .85rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .79rem; line-height: 1.55; }
+.newtonian-junction {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(20rem, 1.15fr);
+  gap: clamp(1.6rem, 5vw, 4.5rem);
+  margin-top: clamp(2rem, 5vw, 3.75rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.newtonian-junction h3 { margin: 0 0 .65rem; font-size: clamp(1.22rem, 2.3vw, 1.62rem); }
+.newtonian-junction > div > p:not(.field-label):not(.newtonian-sources) { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.6; }
+.newtonian-sources { display: flex; flex-wrap: wrap; gap: .45rem 1rem; margin: 1rem 0 0; font-size: .76rem; font-weight: 700; }
+.newton-equations { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.newton-equations article { padding: .78rem 0 .9rem; border-bottom: 1px solid var(--line); }
+.newton-equations span { display: block; margin-bottom: .25rem; color: var(--red); font: .6rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .075em; text-transform: uppercase; }
+.newton-equations .equation { margin: 0; color: var(--ink); font: .87rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.newton-equations .equation + p { margin: .24rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.5; }
+.standard-table-wrap { margin-top: clamp(2.4rem, 6vw, 4.5rem); }
+.standard-table { min-width: 900px; }
+.standard-table th:first-child { width: 11.5rem; }
+.standard-table td:nth-child(2) { width: 25%; }
+.standard-table td:nth-child(3) { width: 32%; color: var(--ink); }
+.standard-table td:nth-child(4) { width: 25%; }
+.standard-table a { font-weight: 700; }
+.standard-route { max-width: 56rem; margin: 1.25rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+.standard-route a { font-weight: 700; }
+.basis-programs { padding-top: clamp(4rem, 8vw, 6.5rem); }
+.basis-programs-intro { max-width: 49rem; margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.68; }
+.basis-programs .field-stack { margin-top: 2rem; }
+.basis-programs .basis-flagship { border-top-color: var(--ink); }
+.time-law { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
+.time-law-inner { max-width: 46rem; margin: 0 auto; padding: clamp(1.65rem, 4vw, 3rem) 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.time-law h2 { margin: .2rem 0 0; max-width: none; }
+.time-law-bell { margin: .55rem 0 2.2rem; color: var(--muted); font: .7rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.time-law-opening { margin: 0; color: var(--ink); font: 1.12rem/1.65 ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+.time-law-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 2.15rem 0 2.2rem; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.time-law-rules li { position: relative; min-height: 3.05rem; padding: .82rem .8rem .72rem 2.35rem; border-bottom: 1px solid var(--line); color: var(--ink); font: .79rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .025em; text-transform: uppercase; }
+.time-law-rules li:nth-child(odd) { border-right: 1px solid var(--line); }
+.time-law-rules li::before { position: absolute; left: 0; color: var(--red); content: counter(list-item, decimal-leading-zero); font-weight: 700; }
+.time-law-school { max-width: 40rem; padding-top: .15rem; }
+.time-law-school p { margin: 0 0 .75rem; color: var(--muted); font: .96rem/1.65 ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+.time-law-close { margin-top: 2.3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.time-law-close p { margin: 0 0 1rem; color: var(--ink); font: 1rem/1.65 ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+.time-law-close p:last-child { margin-bottom: 0; }
+@media (max-width: 54rem) {
+  .minimum-standard-intro,
+  .newtonian-junction { grid-template-columns: 1fr; }
+}
+@media (max-width: 38rem) {
+  .standard-kernel { padding: 1rem; }
+  .kernel-equation { font-size: .81rem; }
+  .newton-equations .equation { font-size: .77rem; }
+  .time-law-rules { grid-template-columns: 1fr; }
+  .time-law-rules li:nth-child(odd) { border-right: 0; }
+}
+
+/* Common-sense mechanical axioms replace the previous wide role table. */
+.minimum-axioms { margin-top: clamp(2.3rem,5vw,4rem); padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.minimum-axioms h3 { margin: .1rem 0 .6rem; font: 700 clamp(1.65rem,3vw,2.5rem)/1.12 ui-serif,Georgia,serif; }
+.axiom-intro { max-width: 48rem; color: var(--muted); line-height: 1.65; }
+.axiom-list { list-style: none; counter-reset: axiom; margin: 1.7rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .85rem; }
+.axiom-list > li { counter-increment: axiom; padding: 1.4rem 1.4rem 1.2rem; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
+.axiom-list > li::before { content: counter(axiom, decimal-leading-zero); display: block; margin-bottom: .9rem; color: var(--red); font: 700 .73rem/1 ui-monospace,SFMono-Regular,Consolas,monospace; }
+.axiom-list > li.axiom-feature { border-top: .22rem solid var(--red); }
+.axiom-list h4 { margin: 0 0 .6rem; color: var(--ink); font: 700 clamp(1.14rem,1.8vw,1.47rem)/1.27 ui-serif,Georgia,serif; }
+.axiom-list p { margin: 0 0 .85rem; color: var(--muted); font-size: .94rem; line-height: 1.62; }
+.axiom-list p.axiom-source { margin-top: 1rem; margin-bottom: 0; padding-top: .7rem; border-top: 1px solid var(--line); font-size: .74rem; }
+.axiom-list a { color: var(--ink); font-weight: 650; text-underline-offset: 3px; }
+.axiom-list .mono { font-size: .82rem; word-break: break-word; }
+.axiom-boundary { max-width: 54rem; font-size: .82rem; line-height: 1.65; color: var(--muted); }
+.basis-tool-redirects { display: flex; gap: .65rem 1.25rem; flex-wrap: wrap; font-weight: 650; font-size: .87rem; }
+@media(max-width:46rem) { .axiom-list { grid-template-columns: 1fr; } .axiom-list > li { padding: 1.2rem; } }

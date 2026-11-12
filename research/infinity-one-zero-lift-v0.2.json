@@ -1,0 +1,138 @@
+{
+  "record_type": "CoppaliniPaperPublicationRecord",
+  "title": "Infinity One Zero Lift",
+  "subtitle": "The Normal Form of Projective Memory",
+  "citation_title": "Infinity One Zero Lift: The Normal Form of Projective Memory",
+  "author": "Anthony Vito Coppa",
+  "publisher": "Coppalini Architecture",
+  "version": "0.2",
+  "source_edition": "Working edition 0.2",
+  "manuscript_date": "2026-11-11",
+  "publication_date": "2026-11-12",
+  "website_release": "R54",
+  "canonical_url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift",
+  "abstract": "This paper constructs an exact normal form for projective return with retained occurrence. A unique projective involution exchanges infinity and one, fixes zero, and admits an order-four complex lift. Explicit coordinate adapters connect these operators to the Coppalini root algebra. The axial escapement returns its phase every four steps while advancing the cycle address. Two successive cycles supply eight distinct occurrences and all 28 pairwise comparisons, resolved into seven four-edge matchings. For a fixed unit reference, an agreement scalar and the signed comparison record reconstruct the normalized state exactly. The resulting normal form has an explicit inverse on its stated image, supported by written proofs, exact executable audits, and a retained finite Lean subcertificate.",
+  "scope": "The result concerns the declared projective, axial, occurrence, and signed-state carriers. The reconstruction theorem fixes a unit reference and gives its inverse on the stated image. The preserved finite Lean source carries its recorded execution; the analytic normal form and complete K₈ construction carry their written proofs and executable-audit evidence. Physical applications retain their model equations, timing, and calibration.",
+  "files": {
+    "pdf": {
+      "url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2.pdf",
+      "bytes": 306110,
+      "sha256": "48e8d5147b688d9e2b5b8dd5e6305909d86358f9739c2ef6fe734fe9a82cac0e"
+    },
+    "source_package": {
+      "url": "https://eulershiddenl.ink/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip",
+      "bytes": 978766,
+      "sha256": "4a8af589be23efc3d923af477d68a424d0f3d02e6be9b8d8e098dfeb96c86268"
+    },
+    "authoritative_tex": {
+      "url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.tex",
+      "sha256": "16ef90e52b361799bcc10681f223e5c881ecabeacbce3eadcd11973c6f31eef9"
+    },
+    "cover": {
+      "url": "https://eulershiddenl.ink/art/covers/infinity-one-zero-lift-v0.2.svg",
+      "sha256": "f7709382feb0f18975d96de4bd563ab8e93dae7dacbd9ae9bdf05219071ab3d6"
+    },
+    "edition_checksums": {
+      "url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/SHA256SUMS",
+      "sha256": "b703861594613a688944c40c6f67fcc2f9a50dc23cb025c689dbf441571ad0da"
+    }
+  },
+  "retained_verification": {
+    "geometry_checks": {
+      "count": 73,
+      "recorded_result": "PASS",
+      "verifier": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verify_graph.py",
+      "receipt": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/verification/geometry_audit/verification.json"
+    },
+    "manuscript_checks": {
+      "count": 31,
+      "recorded_result": "PASS",
+      "verifier": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/verification/verify_manuscript.py",
+      "receipt": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/verification/manuscript_checks.json",
+      "scope": "Symbolic identities, exhaustive finite calculations, and separately labeled examples."
+    },
+    "finite_lean": {
+      "source": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/verification/ProjectiveReturn.lean",
+      "source_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+      "receipt": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/provenance/lean_execution_receipt.json",
+      "scope": "Preserved finite integer and Gaussian-integer source; the composed analytic and K8 portions retain their written-proof and Python evidence."
+    },
+    "composition_receipt": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2/provenance/composition_receipt.json",
+    "site_integration_build_reran_scientific_verifiers": false
+  },
+  "related": {
+    "nop_workbench": "https://eulershiddenl.ink/nop/",
+    "nop_citation_location": "Formal note reference [2]"
+  },
+  "doi": "10.5281/zenodo.24150613",
+  "zenodo_record_url": "https://zenodo.org/records/24150613",
+  "concept_doi": "10.5281/zenodo.24150160",
+  "retained_publication_recheck": {
+    "status": "PASS",
+    "receipt": "https://eulershiddenl.ink/verification/infinity-one-zero-lift-v0.1/publication-recheck.json",
+    "receipt_sha256": "706597d3f906c1905d5d412a290289bf58c5e03e3ee08257d662c61f0708d931",
+    "geometry_checks_passed": 73,
+    "manuscript_checks_passed": 31,
+    "isolated_copy": true,
+    "source_package_unchanged": true,
+    "lean_rerun": false,
+    "source_edition": "0.1",
+    "scope": "Retained execution of the unchanged Python verifier sources. Edition 0.2 source custody and citation completion are recorded separately."
+  },
+  "citation_completion": {
+    "receipt": "https://eulershiddenl.ink/verification/infinity-one-zero-lift-v0.2/citation-completion.json",
+    "receipt_sha256": "266ae1f9ede084f64f394e984dfbf6400bd9b6bfec013fa0687cfd74bcef9d59",
+    "mathematical_claims_unchanged": true,
+    "verifier_sources_unchanged": true,
+    "new_scientific_rerun_claimed_by_this_site_build": false
+  },
+  "previous_version": {
+    "version": "0.1",
+    "doi": "10.5281/zenodo.24150161",
+    "record_url": "https://zenodo.org/records/24150161",
+    "source_record": "https://eulershiddenl.ink/research/infinity-one-zero-lift-v0.1.json",
+    "pdf": {
+      "url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.1.pdf",
+      "bytes": 305916,
+      "sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa"
+    }
+  },
+  "cited_editions": [
+    {
+      "source_key": "LI",
+      "full_title": "Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture",
+      "version": "0.1",
+      "edition_date": "2026-08-13",
+      "zenodo_doi": "10.5281/zenodo.24150517",
+      "zenodo_record_url": "https://zenodo.org/records/24150517",
+      "pdf_sha256": "16b6bd00db89619dc0212c41727b4dd535ec9f6c085ce4a86eaed6f66fa07825"
+    },
+    {
+      "source_key": "METL",
+      "full_title": "Mirror Escapement Time Lift",
+      "version": "0.1",
+      "edition_date": "2026-08-22",
+      "zenodo_doi": "10.5281/zenodo.24150565",
+      "zenodo_record_url": "https://zenodo.org/records/24150565",
+      "pdf_sha256": "02eebc067efa30693ffd47bec6ef082ba068ba7fdeedec5a2ceeace0a78c61a4"
+    },
+    {
+      "source_key": "LM11",
+      "full_title": "Occurrence and the Twenty-Eight-Seam Reader: Finite Addressing, Pairwise Difference, and a Complete 7 × 4 Scan",
+      "version": "0.2",
+      "edition_date": "2026-08-29",
+      "zenodo_doi": "10.5281/zenodo.24150567",
+      "zenodo_record_url": "https://zenodo.org/records/24150567",
+      "pdf_sha256": "a5e6bccecf2dcf239c1832ce7248265ed4bae0f8153ef7969a2104fcae113292"
+    },
+    {
+      "source_key": "MR",
+      "full_title": "Mirror Recognition: The Minimum Symmetric Field Closure",
+      "version": "1.0",
+      "edition_date": "2026-09-11",
+      "zenodo_doi": "10.5281/zenodo.24150572",
+      "zenodo_record_url": "https://zenodo.org/records/24150572",
+      "pdf_sha256": "9728df5b483a3ccea53b9f7155b684a0c18859276fc6a162394cd0d25efdcf10"
+    }
+  ]
+}

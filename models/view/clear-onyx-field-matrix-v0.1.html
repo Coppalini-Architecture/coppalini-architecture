@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clear Onyx Field Matrix: nine synchronized, seeded visual model apertures in one dependency-free page.">
+  <title>Clear Onyx — Field Matrix</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #03090d;
+      --ink: #e9f2ec;
+      --muted: #9fb5b4;
+      --line: rgba(146, 204, 204, .26);
+      --line-bright: rgba(186, 229, 220, .56);
+      --accent: #e6c77b;
+      --water: #9bd8dd;
+      --panel: rgba(8, 21, 27, .88);
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--bg); }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(23, 63, 73, .44), transparent 47rem),
+        radial-gradient(ellipse at 13% 73%, rgba(36, 24, 61, .16), transparent 34rem),
+        var(--bg);
+      font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button, a { font: inherit; }
+    button {
+      appearance: none;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid var(--line-bright);
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(14, 38, 46, .78);
+      letter-spacing: .075em;
+      font: 600 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+    button:hover { border-color: var(--accent); background: rgba(29, 55, 57, .95); }
+    button:active { transform: translateY(1px); }
+    button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    a { color: var(--water); text-decoration-color: rgba(155, 216, 221, .4); text-underline-offset: 3px; }
+
+    main { width: min(1040px, 100%); margin: 0 auto; padding: clamp(20px, 4vw, 48px) clamp(14px, 3vw, 32px) 36px; }
+    .masthead { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: end; margin-bottom: 20px; }
+    .eyebrow, .receipt, .tile-label, .tile-kind, .key, summary {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: .08em;
+    }
+    .eyebrow { margin: 0 0 7px; color: var(--muted); font-size: 10px; }
+    h1 { margin: 0; font: 400 clamp(2.05rem, 6vw, 4.2rem)/.98 Georgia, "Times New Roman", serif; letter-spacing: -.045em; color: var(--accent); }
+    h1 em { font-style: normal; color: var(--water); }
+    .deck { max-width: 53rem; margin: 12px 0 0; color: #d2ded9; font: clamp(.97rem, 2vw, 1.13rem)/1.48 Georgia, "Times New Roman", serif; }
+    .receipt { display: grid; gap: 4px; min-width: 145px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); font-size: 9px; text-align: right; }
+    .receipt strong { color: #c7ece4; font-size: 11px; font-weight: 600; }
+
+    .matrix-shell { position: relative; }
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(4px, 1.05vw, 11px);
+      padding: clamp(5px, 1.2vw, 12px);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(17, 45, 53, .56), rgba(6, 13, 18, .76));
+      box-shadow: 0 26px 80px rgba(0, 0, 0, .34), inset 0 0 0 1px rgba(255,255,255,.018);
+    }
+    figure { position: relative; aspect-ratio: 1; min-width: 0; margin: 0; overflow: hidden; border: 1px solid rgba(155, 218, 218, .18); border-radius: 8px; background: #040b10; }
+    figure.center { border-color: rgba(230, 199, 123, .58); box-shadow: inset 0 0 0 1px rgba(230, 199, 123, .12), 0 0 30px rgba(222, 185, 92, .08); }
+    canvas { display: block; width: 100%; height: 100%; image-rendering: auto; }
+    figcaption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; align-items: end; gap: 8px; padding: 16px 9px 8px; background: linear-gradient(transparent, rgba(2, 8, 12, .88) 73%); pointer-events: none; }
+    .tile-label { color: #dcebe5; font-size: clamp(7px, 1.25vw, 10px); line-height: 1.15; text-transform: uppercase; }
+    .tile-kind { color: var(--muted); font-size: clamp(5.5px, .82vw, 7.5px); line-height: 1.15; text-align: right; }
+    .tile-pin { position: absolute; top: 8px; right: 8px; width: 5px; height: 5px; border-radius: 50%; background: rgba(207, 242, 230, .78); box-shadow: 0 0 10px rgba(165, 235, 219, .75); }
+    .center .tile-pin { background: var(--accent); box-shadow: 0 0 12px rgba(234, 197, 110, .88); }
+
+    .controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 9px; margin-top: 16px; }
+    .controls button.primary { color: #191711; border-color: #f1d787; background: linear-gradient(135deg, #f0d68a, #cba35d); }
+    .controls button.primary:hover { background: linear-gradient(135deg, #f7e4a4, #d9b46c); }
+    .key { min-width: 125px; color: var(--muted); font-size: 9px; text-align: center; }
+    .key b { display: block; margin-top: 2px; color: #c7ece4; font-weight: 600; }
+
+    .note { max-width: 780px; margin: 16px auto 0; color: var(--muted); text-align: center; font-size: 11px; }
+    details { max-width: 780px; margin: 20px auto 0; padding: 12px 14px; border: 1px solid rgba(155, 216, 221, .15); border-radius: 9px; background: rgba(8, 22, 28, .46); }
+    summary { color: #c8e4de; font-size: 9px; cursor: pointer; }
+    details p { margin: 11px 0 1px; color: var(--muted); font-size: 11px; }
+    footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 18px; color: #78918d; font: 9px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    body.presentation { display: grid; min-height: 100svh; place-items: center; overflow: hidden; background: #020508; }
+    body.presentation main { width: min(100vmin, 100vw); padding: 0; }
+    body.presentation .masthead, body.presentation .controls, body.presentation .note, body.presentation details, body.presentation footer, body.presentation figcaption { display: none; }
+    body.presentation .matrix { gap: clamp(3px, .7vmin, 8px); padding: clamp(3px, .7vmin, 8px); border-radius: 0; border: 0; background: #020508; box-shadow: none; }
+    body.presentation figure { border-radius: 4px; }
+
+    @media (max-width: 620px) {
+      main { padding-top: 24px; }
+      .masthead { grid-template-columns: 1fr; gap: 13px; }
+      .receipt { width: fit-content; text-align: left; }
+      .deck { font-size: .98rem; }
+      footer { display: block; }
+      footer span { display: block; margin-top: 3px; }
+    }
+  </style>
+  <link rel="canonical" href="https://eulershiddenl.ink/models/view/clear-onyx-field-matrix-v0.1">
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">CLEAR ONYX · FIELD MATRIX · NINE MODEL APERTURES</p>
+        <h1>One aperture.<br><em>Nine live fields.</em></h1>
+        <p class="deck">A shared clock carries nine compact model readers. Roll one seeded configuration and the whole field changes together.</p>
+      </div>
+      <div class="receipt" aria-live="polite">
+        <span>CONFIGURATION RECEIPT</span>
+        <strong id="seed-readout">SEED 00000000</strong>
+        <span id="clock-readout">SHARED CLOCK · 0.00</span>
+      </div>
+    </header>
+
+    <section class="matrix-shell" aria-label="Clear Onyx Field Matrix">
+      <div class="matrix" id="matrix"></div>
+    </section>
+
+    <div class="controls" aria-label="Field Matrix controls">
+      <button class="primary" id="roll" type="button">FIELD ROLL</button>
+      <button id="pause" type="button">PAUSE</button>
+      <button id="presentation" type="button">PRESENTATION</button>
+      <span class="key">R · roll &nbsp; SPACE · pause &nbsp; P · present<b>ONE PAGE · NO PRE-RENDERED FRAMES</b></span>
+    </div>
+
+    <p class="note">Brightness carries magnitude or density. Hue carries phase or colour-basis population. Filaments carry transport.</p>
+
+    <details>
+      <summary>FIELD MATRIX RECEIPT</summary>
+      <p>Each square is a compact visual model aperture with its own parameter tuple. Field Roll chooses a deterministic tuple from the displayed seed, so any configuration can return through the same address. The full Clear Onyx instruments retain their independent controls, model boundaries, and verification receipts.</p>
+    </details>
+
+    <footer>
+      <span>CLEAR ONYX · FIELD MATRIX v0.1 · SEE THE WHOLE FIELD, THEN OPEN THE INSTRUMENT</span>
+      <span><a href="/provenance">OPEN THE LABORATORY</a></span>
+    </footer>
+  </main>
+
+  <script>
+  (() => {
+    'use strict';
+
+    const TAU = Math.PI * 2;
+    const RESOLUTION = 144;
+    const $ = (selector) => document.querySelector(selector);
+    const matrix = $('#matrix');
+    const seedReadout = $('#seed-readout');
+    const clockReadout = $('#clock-readout');
+    const rollButton = $('#roll');
+    const pauseButton = $('#pause');
+    const presentationButton = $('#presentation');
+
+    const clamp = (value, low = 0, high = 1) => Math.min(high, Math.max(low, value));
+    const mix = (a, b, t) => a + (b - a) * t;
+    const mod = (value, divisor) => ((value % divisor) + divisor) % divisor;
+    const smooth = (value) => value * value * (3 - 2 * value);
+    const hash32 = (value) => {
+      value = Math.imul(value ^ (value >>> 16), 0x45d9f3b);
+      value = Math.imul(value ^ (value >>> 16), 0x45d9f3b);
+      return (value ^ (value >>> 16)) >>> 0;
+    };
+    const makeRng = (seed) => () => {
+      seed = (seed + 0x6D2B79F5) >>> 0;
+      let t = seed;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+    const pick = (rng, entries) => entries[Math.floor(rng() * entries.length)];
+    const signed = (value) => value < 0 ? -1 : 1;
+    const hexSeed = (seed) => seed.toString(16).padStart(8, '0').toUpperCase();
+    const parseSeed = () => {
+      const raw = location.hash.replace('#', '').trim();
+      if (/^[0-9a-f]{1,8}$/i.test(raw)) return parseInt(raw, 16) >>> 0;
+      return hash32(Date.now() ^ Math.floor(performance.now() * 1000));
+    };
+
+    function writeHsl(data, offset, hue, saturation, lightness, alpha = 255) {
+      hue = mod(hue, 360) / 360;
+      saturation = clamp(saturation);
+      lightness = clamp(lightness);
+      const chroma = (1 - Math.abs(2 * lightness - 1)) * saturation;
+      const sector = hue * 6;
+      const secondary = chroma * (1 - Math.abs((sector % 2) - 1));
+      let r = 0, g = 0, b = 0;
+      if (sector < 1) { r = chroma; g = secondary; }
+      else if (sector < 2) { r = secondary; g = chroma; }
+      else if (sector < 3) { g = chroma; b = secondary; }
+      else if (sector < 4) { g = secondary; b = chroma; }
+      else if (sector < 5) { r = secondary; b = chroma; }
+      else { r = chroma; b = secondary; }
+      const base = lightness - chroma / 2;
+      data[offset] = (r + base) * 255;
+      data[offset + 1] = (g + base) * 255;
+      data[offset + 2] = (b + base) * 255;
+      data[offset + 3] = alpha;
+    }
+
+    function writeRgb(data, offset, r, g, b, alpha = 255) {
+      data[offset] = clamp(r) * 255;
+      data[offset + 1] = clamp(g) * 255;
+      data[offset + 2] = clamp(b) * 255;
+      data[offset + 3] = alpha;
+    }
+
+    function fieldImage(ctx, sampler) {
+      const width = ctx.canvas.width;
+      const height = ctx.canvas.height;
+      const image = ctx.createImageData(width, height);
+      const data = image.data;
+      let offset = 0;
+      for (let y = 0; y < height; y += 1) {
+        const v = (y / (height - 1)) * 2 - 1;
+        for (let x = 0; x < width; x += 1) {
+          const u = (x / (width - 1)) * 2 - 1;
+          sampler(u, v, offset, data, x, y, width, height);
+          offset += 4;
+        }
+      }
+      ctx.putImageData(image, 0, 0);
+    }
+
+    function backdrop(ctx) {
+      const { width, height } = ctx.canvas;
+      const wash = ctx.createRadialGradient(width * .49, height * .43, 0, width * .5, height * .5, width * .78);
+      wash.addColorStop(0, '#10242e');
+      wash.addColorStop(.55, '#07131a');
+      wash.addColorStop(1, '#020609');
+      ctx.fillStyle = wash;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    function ringStroke(ctx, x, y, radius, color, width = 1) {
+      ctx.save();
+      ctx.lineWidth = width;
+      ctx.strokeStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, TAU);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function line(ctx, x1, y1, x2, y2, color, width = 1) {
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    const MODELS = [
+      {
+        id: 'ab', label: 'U(1) Flux Ring', kind: 'gauge phase',
+        config(rng) { return { flux: mix(-.95, .95, rng()), mode: pick(rng, [1, 2, 3, 4]), phase: rng() * TAU, rate: mix(.45, 1.25, rng()) }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const cx = w / 2, cy = h / 2, radius = w * .285;
+          fieldImage(ctx, (u, v, off, data) => {
+            const r = Math.hypot(u, v);
+            const theta = Math.atan2(v, u);
+            const envelope = Math.exp(-((r - .57) ** 2) / .013);
+            const phase = c.mode * theta + c.flux * theta - t * c.rate + c.phase;
+            const density = envelope * (.2 + .8 * Math.cos(phase) ** 2);
+            writeHsl(data, off, 185 + phase / TAU * 250, .65, .017 + .48 * density);
+          });
+          ringStroke(ctx, cx, cy, radius, 'rgba(176, 233, 232, .48)', 1);
+          ringStroke(ctx, cx, cy, radius * .54, 'rgba(147, 187, 205, .16)', 1);
+          ctx.fillStyle = 'rgba(230, 198, 109, .87)';
+          ctx.beginPath(); ctx.arc(cx, cy, w * .028, 0, TAU); ctx.fill();
+          ctx.strokeStyle = 'rgba(230, 198, 109, .45)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.arc(cx, cy, w * .09, 0, TAU); ctx.stroke();
+        }
+      },
+      {
+        id: 'su3', label: 'SU(3) Transport', kind: 'colour link',
+        config(rng) { return { twist: rng() * TAU, drift: mix(.35, 1.2, rng()), link: mix(.35, .9, rng()), basis: Math.floor(rng() * 8) }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          fieldImage(ctx, (u, v, off, data) => {
+            const a = Math.sin(5.1 * u + 2.6 * v + t * c.drift + c.twist);
+            const b = Math.sin(-2.2 * u + 5.6 * v - t * c.drift * .83 + c.twist * 1.7);
+            const d = Math.sin(4.3 * (u - v) + t * c.drift * 1.12 - c.twist);
+            const envelope = .24 + .76 * Math.exp(-1.25 * (u * u + v * v));
+            writeRgb(data, off,
+              envelope * (.07 + .74 * (a * .5 + .5)),
+              envelope * (.07 + .74 * (b * .5 + .5)),
+              envelope * (.07 + .74 * (d * .5 + .5)));
+          });
+          const n = 6, step = w / n;
+          ctx.save(); ctx.globalAlpha = .2 + c.link * .26; ctx.lineWidth = 1;
+          for (let i = 1; i < n; i += 1) {
+            ctx.strokeStyle = i % 3 === 0 ? '#ef8985' : i % 3 === 1 ? '#8ee3a2' : '#8db9f0';
+            ctx.beginPath(); ctx.moveTo(i * step, 0); ctx.lineTo(i * step, h); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0, i * step); ctx.lineTo(w, i * step); ctx.stroke();
+          }
+          ctx.restore();
+        }
+      },
+      {
+        id: 'neutrino', label: 'Neutrino Oscillation', kind: 'two-flavour',
+        config(rng) { return { theta: mix(.28, .77, rng()), massGap: mix(.7, 2.3, rng()), energy: mix(.72, 1.6, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const mixAngle = Math.sin(2 * c.theta) ** 2;
+          fieldImage(ctx, (u, v, off, data) => {
+            const L = (u + 1) * 5.6;
+            const pMu = mixAngle * Math.sin((c.massGap * L / c.energy - t * .88 + c.phase) * .5) ** 2;
+            const packet = Math.exp(-((v - .19 * Math.sin(L * 1.17 - t)) ** 2) / .085);
+            const trail = .24 + .76 * packet;
+            writeRgb(data, off, trail * (1 - pMu) * .22, trail * (.16 + pMu * .75), trail * (.52 + (1 - pMu) * .38));
+          });
+          ctx.save(); ctx.globalAlpha = .33; ctx.strokeStyle = 'rgba(213,244,236,.62)'; ctx.lineWidth = 1;
+          for (let i = 1; i < 5; i += 1) { ctx.beginPath(); ctx.moveTo(i * w / 5, h * .1); ctx.lineTo(i * w / 5, h * .9); ctx.stroke(); }
+          ctx.restore();
+        }
+      },
+      {
+        id: 'dirac', label: 'Dirac Packet', kind: 'spinor field',
+        config(rng) { return { kx: mix(3.1, 6.4, rng()), ky: mix(-1.9, 1.9, rng()), mass: mix(.35, 1.35, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const energy = Math.hypot(c.kx, c.ky, c.mass);
+          fieldImage(ctx, (u, v, off, data) => {
+            const travelX = .34 * Math.cos(c.kx / energy) * Math.sin(t * .34);
+            const travelY = .34 * Math.sin(c.ky / energy) * Math.sin(t * .34);
+            const x = u - travelX, y = v - travelY;
+            const envelope = Math.exp(-(x * x + y * y) / .19);
+            const phase = c.kx * x + c.ky * y - energy * t + c.phase;
+            const zb = .5 + .5 * Math.sin(2 * energy * t + x * 3.2);
+            writeHsl(data, off, 192 + phase / TAU * 140 + zb * 22, .72, .01 + envelope * (.14 + .48 * zb));
+          });
+          ctx.save(); ctx.strokeStyle = 'rgba(177,227,236,.55)'; ctx.lineWidth = 1;
+          for (let i = 0; i < 5; i += 1) {
+            const y = h * (.22 + i * .14);
+            ctx.beginPath(); ctx.moveTo(w * .18, y); ctx.bezierCurveTo(w * .43, y - 10, w * .58, y + 10, w * .84, y); ctx.stroke();
+          }
+          ctx.restore();
+        }
+      },
+      {
+        id: 'hydrogen', label: 'Hydrogen Orbital', kind: 'atomic field', center: true,
+        config(rng) { return { orbital: pick(rng, ['2p', '3d', '4f']), rotate: rng() * TAU, mix: mix(.16, .47, rng()), gap: mix(.46, 1.04, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const cr = Math.cos(c.rotate), sr = Math.sin(c.rotate);
+          fieldImage(ctx, (u, v, off, data) => {
+            const x = u * cr - v * sr, y = u * sr + v * cr;
+            const r = Math.hypot(x, y);
+            const s = Math.exp(-2.05 * r);
+            let basis;
+            if (c.orbital === '2p') basis = x * Math.exp(-1.48 * r);
+            else if (c.orbital === '3d') basis = (x * x - y * y) * Math.exp(-1.34 * r) * 1.75;
+            else basis = x * (x * x - 3 * y * y) * Math.exp(-1.24 * r) * 2.2;
+            const phaseS = c.phase - t * .38;
+            const phaseB = c.phase + .68 - t * (.38 + c.gap);
+            const re = s * Math.cos(phaseS) + c.mix * basis * Math.cos(phaseB);
+            const im = s * Math.sin(phaseS) + c.mix * basis * Math.sin(phaseB);
+            const density = clamp((re * re + im * im) * 2.65);
+            const phase = Math.atan2(im, re);
+            writeHsl(data, off, 35 + phase / TAU * 210, .58 + density * .3, .012 + density * .61);
+          });
+          const cx = w / 2, cy = h / 2;
+          ctx.save(); ctx.strokeStyle = 'rgba(193,232,242,.27)'; ctx.lineWidth = 1;
+          for (const r of [.145, .29, .44]) { ctx.beginPath(); ctx.arc(cx, cy, w * r, 0, TAU); ctx.stroke(); }
+          ctx.fillStyle = 'rgba(244, 209, 121, .92)'; ctx.beginPath(); ctx.arc(cx, cy, w * .023, 0, TAU); ctx.fill();
+          ctx.restore();
+        }
+      },
+      {
+        id: 'slit', label: 'Double-Slit Electron', kind: 'wave transport',
+        config(rng) { return { separation: mix(.20, .42, rng()), k: mix(8.2, 15.6, rng()), packet: mix(.23, .48, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const barrierX = -.12;
+          fieldImage(ctx, (u, v, off, data) => {
+            const packetX = u + .86 - .2 * Math.sin(t * .28);
+            const incident = Math.exp(-(packetX * packetX + v * v * .52) / c.packet);
+            const dx = Math.max(.04, u - barrierX);
+            const y1 = v - c.separation, y2 = v + c.separation;
+            const d1 = Math.hypot(dx, y1), d2 = Math.hypot(dx, y2);
+            const a1 = Math.exp(-(y1 * y1) / .12) * Math.cos(c.k * d1 - t * 1.45 + c.phase);
+            const b1 = Math.exp(-(y1 * y1) / .12) * Math.sin(c.k * d1 - t * 1.45 + c.phase);
+            const a2 = Math.exp(-(y2 * y2) / .12) * Math.cos(c.k * d2 - t * 1.45 + c.phase);
+            const b2 = Math.exp(-(y2 * y2) / .12) * Math.sin(c.k * d2 - t * 1.45 + c.phase);
+            const gate = smooth(clamp((u - barrierX + .05) / .18));
+            const re = (1 - gate) * incident * Math.cos(c.k * u - t) + gate * (a1 + a2) * .48;
+            const im = (1 - gate) * incident * Math.sin(c.k * u - t) + gate * (b1 + b2) * .48;
+            const density = clamp((re * re + im * im) * 1.9);
+            writeHsl(data, off, 198 + Math.atan2(im, re) / TAU * 178, .62, .01 + density * .55);
+          });
+          ctx.save(); ctx.strokeStyle = 'rgba(206,239,231,.45)'; ctx.lineWidth = 1;
+          const bx = w * ((barrierX + 1) / 2);
+          const slitA = h * ((1 - c.separation - .095) / 2), slitB = h * ((1 - c.separation + .095) / 2);
+          const slitC = h * ((1 + c.separation - .095) / 2), slitD = h * ((1 + c.separation + .095) / 2);
+          [[0, slitA], [slitB, slitC], [slitD, h]].forEach(([from, to]) => { ctx.beginPath(); ctx.moveTo(bx, from); ctx.lineTo(bx, to); ctx.stroke(); });
+          ctx.restore();
+        }
+      },
+      {
+        id: 'higgs', label: 'Higgs Doublet', kind: 'electroweak field',
+        config(rng) { return { vacuum: mix(.58, 1.18, rng()), pulse: mix(.35, .9, rng()), winding: pick(rng, [-2, -1, 1, 2]), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          fieldImage(ctx, (u, v, off, data) => {
+            const r = Math.hypot(u, v);
+            const theta = Math.atan2(v, u);
+            const wave = c.pulse * Math.exp(-r * 2.1) * Math.cos(8.2 * r - t * 1.6 + c.phase);
+            const amp = clamp(c.vacuum + wave);
+            const phase = c.winding * theta + t * .21 + c.phase + .24 * Math.sin(r * 6 - t);
+            const second = .5 + .5 * Math.cos(phase * 1.4 + r * 3);
+            writeHsl(data, off, 272 + phase / TAU * 118 + second * 18, .47 + amp * .36, .012 + amp * .43);
+          });
+          const { width: w, height: h } = ctx.canvas;
+          const cx = w / 2, cy = h / 2;
+          ctx.save(); ctx.strokeStyle = 'rgba(218, 177, 242, .25)'; ctx.lineWidth = 1;
+          for (let r = .13; r < .52; r += .13) { ctx.beginPath(); ctx.arc(cx, cy, w * r, 0, TAU); ctx.stroke(); }
+          ctx.restore();
+        }
+      },
+      {
+        id: 'helium', label: 'Helium Correlation', kind: 'configuration slice',
+        config(rng) { return { zeta: mix(.75, 1.35, rng()), correlation: mix(.25, .68, rng()), breath: mix(.28, .85, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          fieldImage(ctx, (u, v, off, data) => {
+            const r1 = (u + 1) * 2.9;
+            const r2 = (v + 1) * 2.9;
+            const seam = r1 - r2;
+            const breath = 1 + .12 * Math.sin(t * c.breath + c.phase);
+            const orbital = Math.exp(-c.zeta * (r1 + r2) / breath);
+            const pair = 1 - c.correlation * Math.exp(-(seam * seam) / .3);
+            const density = clamp(orbital * pair * 1.85);
+            const phase = c.phase - t * .36 + .14 * (r1 + r2) + .08 * Math.sin(seam * 4);
+            writeHsl(data, off, 265 + phase / TAU * 100, .47 + density * .35, .012 + density * .56);
+          });
+          ctx.save(); ctx.strokeStyle = 'rgba(220, 185, 246, .6)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(w, h); ctx.stroke();
+          ctx.strokeStyle = 'rgba(168, 223, 224, .18)'; ctx.beginPath(); ctx.moveTo(0, h); ctx.lineTo(w, 0); ctx.stroke();
+          ctx.restore();
+        }
+      },
+      {
+        id: 'baryon', label: 'Baryon Y-Junction', kind: 'colour flux',
+        config(rng) { return { spread: mix(.43, .7, rng()), spin: mix(.24, .85, rng()), phase: rng() * TAU }; },
+        render(ctx, t, c) {
+          backdrop(ctx);
+          const { width: w, height: h } = ctx.canvas;
+          const cx = w / 2, cy = h / 2;
+          const points = [0, TAU / 3, TAU * 2 / 3].map((angle, i) => {
+            const orbit = c.spread * w * (.5 + .06 * Math.sin(t * c.spin + c.phase + i));
+            const a = angle + c.phase + t * c.spin * .18;
+            return { x: cx + Math.cos(a) * orbit, y: cy + Math.sin(a) * orbit };
+          });
+          const colors = ['rgba(245,111,100,.92)', 'rgba(108,226,143,.92)', 'rgba(110,158,245,.92)'];
+          ctx.save();
+          points.forEach((p, i) => {
+            const gr = ctx.createLinearGradient(cx, cy, p.x, p.y);
+            gr.addColorStop(0, 'rgba(222,241,233,.77)'); gr.addColorStop(1, colors[i]);
+            ctx.strokeStyle = gr; ctx.lineWidth = Math.max(1.5, w * .02); ctx.lineCap = 'round';
+            ctx.beginPath(); ctx.moveTo(cx, cy); ctx.quadraticCurveTo((cx + p.x) / 2 + Math.sin(t + i) * 4, (cy + p.y) / 2 + Math.cos(t + i) * 4, p.x, p.y); ctx.stroke();
+            ctx.fillStyle = colors[i]; ctx.beginPath(); ctx.arc(p.x, p.y, w * .042, 0, TAU); ctx.fill();
+          });
+          ctx.fillStyle = 'rgba(235, 246, 239, .92)'; ctx.beginPath(); ctx.arc(cx, cy, w * .034, 0, TAU); ctx.fill();
+          ctx.restore();
+        }
+      }
+    ];
+
+    const state = { seed: parseSeed(), config: [], time: 0, last: performance.now(), running: true, presentation: false, frames: 0 };
+    const tiles = [];
+
+    function makeTile(model) {
+      const figure = document.createElement('figure');
+      if (model.center) figure.classList.add('center');
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = RESOLUTION;
+      canvas.setAttribute('aria-label', model.label);
+      const caption = document.createElement('figcaption');
+      caption.innerHTML = `<span class="tile-label">${model.label}</span><span class="tile-kind">${model.kind}</span>`;
+      const pin = document.createElement('span');
+      pin.className = 'tile-pin';
+      figure.append(canvas, caption, pin);
+      matrix.append(figure);
+      return { model, canvas, ctx: canvas.getContext('2d', { alpha: false }), figure };
+    }
+
+    MODELS.forEach((model) => tiles.push(makeTile(model)));
+
+    function applySeed(seed) {
+      state.seed = seed >>> 0;
+      const rng = makeRng(state.seed);
+      state.config = MODELS.map((model, index) => model.config(makeRng(hash32(state.seed ^ ((index + 1) * 0x9e3779b9) ^ Math.floor(rng() * 0xffffffff)))));
+      location.hash = `#${hexSeed(state.seed).toLowerCase()}`;
+      seedReadout.textContent = `SEED ${hexSeed(state.seed)}`;
+      state.time = 0;
+      state.frames = 0;
+    }
+
+    function roll() { applySeed(hash32(state.seed ^ (Date.now() >>> 0) ^ Math.floor(performance.now() * 1000))); }
+
+    function drawFrame(now) {
+      const dt = Math.min(.05, Math.max(0, (now - state.last) / 1000));
+      state.last = now;
+      if (state.running) state.time += dt;
+      const t = state.time;
+      tiles.forEach((tile, index) => tile.model.render(tile.ctx, t, state.config[index]));
+      state.frames += 1;
+      if (state.frames % 6 === 0) clockReadout.textContent = `SHARED CLOCK · ${t.toFixed(2)}`;
+      requestAnimationFrame(drawFrame);
+    }
+
+    rollButton.addEventListener('click', roll);
+    pauseButton.addEventListener('click', () => {
+      state.running = !state.running;
+      pauseButton.textContent = state.running ? 'PAUSE' : 'RESUME';
+    });
+    presentationButton.addEventListener('click', () => {
+      state.presentation = !state.presentation;
+      document.body.classList.toggle('presentation', state.presentation);
+      presentationButton.textContent = state.presentation ? 'EXIT PRESENTATION' : 'PRESENTATION';
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key.toLowerCase() === 'r') roll();
+      if (event.key.toLowerCase() === 'p') presentationButton.click();
+      if (event.code === 'Space' && event.target === document.body) { event.preventDefault(); pauseButton.click(); }
+    });
+    window.addEventListener('hashchange', () => {
+      const next = parseSeed();
+      if (next !== state.seed) applySeed(next);
+    });
+
+    applySeed(state.seed);
+    requestAnimationFrame(drawFrame);
+  })();
+  </script>
+</body>
+</html>

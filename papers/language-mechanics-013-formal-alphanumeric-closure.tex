@@ -1,0 +1,269 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.84in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array,longtable}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black,pdftitle={Formal Alphanumeric Closure},pdfauthor={Anthony Vito Coppa}}
+\definecolor{ink}{HTML}{242522}
+\definecolor{muted}{HTML}{6D685F}
+\definecolor{rule}{HTML}{B9B1A4}
+\definecolor{wash}{HTML}{F5F1E9}
+\definecolor{accent}{HTML}{8A6935}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.56em}
+\setlength{\headheight}{22pt}
+\renewcommand{\arraystretch}{1.16}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\term}[1]{\textsc{#1}}
+\newcommand{\scope}{\operatorname{Scope}}
+\newcommand{\readerread}{\operatorname{Read}}
+\newcommand{\receipt}{\operatorname{Receipt}}
+\newcommand{\type}{\operatorname{Type}}
+\titleformat{\section}{\large\scshape\color{ink}}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{ink}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.65em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\scshape Language Mechanics / 013}
+\rhead{\footnotesize\scshape Formal Alphanumeric Closure}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{rule}\leaders\hrule height \headrulewidth\hfill}}
+
+\begin{document}
+\begin{center}
+{\small\scshape Coppalini Architecture \quad / \quad Language Mechanics 013}\\[2.3em]
+{\LARGE\bfseries Formal Alphanumeric Closure}\\[1em]
+{\large A typed registry for decimal, Greek, Roman-operator, and English written form}\\[2em]
+\rule{0.8\textwidth}{0.45pt}\\[1.2em]
+{\small 1 November 2026 \quad \textbullet\quad Edition 1.0 \quad \textbullet\quad Formal-basis paper}
+\end{center}
+
+\vspace{1.1em}
+\begin{quote}\itshape
+An alphabet becomes formally usable when each admitted mark has a declared carrier, operation, reader, invariant, and receipt. The closure is finite at the registry layer and explicit about every further proof obligation.
+\end{quote}
+
+\section*{Abstract}
+This paper defines an alphanumeric registry for Language Mechanics. The construction has four layers: decimal numerals for quantity and position; the $24$ classical Greek letters for direct field offices; selected Roman symbols for formal operators; and the $26$ English lowercase/uppercase pairs for a declared reader/action interface. It distinguishes the typed null $\varnothing=\mathsf{UNTYPEABLE}$ from the empty set and the zero digit, gives a six-place constructor for every glyph, and states a finite verification protocol. The Greek and decimal layers are closed registries in this edition. The English reader/action grid is an explicit interface declaration: each pairing is published with its proof burden rather than promoted as a theorem before its carrier, reader, invariant, receipt, and repeatable fit test have been supplied.
+
+\section{Why a character registry is needed}
+Every formal system writes through a finite visible alphabet. Yet the visible mark is only the beginning of its job. A symbol becomes usable when a reader can tell which mark it is, what role it has in the current expression, which operations are permitted, and how the result can be checked later.
+
+The registry therefore treats a glyph as a compact interface packet:
+\begin{equation}
+\operatorname{CORDIS}(\ell[c])=
+\bigl(\operatorname{Codomain},\operatorname{Operation},\operatorname{Receipt},
+\operatorname{Domain},\operatorname{Invariant},\operatorname{Symmetry}\bigr).
+\label{eq:cordis}
+\end{equation}
+The character $\ell$ carries a declared coordinate $c$. The six positions in \eqref{eq:cordis} make it possible to ask the ordinary questions: What kind of output does this mark produce? What may it do? Where is its use recorded? What may it act on? What stays fixed? Which reversal, mirror, or partner relation has been declared?
+
+\section{The type boundary}
+Three frequently conflated marks have separate types in this architecture:
+\begin{equation}
+\begin{aligned}
+\varnothing&=\mathsf{UNTYPEABLE},\\
+\emptyset_{\mathrm{set}}&=\text{the set with no members},\\
+0&=\text{the decimal additive identity in its declared numerical domain}.
+\end{aligned}
+\label{eq:nulls}
+\end{equation}
+They can appear near one another on a page. They do not perform the same work. The first is a typing boundary: no lawful operation has been admitted. The second is a set object. The third is a numeral used by a positional number system. The distinction prevents a missing type, a collection with no members, and a quantity at its additive identity from being silently merged.
+
+\section{Layer I: decimal numerals}
+The decimal digit set is
+\begin{equation}
+\mathbb{D}_{10}=\{0,1,2,3,4,5,6,7,8,9\}.
+\end{equation}
+For a finite sequence of digits, positional value is declared by
+\begin{equation}
+[d_k\ldots d_1d_0]_{10}=\sum_{j=0}^{k}d_j10^j,
+\qquad d_j\in\mathbb{D}_{10}.
+\label{eq:decimal}
+\end{equation}
+The decimal layer supplies counting and positional address. It is intentionally modest: a decimal string represents a number only inside the declared base-$10$ convention, and numerical operations remain typed by their relevant domain.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}c Y >{\bfseries}c Y >{\bfseries}c Y >{\bfseries}c Y >{\bfseries}c Y@{}}
+\toprule
+0 & origin & 1 & unit & 2 & pair & 3 & triad & 4 & quarter\\
+5 & half-ten & 6 & sixfold & 7 & septad & 8 & octave & 9 & final digit\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The verbal labels are reading aids, not replacements for arithmetic definitions. Equation \eqref{eq:decimal} is the exact construction.
+
+\section{Layer II: Greek field registry}
+The Greek layer contains $24$ canonical letters, each assigned one direct office in this edition. It is a finite registry, so its cardinality and uniqueness can be mechanically checked.
+
+\begin{center}
+\begin{tabularx}{.9\textwidth}{@{}>{\bfseries}c Y >{\bfseries}c Y@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Greek field office}} & \multicolumn{2}{c}{\textbf{Greek field office}}\\
+\midrule
+$\alpha$ & Carriage & $\nu$ & Rhythm\\
+$\beta$ & Phase & $\xi$ & Contrast\\
+$\gamma$ & Path & $o$ & Occurrence (omicron)\\
+$\delta$ & Change & $\pi$ & Light\\
+$\epsilon$ & Fit & $\rho$ & Read\\
+$\zeta$ & Memory & $\sigma$ & State\\
+$\eta$ & Trust & $\tau$ & Time\\
+$\theta$ & Survival & $\upsilon$ & Can\\
+$\iota$ & Archive & $\phi$ & Drift\\
+$\kappa$ & Tuning & $\chi$ & Form\\
+$\lambda$ & Meaning & $\psi$ & Mirror\\
+$\mu$ & Measure & $\omega$ & Closure\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The registry is direct: it gives a reader a stable vocabulary for the role being named. For example, $\zeta$ designates memory in the field register, while $\rho$ designates the act or output of reading. The assignment does not replace the ordinary mathematical meanings of Greek letters in every discipline; its force is scoped to the declared Language Mechanics registry.
+
+\subsection{Seven-band observer order}
+The architecture also declares a seven-band order used to label a visible color carrier:
+\begin{equation}
+(\Psi,\Theta,\theta,\pi,\epsilon,\Phi,\Lambda)
+=(\mathrm{Red},\mathrm{Orange},\mathrm{Yellow},\mathrm{Green},\mathrm{Blue},\mathrm{Indigo},\mathrm{Violet}).
+\label{eq:bands}
+\end{equation}
+This is a finite mnemonic and design coordinate. Color remains physically readable through an observer model, an illumination condition, a spectral relation, and a stated response function. Equation \eqref{eq:bands} does not identify a color swatch with a physical field equation.
+
+\section{Layer III: Roman operators}
+Roman notation supplies selected operators and constants that have established formal roles. The registry lists their local architecture role alongside their standard mathematical use.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{.12\textwidth}Y Y@{}}
+\toprule
+\textbf{Mark} & \textbf{Formal use} & \textbf{Declared architecture reading}\\
+\midrule
+$i=-\Omega$ & a quarter-turn / complex structure on an oriented real plane & Gravity office: a bounded, regulated experiential relation; this reading requires the declared reader scope.\\
+$g$ & metric tensor or local bilinear comparison rule & metric field witness when supplied by a physical adapter.\\
+$H$ & Hamiltonian or other declared generator & a law of transport stated in its native domain.\\
+$\sqrt{5}$ & positive real square root of $5$ & a normalization appearing in the Fibonacci carrier family.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The equality $i=-\Omega$ is a conventional matrix identity when
+\begin{equation}
+\Omega=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad \Omega^2=-I.
+\label{eq:omega}
+\end{equation}
+It acts inside the two-dimensional carrier. An embodied three-dimensional or spacetime occurrence requires a declared bridge: an inscription or interface carrier $e$, a transport relation $L$, and a reader $\rho$. The operator by itself does not exhaust that bridge.
+
+\section{Layer IV: English reader/action interface}
+The English alphabet is organized as a paired interface. Lowercase names the local reading coordinate; uppercase names the corresponding admitted action. The pairing is an involution schema:
+\begin{equation}
+C:\mathcal{L}_{26}^{-}\longleftrightarrow\mathcal{L}_{26}^{+},
+\qquad C^2=\operatorname{id},
+\qquad \rho_a(T_Ax)=\overline{T}_A\bigl(\rho_a(x)\bigr).
+\label{eq:english}
+\end{equation}
+The final clause asks the action to have a declared reader-side consequence. It is the proof obligation for each pair, not a claim that every line below has already been independently established in every use context.
+
+\begin{longtable}{p{.12\textwidth}p{.3\textwidth}p{.12\textwidth}p{.3\textwidth}}
+\toprule
+\textbf{Read} & \textbf{Local coordinate} & \textbf{Act} & \textbf{Admitted action}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$a$ & Address & $A$ & Arrive\\
+$b$ & Boundary & $B$ & Bind\\
+$c$ & Contact & $C$ & Couple\\
+$d$ & Difference & $D$ & Decide\\
+$e$ & Evidence & $E$ & Evaluate\\
+$f$ & Form & $F$ & Fit\\
+$g$ & Gravity & $G$ & Ground\\
+$h$ & Horizon & $H$ & Hold\\
+$i$ & Interface & $I$ & Integrate\\
+$j$ & Junction & $J$ & Join\\
+$k$ & Kernel & $K$ & Keep\\
+$l$ & Light & $L$ & Lift\\
+$m$ & Memory & $M$ & Move\\
+$n$ & No & $N$ & Notice\\
+$o$ & Orientation & $O$ & Open\\
+$p$ & Path & $P$ & Proceed\\
+$q$ & Question & $Q$ & Qualify\\
+$r$ & Reference & $R$ & Return\\
+$s$ & Signal & $S$ & Survive\\
+$t$ & Time & $T$ & Transport\\
+$u$ & Use & $U$ & Unfold\\
+$v$ & View & $V$ & Verify\\
+$w$ & Wheel & $W$ & Weigh\\
+$x$ & Crossing & $X$ & Exchange\\
+$y$ & Yes & $Y$ & Yield\\
+$z$ & Zero & $Z$ & Close\\
+\end{longtable}
+
+\subsection{The refusal mark}
+The pair $(n,N)$ gives refusal its readable coordinate and receipt. $n=\text{No}$ is the reader-side sign of refusal; $N=\text{Notice}$ recognizes and records that sign. Gate/Fold carries the formal refusal of a typed candidate. Its declared refusals are nothing, noise, nuisance, negative, and annihilation. A receipt preserves the addressed candidate and its history for a later lawful comparison.
+
+\section{Proof status and audit}
+The registry contains three different kinds of claim. Keeping them separate is part of the closure.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{.23\textwidth}Y Y@{}}
+\toprule
+\textbf{Claim class} & \textbf{What is exact now} & \textbf{What remains field-specific}\\
+\midrule
+Finite registry & Counts, uniqueness, declared entries, and the presence of all required slots can be checked mechanically. & Whether a glyph is a good model of a particular empirical process.\\
+Algebraic identity & Matrix multiplication, involution, composition, and declared equivalences can be proved symbolically. & The connection of an identity to a physical system.\\
+Reader adapter & A scope packet can list reader, carrier, resolution, residual, and receipt. & Calibration, uncertainty, biology, apparatus behavior, and independent replication.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The companion program \texttt{lm\_012\_013\_registry\_check.py} verifies the finite portion of this edition:
+\begin{enumerate}[leftmargin=1.8em,itemsep=.35em]
+\item exactly $10$ decimal digits and their distinctness;
+\item exactly $24$ Greek letters and $24$ distinct direct offices;
+\item exactly $26$ lowercase/uppercase English pairs;
+\item distinct typed-null, set-empty, and decimal-zero representations;
+\item $\binom{8}{2}=28$, $7\times4=28$, and $\binom{8}{3}=56$ for the shared eight-office finite reader.
+\end{enumerate}
+The program is a receipt for the stated finite registry. It neither certifies a physical field model nor grants an empirical interpretation without its required native evidence.
+
+\section{What closes here}
+The alphanumeric closure is a closure of the visible formal interface. Every admitted layer has a declared domain and a readable job:
+\begin{equation}
+\begin{aligned}
+\text{decimal address}&\longrightarrow\text{Greek field office}\longrightarrow\text{Roman operator}\\
+&\longrightarrow\text{English reader/action pair}\longrightarrow\text{receipt}.
+\end{aligned}
+\end{equation}
+This gives a later reader a way to identify the mark, reconstruct its declared role, test its finite register membership, and locate the remaining proof obligation. It is sufficient to make the written layer inspectable; it leaves every physical, mathematical, linguistic, or computational adapter answerable to its own standards of demonstration.
+
+\vfill
+\begin{center}
+\rule{.75\textwidth}{0.45pt}\\[1em]
+\textit{The glyph is visible. The type is declared. The receipt remains.}
+\end{center}
+
+\newpage
+\section*{References and internal records}
+\begin{enumerate}[leftmargin=1.8em,itemsep=.55em]
+\item Euclid. \textit{Elements}. Classical construction of definitions, common notions, and propositions.
+\item G. Peano. \textit{Arithmetices principia, nova methodo exposita}. 1889.
+\item G. Frege. \textit{Begriffsschrift}. 1879.
+\item C. S. Peirce. Selected writings on signs, relation, and interpretation.
+\item A. Church. ``An Unsolvable Problem of Elementary Number Theory.'' 1936.
+\item J. von Neumann. \textit{First Draft of a Report on the EDVAC}. 1945.
+\item Unicode Consortium. \textit{The Unicode Standard}; encoded character identity and interchange practice.
+\item Coppalini Architecture. \textit{Language Mechanics 000--012}; internal formal-basis series.
+\end{enumerate}
+
+\vspace{1em}
+{\small\color{muted}Document receipt: LM 013 / Edition 1.0 / typeset 1 November 2026. The finite checker is supplied with the staged website package.}
+\end{document}

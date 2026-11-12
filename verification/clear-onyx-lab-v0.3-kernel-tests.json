@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "runtime": "v24.22.1",
+  "checks": 22543,
+  "groups": [
+    {
+      "name": "Native source preservation",
+      "checks": 13,
+      "status": "PASS"
+    },
+    {
+      "name": "Exact quadratic field and matrix root",
+      "checks": 98,
+      "status": "PASS"
+    },
+    {
+      "name": "Atomic quotient, integer lift, and retained receipts",
+      "checks": 137,
+      "status": "PASS"
+    },
+    {
+      "name": "Water exact addresses and full native within-beat motion",
+      "checks": 727,
+      "status": "PASS",
+      "detail": {
+        "maxAmplitudeResidual": 1.3442082238417696e-14,
+        "archivedInterpolationCounterexample": "n=2, beat=0, alpha=0.5: native phase −1, archived shortest-path phase +1"
+      }
+    },
+    {
+      "name": "Cached density equivalence and numerical current",
+      "checks": 9601,
+      "status": "PASS",
+      "detail": {
+        "maxCacheResidual": 2.0122792321330962e-16
+      }
+    },
+    {
+      "name": "28 addressed pairs, seven matchings and raw frame covariance",
+      "checks": 1290,
+      "status": "PASS"
+    },
+    {
+      "name": "Doublet polar geometry, central readers and zero distinction",
+      "checks": 10611,
+      "status": "PASS",
+      "detail": {
+        "maxUnitarityResidual": 2.220446049250313e-16,
+        "finiteDoublets": 625
+      }
+    },
+    {
+      "name": "Plane coherence averages products rather than amplitudes",
+      "checks": 66,
+      "status": "PASS",
+      "detail": {
+        "distinction": 0.000018963237872779946
+      }
+    }
+  ],
+  "benchmark": {
+    "grid": "48x48",
+    "setupMs": 6.500423000000012,
+    "nativeMedianMs": 16.076795000000004,
+    "cachedMedianMs": 0.03617300000001933,
+    "scope": "Node CPU native full-packet evaluation versus cached density-only evaluation on the same grid. Cache preparation separate; excludes browser drawing and input latency."
+  }
+}

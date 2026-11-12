@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title description">
+  <title id="title">Mirror Escapement Time Lift</title>
+  <desc id="description">A four-phase wheel carries an axial lift through paired mirror directions.</desc>
+  <defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#b38d4e" stroke-width="1.2"/></marker></defs>
+  <rect width="800" height="1050" fill="#faf8f3"/>
+  <rect x="30" y="28" width="740" height="994" fill="none" stroke="#b38d4e" stroke-width="1" opacity=".72"/>
+  <text x="400" y="139" text-anchor="middle" fill="#262522" font-family="Georgia, Times New Roman, serif" font-size="38"><tspan x="400">Mirror Escapement</tspan><tspan x="400" dy="45">Time Lift</tspan></text>
+  <text x="400" y="220" text-anchor="middle" fill="#777065" font-family="Georgia, Times New Roman, serif" font-size="12" letter-spacing=".35">A four-phase mechanical bridge from inversion to return</text>
+  <line x1="214" y1="242" x2="586" y2="242" stroke="#b38d4e" stroke-width="1"/>
+  <g transform="translate(400 535)" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="176" fill="none" stroke="#b38d4e" stroke-width="1.2"/>
+    <path d="M0 0L0 -142A142 142 0 0 1 142 0Z" fill="#a2b4cd" opacity=".72"/>
+    <path d="M0 0L142 0A142 142 0 0 1 0 142Z" fill="#b9a8bf" opacity=".72"/>
+    <path d="M0 0L0 142A142 142 0 0 1 -142 0Z" fill="#d8a6a3" opacity=".72"/>
+    <path d="M0 0L-142 0A142 142 0 0 1 0 -142Z" fill="#d9d09e" opacity=".72"/>
+    <path d="M-118 -71A142 142 0 0 1 71 -118" fill="none" stroke="#b38d4e" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M71 118A142 142 0 0 1 -118 71" fill="none" stroke="#b38d4e" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M0 -155V166" fill="none" stroke="#526f7b" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <path d="M-108 -108L108 108M108 -108L-108 108" fill="none" stroke="#d8d0c2" stroke-width="1.2"/>
+    <circle r="31" fill="#faf8f3" stroke="#262522" stroke-width="1.2"/>
+    <circle r="5" fill="#262522"/>
+    <text x="0" y="-113" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="15">0</text>
+    <text x="114" y="5" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="15">1</text>
+    <text x="0" y="123" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="15">2</text>
+    <text x="-114" y="5" text-anchor="middle" fill="#262522" font-family="Georgia,serif" font-size="15">3</text>
+  </g>
+  <line x1="154" y1="835" x2="646" y2="835" stroke="#b38d4e" stroke-width="1"/>
+  <text x="400" y="872" text-anchor="middle" fill="#262522" font-family="Georgia, Times New Roman, serif" font-size="19">i⁴ = 1, Δt = 4c + p</text>
+  <text x="400" y="934" text-anchor="middle" fill="#777065" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2.2">ANTHONY VITO COPPA</text>
+  <text x="400" y="956" text-anchor="middle" fill="#777065" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.7">COPPALINI ARCHITECTURE</text>
+</svg>

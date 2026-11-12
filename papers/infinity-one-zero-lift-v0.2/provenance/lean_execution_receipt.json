@@ -1,0 +1,14 @@
+{
+  "source_commit": "43073ed248bad45c94dd12aaa0dbc00a3ec64875",
+  "source_path": "proofs/ProjectiveReturn.lean",
+  "source_sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "run_id": 43033661694,
+  "job_id": 130566797599,
+  "status": "completed",
+  "conclusion": "success",
+  "completed_at": "2026-11-11T13:56:31Z",
+  "receipt_rechecked_via": "connected GitHub API",
+  "run_url": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43033661694",
+  "scope": "The exact unmodified finite source only; new manuscript additions retain their Python and written-proof status."
+}

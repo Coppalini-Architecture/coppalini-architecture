@@ -1,0 +1,259 @@
+{
+  "record_type": "CitationEditionReceipt",
+  "edition": "0.2",
+  "manuscript_date": "2026-11-11",
+  "prepared_at_utc": "2026-11-12T03:18:40.711147+00:00",
+  "status": "CITATION_EDITION_READY",
+  "source_edition": "0.1",
+  "source_pdf_sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa",
+  "source_package_sha256": "f016d1306645756f7688f542d85fedf03e6c30f3f4b67d36a4eff89ee3f00066",
+  "source_manifest_sha256": "fc3f33416383a48a5057b3e2878396b235e80e33196833a6cd6740f60dcae87b",
+  "change_scope": "Edition label, citation-only authorship note, four bibliography DOI links, corresponding reading-export and package metadata, newly typeset PDF, and new edition integrity records. Cover-only PDF page-anchor metadata repair.",
+  "mathematical_content_changed": false,
+  "verifier_or_lean_source_changed": false,
+  "cover_or_incidence_assets_changed": false,
+  "mathematical_verifiers_rerun_for_this_citation_edition": false,
+  "bibliographic_updates": [
+    {
+      "key": "LI",
+      "doi": "10.5281/zenodo.24150517",
+      "url": "https://doi.org/10.5281/zenodo.24150517",
+      "public_record_url": "https://zenodo.org/records/24150517",
+      "publication_status_observed": "PUBLISHED_AND_VERIFIED",
+      "verified_download_file_count": 3,
+      "publication_receipt_sha256": "cc137a31f18ed8d11775b584a703ceb6823482cedecdd5cff48e1735121271d1",
+      "cited_pdf_sha256": "16b6bd00db89619dc0212c41727b4dd535ec9f6c085ce4a86eaed6f66fa07825"
+    },
+    {
+      "key": "METL",
+      "doi": "10.5281/zenodo.24150565",
+      "url": "https://doi.org/10.5281/zenodo.24150565",
+      "public_record_url": "https://zenodo.org/records/24150565",
+      "publication_status_observed": "PUBLISHED_AND_VERIFIED",
+      "verified_download_file_count": 2,
+      "publication_receipt_sha256": "b9fab7d570588434baa2ea0cb38e04d94bc4bef37eefcf8653e4a8b23644c9b6",
+      "cited_pdf_sha256": "02eebc067efa30693ffd47bec6ef082ba068ba7fdeedec5a2ceeace0a78c61a4"
+    },
+    {
+      "key": "LM11",
+      "doi": "10.5281/zenodo.24150567",
+      "url": "https://doi.org/10.5281/zenodo.24150567",
+      "public_record_url": "https://zenodo.org/records/24150567",
+      "publication_status_observed": "PUBLISHED_AND_VERIFIED",
+      "verified_download_file_count": 3,
+      "publication_receipt_sha256": "9f1d4879a9fad40c971dad05505914fa64414f2a67d2673db454a7d69d2756cd",
+      "cited_pdf_sha256": "a5e6bccecf2dcf239c1832ce7248265ed4bae0f8153ef7969a2104fcae113292"
+    },
+    {
+      "key": "MR",
+      "doi": "10.5281/zenodo.24150572",
+      "url": "https://doi.org/10.5281/zenodo.24150572",
+      "public_record_url": "https://zenodo.org/records/24150572",
+      "publication_status_observed": "PUBLISHED_AND_VERIFIED",
+      "verified_download_file_count": 4,
+      "publication_receipt_sha256": "7383228929eb35c87368a221a47b98f82c3f9f283171e27a8b7021eeabd74bbe",
+      "cited_pdf_sha256": "9728df5b483a3ccea53b9f7155b684a0c18859276fc6a162394cd0d25efdcf10"
+    }
+  ],
+  "retained_history": {
+    "composition": "provenance/composition_receipt.json",
+    "original_pdf_preflight": "provenance/pdf_preflight.json",
+    "original_manifest": "provenance/edition_0_1_SHA256SUMS.txt",
+    "lean_execution": "provenance/lean_execution_receipt.json",
+    "original_pdf_url": "https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.1.pdf",
+    "original_package_url": "https://eulershiddenl.ink/downloads/infinity-one-zero-lift-source-and-verification-v0.1.zip"
+  },
+  "new_pdf_preflight": "provenance/pdf_preflight_v0_2.json",
+  "navigation_metadata_repair": "Disable page anchors for the unnumbered cover, then enable them for the numbered body, removing the inherited duplicate page.1 destination. No visible text or layout command changes.",
+  "schema_version": "1.0.0",
+  "completed_at_utc": "2026-11-12T03:24:46.065805+00:00",
+  "edition_doi": "10.5281/zenodo.24150613",
+  "edition_record_url": "https://zenodo.org/records/24150613",
+  "previous_edition_doi": "10.5281/zenodo.24150161",
+  "concept_doi": "10.5281/zenodo.24150160",
+  "zenodo_record_date": "2026-11-12",
+  "publication_action_performed_in_this_build": false,
+  "retained_scientific_check_counts": {
+    "geometry": 73,
+    "manuscript": 31
+  },
+  "citation_validation": {
+    "tex_matches_v0_1_after_reversing_allowlisted_edits": true,
+    "markdown_matches_v0_1_after_reversing_allowlisted_edits": true,
+    "tex_and_markdown_citation_changes_match": true,
+    "original_titles_edition_dates_and_page_locators_preserved": true,
+    "all_four_pdf_doi_annotations_present": true
+  },
+  "preserved_files": [
+    {
+      "path": "assets/cover.pdf",
+      "sha256": "3fb4599f3b561563e668dc7e15bb85963e1320805ea8e6997bd36a9fe4232140"
+    },
+    {
+      "path": "assets/cover.png",
+      "sha256": "fb588415acc26c53b6745fef4a4a68a3b88646dcfdef7ce7cdebed47224a735f"
+    },
+    {
+      "path": "assets/cover.svg",
+      "sha256": "f7709382feb0f18975d96de4bd563ab8e93dae7dacbd9ae9bdf05219071ab3d6"
+    },
+    {
+      "path": "assets/incidence.pdf",
+      "sha256": "c841d9fd52585a6ad97da6c485a66348eabbc893f39abc863d4e7bd83b8440f2"
+    },
+    {
+      "path": "assets/incidence.svg",
+      "sha256": "7823ef138f2bf8d69e3d10ee51aa554965e86b21af7956c96aa102002ebcc97c"
+    },
+    {
+      "path": "build_cover.py",
+      "sha256": "5fccbed112630f15f120758d6af29f48efdfe7235e0f2e59072fc536841d0f22"
+    },
+    {
+      "path": "provenance/composition_receipt.json",
+      "sha256": "39c69a898a6e1f3e229ec36311b430d3b0c6f9a525bf2dd45041f768f445c0cb"
+    },
+    {
+      "path": "provenance/geometry_audit_original.zip",
+      "sha256": "ac0c6c1364351d3c5bd1b907a87230efd13c9255195600dc103c70f2a1ff3b75"
+    },
+    {
+      "path": "provenance/lean_execution_receipt.json",
+      "sha256": "bd934e3f882227924a11c7ea4e10d8b46e6da64be854961fd16654578a3c5c41"
+    },
+    {
+      "path": "provenance/original_geometry_SHA256SUMS.txt",
+      "sha256": "b4b03e71327f0d9f3ef483e31d78aa61d8cbe779c2527e8ec3dbf27edbd0a419"
+    },
+    {
+      "path": "provenance/pdf_preflight.json",
+      "sha256": "9db10da7087018379872161cb5ae2e8b6cf3e3925016943618a3d31aa206b56f"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "27bb02e7a27e5f647d82159b6b680ac594b20685be2e13682b4cb72bc0422fe3"
+    },
+    {
+      "path": "verification/ProjectiveReturn.lean",
+      "sha256": "c26e6948eb26e0f3081ab37b35732f029c33a37acc4eb02090cfcf6203f320b2"
+    },
+    {
+      "path": "verification/geometry_audit/AUDIT.md",
+      "sha256": "c508b46b1baeb36d1660d22cef635406b4419a273775416fdb0ec6d5138658ac"
+    },
+    {
+      "path": "verification/geometry_audit/COPPALINI_COVER_FRAME.svg",
+      "sha256": "cca541de2294366cf1e9790d3a465be81d1ee2bd08d153d5990950eaffa03a6b"
+    },
+    {
+      "path": "verification/geometry_audit/COPPALINI_COVER_STYLE_LOCK.json",
+      "sha256": "0d3eeabe76c1db3a18b73c72cfebccdf908f70452b2fa0cb85443696a6565966"
+    },
+    {
+      "path": "verification/geometry_audit/COPPALINI_COVER_STYLE_REFERENCE.md",
+      "sha256": "117476ad53c353dbfdee4b8b86646bf0fc4ae7ffa6cc2da3d18e31d1b33411d6"
+    },
+    {
+      "path": "verification/geometry_audit/README.md",
+      "sha256": "2a2e2d969a6cb81f032a732e1cb03e8ef5b2c8a611e104860efdf9a930a9ac3c"
+    },
+    {
+      "path": "verification/geometry_audit/build_graph.py",
+      "sha256": "b46d33aba953c4adbfe58310bcfc3d6138e20d90c7fc62609f5f62e375dc9aaa"
+    },
+    {
+      "path": "verification/geometry_audit/edge_ledger.csv",
+      "sha256": "00acfd78fc805f4112026f528dade1f8f738496672f7ec1c99f12508965375b5"
+    },
+    {
+      "path": "verification/geometry_audit/graph_coordinates.json",
+      "sha256": "593cfd43d13abd6f3a9f661836ecc890ceedf499c9ff0ecb9d14b8c254868b91"
+    },
+    {
+      "path": "verification/geometry_audit/incidence_reader.html",
+      "sha256": "61f624f8a8d50895d2813d480708fad3f8b044d4d89a24c407bc36cf0e31502d"
+    },
+    {
+      "path": "verification/geometry_audit/linear_infinity_28_seam_graph.pdf",
+      "sha256": "b80882d4ff92c469b439f79f36fe1e05d230a824736a4a45e197faeba8ffed40"
+    },
+    {
+      "path": "verification/geometry_audit/linear_infinity_28_seam_graph.png",
+      "sha256": "262dc5694841233794af7ad966efeb8910347cf67f78830391a85e04e7993ddb"
+    },
+    {
+      "path": "verification/geometry_audit/linear_infinity_28_seam_graph.svg",
+      "sha256": "de5f7ed4b85a9b44785916fa2f8349baf4be4390ce6b45b944bbac61d4bf5139"
+    },
+    {
+      "path": "verification/geometry_audit/references/complete-operator-algebra(2).svg",
+      "sha256": "dc1f0f07e821db30a34d76d685cb9b8bc0f1f554b3a7d69bdc36d86625204834"
+    },
+    {
+      "path": "verification/geometry_audit/references/four-phase-eight-state(2).svg",
+      "sha256": "a71009b00728fab6782b02a198bccb0b223dce1bbf1a00b3eb5ac3fc3daddbe6"
+    },
+    {
+      "path": "verification/geometry_audit/references/independent-tunability(2).svg",
+      "sha256": "a6dc275164a5c96024fb504d25c224d3846ded04fa14092c10eec0a29be674d9"
+    },
+    {
+      "path": "verification/geometry_audit/references/mirror-recognition(2).svg",
+      "sha256": "c6e6a843a7ab07d24781dd44ac36f9a0f8fd502ca4919a929f3878a09685186d"
+    },
+    {
+      "path": "verification/geometry_audit/references/the-exact-reader(2).svg",
+      "sha256": "d8d6be1cc831e4d49d72d87d075f2ce40c57cd59b7ef1735fe3b36cbbcb05ca7"
+    },
+    {
+      "path": "verification/geometry_audit/render_receipt.json",
+      "sha256": "1e8b59e6ba0badfff871e9b09bb677099e772d8d533d08db00f371f50e7d29d6"
+    },
+    {
+      "path": "verification/geometry_audit/requirements.txt",
+      "sha256": "cd0e99fc56571a5b31be812561f841058a54fd193783b56849dd46dfad2a0c89"
+    },
+    {
+      "path": "verification/geometry_audit/source_custody.json",
+      "sha256": "b2c3125399d29ef6560d0cf7ea46a4ae0383231a7adbc8b63ea9f5aba18e2366"
+    },
+    {
+      "path": "verification/geometry_audit/style_measurements.json",
+      "sha256": "a7ddb1f483cf7fbad1a150696e7f1fb28d05c8cb9cf8f8897c515bb2eacf6541"
+    },
+    {
+      "path": "verification/geometry_audit/verification.json",
+      "sha256": "9360775522897c50c6a8da971bab240de92430303310a44639bae679231932bc"
+    },
+    {
+      "path": "verification/geometry_audit/verification.txt",
+      "sha256": "98061e51b87bdfb9769911d4f50caa502b3f056d4e88be502d07d64b93287971"
+    },
+    {
+      "path": "verification/geometry_audit/verify_graph.py",
+      "sha256": "9be5236dbf03a45cd5f078b08bf66ccba78158ee67e2bc9b5f2d6852237d3965"
+    },
+    {
+      "path": "verification/manuscript_checks.json",
+      "sha256": "675705d8f81e7e0afc55d3ce0b2811936c28cb3e4aaf7563dc1888577875ae1b"
+    },
+    {
+      "path": "verification/manuscript_checks.txt",
+      "sha256": "78afd6de825095f3976156038c131e1886c0cbeaa499e2bac3942b77a21ef9bc"
+    },
+    {
+      "path": "verification/verify_manuscript.py",
+      "sha256": "d35dbc95a5e968cd365330f9f1f7d2f254e9294cdf0c56ace3f7ab6a52e83b2b"
+    }
+  ],
+  "current_pdf": {
+    "path": "Infinity_One_Zero_Lift.pdf",
+    "sha256": "48e8d5147b688d9e2b5b8dd5e6305909d86358f9739c2ef6fe734fe9a82cac0e",
+    "bytes": 306110
+  },
+  "current_sources": {
+    "Infinity_One_Zero_Lift.tex": "16ef90e52b361799bcc10681f223e5c881ecabeacbce3eadcd11973c6f31eef9",
+    "Infinity_One_Zero_Lift.md": "2eb77b7405b6269a772ff119127cd0027df69030101e898819d38ef73849b8e0"
+  },
+  "pdf_preflight_sha256": "e17eaade95a3b68ad33cc56dc0c8d196e10674c4c26002a32a2a484db1eb97e5"
+}

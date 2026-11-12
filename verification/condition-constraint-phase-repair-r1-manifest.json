@@ -1,0 +1,26 @@
+{
+  "schema": "coppalini-architecture/condition-constraint-phase-repair/1",
+  "status": "HISTORICAL_R1",
+  "scope": "Runtime PhaseISqrt7 candidate-matrix admission repair.",
+  "artifacts": {
+    "translator": {
+      "path": "tools/condition_constraint_can_translator.py",
+      "sha256": "e41322258a37964480fd40bdacbac2375adbd03becda417aa70d3331f1057010"
+    },
+    "audit": {
+      "path": "tools/mirror_audit.py",
+      "sha256": "06df894641a6366c8561062ebc49641113b6803b42a0bbf5406f6e9b79a0594b"
+    },
+    "r27_source_packet": {
+      "path": "papers/theory-of-everything-contact-record-r27-source.zip",
+      "sha256": "933c420ae3b9fe1d9b4a90a0203590c3fe4f30ba0f94464f262a0b4c40f4c58d"
+    }
+  },
+  "regressions": [
+    {"submitted_matrix": "PHASE_I", "result": "Can"},
+    {"submitted_matrix": "ZERO", "result": "Fold(constraint)"},
+    {"submitted_matrix": "I", "result": "Fold(constraint)"}
+  ],
+  "boundary": "The C++ companion is a closed type-level receipt with a statically declared phase representative; this repair addresses the Python runtime candidate path.",
+  "superseded_by": "verification/condition-constraint-integer-carrier-repair-r1-manifest.json"
+}

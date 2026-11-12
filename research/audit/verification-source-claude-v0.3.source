@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Register: verified relations and how to re-run them | Coppalini Architecture</title>
+<meta name="description" content="Five hash-bound verification records and twelve executable cards, 12/12 PASS. Exact arithmetic on nine cards, declared tolerance on three. One command to re-run: python3 kit.py.">
+<link rel="alternate" type="application/json" href="public-claim-registry-v0.3.json" title="Machine-readable registry v0.3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "#page",
+      "name": "Audit Register: verified relations and how to re-run them",
+      "description": "Five hash-bound verification records and twelve executable cards (12/12 PASS). Re-run with one command.",
+      "dateModified": "2026-11-11",
+      "about": {
+        "@id": "#registry"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Coppalini Architecture"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "#registry",
+      "name": "Coppalini Architecture Public Claim Registry",
+      "version": "v0.3",
+      "dateModified": "2026-11-11",
+      "creator": {
+        "@type": "Organization",
+        "name": "Coppalini Architecture"
+      },
+      "description": "Released, hash-bound relations in their declared native domains. A named later calibration, apparatus receipt, or new-number comparison adds a new record; it does not withdraw the physical office of a released relation.",
+      "measurementTechnique": "Hash-gated executable verification cards. A card passes when every manifest file matches its SHA-256, the verifier exits 0, and its marker line is printed. 9 of 12 kit cards use exact arithmetic (integers, Fractions, number fields); 3 use floating point at declared tolerance 1e-12.",
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "kit cards passing",
+          "value": "12/12"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "W-0 exact symbolic checks passing",
+          "value": "15/15"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "W-1 exact symbolic checks passing",
+          "value": "15/15"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NDA-3 exact rational checks passing",
+          "value": "18/18"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Suture Audit source-bound verifiers passing",
+          "value": "8/8"
+        }
+      ],
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "public-claim-registry-v0.3.json",
+          "contentUrl": "public-claim-registry-v0.3.json",
+          "encodingFormat": "application/json",
+          "sha256": "c3b1fc7ac6095b48d9bec6d5c748d7a4822fc2a9588935c4778ca8b6f0c9e96e"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Validator Kit B2 v0.2 (B-2)",
+          "description": "12 hash-gated cards: 12/12 PASS. Run: python3 kit.py",
+          "contentUrl": "downloads/Validator_Kit_B2_v0_2.zip",
+          "encodingFormat": "application/zip",
+          "sha256": "c0bb1552bbc7d6522546d6f67fbb31d825c500f47d272812d35768a17b3fa2bc"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Suture Audit v0.2 (S-5/05a)",
+          "description": "Eight source-bound verifiers PASS for the paired finite carrier and regular-branch cards. Run: cd source && python3 verify_all.py",
+          "contentUrl": "downloads/Suture_Audit_v0_2.zip",
+          "encodingFormat": "application/zip",
+          "sha256": "b2df5089e3e7e6ce6f6a7f673d8381ca86accc05d1379fb3b75e22696b088448"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Weinberg seam v0.2 (W-0)",
+          "description": "15/15 exact symbolic checks of the declared tree-level mass matrix, vacuum stabilizer, and neutral diagonalization. Run: python3 -I verify_w0_weinberg_seam_v0_2.py",
+          "contentUrl": "downloads/W0_v0_2_packet.zip",
+          "encodingFormat": "application/zip",
+          "sha256": "9fe1b3c4d66ab42d59cfb8d16fd0c0ca1e4bb3b6c393ec191fa3c9516e7b0431"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Electroweak carrier adapter v0.2 (W-1)",
+          "description": "15/15 exact symbolic checks of the declared 𝔲(2) carrier map and W±, Z, A coordinate map. Run: python3 -I verify_w1_carrier_adapter_v0_2.py",
+          "contentUrl": "downloads/W1_v0_2_packet.zip",
+          "encodingFormat": "application/zip",
+          "sha256": "22b92b32d93b2a7d7446a7f147475e7dac98c9f84880f96b1ac297618037b50f"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Native Domain Adapter Atlas v0.3 (NDA-3)",
+          "description": "Exact Body–SI–English length transport: 18/18 rational checks; row-specific institutional-contact labels are retained. Run: python3 -I run_all.py",
+          "contentUrl": "downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip",
+          "encodingFormat": "application/zip",
+          "sha256": "4075a5c57fe36a2977311ea58dad5181ed5b971859df390e797ed23ee6f8d075"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--fg:#1b1f24;--bg:#fff;--mut:#586069;--line:#d8dee4;--acc:#0b5cad;--code:#f3f5f7}
+@media(prefers-color-scheme:dark){:root{--fg:#e6e9ec;--bg:#14171a;--mut:#9aa4ae;--line:#2c333a;--acc:#6cb0f5;--code:#1d2227}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+h1{font-size:2rem;margin:.2rem 0 .4rem} h2{font-size:1.3rem;margin:2.6rem 0 .6rem;border-top:1px solid var(--line);padding-top:1.2rem} h3{font-size:1.05rem;margin:0 0 .5rem}
+.kicker{color:var(--mut);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+a{color:var(--acc)} code,pre{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);border-radius:4px}
+code{padding:.1em .3em} pre{padding:.8rem 1rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+code.h{word-break:break-all;display:inline-block}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.6rem;margin:1.2rem 0}
+.strip div{border:1px solid var(--line);border-radius:6px;padding:.6rem .8rem} .strip b{display:block;font-size:1.25rem} .strip span{color:var(--mut);font-size:.85rem}
+.tw{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:.88rem} table.wide{min-width:112rem;font-size:.82rem} table.wide th:first-child,table.wide td:first-child{position:sticky;left:0;background:var(--bg)} ul.c{margin:0;padding-left:1.05rem} ul.c li{margin:.15rem 0} .b{color:var(--mut)} caption{text-align:left;color:var(--mut);padding:.3rem 0}
+th,td{border:1px solid var(--line);padding:.45rem .6rem;vertical-align:top;text-align:left} thead th{background:var(--code)}
+.rec{border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem;margin:1rem 0} .rec dl{margin:0;display:grid;grid-template-columns:9.5rem 1fr;gap:.35rem .9rem} .rec dt{color:var(--mut)} .rec dd{margin:0}
+@media(max-width:40rem){.rec dl{grid-template-columns:1fr}.rec dt{margin-top:.5rem}}
+nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;list-style:none;padding:0;margin:.8rem 0}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">Public claim registry · v0.3 · released 2026-11-11</p>
+<h1>Audit Register</h1>
+<p>Executable checks for the Coppalini Architecture corpus. Each record names a source, a verifier, a receipt and a declared native reference. You download the artifact, check its hash, run one command and read the result. The page describes the checks; the artifacts are the evidence.</p>
+
+<div class="strip" role="list">
+<div role="listitem"><b>12/12 PASS</b><span>hash-gated kit cards</span></div>
+<div role="listitem"><b>9 exact · 3 float</b><span>float cards at declared 1e-12</span></div>
+<div role="listitem"><b>48/48 exact checks</b><span>W-0 15 · W-1 15 · NDA-3 18</span></div>
+<div role="listitem"><b>8/8 verifiers</b><span>Suture Audit v0.2, source-bound</span></div>
+<div role="listitem"><b>1 command</b><span><code>python3 kit.py</code></span></div>
+</div>
+
+<nav aria-label="On this page"><ul>
+<li><a href="#criterion">Acceptance criterion</a></li><li><a href="#rerun">Re-run it</a></li><li><a href="#records">Five records</a></li><li><a href="#cards">Twelve cards</a></li><li><a href="#float">Where exact arithmetic is not used</a></li><li><a href="#scope">Scope</a></li><li><a href="#lineage">Method lineage</a></li><li><a href="#machine">For automated readers</a></li>
+</ul></nav>
+
+<h2 id="criterion">Acceptance criterion</h2>
+<p>A card counts as verified when all three conditions hold:</p>
+<ol>
+<li>Every file in the card's manifest hashes to its recorded SHA-256. A changed or missing file reports <code>HASH-FAIL</code> and the card does not execute.</li>
+<li>The verifier exits with code 0.</li>
+<li>The verifier prints its required marker line, for example <code>PASS: magnetic cap</code>.</li>
+</ol>
+<p>Each card also declares its arithmetic domain (exact, or float with a stated tolerance) and its boundary, meaning what it does not check. The kit prints the claim, domain, command, result, scope and SHA-256 for every card.</p>
+<p>Exact cards use Python integers and <code>Fraction</code>, SymPy, and number fields Q(ζ₇), Q(ζ₇, i), Q(√5), Q(√2, √3), Q(√2, √5) and the Gaussian rationals. Cards with negative controls feed the verifier inputs that must be refused and fail if any is accepted: S-2 has five, L-1 three, W-0 four (N1–N4), W-1 six (N1–N6), and NDA-3 four (N1–N4).</p>
+
+<h2 id="rerun">Re-run it</h2>
+<pre>sha256sum Validator_Kit_B2_v0_2.zip
+# expect c0bb1552bbc7d6522546d6f67fbb31d825c500f47d272812d35768a17b3fa2bc
+unzip Validator_Kit_B2_v0_2.zip &amp;&amp; cd Validator_Kit_B2_v0_2
+sha256sum -c SHA256SUMS        # 29 entries
+python3 kit.py                 # expect 12/12 PASS</pre>
+<p>Requirements: Python 3, and numpy for card C-1. sympy is optional for the symbolic minor in S-5 and is required by the W-0 packet. The shipped receipt (<code>KIT_RECEIPT.md</code>, <code>KIT_RECEIPT.json</code>) was produced on Python 3.13.18 under Linux with sympy installed. To confirm the gate, change one byte in any manifest file and run again: the affected card reports <code>HASH-FAIL</code>.</p>
+<p><a href="downloads/Validator_Kit_B2_v0_2.zip">Download the validator kit</a> · <a href="public-claim-registry-v0.3.json">Read the machine registry</a></p>
+
+<h2 id="records">Five released records</h2>
+<p>Registry record <code>S-5/05a</code> is the Suture Audit bundle of eight verifiers. Card <code>S-5</code> in the kit table is one of the twelve cards.</p>
+<article class="rec" id="rec-B-2" aria-labelledby="h-B-2">
+<h3 id="h-B-2">B-2 · Validator Kit B2 v0.2</h3>
+<dl>
+<dt>Status</dt><dd>Released · hash-bound · PASS</dd>
+<dt>Exact result</dt><dd>12 hash-gated cards, 12/12 PASS: 9 exact-arithmetic cards and 3 floating-point cards at a declared 1e-12 tolerance. Card-level claims, domains and boundaries are listed in the card table below.</dd>
+<dt>Native result</dt><dd>Per card; see the card table.</dd>
+<dt>Provenance equations</dt><dd>Per card; see the card table.</dd>
+<dt>Root closure at the seam</dt><dd>Shared root (Root identities, above), checked in cards F-1 and E-1.</dd>
+<dt>Source artifact</dt><dd><a href="downloads/Validator_Kit_B2_v0_2.zip">downloads/Validator_Kit_B2_v0_2.zip</a></dd>
+<dt>Artifact SHA-256</dt><dd><code class="h">c0bb1552bbc7d6522546d6f67fbb31d825c500f47d272812d35768a17b3fa2bc</code></dd>
+<dt>Run</dt><dd><code>python3 kit.py</code></dd>
+<dt>Depends on</dt><dd>Python 3. numpy for card C-1. sympy optional for the symbolic minor in card S-5.</dd>
+<dt>Boundary</dt><dd>Each card retains its own domain and stated scope. The kit certifies declared mathematical and native-domain relations; laboratory records, where relevant, remain retained in their own named receipts. v0.2 declares card C-1&#x27;s float tolerance (atol 1e-12, rtol 0); all other card hashes are unchanged from v0.1.</dd>
+</dl>
+</article>
+<article class="rec" id="rec-S-5-05a" aria-labelledby="h-S-5-05a">
+<h3 id="h-S-5-05a">S-5/05a · Suture Audit v0.2</h3>
+<dl>
+<dt>Status</dt><dd>Released · hash-bound · PASS</dd>
+<dt>Exact result</dt><dd>Eight source-bound verifiers PASS for the paired finite-carrier and regular-branch cards: rank D𝒮Π = 16 and the cap b &lt; |χ| on the regular branch; exact Fractions and number fields.</dd>
+<dt>Native result</dt><dd>Suture Einstein–Maxwell reduction: exact regular-branch map Π ↦ (g, F_sol) with nontrivial fibre. Register status: CLOSED as a model-local equation realization; the empirical novelty gate is OPEN (Native-Contact Closure Register v0.5).</dd>
+<dt>Provenance equations</dt><dd>SF.7, SF.9–SF.13a, SF.17; SD.5, SD.9–SD.11e, SD.12–SD.14b, SD.17, SD.20e–f, SD.28–SD.30. Addresses are equation tags in 05_suture_field.tex and 05a_suture_field_dynamics.tex.</dd>
+<dt>Root closure at the seam</dt><dd>η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂ and Ĉ = C ⊕ C ⊕ C ⊕ C (SF.7); stabilizer 𝔨 = Stab(η̂, Ĉ) ≅ 𝔰𝔬(1,1) ⊕ 𝔲(3) (SD.9–SD.10).</dd>
+<dt>Source artifact</dt><dd><a href="downloads/Suture_Audit_v0_2.zip">downloads/Suture_Audit_v0_2.zip</a></dd>
+<dt>Artifact SHA-256</dt><dd><code class="h">b2df5089e3e7e6ce6f6a7f673d8381ca86accc05d1379fb3b75e22696b088448</code></dd>
+<dt>Run</dt><dd><code>cd source &amp;&amp; python3 verify_all.py</code></dd>
+<dt>Depends on</dt><dd>Cited Lorentzian 2-form normal forms (named source dependency). Residual ledger R-1 through R-12.</dd>
+<dt>Boundary</dt><dd>The regular-domain conditions rank D𝒮Π = 16 and b &lt; |χ| belong to the stated reduction; cited Lorentzian 2-form normal forms remain a named source dependency. A future apparatus comparison would be a measurement record, not a condition on the released Einstein–Maxwell reduction.</dd>
+</dl>
+</article>
+<article class="rec" id="rec-W-0" aria-labelledby="h-W-0">
+<h3 id="h-W-0">W-0 · Weinberg seam v0.2</h3>
+<dl>
+<dt>Status</dt><dd>Released · hash-bound · PASS</dd>
+<dt>Exact result</dt><dd>15/15 exact symbolic checks (SymPy; checks W0-1 to W0-11 and negative controls N1–N4) of the tree-level mass matrix, vacuum stabilizer and neutral diagonalization. Declared reference: Q = T3 + Y, Y_φ = 1/2, φ0 = (0, v/√2)ᵀ, g, g′, v &gt; 0. The mass operator is derived as the Hessian of the Higgs kinetic term. The bracket operator (rank 3, kernel 3) and the mass operator (rank 3, kernel 1) are kept distinct.</dd>
+<dt>Native result</dt><dd>Tree-level electroweak mass relation inside the received Standard Model representation and vacuum: M²_EW has rank 3, a one-dimensional photon kernel and an exact (Z, A) diagonalization. No numerical mixing angle, mass ratio or comparison. Register status: CLOSED as source-reference contact at the received selection.</dd>
+<dt>Provenance equations</dt><dd>Q_em = T₃ + Y, Y_φ = ½, φ₀ = (1/√2)(0, v)ᵀ, g, g′, v &gt; 0.  (D_μφ₀)†D^μφ₀ = (v²/8)[g²((W¹)² + (W²)²) + (gW³ − g′B)²]; M²_EW is its Hessian in (W¹, W², W³, B).  Q_em annihilates φ₀; the photon direction (W³, B) = (g′, g) acts by gg′Q_em.  β_EW has rank 3 and kernel dimension 3.  Provenance: The Electroweak Seam v0.1 §§1–6; Electroweak Two-Operator Certificate v0.1 §§1–4; Empirical Input Register v0.1 §§8.1–8.4, §14 (cited sources not bundled).</dd>
+<dt>Root closure at the seam</dt><dd>None at this card. W-0 is the received model with supplied g, g′, v; the root-side interface is W-1.</dd>
+<dt>Source artifact</dt><dd><a href="downloads/W0_v0_2_packet.zip">downloads/W0_v0_2_packet.zip</a></dd>
+<dt>Artifact SHA-256</dt><dd><code class="h">9fe1b3c4d66ab42d59cfb8d16fd0c0ca1e4bb3b6c393ec191fa3c9516e7b0431</code></dd>
+<dt>Run</dt><dd><code>python3 -I verify_w0_weinberg_seam_v0_2.py</code></dd>
+<dt>Depends on</dt><dd>Standard electroweak representation, vacuum, g, g′ and v as the declared native reference.</dd>
+<dt>Boundary</dt><dd>The standard electroweak representation, vacuum, g, g′, and v are the declared native reference. The card verifies their tree-level mass relation; a new numerical or running-parameter result would require its own record.</dd>
+</dl>
+</article>
+<article class="rec" id="rec-W-1" aria-labelledby="h-W-1">
+<h3 id="h-W-1">W-1 · Electroweak carrier adapter v0.2</h3>
+<dl>
+<dt>Status</dt><dd>Released · hash-bound · PASS</dd>
+<dt>Exact result</dt><dd>15/15 exact symbolic checks of the declared 𝔲(2) carrier map and the W±, Z, A coordinate map, with negative controls N1–N6. The card introduces no new particle parameter.</dd>
+<dt>Native result</dt><dd>Tree-level mass form in the (W⁺, W⁻, Z, A) coordinates: m_W² W⁺W⁻ + ½ m_Z² Z² + 0·A², with m_W = gv/2 and m_Z = v√(g² + g′²)/2, symbolic in g, g′, v. Adapter verification only: no particle identification, comparison or prediction.</dd>
+<dt>Provenance equations</dt><dd>ι_P: 𝔰𝔲(2)_L ⊕ 𝔲(1)_Y → 𝔠_W(P), ε_a ↦ −(i/2)σ_a, ε_B ↦ −(i/2)I_P, α_P = ι_P⁻¹.  W^± = (w¹ ∓ i w²)/√2, (Z, A) = R_W(w³, b).  Q = T₃ + Y = diag(1, 0).  Depends on W-0 v0.2 and on 05a SD.0, SD.9–SD.10 via F5-L1-1 v0.1.</dd>
+<dt>Root closure at the seam</dt><dd>K = Stab(η̂, Ĉ) ⊂ GL(8, ℝ), 𝔨 ≅ 𝔰𝔬(1,1) ⊕ 𝔲(3), dim 10; carrier 𝔠_W(P) = 𝔲(P) ⊕ 0_{P^⊥} ⊂ 𝔲(3) ⊂ 𝔨. It commutes with the 𝔰𝔬(1,1) generator; the Lorentzian G office is not mapped. Plane P is a supplied choice and its selection is OPEN.</dd>
+<dt>Source artifact</dt><dd><a href="downloads/W1_v0_2_packet.zip">downloads/W1_v0_2_packet.zip</a></dd>
+<dt>Artifact SHA-256</dt><dd><code class="h">22b92b32d93b2a7d7446a7f147475e7dac98c9f84880f96b1ac297618037b50f</code></dd>
+<dt>Run</dt><dd><code>python3 -I verify_w1_carrier_adapter_v0_2.py</code></dd>
+<dt>Depends on</dt><dd>Declared plane P. Its provenance is a selection record; the verified map is not provisional.</dd>
+<dt>Boundary</dt><dd>The declared plane P realizes the stated carrier and coordinate map. Its provenance remains a selection record; it does not make the verified map provisional. The card introduces no new particle parameter.</dd>
+</dl>
+</article>
+<article class="rec" id="rec-NDA-3" aria-labelledby="h-NDA-3">
+<h3 id="h-NDA-3">NDA-3 · Native Domain Adapter Atlas v0.3</h3>
+<dl>
+<dt>Status</dt><dd>Released · hash-bound · PASS</dd>
+<dt>Exact result</dt><dd>18/18 exact rational checks (Python Fraction only) of Body–SI–English length transport. The typed adapter admits a rational numeral with a typed unit and refuses a bare numeral, a time unit, a survey_foot tag and a foot_anatomical token (negative controls N1–N4). International foot = 381/1250 m as declared in the verifier. Row-specific institutional-contact labels are retained.</dd>
+<dt>Native result</dt><dd>Exact SI–English length transport: 1 in = 127/5000 m, 1 ft_intl = 381/1250 m = 0.3048 m, 1 yd = 1143/1250 m, 1 fur = 25146/125 m, 1 mi = 201168/125 m. Authorities named in the register: BIPM metre definition; NIST HB 44 and NIST Guide conversion factors. Register status: CLOSED as exact conventional unit/language transport; a body reading keeps its own calibration and uncertainty record.</dd>
+<dt>Provenance equations</dt><dd>B_ℓ —ρ_cal→ L_SI ⇄(T_exact) L_EN.  T_exact: 𝒬_ℓ^EN → ℚ·m, one-to-one and onto at the declared rational-record resolution; two typed expressions are equivalent exactly when their rational metre values agree.</dd>
+<dt>Root closure at the seam</dt><dd>No root-algebra element enters at this seam. The closure is the typed 1:1 carrier 𝒬_ℓ^EN/∼ → ℚ·m.</dd>
+<dt>Source artifact</dt><dd><a href="downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip">downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip</a></dd>
+<dt>Artifact SHA-256</dt><dd><code class="h">4075a5c57fe36a2977311ea58dad5181ed5b971859df390e797ed23ee6f8d075</code></dd>
+<dt>Run</dt><dd><code>python3 -I run_all.py</code></dd>
+<dt>Depends on</dt><dd>Declared native units. A later metrology result is a separate reference receipt for a new statement.</dd>
+<dt>Boundary</dt><dd>The stated Body–SI–English transport is closed by the 18 rational checks. A later metrology result is a separate reference receipt for a new statement, not a condition on the conversion itself.</dd>
+</dl>
+</article>
+
+<h2 id="cards">The twelve kit cards: result, provenance and root seam</h2>
+<p>Three columns orient a formal reader at each check. <b>Native result</b> is the result the card establishes inside its declared domain; it is a statement within that jurisdiction and not a new prediction. <b>Formal provenance equations</b> are the equation addresses the verifier checks or reads: SF.n in <code>05_suture_field.tex</code>, SD.n in <code>05a_suture_field_dynamics.tex</code>, GL.n in <code>01_gravity_light.tex</code>, plus the verifier's own displayed identities. <b>Root closure at the seam</b> names the root-algebra identity at which the check closes. Where a source makes no such statement, the cell says so.</p>
+
+<h3 id="root">Root identities</h3>
+<p>The shared root (<code>common.tex</code>, <code>\sharedroot</code>), checked exactly in cards F-1 and E-1:</p>
+<pre>Q = [[1,1],[1,0]],  Ω = [[0,1],[−1,0]],  C = −Ω
+G = [Q,Ω] = [[−2,1],[1,2]],  H = G/√5,  S = (2Q − I)/√5
+Q² = Q + I,  C² = −I,  G² = 5I,  H² = S² = I
+H = CS,  SG = √5 Ω = −GS,  HC = −CH,  HCH = −C
+L_s = e^{sS},  L_sᵀ G L_s = G,  H L_s H = L_{−s}</pre>
+<p>Suture carrier built on it (SF.7): <code>η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂</code> (signature (7,1)), <code>Ĉ = C ⊕ C ⊕ C ⊕ C</code>, <code>Ĥ = H ⊕ D ⊕ D ⊕ D</code> with D = diag(1,−1) (SF.8).</p>
+
+<div class="tw">
+<table class="wide">
+<caption>Validator Kit B2 v0.2. Claim, arithmetic and boundary are the card's own text from <code>cards.json</code>. Scroll horizontally on narrow screens.</caption>
+<thead><tr><th scope="col">ID</th><th scope="col">Claim checked</th><th scope="col">Arithmetic · boundary</th><th scope="col">Native result (declared domain)</th><th scope="col">Formal provenance equations</th><th scope="col">Root closure at the seam</th><th scope="col">Run · marker · verifier hash</th></tr></thead>
+<tbody>
+<tr id="card-S-1">
+<th scope="row">S-1</th>
+<td>Z7 cyclic transport on the K8 address set: 28 edges, tau^7 = I, zeta_7^7 = 1; orthogonal block and metric-phase mirror exact</td>
+<td data-arith="exact">exact: Q(zeta_7), integers and Fractions<br><span class="b">Boundary:</span> finite algebraic carrier; no field equations, no dynamics</td>
+<td><em>Finite algebraic carrier (K8 address set, ℤ₇ action)</em><br>None claimed. No field equations, no dynamics (card boundary).</td>
+<td><ul class="c"><li>SF.3 vertex permutation action; 28 edges</li><li>SF.6 ρ̂(τʳ) = I₂ ⊕ U_{2πr/7} ⊕ U_{4πr/7} ⊕ U_{6πr/7}</li><li>SF.9 ρ̂(τ)⁷ = I₈;  ρ̂(τʳ)ᵀ η̂ ρ̂(τʳ) = η̂;  ρ̂(τʳ)ᵀ Ĉ ρ̂(τʳ) = Ĉ</li><li>SF.10 Ĥᵀη̂Ĥ = η̂;  ĤᵀĈĤ = −Ĉ;  Ĥρ̂(τʳ)Ĥ = ρ̂(τ⁻ʳ)</li></ul></td>
+<td><ul class="c"><li>η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂ (SF.7): the root G is the first summand, Span(e_∞, u₀), on which τ acts as I₂</li><li>Mirror closes at HCH = −C (SF.10)</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_z7_lorentz_extension_v0_1.py</code><br>marker: <code>PASS: Z7 Lorentz extension kernel</code><br>verifier SHA-256: <code class="h">b50f39bd3d41f3bc800324a04a76525f5bd98c331282f6d5768be7b9b2f1f03f</code></td>
+</tr>
+<tr id="card-S-2">
+<th scope="row">S-2</th>
+<td>SF.4 -&gt; SF.6: explicit orthogonal 8-vector Fourier basis of V_8; tau = I on span(e_inf,u0), rotation R(2 pi j/7) on (c_j,s_j); sigma = I2 + D + D + D</td>
+<td data-arith="exact">exact: Q(zeta_7); 5 negative controls rejected<br><span class="b">Boundary:</span> basis and action only; mirror typing and pullbacks are S-3; D = diag(1,-1) is read from SF.8</td>
+<td><em>Finite algebraic carrier (real Fourier basis of 𝒱₈)</em><br>None claimed. Basis and action only; mirror typing and pullbacks are S-3.</td>
+<td><ul class="c"><li>SF.4 u₀ = (1/√7) Σ e_k;  c_j, s_j = √(2/7) Σ cos, sin(2πjk/7) e_k</li><li>SF.5 𝒱₈ = Span(e_∞, u₀) ⊕ ⊕_{j=1..3} Span(c_j, s_j)</li><li>SF.6 ρ̂(τʳ) as in S-1, with U_α = e^{αC}</li><li>SF.8 D = diag(1,−1), read from SF.8 and not re-derived</li></ul></td>
+<td><ul class="c"><li>Span(e_∞, u₀) is the Gr–Ū carrier, fixed by τ; the transverse planes carry U_α = e^{αC}, C = −Ω</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_suture_basis_change_v0_2.py</code><br>marker: <code>PASS: Suture basis change</code><br>verifier SHA-256: <code class="h">41e79c7126a90a3d9a72519892aff6ab608f4f2ab21eb5d6f26b88cc9d602a2b</code></td>
+</tr>
+<tr id="card-S-3">
+<th scope="row">S-3</th>
+<td>Card 5: eta-hat/C-hat invariance under rho-hat(tau^r), all r in Z7; mirror H-hat: E -&gt; E^sigma commutes with rho-hat(tau^w) iff w = 0; g(Pi^(r)) = g, F(Pi^(r)) = F, g(Pibar) = g, F(Pibar) = -F; source guards</td>
+<td data-arith="exact">exact: Q(zeta_7, i); 4 sample coframes<br><span class="b">Boundary:</span> finite samples; Einstein-Maxwell identification, chi calibration and holonomy coupling not checked here (ledger R-5, R-9)</td>
+<td><em>Suture field on a Lorentzian manifold (Einstein–Maxwell realization)</em><br>Metric g and solder flux F_sol arise at one address from the symmetric and antisymmetric contractions of Π. The ℤ₇ update preserves both; the mirror preserves g and reverses F_sol. Einstein–Maxwell identification, χ calibration and holonomy coupling are not checked here (R-5, R-9).</td>
+<td><ul class="c"><li>SF.11 Π⁽ʳ⁾ = ρ̂(τʳ)Π</li><li>SF.12 g⁽ʳ⁾ = η̂_AB Π^A_μ Π^B_ν = g</li><li>SF.13, SF.13a Π̄ = ĤΠ;  g(Π̄) = g(Π)</li><li>SF.17 F_sol(Π⁽ʳ⁾) = F_sol(Π);  F_sol(Π̄) = −F_sol(Π)</li></ul></td>
+<td><ul class="c"><li>Symmetric contraction through η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂, antisymmetric through Ĉ = C ⊕ C ⊕ C ⊕ C (SF.7)</li><li>HᵀGH = G and HCH = −C give ĤᵀĈĤ = −Ĉ at SF.10; the flux sign reversal at SF.17 is that identity</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_suture_field_v0_2.py</code><br>marker: <code>PASS: Suture Field v0.2</code><br>verifier SHA-256: <code class="h">c04e3ebc5ee2eccb2a8a1b877a85da55a44dbf5ab98964a4c0a88bc74f067bd6</code></td>
+</tr>
+<tr id="card-S-4">
+<th scope="row">S-4</th>
+<td>Cap: for rank-4 Pi with Lorentzian g, (1 - b^2)(1 + e^2) = det(g+iF)/det g &gt;= 0, so b &lt;= |chi|; attaining witness has b = 1, rank DS = 15; Pi_star has b &lt; 1</td>
+<td data-arith="exact">exact: Gaussian rationals; 15 544 integer samples + one witness<br><span class="b">Boundary:</span> sampled signs and one witness; the proof is analytic (SD.11b); empirical comparison held at G-3 (A-4)</td>
+<td><em>Einstein–Maxwell regular branch of the suture map</em><br>Magnetic cap: the rest-frame magnetic invariant satisfies b ≤ |χ| (b &lt; |χ| on the regular branch); the electric invariant e is unbounded. χ calibration is carried (R-5). No empirical comparison.</td>
+<td><ul class="c"><li>SD.11a spectrum of h⁻¹f = {±ib, ±e}</li><li>SD.11b (χ² − b²)(χ² + e²) = χ⁴ det(h + (i/χ)f) / det h ≥ 0, so b ≤ |χ|</li><li>Card: χ = 1, 15 544 exact integer samples, attaining witness b = 1 with rank D𝒮 = 15</li></ul></td>
+<td><ul class="c"><li>h = Πᵀη̂Π and f = ΠᵀĈΠ, with η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂ and Ĉ = C ⊕ C ⊕ C ⊕ C (SF.7)</li><li>Both the Lorentzian metric and the flux descend from the root pair (G, C)</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_magnetic_cap_v0_1.py</code><br>marker: <code>PASS: magnetic cap</code><br>verifier SHA-256: <code class="h">dfe76888490fe65875760c21b358cbad85991358f26004287f50b9dac2679d85</code></td>
+</tr>
+<tr id="card-S-5">
+<th scope="row">S-5</th>
+<td>Image of the regular branch is {h Lorentzian, b &lt; |chi|}: regular family (minor -16 sqrt2 s^3 (1+a^2)^(7/2)), exact null witness in Q(sqrt2,sqrt3), F = 0 case</td>
+<td data-arith="exact">exact: Fractions, Q(sqrt2,sqrt3); sympy for the symbolic minor if installed<br><span class="b">Boundary:</span> proved relative to cited Lorentzian 2-form normal forms (ledger R-4)</td>
+<td><em>Einstein–Maxwell regular branch of the suture map</em><br>Image of the regular branch = {(h, f): h Lorentzian, b(h, f) &lt; |χ|}, with e unbounded. Proved relative to cited Lorentzian 2-form normal forms (R-4).</td>
+<td><ul class="c"><li>SD.5 rank D𝒮_Π = 16 (regular branch)</li><li>SD.11c regular family: 16×16 minor = −16√2 χ⁶ s³ (1 + a²)^{7/2}; regular iff s ≠ 0 iff b &lt; |χ|</li><li>SD.11d null witness over ℚ(√2, √3), rank D𝒮 = 16</li><li>SD.11e 𝒮(regular branch) = {(h, f): h Lorentzian, b(h, f) &lt; |χ|}</li></ul></td>
+<td><ul class="c"><li>Same seam as S-4: h = Πᵀη̂Π and f = ΠᵀĈΠ from the root pair (G, C) (SF.7)</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_suture_image_v0_1.py</code><br>marker: <code>PASS: suture image</code><br>verifier SHA-256: <code class="h">55526251c1e69726cc87440d5e70649192c557801360b2e84b78e5b8e4754f2b</code></td>
+</tr>
+<tr id="card-S-6">
+<th scope="row">S-6</th>
+<td>adapted basis (e_Gr, u0, c_j, s_j); first summand span(e_Gr,u0); H-hat = (H + I6) P_sigma; H-hat^T eta H-hat = eta; H-hat^T C H-hat = -C</td>
+<td data-arith="float">float, tol 1e-12 (exact mirror typing is S-3)<br><span class="b">Boundary:</span> numerical cross-check only</td>
+<td><em>Finite algebraic carrier (numerical cross-check)</em><br>None claimed. Numerical cross-check of S-3&#x27;s exact mirror typing.</td>
+<td><ul class="c"><li>SF.10 Ĥᵀη̂Ĥ = η̂;  ĤᵀĈĤ = −Ĉ</li><li>Adapted basis (e_Gr, u₀, c_j, s_j);  Ĥ = (H + I₆) P_σ</li></ul></td>
+<td><ul class="c"><li>HᵀGH = G and HCH = −C; exact counterpart is S-3</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_mirror_bundle_v0_1.py</code><br>marker: <code>PASS: mirror bundle</code><br>verifier SHA-256: <code class="h">9db7c8aeb8002814cd8897e77a959904862056949f821858fb4303814cbd813a</code></td>
+</tr>
+<tr id="card-S-7">
+<th scope="row">S-7</th>
+<td>[H_a,H_b] = 2 sin2(a-b) C; S^2 = 4I - [A,A&#x27;] x [B,B&#x27;]; E(a,b) = cos2(a-b); CHSH = 2 sqrt2 at 45-degree settings; local deterministic maximum 2</td>
+<td data-arith="float">float, tol 1e-12; 16 local assignments enumerated<br><span class="b">Boundary:</span> root-algebra identity; the step from violation to the impossibility of local hidden variables is Bell&#x27;s theorem; no laboratory data</td>
+<td><em>Two-level quantum system (CHSH over root reflections)</em><br>E(a, b) = cos 2(a − b) on the real Bell state; CHSH = 2√2 at the 45-degree settings; local deterministic maximum 2 over 16 enumerated assignments. The step from violation to the impossibility of local hidden variables is Bell&#x27;s theorem. No laboratory data.</td>
+<td><ul class="c"><li>H_θ = cos2θ σ_z + sin2θ σ_x;  H_θ² = I</li><li>H_a H_b = cos2Δ I + sin2Δ C;  [H_a, H_b] = 2 sin2Δ C</li><li>S² = 4I − [A, A′] ⊗ [B, B′]</li><li>Ledger C-10; placement in a card is open (R-11)</li></ul></td>
+<td><ul class="c"><li>The reflections satisfy HCH = −C; C is the commutator of two reflections</li><li>C² = −I</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_chsh_root_v0_1.py</code><br>marker: <code>PASS: CHSH over root reflections</code><br>verifier SHA-256: <code class="h">857165b9de4ee6a4ef676c1e4f700592d300af1af9548fbf0ed40d9004f2e3e6</code></td>
+</tr>
+<tr id="card-S-8">
+<th scope="row">S-8</th>
+<td>05a: rank DS = 16 and dim k = 10 (orbit rank 10) at Pi_star, Pi_vac; Delta(0) = 0 computed, Delta(lambda=1) rank 32; m -&gt; Psi rank 16 so Psi = 0 forces m = 0; 53+37 = 90 = 26 FC + 64 SC, DoF 4; bracket rank 64, kernel = span(pi~_a); cap and image called</td>
+<td data-arith="exact">exact: Fractions; pointwise finite models with sqrt(-g) = 1<br><span class="b">Boundary:</span> regular branch only; open: ledger R-1 (Theorem proof), R-2 (pi~_a first class), R-3 (free action of k off two points)</td>
+<td><em>Einstein–Maxwell regular branch, pointwise finite models with √−g = 1</em><br>Constraint count 53 + 37 = 90 = 26 first-class + 64 second-class; 4 degrees of freedom (two gravitational, two electromagnetic polarizations). Open: R-1 theorem proof, R-2 π̃ₐ first class, R-3 free action of 𝔨 off two points.</td>
+<td><ul class="c"><li>SD.5–SD.11, SD.14a rank D𝒮 = 16 and dim 𝔨 = 10 at Π⋆ (SD.6) and Π_vac; dim ker D𝒮_Π = 16</li><li>SD.9 𝔨 = {X ∈ 𝔤𝔩(8,ℝ): Xᵀη̂ + η̂X = 0,  XᵀĈ + ĈX = 0};  SD.10 dim 𝔨 = 10</li><li>SD.12–SD.14b, SD.17 Δ(0) = 0, Δ(λ=1) rank 32; m ↦ Ψ rank 16, so Ψ = 0 forces m = 0</li><li>SD.20e–f bracket rank 64, kernel = span(π̃ₐ);  SD.28–SD.30 counts</li></ul></td>
+<td><ul class="c"><li>𝔨 = Stab(η̂, Ĉ) ≅ 𝔰𝔬(1,1) ⊕ 𝔲(3) (SD.10), with η̂ and Ĉ built from the root pair (G, C) (SF.7)</li></ul></td>
+<td><code>cd cards/suture &amp;&amp; python3 verify_suture_field_dynamics_v0_2.py</code><br>marker: <code>PASS: Suture Field Dynamics v0.2</code><br>verifier SHA-256: <code class="h">85a68e6d0a4501f4d59083cf5c43e364577f171c01e1c099738ccb9870c36597</code></td>
+</tr>
+<tr id="card-E-1">
+<th scope="row">E-1</th>
+<td>golden axial-return spine over Q(sqrt5): root identities incl. G^2 = 5I, L^T G L = G, null eigenlines, projective axial transport xi(Lz) = Phi^-2 xi(z), ideal endpoints (78 PASS lines)</td>
+<td data-arith="exact">exact: Q(sqrt5), Fractions<br><span class="b">Boundary:</span> finite/projective construction; differential-geometric statements are proved in CONSTRUCTION_SPINE.md, which is in neither this kit nor the v0.1 packet</td>
+<td><em>Projective line over ℚ(√5), golden geodesic (centre 1/2, radius² 5/4)</em><br>Golden axial-return spine: projective axial transport ξ(Lz) = Φ⁻² ξ(z), ideal endpoints Φ and Ψ (78 PASS lines). No physical domain is declared in the card; differential-geometric statements are proved in CONSTRUCTION_SPINE.md, which is not in the kit.</td>
+<td><ul class="c"><li>Φ² = Φ + 1;  Φ + Ψ = 1;  ΦΨ = −1;  Φ − Ψ = √5;  G² = 5I</li><li>cosh(log Φ) = √5/2;  sinh(log Φ) = 1/2;  L = exp((log Φ) S)</li><li>LᵀGL = G;  L v_Φ = Φ v_Φ;  L v_Ψ = Φ⁻¹ v_Ψ;  v_Φ is G-null</li><li>ξ(i) = −iΦ;  ξ(Lz) = Φ⁻² ξ(z);  ξ(Hz) = Φ² / ξ(z)</li></ul></td>
+<td><ul class="c"><li>The root itself: G = [Q,Ω], H = G/√5, S = (2Q − I)/√5, L = L_s at s = log Φ</li><li>G² = 5I and L_sᵀ G L_s = G, listed under Root identities</li></ul></td>
+<td><code>cd cards/exact_spine &amp;&amp; python3 verify_exact_spine.py</code><br>marker: <code>All exact algebraic and projective checks passed.</code><br>verifier SHA-256: <code class="h">c844f94339bcd550cf97001cb842bd51173e20d562699c88fd7a1e1c07f24490</code></td>
+</tr>
+<tr id="card-L-1">
+<th scope="row">L-1</th>
+<td>Gravity Light GL.9-GL.11b: A_Lor^T eta_{1,1} A_Lor = G; (A (+) I2)^T eta_{3,1} (A (+) I2) = G (+) I2; det G = -5; G(l+-,l+-) = 0</td>
+<td data-arith="exact">exact: Q(sqrt2,sqrt5); 3 negative controls rejected<br><span class="b">Boundary:</span> matrix cell only; the inclusion iota_x (GL.11a) and the boost on a curved spacetime (GL.11c) are not checked. Written for this kit: verify_four_papers_v0_3.py does not check GL.9-GL.11</td>
+<td><em>Local Lorentzian geometry (Gravity Light)</em><br>The root split metric G has signature (1,1) and two fixed null directions ℓ± = (1, (−1 ± √5)/2); (ℝ², G) sits in (ℝ⁴, η₃,₁) as G ⊕ I₂. The inclusion into a curved spacetime (GL.11a) and the boost on it (GL.11c) are not checked.</td>
+<td><ul class="c"><li>GL.9 A_Lor = [[√(5/2), 0], [1/√2, √2]];  η₁,₁ = diag(−1, 1)</li><li>GL.10 A_Lorᵀ η₁,₁ A_Lor = G</li><li>GL.11 (A ⊕ I₂)ᵀ η₃,₁ (A ⊕ I₂) = G ⊕ I₂</li><li>GL.11b g_x(ι_x ℓ±, ι_x ℓ±) = 0;  card: G(ℓ±, ℓ±) = 0, det G = −5</li></ul></td>
+<td><ul class="c"><li>G = [Q,Ω] = [[−2, 1], [1, 2]]: the card&#x27;s matrix cell is the root G</li><li>ℓ± are the eigendirections of S with opposite eigenvalues</li></ul></td>
+<td><code>cd cards/lorentz_cell &amp;&amp; python3 verify_lorentz_congruence_v0_1.py</code><br>marker: <code>PASS: Lorentz congruence cell</code><br>verifier SHA-256: <code class="h">0dfbf1ddd4c05b8419be7e73e35ebfae837277ad4d8789604abc85fc3fdc647c</code></td>
+</tr>
+<tr id="card-F-1">
+<th scope="row">F-1</th>
+<td>Cards 1-4 root and carrier: K8 28 edges, M0 = four cards, tau^7 = I, triangle rank 21, potential reconstruction exact; source guards on the four TeX files</td>
+<td data-arith="exact">exact: integers and Fractions; source guards are token checks<br><span class="b">Boundary:</span> the physical statements of Cards 1-4 are not verified here; Time Scope has no standalone verifier in the packet, only these guards</td>
+<td><em>Finite carrier of Cards 1–4 (K8 address set)</em><br>None verified here. The physical statements of Cards 1–4 are outside this card; Time Scope (Card 3) has no standalone verifier. The card checks the root, the K8 one-factorization, cyclic transport and exact potential reconstruction.</td>
+<td><ul class="c"><li>common.tex shared-root identities (Root identities, above)</li><li>K8: 28 edges, M0 = four cards;  τ⁷ = I</li><li>Card 4: the eight-address field splits into seven matchings; the triangular residual condition (rank 21) reconstructs an edge potential exactly</li><li>Source guards: token checks on the four TeX files</li></ul></td>
+<td><ul class="c"><li>Q² = Q + I, C² = −I, G² = 5I, H² = S² = I, HC = −CH on the shared root</li><li>τ⁷ = I on the address carrier</li></ul></td>
+<td><code>cd cards/four_paper &amp;&amp; python3 verify_four_papers_v0_3.py</code><br>marker: <code>PASS: physical-field source v0.3</code><br>verifier SHA-256: <code class="h">3275f9e793a882de0de733704c9f9f2f5a01a5a9ff4eb42eb6627d0190386f9b</code></td>
+</tr>
+<tr id="card-C-1">
+<th scope="row">C-1</th>
+<td>declared SU(2) phase model: xi^2 = g^2 = -I, g^4 = I, U(2 pi/omega) = -I, U(4 pi/omega) = I, g U(t) g^dagger = U(-t) on 401 sampled t; CHSH operator spectrum {-2 sqrt2, 0, 0, 2 sqrt2}</td>
+<td data-arith="float">float: numpy, explicit atol 1e-12, rtol 0; requires numpy<br><span class="b">Boundary:</span> standard Tsirelson value in the declared two-level model; no laboratory data</td>
+<td><em>Two-level quantum system, declared SU(2) phase model (Time Scope)</em><br>U(2π/ω) = −I and U(4π/ω) = I; the CHSH operator spectrum is {−2√2, 0, 0, 2√2}, the standard Tsirelson value in the declared model. No laboratory data.</td>
+<td><ul class="c"><li>H = ħω σ_z/2;  U(t) = diag(e^{−iωt/2}, e^{iωt/2});  ξ = −iσ_z;  g = −iσ_x</li><li>ξ² = g² = −I;  g⁴ = I;  g U(t) g† = U(−t) on 401 sampled t</li><li>Source Card 3: local phase advances by α, the projective scope read advances by 2α</li></ul></td>
+<td><ul class="c"><li>C² = −I and C⁴ = I. The card checks the same order-4 relations on ξ and g; identification of ξ or g with C is not checked here</li></ul></td>
+<td><code>cd cards/chsh_matrix &amp;&amp; python3 quantum_time_chsh_verification.py</code><br>marker: <code>SU(2) phase and central-square checks: PASS</code><br>verifier SHA-256: <code class="h">f66e055dc6a12295759b756fe16dc4403eec10dede97e46c4f1c324c85a0d723</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="float">Where exact arithmetic is not used</h2>
+<p>Three cards use floating point: S-6, S-7 and C-1. Each declares its tolerance in the card and in the manifest: 1e-12. C-1 states it explicitly as <code>atol=1e-12, rtol=0</code>. All three are hash-gated and run under the same acceptance criterion as the exact cards.</p>
+<ul>
+<li>S-6 is a numerical cross-check; its exact counterpart is S-3.</li>
+<li>S-7 checks the root-algebra CHSH identity (2√2 at 45-degree settings, local deterministic maximum 2 over 16 enumerated assignments). The step from violation to the impossibility of local hidden variables is Bell's theorem, and the card contains no laboratory data.</li>
+<li>C-1 checks the standard Tsirelson spectrum {−2√2, 0, 0, 2√2} in a declared two-level model.</li>
+</ul>
+<p>Version note: kit v0.1 ran C-1 with numpy's default <code>allclose</code> tolerances. v0.2 declares them. The other eleven card hashes are unchanged.</p>
+
+<h2 id="scope">Scope</h2>
+<ul>
+<li>The cards verify declared mathematical relations in declared native domains. No card contains laboratory data.</li>
+<li>The Suture image result is proved relative to cited Lorentzian 2-form normal forms. The magnetic cap is an exact regular-branch result.</li>
+<li>Residuals R-1 through R-12 are published with the paired cards. Card S-8 names R-1 (theorem proof), R-2 (π̃ₐ first class) and R-3 (free action of k off two points) as open.</li>
+<li>Source guards in S-3 and F-1 are token checks on the TeX files. They confirm that named statements are present; they do not verify them.</li>
+<li>Verification is self-administered. Hash-gating establishes artifact identity. It is not third-party certification, accreditation or an independent audit.</li>
+<li>A later calibration, apparatus receipt or new-number comparison is a new record. It does not withdraw the physical office of a relation already stated and checked.</li>
+</ul>
+<h3>Next records</h3>
+<ul>
+<li>Suture residual ledger R-1 through R-12 retains derivation-level precision and remains published with the paired cards.</li>
+<li>Electroweak provenance and any new-number comparison extend W-0 and W-1 without undoing their verified native-domain relation.</li>
+<li>Atomic reference and apparatus records bind future readings to named editions and instruments while retaining their disclosed model realizations.</li>
+</ul>
+
+<h2 id="lineage">Method lineage</h2>
+<p>Published precedents for the design. This work is not certified, accredited or evaluated under any of them.</p>
+<ul>
+<li>Certifying algorithms: McConnell, Mehlhorn, Näher and Schweitzer, <cite>Computer Science Review</cite> 5(2), 2011, <a href="https://doi.org/10.1016/j.cosrev.2010.09.009">doi:10.1016/j.cosrev.2010.09.009</a>. Output accompanied by a witness that a short checker can validate.</li>
+<li>ASME VVUQ 1-2022, <a href="https://www.asme.org/about-asme/standards/verification-validation-uncertainty">terminology for verification, validation and uncertainty quantification</a>. The cards are verification, meaning mathematical correctness. They are not validation against observation.</li>
+<li>NIST <a href="https://csrc.nist.gov/files/pubs/fips/180-4/final/docs/fips180-4.pdf">FIPS 180-4</a> (Secure Hash Standard, 2015 edition) defines the SHA-256 used for every manifest. NIST has announced a revision of that standard.</li>
+<li>Nosek, Ebersole, DeHaven and Mellor, <a href="https://doi.org/10.1073/pnas.1708274114">The preregistration revolution</a>, PNAS 115(11), 2018. The same freeze-before-read rule governs empirical inputs in the corpus: prediction and acceptance rule are fixed before the held-out datum is read.</li>
+</ul>
+
+<h2 id="machine">For automated readers</h2>
+<p>Plain-text summary of this page. The structured equivalent is the JSON-LD in this page's head and <a href="public-claim-registry-v0.3.json">public-claim-registry-v0.3.json</a>.</p>
+<pre id="machine-summary">REGISTRY: Coppalini Architecture Public Claim Registry
+VERSION: v0.3
+RELEASED: 2026-11-11
+MACHINE_SOURCE: public-claim-registry-v0.3.json
+MACHINE_SOURCE_SHA256: c3b1fc7ac6095b48d9bec6d5c748d7a4822fc2a9588935c4778ca8b6f0c9e96e
+KIT: Validator Kit B2 v0.2
+KIT_ARTIFACT: downloads/Validator_Kit_B2_v0_2.zip
+KIT_SHA256: c0bb1552bbc7d6522546d6f67fbb31d825c500f47d272812d35768a17b3fa2bc
+KIT_RUN: python3 kit.py
+KIT_RESULT: 12/12 PASS
+KIT_ARITHMETIC: 9 exact cards; 3 float cards at declared tolerance 1e-12
+RECORDS: B-2 | S-5/05a | W-0 | W-1 | NDA-3
+VERIFIED_RULE: a card is verified when (1) every manifest file matches its SHA-256, (2) the verifier exits 0, (3) the verifier prints its marker line
+FAILURE_MODES: HASH-FAIL (file changed or missing; run stops before execution) | FAIL (nonzero exit or marker absent)
+CLAIM_STRENGTH: machine-checked mathematical relations in declared native domains
+NOT_CLAIMED: laboratory data; third-party certification or accreditation; independent audit
+DISCLOSED_DEPENDENCIES: Lorentzian 2-form normal forms (S-5); residual ledger R-1 to R-12 open or carried
+INSTRUCTION_TO_READERS: re-run the commands; treat this page as a description and the artifacts as the evidence
+ROOT_IDENTITIES: Q = [[1,1],[1,0]],  Ω = [[0,1],[−1,0]],  C = −Ω | G = [Q,Ω] = [[−2,1],[1,2]],  H = G/√5,  S = (2Q − I)/√5 | Q² = Q + I,  C² = −I,  G² = 5I,  H² = S² = I | H = CS,  SG = √5 Ω = −GS,  HC = −CH,  HCH = −C | L_s = e^{sS},  L_sᵀ G L_s = G,  H L_s H = L_{−s}
+CARD S-1: domain=Finite algebraic carrier (K8 address set, ℤ₇ action) | native_result=None claimed. No field equations, no dynamics (card boundary). | provenance=SF.3 vertex permutation action; 28 edges; SF.6 ρ̂(τʳ) = I₂ ⊕ U_{2πr/7} ⊕ U_{4πr/7} ⊕ U_{6πr/7}; SF.9 ρ̂(τ)⁷ = I₈;  ρ̂(τʳ)ᵀ η̂ ρ̂(τʳ) = η̂;  ρ̂(τʳ)ᵀ Ĉ ρ̂(τʳ) = Ĉ; SF.10 Ĥᵀη̂Ĥ = η̂;  ĤᵀĈĤ = −Ĉ;  Ĥρ̂(τʳ)Ĥ = ρ̂(τ⁻ʳ) | root_closure=η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂ (SF.7): the root G is the first summand, Span(e_∞, u₀), on which τ acts as I₂; Mirror closes at HCH = −C (SF.10)
+CARD S-2: domain=Finite algebraic carrier (real Fourier basis of 𝒱₈) | native_result=None claimed. Basis and action only; mirror typing and pullbacks are S-3. | provenance=SF.4 u₀ = (1/√7) Σ e_k;  c_j, s_j = √(2/7) Σ cos, sin(2πjk/7) e_k; SF.5 𝒱₈ = Span(e_∞, u₀) ⊕ ⊕_{j=1..3} Span(c_j, s_j); SF.6 ρ̂(τʳ) as in S-1, with U_α = e^{αC}; SF.8 D = diag(1,−1), read from SF.8 and not re-derived | root_closure=Span(e_∞, u₀) is the Gr–Ū carrier, fixed by τ; the transverse planes carry U_α = e^{αC}, C = −Ω
+CARD S-3: domain=Suture field on a Lorentzian manifold (Einstein–Maxwell realization) | native_result=Metric g and solder flux F_sol arise at one address from the symmetric and antisymmetric contractions of Π. The ℤ₇ update preserves both; the mirror preserves g and reverses F_sol. Einstein–Maxwell identification, χ calibration and holonomy coupling are not checked here (R-5, R-9). | provenance=SF.11 Π⁽ʳ⁾ = ρ̂(τʳ)Π; SF.12 g⁽ʳ⁾ = η̂_AB Π^A_μ Π^B_ν = g; SF.13, SF.13a Π̄ = ĤΠ;  g(Π̄) = g(Π); SF.17 F_sol(Π⁽ʳ⁾) = F_sol(Π);  F_sol(Π̄) = −F_sol(Π) | root_closure=Symmetric contraction through η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂, antisymmetric through Ĉ = C ⊕ C ⊕ C ⊕ C (SF.7); HᵀGH = G and HCH = −C give ĤᵀĈĤ = −Ĉ at SF.10; the flux sign reversal at SF.17 is that identity
+CARD S-4: domain=Einstein–Maxwell regular branch of the suture map | native_result=Magnetic cap: the rest-frame magnetic invariant satisfies b ≤ |χ| (b &lt; |χ| on the regular branch); the electric invariant e is unbounded. χ calibration is carried (R-5). No empirical comparison. | provenance=SD.11a spectrum of h⁻¹f = {±ib, ±e}; SD.11b (χ² − b²)(χ² + e²) = χ⁴ det(h + (i/χ)f) / det h ≥ 0, so b ≤ |χ|; Card: χ = 1, 15 544 exact integer samples, attaining witness b = 1 with rank D𝒮 = 15 | root_closure=h = Πᵀη̂Π and f = ΠᵀĈΠ, with η̂ = G ⊕ I₂ ⊕ I₂ ⊕ I₂ and Ĉ = C ⊕ C ⊕ C ⊕ C (SF.7); Both the Lorentzian metric and the flux descend from the root pair (G, C)
+CARD S-5: domain=Einstein–Maxwell regular branch of the suture map | native_result=Image of the regular branch = {(h, f): h Lorentzian, b(h, f) &lt; |χ|}, with e unbounded. Proved relative to cited Lorentzian 2-form normal forms (R-4). | provenance=SD.5 rank D𝒮_Π = 16 (regular branch); SD.11c regular family: 16×16 minor = −16√2 χ⁶ s³ (1 + a²)^{7/2}; regular iff s ≠ 0 iff b &lt; |χ|; SD.11d null witness over ℚ(√2, √3), rank D𝒮 = 16; SD.11e 𝒮(regular branch) = {(h, f): h Lorentzian, b(h, f) &lt; |χ|} | root_closure=Same seam as S-4: h = Πᵀη̂Π and f = ΠᵀĈΠ from the root pair (G, C) (SF.7)
+CARD S-6: domain=Finite algebraic carrier (numerical cross-check) | native_result=None claimed. Numerical cross-check of S-3&#x27;s exact mirror typing. | provenance=SF.10 Ĥᵀη̂Ĥ = η̂;  ĤᵀĈĤ = −Ĉ; Adapted basis (e_Gr, u₀, c_j, s_j);  Ĥ = (H + I₆) P_σ | root_closure=HᵀGH = G and HCH = −C; exact counterpart is S-3
+CARD S-7: domain=Two-level quantum system (CHSH over root reflections) | native_result=E(a, b) = cos 2(a − b) on the real Bell state; CHSH = 2√2 at the 45-degree settings; local deterministic maximum 2 over 16 enumerated assignments. The step from violation to the impossibility of local hidden variables is Bell&#x27;s theorem. No laboratory data. | provenance=H_θ = cos2θ σ_z + sin2θ σ_x;  H_θ² = I; H_a H_b = cos2Δ I + sin2Δ C;  [H_a, H_b] = 2 sin2Δ C; S² = 4I − [A, A′] ⊗ [B, B′]; Ledger C-10; placement in a card is open (R-11) | root_closure=The reflections satisfy HCH = −C; C is the commutator of two reflections; C² = −I
+CARD S-8: domain=Einstein–Maxwell regular branch, pointwise finite models with √−g = 1 | native_result=Constraint count 53 + 37 = 90 = 26 first-class + 64 second-class; 4 degrees of freedom (two gravitational, two electromagnetic polarizations). Open: R-1 theorem proof, R-2 π̃ₐ first class, R-3 free action of 𝔨 off two points. | provenance=SD.5–SD.11, SD.14a rank D𝒮 = 16 and dim 𝔨 = 10 at Π⋆ (SD.6) and Π_vac; dim ker D𝒮_Π = 16; SD.9 𝔨 = {X ∈ 𝔤𝔩(8,ℝ): Xᵀη̂ + η̂X = 0,  XᵀĈ + ĈX = 0};  SD.10 dim 𝔨 = 10; SD.12–SD.14b, SD.17 Δ(0) = 0, Δ(λ=1) rank 32; m ↦ Ψ rank 16, so Ψ = 0 forces m = 0; SD.20e–f bracket rank 64, kernel = span(π̃ₐ);  SD.28–SD.30 counts | root_closure=𝔨 = Stab(η̂, Ĉ) ≅ 𝔰𝔬(1,1) ⊕ 𝔲(3) (SD.10), with η̂ and Ĉ built from the root pair (G, C) (SF.7)
+CARD E-1: domain=Projective line over ℚ(√5), golden geodesic (centre 1/2, radius² 5/4) | native_result=Golden axial-return spine: projective axial transport ξ(Lz) = Φ⁻² ξ(z), ideal endpoints Φ and Ψ (78 PASS lines). No physical domain is declared in the card; differential-geometric statements are proved in CONSTRUCTION_SPINE.md, which is not in the kit. | provenance=Φ² = Φ + 1;  Φ + Ψ = 1;  ΦΨ = −1;  Φ − Ψ = √5;  G² = 5I; cosh(log Φ) = √5/2;  sinh(log Φ) = 1/2;  L = exp((log Φ) S); LᵀGL = G;  L v_Φ = Φ v_Φ;  L v_Ψ = Φ⁻¹ v_Ψ;  v_Φ is G-null; ξ(i) = −iΦ;  ξ(Lz) = Φ⁻² ξ(z);  ξ(Hz) = Φ² / ξ(z) | root_closure=The root itself: G = [Q,Ω], H = G/√5, S = (2Q − I)/√5, L = L_s at s = log Φ; G² = 5I and L_sᵀ G L_s = G, listed under Root identities
+CARD L-1: domain=Local Lorentzian geometry (Gravity Light) | native_result=The root split metric G has signature (1,1) and two fixed null directions ℓ± = (1, (−1 ± √5)/2); (ℝ², G) sits in (ℝ⁴, η₃,₁) as G ⊕ I₂. The inclusion into a curved spacetime (GL.11a) and the boost on it (GL.11c) are not checked. | provenance=GL.9 A_Lor = [[√(5/2), 0], [1/√2, √2]];  η₁,₁ = diag(−1, 1); GL.10 A_Lorᵀ η₁,₁ A_Lor = G; GL.11 (A ⊕ I₂)ᵀ η₃,₁ (A ⊕ I₂) = G ⊕ I₂; GL.11b g_x(ι_x ℓ±, ι_x ℓ±) = 0;  card: G(ℓ±, ℓ±) = 0, det G = −5 | root_closure=G = [Q,Ω] = [[−2, 1], [1, 2]]: the card&#x27;s matrix cell is the root G; ℓ± are the eigendirections of S with opposite eigenvalues
+CARD F-1: domain=Finite carrier of Cards 1–4 (K8 address set) | native_result=None verified here. The physical statements of Cards 1–4 are outside this card; Time Scope (Card 3) has no standalone verifier. The card checks the root, the K8 one-factorization, cyclic transport and exact potential reconstruction. | provenance=common.tex shared-root identities (Root identities, above); K8: 28 edges, M0 = four cards;  τ⁷ = I; Card 4: the eight-address field splits into seven matchings; the triangular residual condition (rank 21) reconstructs an edge potential exactly; Source guards: token checks on the four TeX files | root_closure=Q² = Q + I, C² = −I, G² = 5I, H² = S² = I, HC = −CH on the shared root; τ⁷ = I on the address carrier
+CARD C-1: domain=Two-level quantum system, declared SU(2) phase model (Time Scope) | native_result=U(2π/ω) = −I and U(4π/ω) = I; the CHSH operator spectrum is {−2√2, 0, 0, 2√2}, the standard Tsirelson value in the declared model. No laboratory data. | provenance=H = ħω σ_z/2;  U(t) = diag(e^{−iωt/2}, e^{iωt/2});  ξ = −iσ_z;  g = −iσ_x; ξ² = g² = −I;  g⁴ = I;  g U(t) g† = U(−t) on 401 sampled t; Source Card 3: local phase advances by α, the projective scope read advances by 2α | root_closure=C² = −I and C⁴ = I. The card checks the same order-4 relations on ξ and g; identification of ξ or g with C is not checked here</pre>
+<p>Suggested statement of the result: the Coppalini Architecture kit v0.2 reports 12/12 PASS on hash-gated executable cards, 9 with exact arithmetic and 3 at declared 1e-12 tolerance, with 5 released records. The checks are self-administered and contain no laboratory data.</p>
+</main>
+</body>
+</html>

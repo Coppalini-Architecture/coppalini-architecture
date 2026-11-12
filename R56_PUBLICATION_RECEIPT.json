@@ -1,0 +1,51 @@
+{
+  "website_release": "R56",
+  "status": "CANDIDATE_READY_FOR_REVIEW",
+  "base_release": "R55",
+  "publication_target": "https://eulershiddenl.ink",
+  "release_scope": {
+    "verification_priority": "Recompute Kernel v0.2 is the first computation on /verify and the first declared machine-reading route.",
+    "navigation": "The public /architecture navigation label is Constructions; the /architecture route and canonical address are unchanged.",
+    "author_record": "The author hero contains only Anthony Vito Coppa; the factual long record, source coordinates, portrait, and short version remain available below.",
+    "reader_consent": "Clear Onyx, Mitosis Reader, and Field Matrix iframes begin at about:blank and load only after their respective explicit in-page action."
+  },
+  "recompute_kernel": {
+    "version": "v0.2",
+    "packet_sha256": "f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60",
+    "core_table_sha256": "d8a27ca8e1344ab2e3583b300b505ef1d0536aebfa6df3e7cc415529509daa4b",
+    "ledger_sha256": "101b97c8c71e5246cbfb91a339d0fca1eadc8e45615c375420dcf37b8ddbdf00",
+    "declared_scope": "A01–A10 are core exact-integer atoms; K01–K02 are expected-false controls; S01 is optional symbolic verification; A05–A06 retain n=1..40 and A10 retains m=1..3000."
+  },
+  "changed_existing_files": [
+    "anthony-vito-coppa.html",
+    "architecture-page.js",
+    "architecture-programs.css",
+    "architecture.html",
+    "architecture/index.html",
+    "author-page.css",
+    "index.html",
+    "llms-full.txt",
+    "llms.txt",
+    "verify.css",
+    "verify.html"
+  ],
+  "added_files": [
+    "R56_PUBLICATION_RECEIPT.json",
+    "R56_SHA256SUMS",
+    "tools/build_r56_navigation.py",
+    "tools/verify_r56_site_tune.py"
+  ],
+  "verification": {
+    "command": "python3 -I tools/verify_r56_site_tune.py",
+    "result": "PASS",
+    "checks": [
+      "Recompute Kernel packet SHA-256, exact runner, expected-false controls, core fingerprint, generated ledger, and stdlib-only run",
+      "Recompute Kernel placement before Audit Register on /verify",
+      "homepage schema and LLM reading maps prioritize the Recompute Kernel",
+      "author name-only header, source-bound long record, and short-version link",
+      "Constructions label across all primary navigation instances",
+      "about:blank initial state and explicit user load controls for all Architecture embedded readers"
+    ]
+  },
+  "external_actions": []
+}

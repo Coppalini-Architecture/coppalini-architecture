@@ -1,8 +1,0 @@
-# Executable receipt for The Theory of Everything formal edition.
-# Fields: artifact | sha256 | executed check | result | boundary
-tools/condition_constraint_can_translator.py | 3bb35b2d289d782a4ef5cb142bda6b101cde43edfb53640328e13741a1761f6e | python3 tools/condition_constraint_can_translator.py | exact root and six typed can|fold paths PASS | finite exact carrier only
-tools/mirror_audit.py | c3d0ae22f9e64fc0ac2ff9d65435f7172c19e335e6f8cc5cf4260e6d72371ec4 | python3 tools/mirror_audit.py | 9 declared finite gates PASS | finite algebra and toy-reader schemas only
-verification/verify_physical_reality_final.py | 309a11423bbc8f4fd453d43aa99e89da5392a8168ab967c74188aa8723590f45 | python3 verification/verify_physical_reality_final.py | V1-V10 exact checks PASS | finite witnesses; physical interface not tested
-tools/mirror_phase_translation.cpp | e34f529ecc94a25b22a693ae63e0e410795385591a6f79449c3336cc9dd55c8a | g++ -std=c++17 -fsyntax-only; g++ -std=c++20 -fsyntax-only | compile-time assertions accepted | declared compile-time carrier only
-tools/condition_constraint_can_translator.cpp | acc3c77f8072114f56ffa71a5f4f318ac3d2899cf024ac122e4649378dcc3544 | g++ -std=c++20 -fsyntax-only | compile-time assertions accepted | declared compile-time carrier only
-tools/MoneyRoot_Mirror_Algebra.lean | 63036540838c5324448d4173be1858625ea444665cc198244d5ac667b47f3e22 | source retained | elaboration receipt OPEN | source does not replace an elaboration receipt

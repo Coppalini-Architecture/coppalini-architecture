@@ -1,3 +1,0 @@
-PASS root grading, gl(1|1) super-Jacobi, scalar oscillator, K8 ledger, su(3) exterior-square carrier
-
-Exit code: 0

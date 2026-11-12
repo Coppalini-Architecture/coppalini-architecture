@@ -1,0 +1,38 @@
+{
+  "release": "R52.1",
+  "tool": "NOP Return / Memory Workbench",
+  "version": "0.2.0",
+  "author": "Anthony Vito Coppa",
+  "date": "2026-11-12",
+  "route": "https://eulershiddenl.ink/nop/",
+  "scope": "Exact positive assay-coordinate bijection, Metric Mirror adapter, declared adaptation theorem, and paired-data audit.",
+  "data_origin": "synthetic",
+  "verification": {
+    "symbolic_checks": 36,
+    "measurement_contract_tests": 24,
+    "browser_python_parity_suites": 7,
+    "algebra_receipt": "verification/algebra_receipt.json",
+    "implementation_receipt": "verification/audit_test_receipt.json",
+    "browser_ui_receipt": "verification/browser_ui_receipt.json"
+  },
+  "empirical_map": {
+    "observables": 68,
+    "sources": 15,
+    "source_corrections": 19,
+    "path": "docs/Empirical_Reference_Map.json"
+  },
+  "documents": {
+    "formal_note": "docs/Formal_Note.pdf",
+    "user_manual": "docs/User_Manual.pdf",
+    "research_briefing": "docs/Research_Briefing.pdf"
+  },
+  "source": "downloads/NOP_Return_Memory_Workbench_v0_2_0.zip",
+  "open": [
+    "Participant-level data import",
+    "Biological parameter identification",
+    "Oxygen-to-ROS transfer",
+    "Redox-to-HIF causal law"
+  ],
+  "zenodo_doi": null,
+  "source_sha256": "b73ce0303a15be1ea701d4ccde81e1119c98b4fc5a5335121ed78b2133fe7b7b"
+}

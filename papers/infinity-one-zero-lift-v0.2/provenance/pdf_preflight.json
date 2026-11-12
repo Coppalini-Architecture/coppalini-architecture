@@ -1,0 +1,16 @@
+{
+  "pages": 15,
+  "pdf_sha256": "7f642af58c0c5a4375d1826e30477c815d26c2fdf4b08fbba67f3a287f25b1fa",
+  "rendered_and_visually_inspected": true,
+  "latex_unresolved_references": false,
+  "latex_overfull_boxes": false,
+  "text_boundary_violations": [],
+  "cover_width_height_points": [
+    599.9990234375,
+    787.4979858398438
+  ],
+  "body_width_height_points": [
+    595.2760009765625,
+    841.8900146484375
+  ]
+}

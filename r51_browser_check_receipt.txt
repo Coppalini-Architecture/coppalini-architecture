@@ -1,0 +1,10 @@
+R51 Exact Reader presentation check
+Recorded UTC: 2026-11-11T18:55:34.446099+00:00
+Command: node tools/test_exact_reader.cjs
+
+PASS exact/index.html: static/registry agreement, ready before activation, exact output, three rejected faults, restored reference.
+PASS exact/matrix-root-g-001/index.html: static/registry agreement, ready before activation, exact output, three rejected faults, restored reference.
+
+Browser observation: ready before activation; explicit click reproduced the four declared outputs.
+Responsive observation: 340 CSS-pixel viewport, document clientWidth=337 and scrollWidth=337; no horizontal overflow.
+Scope: UI/source binding and publication integrity. Historical scientific verifiers and their recorded receipts retain their original provenance.

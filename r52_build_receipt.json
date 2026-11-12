@@ -1,0 +1,34 @@
+{
+  "release": "R52",
+  "issued": "2026-11-12",
+  "source_candidate": {
+    "name": "coppalini-r51.1-architecture-redirect-repair-candidate.zip",
+    "sha256": "296238574da637579bdf19a86f2ef1e6c016a7fccd319b98c7bd0a376d0d38c0"
+  },
+  "result": "PASS",
+  "checks": {
+    "r52_builder": {
+      "command": "python3 -I tools/build_r52_discovery.py --validate-only",
+      "result": "PASS",
+      "paper_records": 4,
+      "canonical_html_routes": 59,
+      "sitemap_urls": 110,
+      "lastmod_routes": 7
+    },
+    "exact_reader": {
+      "command": "node tools/test_exact_reader.cjs",
+      "result": "PASS",
+      "checks": 2
+    },
+    "checksum_inventory": {
+      "command": "sha256sum -c SHA256SUMS",
+      "result": "PASS",
+      "payload_files": 365
+    },
+    "clean_room": {
+      "method": "unzip candidate; check SHA256SUMS; run R52 validation and Exact Reader test",
+      "result": "PASS"
+    }
+  },
+  "boundary": "This receipt covers the static release candidate. Search-console, GitHub-profile, GitHub-release, and Zenodo-account changes are separate external operations and are not claimed here."
+}
