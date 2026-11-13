@@ -31,9 +31,9 @@
 
   <main id="main">
     <section class="hero lean-proof-hero" id="lean-certificates" aria-labelledby="lean-certificates-title">
-      <p class="kicker">Lean 4 / exact finite certificates</p>
+      <p class="kicker">Lean 4.33.0 / exact finite certificates</p>
       <h1 id="lean-certificates-title">Exact closures</h1>
-      <p class="summary">Three kernel certificates close the displayed matrix relations exactly. Each card names its carrier, equation, source, and the physical office the relation carries at its stated resolution.</p>
+      <p class="summary">Seven kernel certificates close the displayed finite matrix relations exactly. The root collection fixes the carrier, quantum-correlation, and projective-return reads; the Π₀ batch fixes four independent local relations. Each card names its carrier, equation, source, CI receipt, and boundary.</p>
       <div class="lean-proof-grid">
         <article class="lean-proof-card">
           <p class="lean-proof-index">01</p>
@@ -73,7 +73,58 @@
           <nav class="lean-proof-links" aria-label="Projective return proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/53892b68bc279bf5f0cb382c722ca23481809695/proofs/RootProjectiveAdapters_v2.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43376091927" target="_blank" rel="noopener">CI receipt</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/43073ed248bad45c94dd12aaa0dbc00a3ec64875/proofs/ProjectiveReturn.lean" target="_blank" rel="noopener">Pinned return source</a></nav>
         </article>
       </div>
-      <p class="lean-proof-note">Each closure fixes the displayed relation at its named carrier, frame, and field. The linked source and receipt make the path inspectable.</p>
+      <p class="lean-proof-group-label">Π₀ local batch / CI run 43434543921</p>
+      <div class="lean-proof-grid lean-proof-grid--pi0">
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">04</p>
+          <p class="tag">Π₀ / stabilizer algebra</p>
+          <h2>The Π₀ stabilizer has ten exact witness directions and a nine-direction orbit read.</h2>
+          <p class="lean-proof-equation">WN = 30I₁₀ &nbsp; · &nbsp; NW + AE = 30I₆₄</p>
+          <ul class="lean-proof-list">
+            <li>Ten explicit integer vectors satisfy the 128 stated constraints; the final vector is <code>Xw</code>.</li>
+            <li>The first nine orbit images have an exact left inverse, while <code>XwΠ₀ = 0</code>.</li>
+          </ul>
+          <p class="lean-proof-boundary">The finite witness supports the stated <code>dim 𝔨 = 10</code>, one-dimensional stabilizer, and orbit-rank-<code>9</code> read by ordinary finite-dimensional linear algebra. The file makes no claim about <code>Π⋆</code> or a branch. Listed theorems use <code>propext</code>.</p>
+          <nav class="lean-proof-links" aria-label="Pi zero stabilizer proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/6f46072fee7d423e8cb3cd0fe5db3aa3f46fecd4/proofs/StabilizerDim.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43434543921" target="_blank" rel="noopener">CI receipt</a></nav>
+        </article>
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">05</p>
+          <p class="tag">Electroweak / mass operator</p>
+          <h2>The declared mass operator fixes one photon kernel and three massive eigendirections.</h2>
+          <p class="lean-proof-equation">M₄ = v²RᵀR &nbsp; · &nbsp; M₄(0,0,g′,g)ᵀ = 0</p>
+          <ul class="lean-proof-list">
+            <li>The two charged directions and the neutral <code>(0,0,g,−g′)ᵀ</code> direction carry the displayed massive eigenvalues.</li>
+            <li>The trace identity and the nonzero <code>3×3</code> minor <code>g³</code> are exact polynomial identities.</li>
+          </ul>
+          <p class="lean-proof-boundary">This certifies the declared polynomial operator over <code>ℤ[g,g′,v]</code>. The derivation <code>4·Hess(L) = M₄</code>, plane selection, and numerical prediction remain outside this file. <code>M4_gram</code> and the minor use <code>propext</code>; the reported photon-kernel and massive-direction theorems are axiom-free.</p>
+          <nav class="lean-proof-links" aria-label="Higgs mass proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/6f46072fee7d423e8cb3cd0fe5db3aa3f46fecd4/proofs/HiggsMass.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43434543921" target="_blank" rel="noopener">CI receipt</a></nav>
+        </article>
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">06</p>
+          <p class="tag">Π₀ / multiplier</p>
+          <h2>At Π₀, the differential has exact scaled inverses and the ten orbit directions lie in its fibre.</h2>
+          <p class="lean-proof-equation">dS·Pᵀ = 30I₁₆ &nbsp; · &nbsp; P·dSᵀ = 30I₁₆</p>
+          <ul class="lean-proof-list">
+            <li>Both displayed integer identities are kernel-checked at the supplied point <code>Π₀</code>.</li>
+            <li>All ten declared stabilizer directions map to zero under the stated differential read.</li>
+          </ul>
+          <p class="lean-proof-boundary">This is a pointwise finite certificate. Rank–nullity, branch-wide extension, and field-action multiplier elimination remain outside the file. All reported theorems use <code>propext</code>.</p>
+          <nav class="lean-proof-links" aria-label="Pi zero multiplier proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/6f46072fee7d423e8cb3cd0fe5db3aa3f46fecd4/proofs/MultiplierElimination.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43434543921" target="_blank" rel="noopener">CI receipt</a></nav>
+        </article>
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">07</p>
+          <p class="tag">Π₀ / magnetic value</p>
+          <h2>At Π₀, the declared magnetic form has zero Pfaffian and exact invariant numerator 14.</h2>
+          <p class="lean-proof-equation">hA = Ah = −7I &nbsp; · &nbsp; tr(FᵀAFA) = 14</p>
+          <ul class="lean-proof-list">
+            <li>The displayed <code>F</code>, its antisymmetry, and <code>Pf(F) = 0</code> are checked in the finite carrier.</li>
+            <li>Under the declared convention, the numerator reads <code>½F<sub>ab</sub>F<sup>ab</sup> = 1/7</code>, with <code>14 &lt; 98</code>.</li>
+          </ul>
+          <p class="lean-proof-boundary">This is the magnetic value at <code>Π₀</code>. The <code>b = 1/√7</code>, <code>χ = 1</code> reading is declared convention; C-2’s branch-wide magnetic cap remains its separate receipt. The reported theorems use <code>propext</code>.</p>
+          <nav class="lean-proof-links" aria-label="Pi zero magnetic proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/6f46072fee7d423e8cb3cd0fe5db3aa3f46fecd4/proofs/MagneticValueAtPi0.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43434543921" target="_blank" rel="noopener">CI receipt</a></nav>
+        </article>
+      </div>
+      <p class="lean-proof-note">Each closure fixes the displayed relation at its named carrier, frame, and field. The linked source and CI receipt make the path inspectable; the SHA ledger records the committed source separately.</p>
     </section>
 
     <section class="section" id="physics-closures" aria-labelledby="physics-closures-title">
