@@ -45,7 +45,8 @@
 /formalism.html  /formalism  301!
 /index.html  /  301!
 /ledger.html  /ledger  301!
-/library-archive.html  /library-archive  301!
+/library-archive.html  /library  301!
+/library-archive  /library  301!
 /library.html  /library  301!
 /models/view/clear-onyx-field-matrix-v0.1.html  /models/view/clear-onyx-field-matrix-v0.1  301!
 /models/view/clear-onyx-gauge-laboratory-v0.5.3.html  /models/view/clear-onyx-gauge-laboratory-v0.5.3  301!
@@ -63,6 +64,7 @@
 /provenance.html  /provenance  301!
 /provenance  /about  301!
 /references.html  /references  301!
-/site-information.html  /site-information  301!
+/site-information.html  /about  301!
+/site-information  /about  301!
 /verify.html  /verify  301!
 /papers/infinity-one-zero-lift.html  /papers/infinity-one-zero-lift  301!

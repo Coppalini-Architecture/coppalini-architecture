@@ -3,55 +3,30 @@
   const title = document.querySelector('[data-architecture-model-title]');
   const scope = document.querySelector('[data-architecture-model-scope]');
   const open = document.querySelector('[data-architecture-model-open]');
-  const load = document.querySelector('#architecture-model-load');
   const buttons = [...document.querySelectorAll('[data-architecture-model]')];
-  if (!frame || !title || !scope || !open || !load || !buttons.length) return;
+  if (!frame || !title || !scope || !open || !buttons.length) return;
 
   let selected = buttons[0];
 
   const select = (button) => {
     selected = button;
     buttons.forEach((candidate) => candidate.setAttribute('aria-pressed', String(candidate === button)));
-    if (frame.dataset.loadedSrc && frame.dataset.loadedSrc !== button.dataset.src) {
-      frame.src = 'about:blank';
-      delete frame.dataset.loadedSrc;
+    if (frame.dataset.loadedSrc !== button.dataset.src) {
+      frame.src = button.dataset.src;
+      frame.dataset.loadedSrc = button.dataset.src;
     }
-    frame.title = `Clear Onyx ${button.dataset.title} model; unloaded`;
+    frame.title = `Clear Onyx ${button.dataset.title} model`;
     title.textContent = button.dataset.title;
     scope.textContent = button.dataset.scope;
     open.href = button.dataset.src;
     open.textContent = `Open ${button.dataset.title} laboratory`;
-    load.textContent = `Load ${button.dataset.title} reader`;
-  };
-
-  const loadSelected = () => {
-    frame.src = selected.dataset.src;
-    frame.dataset.loadedSrc = selected.dataset.src;
-    frame.title = `Clear Onyx ${selected.dataset.title} model`;
-    load.textContent = `${selected.dataset.title} reader loaded`;
   };
 
   buttons.forEach((button, index) => {
     button.setAttribute('aria-pressed', String(index === 0));
     button.addEventListener('click', () => select(button));
   });
-  load.addEventListener('click', loadSelected);
   select(selected);
-})();
-
-(() => {
-  const controls = [...document.querySelectorAll('[data-reader-load]')];
-  controls.forEach((control) => {
-    const frame = document.querySelector(control.dataset.readerLoad);
-    const source = control.dataset.readerSrc;
-    if (!frame || !source) return;
-    control.addEventListener('click', () => {
-      frame.src = source;
-      frame.dataset.loadedSrc = source;
-      frame.title = frame.title.replace('; unloaded', '');
-      control.textContent = control.textContent.includes('matrix') ? 'Matrix loaded' : 'Reader loaded';
-    });
-  });
 })();
 
 (() => {

@@ -54,11 +54,7 @@
 #architecture-model-frame { display: block; width: 100%; height: min(50rem, 86vw); min-height: 35rem; border: 0; background: #0b1117; }
 .architecture-model-links { display: flex; flex-wrap: wrap; gap: .45rem 1rem; margin-top: .9rem; padding-top: .9rem; border-top: 1px solid #39444a; font-size: .75rem; font-weight: 730; }
 .architecture-model-links a { color: #dce6e1; text-underline-offset: .2em; }
-.architecture-mitosis-reader { margin-top: 0; background: #0e1921; }
-#mitosis-reader-frame { display: block; width: 100%; height: min(65rem, 112vw); min-height: 47rem; border: 0; background: #080f15; }
-.architecture-field-matrix { margin-top: 0; background: #0a1419; }
-#field-matrix-frame { display: block; width: 100%; height: min(68rem, 118vw); min-height: 48rem; border: 0; background: #03090d; }
 #architecture-method { max-width: 65rem; }
 #architecture-method .deck { margin: .75rem 0 .7rem; font-size: clamp(1.08rem,1.9vw,1.42rem); }
 @media(max-width:52rem) { .lean-proof-grid { grid-template-columns: 1fr; } .lean-proof-card { min-height: 0; } }
-@media(max-width:42rem) { .program-catalog-grid { grid-template-columns: 1fr; } .program-action-row a.program-primary { width: 100%; text-align: center; } .architecture-model-stage-head { display: block; } .architecture-model-stage-head p { margin-top: .6rem; } .architecture-model-actions { justify-content: flex-start; margin-top: .8rem; } .architecture-model-stage-head a { display: inline-block; margin-top: 0; } #architecture-model-frame { min-height: 31rem; height: 115vw; } #mitosis-reader-frame { min-height: 52rem; height: 165vw; } #field-matrix-frame { min-height: 54rem; height: 205vw; } }
+@media(max-width:42rem) { .program-catalog-grid { grid-template-columns: 1fr; } .program-action-row a.program-primary { width: 100%; text-align: center; } .architecture-model-stage-head { display: block; } .architecture-model-stage-head p { margin-top: .6rem; } .architecture-model-actions { justify-content: flex-start; margin-top: .8rem; } .architecture-model-stage-head a { display: inline-block; margin-top: 0; } #architecture-model-frame { min-height: 31rem; height: 115vw; } }
