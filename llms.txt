@@ -6,7 +6,7 @@
 
 - [Recompute Kernel v0.2](https://eulershiddenl.ink/exact/recompute-kernel/): one atom registry, exact-integer runner, generated ledger, machine manifest, and SHA-256-bound packet.
 - [Home](https://eulershiddenl.ink/): project overview and released research paths.
-- [Author record](https://eulershiddenl.ink/anthony-vito-coppa): Anthony Vito Coppa.
+- [About and provenance](https://eulershiddenl.ink/about): Anthony Vito Coppa and the editorial record for Coppalini Architecture.
 - [Audit Register](https://eulershiddenl.ink/verify): released hash-bound verification records.
 - [Verification manifest](https://eulershiddenl.ink/research/verification-manifest-v0.3.json): stable machine map for the released audit records.
 - [Exact Reader](https://eulershiddenl.ink/exact/): source-indexed deterministic record interface.

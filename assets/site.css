@@ -1109,4 +1109,6 @@ body { background: var(--paper); }
 .button.secondary { color: var(--muted); }
 .rule { height: 1px; width: 3.5rem; background: var(--red); }
 .site-footer { padding: 1.5rem 0 2.5rem; }
+.site-footer .footer-about { color: var(--muted); font-size: .78rem; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); text-underline-offset: .18em; }
+.site-footer .footer-about:hover, .site-footer .footer-about:focus-visible { color: var(--blue); }
 .site-footer nav { display: none; }
