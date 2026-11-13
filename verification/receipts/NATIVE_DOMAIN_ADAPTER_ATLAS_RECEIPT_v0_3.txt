@@ -1,0 +1,35 @@
+NATIVE DOMAIN ADAPTER ATLAS v0.3
+RELEASE RECEIPT
+Date: 10 November 2026
+
+PURPOSE
+New sibling release. v0.2 is preserved byte-for-byte under lineage/.
+
+NEW U1 RESULT
+Body–SI–English Length Adapter v0.1:
+  international foot = 381/1250 metre exactly
+  furlong = 660 international feet = 25146/125 metres exactly
+  mile = 5280 international feet = 201168/125 metres exactly
+  English measurement grammar is typed as numeral + unit + quantity + standard.
+  A finite-resolution body record retains its calibration interval.
+
+U1 VERIFIER
+  verify_body_si_english_length_adapter_v0_1.py
+  Result: 18/18 PASS
+  Arithmetic: Python Fraction only; no floating-point values.
+  Negative controls: bare numeral, time unit, survey-foot tag, and anatomical-foot token refused.
+
+SOURCE-BINDING VERIFIER
+  verify_source_bindings_v0_3.py
+  Result: 10/10 PASS
+  Boundary: verifies bundled source-address markers; it does not replace the original source proofs or external authorities.
+
+STATUS REPAIR
+  Atomic: binds previously omitted hydrogen numerical-reference and H–Li source records; A-1 remains separate.
+  GR: separates its closed duty/type map from its source-owned observational-instantiation continuation.
+  Historical source receipts and prospective Architecture novelty gates remain distinct.
+
+REPRODUCTION
+  python3 -I run_all.py
+  Expected: hash verification, U1 18/18 PASS, source bindings 10/10 PASS,
+  inherited v0.2 clean-room suite, then OVERALL PASS.

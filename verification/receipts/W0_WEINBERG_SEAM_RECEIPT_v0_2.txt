@@ -1,0 +1,53 @@
+W-0 · Weinberg seam receipt · v0.2
+
+Delta from v0.1
+  - the Higgs kinetic term is evaluated directly at phi_0 and its Hessian is
+    checked against the displayed vacuum mass operator;
+  - Q_em is computed as a matrix on the Higgs doublet, including its action on
+    phi_0 and on the photon connection direction;
+  - W0-3 is an exact coordinate-rewrite check, with no independent-rank claim;
+  - this manifest binds the receipt itself.
+
+Declared convention
+  Q_em = T3 + Y; Y_phi = 1/2; phi_0 = (0,v/sqrt(2))^T; g, gprime, v > 0.
+
+Source basis
+  THE_ELECTROWEAK_SEAM_v0_1.md, §§1–6.
+  ELECTROWEAK_TWO_OPERATOR_CERTIFICATE_v0_1.md, §§1–4.
+  THE_EMPIRICAL_INPUT_REGISTER_v0_1.md, §§8.1–8.4 and §14.
+
+Contract SHA-256
+  c8f03b360cef3700f4c9c2d57711692b0bdab8c8ec93b2f8d3ce42da1449c7ec
+
+Verifier SHA-256
+  8e090c1cd25dc455f624f7029b66b794f250151f0de3228f5eaeadd4e78d1a8e
+
+Command
+  python3 -I verify_w0_weinberg_seam_v0_2.py
+
+Arithmetic
+  exact symbolic SymPy; no floats; no empirical inputs.
+
+Result
+  W0-1  bracket rank / kernel                                 PASS
+  W0-2  orientation-preserving orthogonal neutral map          PASS
+  W0-3  exact bracket coordinate rewrite                       PASS
+  W0-4  Higgs kinetic quadratic form                           PASS
+  W0-5  Hessian equals displayed M_EW^2                        PASS
+  W0-6  mass rank / photon kernel                              PASS
+  W0-7  photon and Z eigenvectors                              PASS
+  W0-8  neutral diagonalization                                PASS
+  W0-9  tree-level algebraic identities                        PASS
+  W0-10 Q_em matrix, component charges, vacuum action          PASS
+  W0-11 photon connection action on vacuum                     PASS
+  N1–N4 wrong rotation, false photon, operator conflation,
+         and convention mismatch                               REJECTED as expected
+
+checks: 15/15 satisfied
+OVERALL: PASS
+
+Boundary
+  Exact tree-level consequences of declared representation, vacuum,
+  convention, and supplied g, gprime, v.  Numerical prediction, empirical
+  comparison, running/scheme effects, and carrier-to-particle identification
+  remain outside this receipt.

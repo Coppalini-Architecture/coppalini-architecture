@@ -32,47 +32,100 @@
   <main id="main">
     <section class="hero lean-proof-hero" id="lean-certificates" aria-labelledby="lean-certificates-title">
       <p class="kicker">Lean 4 / exact finite certificates</p>
-      <h1 id="lean-certificates-title">Lean certificates</h1>
-      <p class="summary">A small public record of closed algebraic statements, compiled under Lean 4.33.0. Each certificate names the finite object, the theorem it establishes, the source, and its boundary.</p>
+      <h1 id="lean-certificates-title">Exact closures</h1>
+      <p class="summary">Three kernel certificates close the displayed matrix relations exactly. Each card names its carrier, equation, source, and the physical office the relation carries at its stated resolution.</p>
       <div class="lean-proof-grid">
         <article class="lean-proof-card">
           <p class="lean-proof-index">01</p>
           <p class="tag">Root carrier</p>
-          <h2>A Lorentzian four-plane from an 8 × 4 integer carrier.</h2>
-          <p class="lean-proof-equation">G² = 5I</p>
+          <h2>A local (3,1) metric form from the declared finite carrier.</h2>
+          <p class="lean-proof-equation">TᵀhT = diag(−2, 14, 1, 1)</p>
           <ul class="lean-proof-list">
-            <li><code>Π₀ᵀηΠ₀</code> is explicitly congruent to <code>diag(−2, 14, 1, 1)</code>.</li>
+            <li><code>h = Π₀ᵀη̂Π₀</code> is explicitly congruent to the displayed diagonal form.</li>
+            <li><code>T</code> is invertible over <code>ℚ</code>; by Sylvester’s law, <code>h</code> has one negative and three positive directions.</li>
             <li>Sixteen explicit integer directions map to the sixteen coordinates of the differential, each scaled by <code>30</code>.</li>
           </ul>
-          <p class="lean-proof-boundary">Finite local certificate at <code>Π₀</code>; no global-rank or empirical-physics claim.</p>
+          <p class="lean-proof-boundary">Exact local geometry at the supplied frame <code>Π₀</code>.</p>
           <nav class="lean-proof-links" aria-label="Root carrier proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/RootCarrier.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-carrier-chsh.yml" target="_blank" rel="noopener">CI record</a></nav>
         </article>
         <article class="lean-proof-card">
           <p class="lean-proof-index">02</p>
           <p class="tag">CHSH carrier</p>
-          <h2>The Tsirelson bound, with an exact saturation witness.</h2>
-          <p class="lean-proof-equation">CHSH² ≤ 8I &nbsp; · &nbsp; 2√2 attained</p>
+          <h2>The declared root-generated CHSH operator attains 2√2 exactly.</h2>
+          <p class="lean-proof-equation">𝓑 = (√2/5)K &nbsp; · &nbsp; 𝓑² ≤ 8I</p>
           <ul class="lean-proof-list">
-            <li>A sum-of-squares identity gives the bound for the displayed two-level carrier.</li>
-            <li>The Bell vector <code>(1, 0, 0, 1)</code> saturates it exactly.</li>
+            <li><code>K² = 50Pₘ</code> gives the exact bound for the displayed two-level carrier.</li>
+            <li>The Bell vector returns <code>⟨Φ⁺|𝓑|Φ⁺⟩ = 2√2</code> with no numerical approximation.</li>
           </ul>
-          <p class="lean-proof-boundary">A closed statement about the declared operator model; no laboratory-data claim.</p>
+          <p class="lean-proof-boundary">Exact quantum-correlation edge of the declared operator and state.</p>
           <nav class="lean-proof-links" aria-label="CHSH proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/CHSH.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-carrier-chsh.yml" target="_blank" rel="noopener">CI record</a></nav>
         </article>
         <article class="lean-proof-card">
           <p class="lean-proof-index">03</p>
-          <p class="tag">Root / projective adapters</p>
-          <h2>Two exact conjugacies, without a numerical approximation layer.</h2>
-          <p class="lean-proof-equation">PHP⁻¹ = M &nbsp; · &nbsp; ZCZ⁻¹ = iM</p>
+          <p class="tag">Root / projective return</p>
+          <h2>Projective return preserves the exact form it transports.</h2>
+          <p class="lean-proof-equation">PHP⁻¹ = M &nbsp; · &nbsp; ZCZ⁻¹ = iM &nbsp; · &nbsp; MᵀĜM = Ĝ</p>
           <ul class="lean-proof-list">
-            <li>The real bridge is certified over <code>ℚ(√5)</code>.</li>
-            <li>The central lift is certified over Gaussian integers, together with the projective-return witness.</li>
+            <li>The real adapter is certified over <code>ℚ(√5)</code>; the central lift is certified over the Gaussian integers.</li>
+            <li><code>Ĝ = P⁻ᵀGP⁻¹</code> has <code>det Ĝ = −1</code> and is preserved by the projective return <code>M</code>.</li>
           </ul>
-          <p class="lean-proof-boundary">Finite matrix conjugacies only; interpretation stays outside the certificate.</p>
-          <nav class="lean-proof-links" aria-label="Projective adapter proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/RootProjectiveAdapters.lean" target="_blank" rel="noopener">Adapter source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/ProjectiveReturn.lean" target="_blank" rel="noopener">Return source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-projective-adapters.yml" target="_blank" rel="noopener">CI record</a></nav>
+          <p class="lean-proof-boundary">Certified in Lean 4.33.0 at commit <code>53892b6</code>; standard axiom basis: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Color, Meaning, Memory, and Motion retain their declared interface offices.</p>
+          <nav class="lean-proof-links" aria-label="Projective return proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/53892b68bc279bf5f0cb382c722ca23481809695/proofs/RootProjectiveAdapters_v2.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43376091927" target="_blank" rel="noopener">CI receipt</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/43073ed248bad45c94dd12aaa0dbc00a3ec64875/proofs/ProjectiveReturn.lean" target="_blank" rel="noopener">Pinned return source</a></nav>
         </article>
       </div>
-      <p class="lean-proof-note">These are Lean certificates, not a claim that Lean has resolved an unsolved problem in physics or mathematics. The sources are public and inspectable.</p>
+      <p class="lean-proof-note">Each closure fixes the displayed relation at its named carrier, frame, and field. The linked source and receipt make the path inspectable.</p>
+    </section>
+
+    <section class="section" id="physics-closures" aria-labelledby="physics-closures-title">
+      <p class="kicker">Exact physics / source-bound closure register</p>
+      <h2 id="physics-closures-title">What the constructions close</h2>
+      <p class="provenance">The record below states the exact physical relations established at their declared carriers, vacua, and regular points. Kernel certification, exact symbolic verification, and regular-branch receipts remain visibly distinct evidence layers.</p>
+      <div class="field-stack">
+        <article class="field-card">
+          <div>
+            <span class="field-label">W-0 / electroweak seam</span>
+            <h3>The declared electroweak vacuum returns one photon kernel and three massive directions.</h3>
+            <p>With <span class="mono">Q<sub>em</sub> = T<sub>3</sub> + Y</span>, <span class="mono">Y<sub>φ</sub> = 1/2</span>, and <span class="mono">φ<sub>0</sub> = (0, v/√2)ᵀ</span>, the exact tree-level mass matrix closes: its Higgs kinetic quadratic form, Hessian, rank, neutral diagonalization, photon and Z eigenvectors, and component charges all agree.</p>
+            <div class="native-strip"><a href="verification/receipts/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt"><strong>W-0 receipt</strong><span>15 / 15 exact symbolic checks</span></a></div>
+          </div>
+          <dl class="field-notes"><div><dt>Closure</dt><dd>One massless photon direction; three massive eigendirections; exact neutral rotation.</dd></div><div><dt>Office</dt><dd>Tree-level electroweak mass structure at the declared representation and vacuum.</dd></div></dl>
+        </article>
+
+        <article class="field-card">
+          <div>
+            <span class="field-label">W-1 / carrier adapter</span>
+            <h3>The declared carrier contains an exact electroweak <span class="mono">u(2)</span> read.</h3>
+            <p><span class="mono">𝔨 = so(1,1) ⊕ u(3)</span> has real dimension <span class="mono">10</span>. For the supplied transverse complex two-plane <span class="mono">P</span>, <span class="mono">c<sub>W</sub>(P)</span> has dimension <span class="mono">4</span>, and the exact carrier map supplies the <span class="mono">W⁺, W⁻, Z, A</span> coordinates.</p>
+            <div class="native-strip"><a href="verification/receipts/W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt"><strong>W-1 receipt</strong><span>15 / 15 exact symbolic checks</span></a></div>
+          </div>
+          <dl class="field-notes"><div><dt>Closure</dt><dd>Exact bracket isomorphism, normalized pairing, charge matrix, and unitary neutral coordinate map.</dd></div><div><dt>Open address</dt><dd>The transverse-plane selection remains an explicit provenance record.</dd></div></dl>
+        </article>
+
+        <article class="field-card">
+          <div>
+            <span class="field-label">C-1—C-10 / regular constrained branch</span>
+            <h3>The stated regular branch closes its geometry, cap, constraints, and mirror return.</h3>
+            <ul class="lean-proof-list">
+              <li><strong>C-1.</strong> At <code>Π⋆</code> and <code>Π<sub>vac</sub></code>, <code>rank D𝒮 = 16</code>, <code>dim 𝔨 = 10</code>, and the orbit rank is <code>10</code>.</li>
+              <li><strong>C-2—C-3.</strong> The magnetic cap is <code>b ≤ |χ|</code>; the regular branch is <code>b &lt; |χ|</code>; its image is the stated Lorentzian metric-and-field domain under the named Lorentzian two-form normal-form source.</li>
+              <li><strong>C-4—C-6.</strong> <code>Ψ = m·D𝒮</code> forces <code>m = 0</code>, hence <code>λ = B = 0</code> and <code>Δ = 0</code>; the recorded count is four degrees of freedom; the lapse/shift bracket has rank <code>64</code> and a four-dimensional kernel.</li>
+              <li><strong>C-7—C-10.</strong> The <code>ℤ₇</code> pullback, basis change, mirror field, and root-reflection CHSH identity close in their stated finite carriers.</li>
+            </ul>
+            <div class="native-strip"><a href="verification/receipts/RESIDUAL_LEDGER_v0_2.md"><strong>Residual ledger</strong><span>C-1 through C-10 and named open edges</span></a><a href="verification/receipts/VALIDATOR_KIT_B2_RECEIPT_v0_2.md"><strong>Validator receipt</strong><span>source-bound verifier record</span></a><a href="papers/suture-field/05a_suture_field_dynamics.pdf"><strong>Suture dynamics</strong><span>source paper</span></a></div>
+          </div>
+          <dl class="field-notes"><div><dt>Closure</dt><dd>Exact pointwise and branch-level relations are recorded at their stated domain and resolution.</dd></div><div><dt>Open edges</dt><dd>R-1 through R-12 remain named beside the closed record.</dd></div></dl>
+        </article>
+
+        <article class="field-card">
+          <div>
+            <span class="field-label">NDA-3 / native-domain adapter</span>
+            <h3>Body, SI, and English length standards are connected by exact rational transport.</h3>
+            <p>The international foot, furlong, and mile close as rational metre relations; the adapter also retains unit grammar, standard, calibration interval, and negative controls.</p>
+            <div class="native-strip"><a href="verification/receipts/NATIVE_DOMAIN_ADAPTER_ATLAS_RECEIPT_v0_3.txt"><strong>Atlas receipt</strong><span>18 / 18 rational checks</span></a><a href="verification/receipts/public-claim-registry-v0_3.json"><strong>Public registry</strong><span>hash-bound result index</span></a></div>
+          </div>
+          <dl class="field-notes"><div><dt>Closure</dt><dd><span class="mono">1 foot = 381/1250 metre</span>, with the stated furlong and mile consequences.</dd></div><div><dt>Office</dt><dd>Exact metrological transport between declared standards and a finite-resolution body record.</dd></div></dl>
+        </article>
+      </div>
     </section>
 
     <section class="section architecture-program-hero" id="llm-diaper" aria-labelledby="page-title">
