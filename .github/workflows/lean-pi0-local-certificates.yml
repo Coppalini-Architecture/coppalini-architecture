@@ -1,0 +1,56 @@
+name: Lean Pi_0 local certificates
+
+on:
+  push:
+    paths:
+      - 'proofs/StabilizerDim.lean'
+      - 'proofs/HiggsMass.lean'
+      - 'proofs/MultiplierElimination.lean'
+      - 'proofs/MagneticValueAtPi0.lean'
+      - '.github/workflows/lean-pi0-local-certificates.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/StabilizerDim.lean'
+      - 'proofs/HiggsMass.lean'
+      - 'proofs/MultiplierElimination.lean'
+      - 'proofs/MagneticValueAtPi0.lean'
+      - '.github/workflows/lean-pi0-local-certificates.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read source
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel elaboration of stabilizer dimension
+        shell: bash
+        run: |
+          lean --version
+          time lean proofs/StabilizerDim.lean
+      - name: Kernel elaboration of Higgs mass operator
+        shell: bash
+        run: time lean proofs/HiggsMass.lean
+      - name: Kernel elaboration of multiplier elimination
+        shell: bash
+        run: time lean proofs/MultiplierElimination.lean
+      - name: Kernel elaboration of magnetic value at Pi_0
+        shell: bash
+        run: lean proofs/MagneticValueAtPi0.lean
+      - name: Report provenance and source hashes
+        shell: bash
+        run: |
+          sha256sum proofs/StabilizerDim.lean proofs/HiggsMass.lean proofs/MultiplierElimination.lean proofs/MagneticValueAtPi0.lean
+          sha256sum .github/workflows/lean-pi0-local-certificates.yml
+          git rev-parse HEAD
