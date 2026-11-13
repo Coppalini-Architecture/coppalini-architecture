@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Architecture and executable programs, beginning with LLM Diaper: source-gated language output, exact verification instruments, mathematical carriers, and physical interfaces.">
+  <meta name="description" content="Lean 4 certificates, executable programs, exact verification instruments, mathematical carriers, and declared physical interfaces.">
   <title>Constructions — Coppalini Architecture</title>
   <link rel="canonical" href="https://eulershiddenl.ink/architecture">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -30,9 +30,54 @@
   </header>
 
   <main id="main">
-    <section class="hero architecture-program-hero" id="llm-diaper" aria-labelledby="page-title">
+    <section class="hero lean-proof-hero" id="lean-certificates" aria-labelledby="lean-certificates-title">
+      <p class="kicker">Lean 4 / exact finite certificates</p>
+      <h1 id="lean-certificates-title">Lean certificates</h1>
+      <p class="summary">A small public record of closed algebraic statements, compiled under Lean 4.33.0. Each certificate names the finite object, the theorem it establishes, the source, and its boundary.</p>
+      <div class="lean-proof-grid">
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">01</p>
+          <p class="tag">Root carrier</p>
+          <h2>A Lorentzian four-plane from an 8 × 4 integer carrier.</h2>
+          <p class="lean-proof-equation">G² = 5I</p>
+          <ul class="lean-proof-list">
+            <li><code>Π₀ᵀηΠ₀</code> is explicitly congruent to <code>diag(−2, 14, 1, 1)</code>.</li>
+            <li>Sixteen explicit integer directions map to the sixteen coordinates of the differential, each scaled by <code>30</code>.</li>
+          </ul>
+          <p class="lean-proof-boundary">Finite local certificate at <code>Π₀</code>; no global-rank or empirical-physics claim.</p>
+          <nav class="lean-proof-links" aria-label="Root carrier proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/RootCarrier.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-carrier-chsh.yml" target="_blank" rel="noopener">CI record</a></nav>
+        </article>
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">02</p>
+          <p class="tag">CHSH carrier</p>
+          <h2>The Tsirelson bound, with an exact saturation witness.</h2>
+          <p class="lean-proof-equation">CHSH² ≤ 8I &nbsp; · &nbsp; 2√2 attained</p>
+          <ul class="lean-proof-list">
+            <li>A sum-of-squares identity gives the bound for the displayed two-level carrier.</li>
+            <li>The Bell vector <code>(1, 0, 0, 1)</code> saturates it exactly.</li>
+          </ul>
+          <p class="lean-proof-boundary">A closed statement about the declared operator model; no laboratory-data claim.</p>
+          <nav class="lean-proof-links" aria-label="CHSH proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/CHSH.lean" target="_blank" rel="noopener">Lean source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-carrier-chsh.yml" target="_blank" rel="noopener">CI record</a></nav>
+        </article>
+        <article class="lean-proof-card">
+          <p class="lean-proof-index">03</p>
+          <p class="tag">Root / projective adapters</p>
+          <h2>Two exact conjugacies, without a numerical approximation layer.</h2>
+          <p class="lean-proof-equation">PHP⁻¹ = M &nbsp; · &nbsp; ZCZ⁻¹ = iM</p>
+          <ul class="lean-proof-list">
+            <li>The real bridge is certified over <code>ℚ(√5)</code>.</li>
+            <li>The central lift is certified over Gaussian integers, together with the projective-return witness.</li>
+          </ul>
+          <p class="lean-proof-boundary">Finite matrix conjugacies only; interpretation stays outside the certificate.</p>
+          <nav class="lean-proof-links" aria-label="Projective adapter proof links"><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/RootProjectiveAdapters.lean" target="_blank" rel="noopener">Adapter source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/blob/site-r57/proofs/ProjectiveReturn.lean" target="_blank" rel="noopener">Return source</a><a href="https://github.com/Coppalini-Architecture/coppalini-architecture/actions/workflows/lean-root-projective-adapters.yml" target="_blank" rel="noopener">CI record</a></nav>
+        </article>
+      </div>
+      <p class="lean-proof-note">These are Lean certificates, not a claim that Lean has resolved an unsolved problem in physics or mathematics. The sources are public and inspectable.</p>
+    </section>
+
+    <section class="section architecture-program-hero" id="llm-diaper" aria-labelledby="page-title">
       <p class="kicker">Architecture / working program 01 / version 1.2.0</p>
-      <h1 id="page-title">LLM Diaper</h1>
+      <h2 id="page-title">LLM Diaper</h2>
       <p class="summary">A small Python program that checks candidate model output line by line. Exact rational arithmetic and externally supplied keyed references can pass; unsupported prose is classified as open. The complete candidate is released only when every line meets the declared check.</p>
       <div class="program-action-row">
         <a class="program-primary" href="downloads/llm-diaper-1.2.0.zip" download>Download v1.2.0 source + tests</a>
