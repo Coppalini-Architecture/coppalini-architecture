@@ -13,8 +13,10 @@
   padding: clamp(2.5rem, 6vw, 4.75rem) 0 clamp(2.2rem, 4vw, 3.5rem);
   border-bottom: 1px solid var(--line);
 }
-.about-portrait-frame { display: block; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.about-portrait-frame { display: block; margin: 0; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.about-portrait-frame picture { display: block; }
 .about-portrait { display: block; width: 100%; height: clamp(14rem, 25vw, 17.5rem); object-fit: cover; object-position: 50% 22%; filter: saturate(.93) contrast(1.02); }
+.about-portrait-frame figcaption { padding: .55rem .65rem; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .055em; line-height: 1.4; text-transform: uppercase; }
 .about-intro { max-width: 43rem; }
 .about-intro .eyebrow { margin-bottom: .65rem; }
 .about-intro h1 { max-width: none; font-size: clamp(2.25rem, 4vw, 3.4rem); letter-spacing: -.035em; }
@@ -29,7 +31,11 @@
 .about-principles > div:last-child { border-right: 0; }
 .about-principles strong { display: block; color: var(--red); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 .about-principles span { display: block; margin-top: .5rem; color: var(--muted); font-size: .9rem; line-height: 1.48; }
-.about-fieldwork { max-width: 48rem; }
+.about-fieldwork { max-width: 52rem; }
+.about-fieldwork > p:not(.eyebrow) { margin-top: 1rem; }
+.about-fieldwork > p:not(.eyebrow):first-of-type { margin-top: 0; }
+.about-github-links { display: flex; flex-wrap: wrap; gap: .65rem 1.1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .82rem; }
+.about-github-links a { color: var(--blue); text-underline-offset: .18em; }
 .about-contact { border-bottom: 0; }
 .about-contacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 1.25rem 0 0; border: 1px solid var(--line); background: var(--line); }
 .about-contacts > div { padding: 1rem 1.1rem; background: var(--surface); }
