@@ -421,7 +421,7 @@ theorem jp_exact (c u v : K) (i j : Nat)
 theorem variational_wall_relation (c : K) (two_ne : (2:K) ≠ 0)
     (d : Dual K) :
     PairKernel c 0 0 d ↔ ∃ t : K, d = lift c t := by
-  rw [pairing_zero_iff_matrix c 0 0 d two_ne]
+  rw [pairing_zero_iff_matrix c 0 0 d two_ne, matrix_kernel_iff c 0 0 d]
   exact wall_kernel c two_ne d
 
 -- Removing the m33 output coordinate leaves fifteen independent dual rows.
@@ -439,7 +439,8 @@ theorem variational_wall_has_relation (c : K)
     (two_ne : (2:K) ≠ 0) :
     ∃ d : Dual K, PairKernel c 0 0 d ∧ d ≠ lift c 0 := by
   obtain ⟨d, hd, hn⟩ := nonzero_wall c two_ne
-  exact ⟨d, (pairing_zero_iff_matrix c 0 0 d two_ne).mpr hd, hn⟩
+  have hm : MatrixKernel c 0 0 d := (matrix_kernel_iff c 0 0 d).mpr hd
+  exact ⟨d, (pairing_zero_iff_matrix c 0 0 d two_ne).mpr hm, hn⟩
 
 
 end SutureDifferentialBridge
