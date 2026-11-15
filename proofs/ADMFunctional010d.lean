@@ -41,6 +41,7 @@ namespace ADMFunctional010d
 structure StokesSlice (Field Scalar : Type) where
   addField : Field → Field → Field
   mulField : Field → Field → Field
+  multiply_comm : ∀ f g, mulField f g = mulField g f
   deriv : Fin 3 → Field → Field
   integral : Field → Scalar
   zeroScalar : Scalar
@@ -93,6 +94,25 @@ theorem second_ibp_commuting_scalar {Field Scalar : Type}
     s.integral (s.mulField f (s.deriv i (s.deriv j h))) =
       s.integral (s.mulField (s.deriv i (s.deriv j f)) h) := by
   rw [second_integration_by_parts s i j f h, hcomm]
+
+-- Formal derivative-bearing Palatini terms transport by the same Stokes
+-- interface. The Palatini variation itself must be supplied by geometry.
+theorem palatini_mixed_second_transfer {Field Scalar : Type}
+    (s : StokesSlice Field Scalar) (i j : Fin 3) (N h : Field) :
+    s.integral (s.mulField N (s.deriv i (s.deriv j h))) =
+      s.integral (s.mulField h (s.deriv j (s.deriv i N))) := by
+  calc
+    s.integral (s.mulField N (s.deriv i (s.deriv j h))) =
+      s.integral (s.mulField (s.deriv j (s.deriv i N)) h) :=
+        second_integration_by_parts s i j N h
+    _ = s.integral (s.mulField h (s.deriv j (s.deriv i N))) := by
+      rw [s.multiply_comm (s.deriv j (s.deriv i N)) h]
+
+theorem palatini_trace_laplacian_transfer {Field Scalar : Type}
+    (s : StokesSlice Field Scalar) (i : Fin 3) (N trh : Field) :
+    s.integral (s.mulField N (s.deriv i (s.deriv i trh))) =
+      s.integral (s.mulField trh (s.deriv i (s.deriv i N))) := by
+  exact palatini_mixed_second_transfer s i i N trh
 
 /-! ## Local ADM current from exact 010c tensor carriers -/
 
@@ -206,6 +226,31 @@ theorem einstein_maxwell_normal_normal_conditional
   rw [gravity_normal_normal_from_boundary g boundary_flux_zero,
       maxwell_bracket_equals_momentum e]
 
+/-! ## Explicit residual / nonzero boundary negative control -/
+
+def boundaryWitness : NormalCell :=
+  { N := 1
+    M := 0
+    dN := ⟨0, 0, 0⟩
+    dM := ⟨0, 0, 0⟩
+    hN := ⟨0, 0, 0, 0, 0, 0⟩
+    hM := ⟨1, 0, 0, 0, 0, 0⟩
+    pi := ⟨1, 0, 0, 0, 0, 0⟩
+    divPi := ⟨0, 0, 0⟩ }
+
+-- If the integrated divergence survives, the normal bracket differs from
+-- the momentum term. The premise of the closure theorem is load-bearing.
+theorem nonzero_boundary_residual :
+    scalarHessianBracket boundaryWitness = 2 ∧
+    gravMomentumSmear boundaryWitness = 0 ∧
+    gravCurrentDivergence boundaryWitness = 2 := by
+  decide
+
+theorem boundary_hypothesis_is_necessary_on_witness :
+    scalarHessianBracket boundaryWitness ≠
+      gravMomentumSmear boundaryWitness := by
+  decide
+
 /-! ## Gauss-improved momentum is a compatible second presentation -/
 
 def improvedDiffeomorphism (momentum gaussContribution : Int) : Int :=
@@ -232,10 +277,14 @@ theorem normal_normal_improved_gauge_presentation
 #print axioms first_integration_by_parts
 #print axioms second_integration_by_parts
 #print axioms second_ibp_commuting_scalar
+#print axioms palatini_mixed_second_transfer
+#print axioms palatini_trace_laplacian_transfer
 #print axioms gravitational_divergence_identity
 #print axioms sum_gravitational_divergence_identity
 #print axioms gravity_normal_normal_from_boundary
 #print axioms maxwell_bracket_equals_momentum
+#print axioms nonzero_boundary_residual
+#print axioms boundary_hypothesis_is_necessary_on_witness
 #print axioms einstein_maxwell_normal_normal_conditional
 #print axioms normal_normal_improved_gauge_presentation
 
