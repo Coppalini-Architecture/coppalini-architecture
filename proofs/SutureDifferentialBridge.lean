@@ -589,6 +589,37 @@ theorem flux_taylor_exact (c u v : K) (V : Variation K) (t : K)
   rw [flux_variation_exact c u v V i j hi hj] at h
   exact h
 
+
+-- The terminal proof carries the original quadratic map, its differential,
+-- the all-variation adjoint kernel, and the critical one-dimensional fibre.
+theorem suture_differential_spine (c u v : K)
+    (two_ne : (2:K) ≠ 0) :
+    ((∀ d : Dual K, PairKernel c u v d → d = lift c 0) ↔
+      (u ≠ 0 ∨ v ≠ 0))
+    ∧
+    (∀ (V : Variation K) (t : K) (i j : Nat),
+      i < 4 → j < 4 →
+      bilinear etaHat (shifted t (p c u v) V)
+        (shifted t (p c u v) V) i j =
+      bilinear etaHat (p c u v) (p c u v) i j +
+        t * dg c u v V i j + (t*t) * bilinear etaHat V V i j)
+    ∧
+    (∀ (V : Variation K) (t : K) (i j : Nat),
+      i < 4 → j < 4 →
+      bilinear cHat (shifted t (p c u v) V)
+        (shifted t (p c u v) V) i j =
+      bilinear cHat (p c u v) (p c u v) i j +
+        t * df c u v V i j + (t*t) * bilinear cHat V V i j)
+    ∧
+    (∀ d : Dual K, PairKernel c 0 0 d ↔
+      ∃ t : K, d = lift c t) := by
+  exact ⟨
+    variational_full_rank_iff c u v two_ne,
+    (fun V t i j hi hj => metric_taylor_exact c u v V t i j hi hj),
+    (fun V t i j hi hj => flux_taylor_exact c u v V t i j hi hj),
+    (fun d => variational_wall_relation c two_ne d)⟩
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -608,3 +639,4 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.quadratic_taylor
 #print axioms SutureDifferentialBridge.metric_taylor_exact
 #print axioms SutureDifferentialBridge.flux_taylor_exact
+#print axioms SutureDifferentialBridge.suture_differential_spine
