@@ -316,15 +316,15 @@ theorem matrix_kernel_iff (c u v : K) (d : Dual K) :
     have e71 := h 7 1 (by omega) (by omega)
     have e72 := h 7 2 (by omega) (by omega)
     have e73 := h 7 3 (by omega) (by omega)
-    grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7,
-      pN, jpM, p, jp, mVal, nVal]
+    simp [pN, jpM, p, jp, mVal, nVal] at e00 e01 e02 e03 e10 e11 e12 e13 e20 e21 e22 e23 e30 e31 e32 e33 e40 e41 e42 e43 e50 e51 e52 e53 e60 e61 e62 e63 e70 e71 e72 e73
+    grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7]
   · intro h i j hi hj
     have hi8 : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
     have hj4 : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
     rcases hi8 with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
     all_goals rcases hj4 with rfl | rfl | rfl | rfl
-    all_goals grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7,
-      pN, jpM, p, jp, mVal, nVal]
+    all_goals simp [pN, jpM, p, jp, mVal, nVal]
+    all_goals grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7]
 
 -- Now rank is stated against the actual P*n = J*P*m pairing, not a proxy.
 theorem matrix_rank_criterion (c u v : K) (two_ne : (2:K) ≠ 0) :
