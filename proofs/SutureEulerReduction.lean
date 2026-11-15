@@ -119,8 +119,12 @@ theorem bracket_inverse_right (a : Aux) :
 
 theorem bracket_kernel (a : Aux) (h : bracket a = zero) :
     a = zero := by
-  have hh := congrArg (fun z => negative (bracket z)) h
-  simpa [bracket_inverse_right, bracket, negative, zero] using hh
+  have hh : a = negative (bracket zero) := by
+    simpa only [bracket_inverse_right] using
+      congrArg (fun z => negative (bracket z)) h
+  have hz : negative (bracket zero) = zero := by
+    simp [zero, negative, bracket]
+  exact hh.trans hz
 
 theorem bracket_surjective (b : Aux) :
     ∃ a : Aux, bracket a = b := by
