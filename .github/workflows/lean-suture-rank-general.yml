@@ -27,5 +27,5 @@ jobs:
           lean proofs/SutureRankGeneral.lean
       - name: Retained SHA
         run: |
-          sha256sum proofs/SutureRankGeneral.lean
+          sha256sum proofs/SutureRankGeneral.lean .github/workflows/lean-suture-rank-general.yml
           git rev-parse HEAD
