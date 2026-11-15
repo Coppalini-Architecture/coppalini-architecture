@@ -43,9 +43,12 @@ theorem product_variation (a b da db t : Int) :
 theorem symmetric_electric_pair (g a b da db : Int) :
     g*(da*b + a*db) + g*(db*a + b*da) =
       2*g*(da*b + a*db) := by
-  simp only [Int.mul_add, Int.add_mul, Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-  omega
+  have hp : g * (db*a + b*da) = g * (da*b + a*db) := by
+    congr 1
+    ac_rfl
+  rw [hp]
+  have ht : (2 : Int) * g = g + g := by omega
+  rw [ht, Int.add_mul]
 
 /-! ## F=dA and U(1) Gauss transformation -/
 
@@ -103,10 +106,12 @@ theorem gauss_preserves_component_energy
 theorem magnetic_pair (f dij dji : Int) :
     f * (dij - dji) + (-f) * (dji - dij) =
       2 * f * (dij - dji) := by
-  simp only [Int.mul_sub, Int.neg_mul, Int.mul_neg,
-             Int.add_mul, Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-  omega
+  have hp : (-f) * (dji - dij) = f * (dij - dji) := by
+    rw [Int.neg_mul, Int.mul_sub]
+    omega
+  rw [hp]
+  have ht : (2 : Int) * f = f + f := by omega
+  rw [ht, Int.add_mul]
 
 /-! ## Maxwell normal–normal Poisson integrand -/
 
@@ -182,7 +187,7 @@ theorem maxwell_physical_normalization
     physicalE μ invRoot ELower * physicalK root invμ FUpper =
         (μ * invμ) * (root * invRoot) * (ELower * FUpper) := by
       simp only [physicalE, physicalK]
-      ac_rfl
+      simp only [Rat.mul_assoc, Rat.mul_comm, Rat.mul_left_comm]
     _ = ELower * FUpper := by simp [hμ, hroot]
 
 /-! ## Spatial momentum constraint and Gauss improvement -/
