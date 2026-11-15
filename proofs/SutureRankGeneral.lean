@@ -176,6 +176,37 @@ theorem rank_criterion (c u v : K) (two_ne : (2:K) ≠ 0) :
   · intro h d hd
     exact regular_kernel c u v two_ne h d hd
 
+-- Euclidean positivity is a separate, explicit property of the scalar domain.
+def PositiveTwoSquare (K : Type) [Lean.Grind.Field K] : Prop :=
+  ∀ a b : K, a*a + b*b = 0 → a = 0 ∧ b = 0
+
+theorem euclidean_nonzero (u v : K) (hp : PositiveTwoSquare K) :
+    (u*u + v*v ≠ 0) ↔ (u ≠ 0 ∨ v ≠ 0) := by
+  constructor
+  · intro h
+    by_cases hu : u = 0
+    · by_cases hv : v = 0
+      · subst u
+        subst v
+        have z : (0:K)*(0:K) + (0:K)*(0:K) = 0 := by grind
+        exact False.elim (h z)
+      · exact Or.inr hv
+    · exact Or.inl hu
+  · intro h hnorm
+    obtain ⟨hu, hv⟩ := hp u v hnorm
+    grind
+
+-- The rotation-invariant rank criterion (over a positive Euclidean domain).
+theorem euclidean_rank_criterion (c u v : K)
+    (two_ne : (2:K) ≠ 0) (hp : PositiveTwoSquare K) :
+    (∀ d : Dual K, Kernel c u v d → d = lift c 0) ↔
+      u*u + v*v ≠ 0 := by
+  rw [rank_criterion c u v two_ne]
+  exact (euclidean_nonzero u v hp).symm
+
+
 end SutureRankGeneral
 #print axioms SutureRankGeneral.rank_criterion
 #print axioms SutureRankGeneral.wall_kernel
+
+#print axioms SutureRankGeneral.euclidean_rank_criterion
