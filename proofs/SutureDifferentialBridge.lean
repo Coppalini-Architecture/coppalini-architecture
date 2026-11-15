@@ -126,6 +126,7 @@ theorem basis_pair (c u v : K) (d : Dual K) (i j : Nat)
   rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
   all_goals rcases jcases with rfl | rfl | rfl | rfl
   all_goals simp [adjointPair, basis, sum8, sum4]
+  all_goals grind
 
 def PairKernel (c u v : K) (d : Dual K) : Prop :=
   ∀ V : Variation K, pairing c u v d V = 0
@@ -208,6 +209,7 @@ theorem pairing_zero_iff_adjoint (c u v : K) (d : Dual K)
       h 7 3 (by omega) (by omega)
     rw [pairing_adjoint]
     simp [adjointPair, sum8, sum4, hz00, hz01, hz02, hz03, hz10, hz11, hz12, hz13, hz20, hz21, hz22, hz23, hz30, hz31, hz32, hz33, hz40, hz41, hz42, hz43, hz50, hz51, hz52, hz53, hz60, hz61, hz62, hz63, hz70, hz71, hz72, hz73]
+    grind
 
 
 end SutureDifferentialBridge
