@@ -277,54 +277,79 @@ def jpM (c u v : K) (d : Dual K) (i j : Nat) : K :=
  jp c u v i 2 * mVal d 2 j +
  jp c u v i 3 * mVal d 3 j
 
+def RawRow (c u v : K) (d : Dual K) (i : Nat) : Prop :=
+ pN c u v d i 0 = jpM c u v d i 0 ∧
+ pN c u v d i 1 = jpM c u v d i 1 ∧
+ pN c u v d i 2 = jpM c u v d i 2 ∧
+ pN c u v d i 3 = jpM c u v d i 3
+
+-- Thirty-two concrete scalar equations, packaged in eight four-component rows.
 def MatrixKernel (c u v : K) (d : Dual K) : Prop :=
- ∀ i j : Nat, i < 8 → j < 4 → pN c u v d i j = jpM c u v d i j
+ ∀ i : Nat, i < 8 → RawRow c u v d i
+
+theorem row0_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 0 ↔ row0 d := by
+  grind [RawRow, row0, pN, jpM, p, jp, mVal, nVal]
+
+theorem row1_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 1 ↔ row1 d := by
+  grind [RawRow, row1, pN, jpM, p, jp, mVal, nVal]
+
+theorem row2_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 2 ↔ row2 c d := by
+  grind [RawRow, row2, pN, jpM, p, jp, mVal, nVal]
+
+theorem row3_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 3 ↔ row3 c d := by
+  grind [RawRow, row3, pN, jpM, p, jp, mVal, nVal]
+
+theorem row4_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 4 ↔ row4 u v d := by
+  grind [RawRow, row4, pN, jpM, p, jp, mVal, nVal]
+
+theorem row5_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 5 ↔ row5 u v d := by
+  grind [RawRow, row5, pN, jpM, p, jp, mVal, nVal]
+
+theorem row6_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 6 ↔ row6 d := by
+  grind [RawRow, row6, pN, jpM, p, jp, mVal, nVal]
+
+theorem row7_equiv (c u v : K) (d : Dual K) :
+    RawRow c u v d 7 ↔ row7 d := by
+  grind [RawRow, row7, pN, jpM, p, jp, mVal, nVal]
 
 theorem matrix_kernel_iff (c u v : K) (d : Dual K) :
     MatrixKernel c u v d ↔ Kernel c u v d := by
   constructor
   · intro h
-    have e00 := h 0 0 (by omega) (by omega)
-    have e01 := h 0 1 (by omega) (by omega)
-    have e02 := h 0 2 (by omega) (by omega)
-    have e03 := h 0 3 (by omega) (by omega)
-    have e10 := h 1 0 (by omega) (by omega)
-    have e11 := h 1 1 (by omega) (by omega)
-    have e12 := h 1 2 (by omega) (by omega)
-    have e13 := h 1 3 (by omega) (by omega)
-    have e20 := h 2 0 (by omega) (by omega)
-    have e21 := h 2 1 (by omega) (by omega)
-    have e22 := h 2 2 (by omega) (by omega)
-    have e23 := h 2 3 (by omega) (by omega)
-    have e30 := h 3 0 (by omega) (by omega)
-    have e31 := h 3 1 (by omega) (by omega)
-    have e32 := h 3 2 (by omega) (by omega)
-    have e33 := h 3 3 (by omega) (by omega)
-    have e40 := h 4 0 (by omega) (by omega)
-    have e41 := h 4 1 (by omega) (by omega)
-    have e42 := h 4 2 (by omega) (by omega)
-    have e43 := h 4 3 (by omega) (by omega)
-    have e50 := h 5 0 (by omega) (by omega)
-    have e51 := h 5 1 (by omega) (by omega)
-    have e52 := h 5 2 (by omega) (by omega)
-    have e53 := h 5 3 (by omega) (by omega)
-    have e60 := h 6 0 (by omega) (by omega)
-    have e61 := h 6 1 (by omega) (by omega)
-    have e62 := h 6 2 (by omega) (by omega)
-    have e63 := h 6 3 (by omega) (by omega)
-    have e70 := h 7 0 (by omega) (by omega)
-    have e71 := h 7 1 (by omega) (by omega)
-    have e72 := h 7 2 (by omega) (by omega)
-    have e73 := h 7 3 (by omega) (by omega)
-    simp [pN, jpM, p, jp, mVal, nVal] at e00 e01 e02 e03 e10 e11 e12 e13 e20 e21 e22 e23 e30 e31 e32 e33 e40 e41 e42 e43 e50 e51 e52 e53 e60 e61 e62 e63 e70 e71 e72 e73
-    grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7]
-  · intro h i j hi hj
+    have h0 : RawRow c u v d 0 := h 0 (by omega)
+    have h1 : RawRow c u v d 1 := h 1 (by omega)
+    have h2 : RawRow c u v d 2 := h 2 (by omega)
+    have h3 : RawRow c u v d 3 := h 3 (by omega)
+    have h4 : RawRow c u v d 4 := h 4 (by omega)
+    have h5 : RawRow c u v d 5 := h 5 (by omega)
+    have h6 : RawRow c u v d 6 := h 6 (by omega)
+    have h7 : RawRow c u v d 7 := h 7 (by omega)
+    exact ⟨(row0_equiv c u v d).mp h0,
+      (row1_equiv c u v d).mp h1,
+      (row2_equiv c u v d).mp h2,
+      (row3_equiv c u v d).mp h3,
+      (row4_equiv c u v d).mp h4,
+      (row5_equiv c u v d).mp h5,
+      (row6_equiv c u v d).mp h6,
+      (row7_equiv c u v d).mp h7⟩
+  · intro h i hi
     have hi8 : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
-    have hj4 : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
     rcases hi8 with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
-    all_goals rcases hj4 with rfl | rfl | rfl | rfl
-    all_goals simp [pN, jpM, p, jp, mVal, nVal]
-    all_goals grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7]
+    · exact (row0_equiv c u v d).mpr (h.1)
+    · exact (row1_equiv c u v d).mpr (h.2.1)
+    · exact (row2_equiv c u v d).mpr (h.2.2.1)
+    · exact (row3_equiv c u v d).mpr (h.2.2.2.1)
+    · exact (row4_equiv c u v d).mpr (h.2.2.2.2.1)
+    · exact (row5_equiv c u v d).mpr (h.2.2.2.2.2.1)
+    · exact (row6_equiv c u v d).mpr (h.2.2.2.2.2.2.1)
+    · exact (row7_equiv c u v d).mpr (h.2.2.2.2.2.2.2)
 
 -- Now rank is stated against the actual P*n = J*P*m pairing, not a proxy.
 theorem matrix_rank_criterion (c u v : K) (two_ne : (2:K) ≠ 0) :
