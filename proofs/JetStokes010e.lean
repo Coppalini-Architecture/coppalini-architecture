@@ -85,7 +85,7 @@ theorem add_zero (a : Jet3) : add a zero = a := by
 
 theorem add_neg (a : Jet3) : add a (neg a) = zero := by
   cases a with
-  | mk ac ax ay az => simp [add, neg, zero]
+  | mk ac ax ay az => simp [add, neg, zero, Int.add_neg_self]
 
 theorem neg_neg (a : Jet3) : neg (neg a) = a := by
   cases a with
@@ -143,9 +143,7 @@ theorem D_mul (i : Fin 3) (a b : Jet3) :
       cases h with
       | inl h1 =>
           have h0 : i.val ≠ 0 := by omega
-          simp only [D, h0, h1, ↓reduceIte, mul, add, Jet3.mk.injEq]
-          simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-          omega
+          simp [D, h0, h1, mul, add, Jet3.mk.injEq] <;> omega
       | inr h2 =>
           have h0 : i.val ≠ 0 := by omega
           have h1 : i.val ≠ 1 := by omega
