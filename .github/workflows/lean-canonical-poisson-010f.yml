@@ -1,0 +1,63 @@
+name: Lean Canonical Poisson 010f
+
+on:
+  push:
+    paths:
+      - 'proofs/CanonicalPoisson010f.lean'
+      - 'proofs/LinearTransport010f.lean'
+      - 'proofs/FourierTorus010e.lean'
+      - 'proofs/JetStokes010e.lean'
+      - '.github/workflows/lean-canonical-poisson-010f.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/CanonicalPoisson010f.lean'
+      - 'proofs/LinearTransport010f.lean'
+      - '.github/workflows/lean-canonical-poisson-010f.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel compile 010a through 010f
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMGravity010c.olean proofs/ADMGravity010c.lean | tee /tmp/010c.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMFunctional010d.olean proofs/ADMFunctional010d.lean | tee /tmp/010d.log
+          LEAN_PATH=build lean --root=. -o build/proofs/JetStokes010e.olean proofs/JetStokes010e.lean | tee /tmp/010e-jet.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/010e-fourier.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CanonicalPoisson010f.olean proofs/CanonicalPoisson010f.lean | tee /tmp/010f.log
+          if [ -f proofs/LinearTransport010f.lean ]; then
+             LEAN_PATH=build lean --root=. proofs/LinearTransport010f.lean | tee /tmp/010f-transport.log
+          fi
+      - name: Audit checked axioms and unresolved placeholders
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010{a,b,c,d}.log /tmp/010e-jet.log /tmp/010e-fourier.log /tmp/010f.log
+          if [ -f /tmp/010f-transport.log ]; then
+            ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010f-transport.log
+          fi
+      - name: Hash sources and report immutable commit
+        shell: bash
+        run: |
+          sha256sum proofs/SutureDirac010a.lean proofs/Maxwell010b.lean proofs/ADMGravity010c.lean proofs/ADMFunctional010d.lean proofs/JetStokes010e.lean proofs/FourierTorus010e.lean proofs/CanonicalPoisson010f.lean
+          if [ -f proofs/LinearTransport010f.lean ]; then sha256sum proofs/LinearTransport010f.lean; fi
+          sha256sum .github/workflows/lean-canonical-poisson-010f.yml
+          git rev-parse HEAD
