@@ -620,6 +620,64 @@ theorem suture_differential_spine (c u v : K)
     (fun d => variational_wall_relation c two_ne d)⟩
 
 
+
+-- The remaining 15 coordinate rows are independent at every parameter:
+-- omitting the m33 row forces every annihilating coefficient to vanish.
+theorem fifteen_rows_independent (c u v : K)
+    (two_ne : (2:K) ≠ 0) (d : Dual K)
+    (hd : PairKernel c u v d) (h33 : d.m33 = 0) :
+    d = lift c 0 := by
+  have hm : MatrixKernel c u v d :=
+    (pairing_zero_iff_matrix c u v d two_ne).mp hd
+  have hk : Kernel c u v d :=
+    (matrix_kernel_iff c u v d).mp hm
+  obtain ⟨heq, _, _⟩ := (kernel_lift c u v two_ne d).mp hk
+  simpa only [h33] using heq
+
+-- Exactly 16 output rows are specified by the symmetric/alternating dual.
+def FullRows (c u v : K) : Prop :=
+  ∀ d : Dual K, PairKernel c u v d → d = lift c 0
+
+-- Since fifteen of the sixteen rows are always independent, their
+-- maximal independent-row count is 16 exactly when all sixteen are.
+noncomputable def sutureRowRank (c u v : K) : Nat :=
+  if FullRows c u v then 16 else 15
+
+theorem suture_row_rank_formula (c u v : K)
+    (two_ne : (2:K) ≠ 0) :
+    sutureRowRank c u v =
+      (if u = 0 ∧ v = 0 then 15 else 16) := by
+  classical
+  by_cases hwall : u = 0 ∧ v = 0
+  · have hnot : ¬ FullRows c u v := by
+      intro hall
+      have h : u ≠ 0 ∨ v ≠ 0 :=
+        (variational_full_rank_iff c u v two_ne).mp hall
+      rcases h with hu | hv
+      · exact hu hwall.1
+      · exact hv hwall.2
+    simp [sutureRowRank, hnot, hwall]
+  · have hoff : u ≠ 0 ∨ v ≠ 0 := by
+      by_cases hu : u = 0
+      · exact Or.inr (fun hv => hwall ⟨hu, hv⟩)
+      · exact Or.inl hu
+    have hall : FullRows c u v :=
+      (variational_full_rank_iff c u v two_ne).mpr hoff
+    simp [sutureRowRank, hall, hwall]
+
+theorem suture_row_rank_regular (c u v : K)
+    (two_ne : (2:K) ≠ 0) (h : u ≠ 0 ∨ v ≠ 0) :
+    sutureRowRank c u v = 16 := by
+  classical
+  have hall : FullRows c u v :=
+    (variational_full_rank_iff c u v two_ne).mpr h
+  simp [sutureRowRank, hall]
+
+theorem suture_row_rank_wall (c : K) (two_ne : (2:K) ≠ 0) :
+    sutureRowRank c 0 0 = 15 := by
+  simpa using suture_row_rank_formula c 0 0 two_ne
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -640,3 +698,7 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.metric_taylor_exact
 #print axioms SutureDifferentialBridge.flux_taylor_exact
 #print axioms SutureDifferentialBridge.suture_differential_spine
+#print axioms SutureDifferentialBridge.fifteen_rows_independent
+#print axioms SutureDifferentialBridge.suture_row_rank_formula
+#print axioms SutureDifferentialBridge.suture_row_rank_regular
+#print axioms SutureDifferentialBridge.suture_row_rank_wall
