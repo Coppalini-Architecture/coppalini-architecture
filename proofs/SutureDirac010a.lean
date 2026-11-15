@@ -111,6 +111,51 @@ theorem cotangent_all_components
   intro i
   exact cotangent_coefficient (p i) (pq i) (dr i) (J i a) (dx i)
 
+
+-- Summed cotangent identity: the shift is accumulated across every auxiliary
+-- address, rather than merely checked for isolated coefficients.
+structure CotTerm where
+  pq : Int
+  dr : Int
+  j : Int
+
+def beforeTerm (dx : Int) (t : CotTerm) : Int :=
+  t.pq * (t.dr + t.j * dx)
+
+def shiftTerm (t : CotTerm) : Int := t.pq * t.j
+
+def afterTerm (t : CotTerm) : Int := t.pq * t.dr
+
+theorem cotangent_sum_aux (xs : List CotTerm) (dx : Int) :
+    (xs.map (beforeTerm dx)).sum =
+    (xs.map shiftTerm).sum * dx + (xs.map afterTerm).sum := by
+  induction xs with
+  | nil => simp [beforeTerm, shiftTerm, afterTerm]
+  | cons x xs ih =>
+      simp only [List.map_cons, List.sum_cons]
+      rw [ih]
+      simp only [beforeTerm, shiftTerm, afterTerm]
+      rw [Int.mul_add, Int.add_mul, Int.mul_assoc]
+      ac_rfl
+
+theorem cotangent_sum (xs : List CotTerm) (p dx : Int) :
+    p * dx + (xs.map (beforeTerm dx)).sum =
+      (p + (xs.map shiftTerm).sum) * dx +
+        (xs.map afterTerm).sum := by
+  rw [cotangent_sum_aux, Int.add_mul]
+  ac_rfl
+
+def sixteenTerms (pq dr j : Fin 16 → Int) : List CotTerm :=
+  List.ofFn (fun i => ⟨pq i, dr i, j i⟩)
+
+theorem cotangent_16
+    (pq dr : Fin 16 → Int) (J : Fin 16 → Fin 4 → Int)
+    (a : Fin 4) (p dx : Int) :
+    p * dx + ((sixteenTerms pq dr (fun i => J i a)).map (beforeTerm dx)).sum =
+      (p + ((sixteenTerms pq dr (fun i => J i a)).map shiftTerm).sum) * dx +
+        ((sixteenTerms pq dr (fun i => J i a)).map afterTerm).sum := by
+  exact cotangent_sum (sixteenTerms pq dr (fun i => J i a)) p dx
+
 /-! ## The canonical Poisson 1- and 2-jet calculation -/
 
 -- Two base pairs (x_0,p_0), (x_1,p_1), and one auxiliary pair (q,P_q).
@@ -211,6 +256,8 @@ theorem dirac_exterior_rhs (ordinary : Int) (F : Fin 4 → Int) :
 #print axioms C64_fiber_right_inverse
 #print axioms C64_fiber_left_inverse
 #print axioms cotangent_coefficient
+#print axioms cotangent_sum
+#print axioms cotangent_16
 #print axioms shifted_p0_commutes_C
 #print axioms shifted_p1_commutes_C
 #print axioms shifted_momenta_commute
