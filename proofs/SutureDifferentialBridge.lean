@@ -79,6 +79,42 @@ theorem pairing_adjoint (c u v : K) (d : Dual K) (V : Variation K) :
   grind [pairing, adjointPair, dg, df, adjoint,
     sum4, sum8, etaP, cP, mVal, nVal]
 
+-- Multiplying the adjoint equation by C sends its row 0 to 1.
+theorem flip_0 (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (jpM c u v d 0 j - pN c u v d 0 j = -adjoint c u v d 1 j) ∧
+    (jpM c u v d 1 j - pN c u v d 1 j = adjoint c u v d 0 j) := by
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [jpM, pN, adjoint, sum4, etaP, cP, p, jp, mVal, nVal]
+
+-- Multiplying the adjoint equation by C sends its row 2 to 3.
+theorem flip_2 (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (jpM c u v d 2 j - pN c u v d 2 j = -adjoint c u v d 3 j) ∧
+    (jpM c u v d 3 j - pN c u v d 3 j = adjoint c u v d 2 j) := by
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [jpM, pN, adjoint, sum4, etaP, cP, p, jp, mVal, nVal]
+
+-- Multiplying the adjoint equation by C sends its row 4 to 5.
+theorem flip_4 (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (jpM c u v d 4 j - pN c u v d 4 j = -adjoint c u v d 5 j) ∧
+    (jpM c u v d 5 j - pN c u v d 5 j = adjoint c u v d 4 j) := by
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [jpM, pN, adjoint, sum4, etaP, cP, p, jp, mVal, nVal]
+
+-- Multiplying the adjoint equation by C sends its row 6 to 7.
+theorem flip_6 (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (jpM c u v d 6 j - pN c u v d 6 j = -adjoint c u v d 7 j) ∧
+    (jpM c u v d 7 j - pN c u v d 7 j = adjoint c u v d 6 j) := by
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [jpM, pN, adjoint, sum4, etaP, cP, p, jp, mVal, nVal]
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
+#print axioms SutureDifferentialBridge.flip_0
+#print axioms SutureDifferentialBridge.flip_2
+#print axioms SutureDifferentialBridge.flip_4
+#print axioms SutureDifferentialBridge.flip_6
