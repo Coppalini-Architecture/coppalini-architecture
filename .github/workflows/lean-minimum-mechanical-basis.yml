@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           echo '93f289f0f82f36028551238f19da3b56e985775e62afab23402a50eec0c571a5  proofs/MinimumMechanicalBasis.lean' | sha256sum -c -
-          echo '98613d143e8924ce2d4c59abfa906e12431d1d562cdcf202c5a7791f9d2ba873  proofs/MinimumMechanicalSpine.lean' | sha256sum -c -
+          echo '31d8e34ba26abe4ead21bad465088e01b6e46c028fc850f6a0f35f237184106c  proofs/MinimumMechanicalSpine.lean' | sha256sum -c -
       - name: Install Lean 4.33.0
         shell: bash
         run: |
