@@ -368,3 +368,7 @@ end SutureRankGeneral
 #print axioms SutureRankGeneral.wall_kernel
 
 #print axioms SutureRankGeneral.euclidean_rank_criterion
+
+#print axioms SutureRankGeneral.matrix_kernel_iff
+#print axioms SutureRankGeneral.matrix_rank_criterion
+#print axioms SutureRankGeneral.euclidean_matrix_rank_criterion
