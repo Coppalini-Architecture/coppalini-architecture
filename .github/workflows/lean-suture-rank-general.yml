@@ -1,0 +1,31 @@
+name: Lean Suture rank general
+
+on:
+  push:
+    paths:
+      - 'proofs/SutureRankGeneral.lean'
+      - '.github/workflows/lean-suture-rank-general.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile generic suture-rank proof
+        run: |
+          lean --version
+          lean proofs/SutureRankGeneral.lean
+      - name: Retained SHA
+        run: |
+          sha256sum proofs/SutureRankGeneral.lean
+          git rev-parse HEAD
