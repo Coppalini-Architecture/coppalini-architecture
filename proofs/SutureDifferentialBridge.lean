@@ -500,6 +500,93 @@ theorem quadratic_taylor (A : Nat → Nat → K)
 
 
 
+
+theorem bilinear_eta_Vp (c u v : K) (V : Variation K)
+    (i j : Nat) (hj : j < 4) :
+    bilinear etaHat V (p c u v) i j =
+       sum8 (fun k => V k i * etaP c u v k j) := by
+  have h0 := etaP_exact c u v 0 j (by omega) hj
+  have h1 := etaP_exact c u v 1 j (by omega) hj
+  have h2 := etaP_exact c u v 2 j (by omega) hj
+  have h3 := etaP_exact c u v 3 j (by omega) hj
+  have h4 := etaP_exact c u v 4 j (by omega) hj
+  have h5 := etaP_exact c u v 5 j (by omega) hj
+  have h6 := etaP_exact c u v 6 j (by omega) hj
+  have h7 := etaP_exact c u v 7 j (by omega) hj
+  change sum8 (fun k => V k i * product8 etaHat (p c u v) k j)
+    = sum8 (fun k => V k i * etaP c u v k j)
+  simp only [sum8, h0, h1, h2, h3, h4, h5, h6, h7]
+
+theorem bilinear_c_Vp (c u v : K) (V : Variation K)
+    (i j : Nat) (hj : j < 4) :
+    bilinear cHat V (p c u v) i j =
+       sum8 (fun k => V k i * cP c u v k j) := by
+  have h0 := cP_exact c u v 0 j (by omega) hj
+  have h1 := cP_exact c u v 1 j (by omega) hj
+  have h2 := cP_exact c u v 2 j (by omega) hj
+  have h3 := cP_exact c u v 3 j (by omega) hj
+  have h4 := cP_exact c u v 4 j (by omega) hj
+  have h5 := cP_exact c u v 5 j (by omega) hj
+  have h6 := cP_exact c u v 6 j (by omega) hj
+  have h7 := cP_exact c u v 7 j (by omega) hj
+  change sum8 (fun k => V k i * product8 cHat (p c u v) k j)
+    = sum8 (fun k => V k i * cP c u v k j)
+  simp only [sum8, h0, h1, h2, h3, h4, h5, h6, h7]
+
+-- Symmetry and antisymmetry supply the transpose terms.
+theorem bilinear_eta_pV (c u v : K) (V : Variation K)
+    (i j : Nat) (hi : i < 4) :
+    bilinear etaHat (p c u v) V i j =
+       sum8 (fun k => V k j * etaP c u v k i) := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl
+  all_goals grind [bilinear, product8, sum8, etaHat, etaP, p]
+
+theorem bilinear_c_pV (c u v : K) (V : Variation K)
+    (i j : Nat) (hi : i < 4) :
+    bilinear cHat (p c u v) V i j =
+       -sum8 (fun k => V k j * cP c u v k i) := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl
+  all_goals grind [bilinear, product8, sum8, cHat, cP, p]
+
+theorem metric_variation_exact (c u v : K) (V : Variation K)
+    (i j : Nat) (hi : i < 4) (hj : j < 4) :
+    bilinear etaHat V (p c u v) i j +
+    bilinear etaHat (p c u v) V i j = dg c u v V i j := by
+  rw [bilinear_eta_Vp c u v V i j hj,
+      bilinear_eta_pV c u v V i j hi]
+  grind [dg, sum8]
+
+theorem flux_variation_exact (c u v : K) (V : Variation K)
+    (i j : Nat) (hi : i < 4) (hj : j < 4) :
+    bilinear cHat V (p c u v) i j +
+    bilinear cHat (p c u v) V i j = df c u v V i j := by
+  rw [bilinear_c_Vp c u v V i j hj,
+      bilinear_c_pV c u v V i j hi]
+  grind [df, sum8]
+
+-- S(P+tV)=S(P)+t*DS_P(V)+t²*S(V), metric and flux.
+theorem metric_taylor_exact (c u v : K) (V : Variation K) (t : K)
+    (i j : Nat) (hi : i < 4) (hj : j < 4) :
+    bilinear etaHat (shifted t (p c u v) V)
+      (shifted t (p c u v) V) i j =
+    bilinear etaHat (p c u v) (p c u v) i j +
+      t * dg c u v V i j + (t*t) * bilinear etaHat V V i j := by
+  have h := quadratic_taylor etaHat (p c u v) V t i j
+  rw [metric_variation_exact c u v V i j hi hj] at h
+  exact h
+
+theorem flux_taylor_exact (c u v : K) (V : Variation K) (t : K)
+    (i j : Nat) (hi : i < 4) (hj : j < 4) :
+    bilinear cHat (shifted t (p c u v) V)
+      (shifted t (p c u v) V) i j =
+    bilinear cHat (p c u v) (p c u v) i j +
+      t * df c u v V i j + (t*t) * bilinear cHat V V i j := by
+  have h := quadratic_taylor cHat (p c u v) V t i j
+  rw [flux_variation_exact c u v V i j hi hj] at h
+  exact h
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -517,3 +604,5 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.variational_wall_fifteen_independent
 #print axioms SutureDifferentialBridge.variational_wall_has_relation
 #print axioms SutureDifferentialBridge.quadratic_taylor
+#print axioms SutureDifferentialBridge.metric_taylor_exact
+#print axioms SutureDifferentialBridge.flux_taylor_exact
