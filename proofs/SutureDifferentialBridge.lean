@@ -395,13 +395,27 @@ theorem jp_exact (c u v : K) (i j : Nat)
     (hi : i < 8) (hj : j < 4) :
     product8 cHat (fun a b => product8 etaHat (p c u v) a b)
        i j = jp c u v i j := by
+  have h0 := etaP_exact c u v 0 j (by omega) hj
+  have h1 := etaP_exact c u v 1 j (by omega) hj
+  have h2 := etaP_exact c u v 2 j (by omega) hj
+  have h3 := etaP_exact c u v 3 j (by omega) hj
+  have h4 := etaP_exact c u v 4 j (by omega) hj
+  have h5 := etaP_exact c u v 5 j (by omega) hj
+  have h6 := etaP_exact c u v 6 j (by omega) hj
+  have h7 := etaP_exact c u v 7 j (by omega) hj
+  have hEval :
+      product8 cHat (fun a b => product8 etaHat (p c u v) a b)
+        i j = sum8 (fun k => cHat i k * etaP c u v k j) := by
+    change sum8 (fun k => cHat i k * product8 etaHat (p c u v) k j)
+      = sum8 (fun k => cHat i k * etaP c u v k j)
+    simp only [sum8, h0, h1, h2, h3, h4, h5, h6, h7]
+  rw [hEval]
   have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
       i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
   have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
-  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
   all_goals rcases jcases with rfl | rfl | rfl | rfl
-  all_goals grind [product8, sum8, etaHat, cHat, jp, p]
-
+  all_goals grind [sum8, cHat, etaP, jp]
 
 end SutureDifferentialBridge
 
