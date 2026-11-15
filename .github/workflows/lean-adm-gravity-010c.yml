@@ -1,0 +1,52 @@
+name: Lean ADM gravity 010c
+
+on:
+  push:
+    paths:
+      - 'proofs/ADMGravity010c.lean'
+      - 'proofs/Maxwell010b.lean'
+      - 'proofs/SutureDirac010a.lean'
+      - '.github/workflows/lean-adm-gravity-010c.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/ADMGravity010c.lean'
+      - 'proofs/Maxwell010b.lean'
+      - 'proofs/SutureDirac010a.lean'
+      - '.github/workflows/lean-adm-gravity-010c.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile 010a, 010b, then 010c with kernel
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a-proof-audit.txt
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b-proof-audit.txt
+          LEAN_PATH=build lean --root=. proofs/ADMGravity010c.lean | tee /tmp/010c-proof-audit.txt
+      - name: Reject sorry and unsanctioned axioms
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010a-proof-audit.txt /tmp/010b-proof-audit.txt /tmp/010c-proof-audit.txt
+      - name: Source and provenance hashes
+        shell: bash
+        run: |
+          sha256sum proofs/SutureDirac010a.lean proofs/Maxwell010b.lean proofs/ADMGravity010c.lean
+          sha256sum .github/workflows/lean-adm-gravity-010c.yml
+          git rev-parse HEAD
