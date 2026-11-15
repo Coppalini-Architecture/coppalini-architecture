@@ -1,0 +1,51 @@
+name: Lean Maxwell 010b
+
+on:
+  push:
+    paths:
+      - 'proofs/Maxwell010b.lean'
+      - 'proofs/SutureDirac010a.lean'
+      - '.github/workflows/lean-maxwell-010b.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/Maxwell010b.lean'
+      - 'proofs/SutureDirac010a.lean'
+      - '.github/workflows/lean-maxwell-010b.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile parent and Maxwell certificate
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean > /tmp/010a-inherited-axioms.txt
+          LEAN_PATH=build lean --root=. proofs/Maxwell010b.lean | tee /tmp/010b-axioms.txt
+      - name: Refuse sorry and unrestricted axioms
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010b-axioms.txt
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010a-inherited-axioms.txt
+      - name: Source integrity receipt
+        shell: bash
+        run: |
+          sha256sum proofs/SutureDirac010a.lean
+          sha256sum proofs/Maxwell010b.lean
+          sha256sum .github/workflows/lean-maxwell-010b.yml
+          git rev-parse HEAD
