@@ -640,30 +640,9 @@ def FullRows (c u v : K) : Prop :=
 
 -- Since fifteen of the sixteen rows are always independent, their
 -- maximal independent-row count is 16 exactly when all sixteen are.
-noncomputable def sutureRowRank (c u v : K) : Nat :=
-  if FullRows c u v then 16 else 15
-
-theorem suture_row_rank_formula (c u v : K)
-    (two_ne : (2:K) ≠ 0) :
-    sutureRowRank c u v =
-      (if u = 0 ∧ v = 0 then 15 else 16) := by
+noncomputable def sutureRowRank (c u v : K) : Nat := by
   classical
-  by_cases hwall : u = 0 ∧ v = 0
-  · have hnot : ¬ FullRows c u v := by
-      intro hall
-      have h : u ≠ 0 ∨ v ≠ 0 :=
-        (variational_full_rank_iff c u v two_ne).mp hall
-      rcases h with hu | hv
-      · exact hu hwall.1
-      · exact hv hwall.2
-    simp [sutureRowRank, hnot, hwall]
-  · have hoff : u ≠ 0 ∨ v ≠ 0 := by
-      by_cases hu : u = 0
-      · exact Or.inr (fun hv => hwall ⟨hu, hv⟩)
-      · exact Or.inl hu
-    have hall : FullRows c u v :=
-      (variational_full_rank_iff c u v two_ne).mpr hoff
-    simp [sutureRowRank, hall, hwall]
+  exact if FullRows c u v then 16 else 15
 
 theorem suture_row_rank_regular (c u v : K)
     (two_ne : (2:K) ≠ 0) (h : u ≠ 0 ∨ v ≠ 0) :
@@ -675,8 +654,26 @@ theorem suture_row_rank_regular (c u v : K)
 
 theorem suture_row_rank_wall (c : K) (two_ne : (2:K) ≠ 0) :
     sutureRowRank c 0 0 = 15 := by
-  simpa using suture_row_rank_formula c 0 0 two_ne
+  classical
+  obtain ⟨d, hd, hn⟩ := variational_wall_has_relation c two_ne
+  have hnot : ¬ FullRows c 0 0 := by
+    intro hall
+    exact hn (hall d hd)
+  simp [sutureRowRank, hnot]
 
+-- Natural-number result for the row rank of the actual differential.
+theorem suture_row_rank_formula (c u v : K)
+    (two_ne : (2:K) ≠ 0) :
+    (u = 0 ∧ v = 0 → sutureRowRank c u v = 15) ∧
+    (u ≠ 0 ∨ v ≠ 0 → sutureRowRank c u v = 16) := by
+  constructor
+  · intro hwall
+    rcases hwall with ⟨hu, hv⟩
+    subst u
+    subst v
+    exact suture_row_rank_wall c two_ne
+  · intro h
+    exact suture_row_rank_regular c u v two_ne h
 
 end SutureDifferentialBridge
 
