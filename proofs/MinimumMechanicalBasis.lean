@@ -1,3 +1,9 @@
+import proofs.RootCarrier
+import proofs.RootProjectiveAdapters_v2
+import proofs.MultiplierElimination
+import proofs.StabilizerDim
+import proofs.MagneticValueAtPi0
+
 /-!
 # Minimum mechanical basis — one exact Lean 4 certificate
 
@@ -28,12 +34,6 @@ Those require the separately stated dynamical hypotheses and reductions.
 Lean 4.33.0; no Mathlib.  This file belongs in the existing repository's
 `proofs/` directory so its imports resolve.  All arithmetic is exact.
 -/
-
-import proofs.RootCarrier
-import proofs.RootProjectiveAdapters_v2
-import proofs.MultiplierElimination
-import proofs.StabilizerDim
-import proofs.MagneticValueAtPi0
 
 set_option autoImplicit false
 
