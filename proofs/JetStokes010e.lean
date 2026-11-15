@@ -85,7 +85,7 @@ theorem add_zero (a : Jet3) : add a zero = a := by
 
 theorem add_neg (a : Jet3) : add a (neg a) = zero := by
   cases a with
-  | mk ac ax ay az => simp [add, neg, zero, Int.add_neg_self]
+  | mk ac ax ay az => simp [add, neg, zero] <;> omega
 
 theorem neg_neg (a : Jet3) : neg (neg a) = a := by
   cases a with
