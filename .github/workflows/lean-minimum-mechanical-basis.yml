@@ -23,7 +23,7 @@ jobs:
       - name: Verify source SHA-256
         shell: bash
         run: |
-          echo '04cbd1ee7358a60e7d60442beb0fbce39c13e152d1b174ee9730a89f8a851d30  proofs/MinimumMechanicalBasis.lean' | sha256sum -c -
+          echo '93f289f0f82f36028551238f19da3b56e985775e62afab23402a50eec0c571a5  proofs/MinimumMechanicalBasis.lean' | sha256sum -c -
       - name: Install pinned Lean 4.33.0
         shell: bash
         run: |
