@@ -1,0 +1,50 @@
+name: Minimum mechanical basis — Lean 4.33.0
+
+on:
+  push:
+    paths:
+      - 'proofs/MinimumMechanicalBasis.lean'
+      - '.github/workflows/lean-minimum-mechanical-basis.yml'
+  pull_request:
+    paths:
+      - 'proofs/MinimumMechanicalBasis.lean'
+      - '.github/workflows/lean-minimum-mechanical-basis.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@v4
+      - name: Verify source SHA-256
+        shell: bash
+        run: |
+          echo '04cbd1ee7358a60e7d60442beb0fbce39c13e152d1b174ee9730a89f8a851d30  proofs/MinimumMechanicalBasis.lean' | sha256sum -c -
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original dependencies and unified theorem
+        shell: bash
+        run: |
+          lean --version
+          mkdir -p build/proofs
+          export LEAN_PATH="$PWD/build"
+          lean --root=. -o build/proofs/ProjectiveReturn.olean proofs/ProjectiveReturn.lean
+          lean --root=. -o build/proofs/RootProjectiveAdapters_v2.olean proofs/RootProjectiveAdapters_v2.lean
+          lean --root=. -o build/proofs/RootCarrier.olean proofs/RootCarrier.lean
+          lean --root=. -o build/proofs/StabilizerDim.olean proofs/StabilizerDim.lean
+          lean --root=. -o build/proofs/MultiplierElimination.olean proofs/MultiplierElimination.lean
+          lean --root=. -o build/proofs/MagneticValueAtPi0.olean proofs/MagneticValueAtPi0.lean
+          lean --root=. proofs/MinimumMechanicalBasis.lean
+      - name: Receipt
+        shell: bash
+        run: |
+          sha256sum proofs/MinimumMechanicalBasis.lean
+          git rev-parse HEAD
