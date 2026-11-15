@@ -338,6 +338,71 @@ theorem euclidean_variational_full_rank_iff (c u v : K)
   exact (euclidean_nonzero u v hp).symm
 
 
+
+-- The declared eight-dimensional carrier, in fixed zero-based coordinates.
+def etaHat (i j : Nat) : K :=
+  match i, j with
+  | 0, 0 => -2
+  | 0, 1 => 1
+  | 1, 0 => 1
+  | 1, 1 => 2
+  | 2, 2 => 1
+  | 3, 3 => 1
+  | 4, 4 => 1
+  | 5, 5 => 1
+  | 6, 6 => 1
+  | 7, 7 => 1
+  | _, _ => 0
+
+def cHat (i j : Nat) : K :=
+  match i, j with
+  | 0, 1 => -1
+  | 1, 0 => 1
+  | 2, 3 => -1
+  | 3, 2 => 1
+  | 4, 5 => -1
+  | 5, 4 => 1
+  | 6, 7 => -1
+  | 7, 6 => 1
+  | _, _ => 0
+
+def product8 (A : Nat → Nat → K) (P : Variation K)
+    (i j : Nat) : K :=
+  sum8 (fun k => A i k * P k j)
+
+-- Those are exactly eta*P, C*P, and C*eta*P.
+theorem etaP_exact (c u v : K) (i j : Nat)
+    (hi : i < 8) (hj : j < 4) :
+    product8 etaHat (p c u v) i j = etaP c u v i j := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+      i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  all_goals rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [product8, sum8, etaHat, etaP, p]
+
+theorem cP_exact (c u v : K) (i j : Nat)
+    (hi : i < 8) (hj : j < 4) :
+    product8 cHat (p c u v) i j = cP c u v i j := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+      i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  all_goals rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [product8, sum8, cHat, cP, p]
+
+theorem jp_exact (c u v : K) (i j : Nat)
+    (hi : i < 8) (hj : j < 4) :
+    product8 cHat (fun a b => product8 etaHat (p c u v) a b)
+       i j = jp c u v i j := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+      i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  all_goals rcases jcases with rfl | rfl | rfl | rfl
+  all_goals grind [product8, sum8, etaHat, cHat, jp, p]
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -349,3 +414,6 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.adjoint_matrix_iff
 #print axioms SutureDifferentialBridge.variational_full_rank_iff
 #print axioms SutureDifferentialBridge.euclidean_variational_full_rank_iff
+#print axioms SutureDifferentialBridge.etaP_exact
+#print axioms SutureDifferentialBridge.cP_exact
+#print axioms SutureDifferentialBridge.jp_exact
