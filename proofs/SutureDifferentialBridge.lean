@@ -417,6 +417,31 @@ theorem jp_exact (c u v : K) (i j : Nat)
   all_goals rcases jcases with rfl | rfl | rfl | rfl
   all_goals grind [sum8, cHat, etaP, jp]
 
+-- At the wall there is exactly one free row relation.
+theorem variational_wall_relation (c : K) (two_ne : (2:K) ≠ 0)
+    (d : Dual K) :
+    PairKernel c 0 0 d ↔ ∃ t : K, d = lift c t := by
+  rw [pairing_zero_iff_matrix c 0 0 d two_ne]
+  exact wall_kernel c two_ne d
+
+-- Removing the m33 output coordinate leaves fifteen independent dual rows.
+theorem variational_wall_fifteen_independent (c : K)
+    (two_ne : (2:K) ≠ 0) (d : Dual K)
+    (h : PairKernel c 0 0 d) (h33 : d.m33 = 0) :
+    d = lift c 0 := by
+  obtain ⟨t, ht⟩ := (variational_wall_relation c two_ne d).mp h
+  have hterm : t = 0 := by
+    rw [ht] at h33
+    simpa [lift] using h33
+  rw [ht, hterm]
+
+theorem variational_wall_has_relation (c : K)
+    (two_ne : (2:K) ≠ 0) :
+    ∃ d : Dual K, PairKernel c 0 0 d ∧ d ≠ lift c 0 := by
+  obtain ⟨d, hd, hn⟩ := nonzero_wall c two_ne
+  exact ⟨d, (pairing_zero_iff_matrix c 0 0 d two_ne).mpr hd, hn⟩
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -431,3 +456,5 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.etaP_exact
 #print axioms SutureDifferentialBridge.cP_exact
 #print axioms SutureDifferentialBridge.jp_exact
+#print axioms SutureDifferentialBridge.variational_wall_fifteen_independent
+#print axioms SutureDifferentialBridge.variational_wall_has_relation
