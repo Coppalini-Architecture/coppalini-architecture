@@ -50,17 +50,17 @@ def cP (c u v : K) (i j : Nat) : K :=
   | 5, 3 => u
   | _, _ => 0
 
-def Variation := Nat → Nat → K
+def Variation (K : Type) := Nat → Nat → K
 
 -- First-order variation of the metric and two-form at P(c,u,v).
-def dg (c u v : K) (V : Variation) (i j : Nat) : K :=
+def dg (c u v : K) (V : Variation K) (i j : Nat) : K :=
   sum8 (fun k => V k i * etaP c u v k j + V k j * etaP c u v k i)
 
-def df (c u v : K) (V : Variation) (i j : Nat) : K :=
+def df (c u v : K) (V : Variation K) (i j : Nat) : K :=
   sum8 (fun k => V k i * cP c u v k j - V k j * cP c u v k i)
 
 -- Trace pairing with a sign-adjusted antisymmetric dual n.
-def pairing (c u v : K) (d : Dual K) (V : Variation) : K :=
+def pairing (c u v : K) (d : Dual K) (V : Variation K) : K :=
   sum4 (fun i => sum4 (fun j =>
     mVal d i j * dg c u v V i j -
     nVal d i j * df c u v V i j))
@@ -70,11 +70,11 @@ def adjoint (c u v : K) (d : Dual K) (k j : Nat) : K :=
     etaP c u v k i * mVal d i j +
     cP c u v k i * nVal d i j)
 
-def adjointPair (c u v : K) (d : Dual K) (V : Variation) : K :=
+def adjointPair (c u v : K) (d : Dual K) (V : Variation K) : K :=
   (2 : K) * sum8 (fun k => sum4 (fun j => V k j * adjoint c u v d k j))
 
 -- The full finite-index variational identity (not a definition of pairing).
-theorem pairing_adjoint (c u v : K) (d : Dual K) (V : Variation) :
+theorem pairing_adjoint (c u v : K) (d : Dual K) (V : Variation K) :
     pairing c u v d V = adjointPair c u v d V := by
   grind [pairing, adjointPair, dg, df, adjoint,
     sum4, sum8, etaP, cP, mVal, nVal]
