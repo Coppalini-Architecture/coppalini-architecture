@@ -1,0 +1,38 @@
+name: Lean Suture differential bridge
+
+on:
+  push:
+    paths:
+      - 'proofs/SutureDifferentialBridge.lean'
+      - '.github/workflows/lean-suture-differential-bridge.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact proof sources
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile rank dependency and differential pairing
+        shell: bash
+        run: |
+          lean --version
+          mkdir -p build/proofs
+          export LEAN_PATH="$PWD/build"
+          lean --root=. -o build/proofs/SutureRankGeneral.olean proofs/SutureRankGeneral.lean
+          lean --root=. proofs/SutureDifferentialBridge.lean
+      - name: Source identity
+        shell: bash
+        run: |
+          sha256sum proofs/SutureDifferentialBridge.lean .github/workflows/lean-suture-differential-bridge.yml
+          git rev-parse HEAD
