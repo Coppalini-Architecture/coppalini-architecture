@@ -107,7 +107,7 @@ theorem magnetic_pair (f dij dji : Int) :
     f * (dij - dji) + (-f) * (dji - dij) =
       2 * f * (dij - dji) := by
   have hp : (-f) * (dji - dij) = f * (dij - dji) := by
-    rw [Int.neg_mul, Int.mul_sub]
+    simp only [Int.neg_mul, Int.mul_sub, Int.mul_neg]
     omega
   rw [hp]
   have ht : (2 : Int) * f = f + f := by omega
@@ -187,7 +187,12 @@ theorem maxwell_physical_normalization
     physicalE μ invRoot ELower * physicalK root invμ FUpper =
         (μ * invμ) * (root * invRoot) * (ELower * FUpper) := by
       simp only [physicalE, physicalK]
-      simp only [Rat.mul_assoc, Rat.mul_comm, Rat.mul_left_comm]
+      have swap (a b c : Rat) : a * (b * c) = b * (a * c) := by
+        calc
+          a * (b * c) = (a * b) * c := by rw [← Rat.mul_assoc]
+          _ = (b * a) * c := by rw [Rat.mul_comm a b]
+          _ = b * (a * c) := by rw [Rat.mul_assoc]
+      simp only [Rat.mul_assoc, Rat.mul_comm, swap]
     _ = ELower * FUpper := by simp [hμ, hroot]
 
 /-! ## Spatial momentum constraint and Gauss improvement -/
