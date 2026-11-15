@@ -76,6 +76,7 @@ theorem dewitt_hessian_contraction (p h : Sym3) :
     Int.mul_add, Int.mul_sub, Int.sub_mul, Int.add_mul,
     Int.mul_neg, Int.neg_mul, Int.mul_assoc]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  simp only [← Int.mul_assoc]
   omega
 
 -- This is the local derivative-bearing antisymmetrized PB contribution;
@@ -93,6 +94,7 @@ theorem gravity_normal_normal_local (p hN hM : Sym3) (N M : Int) :
     dewitt_hessian_contraction, Int.mul_neg, Int.mul_sub, Int.sub_mul,
     Int.mul_assoc]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  simp only [← Int.mul_assoc]
   omega
 
 /-! ## Symmetric momenta annihilate the gradient wedge -/
