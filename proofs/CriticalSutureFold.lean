@@ -8,8 +8,8 @@ set_option autoImplicit false
 
 Carrier: etaHat = G (+) I6, Chat = C (+) C (+) C (+) C.
 Pi(0) and Pi(positive or negative 1/3) come from SD.11c at a=1.
-The interior integer representatives use a last column 4*o4 +/- 3*o5,
-whose unscaled rational counterpart is (4/5)*o4 +/- (3/5)*o5.
+The interior integer representatives use a last column 4*o4 plus or minus 3*o5,
+whose unscaled rational counterpart is (4/5)*o4 plus or minus (3/5)*o5.
 
 The two matrix certificates establish rank 15 at the wall and rank 16
 at an interior address: a nonzero left annihilator and a scaled
