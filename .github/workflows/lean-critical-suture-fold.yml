@@ -1,0 +1,43 @@
+name: Lean critical suture fold
+
+on:
+  push:
+    paths:
+      - 'proofs/CriticalSutureFold.lean'
+      - '.github/workflows/lean-critical-suture-fold.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/CriticalSutureFold.lean'
+      - '.github/workflows/lean-critical-suture-fold.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile root, differential, and critical fold
+        shell: bash
+        run: |
+          lean --version
+          mkdir -p build/proofs
+          export LEAN_PATH="$PWD/build"
+          lean --root=. -o build/proofs/RootCarrier.olean proofs/RootCarrier.lean
+          lean --root=. -o build/proofs/MultiplierElimination.olean proofs/MultiplierElimination.lean
+          lean --root=. proofs/CriticalSutureFold.lean
+      - name: Source identity receipt
+        shell: bash
+        run: |
+          sha256sum proofs/CriticalSutureFold.lean
+          sha256sum .github/workflows/lean-critical-suture-fold.yml
+          git rev-parse HEAD
