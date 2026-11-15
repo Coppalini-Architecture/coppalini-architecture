@@ -55,7 +55,7 @@ structure Spine : Prop where
     (x y : X), Same ρ x y → needed x ≠ needed y →
       ¬ ∃ decode : Y → Z, ∀ z : X, decode (ρ z) = needed z
   phase : ∀ n : Nat,
-    (n + 4) % 4 = n % 4 ∧
+    Return (fun k : Nat => k % 4) (fun k => k + 4) n ∧
     (n + 4) / 4 = n / 4 + 1 ∧
     n + 4 ≠ n
   root : RootCarrier.mmul RootCarrier.G2 RootCarrier.G2 2 =
@@ -65,7 +65,7 @@ structure Spine : Prop where
     qMatMul S S = qI ∧ qMatMul qH qH = qI
   axial : qMatMul Lax Lax = B ∧
     qMatMul (qMatMul qH B) qH = BInv
-  mirror : qMatMul (tr mirrorHat 8) (mul etaHat mirrorHat 8) 8 = etaHat ∧
+  mirror : mul (tr mirrorHat 8) (mul etaHat mirrorHat 8) 8 = etaHat ∧
     mul (tr mirrorHat 8) (mul cHat mirrorHat 8) 8 =
       scale (qOfInt (-1)) cHat
   regular : RootCarrier.preimages.map (RootCarrier.dS RootCarrier.Pi0) =
