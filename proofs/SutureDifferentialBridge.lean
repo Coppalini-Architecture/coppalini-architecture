@@ -212,6 +212,132 @@ theorem pairing_zero_iff_adjoint (c u v : K) (d : Dual K)
     grind
 
 
+theorem raw_0_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 0 j = jpM c u v d 0 j) ↔
+    adjoint c u v d 1 j = 0 := by
+  have hf := (flip_0 c u v d j hj).1
+  grind
+
+theorem raw_1_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 1 j = jpM c u v d 1 j) ↔
+    adjoint c u v d 0 j = 0 := by
+  have hf := (flip_0 c u v d j hj).2
+  grind
+
+theorem raw_2_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 2 j = jpM c u v d 2 j) ↔
+    adjoint c u v d 3 j = 0 := by
+  have hf := (flip_2 c u v d j hj).1
+  grind
+
+theorem raw_3_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 3 j = jpM c u v d 3 j) ↔
+    adjoint c u v d 2 j = 0 := by
+  have hf := (flip_2 c u v d j hj).2
+  grind
+
+theorem raw_4_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 4 j = jpM c u v d 4 j) ↔
+    adjoint c u v d 5 j = 0 := by
+  have hf := (flip_4 c u v d j hj).1
+  grind
+
+theorem raw_5_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 5 j = jpM c u v d 5 j) ↔
+    adjoint c u v d 4 j = 0 := by
+  have hf := (flip_4 c u v d j hj).2
+  grind
+
+theorem raw_6_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 6 j = jpM c u v d 6 j) ↔
+    adjoint c u v d 7 j = 0 := by
+  have hf := (flip_6 c u v d j hj).1
+  grind
+
+theorem raw_7_iff (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
+    (pN c u v d 7 j = jpM c u v d 7 j) ↔
+    adjoint c u v d 6 j = 0 := by
+  have hf := (flip_6 c u v d j hj).2
+  grind
+
+def RawKernel (c u v : K) (d : Dual K) : Prop :=
+  ∀ i j : Nat, i < 8 → j < 4 →
+    pN c u v d i j = jpM c u v d i j
+
+theorem raw_matrix_iff (c u v : K) (d : Dual K) :
+    RawKernel c u v d ↔ MatrixKernel c u v d := by
+  constructor
+  · intro h i hi
+    exact ⟨h i 0 hi (by omega), h i 1 hi (by omega),
+      h i 2 hi (by omega), h i 3 hi (by omega)⟩
+  · intro h i j hi hj
+    have hr := h i hi
+    have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+    rcases jcases with rfl | rfl | rfl | rfl
+    · exact hr.1
+    · exact hr.2.1
+    · exact hr.2.2.1
+    · exact hr.2.2.2
+
+theorem raw_adjoint_iff (c u v : K) (d : Dual K) :
+    RawKernel c u v d ↔ AdjointKernel c u v d := by
+  constructor
+  · intro h i j hi hj
+    have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+      i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+    rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact (raw_1_iff c u v d j hj).mp (h 1 j (by omega) hj)
+    · exact (raw_0_iff c u v d j hj).mp (h 0 j (by omega) hj)
+    · exact (raw_3_iff c u v d j hj).mp (h 3 j (by omega) hj)
+    · exact (raw_2_iff c u v d j hj).mp (h 2 j (by omega) hj)
+    · exact (raw_5_iff c u v d j hj).mp (h 5 j (by omega) hj)
+    · exact (raw_4_iff c u v d j hj).mp (h 4 j (by omega) hj)
+    · exact (raw_7_iff c u v d j hj).mp (h 7 j (by omega) hj)
+    · exact (raw_6_iff c u v d j hj).mp (h 6 j (by omega) hj)
+  · intro h i j hi hj
+    have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+      i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+    rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact (raw_0_iff c u v d j hj).mpr (h 1 j (by omega) hj)
+    · exact (raw_1_iff c u v d j hj).mpr (h 0 j (by omega) hj)
+    · exact (raw_2_iff c u v d j hj).mpr (h 3 j (by omega) hj)
+    · exact (raw_3_iff c u v d j hj).mpr (h 2 j (by omega) hj)
+    · exact (raw_4_iff c u v d j hj).mpr (h 5 j (by omega) hj)
+    · exact (raw_5_iff c u v d j hj).mpr (h 4 j (by omega) hj)
+    · exact (raw_6_iff c u v d j hj).mpr (h 7 j (by omega) hj)
+    · exact (raw_7_iff c u v d j hj).mpr (h 6 j (by omega) hj)
+
+theorem adjoint_matrix_iff (c u v : K) (d : Dual K) :
+    AdjointKernel c u v d ↔ MatrixKernel c u v d :=
+  (raw_adjoint_iff c u v d).symm.trans (raw_matrix_iff c u v d)
+
+theorem pairing_zero_iff_matrix (c u v : K) (d : Dual K)
+    (two_ne : (2:K) ≠ 0) :
+    PairKernel c u v d ↔ MatrixKernel c u v d :=
+  (pairing_zero_iff_adjoint c u v d two_ne).trans
+    (adjoint_matrix_iff c u v d)
+
+-- This is a theorem about the actual suture variation pairing.
+theorem variational_full_rank_iff (c u v : K) (two_ne : (2:K) ≠ 0) :
+    (∀ d : Dual K, PairKernel c u v d → d = lift c 0) ↔
+       (u ≠ 0 ∨ v ≠ 0) := by
+  constructor
+  · intro h
+    apply (matrix_rank_criterion c u v two_ne).mp
+    intro d hm
+    exact h d ((pairing_zero_iff_matrix c u v d two_ne).mpr hm)
+  · intro h d hv
+    apply (matrix_rank_criterion c u v two_ne).mpr h
+    exact (pairing_zero_iff_matrix c u v d two_ne).mp hv
+
+theorem euclidean_variational_full_rank_iff (c u v : K)
+    (two_ne : (2:K) ≠ 0) (hp : PositiveTwoSquare K) :
+    (∀ d : Dual K, PairKernel c u v d → d = lift c 0) ↔
+       u*u + v*v ≠ 0 := by
+  rw [variational_full_rank_iff c u v two_ne]
+  exact (euclidean_nonzero u v hp).symm
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -220,3 +346,6 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.flip_4
 #print axioms SutureDifferentialBridge.flip_6
 #print axioms SutureDifferentialBridge.pairing_zero_iff_adjoint
+#print axioms SutureDifferentialBridge.adjoint_matrix_iff
+#print axioms SutureDifferentialBridge.variational_full_rank_iff
+#print axioms SutureDifferentialBridge.euclidean_variational_full_rank_iff
