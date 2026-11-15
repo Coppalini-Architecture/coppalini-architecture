@@ -96,9 +96,9 @@ theorem cotangent_coefficient (p pq dr j dx : Int) :
       (p + pq * j) * dx + pq * dr := by
   calc
     p * dx + pq * (dr + j * dx)
-        = p * dx + (pq * dr + pq * (j * dx)) := by rw [mul_add]
+        = p * dx + (pq * dr + pq * (j * dx)) := by rw [Int.mul_add]
     _ = (p + pq * j) * dx + pq * dr := by
-      rw [add_mul, mul_assoc]
+      rw [Int.add_mul, Int.mul_assoc]
       ac_rfl
 
 theorem cotangent_all_components
@@ -156,11 +156,11 @@ theorem unshifted_p1_detects_X (j0 j1 : Int) :
 
 theorem shifted_p0_commutes_C (j0 j1 h00 h10 pq : Int) :
     pb (gradShiftP0 j0 h00 h10 pq) (gradC j0 j1) = 0 := by
-  simp [pb, gradShiftP0, gradC]
+  simp [pb, gradShiftP0, gradC] <;> omega
 
 theorem shifted_p1_commutes_C (j0 j1 h01 h11 pq : Int) :
     pb (gradShiftP1 j1 h01 h11 pq) (gradC j0 j1) = 0 := by
-  simp [pb, gradShiftP1, gradC]
+  simp [pb, gradShiftP1, gradC] <;> omega
 
 theorem shifted_p0_commutes_Pq (j0 h00 h10 pq : Int) :
     pb (gradShiftP0 j0 h00 h10 pq) gradPq = 0 := by
@@ -176,7 +176,7 @@ theorem shifted_momenta_commute
     pb (gradShiftP0 j0 h00 h10 pq)
        (gradShiftP1 j1 h01 h11 pq) = 0 := by
   subst h01
-  simp [pb, gradShiftP0, gradShiftP1]
+  simp [pb, gradShiftP0, gradShiftP1] <;> omega
 
 /-! ## Dirac bracket restriction -/
 
