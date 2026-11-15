@@ -111,6 +111,105 @@ theorem flip_6 (c u v : K) (d : Dual K) (j : Nat) (hj : j < 4) :
   rcases jcases with rfl | rfl | rfl | rfl
   all_goals grind [jpM, pN, adjoint, sum4, etaP, cP, p, jp, mVal, nVal]
 
+
+-- A variation probes one coframe coordinate with its exact dual index.
+def basis (i j : Nat) : Variation K :=
+  fun k l => (if k = i then (1:K) else 0) *
+             (if l = j then (1:K) else 0)
+
+theorem basis_pair (c u v : K) (d : Dual K) (i j : Nat)
+    (hi : i < 8) (hj : j < 4) :
+    adjointPair c u v d (basis i j) = 2 * adjoint c u v d i j := by
+  have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨
+    i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+  have jcases : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+  rcases icases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  all_goals rcases jcases with rfl | rfl | rfl | rfl
+  all_goals simp [adjointPair, basis, sum8, sum4]
+
+def PairKernel (c u v : K) (d : Dual K) : Prop :=
+  ∀ V : Variation K, pairing c u v d V = 0
+
+def AdjointKernel (c u v : K) (d : Dual K) : Prop :=
+  ∀ i j : Nat, i < 8 → j < 4 → adjoint c u v d i j = 0
+
+theorem pairing_zero_iff_adjoint (c u v : K) (d : Dual K)
+    (two_ne : (2:K) ≠ 0) :
+    PairKernel c u v d ↔ AdjointKernel c u v d := by
+  constructor
+  · intro h i j hi hj
+    have hb := h (basis i j)
+    rw [pairing_adjoint, basis_pair c u v d i j hi hj] at hb
+    grind
+  · intro h V
+    have hz00 : adjoint c u v d 0 0 = 0 :=
+      h 0 0 (by omega) (by omega)
+    have hz01 : adjoint c u v d 0 1 = 0 :=
+      h 0 1 (by omega) (by omega)
+    have hz02 : adjoint c u v d 0 2 = 0 :=
+      h 0 2 (by omega) (by omega)
+    have hz03 : adjoint c u v d 0 3 = 0 :=
+      h 0 3 (by omega) (by omega)
+    have hz10 : adjoint c u v d 1 0 = 0 :=
+      h 1 0 (by omega) (by omega)
+    have hz11 : adjoint c u v d 1 1 = 0 :=
+      h 1 1 (by omega) (by omega)
+    have hz12 : adjoint c u v d 1 2 = 0 :=
+      h 1 2 (by omega) (by omega)
+    have hz13 : adjoint c u v d 1 3 = 0 :=
+      h 1 3 (by omega) (by omega)
+    have hz20 : adjoint c u v d 2 0 = 0 :=
+      h 2 0 (by omega) (by omega)
+    have hz21 : adjoint c u v d 2 1 = 0 :=
+      h 2 1 (by omega) (by omega)
+    have hz22 : adjoint c u v d 2 2 = 0 :=
+      h 2 2 (by omega) (by omega)
+    have hz23 : adjoint c u v d 2 3 = 0 :=
+      h 2 3 (by omega) (by omega)
+    have hz30 : adjoint c u v d 3 0 = 0 :=
+      h 3 0 (by omega) (by omega)
+    have hz31 : adjoint c u v d 3 1 = 0 :=
+      h 3 1 (by omega) (by omega)
+    have hz32 : adjoint c u v d 3 2 = 0 :=
+      h 3 2 (by omega) (by omega)
+    have hz33 : adjoint c u v d 3 3 = 0 :=
+      h 3 3 (by omega) (by omega)
+    have hz40 : adjoint c u v d 4 0 = 0 :=
+      h 4 0 (by omega) (by omega)
+    have hz41 : adjoint c u v d 4 1 = 0 :=
+      h 4 1 (by omega) (by omega)
+    have hz42 : adjoint c u v d 4 2 = 0 :=
+      h 4 2 (by omega) (by omega)
+    have hz43 : adjoint c u v d 4 3 = 0 :=
+      h 4 3 (by omega) (by omega)
+    have hz50 : adjoint c u v d 5 0 = 0 :=
+      h 5 0 (by omega) (by omega)
+    have hz51 : adjoint c u v d 5 1 = 0 :=
+      h 5 1 (by omega) (by omega)
+    have hz52 : adjoint c u v d 5 2 = 0 :=
+      h 5 2 (by omega) (by omega)
+    have hz53 : adjoint c u v d 5 3 = 0 :=
+      h 5 3 (by omega) (by omega)
+    have hz60 : adjoint c u v d 6 0 = 0 :=
+      h 6 0 (by omega) (by omega)
+    have hz61 : adjoint c u v d 6 1 = 0 :=
+      h 6 1 (by omega) (by omega)
+    have hz62 : adjoint c u v d 6 2 = 0 :=
+      h 6 2 (by omega) (by omega)
+    have hz63 : adjoint c u v d 6 3 = 0 :=
+      h 6 3 (by omega) (by omega)
+    have hz70 : adjoint c u v d 7 0 = 0 :=
+      h 7 0 (by omega) (by omega)
+    have hz71 : adjoint c u v d 7 1 = 0 :=
+      h 7 1 (by omega) (by omega)
+    have hz72 : adjoint c u v d 7 2 = 0 :=
+      h 7 2 (by omega) (by omega)
+    have hz73 : adjoint c u v d 7 3 = 0 :=
+      h 7 3 (by omega) (by omega)
+    rw [pairing_adjoint]
+    simp [adjointPair, sum8, sum4, hz00, hz01, hz02, hz03, hz10, hz11, hz12, hz13, hz20, hz21, hz22, hz23, hz30, hz31, hz32, hz33, hz40, hz41, hz42, hz43, hz50, hz51, hz52, hz53, hz60, hz61, hz62, hz63, hz70, hz71, hz72, hz73]
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -118,3 +217,4 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.flip_2
 #print axioms SutureDifferentialBridge.flip_4
 #print axioms SutureDifferentialBridge.flip_6
+#print axioms SutureDifferentialBridge.pairing_zero_iff_adjoint
