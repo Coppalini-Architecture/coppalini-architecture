@@ -150,6 +150,56 @@ theorem interior_rank_full :
     (sparse 16 witness16) 16 = mscale 12 (idMat 16) :=
  by decide +kernel
 
+-- Integer-normalized pure-magnetic suture: the Melvin axis.
+def magneticWall : List (List Int) := [
+ [1,0,0,0], [0,0,0,0], [0,0,1,0], [0,0,0,-1],
+ [0,0,0,0], [0,0,0,0], [0,0,0,0], [0,1,0,0]]
+
+def magneticInterior : List (List Int) := [
+ [1,0,0,0], [0,0,0,0], [0,0,1,0], [0,0,0,-4],
+ [0,0,0,3], [0,0,0,0], [0,0,0,0], [0,1,0,0]]
+
+theorem magnetic_metric : metric magneticWall =
+ [[-2,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]] := by decide +kernel
+
+theorem magnetic_flux : flux magneticWall =
+ [[0,0,0,0],[0,0,0,0],[0,0,0,1],[0,0,-1,0]] := by decide +kernel
+
+def magneticLeftNull : List Int :=
+ [0,0,0,0,0,0,0,-1,0,-1,0,0,0,0,0,2]
+
+theorem magnetic_wall_null :
+ mmul [magneticLeftNull] (DS magneticWall) 32 =
+ [List.replicate 32 0] := by decide +kernel
+
+def magneticWitness15 : List Entry := [
+ ⟨0,0,-1⟩, ⟨1,1,-2⟩, ⟨1,10,-2⟩,
+ ⟨2,2,-2⟩, ⟨2,11,-2⟩, ⟨3,3,-2⟩, ⟨3,12,-2⟩,
+ ⟨4,10,-4⟩, ⟨5,11,-4⟩, ⟨6,12,-4⟩,
+ ⟨7,5,4⟩, ⟨8,7,2⟩, ⟨9,8,4⟩,
+ ⟨10,6,-4⟩, ⟨11,9,-2⟩, ⟨12,6,4⟩, ⟨12,13,4⟩,
+ ⟨13,5,-4⟩, ⟨13,14,4⟩, ⟨14,4,2⟩]
+
+theorem magnetic_wall_rank_lower :
+ mmul (select (DS magneticWall) (List.range 15) columns15)
+   (sparse 15 magneticWitness15) 15 = mscale 4 (idMat 15) :=
+ by decide +kernel
+
+def magneticWitness16 : List Entry := [
+ ⟨0,0,-3⟩, ⟨1,1,-6⟩, ⟨1,10,-6⟩,
+ ⟨2,2,-6⟩, ⟨2,11,-6⟩, ⟨3,3,-6⟩, ⟨3,12,-6⟩,
+ ⟨4,10,-12⟩, ⟨5,11,-12⟩, ⟨6,12,-12⟩,
+ ⟨7,5,12⟩, ⟨8,7,6⟩, ⟨9,8,12⟩, ⟨10,13,12⟩,
+ ⟨11,7,24⟩, ⟨11,15,-12⟩, ⟨12,6,4⟩, ⟨12,13,16⟩,
+ ⟨13,7,32⟩, ⟨13,9,2⟩, ⟨13,15,-16⟩,
+ ⟨14,5,-16⟩, ⟨14,14,4⟩, ⟨15,4,6⟩]
+
+theorem magnetic_interior_rank_full :
+ mmul (select (DS magneticInterior) (List.range 16) columns16)
+   (sparse 16 magneticWitness16) 16 = mscale 12 (idMat 16) :=
+ by decide +kernel
+
+
 structure Certificate : Prop where
  scalar_circle :
    (List.range 5).map (fun i => coeff (pMul Dpoly Dpoly) i) =
@@ -172,6 +222,17 @@ structure Certificate : Prop where
  rank16_interior : mmul (select (DS plus) (List.range 16) columns16)
    (sparse 16 witness16) 16 = mscale 12 (idMat 16)
 
+ magnetic_metric : metric magneticWall =
+  [[-2,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]
+ magnetic_flux : flux magneticWall =
+  [[0,0,0,0],[0,0,0,0],[0,0,0,1],[0,0,-1,0]]
+ magnetic_annihilator :
+  mmul [magneticLeftNull] (DS magneticWall) 32 = [List.replicate 32 0]
+ magnetic_rank15 : mmul (select (DS magneticWall) (List.range 15) columns15)
+  (sparse 15 magneticWitness15) 15 = mscale 4 (idMat 15)
+ magnetic_rank16 : mmul (select (DS magneticInterior) (List.range 16) columns16)
+  (sparse 16 magneticWitness16) 16 = mscale 12 (idMat 16)
+
 theorem critical_suture_fold : Certificate :=
  { scalar_circle := circle_polynomial
    scalar_fold := mobius_fold_polynomial
@@ -182,7 +243,12 @@ theorem critical_suture_fold : Certificate :=
    gauge_exchange := K_exchanges
    wall_annihilator := wall_left_null
    rank15_lower := wall_rank_lower
-   rank16_interior := interior_rank_full }
+   rank16_interior := interior_rank_full
+   magnetic_metric := magnetic_metric
+   magnetic_flux := magnetic_flux
+   magnetic_annihilator := magnetic_wall_null
+   magnetic_rank15 := magnetic_wall_rank_lower
+   magnetic_rank16 := magnetic_interior_rank_full }
 
 end CriticalSutureFold
 
