@@ -103,7 +103,8 @@ theorem pb_antisym (f g : Affine) : pb f g = -pb g f := by
   omega
 
 theorem pb_self (f : Affine) : pb f f = 0 := by
-  simp [pb]
+  simp only [pb, dot_comm f.dp f.dq]
+  omega
 
 theorem pb_of_const_left (c : Int) (f : Affine) :
     pb (constObs c) f = 0 := by
@@ -143,15 +144,15 @@ theorem gauss_gauss (k l : Vec3) (lambda mu : Int) :
 
 theorem gauss_action_x (k : Vec3) (lambda : Int) :
     pb qX (gauss k lambda) = lambda*k.x := by
-  simp [pb,gauss,dot_eX,dot_z3_right,scale]
+  simp [pb,gauss,qX,dot,z3,eX,scale]
 
 theorem gauss_action_y (k : Vec3) (lambda : Int) :
     pb qY (gauss k lambda) = lambda*k.y := by
-  simp [pb,gauss,dot_eY,dot_z3_right,scale]
+  simp [pb,gauss,qY,dot,z3,eY,scale]
 
 theorem gauss_action_z (k : Vec3) (lambda : Int) :
     pb qZ (gauss k lambda) = lambda*k.z := by
-  simp [pb,gauss,dot_eZ,dot_z3_right,scale]
+  simp [pb,gauss,qZ,dot,z3,eZ,scale]
 
 theorem electric_invariant_x (k : Vec3) (lambda : Int) :
     pb pX (gauss k lambda) = 0 := by
@@ -217,7 +218,8 @@ theorem finite_sector_gauss_commutes
   induction xs with
   | nil => simp [sumSectorBrackets]
   | cons x rest ih =>
-      simp only [List.map_cons, sumSectorBrackets, List.map_cons, List.sum_cons]
+      change pb (gauss x.1 x.2.1) (gauss x.1 x.2.2) +
+        sumSectorBrackets (rest.map (fun t => gaugePair t.1 t.2.1 t.2.2)) = 0
       rw [gauss_gauss]
       simpa using ih
 
