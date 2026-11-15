@@ -7,7 +7,7 @@ set_option autoImplicit false
 # Critical suture fold: exact metric, flux, reflection, and rank certificates
 
 Carrier: etaHat = G (+) I6, Chat = C (+) C (+) C (+) C.
-Pi(0) and Pi(+/- 1/3) come from the regular family SD.11c at a=1.
+Pi(0) and Pi(positive or negative 1/3) come from SD.11c at a=1.
 The interior integer representatives use a last column 4*o4 +/- 3*o5,
 whose unscaled rational counterpart is (4/5)*o4 +/- (3/5)*o5.
 
