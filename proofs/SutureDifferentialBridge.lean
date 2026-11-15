@@ -443,6 +443,25 @@ theorem variational_wall_has_relation (c : K)
   exact ⟨d, (pairing_zero_iff_matrix c 0 0 d two_ne).mpr hm, hn⟩
 
 
+
+-- Quadratic suture map as an exact finite bilinear contraction.
+def bilinear (A : Nat → Nat → K)
+    (X Y : Variation K) (i j : Nat) : K :=
+  sum8 (fun k => X k i * product8 A Y k j)
+
+def shifted (t : K) (X V : Variation K) : Variation K :=
+  fun k j => X k j + t * V k j
+
+-- Algebraic derivative: the coefficient of t in S(X+tV).
+theorem quadratic_taylor (A : Nat → Nat → K)
+    (X V : Variation K) (t : K) (i j : Nat) :
+    bilinear A (shifted t X V) (shifted t X V) i j =
+      bilinear A X X i j +
+      t * (bilinear A V X i j + bilinear A X V i j) +
+      (t*t) * bilinear A V V i j := by
+  grind [bilinear, shifted, product8, sum8]
+
+
 end SutureDifferentialBridge
 
 #print axioms SutureDifferentialBridge.pairing_adjoint
@@ -459,3 +478,4 @@ end SutureDifferentialBridge
 #print axioms SutureDifferentialBridge.jp_exact
 #print axioms SutureDifferentialBridge.variational_wall_fifteen_independent
 #print axioms SutureDifferentialBridge.variational_wall_has_relation
+#print axioms SutureDifferentialBridge.quadratic_taylor
