@@ -64,7 +64,7 @@ theorem add_comm (a b : Jet3) : add a b = add b a := by
   cases a with
   | mk ac ax ay az =>
     cases b with
-    | mk bc bx by bz =>
+    | mk bc bx bY bz =>
       simp only [add, Jet3.mk.injEq]
       omega
 
@@ -73,7 +73,7 @@ theorem add_assoc (a b c : Jet3) :
   cases a with
   | mk ac ax ay az =>
     cases b with
-    | mk bc bx by bz =>
+    | mk bc bx bY bz =>
       cases c with
       | mk cc cx cy cz =>
         simp only [add, Jet3.mk.injEq]
@@ -95,7 +95,7 @@ theorem mul_comm (a b : Jet3) : mul a b = mul b a := by
   cases a with
   | mk ac ax ay az =>
     cases b with
-    | mk bc bx by bz =>
+    | mk bc bx bY bz =>
       simp only [mul, Jet3.mk.injEq]
       constructor
       · exact Int.mul_comm ac bc
@@ -103,7 +103,7 @@ theorem mul_comm (a b : Jet3) : mul a b = mul b a := by
       · rw [Int.mul_comm ac bx, Int.mul_comm ax bc]
         omega
       constructor
-      · rw [Int.mul_comm ac by, Int.mul_comm ay bc]
+      · rw [Int.mul_comm ac bY, Int.mul_comm ay bc]
         omega
       · rw [Int.mul_comm ac bz, Int.mul_comm az bc]
         omega
@@ -144,6 +144,7 @@ theorem D_mul (i : Fin 3) (a b : Jet3) :
       | inl h1 =>
           have h0 : i.val ≠ 0 := by omega
           simp only [D, h0, h1, ↓reduceIte, mul, add, Jet3.mk.injEq]
+          simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
           omega
       | inr h2 =>
           have h0 : i.val ≠ 0 := by omega
@@ -267,46 +268,30 @@ def gauge (A : Potential) (α : Jet3) : Potential :=
 def flux (A : Potential) (i j : Fin 3) : Jet3 :=
   add (D i (A j)) (neg (D j (A i)))
 
+theorem neg_add (a b : Jet3) :
+    neg (add a b) = add (neg a) (neg b) := by
+  cases a with
+  | mk ac ax ay az =>
+    cases b with
+    | mk bc bx bY bz =>
+      simp only [neg, add, Jet3.mk.injEq]
+      omega
+
 theorem flux_add (A B : Potential) (i j : Fin 3) :
     flux (fun k => add (A k) (B k)) i j =
       add (flux A i j) (flux B i j) := by
-  simp only [flux, D_add]
-  cases (A i) with
-  | mk a0 ax ay az =>
-    cases (A j) with
-    | mk b0 bx by bz =>
-      cases (B i) with
-      | mk c0 cx cy cz =>
-        cases (B j) with
-        | mk d0 dx dy dz =>
-          -- This is the additivity of the negative derivative as well.
-          have h : neg (add (D j ⟨a0,ax,ay,az⟩) (D j ⟨c0,cx,cy,cz⟩)) =
-            add (neg (D j ⟨a0,ax,ay,az⟩)) (neg (D j ⟨c0,cx,cy,cz⟩)) := by
-            cases (D j ⟨a0,ax,ay,az⟩) with
-            | mk e0 ex ey ez =>
-              cases (D j ⟨c0,cx,cy,cz⟩) with
-              | mk f0 fx fy fz =>
-                simp [neg, add, Jet3.mk.injEq]
-          rw [h]
-          rw [add_assoc]
-          rw [← add_assoc (D i ⟨b0,bx,by,bz⟩)]
-          rw [add_comm (D i ⟨d0,dx,dy,dz⟩)]
-          simp only [add_assoc]
-          
+  simp only [flux, D_add, neg_add]
+  -- This is commutativity and associativity of the four additive terms.
+  -- Unfolding the four Jet3 slots reduces the calculation to Int addition.
+  simp only [add, neg, Jet3.mk.injEq]
+  omega
+
 theorem flux_gauge_invariant (A : Potential) (α : Jet3) (i j : Fin 3) :
     flux (gauge A α) i j = flux A i j := by
   simp only [flux, gauge, D_add]
-  have h : D i (D j α) = D j (D i α) := D_commutes i j α
-  rw [h]
-  -- The two terms with second derivatives cancel in the additive group.
-  cases (D i (A j)) with
-  | mk a0 ax ay az =>
-    cases (D j (A i)) with
-    | mk b0 bx by bz =>
-      cases (D j (D i α)) with
-      | mk c0 cx cy cz =>
-        simp [add, neg, Jet3.mk.injEq]
-        omega
+  rw [D_commutes i j α]
+  simp only [add, neg, Jet3.mk.injEq]
+  omega
 
 theorem gauss_commutator_zero (A : Potential) (α β : Jet3) :
     gauge (gauge A α) β = gauge (gauge A β) α := by
