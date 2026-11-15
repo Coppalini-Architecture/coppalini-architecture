@@ -1,0 +1,40 @@
+name: Lean suture Euler reduction
+
+on:
+  push:
+    paths:
+      - 'proofs/SutureEulerReduction.lean'
+      - '.github/workflows/lean-suture-euler.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/SutureEulerReduction.lean'
+      - '.github/workflows/lean-suture-euler.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel elaboration of suture Euler reduction
+        run: |
+          lean --version
+          mkdir -p build/proofs
+          export LEAN_PATH="$PWD/build"
+          lean --root=. -o build/proofs/RootCarrier.olean proofs/RootCarrier.lean
+          lean --root=. -o build/proofs/MultiplierElimination.olean proofs/MultiplierElimination.lean
+          lean --root=. proofs/SutureEulerReduction.lean
+      - name: Source and receipt
+        run: |
+          sha256sum proofs/SutureEulerReduction.lean
+          sha256sum .github/workflows/lean-suture-euler.yml
+          git rev-parse HEAD
