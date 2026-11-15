@@ -205,6 +205,139 @@ theorem euclidean_rank_criterion (c u v : K)
   exact (euclidean_nonzero u v hp).symm
 
 
+
+-- Raw dual pairing of the suture differential in the fixed root coordinates.
+-- p is the normalized eight-by-four coframe; jp = Jp for J = Chat*eta.
+def p (c u v : K) (i j : Nat) : K :=
+ match i, j with
+ | 0, 0 => 1
+ | 7, 1 => 1
+ | 2, 2 => 1
+ | 3, 3 => -c
+ | 4, 3 => u
+ | 5, 3 => v
+ | _, _ => 0
+
+def jp (c u v : K) (i j : Nat) : K :=
+ match i, j with
+ | 0, 0 => -1
+ | 1, 0 => -2
+ | 6, 1 => -1
+ | 3, 2 => 1
+ | 2, 3 => c
+ | 4, 3 => -v
+ | 5, 3 => u
+ | _, _ => 0
+
+def mVal (d : Dual K) (i j : Nat) : K :=
+ match i, j with
+ | 0, 0 => d.m00
+ | 0, 1 => d.m01
+ | 0, 2 => d.m02
+ | 0, 3 => d.m03
+ | 1, 0 => d.m01
+ | 1, 1 => d.m11
+ | 1, 2 => d.m12
+ | 1, 3 => d.m13
+ | 2, 0 => d.m02
+ | 2, 1 => d.m12
+ | 2, 2 => d.m22
+ | 2, 3 => d.m23
+ | 3, 0 => d.m03
+ | 3, 1 => d.m13
+ | 3, 2 => d.m23
+ | 3, 3 => d.m33
+ | _, _ => 0
+
+def nVal (d : Dual K) (i j : Nat) : K :=
+ match i, j with
+ | 0, 1 => d.n01
+ | 1, 0 => -d.n01
+ | 0, 2 => d.n02
+ | 2, 0 => -d.n02
+ | 0, 3 => d.n03
+ | 3, 0 => -d.n03
+ | 1, 2 => d.n12
+ | 2, 1 => -d.n12
+ | 1, 3 => d.n13
+ | 3, 1 => -d.n13
+ | 2, 3 => d.n23
+ | 3, 2 => -d.n23
+ | _, _ => 0
+
+def pN (c u v : K) (d : Dual K) (i j : Nat) : K :=
+ p c u v i 0 * nVal d 0 j +
+ p c u v i 1 * nVal d 1 j +
+ p c u v i 2 * nVal d 2 j +
+ p c u v i 3 * nVal d 3 j
+
+def jpM (c u v : K) (d : Dual K) (i j : Nat) : K :=
+ jp c u v i 0 * mVal d 0 j +
+ jp c u v i 1 * mVal d 1 j +
+ jp c u v i 2 * mVal d 2 j +
+ jp c u v i 3 * mVal d 3 j
+
+def MatrixKernel (c u v : K) (d : Dual K) : Prop :=
+ ∀ i j : Nat, i < 8 → j < 4 → pN c u v d i j = jpM c u v d i j
+
+theorem matrix_kernel_iff (c u v : K) (d : Dual K) :
+    MatrixKernel c u v d ↔ Kernel c u v d := by
+  constructor
+  · intro h
+    have e00 := h 0 0 (by omega) (by omega)
+    have e01 := h 0 1 (by omega) (by omega)
+    have e02 := h 0 2 (by omega) (by omega)
+    have e03 := h 0 3 (by omega) (by omega)
+    have e10 := h 1 0 (by omega) (by omega)
+    have e11 := h 1 1 (by omega) (by omega)
+    have e12 := h 1 2 (by omega) (by omega)
+    have e13 := h 1 3 (by omega) (by omega)
+    have e20 := h 2 0 (by omega) (by omega)
+    have e21 := h 2 1 (by omega) (by omega)
+    have e22 := h 2 2 (by omega) (by omega)
+    have e23 := h 2 3 (by omega) (by omega)
+    have e30 := h 3 0 (by omega) (by omega)
+    have e31 := h 3 1 (by omega) (by omega)
+    have e32 := h 3 2 (by omega) (by omega)
+    have e33 := h 3 3 (by omega) (by omega)
+    have e40 := h 4 0 (by omega) (by omega)
+    have e41 := h 4 1 (by omega) (by omega)
+    have e42 := h 4 2 (by omega) (by omega)
+    have e43 := h 4 3 (by omega) (by omega)
+    have e50 := h 5 0 (by omega) (by omega)
+    have e51 := h 5 1 (by omega) (by omega)
+    have e52 := h 5 2 (by omega) (by omega)
+    have e53 := h 5 3 (by omega) (by omega)
+    have e60 := h 6 0 (by omega) (by omega)
+    have e61 := h 6 1 (by omega) (by omega)
+    have e62 := h 6 2 (by omega) (by omega)
+    have e63 := h 6 3 (by omega) (by omega)
+    have e70 := h 7 0 (by omega) (by omega)
+    have e71 := h 7 1 (by omega) (by omega)
+    have e72 := h 7 2 (by omega) (by omega)
+    have e73 := h 7 3 (by omega) (by omega)
+    grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7,
+      pN, jpM, p, jp, mVal, nVal]
+  · intro h i j hi hj
+    have hi8 : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 := by omega
+    have hj4 : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 := by omega
+    rcases hi8 with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    all_goals rcases hj4 with rfl | rfl | rfl | rfl
+    all_goals grind [Kernel, row0, row1, row2, row3, row4, row5, row6, row7,
+      pN, jpM, p, jp, mVal, nVal]
+
+-- Now rank is stated against the actual P*n = J*P*m pairing, not a proxy.
+theorem matrix_rank_criterion (c u v : K) (two_ne : (2:K) ≠ 0) :
+    (∀ d : Dual K, MatrixKernel c u v d → d = lift c 0) ↔
+       (u ≠ 0 ∨ v ≠ 0) := by
+  simpa only [matrix_kernel_iff] using rank_criterion c u v two_ne
+
+theorem euclidean_matrix_rank_criterion (c u v : K)
+    (two_ne : (2:K) ≠ 0) (hp : PositiveTwoSquare K) :
+    (∀ d : Dual K, MatrixKernel c u v d → d = lift c 0) ↔
+       u*u + v*v ≠ 0 := by
+  simpa only [matrix_kernel_iff] using euclidean_rank_criterion c u v two_ne hp
+
 end SutureRankGeneral
 #print axioms SutureRankGeneral.rank_criterion
 #print axioms SutureRankGeneral.wall_kernel
