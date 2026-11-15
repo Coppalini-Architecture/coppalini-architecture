@@ -452,6 +452,32 @@ def bilinear (A : Nat → Nat → K)
 def shifted (t : K) (X V : Variation K) : Variation K :=
   fun k j => X k j + t * V k j
 
+theorem product8_shift (A : Nat → Nat → K)
+    (X V : Variation K) (t : K) (i j : Nat) :
+    product8 A (shifted t X V) i j =
+       product8 A X i j + t * product8 A V i j := by
+  grind [product8, shifted, sum8]
+
+theorem bilinear_shift_left (A : Nat → Nat → K)
+    (X V Y : Variation K) (t : K) (i j : Nat) :
+    bilinear A (shifted t X V) Y i j =
+      bilinear A X Y i j + t * bilinear A V Y i j := by
+  grind [bilinear, shifted, sum8]
+
+theorem bilinear_shift_right (A : Nat → Nat → K)
+    (X Y V : Variation K) (t : K) (i j : Nat) :
+    bilinear A X (shifted t Y V) i j =
+      bilinear A X Y i j + t * bilinear A X V i j := by
+  have h0 := product8_shift A Y V t 0 j
+  have h1 := product8_shift A Y V t 1 j
+  have h2 := product8_shift A Y V t 2 j
+  have h3 := product8_shift A Y V t 3 j
+  have h4 := product8_shift A Y V t 4 j
+  have h5 := product8_shift A Y V t 5 j
+  have h6 := product8_shift A Y V t 6 j
+  have h7 := product8_shift A Y V t 7 j
+  grind [bilinear, sum8]
+
 -- Algebraic derivative: the coefficient of t in S(X+tV).
 theorem quadratic_taylor (A : Nat → Nat → K)
     (X V : Variation K) (t : K) (i j : Nat) :
@@ -459,7 +485,19 @@ theorem quadratic_taylor (A : Nat → Nat → K)
       bilinear A X X i j +
       t * (bilinear A V X i j + bilinear A X V i j) +
       (t*t) * bilinear A V V i j := by
-  grind [bilinear, shifted, product8, sum8]
+  calc
+    bilinear A (shifted t X V) (shifted t X V) i j
+        = bilinear A X (shifted t X V) i j +
+          t * bilinear A V (shifted t X V) i j :=
+          bilinear_shift_left A X V (shifted t X V) t i j
+    _ = (bilinear A X X i j + t * bilinear A X V i j) +
+          t * (bilinear A V X i j + t * bilinear A V V i j) := by
+          rw [bilinear_shift_right A X X V t i j,
+              bilinear_shift_right A V X V t i j]
+    _ = bilinear A X X i j +
+          t * (bilinear A V X i j + bilinear A X V i j) +
+          (t*t) * bilinear A V V i j := by grind
+
 
 
 end SutureDifferentialBridge
