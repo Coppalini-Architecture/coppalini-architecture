@@ -35,40 +35,63 @@ namespace ADMFunctional010d
 -- A represents a ring of admissible smooth scalar fields on the slice.
 -- Concrete instances must supply derivative, integrated density, and boundary
 -- properties; the structure makes the analytic requirements inspectable.
-structure StokesSlice (A : Type) [CommRing A] where
-  deriv : Fin 3 → A → A
-  integral : A → A
-  derivative_product : ∀ i f g, deriv i (f*g) =
-    (deriv i f)*g + f*(deriv i g)
-  integral_add : ∀ f g, integral (f+g) = integral f + integral g
-  stokes_zero : ∀ i f, integral (deriv i f) = 0
+-- Two distinct types keep the field algebra and the integrated scalar
+-- separate. This prevents any hidden assumption that "integral" is a point
+-- evaluation, or that a smooth derivative acts on the scalar codomain.
+structure StokesSlice (Field Scalar : Type) where
+  addField : Field → Field → Field
+  mulField : Field → Field → Field
+  deriv : Fin 3 → Field → Field
+  integral : Field → Scalar
+  zeroScalar : Scalar
+  addScalar : Scalar → Scalar → Scalar
+  negScalar : Scalar → Scalar
+  derivative_product : ∀ i f g,
+    deriv i (mulField f g) =
+      addField (mulField (deriv i f) g) (mulField f (deriv i g))
+  integral_add : ∀ f g,
+    integral (addField f g) = addScalar (integral f) (integral g)
+  stokes_zero : ∀ i f, integral (deriv i f) = zeroScalar
+  sum_comm : ∀ x y, addScalar x y = addScalar y x
+  sum_zero_to_neg : ∀ x y,
+    addScalar x y = zeroScalar → x = negScalar y
+  double_neg : ∀ x, negScalar (negScalar x) = x
 
-theorem first_integration_by_parts {A : Type} [CommRing A]
-    (s : StokesSlice A) (i : Fin 3) (f g : A) :
-    s.integral (f * s.deriv i g) =
-      -s.integral ((s.deriv i f) * g) := by
-  have hs := s.stokes_zero i (f*g)
+theorem first_integration_by_parts {Field Scalar : Type}
+    (s : StokesSlice Field Scalar) (i : Fin 3) (f g : Field) :
+    s.integral (s.mulField f (s.deriv i g)) =
+      s.negScalar (s.integral (s.mulField (s.deriv i f) g)) := by
+  have hs := s.stokes_zero i (s.mulField f g)
   rw [s.derivative_product, s.integral_add] at hs
   have hswap :
-      s.integral (f * s.deriv i g) +
-      s.integral ((s.deriv i f) * g) = 0 := by
-    simpa only [add_comm] using hs
-  exact (eq_neg_iff_add_eq_zero).2 hswap
+      s.addScalar (s.integral (s.mulField f (s.deriv i g)))
+        (s.integral (s.mulField (s.deriv i f) g)) = s.zeroScalar := by
+    rw [s.sum_comm]
+    exact hs
+  exact s.sum_zero_to_neg _ _ hswap
 
-theorem second_integration_by_parts {A : Type} [CommRing A]
-    (s : StokesSlice A) (i j : Fin 3) (f h : A) :
-    s.integral (f * s.deriv i (s.deriv j h)) =
-      s.integral ((s.deriv j (s.deriv i f)) * h) := by
-  rw [first_integration_by_parts s i f (s.deriv j h)]
-  rw [first_integration_by_parts s j (s.deriv i f) h]
-  simp
+theorem second_integration_by_parts {Field Scalar : Type}
+    (s : StokesSlice Field Scalar) (i j : Fin 3) (f h : Field) :
+    s.integral (s.mulField f (s.deriv i (s.deriv j h))) =
+      s.integral (s.mulField (s.deriv j (s.deriv i f)) h) := by
+  calc
+    s.integral (s.mulField f (s.deriv i (s.deriv j h))) =
+      s.negScalar (s.integral (s.mulField (s.deriv i f) (s.deriv j h))) :=
+        first_integration_by_parts s i f (s.deriv j h)
+    _ = s.negScalar (s.negScalar
+        (s.integral (s.mulField (s.deriv j (s.deriv i f)) h))) := by
+      rw [first_integration_by_parts s j (s.deriv i f) h]
+    _ = s.integral (s.mulField (s.deriv j (s.deriv i f)) h) :=
+      s.double_neg _
 
--- If the scalar covariant derivatives commute, Hessian order returns.
-theorem second_ibp_commuting_scalar {A : Type} [CommRing A]
-    (s : StokesSlice A) (i j : Fin 3) (f h : A)
+-- The additional hypothesis is the commutation of scalar covariant
+-- derivatives. It is kept explicit because general tensor derivatives
+-- need a curvature-commutator analysis.
+theorem second_ibp_commuting_scalar {Field Scalar : Type}
+    (s : StokesSlice Field Scalar) (i j : Fin 3) (f h : Field)
     (hcomm : s.deriv j (s.deriv i f) = s.deriv i (s.deriv j f)) :
-    s.integral (f * s.deriv i (s.deriv j h)) =
-      s.integral ((s.deriv i (s.deriv j f)) * h) := by
+    s.integral (s.mulField f (s.deriv i (s.deriv j h))) =
+      s.integral (s.mulField (s.deriv i (s.deriv j f)) h) := by
   rw [second_integration_by_parts s i j f h, hcomm]
 
 /-! ## Local ADM current from exact 010c tensor carriers -/
@@ -124,7 +147,7 @@ theorem gravitational_divergence_identity (c : NormalCell) :
       gravCurrentDivergence c + gravMomentumSmear c := by
   have hw := symmetric_current_wedge_zero c
   simp only [scalarHessianBracket, gravCurrentDivergence,
-    gravMomentumSmear, hw, add_zero]
+    gravMomentumSmear, hw]
   omega
 
 /-! ## From pointwise currents to an integrated normal-normal bracket -/
