@@ -1,0 +1,53 @@
+name: Lean Jet Stokes 010e
+
+on:
+  push:
+    paths:
+      - 'proofs/JetStokes010e.lean'
+      - 'proofs/ADMFunctional010d.lean'
+      - 'proofs/ADMGravity010c.lean'
+      - 'proofs/Maxwell010b.lean'
+      - 'proofs/SutureDirac010a.lean'
+      - '.github/workflows/lean-jet-stokes-010e.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/JetStokes010e.lean'
+      - '.github/workflows/lean-jet-stokes-010e.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile 010a–010e
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.txt
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b.txt
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMGravity010c.olean proofs/ADMGravity010c.lean | tee /tmp/010c.txt
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMFunctional010d.olean proofs/ADMFunctional010d.lean | tee /tmp/010d.txt
+          LEAN_PATH=build lean --root=. proofs/JetStokes010e.lean | tee /tmp/010e.txt
+      - name: Axiom audit
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010a.txt /tmp/010b.txt /tmp/010c.txt /tmp/010d.txt /tmp/010e.txt
+      - name: SHA-256 and commit
+        shell: bash
+        run: |
+          sha256sum proofs/SutureDirac010a.lean proofs/Maxwell010b.lean proofs/ADMGravity010c.lean proofs/ADMFunctional010d.lean proofs/JetStokes010e.lean
+          sha256sum .github/workflows/lean-jet-stokes-010e.yml
+          git rev-parse HEAD
