@@ -144,6 +144,7 @@ theorem wall_kernel (c : K) (two_ne : (2:K) ≠ 0)
   · rintro ⟨t, rfl⟩
     apply (kernel_lift c 0 0 two_ne (lift c t)).mpr
     simp [lift]
+    grind
 
 theorem lift_injective (c : K) :
     Function.Injective (lift c) := by
@@ -164,13 +165,14 @@ theorem rank_criterion (c u v : K) (two_ne : (2:K) ≠ 0) :
       (u ≠ 0 ∨ v ≠ 0) := by
   constructor
   · intro h
-    by_contra hnot
-    have hu : u = 0 := by grind
-    have hv : v = 0 := by grind
-    subst u
-    subst v
-    obtain ⟨d, hk, hn⟩ := nonzero_wall c two_ne
-    exact hn (h d hk)
+    by_cases hu : u = 0
+    · by_cases hv : v = 0
+      · subst u
+        subst v
+        obtain ⟨d, hk, hn⟩ := nonzero_wall c two_ne
+        exact False.elim (hn (h d hk))
+      · exact Or.inr hv
+    · exact Or.inl hu
   · intro h d hd
     exact regular_kernel c u v two_ne h d hd
 
