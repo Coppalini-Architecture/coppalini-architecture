@@ -48,7 +48,7 @@ def freq (i : Fin 3) (a : Mode) : Int :=
 def E (i : Fin 3) (a : Mode) : Mode :=
   ⟨a.kx, a.ky, a.kz, (freq i a)*a.c⟩
 
-def zeroFreq (a : Mode) : Prop :=
+abbrev zeroFreq (a : Mode) : Prop :=
   a.kx = 0 ∧ a.ky = 0 ∧ a.kz = 0
 
 def residue (a : Mode) : Int :=
@@ -74,24 +74,27 @@ theorem freq_product (i : Fin 3) (a b : Mode) :
 
 theorem freq_of_zero (i : Fin 3) (a : Mode)
     (hz : zeroFreq a) : freq i a = 0 := by
+  have hx : a.kx = 0 := hz.1
+  have hy : a.ky = 0 := hz.2.1
+  have hZ : a.kz = 0 := hz.2.2
   have h := axis_cases i
   cases h with
-  | inl h0 =>
-    simp [freq, h0, zeroFreq] at *
+  | inl h0 => simpa [freq, h0] using hx
   | inr h =>
     cases h with
     | inl h1 =>
       have h0 : i.val ≠ 0 := by omega
-      simp [freq, h0, h1, zeroFreq] at *
+      simpa [freq, h0, h1] using hy
     | inr h2 =>
       have h0 : i.val ≠ 0 := by omega
       have h1 : i.val ≠ 1 := by omega
-      simp [freq, h0, h1, zeroFreq] at *
+      simpa [freq, h0, h1] using hZ
 
 theorem monomial_Leibniz (i : Fin 3) (a b : Mode) :
     (E i (product a b)).c =
     (product (E i a) b).c + (product a (E i b)).c := by
-  simp only [E, product]
+  change freq i (product a b) * (a.c*b.c) =
+    (freq i a * a.c) * b.c + a.c * (freq i b * b.c)
   rw [freq_product, Int.add_mul]
   ac_rfl
 
@@ -113,7 +116,7 @@ def integral (f : Polynomial) : Int :=
 theorem stokes_finite_Fourier (i : Fin 3) (f : Polynomial) :
     integral (derivative i f) = 0 := by
   induction f with
-  | nil => decide
+  | nil => simp [integral, derivative]
   | cons a rest ih =>
       simp only [integral, derivative, List.map_cons, List.sum_cons] at ih ⊢
       rw [residue_E_zero i a]
