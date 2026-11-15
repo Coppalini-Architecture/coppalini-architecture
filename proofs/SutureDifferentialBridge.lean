@@ -540,7 +540,8 @@ theorem bilinear_eta_pV (c u v : K) (V : Variation K)
        sum8 (fun k => V k j * etaP c u v k i) := by
   have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 := by omega
   rcases icases with rfl | rfl | rfl | rfl
-  all_goals grind [bilinear, product8, sum8, etaHat, etaP, p]
+  all_goals simp [bilinear, product8, sum8, etaHat, etaP, p]
+  all_goals grind
 
 theorem bilinear_c_pV (c u v : K) (V : Variation K)
     (i j : Nat) (hi : i < 4) :
@@ -548,7 +549,8 @@ theorem bilinear_c_pV (c u v : K) (V : Variation K)
        -sum8 (fun k => V k j * cP c u v k i) := by
   have icases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 := by omega
   rcases icases with rfl | rfl | rfl | rfl
-  all_goals grind [bilinear, product8, sum8, cHat, cP, p]
+  all_goals simp [bilinear, product8, sum8, cHat, cP, p]
+  all_goals grind
 
 theorem metric_variation_exact (c u v : K) (V : Variation K)
     (i j : Nat) (hi : i < 4) (hj : j < 4) :
