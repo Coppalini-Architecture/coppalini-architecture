@@ -4,11 +4,15 @@ on:
   push:
     paths:
       - 'proofs/MinimumMechanicalBasis.lean'
+      - 'proofs/MinimumMechanicalSpine.lean'
       - '.github/workflows/lean-minimum-mechanical-basis.yml'
+      - 'SHA256SUMS'
   pull_request:
     paths:
       - 'proofs/MinimumMechanicalBasis.lean'
+      - 'proofs/MinimumMechanicalSpine.lean'
       - '.github/workflows/lean-minimum-mechanical-basis.yml'
+      - 'SHA256SUMS'
   workflow_dispatch:
 
 permissions:
@@ -18,19 +22,20 @@ jobs:
   lean:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out exact source
+      - name: Check out exact sources
         uses: actions/checkout@v4
-      - name: Verify source SHA-256
+      - name: Verify source hashes
         shell: bash
         run: |
           echo '93f289f0f82f36028551238f19da3b56e985775e62afab23402a50eec0c571a5  proofs/MinimumMechanicalBasis.lean' | sha256sum -c -
-      - name: Install pinned Lean 4.33.0
+          echo '98613d143e8924ce2d4c59abfa906e12431d1d562cdcf202c5a7791f9d2ba873  proofs/MinimumMechanicalSpine.lean' | sha256sum -c -
+      - name: Install Lean 4.33.0
         shell: bash
         run: |
           curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
           sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Compile original dependencies and unified theorem
+      - name: Compile the proof chain
         shell: bash
         run: |
           lean --version
@@ -42,9 +47,10 @@ jobs:
           lean --root=. -o build/proofs/StabilizerDim.olean proofs/StabilizerDim.lean
           lean --root=. -o build/proofs/MultiplierElimination.olean proofs/MultiplierElimination.lean
           lean --root=. -o build/proofs/MagneticValueAtPi0.olean proofs/MagneticValueAtPi0.lean
-          lean --root=. proofs/MinimumMechanicalBasis.lean
-      - name: Receipt
+          lean --root=. -o build/proofs/MinimumMechanicalBasis.olean proofs/MinimumMechanicalBasis.lean
+          lean --root=. proofs/MinimumMechanicalSpine.lean
+      - name: Retained receipt
         shell: bash
         run: |
-          sha256sum proofs/MinimumMechanicalBasis.lean
+          sha256sum proofs/MinimumMechanicalBasis.lean proofs/MinimumMechanicalSpine.lean
           git rev-parse HEAD
