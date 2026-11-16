@@ -29,6 +29,7 @@
 .r59 .r59-card { min-width:0; padding:1.4rem 1.3rem 1.45rem; background:var(--surface); }
 .r59 .r59-card h3 { font-size:1.2rem; line-height:1.25; margin:.45rem 0 .65rem; }
 .r59 .r59-card p { font-size:.88rem; color:var(--r59-muted); line-height:1.65; }
+.r59 .r59-card .r59-pillar-subtitle { color:var(--ink); font-size:.92rem; font-weight:650; line-height:1.55; }
 .r59 .r59-card p:last-child { margin-bottom:0; }
 .r59 .r59-card .kicker,.r59 .mini-label { color:var(--red); text-transform:uppercase; font:750 .63rem/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.09em; }
 .r59 .r59-card a { font-size:.78rem; font-weight:750; text-decoration-thickness:1px; }

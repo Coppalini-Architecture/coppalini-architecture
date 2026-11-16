@@ -18,12 +18,12 @@
 - 010a–010p: finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o is conditional on `SmoothCompletion` and retains its smooth-field realization obligation.
 - 010q–010r: exact abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
 - 010s–010t: verified local source attachment and nonzero finite rational symplectic carrier; ordinary smooth real field completion is a distinct mathematical construction from full Lean formalization.
-- 010u: an inhabited, universally quantified jurisdictional admission and pattern-recognition theorem. Universality is over declared typed carriers, not a universal physical theory.
-- `AxiomaticBuild.lean` was not bundled in the 010u source package. Its summary and README remain source reports.
+- 010u: an inhabited, universally quantified jurisdictional admission and pattern-recognition theorem. Universality is over declared typed carriers; physical applications are carried by separately declared observables and conditions.
+- `AxiomaticBuild.lean` is carried here by its summary and README as source-report records.
 
 ## Verify before reapplying
 
-A claim travels with its jurisdiction, reference, theorem statement, dependencies, verified receipt and scope. Source co-compilation is not equivalent to a new theorem-level dependency across all branches.
+A claim travels with its jurisdiction, reference, theorem statement, dependencies, verified receipt and scope. Source co-compilation records a graph; theorem-level dependency remains attached to explicit premises and conclusions.
 
 - [Pinned proof source tree](https://github.com/Coppalini-Architecture/coppalini-architecture/tree/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs)
 - [Compiler receipt](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607)

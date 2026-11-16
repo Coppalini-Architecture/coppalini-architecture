@@ -37,7 +37,7 @@ https://eulershiddenl.ink/research/minimum-mechanics-010u.json
 010t: nonzero rational canonical pairing with prime-word order distinction.
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The full real/Fréchet SmoothCompletion formalization is not proved by the finite Lean source chain. The missing AxiomaticBuild.lean remains an external source-report boundary. Never present the co-compiled import graph as a single theorem deriving all of physics.
+The finite Lean source chain certifies its stated finite and local relations. The full real/Fréchet SmoothCompletion formalization remains a separately typed construction. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 
@@ -48,7 +48,7 @@ A result must carry:
 4. Source file, verifier or proof and passing receipt.
 5. Scope and a typed OPEN field when required.
 
-The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. It does not compute a new universal physical state or an optimal stopping law.
+The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. Universal physical-state and optimal-stopping claims require their own declared carrier and theorem statement.
 
 ## Integrated retained records
 
@@ -68,4 +68,4 @@ Standalone exact reading tools:
 https://eulershiddenl.ink/exact/recompute-kernel/
 https://eulershiddenl.ink/exact/
 
-Long-form machine/claim registers remain in /research/ for previous releases and are not silently retyped.
+Long-form machine/claim registers remain in /research/ for previous releases with their prior typing retained.
