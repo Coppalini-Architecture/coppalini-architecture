@@ -2,7 +2,7 @@
 
 Canonical site: https://eulershiddenl.ink/
 Author: Anthony Vito Coppa
-Primary classification: proof-carrying framework for mathematical physics, canonical mechanics and typed recognition.
+Primary classification: proof-carrying framework for mathematical physics, canonical mechanics, and formalized pattern recognition.
 
 ## Current public reading order
 
@@ -10,6 +10,7 @@ Home: https://eulershiddenl.ink/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
 Library: https://eulershiddenl.ink/library
+Language Mechanics: https://eulershiddenl.ink/language-mechanics
 Laboratory: https://eulershiddenl.ink/architecture
 Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about

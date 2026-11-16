@@ -1,6 +1,6 @@
 # Coppalini Architecture — formal mechanics and source-indexed research
 
-> Anthony Vito Coppa's proof-carrying research framework for mathematical physics, canonical field mechanics, typed recognition and inspectable evidence.
+> Anthony Vito Coppa's proof-carrying research framework for mathematical physics, canonical field mechanics, formalized pattern recognition, and inspectable evidence.
 
 ## Begin with the current result
 
@@ -8,6 +8,7 @@
 - [Proof verification](https://eulershiddenl.ink/verify): Lean 4.33.0 and archive-integrity PASS at pinned commit `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.
 - [Research Library](https://eulershiddenl.ink/library): curated primary studies, suture field and physical interfaces; the complete 51-edition historical catalog remains available.
+- [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for readable reference, deterministic pattern recognition inside declared constraint, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
 - [About](https://eulershiddenl.ink/about): discovery chronology and claim boundaries.
 - [Basis](https://eulershiddenl.ink/formalism): jurisdiction, reference, typed Gate, Survival, Reader, Receipt and Enough.
@@ -17,7 +18,7 @@
 - 010a–010p: finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o is conditional on `SmoothCompletion` and retains its smooth-field realization obligation.
 - 010q–010r: exact abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
 - 010s–010t: verified local source attachment and nonzero finite rational symplectic carrier; ordinary smooth real field completion is a distinct mathematical construction from full Lean formalization.
-- 010u: an inhabited, universally quantified jurisdictional admission and recognition theorem. Universality is over declared typed carriers, not a universal physical theory.
+- 010u: an inhabited, universally quantified jurisdictional admission and pattern-recognition theorem. Universality is over declared typed carriers, not a universal physical theory.
 - `AxiomaticBuild.lean` was not bundled in the 010u source package. Its summary and README remain source reports.
 
 ## Verify before reapplying

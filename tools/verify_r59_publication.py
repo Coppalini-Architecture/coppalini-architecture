@@ -15,6 +15,7 @@ import sys
 ROOT = Path(".")
 CURRENT = ("index.html","about.html","library.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
+           "language-mechanics.html",
            "archive/index.html","proofs/minimum-mechanics/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
@@ -24,6 +25,7 @@ REQUIRED_PAPERS = (
  "papers/suture-field/05a_suture_field_dynamics.pdf",
  "papers/the_structure_of_survival_v66.pdf",
  "papers/contact_recognition_continuum.pdf",
+ "assets/authors/anthony-vito-coppa-camera-self-portrait.jpeg",
  "papers/four-dual-forms/pdf/01_gravity_light.pdf",
  "models/view/clear-onyx-gauge-laboratory-v0.5.3.html",
 )
@@ -64,6 +66,11 @@ def redirects():
         if len(terms) >= 3 and terms[2].startswith(("301","302")):
             if terms[0] in entries: raise AssertionError(f"duplicate redirect: {terms[0]}")
             entries[terms[0]] = terms[1]
+    for source, target in entries.items():
+        source_norm = source.rstrip("/") or "/"
+        target_norm = target.split("#", 1)[0].rstrip("/") or "/"
+        if source_norm == target_norm:
+            raise AssertionError(f"normalized self-redirect: {source} -> {target}")
     return entries
 
 def location(path):

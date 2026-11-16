@@ -1,7 +1,7 @@
 {
   "release": "R59",
   "date": "2026-11-16",
-  "classification": "Coppalini Architecture — proof-carrying framework for mathematical physics, constraint mechanics, and recognition",
+  "classification": "Coppalini Architecture — proof-carrying framework for mathematical physics, constraint mechanics, and formalized pattern recognition",
   "role": "editorial presentation and source navigation; no changes to certified Lean theorem files",
   "site_parent_commit": "6996eea6255d109f7c281755c557c74360039e32",
   "proof_pin": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
@@ -12,7 +12,8 @@
     "/library",
     "/architecture",
     "/about",
-    "/formalism"
+    "/formalism",
+    "/language-mechanics"
   ],
   "proof": {
     "modules": 45,

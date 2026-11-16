@@ -1,0 +1,43 @@
+.language-mechanics-page {
+  background:
+    radial-gradient(circle at 92% 2%, rgba(196, 148, 62, .12), transparent 25rem),
+    radial-gradient(circle at 2% 34%, rgba(47, 94, 153, .07), transparent 27rem),
+    var(--paper);
+}
+.language-mechanics-page main { width: min(66rem, calc(100% - 2rem)); }
+.language-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 15rem);
+  gap: clamp(1.8rem, 5vw, 4.75rem);
+  align-items: center;
+}
+.lm-cover { margin: 0; border: 1px solid var(--line); background: var(--surface); }
+.lm-cover img { display: block; width: 100%; height: auto; }
+.lm-cover figcaption { padding: .6rem .7rem; color: var(--muted); font-size: .63rem; font-weight: 700; letter-spacing: .06em; line-height: 1.4; text-transform: uppercase; }
+.lm-section { max-width: 55rem; padding: clamp(2.25rem, 5vw, 4rem) 0; border-bottom: 1px solid var(--line); }
+.lm-section .eyebrow { margin-bottom: .55rem; }
+.lm-section h2 { max-width: 25ch; margin: 0 0 .95rem; font-size: clamp(1.7rem, 3vw, 2.45rem); letter-spacing: -.03em; }
+.lm-section > p:not(.eyebrow), .lm-section li, .lm-section dd { color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; font-size: clamp(1rem, 1.35vw, 1.12rem); line-height: 1.62; }
+.lm-section > p:not(.eyebrow) { margin: 0 0 1rem; }
+.lm-note { margin: 1.5rem 0 0; padding: 1.1rem 1.2rem; border-left: 3px solid var(--red); background: var(--surface); color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; line-height: 1.58; }
+.lm-note strong { color: var(--ink); }
+.lm-dependency { display: grid; gap: 1px; margin: 1.5rem 0 0; border: 1px solid var(--line); background: var(--line); }
+.lm-dependency > div { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1rem; padding: 1rem 1.1rem; background: var(--surface); }
+.lm-dependency strong, .lm-register strong, .lm-lineage dt { color: var(--red); font-size: .68rem; font-weight: 780; letter-spacing: .1em; line-height: 1.4; text-transform: uppercase; }
+.lm-dependency span { color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; line-height: 1.52; }
+.lm-register { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 1.5rem 0 0; border: 1px solid var(--line); background: var(--line); }
+.lm-register > div { min-height: 8.25rem; padding: 1rem 1.1rem; background: var(--surface); }
+.lm-register span { display: block; margin-top: .45rem; color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; font-size: .93rem; line-height: 1.48; }
+.lm-lineage { display: grid; grid-template-columns: 1fr; gap: 0; margin: 1.4rem 0 0; border-top: 1px solid var(--line); }
+.lm-lineage > div { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.lm-lineage dd { margin: 0; }
+.language-mechanics-page .site-footer { border-top: 1px solid var(--line); }
+@media (max-width: 42rem) {
+  .language-hero { grid-template-columns: minmax(0, 1fr) minmax(9rem, 11rem); gap: 1.25rem; align-items: start; }
+  .lm-dependency > div, .lm-lineage > div { grid-template-columns: 1fr; gap: .45rem; }
+}
+@media (max-width: 30rem) {
+  .language-hero { grid-template-columns: 1fr; }
+  .lm-cover { max-width: 12rem; }
+  .lm-register { grid-template-columns: 1fr; }
+}
