@@ -1,0 +1,44 @@
+name: Lean canonical 010m fast kernel
+
+on:
+  push:
+    paths:
+      - 'proofs/CanonicalTwoSite010m.lean'
+      - 'proofs/QuadraticTransport010m.lean'
+      - '.github/workflows/lean-canonical-fast-010m.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel compile required parents and canonical 010m
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/010e.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CanonicalPoisson010f.olean proofs/CanonicalPoisson010f.lean | tee /tmp/010f.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CanonicalTwoSite010m.olean proofs/CanonicalTwoSite010m.lean | tee /tmp/010m1.log
+          LEAN_PATH=build lean --root=. proofs/QuadraticTransport010m.lean | tee /tmp/010m2.log
+      - name: Axiom receipt
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010{a,b,e,f,m1,m2}.log
+      - name: Exact hashes
+        run: |
+          sha256sum proofs/CanonicalTwoSite010m.lean proofs/QuadraticTransport010m.lean .github/workflows/lean-canonical-fast-010m.yml
+          git rev-parse HEAD
