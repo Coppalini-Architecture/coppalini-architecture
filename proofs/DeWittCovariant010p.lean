@@ -118,6 +118,12 @@ theorem trace_kinetic_BHB
     (hgB : mul g B = M1) (hBg : mul B g = M1) :
     tr (mul (kineticGradient g P) (mul (mul B H) B)) =
       2*tr (mul P H) - (tau g P)*(lambda B H) := by
+  have hG : mul g (mul (mul B H) B) = mul H B := by
+    calc
+      mul g (mul (mul B H) B) =
+        mul (mul g (mul B H)) B := by rw [← mul_assoc]
+      _ = mul (mul (mul g B) H) B := by rw [← mul_assoc]
+      _ = mul H B := by rw [hgB, one_mul]
   have h1 :
       tr (mul (mul (mul g P) g) (mul (mul B H) B)) =
         tr (mul P H) := by
@@ -125,8 +131,12 @@ theorem trace_kinetic_BHB
       tr (mul (mul (mul g P) g) (mul (mul B H) B)) =
         tr (mul (mul g P) (mul g (mul (mul B H) B))) := by
           rw [mul_assoc]
-      _ = tr (mul (mul g P) (mul (mul g B) H |>.mul B)) := by
-          sorry
+      _ = tr (mul (mul g P) (mul H B)) := by rw [hG]
+      _ = tr (mul (mul (mul g P) H) B) := by rw [mul_assoc]
+      _ = tr (mul B (mul (mul g P) H)) := tr_mul_comm _ _
+      _ = tr (mul (mul B g) (mul P H)) := by
+          rw [← mul_assoc B g P, mul_assoc]
+      _ = tr (mul P H) := by rw [hBg, one_mul]
   have h2 : tr (mul g (mul (mul B H) B)) =
       lambda B H := by
     calc
