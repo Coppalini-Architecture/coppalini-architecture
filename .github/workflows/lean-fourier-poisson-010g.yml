@@ -43,8 +43,8 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/010e-fourier.log
           LEAN_PATH=build lean --root=. -o build/proofs/CanonicalPoisson010f.olean proofs/CanonicalPoisson010f.lean | tee /tmp/010f-canonical.log
           LEAN_PATH=build lean --root=. -o build/proofs/LinearTransport010f.olean proofs/LinearTransport010f.lean | tee /tmp/010f-transport.log
-          LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
-          LEAN_PATH=build lean --root=. proofs/LaurentPoisson010g.lean | tee /tmp/010g-laurent.log
+          LEAN_PATH=build lean --root=. -o build/proofs/LaurentPoisson010g.olean proofs/LaurentPoisson010g.lean | tee /tmp/010g-laurent.log
+          LEAN_PATH=build lean --root=. proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
       - name: Audit kernel dependency and placeholder closure
         shell: bash
         run: |
