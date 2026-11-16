@@ -10,6 +10,7 @@ on:
       - 'proofs/SinglePoisson010o.lean'
       - 'proofs/GaugeEnergy010o.lean'
       - '.github/workflows/lean-smooth-functional-010o.yml'
+      - 'scripts/verify_lean_010s.py'
       - 'SHA256SUMS'
   pull_request:
     paths:
@@ -20,6 +21,7 @@ on:
       - 'proofs/SinglePoisson010o.lean'
       - 'proofs/GaugeEnergy010o.lean'
       - '.github/workflows/lean-smooth-functional-010o.yml'
+      - 'scripts/verify_lean_010s.py'
       - 'SHA256SUMS'
   workflow_dispatch:
 
@@ -40,7 +42,7 @@ jobs:
       - name: Compile certified ancestry and prove 010o smooth functional interface
         shell: bash
         run: |
-          set -o pipefail
+          set -euo pipefail
           lean --version
           mkdir -p build/proofs
           lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
@@ -84,22 +86,27 @@ jobs:
           if [ -f proofs/FunctionalClosure010o.lean ]; then
             LEAN_PATH=build lean --root=. proofs/FunctionalClosure010o.lean | tee /tmp/010o-closure.log
           fi
-      - name: Axiom and placeholder audit
+      - name: Fail-closed source axiom and checksum audit
         shell: bash
         run: |
-          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010*.log
-      - name: Hash sources and exact commit
+          set -euo pipefail
+          args=()
+          args+=(--log /tmp/010o-closure.log)
+          args+=(--log /tmp/010o-gauge.log)
+          args+=(--source proofs/SmoothTransport010o.lean)
+          args+=(--source proofs/ImprovedMaxwell010o.lean)
+          args+=(--source proofs/GaugeEnergy010o.lean)
+          args+=(--source proofs/CotangentLift010o.lean)
+          args+=(--source proofs/SinglePoisson010o.lean)
+          args+=(--source proofs/FunctionalClosure010o.lean)
+          args+=(--hash-file proofs/SmoothTransport010o.lean)
+          args+=(--hash-file proofs/ImprovedMaxwell010o.lean)
+          args+=(--hash-file proofs/GaugeEnergy010o.lean)
+          args+=(--hash-file proofs/CotangentLift010o.lean)
+          args+=(--hash-file proofs/SinglePoisson010o.lean)
+          args+=(--hash-file proofs/FunctionalClosure010o.lean)
+          args+=(--hash-file .github/workflows/lean-smooth-functional-010o.yml)
+          python3 scripts/verify_lean_010s.py "${args[@]}"
+      - name: Display commit
         shell: bash
-        run: |
-          sha256sum proofs/MetricVolume010k.lean proofs/CovariantStokes010k.lean proofs/LeviCivitaCurrent010k.lean
-          sha256sum proofs/FourierDiffeo010l.lean
-          if [ -f proofs/FourierConstraints010l.lean ]; then sha256sum proofs/FourierConstraints010l.lean; fi
-          if [ -f proofs/DoubleStokes010l.lean ]; then sha256sum proofs/DoubleStokes010l.lean; fi
-          if [ -f proofs/CovariantStokes010k.lean ]; then sha256sum proofs/CovariantStokes010k.lean; fi
-          if [ -f proofs/LeviCivitaCurrent010k.lean ]; then sha256sum proofs/LeviCivitaCurrent010k.lean; fi
-          sha256sum proofs/SmoothTransport010o.lean
-          if [ -f proofs/ImprovedMaxwell010o.lean ]; then sha256sum proofs/ImprovedMaxwell010o.lean; fi
-          if [ -f proofs/FunctionalClosure010o.lean ]; then sha256sum proofs/FunctionalClosure010o.lean; fi
-          sha256sum proofs/CotangentLift010o.lean proofs/SinglePoisson010o.lean proofs/GaugeEnergy010o.lean
-          sha256sum .github/workflows/lean-smooth-functional-010o.yml
-          git rev-parse HEAD
+        run: git rev-parse HEAD
