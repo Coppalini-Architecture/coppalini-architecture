@@ -139,10 +139,13 @@ theorem curved_Ricci_first_variation_to_boundary
     funext l
     congr 1
     funext j
-    congr 1
-    funext k
-    exact ConnectionPalatini010h.palatini_covariant_curvature
-      G V dV k l k j ht
+    simp only [sum3]
+    rw [ConnectionPalatini010h.palatini_covariant_curvature
+          G V dV 0 l 0 j ht,
+        ConnectionPalatini010h.palatini_covariant_curvature
+          G V dV 1 l 1 j ht,
+        ConnectionPalatini010h.palatini_covariant_curvature
+          G V dV 2 l 2 j ht]
   rw [hPal]
   exact contracted_Palatini_is_divergence B G V dV ht
 
