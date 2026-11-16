@@ -76,15 +76,12 @@ theorem densitized_current_derivative
     | mk nc nx ny nz =>
       cases J with
       | mk jc jx jy jz =>
-        simp only [derivative, densityCurrent, normalIntegrand,
+        simp [derivative, densityCurrent, normalIntegrand,
           gradientIntegrand, covDivergence, volume, traceGamma,
           multiply, plus, JetStokes010e.D,
-          JetStokes010e.mul, JetStokes010e.add,
-          Jet3.mk.injEq]
-        simp only [Int.mul_add, Int.add_mul, Int.mul_assoc]
-        trace_state
-        simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-        omega
+          JetStokes010e.mul, JetStokes010e.add]
+        <;> (simp only [Int.mul_add, Int.add_mul, Int.mul_assoc]
+             <;> omega)
 
 def integral (f : Jet3) : Int := integralJet f
 def boundary (i : Axis) (f : Jet3) : Int := boundaryJet i f
