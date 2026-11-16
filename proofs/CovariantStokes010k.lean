@@ -80,6 +80,7 @@ theorem densitized_current_derivative
           gradientIntegrand, covDivergence, volume, traceGamma,
           multiply, plus, JetStokes010e.D,
           JetStokes010e.mul, JetStokes010e.add,
+          Int.mul_add,
           Int.mul_left_comm nc 2 jc,
           Int.mul_left_comm nc (-1) jc,
           Int.mul_left_comm nc 3 jc,
