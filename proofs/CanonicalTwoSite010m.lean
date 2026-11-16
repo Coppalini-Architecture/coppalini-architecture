@@ -52,36 +52,67 @@ def gap (x : Phase) : Int := x.q1 - x.q0
 def momentumSum (x : Phase) : Int := x.p0 + x.p1
 
 def H (κ : Int) (n : Smear) (x : Phase) : Int :=
-  n.n0*x.p0*x.p0 + n.n1*x.p1*x.p1 +
-    κ*(n.n0+n.n1)*gap x*gap x
+  n.n0*(x.p0*x.p0) + n.n1*(x.p1*x.p1) +
+    (κ*(n.n0+n.n1))*(gap x*gap x)
 
 def gradQ0 (κ : Int) (n : Smear) (x : Phase) : Int :=
-  -2*κ*(n.n0+n.n1)*gap x
+  -(2*(κ*(n.n0+n.n1))*gap x)
 def gradQ1 (κ : Int) (n : Smear) (x : Phase) : Int :=
-  2*κ*(n.n0+n.n1)*gap x
+  2*(κ*(n.n0+n.n1))*gap x
 def gradP0 (_κ : Int) (n : Smear) (x : Phase) : Int :=
   2*n.n0*x.p0
 def gradP1 (_κ : Int) (n : Smear) (x : Phase) : Int :=
   2*n.n1*x.p1
 
--- Direct Taylor-coefficient receipts for each phase coordinate.
--- Each t² remainder is displayed; this witnesses actual derivatives.
+-- Exact weighted second-order Taylor coefficient for one integer square.
+-- This lemma is derived using the inherited 010b quadratic identity.
+theorem weighted_square_shift (c u t : Int) :
+    c*((u+t)*(u+t)) =
+      c*(u*u) + t*(2*c*u) + c*(t*t) := by
+  have h0 := Maxwell010b.product_variation u u 1 1 t
+  simp only [Int.mul_one] at h0
+  have htwo : u+u=2*u := by omega
+  have hcross : c*(t*(u+u))=t*(2*c*u) := by
+    calc
+      c*(t*(u+u)) = c*(t*(2*u)) := by rw [htwo]
+      _ = t*(2*c*u) := by ac_rfl
+  calc
+    c*((u+t)*(u+t)) =
+        c*(u*u + t*(u+u) + t*t) := by rw [h0]
+    _ = c*(u*u)+c*(t*(u+u))+c*(t*t) := by
+      simp only [Int.mul_add]
+    _ = c*(u*u)+t*(2*c*u)+c*(t*t) := by rw [hcross]
+
+theorem weighted_square_sub (c u t : Int) :
+    c*((u-t)*(u-t)) =
+      c*(u*u) + t*(-2*c*u) + c*(t*t) := by
+  have h := weighted_square_shift c u (-t)
+  simp only [Int.sub_eq_add_neg]
+  rw [h]
+  simp only [Int.neg_mul, Int.mul_neg, Int.neg_neg]
+  omega
+
+-- Each Hessian/t² remainder is preserved explicitly. Thus the
+-- gradient used in the canonical bracket is the actual first
+-- Taylor coefficient of H, rather than a freely assigned response.
 theorem derivative_p0_exact (κ : Int) (n : Smear)
     (x : Phase) (t : Int) :
     H κ n {x with p0 := x.p0+t} =
       H κ n x + t * gradP0 κ n x + n.n0*t*t := by
-  simp only [H, gradP0, gap, Int.add_mul, Int.mul_add,
-    Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  have h := weighted_square_shift n.n0 x.p0 t
+  simp only [H, gradP0, gap] at ⊢
+  rw [h]
+  simp only [Int.mul_assoc]
   omega
 
 theorem derivative_p1_exact (κ : Int) (n : Smear)
     (x : Phase) (t : Int) :
     H κ n {x with p1 := x.p1+t} =
       H κ n x + t * gradP1 κ n x + n.n1*t*t := by
-  simp only [H, gradP1, gap, Int.add_mul, Int.mul_add,
-    Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  have h := weighted_square_shift n.n1 x.p1 t
+  simp only [H, gradP1, gap] at ⊢
+  rw [h]
+  simp only [Int.mul_assoc]
   omega
 
 theorem derivative_q0_exact (κ : Int) (n : Smear)
@@ -89,10 +120,19 @@ theorem derivative_q0_exact (κ : Int) (n : Smear)
     H κ n {x with q0 := x.q0+t} =
       H κ n x + t * gradQ0 κ n x +
        κ*(n.n0+n.n1)*t*t := by
-  simp only [H, gradQ0, gap, Int.add_mul, Int.mul_add,
-    Int.mul_sub, Int.sub_mul, Int.neg_mul, Int.mul_neg,
-    Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  have hgap : (x.q1-(x.q0+t)) = gap x-t := by
+    simp only [gap]
+    omega
+  have h := weighted_square_sub (κ*(n.n0+n.n1)) (gap x) t
+  simp only [H, gradQ0] at ⊢
+  change n.n0*(x.p0*x.p0)+n.n1*(x.p1*x.p1) +
+      (κ*(n.n0+n.n1))*((x.q1-(x.q0+t))*(x.q1-(x.q0+t))) =
+    n.n0*(x.p0*x.p0)+n.n1*(x.p1*x.p1) +
+      (κ*(n.n0+n.n1))*(gap x*gap x) +
+      t*(-(2*(κ*(n.n0+n.n1))*gap x)) +
+      κ*(n.n0+n.n1)*t*t
+  rw [hgap, h]
+  simp only [Int.mul_assoc, Int.neg_mul, Int.mul_neg]
   omega
 
 theorem derivative_q1_exact (κ : Int) (n : Smear)
@@ -100,10 +140,19 @@ theorem derivative_q1_exact (κ : Int) (n : Smear)
     H κ n {x with q1 := x.q1+t} =
       H κ n x + t * gradQ1 κ n x +
         κ*(n.n0+n.n1)*t*t := by
-  simp only [H, gradQ1, gap, Int.add_mul, Int.mul_add,
-    Int.mul_sub, Int.sub_mul, Int.neg_mul, Int.mul_neg,
-    Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  have hgap : ((x.q1+t)-x.q0) = gap x+t := by
+    simp only [gap]
+    omega
+  have h := weighted_square_shift (κ*(n.n0+n.n1)) (gap x) t
+  simp only [H, gradQ1] at ⊢
+  change n.n0*(x.p0*x.p0)+n.n1*(x.p1*x.p1) +
+      (κ*(n.n0+n.n1))*(((x.q1+t)-x.q0)*((x.q1+t)-x.q0)) =
+    n.n0*(x.p0*x.p0)+n.n1*(x.p1*x.p1) +
+      (κ*(n.n0+n.n1))*(gap x*gap x) +
+      t*(2*(κ*(n.n0+n.n1))*gap x) +
+      κ*(n.n0+n.n1)*t*t
+  rw [hgap, h]
+  simp only [Int.mul_assoc]
   omega
 
 -- Full canonical symplectic Poisson tensor for arbitrary four
@@ -135,6 +184,7 @@ theorem symplectic_antisymmetric (f g : Gradient) :
 theorem symplectic_self_zero (f : Gradient) :
     symplectic f f = 0 := by
   simp only [symplectic]
+  rw [Int.mul_comm f.p0 f.q0, Int.mul_comm f.p1 f.q1]
   omega
 
 def wedge (n m : Smear) : Int :=
@@ -165,7 +215,12 @@ theorem lapse_wedge_alternating (n m : Smear) :
 theorem homogeneous_lapse_bracket_zero (κ : Int) (n : Smear)
     (x : Phase) : HamiltonianBracket κ n n x = 0 := by
   rw [Hamiltonian_normal_normal_exact]
-  simp [wedge, D]
+  have hw : wedge n n = 0 := by
+    simp only [wedge]
+    rw [Int.mul_comm n.n1 n.n0]
+    omega
+  rw [hw]
+  simp [D]
 
 theorem uncoupled_bracket_zero (n m : Smear)
     (x : Phase) : HamiltonianBracket 0 n m x = 0 := by
@@ -181,6 +236,7 @@ theorem derivative_D_p0 (x : Phase) (t : Int) :
       D 1 x + t * (DGradient x).p0 := by
   simp only [D, gap, momentumSum, DGradient, Int.add_mul,
     Int.mul_add, Int.mul_assoc]
+  simp only [Int.one_mul, Int.mul_one, Int.mul_assoc]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
   omega
 
@@ -189,6 +245,8 @@ theorem derivative_D_q0 (x : Phase) (t : Int) :
       D 1 x + t * (DGradient x).q0 := by
   simp only [D, gap, momentumSum, DGradient, Int.add_mul,
     Int.mul_add, Int.mul_sub, Int.sub_mul, Int.mul_assoc]
+  simp only [Int.one_mul, Int.mul_one, Int.mul_assoc,
+    Int.neg_mul, Int.mul_neg]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
   omega
 
@@ -235,6 +293,8 @@ theorem explicit_nonzero_normal_bracket :
     HamiltonianBracket 1 ⟨1,0⟩ ⟨0,1⟩
       ⟨0,1,1,1⟩ = 8 := by decide
 
+#print axioms weighted_square_shift
+#print axioms weighted_square_sub
 #print axioms derivative_p0_exact
 #print axioms derivative_p1_exact
 #print axioms derivative_q0_exact
