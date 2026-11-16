@@ -141,7 +141,7 @@ theorem integralJet_add (f g : Jet3) :
 theorem jet_boundary_stokes (i : Axis) (f : Jet3) :
     integralJet (JetStokes010e.D i f) = boundaryJet i f := by
   rcases axis_cases i with hi | hi | hi <;>
-    subst i <;> rfl
+    subst i <;> simp [integralJet, boundaryJet, JetStokes010e.D]
 
 def jetBoundarySlice : BoundarySlice Jet3 :=
   { addField := JetStokes010e.add
