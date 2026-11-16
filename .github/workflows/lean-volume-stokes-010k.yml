@@ -56,11 +56,11 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/ContractedPalatini010j.olean proofs/ContractedPalatini010j.lean | tee /tmp/010j-palatini.log
           LEAN_PATH=build lean --root=. -o build/proofs/CurvedEHVariation010j.olean proofs/CurvedEHVariation010j.lean | tee /tmp/010j-eh.log
           LEAN_PATH=build lean --root=. -o build/proofs/MetricVolume010k.olean proofs/MetricVolume010k.lean | tee /tmp/010k-volume.log
+          if [ -f proofs/LeviCivitaCurrent010k.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/LeviCivitaCurrent010k.olean proofs/LeviCivitaCurrent010k.lean | tee /tmp/010k-current.log
+          fi
           if [ -f proofs/CovariantStokes010k.lean ]; then
             LEAN_PATH=build lean --root=. -o build/proofs/CovariantStokes010k.olean proofs/CovariantStokes010k.lean | tee /tmp/010k-stokes.log
-          fi
-          if [ -f proofs/LeviCivitaCurrent010k.lean ]; then
-            LEAN_PATH=build lean --root=. proofs/LeviCivitaCurrent010k.lean | tee /tmp/010k-current.log
           fi
       - name: Axiom and placeholder audit
         shell: bash
