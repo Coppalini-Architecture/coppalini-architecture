@@ -94,8 +94,9 @@ theorem flat_scalar_curvature_first_variation (h : Hessian) :
 -- The correct linearized Ricci tensor is symmetric at this flat address.
 theorem flat_ricci_symmetry (h : Hessian) (i j : Axis) :
     twoRicci h i j = twoRicci h j i := by
-  have hi : i = 0 ∨ i = 1 ∨ i = 2 := by decide
-  have hj : j = 0 ∨ j = 1 ∨ j = 2 := by decide
+  have hcases : ∀ k : Axis, k = 0 ∨ k = 1 ∨ k = 2 := by decide
+  have hi := hcases i
+  have hj := hcases j
   rcases hi with rfl | rfl | rfl <;>
     rcases hj with rfl | rfl | rfl <;>
     simp [twoRicci, twoDGamma, sum3, H, pairIndex] <;> omega
