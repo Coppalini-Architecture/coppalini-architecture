@@ -70,7 +70,7 @@ theorem weighted_square_shift (c u t : Int) :
     c*((u+t)*(u+t)) =
       c*(u*u) + t*(2*c*u) + c*(t*t) := by
   have h0 := Maxwell010b.product_variation u u 1 1 t
-  simp only [Int.mul_one] at h0
+  simp only [Int.mul_one, Int.one_mul] at h0
   have htwo : u+u=2*u := by omega
   have hcross : c*(t*(u+u))=t*(2*c*u) := by
     calc
@@ -90,7 +90,6 @@ theorem weighted_square_sub (c u t : Int) :
   simp only [Int.sub_eq_add_neg]
   rw [h]
   simp only [Int.neg_mul, Int.mul_neg, Int.neg_neg]
-  omega
 
 -- Each Hessian/t² remainder is preserved explicitly. Thus the
 -- gradient used in the canonical bracket is the actual first
@@ -247,7 +246,6 @@ theorem derivative_D_q0 (x : Phase) (t : Int) :
     Int.mul_add, Int.mul_sub, Int.sub_mul, Int.mul_assoc]
   simp only [Int.one_mul, Int.mul_one, Int.mul_assoc,
     Int.neg_mul, Int.mul_neg]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
   omega
 
 def MomentumHamiltonianBracket (κ : Int) (n : Smear)
