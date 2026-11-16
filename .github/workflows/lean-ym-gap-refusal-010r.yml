@@ -1,0 +1,50 @@
+name: Lean Yang–Mills spectral refusal 010r
+
+on:
+  push:
+    paths:
+      - 'proofs/YMGapRefusal010r.lean'
+      - 'proofs/YMDiracGapAudit010q.lean'
+      - '.github/workflows/lean-ym-gap-refusal-010r.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/YMGapRefusal010r.lean'
+      - 'proofs/YMDiracGapAudit010q.lean'
+      - '.github/workflows/lean-ym-gap-refusal-010r.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Pin Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile pinned 010q and exact 010r refusal
+        shell: bash
+        run: |
+          set -euo pipefail
+          lean --version
+          export LEAN_PATH=proofs
+          lean -o proofs/YMDiracGapAudit010q.olean proofs/YMDiracGapAudit010q.lean | tee /tmp/ym-gap-refusal-010q.log
+          lean proofs/YMGapRefusal010r.lean | tee /tmp/ym-gap-refusal-010r.log
+      - name: Refuse placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -E 'sorryAx|admit|Lean\.ofReduceBool|axiom ' /tmp/ym-gap-refusal-010q.log /tmp/ym-gap-refusal-010r.log
+      - name: Verify pinned source hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -E '^(.*)  (proofs/YMGapRefusal010r.lean|.github/workflows/lean-ym-gap-refusal-010r.yml)$' SHA256SUMS | sha256sum --check --status
+          git rev-parse HEAD
