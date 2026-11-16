@@ -49,20 +49,27 @@ private theorem sum_map_add {α : Type} (xs : List α)
     simp only [List.map_cons, List.sum_cons]
     omega
 
+private theorem map_zero_sum {α : Type} (ys : List α) :
+    (ys.map (fun _ => (0 : Int))).sum = 0 := by
+  induction ys with
+  | nil => rfl
+  | cons b rest ih =>
+      simp only [List.map_cons, List.sum_cons, ih]
+      omega
+
 private theorem double_sum_swap {α β : Type}
     (xs : List α) (ys : List β) (f : α → β → Int) :
     (xs.map (fun a => (ys.map (fun b => f a b)).sum)).sum =
       (ys.map (fun b => (xs.map (fun a => f a b)).sum)).sum := by
   induction xs with
   | nil =>
-      simp
+      change (0 : Int) = (ys.map (fun _ => (0 : Int))).sum
+      exact (map_zero_sum ys).symm
   | cons a rest ih =>
       simp only [List.map_cons, List.sum_cons]
       rw [ih]
-      have h := sum_map_add ys (fun b => f a b)
-        (fun b => (rest.map (fun z => f z b)).sum)
-      simp only [List.map_cons, List.sum_cons] at h
-      omega
+      exact (sum_map_add ys (fun b => f a b)
+        (fun b => (rest.map (fun z => f z b)).sum)).symm
 
 theorem finite_pairing_symmetric (f g : Polynomial) :
     FourierPairing010g.pairing f g =
@@ -113,7 +120,8 @@ theorem pairing_empty_left (f : Polynomial) :
 
 theorem pairing_empty_right (f : Polynomial) :
     FourierPairing010g.pairing f [] = 0 := by
-  simp [FourierPairing010g.pairing, FourierPairing010g.pairOne]
+  change (f.map (fun _ => (0 : Int))).sum = 0
+  exact map_zero_sum f
 
 theorem pb_antisymmetric (f g : FieldTest) :
     pb f g = -(pb g f) := by
@@ -141,7 +149,7 @@ theorem canonical_fourier_jacobi (f g h : FieldTest) :
   simp [poisson, pb_const_left]
 
 private theorem axis_cases (i : Axis) :
-    i=0 ∨ i=1 ∨ i=2 := by omega
+    i=0 ∨ i=1 ∨ i=2 := by decide
 
 theorem coordinate_momentum_bracket (i : Axis)
     (f g : Polynomial) :
