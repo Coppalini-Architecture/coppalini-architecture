@@ -114,7 +114,7 @@ theorem curvature_antisymmetric
 -- Negative control: the second-order remainder carries genuine content.
 def nonlinearConn : Connection :=
   fun k i j => if k = 0 ∧ i = 1 ∧ j = 0 then 1
-    else if k = 1 ∧ i = 0 ∧ j = 1 then 1 else 0
+    else if k = 0 ∧ i = 0 ∧ j = 1 then 1 else 0
 
 theorem quadratic_remainder_nonzero :
     secondR nonlinearConn 0 1 1 0 ≠ 0 := by decide
