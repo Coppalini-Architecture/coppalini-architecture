@@ -38,5 +38,5 @@ jobs:
           ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010{a,b,m1,m2}.log
       - name: Exact hashes
         run: |
-          sha256sum proofs/CanonicalTwoSite010m.lean proofs/QuadraticTransport010m.lean .github/workflows/lean-canonical-fast-010m.yml
+          sha256sum proofs/CanonicalTwoSite010m.lean proofs/QuadraticTransport010m.lean .github/workflows/lean-canonical-fast-010m.yml .github/workflows/lean-canonical-field-010m.yml
           git rev-parse HEAD
