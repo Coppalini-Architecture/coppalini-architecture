@@ -1,8 +1,5 @@
 import Init.Data.Rat.Basic
 import proofs.DoubleStokes010l
-import proofs.CurvedEHVariation010j
-import proofs.FourierConstraints010l
-import proofs.FourierNormalBracket010n
 
 /-!
 # Minimum Mechanics 010o — covariant scalar-density transport seam
