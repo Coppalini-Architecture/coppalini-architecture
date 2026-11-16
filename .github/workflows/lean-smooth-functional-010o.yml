@@ -6,6 +6,8 @@ on:
       - 'proofs/SmoothTransport010o.lean'
       - 'proofs/ImprovedMaxwell010o.lean'
       - 'proofs/FunctionalClosure010o.lean'
+      - 'proofs/CotangentLift010o.lean'
+      - 'proofs/SinglePoisson010o.lean'
       - '.github/workflows/lean-smooth-functional-010o.yml'
       - 'SHA256SUMS'
   pull_request:
@@ -13,6 +15,8 @@ on:
       - 'proofs/SmoothTransport010o.lean'
       - 'proofs/ImprovedMaxwell010o.lean'
       - 'proofs/FunctionalClosure010o.lean'
+      - 'proofs/CotangentLift010o.lean'
+      - 'proofs/SinglePoisson010o.lean'
       - '.github/workflows/lean-smooth-functional-010o.yml'
       - 'SHA256SUMS'
   workflow_dispatch:
@@ -72,6 +76,8 @@ jobs:
           if [ -f proofs/ImprovedMaxwell010o.lean ]; then
             LEAN_PATH=build lean --root=. -o build/proofs/ImprovedMaxwell010o.olean proofs/ImprovedMaxwell010o.lean | tee /tmp/010o-maxwell.log
           fi
+          LEAN_PATH=build lean --root=. -o build/proofs/CotangentLift010o.olean proofs/CotangentLift010o.lean | tee /tmp/010o-lift.log
+          LEAN_PATH=build lean --root=. -o build/proofs/SinglePoisson010o.olean proofs/SinglePoisson010o.lean | tee /tmp/010o-poisson.log
           if [ -f proofs/FunctionalClosure010o.lean ]; then
             LEAN_PATH=build lean --root=. proofs/FunctionalClosure010o.lean | tee /tmp/010o-closure.log
           fi
@@ -91,5 +97,6 @@ jobs:
           sha256sum proofs/SmoothTransport010o.lean
           if [ -f proofs/ImprovedMaxwell010o.lean ]; then sha256sum proofs/ImprovedMaxwell010o.lean; fi
           if [ -f proofs/FunctionalClosure010o.lean ]; then sha256sum proofs/FunctionalClosure010o.lean; fi
+          sha256sum proofs/CotangentLift010o.lean proofs/SinglePoisson010o.lean
           sha256sum .github/workflows/lean-smooth-functional-010o.yml
           git rev-parse HEAD
