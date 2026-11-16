@@ -1,0 +1,56 @@
+name: R59 proof-led site integrity
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'about.html'
+      - 'library.html'
+      - 'verify.html'
+      - 'architecture.html'
+      - 'architecture/index.html'
+      - 'formalism.html'
+      - 'proofs/minimum-mechanics/index.html'
+      - 'research/minimum-mechanics-010u.json'
+      - 'archive/**'
+      - 'assets/proof-led-r59.css'
+      - '_redirects'
+      - 'llms*.txt'
+      - 'sitemap.xml'
+      - 'tools/verify_r59_publication.py'
+      - '.github/workflows/r59-site-integrity.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'about.html'
+      - 'library.html'
+      - 'verify.html'
+      - 'architecture.html'
+      - 'architecture/index.html'
+      - 'formalism.html'
+      - 'proofs/minimum-mechanics/index.html'
+      - 'research/minimum-mechanics-010u.json'
+      - 'archive/**'
+      - 'assets/proof-led-r59.css'
+      - '_redirects'
+      - 'tools/verify_r59_publication.py'
+      - '.github/workflows/r59-site-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit the R59 public content, links and provenance
+        run: |
+          set -euo pipefail
+          python3 tools/verify_r59_publication.py
+      - name: Show source commit
+        run: git rev-parse HEAD
