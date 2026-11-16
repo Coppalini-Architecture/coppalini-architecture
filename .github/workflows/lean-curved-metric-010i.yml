@@ -6,6 +6,7 @@ on:
       - 'proofs/MetricInverse010i.lean'
       - 'proofs/MetricDeterminant010i.lean'
       - 'proofs/CurvedEH010i.lean'
+      - 'proofs/PalatiniBoundary010i.lean'
       - '.github/workflows/lean-curved-metric-010i.yml'
       - 'SHA256SUMS'
   pull_request:
@@ -13,6 +14,7 @@ on:
       - 'proofs/MetricInverse010i.lean'
       - 'proofs/MetricDeterminant010i.lean'
       - 'proofs/CurvedEH010i.lean'
+      - 'proofs/PalatiniBoundary010i.lean'
       - '.github/workflows/lean-curved-metric-010i.yml'
   workflow_dispatch:
 
@@ -55,7 +57,10 @@ jobs:
             LEAN_PATH=build lean --root=. -o build/proofs/MetricDeterminant010i.olean proofs/MetricDeterminant010i.lean | tee /tmp/i2.log
           fi
           if [ -f proofs/CurvedEH010i.lean ]; then
-            LEAN_PATH=build lean --root=. proofs/CurvedEH010i.lean | tee /tmp/i3.log
+            LEAN_PATH=build lean --root=. -o build/proofs/CurvedEH010i.olean proofs/CurvedEH010i.lean | tee /tmp/i3.log
+          fi
+          if [ -f proofs/PalatiniBoundary010i.lean ]; then
+            LEAN_PATH=build lean --root=. proofs/PalatiniBoundary010i.lean | tee /tmp/i4.log
           fi
       - name: Audit axioms
         shell: bash
@@ -63,11 +68,13 @@ jobs:
           ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/{a,b,c,d,e1,e2,f1,f2,g1,g2,h1,h2,h3,i1}.log
           if [ -f /tmp/i2.log ]; then ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/i2.log; fi
           if [ -f /tmp/i3.log ]; then ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/i3.log; fi
+          if [ -f /tmp/i4.log ]; then ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/i4.log; fi
       - name: Hash exact source and commit
         shell: bash
         run: |
           sha256sum proofs/MetricInverse010i.lean
           if [ -f proofs/MetricDeterminant010i.lean ]; then sha256sum proofs/MetricDeterminant010i.lean; fi
           if [ -f proofs/CurvedEH010i.lean ]; then sha256sum proofs/CurvedEH010i.lean; fi
+          if [ -f proofs/PalatiniBoundary010i.lean ]; then sha256sum proofs/PalatiniBoundary010i.lean; fi
           sha256sum .github/workflows/lean-curved-metric-010i.yml
           git rev-parse HEAD
