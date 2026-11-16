@@ -61,7 +61,8 @@ theorem mul_scale_left (t : Int) (A B : M) :
 theorem mul_scale_right (t : Int) (A B : M) :
     mul A (scale t B) = scale t (mul A B) := by
   funext i j
-  simp only [mul, scale, Int.mul_assoc]
+  simp only [mul, scale, Int.mul_add, Int.mul_assoc]
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
 
 theorem mul_sub_right (A B C : M) :
     mul A (sub B C) = sub (mul A B) (mul A C) := by
@@ -132,10 +133,10 @@ theorem trace_kinetic_BHB
         tr (mul (mul g P) (mul g (mul (mul B H) B))) := by
           rw [mul_assoc]
       _ = tr (mul (mul g P) (mul H B)) := by rw [hG]
-      _ = tr (mul (mul (mul g P) H) B) := by rw [mul_assoc]
+      _ = tr (mul (mul (mul g P) H) B) := by simp only [mul_assoc]
       _ = tr (mul B (mul (mul g P) H)) := tr_mul_comm _ _
       _ = tr (mul (mul B g) (mul P H)) := by
-          rw [← mul_assoc B g P, mul_assoc]
+          simp only [mul_assoc]
       _ = tr (mul P H) := by rw [hBg, one_mul]
   have h2 : tr (mul g (mul (mul B H) B)) =
       lambda B H := by
@@ -169,7 +170,7 @@ theorem covariant_dewitt_hessian
     _ = -2 * tr (mul P H) := by
       rw [trace_kinetic_B g B P hgB,
         trace_kinetic_BHB g B P H hgB hBg]
-      simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+      simp only [Int.mul_neg, Int.neg_mul]
       omega
 
 #print axioms trace_kinetic_B
