@@ -126,18 +126,19 @@ theorem singlePB_DG {FG FE V : Type} {comm : V → V → V}
     pbDG S v s gamma pi A E =
       G S.electromagnetic (S.electromagnetic.transport v s) E := by
   simp only [pbDG, canonicalPB, spatialGradient, gaussGradient]
-  rw [S.gravity.pairZeroRight, S.gravity.pairZeroRight,
-      S.electromagnetic.pairZeroRight]
-  simp only [sub_zero, zero_add]
-  exact cotangent_DG_closure S.electromagnetic v s A E
+  simp only [S.gravity.pairZeroRight,
+    S.electromagnetic.pairZeroRight]
+  rw [S.electromagnetic.adjointDual v E s]
+  simp only [CotangentLift010o.G]
+  omega
 
 theorem singlePB_GG {FG FE V : Type} {comm : V → V → V}
     (S : TwoSectors FG FE V comm) (s t : FE) :
     pbGG S s t = 0 := by
   simp only [pbGG, canonicalPB, gaussGradient]
-  rw [S.gravity.pairZeroLeft, S.gravity.pairZeroRight,
-      S.electromagnetic.pairZeroLeft,
-      S.electromagnetic.pairZeroRight]
+  simp only [S.gravity.pairZeroLeft, S.gravity.pairZeroRight,
+    S.electromagnetic.pairZeroLeft,
+    S.electromagnetic.pairZeroRight]
   omega
 
 -- The actual variation of H under spatial Lie transport of all
