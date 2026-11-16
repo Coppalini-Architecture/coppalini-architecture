@@ -110,7 +110,8 @@ theorem cotangent_DG_closure {F V : Type}
     (u : V) (s q p : F) :
     bracketDG S u s q p = G S (S.transport u s) p := by
   simp only [bracketDG, canonicalPB, gradDq, gradDp, G]
-  rw [S.pairZeroRight, sub_zero, S.adjointDual]
+  rw [S.pairZeroRight, S.adjointDual u p s]
+  omega
 
 theorem cotangent_GG_closure {F V : Type}
     {comm : V → V → V}
