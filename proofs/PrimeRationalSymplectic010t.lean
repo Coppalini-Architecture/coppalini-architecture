@@ -106,7 +106,8 @@ def gaugeGradient (s : EM3) : Gradient :=
 
 theorem abelian_gauss_bracket (s t : EM3) :
     canonicalPB (gaugeGradient s) (gaugeGradient t) = 0 := by
-  simp [canonicalPB, gaugeGradient, pair6, pair3, zeroSym, zeroEM]
+  simp [canonicalPB, gaugeGradient, pair6, pair3, zeroSym, zeroEM,
+    Rat.zero_add, Rat.add_zero, Rat.sub_self]
 
 -- A coarse nonlinear read of a scalar (here x ↦ x²) is an example
 -- of compression; it is NOT an assertion about physical color.
