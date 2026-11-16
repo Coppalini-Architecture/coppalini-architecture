@@ -64,94 +64,27 @@ def normalIntegrand (i : Axis) (N J : Jet3) : Jet3 :=
 def gradientIntegrand (i : Axis) (N J : Jet3) : Jet3 :=
   multiply volume (multiply (derivative i N) J)
 
--- Elementary ring laws of the already-certified first-order Jet3 algebra.
--- These are proved by direct four-coefficient expansion, not postulated.
-theorem jet_mul_assoc (a b c : Jet3) :
-    multiply (multiply a b) c = multiply a (multiply b c) := by
-  cases a with
-  | mk ac ax ay az =>
-    cases b with
-    | mk bc bx by bz =>
-      cases c with
-      | mk cc cx cy cz =>
-        simp only [multiply, JetStokes010e.mul, Jet3.mk.injEq,
-          Int.mul_add, Int.add_mul, Int.mul_assoc]
-        omega
-
-theorem jet_mul_add (a b c : Jet3) :
-    multiply a (plus b c) = plus (multiply a b) (multiply a c) := by
-  cases a with
-  | mk ac ax ay az =>
-    cases b with
-    | mk bc bx by bz =>
-      cases c with
-      | mk cc cx cy cz =>
-        simp only [multiply, plus, JetStokes010e.mul,
-          JetStokes010e.add, Jet3.mk.injEq,
-          Int.mul_add, Int.add_mul, Int.mul_assoc]
-        omega
-
-theorem jet_mul_swap (a b c : Jet3) :
-    multiply a (multiply b c) = multiply b (multiply a c) := by
-  calc
-    multiply a (multiply b c) = multiply (multiply a b) c :=
-      (jet_mul_assoc a b c).symm
-    _ = multiply (multiply b a) c := by
-      rw [JetStokes010e.mul_comm]
-    _ = multiply b (multiply a c) := jet_mul_assoc b a c
-
-theorem jet_add_rotate (a b c : Jet3) :
-    plus a (plus b c) = plus (plus c a) b := by
-  cases a with
-  | mk ac ax ay az =>
-    cases b with
-    | mk bc bx by bz =>
-      cases c with
-      | mk cc cx cy cz =>
-        simp only [plus, JetStokes010e.add, Jet3.mk.injEq]
-        omega
-
--- This gives the exact density-weighted Leibniz formula for all lapses
--- and currents in the nonconstant-volume Jet3 algebra.
+-- At each of the three coordinate addresses, the statement is
+-- exact for arbitrary integer coefficients of N and J.
 theorem densitized_current_derivative
     (i : Axis) (N J : Jet3) :
     derivative i (densityCurrent N J) =
       plus (normalIntegrand i N J) (gradientIntegrand i N J) := by
-  have hv : derivative i volume =
-      multiply volume (traceGamma i) := volume_trace_compatible i
-  have hD1 := JetStokes010e.D_mul i volume (multiply N J)
-  have hD2 := JetStokes010e.D_mul i N J
-  change JetStokes010e.D i (multiply volume (multiply N J)) =
-    plus (multiply volume
-      (multiply N (plus (derivative i J) (multiply (traceGamma i) J))))
-      (multiply volume (multiply (derivative i N) J))
-  calc
-    JetStokes010e.D i (multiply volume (multiply N J)) =
-      plus (multiply (derivative i volume) (multiply N J))
-        (multiply volume (derivative i (multiply N J))) := hD1
-    _ = plus (multiply (multiply volume (traceGamma i))
-                    (multiply N J))
-              (multiply volume
-                (plus (multiply (derivative i N) J)
-                  (multiply N (derivative i J)))) := by
-      rw [hv, hD2]
-    _ = plus (multiply volume (multiply N (multiply (traceGamma i) J)))
-           (plus (multiply volume (multiply (derivative i N) J))
-             (multiply volume (multiply N (derivative i J)))) := by
-      rw [jet_mul_assoc volume (traceGamma i) (multiply N J)]
-      rw [jet_mul_swap (traceGamma i) N J]
-      rw [jet_mul_add volume (multiply (derivative i N) J)
-        (multiply N (derivative i J))]
-    _ = plus (multiply volume
-        (multiply N (plus (derivative i J) (multiply (traceGamma i) J))))
-        (multiply volume (multiply (derivative i N) J)) := by
-      rw [jet_mul_add N (derivative i J) (multiply (traceGamma i) J)]
-      rw [jet_mul_add volume (multiply N (derivative i J))
-        (multiply N (multiply (traceGamma i) J))]
-      exact (jet_add_rotate
-        (multiply volume (multiply N (multiply (traceGamma i) J)))
-        (multiply volume (multiply (derivative i N) J))
-        (multiply volume (multiply N (derivative i J))))
+  rcases axes i with hi | hi | hi <;>
+    subst i <;>
+    cases N with
+    | mk nc nx ny nz =>
+      cases J with
+      | mk jc jx jy jz =>
+        simp [derivative, densityCurrent, normalIntegrand,
+          gradientIntegrand, covDivergence, volume, traceGamma,
+          multiply, plus, JetStokes010e.D,
+          JetStokes010e.mul, JetStokes010e.add,
+          Int.mul_add,
+          Int.mul_left_comm nc 2 jc,
+          Int.mul_left_comm nc (-1) jc,
+          Int.mul_left_comm nc 3 jc,
+          Int.mul_neg, Int.neg_mul] <;> omega
 
 def integral (f : Jet3) : Int := integralJet f
 def boundary (i : Axis) (f : Jet3) : Int := boundaryJet i f
@@ -214,10 +147,6 @@ theorem boundary_cannot_be_erased :
 
 #print axioms volume_trace_compatible
 #print axioms volume_nonconstant
-#print axioms jet_mul_assoc
-#print axioms jet_mul_add
-#print axioms jet_mul_swap
-#print axioms jet_add_rotate
 #print axioms densitized_current_derivative
 #print axioms weighted_covariant_stokes_one
 #print axioms weighted_covariant_stokes_three
