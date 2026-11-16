@@ -217,6 +217,36 @@ theorem universal_scoped_closure
     exact (he.2.2 y).mp hy
   · exact can_retains_prior_history prior r
 
+-- A constructed finite witness shows the universal implication is inhabited.
+-- It does not stand in for AxiomaticBuild.canonicalWitness (source absent).
+def exampleReader : Reader Bool Bool where
+  read := fun x => x
+  compatible := fun x y => y = x
+
+def exampleEvidence (x : Bool) : Prop := x = true
+
+theorem finite_enough_witness :
+    Enough exampleJurisdiction exampleReader exampleEvidence true := by
+  refine ⟨?_, rfl, ?_⟩
+  · exact ⟨True.intro, rfl, rfl, True.intro, rfl, rfl, rfl⟩
+  · intro y
+    exact Iff.rfl
+
+-- The coarse value alone cannot reconstruct a hidden difference.
+-- Here the supplement is explicitly sufficient in the finite model.
+def coarseReader (_ : Bool) : Bool := false
+def supplementReader (x : Bool) : Bool := x
+
+theorem coarse_pair_collision :
+    coarseReader true = coarseReader false ∧
+    supplementReader true ≠ supplementReader false := by decide
+
+theorem supplement_repairs_this_collision (x y : Bool) :
+    (coarseReader x, supplementReader x) =
+      (coarseReader y, supplementReader y) → x = y := by
+  intro h
+  exact congrArg Prod.snd h
+
 -- These source witnesses keep the old branches intact without promoting
 -- a finite rational computation into a C-infinity/quantum-field result.
 theorem prime_source_nonzero :
@@ -257,6 +287,9 @@ theorem spectral_refusal_is_retained :
 #print axioms enough_preserves_owner
 #print axioms collision_refuses_unsourced_reconstruction
 #print axioms universal_scoped_closure
+#print axioms finite_enough_witness
+#print axioms coarse_pair_collision
+#print axioms supplement_repairs_this_collision
 #print axioms prime_source_nonzero
 #print axioms spectral_refusal_is_retained
 
