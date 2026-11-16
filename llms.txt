@@ -4,7 +4,7 @@
 
 ## Begin with the current result
 
-- [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/): 45 Lean modules compiled in one transitive import closure, with theorem-strength annotations and links to the exact files.
+- [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean modules compiled in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
 - [Proof verification](https://eulershiddenl.ink/verify): Lean 4.33.0 and archive-integrity PASS at pinned commit `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.
 - [Research Library](https://eulershiddenl.ink/library): current synthesis followed by all thirty-seven non-Language-Mechanics source records in one continuous library.

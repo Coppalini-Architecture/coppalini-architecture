@@ -5,6 +5,12 @@
   "pinned_commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
   "lean_version": "4.33.0",
   "modules": 45,
+  "public_ledger": "https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger",
+  "statement_types": {
+    "lean_proved": "A theorem statement elaborated by Lean at the pinned source, carrying its declared hypotheses and types.",
+    "source_documented_model": "A mathematical construction recorded in a source note beside the finite Lean statements it motivates.",
+    "physical_interface": "A declared carrier, observable, condition, and receipt path for a physical use of the formal symbols."
+  },
   "stages": [
     {
       "stage": "010a",
@@ -151,7 +157,7 @@
     {
       "stage": "010p",
       "title": "Nonorthonormal ADM",
-      "scope": "Finite local, not global C∞",
+      "scope": "Finite local; global C∞ realization has a separately typed construction.",
       "sources": [
         "proofs/ADMGradient010p.lean",
         "proofs/DeWittCovariant010p.lean",
@@ -161,7 +167,7 @@
     {
       "stage": "010q",
       "title": "Non-Abelian gap test",
-      "scope": "Exact abstract countermodel",
+      "scope": "Exact abstract accumulating-spectrum witness",
       "sources": [
         "proofs/YMDiracGapAudit010q.lean"
       ]
@@ -201,6 +207,6 @@
   ],
   "compiler_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607",
   "archive_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536",
-  "strength": "Individual source-scoped Lean theorems; complete 45-module import compilation. Conditional C-infinity SmoothCompletion remains separately open.",
+  "strength": "Individual source-scoped Lean theorems; complete 45-module import compilation. The conditional C-infinity SmoothCompletion formalization has its own separately typed construction address.",
   "axiomaticBuild": "Reference reports only; AxiomaticBuild.lean not supplied with 010u."
 }

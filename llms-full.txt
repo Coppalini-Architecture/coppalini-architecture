@@ -16,7 +16,7 @@ Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about
 R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
 
-## 010a–010u, verified statements
+## 010a–010u, Lean-proved statements and source ledger
 
 21 stages; 45 transitive Lean 4.33.0 modules. Pinned source commit:
 b9e939d514a63fb021592f79a316f70cbc70ed8a
@@ -28,16 +28,19 @@ https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43
 Exact source table:
 https://eulershiddenl.ink/research/minimum-mechanics-010u.json
 
+Exact public ledger:
+https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
+
 010a–010l: local suture–Dirac, Maxwell and ADM/Palatini transport identities.
 010m–010n: finite nonlinear canonical and Fourier-field sources.
 010o: six-bracket formal theorem conditional on SmoothCompletion.
 010p: nonorthonormal pointwise gradient and metric-shift proof.
-010q–010r: abstract non-entailment of a Yang–Mills spectral gap from the stated Gauss constraints.
+010q–010r: exact abstract gapped and accumulating spectrum witnesses for the stated Gauss constraints.
 010s: pointwise 010p / 010o source attachment.
 010t: nonzero rational canonical pairing with prime-word order distinction.
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The finite Lean source chain certifies its stated finite and local relations. The full real/Fréchet SmoothCompletion formalization remains a separately typed construction. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+The finite Lean source chain proves its stated finite and local relations at the pinned source. The real/Fréchet SmoothCompletion formalization has a separately typed construction address. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 
