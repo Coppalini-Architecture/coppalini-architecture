@@ -65,7 +65,6 @@ theorem pb_coefficient_skew (a b : Mono) :
   simp only [pb]
   rw [det_skew a b]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc, Int.mul_neg]
-  omega
 
 -- The degree shift is identical for all three nested brackets.
 theorem nested_q_exponent (a b c : Mono) :
@@ -100,22 +99,14 @@ theorem nested_coeff_sum_zero (a b c : Mono) :
     (pb (pb a b) c).coeff +
     (pb (pb b c) a).coeff +
     (pb (pb c a) b).coeff = 0 := by
-  have h := det_jacobi a b c
-  simp only [pb] at ⊢
+  simp only [pb, det]
   simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
-    Int.mul_assoc, Int.neg_mul, Int.mul_neg] at ⊢ h
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc] at ⊢ h
-  simp only [← Int.mul_assoc] at ⊢ h
-  -- Multiplying the previously proved determinant cancellation by all
-  -- three monomial coefficients closes the general weighted case.
-  have hw : (a.coeff*b.coeff*c.coeff) * 0 = 0 := by omega
-  have hh := congrArg (fun z : Int => (a.coeff*b.coeff*c.coeff)*z) h
-  simp only [Int.mul_add, Int.mul_assoc] at hh
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc] at hh
-  simp only [← Int.mul_assoc] at hh
+    Int.mul_assoc, Int.neg_mul, Int.mul_neg]
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  simp only [← Int.mul_assoc]
   omega
 
-def sameExp (m : Mono) (q p : Int) : Prop :=
+abbrev sameExp (m : Mono) (q p : Int) : Prop :=
   m.q = q ∧ m.p = p
 
 def readCoeff (m : Mono) (q p : Int) : Int :=
@@ -127,23 +118,31 @@ theorem monomial_jacobi_read (a b c : Mono) (q p : Int) :
     readCoeff (pb (pb a b) c) q p +
     readCoeff (pb (pb b c) a) q p +
     readCoeff (pb (pb c a) b) q p = 0 := by
+  change
+    (if sameExp (pb (pb a b) c) q p
+      then (pb (pb a b) c).coeff else 0) +
+    (if sameExp (pb (pb b c) a) q p
+      then (pb (pb b c) a).coeff else 0) +
+    (if sameExp (pb (pb c a) b) q p
+      then (pb (pb c a) b).coeff else 0) = 0
   have hq := nested_q_exponent a b c
   have hp := nested_p_exponent a b c
   have hc := nested_coeff_sum_zero a b c
   by_cases h : sameExp (pb (pb a b) c) q p
   · have h2 : sameExp (pb (pb b c) a) q p := by
-      exact ⟨hq.1.symm.trans h.1,hp.1.symm.trans h.2⟩
+      exact ⟨hq.1.symm.trans h.1, hp.1.symm.trans h.2⟩
     have h3 : sameExp (pb (pb c a) b) q p := by
-      exact ⟨hq.2.symm.trans h2.1,hp.2.symm.trans h2.2⟩
-    simp only [readCoeff, if_pos h, if_pos h2, if_pos h3]
+      exact ⟨hq.2.symm.trans h2.1, hp.2.symm.trans h2.2⟩
+    rw [if_pos h, if_pos h2, if_pos h3]
     exact hc
   · have h2 : ¬sameExp (pb (pb b c) a) q p := by
       intro h2
-      exact h ⟨hq.1.trans h2.1,hp.1.trans h2.2⟩
+      exact h ⟨hq.1.trans h2.1, hp.1.trans h2.2⟩
     have h3 : ¬sameExp (pb (pb c a) b) q p := by
       intro h3
-      exact h2 ⟨hq.2.trans h3.1,hp.2.trans h3.2⟩
-    simp [readCoeff, h, h2, h3]
+      exact h2 ⟨hq.2.trans h3.1, hp.2.trans h3.2⟩
+    rw [if_neg h, if_neg h2, if_neg h3]
+    decide
 
 abbrev Polynomial := List Mono
 
@@ -155,43 +154,26 @@ def finiteJacobi (fs gs hs : Polynomial) (q p : Int) : Int :=
         readCoeff (pb (pb b c) a) q p +
         readCoeff (pb (pb c a) b) q p)).sum)).sum)).sum
 
-theorem finite_laurent_jacobi (fs gs hs : Polynomial) (q p : Int) :
-    finiteJacobi fs gs hs q p = 0 := by
-  simp only [finiteJacobi]
-  have hleaf (a b c : Mono) :
-      readCoeff (pb (pb a b) c) q p +
-      readCoeff (pb (pb b c) a) q p +
-      readCoeff (pb (pb c a) b) q p = 0 :=
-    monomial_jacobi_read a b c q p
-  induction fs with
+private theorem sum_map_zero {α : Type} (xs : List α)
+    (f : α → Int) (hf : ∀ x, f x = 0) :
+    (xs.map f).sum = 0 := by
+  induction xs with
   | nil => simp
   | cons a rest ih =>
       simp only [List.map_cons, List.sum_cons]
-      have hinner (a : Mono) :
-        (gs.map (fun b =>
-          (hs.map (fun c =>
-            readCoeff (pb (pb a b) c) q p +
-            readCoeff (pb (pb b c) a) q p +
-            readCoeff (pb (pb c a) b) q p)).sum)).sum = 0 := by
-        induction gs with
-        | nil => simp
-        | cons b others ihg =>
-            simp only [List.map_cons, List.sum_cons]
-            have hrow :
-              (hs.map (fun c =>
-                readCoeff (pb (pb a b) c) q p +
-                readCoeff (pb (pb b c) a) q p +
-                readCoeff (pb (pb c a) b) q p)).sum = 0 := by
-              induction hs with
-              | nil => simp
-              | cons c cs ihh =>
-                  simp only [List.map_cons, List.sum_cons]
-                  rw [hleaf a b c]
-                  simpa using ihh
-            rw [hrow, ihg]
-            simp
-      rw [hinner a]
-      simpa using ih
+      rw [hf a, ih]
+      simp
+
+theorem finite_laurent_jacobi (fs gs hs : Polynomial) (q p : Int) :
+    finiteJacobi fs gs hs q p = 0 := by
+  unfold finiteJacobi
+  apply sum_map_zero
+  intro a
+  apply sum_map_zero
+  intro b
+  apply sum_map_zero
+  intro c
+  exact monomial_jacobi_read a b c q p
 
 #print axioms det_jacobi
 #print axioms pb_coefficient_skew
