@@ -1,0 +1,44 @@
+name: Lean Yang–Mills Dirac spectral audit 010q
+
+on:
+  push:
+    paths:
+      - 'proofs/YMDiracGapAudit010q.lean'
+      - '.github/workflows/lean-ym-dirac-gap-010q.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/YMDiracGapAudit010q.lean'
+      - '.github/workflows/lean-ym-dirac-gap-010q.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+      - name: Pin Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile gauge algebra and spectral-boundary theorem
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          lean --root=. proofs/YMDiracGapAudit010q.lean | tee /tmp/ym-gap-010q.log
+      - name: Refuse placeholders
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/ym-gap-010q.log
+      - name: Print source provenance
+        shell: bash
+        run: |
+          sha256sum proofs/YMDiracGapAudit010q.lean .github/workflows/lean-ym-dirac-gap-010q.yml
+          git rev-parse HEAD
