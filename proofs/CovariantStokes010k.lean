@@ -79,13 +79,11 @@ theorem densitized_current_derivative
         simp [derivative, densityCurrent, normalIntegrand,
           gradientIntegrand, covDivergence, volume, traceGamma,
           multiply, plus, JetStokes010e.D,
-          JetStokes010e.mul, JetStokes010e.add]
-        <;> (simp only [
-              Int.mul_left_comm nc 2 jc,
-              Int.mul_left_comm nc (-1) jc,
-              Int.mul_left_comm nc 3 jc,
-              Int.mul_neg, Int.neg_mul]
-             <;> omega)
+          JetStokes010e.mul, JetStokes010e.add,
+          Int.mul_left_comm nc 2 jc,
+          Int.mul_left_comm nc (-1) jc,
+          Int.mul_left_comm nc 3 jc,
+          Int.mul_neg, Int.neg_mul] <;> omega
 
 def integral (f : Jet3) : Int := integralJet f
 def boundary (i : Axis) (f : Jet3) : Int := boundaryJet i f
