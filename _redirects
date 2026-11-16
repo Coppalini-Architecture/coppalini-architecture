@@ -68,3 +68,12 @@
 /site-information  /about  301!
 /verify.html  /verify  301!
 /papers/infinity-one-zero-lift.html  /papers/infinity-one-zero-lift  301!
+
+# R59 proof-led and historical catalog routes.
+/proofs  /proofs/minimum-mechanics/  301!
+/proofs/minimum-mechanics  /proofs/minimum-mechanics/  301!
+/library/full  /archive/r58-library.html  301!
+/verify/legacy  /archive/r58-verify.html  301!
+/architecture/legacy  /archive/r58-constructions.html  301!
+/formalism/legacy  /archive/r58-basis.html  301!
+/lineage  /archive/r58-home.html#formal-lineage  301!
