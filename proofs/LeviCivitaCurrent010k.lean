@@ -99,7 +99,6 @@ theorem current_from_symmetric_metric_gradient
   simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
     Int.mul_assoc, Int.neg_mul, Int.mul_neg]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-  simp only [← Int.mul_assoc]
   omega
 
 -- The current is genuinely dependent on metric-perturbation derivatives.
