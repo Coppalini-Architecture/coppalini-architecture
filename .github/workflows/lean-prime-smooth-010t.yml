@@ -1,0 +1,56 @@
+name: Lean prime-accounted smooth scalar bridge 010t
+
+on:
+  push:
+    paths:
+      - 'proofs/PrimeRationalSymplectic010t.lean'
+      - '.github/workflows/lean-prime-smooth-010t.yml'
+      - 'scripts/compile_lean_010s.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/PrimeRationalSymplectic010t.lean'
+      - '.github/workflows/lean-prime-smooth-010t.yml'
+      - 'scripts/compile_lean_010s.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact 010t import closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          lean --version
+          python3 scripts/compile_lean_010s.py PrimeRationalSymplectic010t
+      - name: Audit sources, theorem axioms, and hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/test_verify_lean_010s.py
+          python3 scripts/verify_lean_010s.py \
+            --source proofs/PrimeRationalSymplectic010t.lean \
+            --log build/010s-lean.log \
+            --hash-file proofs/PrimeRationalSymplectic010t.lean \
+            --hash-file .github/workflows/lean-prime-smooth-010t.yml
+      - name: Source commit
+        shell: bash
+        run: git rev-parse HEAD
