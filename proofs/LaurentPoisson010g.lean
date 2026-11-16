@@ -1,5 +1,5 @@
 import Init.Data.Rat.Basic
-import proofs.FourierPairing010g
+import proofs.FourierTorus010e
 
 /-!
 # Minimum Mechanics 010g — nonlinear canonical Poisson of Laurent monomials
