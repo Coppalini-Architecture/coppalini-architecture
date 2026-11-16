@@ -64,6 +64,7 @@ theorem christoffel_variation_lower_symmetry
     twoDeltaGamma B H k i j = twoDeltaGamma B H k j i := by
   simp only [twoDeltaGamma, sum3]
   rw [hH 0 i j, hH 1 i j, hH 2 i j]
+  simp only [Int.mul_add, Int.mul_sub]
   omega
 
 theorem current_from_symmetric_metric_gradient
@@ -75,6 +76,9 @@ theorem current_from_symmetric_metric_gradient
   have hb01 := hB 0 1
   have hb02 := hB 0 2
   have hb12 := hB 1 2
+  have hbk0 := hB 0 k
+  have hbk1 := hB 1 k
+  have hbk2 := hB 2 k
   have hh001 := hH 0 0 1
   have hh002 := hH 0 0 2
   have hh012 := hH 0 1 2
@@ -88,11 +92,14 @@ theorem current_from_symmetric_metric_gradient
     ContractedPalatini010j.palatiniCurrent,
     ContractedPalatini010j.sum3,
     twiceRaisedDivergence, twiceRaisedTraceGradient,
-    twoDeltaGamma, sum3] at *
+    twoDeltaGamma, sum3]
+  simp only [hb01, hb02, hb12, hbk0, hbk1, hbk2,
+    hh001, hh002, hh012, hh101, hh102, hh112,
+    hh201, hh202, hh212]
   simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
-    Int.mul_assoc, Int.neg_mul, Int.mul_neg] at *
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc] at *
-  simp only [← Int.mul_assoc] at *
+    Int.mul_assoc, Int.neg_mul, Int.mul_neg]
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  simp only [← Int.mul_assoc]
   omega
 
 -- The current is genuinely dependent on metric-perturbation derivatives.
