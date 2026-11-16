@@ -4,11 +4,13 @@ on:
   push:
     paths:
       - 'proofs/DeWittCovariant010p.lean'
+      - 'proofs/MetricShift010p.lean'
       - '.github/workflows/lean-dewitt-010p.yml'
       - 'SHA256SUMS'
   pull_request:
     paths:
       - 'proofs/DeWittCovariant010p.lean'
+      - 'proofs/MetricShift010p.lean'
       - '.github/workflows/lean-dewitt-010p.yml'
   workflow_dispatch:
 
@@ -52,7 +54,8 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/ContractedPalatini010j.olean proofs/ContractedPalatini010j.lean | tee /tmp/010j-palatini.log
           LEAN_PATH=build lean --root=. -o build/proofs/CurvedEHVariation010j.olean proofs/CurvedEHVariation010j.lean | tee /tmp/010j-eh.log
           LEAN_PATH=build lean --root=. -o build/proofs/MetricVolume010k.olean proofs/MetricVolume010k.lean | tee /tmp/010k-volume.log
-          LEAN_PATH=build lean --root=. proofs/DeWittCovariant010p.lean | tee /tmp/010p-dewitt.log
+          LEAN_PATH=build lean --root=. -o build/proofs/DeWittCovariant010p.olean proofs/DeWittCovariant010p.lean | tee /tmp/010p-dewitt.log
+          LEAN_PATH=build lean --root=. proofs/MetricShift010p.lean | tee /tmp/010p-shift.log
       - name: Axiom and placeholder audit
         shell: bash
         run: |
@@ -60,6 +63,6 @@ jobs:
       - name: Hash sources and exact commit
         shell: bash
         run: |
-          sha256sum proofs/DeWittCovariant010p.lean
+          sha256sum proofs/DeWittCovariant010p.lean proofs/MetricShift010p.lean
           sha256sum .github/workflows/lean-dewitt-010p.yml
           git rev-parse HEAD
