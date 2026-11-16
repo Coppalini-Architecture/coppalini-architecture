@@ -132,9 +132,9 @@ theorem monomial_jacobi_read (a b c : Mono) (q p : Int) :
   have hc := nested_coeff_sum_zero a b c
   by_cases h : sameExp (pb (pb a b) c) q p
   · have h2 : sameExp (pb (pb b c) a) q p := by
-      exact ⟨hq.1.symm.trans h.1,hq.2.1.symm.trans h.2⟩
+      exact ⟨hq.1.symm.trans h.1,hp.1.symm.trans h.2⟩
     have h3 : sameExp (pb (pb c a) b) q p := by
-      exact ⟨hq.2.2.symm.trans h2.1,hp.2.2.symm.trans h2.2⟩
+      exact ⟨hq.2.symm.trans h2.1,hp.2.symm.trans h2.2⟩
     simp only [readCoeff, if_pos h, if_pos h2, if_pos h3]
     exact hc
   · have h2 : ¬sameExp (pb (pb b c) a) q p := by
@@ -142,7 +142,7 @@ theorem monomial_jacobi_read (a b c : Mono) (q p : Int) :
       exact h ⟨hq.1.trans h2.1,hp.1.trans h2.2⟩
     have h3 : ¬sameExp (pb (pb c a) b) q p := by
       intro h3
-      exact h2 ⟨hq.2.2.trans h3.1,hp.2.2.trans h3.2⟩
+      exact h2 ⟨hq.2.trans h3.1,hp.2.trans h3.2⟩
     simp [readCoeff, h, h2, h3]
 
 abbrev Polynomial := List Mono
