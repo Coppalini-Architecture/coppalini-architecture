@@ -58,16 +58,14 @@ theorem gravity_gradients_expand (K CN CM U : M) (n m : Int) :
       tr (mul (add (scale n U) CN) (scale m K)) =
         n*m*tr (mul U K)+m*tr (mul CN K) := by
     simp only [MetricInverse010i.add_mul, mul_scale_left,
-      mul_scale_right, trace_add, trace_scale]
-    simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-    omega
+      mul_scale_right, trace_add, trace_scale,
+      Int.mul_add, Int.mul_assoc] <;> ac_rfl
   have h2 :
       tr (mul (scale n K) (add (scale m U) CM)) =
         n*m*tr (mul K U)+n*tr (mul K CM) := by
     simp only [MetricInverse010i.mul_add, mul_scale_left,
-      mul_scale_right, trace_add, trace_scale]
-    simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-    omega
+      mul_scale_right, trace_add, trace_scale,
+      Int.mul_add, Int.mul_assoc] <;> ac_rfl
   rw [h1,h2, tr_mul_comm U K]
   omega
 
@@ -86,7 +84,9 @@ theorem gravity_normal_normal_covariant
   rw [tr_mul_comm (hessianGradient B HN) (kineticGradient g P)]
   rw [covariant_dewitt_hessian g B P HN hgB hBg,
       covariant_dewitt_hessian g B P HM hgB hBg]
-  simp only [Int.mul_neg, Int.neg_mul]
+  simp only [Int.mul_neg, Int.neg_mul, Int.mul_sub,
+    Int.sub_mul, Int.mul_assoc]
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
   omega
 
 def maxwellCellsPB (es : List Maxwell010b.Cell) : Int :=
@@ -110,8 +110,10 @@ theorem nonorthonormal_einstein_maxwell_gradient
     combinedLocalPB g B P U HN HM n m es =
       combinedLocalCurrent P HN HM n m es := by
   simp only [combinedLocalPB, combinedLocalCurrent]
-  rw [gravity_normal_normal_covariant g B P U HN HM n m hgB hBg,
-      Maxwell010b.maxwell_normal_normal_finite_sum es]
+  rw [gravity_normal_normal_covariant g B P U HN HM n m hgB hBg]
+  simp only [maxwellCellsPB, maxwellCellsFlux]
+  exact congrArg (fun v : Int => covariantHessianFlux P HN HM n m + v)
+    (Maxwell010b.maxwell_normal_normal_finite_sum es)
 
 -- Finite lists of independently addressed jets can have a different
 -- metric at every address; their algebraic PB-current equality holds.
