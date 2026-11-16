@@ -158,8 +158,9 @@ private theorem double_sum_swap {α β : Type}
       induction ys with
       | nil => rfl
       | cons b bs ih =>
-          simp only [List.map_cons, List.sum_cons]
-          rw [ih]
+          change (0 : Int) = (0 : Int) +
+            (bs.map (fun _ => (0 : Int))).sum
+          rw [← ih]
           omega
   | cons a rest ih =>
       simp only [List.map_cons, List.sum_cons]
@@ -229,7 +230,8 @@ theorem canonical_normal_normal_fourier
       doubleSum π φ (fun b a =>
         pair (momentumGradientMode n b) (scalarGradientMode m a)) := by
           simp only [normalPoisson, scalarGradient, momentumGradient,
-            pairing, pairOne, doubleSum, List.map_map]
+            pairing, pairOne, doubleSum, List.map_map,
+            Function.comp_apply]
     _ = doubleSum φ π (fun a b =>
         pair (scalarGradientMode n a) (momentumGradientMode m b)) -
       doubleSum φ π (fun a b =>
