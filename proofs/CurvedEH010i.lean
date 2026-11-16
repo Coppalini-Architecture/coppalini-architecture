@@ -47,7 +47,6 @@ theorem scale_left (c : Int) (A B : Mat3) :
     mul (scaleMat c A) B = scaleMat c (mul A B) := by
   funext i j
   simp only [mul, scaleMat, Int.mul_add, Int.mul_assoc]
-  omega
 
 theorem adjugate_is_det_inverse
     (g B : Mat3) (hRight : mul g B = M1) :
@@ -67,6 +66,7 @@ theorem determinant_Jacobi_trace
     (g B h : Mat3) (hRight : mul g B = M1) :
     deltaDet g h = determinant g * traceProduct B h := by
   rw [determinant_trace_adjugate]
+  simp only [traceAdjH]
   rw [adjugate_is_det_inverse g B hRight]
   simp only [traceAdjH, traceProduct, scaleMat, Int.mul_add,
     Int.mul_assoc]
@@ -131,15 +131,22 @@ theorem curved_EH_density_first_variation
       (traceProduct B h * (scalarCurvature B Ric - 2*Lambda) +
        2*(traceProduct B dRic -
           traceProduct (mul B (mul h B)) Ric)) := by
+  let S : Int := scalarCurvature B Ric - 2*Lambda
+  let Q : Int := traceProduct B dRic -
+      traceProduct (mul B (mul h B)) Ric
   have hVol := volume_density_Jacobi g B h hRight root
-  have hCurv := curved_scalar_curvature_differential B h Ric dRic
+  rw [root.square] at hVol
+  have hCurv : deltaScalarCurvature B h Ric dRic = Q :=
+    curved_scalar_curvature_differential B h Ric dRic
+  have hTimes := congrArg (fun z : Int => z * S) hVol
+  have hSq := congrArg (fun z : Int => z * (Q+Q)) root.square
+  dsimp [S, Q] at hTimes hSq hCurv ⊢
   simp only [deltaEHdensity] at ⊢
   rw [hCurv]
-  rw [root.square] at hVol
   simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
-    Int.mul_assoc]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-  simp only [← Int.mul_assoc]
+    Int.mul_assoc] at hTimes hSq ⊢
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc] at hTimes hSq ⊢
+  simp only [← Int.mul_assoc] at hTimes hSq ⊢
   omega
 
 /-! ## Levi-Civita first variation before Palatini contraction -/
