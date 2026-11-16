@@ -67,9 +67,6 @@ theorem christoffel_variation_lower_symmetry
   simp only [Int.mul_add, Int.mul_sub]
   omega
 
-private theorem axes : ∀ k : Axis,
-    k = 0 ∨ k = 1 ∨ k = 2 := by decide
-
 theorem current_from_symmetric_metric_gradient
     (B : Mat3) (H : MetricJet)
     (hB : ∀ i j, B i j = B j i)
@@ -79,6 +76,9 @@ theorem current_from_symmetric_metric_gradient
   have hb01 := hB 0 1
   have hb02 := hB 0 2
   have hb12 := hB 1 2
+  have hbk0 := hB 0 k
+  have hbk1 := hB 1 k
+  have hbk2 := hB 2 k
   have hh001 := hH 0 0 1
   have hh002 := hH 0 0 2
   have hh012 := hH 0 1 2
@@ -88,20 +88,18 @@ theorem current_from_symmetric_metric_gradient
   have hh201 := hH 2 0 1
   have hh202 := hH 2 0 2
   have hh212 := hH 2 1 2
-  rcases axes k with hk | hk | hk <;>
-    subst k <;>
-    simp only [twicePalatiniCurrent, geometricCurrent,
-      ContractedPalatini010j.palatiniCurrent,
-      ContractedPalatini010j.sum3,
-      twiceRaisedDivergence, twiceRaisedTraceGradient,
-      twoDeltaGamma, sum3] <;>
-    simp only [hb01, hb02, hb12, hh001, hh002, hh012,
-      hh101, hh102, hh112, hh201, hh202, hh212] <;>
-    simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
-      Int.mul_assoc, Int.neg_mul, Int.mul_neg] <;>
-    simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc] <;>
-    simp only [← Int.mul_assoc] <;>
-    omega
+  simp only [twicePalatiniCurrent, geometricCurrent,
+    ContractedPalatini010j.palatiniCurrent,
+    ContractedPalatini010j.sum3,
+    twiceRaisedDivergence, twiceRaisedTraceGradient,
+    twoDeltaGamma, sum3]
+  simp only [hb01, hb02, hb12, hbk0, hbk1, hbk2,
+    hh001, hh002, hh012, hh101, hh102, hh112,
+    hh201, hh202, hh212]
+  simp only [Int.mul_add, Int.mul_sub, Int.add_mul, Int.sub_mul,
+    Int.mul_assoc, Int.neg_mul, Int.mul_neg]
+  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  omega
 
 -- The current is genuinely dependent on metric-perturbation derivatives.
 -- This is a negative control for a spurious vanishing-current claim.
