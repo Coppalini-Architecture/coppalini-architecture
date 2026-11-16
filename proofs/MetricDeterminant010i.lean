@@ -119,8 +119,8 @@ def cofactorDeltaDet (g h : Mat3) : Int :=
 
 theorem cofactor_is_determinant_variation (g h : Mat3) :
     deltaDet g h = cofactorDeltaDet g h := by
-  simp only [deltaDet, dTripleCoeff, cofactorDeltaDet,
-    cofactor, Int.mul_add, Int.mul_sub, Int.add_mul,
+  dsimp [deltaDet, dTripleCoeff, cofactorDeltaDet, cofactor]
+  simp only [Int.mul_add, Int.mul_sub, Int.add_mul,
     Int.sub_mul, Int.mul_assoc]
   simp only [Int.mul_comm,Int.mul_left_comm,Int.mul_assoc]
   simp only [← Int.mul_assoc]
@@ -138,7 +138,7 @@ theorem g_times_adjugate (g : Mat3) :
   funext i j
   rcases axis_cases i with rfl | rfl | rfl <;>
     rcases axis_cases j with rfl | rfl | rfl <;>
-    simp only [mul, adjugate, cofactor, determinant,
+    simp [mul, adjugate, cofactor, determinant,
       triple, scaleMat, M1]
     <;> simp only [Int.mul_add, Int.mul_sub, Int.add_mul,
       Int.sub_mul, Int.mul_assoc]
@@ -151,7 +151,7 @@ theorem adjugate_times_g (g : Mat3) :
   funext i j
   rcases axis_cases i with rfl | rfl | rfl <;>
     rcases axis_cases j with rfl | rfl | rfl <;>
-    simp only [mul, adjugate, cofactor, determinant,
+    simp [mul, adjugate, cofactor, determinant,
       triple, scaleMat, M1]
     <;> simp only [Int.mul_add, Int.mul_sub, Int.add_mul,
       Int.sub_mul, Int.mul_assoc]
@@ -185,16 +185,9 @@ def rMul (x y : RatDual) : RatDual :=
   ⟨x.base*y.base,x.base*y.eps+x.eps*y.base⟩
 
 theorem square_volume_linearization (v dv : Rat) :
-    (rMul ⟨v,dv⟩ ⟨v,dv⟩).eps = (2:Rat)*v*dv := by
+    (rMul ⟨v,dv⟩ ⟨v,dv⟩).eps = v*dv + v*dv := by
   simp only [rMul]
-  calc
-    v*dv + dv*v = v*dv + v*dv := by rw [Rat.mul_comm dv v]
-    _ = (2:Rat)*v*dv := by
-      have h2 : (2:Rat)*v = v+v := by
-        simp only [Rat.add_mul]
-        -- Multiplication by two is addition to itself.
-        ring
-      rw [h2, Rat.add_mul]
+  rw [Rat.mul_comm dv v]
 
 #print axioms dTriple_exact
 #print axioms determinantDual_first_coefficient
