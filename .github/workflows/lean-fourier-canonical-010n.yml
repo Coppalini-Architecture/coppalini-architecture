@@ -1,0 +1,59 @@
+name: Lean Fourier field Poisson 010n
+
+on:
+  push:
+    paths:
+      - 'proofs/FourierCanonical010n.lean'
+      - 'proofs/FourierHamiltonian010n.lean'
+      - '.github/workflows/lean-fourier-canonical-010n.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/FourierCanonical010n.lean'
+      - 'proofs/FourierHamiltonian010n.lean'
+      - '.github/workflows/lean-fourier-canonical-010n.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source dependency cone and 010n
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMGravity010c.olean proofs/ADMGravity010c.lean | tee /tmp/010c.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMFunctional010d.olean proofs/ADMFunctional010d.lean | tee /tmp/010d.log
+          LEAN_PATH=build lean --root=. -o build/proofs/JetStokes010e.olean proofs/JetStokes010e.lean | tee /tmp/010e-jet.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/010e-fourier.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierCanonical010n.olean proofs/FourierCanonical010n.lean | tee /tmp/010n-canonical.log
+          if [ -f proofs/FourierHamiltonian010n.lean ]; then
+            LEAN_PATH=build lean --root=. proofs/FourierHamiltonian010n.lean | tee /tmp/010n-hamiltonian.log
+          fi
+      - name: Axiom/placeholder audit
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010*.log
+      - name: Exact source hashes and commit
+        shell: bash
+        run: |
+          sha256sum proofs/FourierCanonical010n.lean
+          if [ -f proofs/FourierHamiltonian010n.lean ]; then sha256sum proofs/FourierHamiltonian010n.lean; fi
+          sha256sum .github/workflows/lean-fourier-canonical-010n.yml
+          git rev-parse HEAD
