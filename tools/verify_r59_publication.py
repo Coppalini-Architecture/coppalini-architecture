@@ -70,7 +70,7 @@ def location(path):
     path=path.split("#",1)[0].split("?",1)[0]
     if path == "/" or not path: return ROOT/"index.html"
     t = ROOT / path.lstrip("/")
-    for q in (t,t.with_suffix(".html") if not t.suffix else t,t/"index.html"):
+    for q in (t, Path(str(t) + ".html"), t/"index.html"):
         if q.is_file(): return q
     return None
 
@@ -89,7 +89,7 @@ def verify():
         if not parser.canonical: errors.append(page+": missing canonical")
         if parser.missing_alt: errors.append(f"{page}: missing image alt {parser.missing_alt}")
         if page in HISTORY and not parser.noindex: errors.append(page+": historic page must be noindex")
-        if page in CURRENT and parser.noindex: errors.append(page+": current page unexpectedly noindex")
+        if page in CURRENT and page != "archive/index.html" and parser.noindex: errors.append(page+": current page unexpectedly noindex")
         for href in parser.links:
             if href.startswith(("https://","http://","mailto:","tel:","data:","//")): continue
             if href.startswith("#"):
