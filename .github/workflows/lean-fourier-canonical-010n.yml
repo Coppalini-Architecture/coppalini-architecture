@@ -5,12 +5,14 @@ on:
     paths:
       - 'proofs/FourierCanonical010n.lean'
       - 'proofs/FourierHamiltonian010n.lean'
+      - 'proofs/FourierNormalBracket010n.lean'
       - '.github/workflows/lean-fourier-canonical-010n.yml'
       - 'SHA256SUMS'
   pull_request:
     paths:
       - 'proofs/FourierCanonical010n.lean'
       - 'proofs/FourierHamiltonian010n.lean'
+      - 'proofs/FourierNormalBracket010n.lean'
       - '.github/workflows/lean-fourier-canonical-010n.yml'
   workflow_dispatch:
 
@@ -44,7 +46,10 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
           LEAN_PATH=build lean --root=. -o build/proofs/FourierCanonical010n.olean proofs/FourierCanonical010n.lean | tee /tmp/010n-canonical.log
           if [ -f proofs/FourierHamiltonian010n.lean ]; then
-            LEAN_PATH=build lean --root=. proofs/FourierHamiltonian010n.lean | tee /tmp/010n-hamiltonian.log
+            LEAN_PATH=build lean --root=. -o build/proofs/FourierHamiltonian010n.olean proofs/FourierHamiltonian010n.lean | tee /tmp/010n-hamiltonian.log
+          fi
+          if [ -f proofs/FourierNormalBracket010n.lean ]; then
+            LEAN_PATH=build lean --root=. proofs/FourierNormalBracket010n.lean | tee /tmp/010n-normal.log
           fi
       - name: Axiom/placeholder audit
         shell: bash
@@ -55,5 +60,6 @@ jobs:
         run: |
           sha256sum proofs/FourierCanonical010n.lean
           if [ -f proofs/FourierHamiltonian010n.lean ]; then sha256sum proofs/FourierHamiltonian010n.lean; fi
+          if [ -f proofs/FourierNormalBracket010n.lean ]; then sha256sum proofs/FourierNormalBracket010n.lean; fi
           sha256sum .github/workflows/lean-fourier-canonical-010n.yml
           git rev-parse HEAD
