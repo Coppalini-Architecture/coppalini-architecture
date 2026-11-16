@@ -1,5 +1,6 @@
 import Init.Data.Rat.Basic
 import proofs.CanonicalPoisson010f
+import proofs.Maxwell010b
 
 /-!
 # Minimum Mechanics 010m — two-site canonical scalar-field Hamiltonian
