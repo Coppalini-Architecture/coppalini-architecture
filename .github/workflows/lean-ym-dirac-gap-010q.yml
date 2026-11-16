@@ -5,11 +5,14 @@ on:
     paths:
       - 'proofs/YMDiracGapAudit010q.lean'
       - '.github/workflows/lean-ym-dirac-gap-010q.yml'
+      - 'scripts/verify_lean_010s.py'
       - 'SHA256SUMS'
   pull_request:
     paths:
       - 'proofs/YMDiracGapAudit010q.lean'
       - '.github/workflows/lean-ym-dirac-gap-010q.yml'
+      - 'scripts/verify_lean_010s.py'
+      - 'SHA256SUMS'
   workflow_dispatch:
 
 permissions:
@@ -30,15 +33,19 @@ jobs:
       - name: Compile gauge algebra and spectral-boundary theorem
         shell: bash
         run: |
-          set -o pipefail
+          set -euo pipefail
           lean --version
           lean --root=. proofs/YMDiracGapAudit010q.lean | tee /tmp/ym-gap-010q.log
-      - name: Refuse placeholders
+      - name: Fail-closed source axiom and checksum audit
         shell: bash
         run: |
-          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/ym-gap-010q.log
-      - name: Print source provenance
+          set -euo pipefail
+          args=()
+          args+=(--log /tmp/ym-gap-010q.log)
+          args+=(--source proofs/YMDiracGapAudit010q.lean)
+          args+=(--hash-file proofs/YMDiracGapAudit010q.lean)
+          args+=(--hash-file .github/workflows/lean-ym-dirac-gap-010q.yml)
+          python3 scripts/verify_lean_010s.py "${args[@]}"
+      - name: Display commit
         shell: bash
-        run: |
-          sha256sum proofs/YMDiracGapAudit010q.lean .github/workflows/lean-ym-dirac-gap-010q.yml
-          git rev-parse HEAD
+        run: git rev-parse HEAD
