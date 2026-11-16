@@ -51,13 +51,15 @@ theorem opposite_symm (a b : Mode) :
     constructor <;> omega
 
 theorem pair_symmetric (a b : Mode) : pair a b = pair b a := by
+  change (if opposite a b then a.c * b.c else 0) =
+    (if opposite b a then b.c * a.c else 0)
   by_cases h : opposite a b
   · have hb : opposite b a := (opposite_symm a b).mp h
-    simp [pair, h, hb, Int.mul_comm]
+    rw [if_pos h, if_pos hb, Int.mul_comm]
   · have hb : ¬opposite b a := by
       intro hh
       exact h ((opposite_symm a b).mpr hh)
-    simp [pair, h, hb]
+    rw [if_neg h, if_neg hb]
 
 theorem opposite_frequency_sum (i : Fin 3) (a b : Mode)
     (h : opposite a b) : freq i a + freq i b = 0 := by
@@ -91,16 +93,19 @@ theorem opposite_deriv_right (i : Fin 3) (a b : Mode) :
 -- derivative an overall factor i multiplies both terms.
 theorem pair_derivative_cancel (i : Fin 3) (a b : Mode) :
     pair (E i a) b + pair a (E i b) = 0 := by
+  change
+    (if opposite (E i a) b then (E i a).c*b.c else 0) +
+    (if opposite a (E i b) then a.c*(E i b).c else 0) = 0
   by_cases h : opposite a b
   · have hsum := opposite_frequency_sum i a b h
     have hl : opposite (E i a) b :=
       (opposite_deriv_left i a b).mpr h
     have hr : opposite a (E i b) :=
       (opposite_deriv_right i a b).mpr h
-    simp only [pair, if_pos hl, if_pos hr, E]
-    simp only [Int.mul_assoc]
+    rw [if_pos hl, if_pos hr]
+    change (freq i a * a.c)*b.c + a.c*(freq i b * b.c)=0
     calc
-      freq i a * (a.c * b.c) + a.c * (freq i b * b.c) =
+      (freq i a * a.c) * b.c + a.c * (freq i b * b.c) =
           (freq i a + freq i b) * (a.c * b.c) := by
         rw [Int.add_mul]
         ac_rfl
@@ -111,7 +116,8 @@ theorem pair_derivative_cancel (i : Fin 3) (a b : Mode) :
     have hr : ¬ opposite a (E i b) := by
       intro hh
       exact h ((opposite_deriv_right i a b).mp hh)
-    simp [pair, hl, hr]
+    rw [if_neg hl, if_neg hr]
+    decide
 
 theorem pairOne_derivative_cancel (i : Fin 3)
     (a : Mode) (bs : Polynomial) :
