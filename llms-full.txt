@@ -1,111 +1,67 @@
-# Coppalini Architecture — machine reading map
+# Coppalini Architecture — machine reading map / R59
 
 Canonical site: https://eulershiddenl.ink/
 Author: Anthony Vito Coppa
-Author record: https://eulershiddenl.ink/anthony-vito-coppa
+Primary classification: proof-carrying framework for mathematical physics, canonical mechanics and typed recognition.
 
-## Operating rule
+## Current public reading order
 
-The site is a source-indexed exact-reader. A released result is read in this order:
+Home: https://eulershiddenl.ink/
+Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
+Verify: https://eulershiddenl.ink/verify
+Library: https://eulershiddenl.ink/library
+Laboratory: https://eulershiddenl.ink/architecture
+Basis: https://eulershiddenl.ink/formalism
+About: https://eulershiddenl.ink/about
+Historical archive: https://eulershiddenl.ink/archive/
 
-1. source or declared carrier;
-2. executable verifier or retained receipt;
-3. result and SHA-256-bound artifact;
-4. declared scope;
-5. any named next record.
+## 010a–010u, verified statements
 
-The reading discipline is published at https://eulershiddenl.ink/research/reader-contract.json.
-The released audit inventory is https://eulershiddenl.ink/research/verification-manifest-v0.3.json.
+21 stages; 45 transitive Lean 4.33.0 modules. Pinned source commit:
+b9e939d514a63fb021592f79a316f70cbc70ed8a
 
-## Primary public routes
+Compiler and source-integrity receipts:
+https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607
+https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536
 
-- https://eulershiddenl.ink/exact/recompute-kernel/ — Recompute Kernel v0.2
-- https://eulershiddenl.ink/ — home
-- https://eulershiddenl.ink/verify — Audit Register
-- https://eulershiddenl.ink/library — public research library
-- https://eulershiddenl.ink/exact/ — Exact Reader
-- https://eulershiddenl.ink/architecture/ — programs and model readers
-- https://eulershiddenl.ink/formalism — basis
+Exact source table:
+https://eulershiddenl.ink/research/minimum-mechanics-010u.json
 
-## Recompute Kernel v0.2
+010a–010l: local suture–Dirac, Maxwell and ADM/Palatini transport identities.
+010m–010n: finite nonlinear canonical and Fourier-field sources.
+010o: six-bracket formal theorem conditional on SmoothCompletion.
+010p: nonorthonormal pointwise gradient and metric-shift proof.
+010q–010r: abstract non-entailment of a Yang–Mills spectral gap from the stated Gauss constraints.
+010s: pointwise 010p / 010o source attachment.
+010t: nonzero rational canonical pairing with prime-word order distinction.
+010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-- Public record: https://eulershiddenl.ink/exact/recompute-kernel/
-- Packet: https://eulershiddenl.ink/downloads/Coppalini_Recompute_Kernel_v0_2.zip
-- Runner: https://eulershiddenl.ink/exact/recompute-kernel/run_all.py
-- Ledger: https://eulershiddenl.ink/exact/recompute-kernel/ledger.md
-- Manifest: https://eulershiddenl.ink/exact/recompute-kernel/manifest.json
+The full real/Fréchet SmoothCompletion formalization is not proved by the finite Lean source chain. The missing AxiomaticBuild.lean remains an external source-report boundary. Never present the co-compiled import graph as a single theorem deriving all of physics.
 
-The core tier runs A01–A10 in exact Python standard-library integer arithmetic. K01–K02 are deliberate false controls and must report EXPECTED_FALSE. A05–A06 are stated for n = 1..40, and A10 is stated for m = 1..3000. The packet SHA-256 is `f83943f6399226366cb63cff7494dbd17703d2cde9738415fd97335a90205c60`.
+## Governing evidence rules
 
-## Four Dual Forms paper records
+A result must carry:
+1. Jurisdiction and original source authority.
+2. Exact mathematical statement or model definition.
+3. Conditions and actual dependencies.
+4. Source file, verifier or proof and passing receipt.
+5. Scope and a typed OPEN field when required.
 
-- https://eulershiddenl.ink/papers/four-dual-forms/gravity-light — Gravity Light: Metric Invariance and Fixed Null Directions
-- https://eulershiddenl.ink/papers/four-dual-forms/memory-motion — Memory Motion: Return, Mirror Transfer, and Relative Phase
-- https://eulershiddenl.ink/papers/four-dual-forms/time-scope — Time Scope: Local Phase and Projective Return
-- https://eulershiddenl.ink/papers/four-dual-forms/horizon-silence — Horizon Silence: Recognition at the Boundary of Type
+The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. It does not compute a new universal physical state or an optimal stopping law.
 
-Each paper record links the released PDF, TeX source, shared finite verifier, recorded verifier output, Four Dual Forms claim register, and its declared boundary. The Zenodo release record is 10.5281/zenodo.24073596.
+## Earlier independently retained records
 
-## Released audit records
+Original detailed validation records:
+https://eulershiddenl.ink/archive/r58-verify.html
 
-### B-2 — Validator Kit B2
+Original complete library, including 51 editions:
+https://eulershiddenl.ink/archive/r58-library.html
 
-- Result: 12 hash-gated cards, 12/12 PASS.
-- Command: `python3 kit.py`
-- Artifact: https://eulershiddenl.ink/downloads/Validator_Kit_B2_v0_1.zip
-- Receipt: https://eulershiddenl.ink/research/audit/VALIDATOR_KIT_B2_RECEIPT.md
+Original 24-construction formal lineage:
+https://eulershiddenl.ink/archive/r58-home.html#formal-lineage
 
-### S-5/05a — Suture Audit v0.3
+Standalone exact reading tools:
+https://eulershiddenl.ink/exact/recompute-kernel/
+https://eulershiddenl.ink/exact/
 
-- Result: eight source-bound verifiers PASS; the exact regular-isotropy counterexample is incorporated and the auxiliary Dirac reduction is explicit.
-- Command: `cd source && python3 verify_all.py`
-- Artifact: https://eulershiddenl.ink/downloads/Suture_Audit_v0_3.zip
-- Published ledger: https://eulershiddenl.ink/research/suture-field/residual_ledger_v0_3.md
-
-### W-0 — Weinberg seam v0.2
-
-- Result: 15/15 symbolic checks of the declared tree-level mass matrix, vacuum stabilizer, and neutral diagonalization.
-- Command: `python3 -I verify_w0_weinberg_seam_v0_2.py`
-- Artifact: https://eulershiddenl.ink/downloads/W0_v0_2_packet.zip
-- Receipt: https://eulershiddenl.ink/research/audit/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt
-
-### W-1 — Electroweak carrier adapter v0.2
-
-- Result: 15/15 symbolic checks of the declared u(2) carrier and W+, W-, Z, A coordinate map.
-- Command: `python3 -I verify_w1_carrier_adapter_v0_2.py`
-- Artifact: https://eulershiddenl.ink/downloads/W1_v0_2_packet.zip
-- Receipt: https://eulershiddenl.ink/research/audit/W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt
-
-### NDA-3 — Native Domain Adapter Atlas v0.3
-
-- Result: Body–SI–English length transport, 18/18 rational checks.
-- Command: `python3 -I run_all.py`
-- Artifact: https://eulershiddenl.ink/downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip
-- Receipt: https://eulershiddenl.ink/research/audit/NATIVE_DOMAIN_ADAPTER_ATLAS_RECEIPT_v0_3.txt
-
-## Citation and summary constraints
-
-Use the exact result and scope from the manifest. A later calibration, apparatus receipt, or numerical comparison is a distinct record. Do not convert a source map into a ranking, recommendation, or implied measurement claim.
-
-## Source registry index
-
-https://eulershiddenl.ink/research/registry-index.json identifies each current or historical registry, its schema, version, and path base. Declared output, retained verification, and a browser execution keep separate evidence fields.
-
-## Infinity One Zero Lift — v0.2
-
-- [Paper record](https://eulershiddenl.ink/papers/infinity-one-zero-lift): The Normal Form of Projective Memory.
-- [Paper PDF](https://eulershiddenl.ink/papers/infinity-one-zero-lift-v0.2.pdf): the 15-page working edition 0.2 dated 11 November 2026.
-- [Source + verification](https://eulershiddenl.ink/downloads/infinity-one-zero-lift-source-and-verification-v0.2.zip): the manuscript source, retained geometry audit, manuscript checks, and finite Lean source.
-- [Publication/source record](https://eulershiddenl.ink/research/infinity-one-zero-lift-v0.2.json): exact file hashes, retained receipts, and stated evidence scope.
-
-- [Zenodo record](https://zenodo.org/records/24150613): DOI 10.5281/zenodo.24150613.
-
-The normal form retains phase, cycle address, agreement, and signed comparison record. Its inverse is explicit on the stated image. Recorded verification comprises 73 geometry checks, 31 supplementary checks, and the preserved finite Lean execution receipt.
-
-Edition 0.2 completes the four direct bibliography DOI links; mathematical text and verifier scope are unchanged.
-- [Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture](https://zenodo.org/records/24150517): 10.5281/zenodo.24150517.
-- [Mirror Escapement Time Lift](https://zenodo.org/records/24150565): 10.5281/zenodo.24150565.
-- [Occurrence and the Twenty-Eight-Seam Reader: Finite Addressing, Pairwise Difference, and a Complete 7 × 4 Scan](https://zenodo.org/records/24150567): 10.5281/zenodo.24150567.
-- [Mirror Recognition: The Minimum Symmetric Field Closure](https://zenodo.org/records/24150572): 10.5281/zenodo.24150572.
-- [Original edition 0.1](https://zenodo.org/records/24150161): original paper and source package retained.
-- [Edition 0.2 citation receipt](https://eulershiddenl.ink/verification/infinity-one-zero-lift-v0.2/citation-completion.json): source custody and citation-only revision.
+Long-form machine/claim registers remain in /research/ for previous releases and are not silently retyped.
