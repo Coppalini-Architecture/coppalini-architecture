@@ -95,8 +95,9 @@ theorem nonabelian_zx : bracket Jz Jx = Jy := by
 theorem genuinely_nonabelian :
     bracket Jx Jy ≠ (fun _ _ => 0) := by
   intro h
+  rw [nonabelian_xy] at h
   have hxy := congrFun (congrFun h 0) 1
-  decide
+  simp [Jz] at hxy
 
 -- For a positive rational candidate p/q (q>0), arbitrarily high
 -- excited singlet addresses n give a smaller positive energy 1/(n+1).
