@@ -1,5 +1,4 @@
 import Init.Data.Rat.Basic
-import proofs.DoubleStokes010l
 import proofs.CanonicalPoisson010f
 
 /-!
