@@ -62,6 +62,9 @@ theorem H_first_q0 (w : W) (x : Phase) (z : Int) :
   simp only [H, gradH, Int.add_mul, Int.mul_add,
     Int.mul_assoc]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  have hm : z*(w.a*(x.q0*2)) =
+      2*(z*(w.a*x.q0)) := by ac_rfl
+  rw [hm]
   omega
 
 theorem D_first_p1 (t : Int) (x : Phase) (z : Int) :
@@ -70,6 +73,7 @@ theorem D_first_p1 (t : Int) (x : Phase) (z : Int) :
   simp only [D, gradD, Int.add_mul, Int.mul_add,
     Int.mul_assoc]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+  simp only [Int.mul_add, Int.mul_sub]
   omega
 
 def PB_DH (t : Int) (w : W) (x : Phase) : Int :=
@@ -112,6 +116,7 @@ theorem exact_normal_normal (w v : W) (x : Phase) :
 theorem exact_transport_transport (t s : Int) (x : Phase) :
     PB_DD t s x = 0 := by
   simp only [PB_DD, symplectic, gradD]
+  simp only [Int.neg_mul, Int.mul_neg, Int.neg_neg]
   simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
   omega
 
