@@ -1,5 +1,4 @@
 import Init.Data.Rat.Basic
-import proofs.CanonicalPoisson010f
 import proofs.Maxwell010b
 
 /-!
