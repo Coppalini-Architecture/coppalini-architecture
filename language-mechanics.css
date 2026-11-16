@@ -28,6 +28,17 @@
 .lm-register { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 1.5rem 0 0; border: 1px solid var(--line); background: var(--line); }
 .lm-register > div { min-height: 8.25rem; padding: 1rem 1.1rem; background: var(--surface); }
 .lm-register span { display: block; margin-top: .45rem; color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; font-size: .93rem; line-height: 1.48; }
+.lm-source-wrap { margin: 1.5rem 0 0; overflow-x: auto; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.lm-source-table { width: 100%; min-width: 42rem; border-collapse: collapse; text-align: left; }
+.lm-source-table th, .lm-source-table td { padding: .8rem .72rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.lm-source-table tbody tr:last-child th, .lm-source-table tbody tr:last-child td { border-bottom: 0; }
+.lm-source-table thead th { color: var(--red); font: 780 .61rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; }
+.lm-source-table tbody th { width: 5.4rem; font: 760 .72rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: nowrap; }
+.lm-source-table td:first-of-type { width: 7rem; color: var(--muted); font: 700 .68rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .04em; text-transform: uppercase; }
+.lm-source-table td:last-child { color: var(--muted); font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; font-size: .91rem; line-height: 1.55; }
+.lm-source-table a { color: var(--ink); font-weight: 700; text-underline-offset: .18em; }
+.lm-source-table td:last-child > a:not(:first-child) { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .69rem; letter-spacing: .025em; }
+.lm-source-table span { color: var(--line); padding: 0 .18rem; }
 .lm-lineage { display: grid; grid-template-columns: 1fr; gap: 0; margin: 1.4rem 0 0; border-top: 1px solid var(--line); }
 .lm-lineage > div { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .lm-lineage dd { margin: 0; }

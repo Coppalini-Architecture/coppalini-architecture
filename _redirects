@@ -69,13 +69,18 @@
 /verify.html  /verify  301!
 /papers/infinity-one-zero-lift.html  /papers/infinity-one-zero-lift  301!
 
-# R59 proof-led and historical catalog routes.
+# Current integrated routes and retained historical-source aliases.
 /proofs  /proofs/minimum-mechanics/  301!
-/library/full  /archive/r58-library.html  301!
-/verify/legacy  /archive/r58-verify.html  301!
-/architecture/legacy  /archive/r58-constructions.html  301!
-/formalism/legacy  /archive/r58-basis.html  301!
-/lineage  /archive/r58-home.html#formal-lineage  301!
+/library/full  /library  301!
+/verify/legacy  /verify  301!
+/architecture/legacy  /architecture  301!
+/formalism/legacy  /formalism  301!
+/lineage  /#formal-lineage  301!
+/archive/r58-home.html  /#formal-lineage  301!
+/archive/r58-library.html  /library  301!
+/archive/r58-verify.html  /verify  301!
+/archive/r58-constructions.html  /architecture  301!
+/archive/r58-basis.html  /formalism  301!
 
 # R59 repair: preserve historical case-sensitive paper/source download URLs.
 /downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip  /downloads/native_domain_adapter_atlas_v0_3.zip  301!

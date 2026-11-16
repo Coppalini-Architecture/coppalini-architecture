@@ -7,7 +7,7 @@
 - [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/): 45 Lean modules compiled in one transitive import closure, with theorem-strength annotations and links to the exact files.
 - [Proof verification](https://eulershiddenl.ink/verify): Lean 4.33.0 and archive-integrity PASS at pinned commit `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.
-- [Research Library](https://eulershiddenl.ink/library): curated primary studies, suture field and physical interfaces; the complete 51-edition historical catalog remains available.
+- [Research Library](https://eulershiddenl.ink/library): current synthesis followed by all thirty-seven non-Language-Mechanics source records in one continuous library.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for readable reference, deterministic pattern recognition inside declared constraint, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
 - [About](https://eulershiddenl.ink/about): discovery chronology and claim boundaries.
@@ -31,14 +31,12 @@ A claim travels with its jurisdiction, reference, theorem statement, dependencie
 - [SHA-256 manifest](https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/SHA256SUMS)
 - [Recompute Kernel v0.2](https://eulershiddenl.ink/exact/recompute-kernel/): earlier exact-integer verifier.
 
-## Archives and independent sources
+## Integrated source continuity
 
-- [Complete earlier 51-edition library](https://eulershiddenl.ink/archive/r58-library.html)
-- [Earlier verification register](https://eulershiddenl.ink/archive/r58-verify.html)
-- [Earlier constructions](https://eulershiddenl.ink/archive/r58-constructions.html)
-- [Original formal lineage deck](https://eulershiddenl.ink/archive/r58-home.html#formal-lineage)
+- [Language Mechanics source shelf · LM 000–013](https://eulershiddenl.ink/language-mechanics#coordinate-register)
+- [Formal lineage deck · 24 constructions](https://eulershiddenl.ink/#formal-lineage)
 - [Four Dual Forms](https://eulershiddenl.ink/library#four-dual-forms-shelf)
 - [Exact Reader](https://eulershiddenl.ink/exact/)
 - [Existing machine verification manifest](https://eulershiddenl.ink/research/verification-manifest-v0.3.json)
 
-Historical R58 records and model-specific findings retain their own source authority.
+The R58 source tree remains preserved as a Git-backed provenance record; public reading uses the current integrated pages.

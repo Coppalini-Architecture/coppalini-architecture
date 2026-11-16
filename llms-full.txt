@@ -14,7 +14,7 @@ Language Mechanics: https://eulershiddenl.ink/language-mechanics
 Laboratory: https://eulershiddenl.ink/architecture
 Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about
-Historical archive: https://eulershiddenl.ink/archive/
+R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
 
 ## 010a–010u, verified statements
 
@@ -50,16 +50,19 @@ A result must carry:
 
 The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. It does not compute a new universal physical state or an optimal stopping law.
 
-## Earlier independently retained records
+## Integrated retained records
 
-Original detailed validation records:
-https://eulershiddenl.ink/archive/r58-verify.html
+The current verification page carries the public verification route:
+https://eulershiddenl.ink/verify
 
-Original complete library, including 51 editions:
-https://eulershiddenl.ink/archive/r58-library.html
+The current Library carries thirty-seven non-Language-Mechanics editions:
+https://eulershiddenl.ink/library
 
-Original 24-construction formal lineage:
-https://eulershiddenl.ink/archive/r58-home.html#formal-lineage
+Language Mechanics carries all fourteen direct LM 000–013 source records:
+https://eulershiddenl.ink/language-mechanics#coordinate-register
+
+The current Home carries the 24-construction formal lineage:
+https://eulershiddenl.ink/#formal-lineage
 
 Standalone exact reading tools:
 https://eulershiddenl.ink/exact/recompute-kernel/
