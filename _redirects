@@ -77,3 +77,30 @@
 /architecture/legacy  /archive/r58-constructions.html  301!
 /formalism/legacy  /archive/r58-basis.html  301!
 /lineage  /archive/r58-home.html#formal-lineage  301!
+
+# R59 repair: preserve historical case-sensitive paper/source download URLs.
+/downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip  /downloads/native_domain_adapter_atlas_v0_3.zip  301!
+/downloads/Validator_Kit_B2_v0_1.zip  /downloads/validator_kit_b2_v0_1.zip  301!
+/downloads/W0_v0_2_packet.zip  /downloads/w0_v0_2_packet.zip  301!
+/downloads/W1_v0_2_packet.zip  /downloads/w1_v0_2_packet.zip  301!
+/nop/docs/Formal_Note.pdf  /nop/docs/formal_note.pdf  301!
+/nop/docs/Research_Briefing.pdf  /nop/docs/research_briefing.pdf  301!
+/nop/docs/User_Manual.pdf  /nop/docs/user_manual.pdf  301!
+/nop/downloads/NOP_Return_Memory_Workbench_v0_2_0.zip  /nop/downloads/nop_return_memory_workbench_v0_2_0.zip  301!
+/papers/A_Complete_2x2_Operator_Algebra_Draft_0_2.pdf  /papers/a_complete_2x2_operator_algebra_draft_0_2.pdf  301!
+/papers/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf  /papers/ca_01_tool_and_technique_stopping_point_theory_of_enough_v0_1.pdf  301!
+/papers/CA_01_Tool_and_Technique_The_Condition_of_Enough_Final.pdf  /papers/ca_01_tool_and_technique_the_condition_of_enough_final.pdf  301!
+/papers/CA_01_Tool_and_Technique_The_Condition_of_Enough_Final.tex  /papers/ca_01_tool_and_technique_the_condition_of_enough_final.tex  301!
+/papers/Central_Lift_Representation_Difference_and_Retained_Occurrence_Draft_0_1.pdf  /papers/central_lift_representation_difference_and_retained_occurrence_draft_0_1.pdf  301!
+/papers/Clear_Onyx_Computational_Kernel_Briefing_AVC_2026-08-05.pdf  /papers/clear_onyx_computational_kernel_briefing_avc_2026-08-05.pdf  301!
+/papers/Condition_and_Constraint_Boundary_Discipline_Draft_0_1.pdf  /papers/condition_and_constraint_boundary_discipline_draft_0_1.pdf  301!
+/papers/Conserved_Transport_and_Return_Draft_0_1.pdf  /papers/conserved_transport_and_return_draft_0_1.pdf  301!
+/papers/Contact_Recognition_Continuum.pdf  /papers/contact_recognition_continuum.pdf  301!
+/papers/Four_Phase_Addressing_and_Eight_State_Relations_Draft_0_1.pdf  /papers/four_phase_addressing_and_eight_state_relations_draft_0_1.pdf  301!
+/papers/LINEAR_INFINITY_CANONICAL_v0_1.pdf  /papers/linear_infinity_canonical_v0_1.pdf  301!
+/papers/The_Structure_of_Survival_v66.pdf  /papers/the_structure_of_survival_v66.pdf  301!
+/research/audit/NATIVE_DOMAIN_ADAPTER_ATLAS_RECEIPT_v0_3.txt  /research/audit/native_domain_adapter_atlas_receipt_v0_3.txt  301!
+/research/audit/VALIDATOR_KIT_B2_RECEIPT.md  /research/audit/validator_kit_b2_receipt.md  301!
+/research/audit/W0_WEINBERG_SEAM_RECEIPT_v0_2.txt  /research/audit/w0_weinberg_seam_receipt_v0_2.txt  301!
+/research/audit/W1_CARRIER_ADAPTER_RECEIPT_v0_2.txt  /research/audit/w1_carrier_adapter_receipt_v0_2.txt  301!
+/verification/the-3-body-mirror/README.md  /verification/the-3-body-mirror/readme.md  301!
