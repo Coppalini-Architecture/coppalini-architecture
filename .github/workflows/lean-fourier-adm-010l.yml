@@ -10,10 +10,11 @@ on:
       - 'SHA256SUMS'
   pull_request:
     paths:
-      - 'proofs/MetricVolume010k.lean'
-      - 'proofs/CovariantStokes010k.lean'
-      - 'proofs/LeviCivitaCurrent010k.lean'
-      - '.github/workflows/lean-volume-stokes-010k.yml'
+      - 'proofs/FourierDiffeo010l.lean'
+      - 'proofs/FourierConstraints010l.lean'
+      - 'proofs/DoubleStokes010l.lean'
+      - '.github/workflows/lean-fourier-adm-010l.yml'
+      - 'SHA256SUMS'
   workflow_dispatch:
 
 permissions:
