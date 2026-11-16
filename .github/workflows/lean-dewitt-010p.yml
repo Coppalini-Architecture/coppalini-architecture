@@ -7,6 +7,7 @@ on:
       - 'proofs/MetricShift010p.lean'
       - 'proofs/ADMGradient010p.lean'
       - '.github/workflows/lean-dewitt-010p.yml'
+      - 'scripts/verify_lean_010s.py'
       - 'SHA256SUMS'
   pull_request:
     paths:
@@ -14,6 +15,8 @@ on:
       - 'proofs/MetricShift010p.lean'
       - 'proofs/ADMGradient010p.lean'
       - '.github/workflows/lean-dewitt-010p.yml'
+      - 'scripts/verify_lean_010s.py'
+      - 'SHA256SUMS'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +36,7 @@ jobs:
       - name: Compile closed parents then 010k
         shell: bash
         run: |
-          set -o pipefail
+          set -euo pipefail
           lean --version
           mkdir -p build/proofs
           lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
@@ -59,13 +62,22 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/DeWittCovariant010p.olean proofs/DeWittCovariant010p.lean | tee /tmp/010p-dewitt.log
           LEAN_PATH=build lean --root=. -o build/proofs/MetricShift010p.olean proofs/MetricShift010p.lean | tee /tmp/010p-shift.log
           LEAN_PATH=build lean --root=. proofs/ADMGradient010p.lean | tee /tmp/010p-gradient.log
-      - name: Axiom and placeholder audit
+      - name: Fail-closed source axiom and checksum audit
         shell: bash
         run: |
-          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010*.log
-      - name: Hash sources and exact commit
+          set -euo pipefail
+          args=()
+          args+=(--log /tmp/010p-dewitt.log)
+          args+=(--log /tmp/010p-shift.log)
+          args+=(--log /tmp/010p-gradient.log)
+          args+=(--source proofs/DeWittCovariant010p.lean)
+          args+=(--source proofs/MetricShift010p.lean)
+          args+=(--source proofs/ADMGradient010p.lean)
+          args+=(--hash-file proofs/DeWittCovariant010p.lean)
+          args+=(--hash-file proofs/MetricShift010p.lean)
+          args+=(--hash-file proofs/ADMGradient010p.lean)
+          args+=(--hash-file .github/workflows/lean-dewitt-010p.yml)
+          python3 scripts/verify_lean_010s.py "${args[@]}"
+      - name: Display commit
         shell: bash
-        run: |
-          sha256sum proofs/DeWittCovariant010p.lean proofs/MetricShift010p.lean proofs/ADMGradient010p.lean
-          sha256sum .github/workflows/lean-dewitt-010p.yml
-          git rev-parse HEAD
+        run: git rev-parse HEAD
