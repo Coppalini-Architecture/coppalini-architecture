@@ -1,0 +1,95 @@
+name: Lean smooth functional 010o
+
+on:
+  push:
+    paths:
+      - 'proofs/SmoothTransport010o.lean'
+      - 'proofs/ImprovedMaxwell010o.lean'
+      - 'proofs/FunctionalClosure010o.lean'
+      - '.github/workflows/lean-smooth-functional-010o.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/SmoothTransport010o.lean'
+      - 'proofs/ImprovedMaxwell010o.lean'
+      - 'proofs/FunctionalClosure010o.lean'
+      - '.github/workflows/lean-smooth-functional-010o.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile certified ancestry and prove 010o smooth functional interface
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/010a.log
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/010b.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMGravity010c.olean proofs/ADMGravity010c.lean | tee /tmp/010c.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMFunctional010d.olean proofs/ADMFunctional010d.lean | tee /tmp/010d.log
+          LEAN_PATH=build lean --root=. -o build/proofs/JetStokes010e.olean proofs/JetStokes010e.lean | tee /tmp/010e-jet.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/010e-fourier.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CanonicalPoisson010f.olean proofs/CanonicalPoisson010f.lean | tee /tmp/010f-canonical.log
+          LEAN_PATH=build lean --root=. -o build/proofs/LinearTransport010f.olean proofs/LinearTransport010f.lean | tee /tmp/010f-transport.log
+          LEAN_PATH=build lean --root=. -o build/proofs/LaurentPoisson010g.olean proofs/LaurentPoisson010g.lean | tee /tmp/010g-laurent.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ConnectionPalatini010h.olean proofs/ConnectionPalatini010h.lean | tee /tmp/010h-connection.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FlatEH010h.olean proofs/FlatEH010h.lean | tee /tmp/010h-flat.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FlatEHFunctional010h.olean proofs/FlatEHFunctional010h.lean | tee /tmp/010h-functional.log
+          LEAN_PATH=build lean --root=. -o build/proofs/MetricInverse010i.olean proofs/MetricInverse010i.lean | tee /tmp/010i-inverse.log
+          LEAN_PATH=build lean --root=. -o build/proofs/MetricDeterminant010i.olean proofs/MetricDeterminant010i.lean | tee /tmp/010i-determinant.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CurvedEH010i.olean proofs/CurvedEH010i.lean | tee /tmp/010i-eh.log
+          LEAN_PATH=build lean --root=. -o build/proofs/PalatiniBoundary010i.olean proofs/PalatiniBoundary010i.lean | tee /tmp/010i-boundary.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ContractedPalatini010j.olean proofs/ContractedPalatini010j.lean | tee /tmp/010j-palatini.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CurvedEHVariation010j.olean proofs/CurvedEHVariation010j.lean | tee /tmp/010j-eh.log
+          LEAN_PATH=build lean --root=. -o build/proofs/MetricVolume010k.olean proofs/MetricVolume010k.lean | tee /tmp/010k-volume.log
+          if [ -f proofs/LeviCivitaCurrent010k.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/LeviCivitaCurrent010k.olean proofs/LeviCivitaCurrent010k.lean | tee /tmp/010k-current.log
+          fi
+          if [ -f proofs/CovariantStokes010k.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/CovariantStokes010k.olean proofs/CovariantStokes010k.lean | tee /tmp/010k-stokes.log
+          fi
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierDiffeo010l.olean proofs/FourierDiffeo010l.lean | tee /tmp/010l-diffeo.log
+          if [ -f proofs/FourierConstraints010l.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/FourierConstraints010l.olean proofs/FourierConstraints010l.lean | tee /tmp/010l-constraints.log
+          fi
+          LEAN_PATH=build lean --root=. -o build/proofs/DoubleStokes010l.olean proofs/DoubleStokes010l.lean | tee /tmp/010l-stokes.log
+          LEAN_PATH=build lean --root=. -o build/proofs/SmoothTransport010o.olean proofs/SmoothTransport010o.lean | tee /tmp/010o-transport.log
+          if [ -f proofs/ImprovedMaxwell010o.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/ImprovedMaxwell010o.olean proofs/ImprovedMaxwell010o.lean | tee /tmp/010o-maxwell.log
+          fi
+          if [ -f proofs/FunctionalClosure010o.lean ]; then
+            LEAN_PATH=build lean --root=. proofs/FunctionalClosure010o.lean | tee /tmp/010o-closure.log
+          fi
+      - name: Axiom and placeholder audit
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010*.log
+      - name: Hash sources and exact commit
+        shell: bash
+        run: |
+          sha256sum proofs/MetricVolume010k.lean proofs/CovariantStokes010k.lean proofs/LeviCivitaCurrent010k.lean
+          sha256sum proofs/FourierDiffeo010l.lean
+          if [ -f proofs/FourierConstraints010l.lean ]; then sha256sum proofs/FourierConstraints010l.lean; fi
+          if [ -f proofs/DoubleStokes010l.lean ]; then sha256sum proofs/DoubleStokes010l.lean; fi
+          if [ -f proofs/CovariantStokes010k.lean ]; then sha256sum proofs/CovariantStokes010k.lean; fi
+          if [ -f proofs/LeviCivitaCurrent010k.lean ]; then sha256sum proofs/LeviCivitaCurrent010k.lean; fi
+          sha256sum proofs/SmoothTransport010o.lean
+          if [ -f proofs/ImprovedMaxwell010o.lean ]; then sha256sum proofs/ImprovedMaxwell010o.lean; fi
+          if [ -f proofs/FunctionalClosure010o.lean ]; then sha256sum proofs/FunctionalClosure010o.lean; fi
+          sha256sum .github/workflows/lean-smooth-functional-010o.yml
+          git rev-parse HEAD
