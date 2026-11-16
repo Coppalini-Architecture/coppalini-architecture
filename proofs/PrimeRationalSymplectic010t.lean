@@ -1,4 +1,4 @@
-import Init.Data.Rat.Basic
+import Init.Data.Rat.Lemmas
 import proofs.FieldAttachment010s
 
 /-!
@@ -32,9 +32,9 @@ def primeWordValue : List Nat → Nat
   | [] => 1
   | x :: xs => x * primeWordValue xs
 
-theorem prime_word_two_three : primeWordValue [2, 3] = 6 := by decide
+theorem prime_word_two_three : primeWordValue [2, 3] = 6 := by decide +kernel
 
-theorem prime_word_three_two : primeWordValue [3, 2] = 6 := by decide
+theorem prime_word_three_two : primeWordValue [3, 2] = 6 := by decide +kernel
 
 theorem distinct_words_same_value :
     ([2,3] : List Nat) ≠ [3,2] ∧
@@ -67,18 +67,16 @@ def pair3 (x y : EM3) : Rat :=
   x 0*y 0 + x 1*y 1 + x 2*y 2
 
 theorem pair6_symmetric (x y : Sym6) : pair6 x y = pair6 y x := by
-  simp only [pair6]
-  simp [mul_comm]
+  simp [pair6, Rat.mul_comm]
 
 theorem pair3_symmetric (x y : EM3) : pair3 x y = pair3 y x := by
-  simp only [pair3]
-  simp [mul_comm]
+  simp [pair3, Rat.mul_comm]
 
 -- Nonzero exact canonical source pairings over Rat.
-theorem diagonal_pair_nonzero : pair6 unitSym0 unitSym0 = 1 := by decide
+theorem diagonal_pair_nonzero : pair6 unitSym0 unitSym0 = 1 := by decide +kernel
 
 theorem offdiagonal_momentum_normalization :
-    pair6 unitSym3 (offdiagMomentum unitSym3) = 2 := by decide
+    pair6 unitSym3 (offdiagMomentum unitSym3) = 2 := by decide +kernel
 
 structure Gradient where
   dGamma : Sym6
@@ -97,10 +95,10 @@ def momentumGradient0 : Gradient :=
   ⟨zeroSym, unitSym0, zeroEM, zeroEM⟩
 
 theorem rational_canonical_bracket_nonzero :
-    canonicalPB metricGradient0 momentumGradient0 = 1 := by decide
+    canonicalPB metricGradient0 momentumGradient0 = 1 := by decide +kernel
 
 theorem rational_canonical_bracket_not_zero :
-    canonicalPB metricGradient0 momentumGradient0 ≠ 0 := by decide
+    canonicalPB metricGradient0 momentumGradient0 ≠ 0 := by decide +kernel
 
 -- The gauge variation acts only in the E-gradient slot.
 def gaugeGradient (s : EM3) : Gradient :=
@@ -116,7 +114,7 @@ def projectedDifference (x : Rat) : Rat := x*x
 
 theorem projected_read_is_not_injective :
     projectedDifference (1:Rat) = projectedDifference (-1:Rat) ∧
-    (1:Rat) ≠ (-1:Rat) := by decide
+    (1:Rat) ≠ (-1:Rat) := by decide +kernel
 
 #print axioms prime_word_two_three
 #print axioms prime_word_three_two
