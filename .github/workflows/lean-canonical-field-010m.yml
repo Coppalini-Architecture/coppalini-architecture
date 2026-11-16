@@ -9,7 +9,8 @@ on:
       - 'SHA256SUMS'
   pull_request:
     paths:
-      - 'proofs/FourierDiffeo010l.lean'
+      - 'proofs/CanonicalTwoSite010m.lean'
+      - 'proofs/QuadraticTransport010m.lean'
       - '.github/workflows/lean-canonical-field-010m.yml'
       - 'SHA256SUMS'
   workflow_dispatch:
@@ -28,7 +29,7 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
           sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Compile closed 010a–010k then 010l
+      - name: Compile preserved 010a–010l and certify canonical 010m
         shell: bash
         run: |
           set -o pipefail
