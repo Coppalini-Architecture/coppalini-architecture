@@ -51,7 +51,7 @@ theorem add_comm (a b : V3) : add a b = add b a := by
   cases a with
   | mk ax ay az =>
     cases b with
-    | mk bx by bz =>
+    | mk bx bY bz =>
       simp [add, V3.mk.injEq]
       omega
 
@@ -59,7 +59,7 @@ theorem add_assoc (a b c : V3) : add (add a b) c = add a (add b c) := by
   cases a with
   | mk ax ay az =>
     cases b with
-    | mk bx by bz =>
+    | mk bx bY bz =>
       cases c with
       | mk cx cy cz =>
         simp [add, V3.mk.injEq]
@@ -119,6 +119,7 @@ def zeroScalarBracket (_ _ : ScalarMode) : Int := 0
 
 theorem vector_frequency_comm (A B : VectorMode) :
     (vectorBracket A B).k = (vectorBracket B A).k := by
+  change add A.k B.k = add B.k A.k
   exact add_comm A.k B.k
 
 theorem vector_amplitude_antisym (A B : VectorMode) :
@@ -135,9 +136,12 @@ theorem vector_amplitude_antisym (A B : VectorMode) :
 theorem scalar_frequency_compat (A B : VectorMode) (f : ScalarMode) :
     (scalarAction A (scalarAction B f)).k =
       (scalarAction B (scalarAction A f)).k := by
-  simp only [scalarAction]
-  rw [add_assoc A.k B.k f.k, add_assoc B.k A.k f.k]
-  rw [add_comm A.k B.k]
+  change add A.k (add B.k f.k) = add B.k (add A.k f.k)
+  calc
+    add A.k (add B.k f.k) = add (add A.k B.k) f.k :=
+      (add_assoc A.k B.k f.k).symm
+    _ = add (add B.k A.k) f.k := by rw [add_comm A.k B.k]
+    _ = add B.k (add A.k f.k) := add_assoc B.k A.k f.k
 
 -- The representation law is checked on an *arbitrary scalar character*.
 -- It proves the D–D–G commutator without imposing a field-functional PB.
