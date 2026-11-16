@@ -148,7 +148,7 @@ theorem canonical_fourier_jacobi (f g h : FieldTest) :
     pb (poisson h f) g = 0 := by
   simp [poisson, pb_const_left]
 
-private theorem axis_cases (i : Axis) :
+private theorem axis_cases : ∀ i : Axis,
     i=0 ∨ i=1 ∨ i=2 := by decide
 
 theorem coordinate_momentum_bracket (i : Axis)
