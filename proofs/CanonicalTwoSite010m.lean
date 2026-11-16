@@ -245,7 +245,7 @@ theorem derivative_D_q0 (x : Phase) (t : Int) :
   simp only [D, gap, momentumSum, DGradient, Int.add_mul,
     Int.mul_add, Int.mul_sub, Int.sub_mul, Int.mul_assoc]
   simp only [Int.one_mul, Int.mul_one, Int.mul_assoc,
-    Int.neg_mul, Int.mul_neg]
+    Int.neg_mul, Int.mul_neg, Int.mul_add]
   omega
 
 def MomentumHamiltonianBracket (κ : Int) (n : Smear)
