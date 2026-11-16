@@ -27,7 +27,7 @@ set_option autoImplicit false
 namespace FourierPairing010g
 open FourierTorus010e
 
-def opposite (a b : Mode) : Prop :=
+abbrev opposite (a b : Mode) : Prop :=
   a.kx + b.kx = 0 ∧ a.ky + b.ky = 0 ∧ a.kz + b.kz = 0
 
 def pair (a b : Mode) : Int :=
@@ -118,11 +118,10 @@ theorem pairOne_derivative_cancel (i : Fin 3)
     pairOne (E i a) bs +
       pairOne a (derivative i bs) = 0 := by
   induction bs with
-  | nil =>
-      simp [pairOne, derivative]
+  | nil => simp [pairOne, derivative]
   | cons b rest ih =>
-      simp only [pairOne, derivative,
-        List.map_cons, List.sum_cons, List.map_map] at ih ⊢
+      change (pair (E i a) b + pairOne (E i a) rest) +
+        (pair a (E i b) + pairOne a (derivative i rest)) = 0
       have hc := pair_derivative_cancel i a b
       omega
 
@@ -135,8 +134,10 @@ theorem pairing_integration_by_parts (i : Fin 3)
   induction as with
   | nil => simp [pairing, derivative]
   | cons a rest ih =>
-      simp only [pairing, derivative,
-        List.map_cons, List.sum_cons, List.map_map] at ih ⊢
+      change (pairOne (E i a) bs +
+        pairing (derivative i rest) bs) +
+        (pairOne a (derivative i bs) +
+          pairing rest (derivative i bs)) = 0
       have hc := pairOne_derivative_cancel i a bs
       omega
 
@@ -149,8 +150,12 @@ theorem pairing_add_right (as bs cs : Polynomial) :
   induction as with
   | nil => simp [pairing]
   | cons a rest ih =>
-      simp only [pairing, List.map_cons, List.sum_cons] at ih ⊢
-      simp only [pairOne, List.map_append, List.sum_append]
+      change (pairOne a (bs ++ cs) + pairing rest (bs ++ cs)) =
+        (pairOne a bs + pairing rest bs) +
+        (pairOne a cs + pairing rest cs)
+      have ha : pairOne a (bs ++ cs) = pairOne a bs + pairOne a cs := by
+        simp [pairOne, List.map_append, List.sum_append]
+      rw [ha, ih]
       omega
 
 -- Negative control: coefficient-wise evaluation at the origin includes
