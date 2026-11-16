@@ -1,0 +1,206 @@
+{
+  "name": "Minimum Mechanics 010a–010u",
+  "date": "2026-11-16",
+  "repository": "https://github.com/Coppalini-Architecture/coppalini-architecture",
+  "pinned_commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+  "lean_version": "4.33.0",
+  "modules": 45,
+  "stages": [
+    {
+      "stage": "010a",
+      "title": "Suture–Dirac chart",
+      "scope": "Finite algebra; rank-15 wall outside chart",
+      "sources": [
+        "proofs/SutureDirac010a.lean"
+      ]
+    },
+    {
+      "stage": "010b",
+      "title": "Maxwell / Gauss",
+      "scope": "Finite local / conditional boundary",
+      "sources": [
+        "proofs/Maxwell010b.lean"
+      ]
+    },
+    {
+      "stage": "010c",
+      "title": "ADM gravity",
+      "scope": "Finite local",
+      "sources": [
+        "proofs/ADMGravity010c.lean"
+      ]
+    },
+    {
+      "stage": "010d",
+      "title": "Functional Stokes",
+      "scope": "Conditional boundary",
+      "sources": [
+        "proofs/ADMFunctional010d.lean"
+      ]
+    },
+    {
+      "stage": "010e",
+      "title": "Concrete Stokes",
+      "scope": "Finite explicit models",
+      "sources": [
+        "proofs/FourierTorus010e.lean",
+        "proofs/JetStokes010e.lean"
+      ]
+    },
+    {
+      "stage": "010f",
+      "title": "Canonical Poisson",
+      "scope": "Finite symplectic models",
+      "sources": [
+        "proofs/CanonicalPoisson010f.lean",
+        "proofs/LinearTransport010f.lean"
+      ]
+    },
+    {
+      "stage": "010g",
+      "title": "Fourier / Laurent",
+      "scope": "Finite Fourier",
+      "sources": [
+        "proofs/FourierPairing010g.lean",
+        "proofs/LaurentPoisson010g.lean"
+      ]
+    },
+    {
+      "stage": "010h",
+      "title": "Palatini / flat EH",
+      "scope": "Finite derivative carriers",
+      "sources": [
+        "proofs/ConnectionPalatini010h.lean",
+        "proofs/FlatEH010h.lean",
+        "proofs/FlatEHFunctional010h.lean"
+      ]
+    },
+    {
+      "stage": "010i",
+      "title": "Curved metric",
+      "scope": "Finite algebra / boundary",
+      "sources": [
+        "proofs/CurvedEH010i.lean",
+        "proofs/MetricDeterminant010i.lean",
+        "proofs/MetricInverse010i.lean",
+        "proofs/PalatiniBoundary010i.lean"
+      ]
+    },
+    {
+      "stage": "010j",
+      "title": "Curved Palatini",
+      "scope": "Finite covariant algebra",
+      "sources": [
+        "proofs/ContractedPalatini010j.lean",
+        "proofs/CurvedEHVariation010j.lean"
+      ]
+    },
+    {
+      "stage": "010k",
+      "title": "Volume / Stokes",
+      "scope": "Finite jets and matrix witnesses",
+      "sources": [
+        "proofs/CovariantStokes010k.lean",
+        "proofs/LeviCivitaCurrent010k.lean",
+        "proofs/MetricVolume010k.lean"
+      ]
+    },
+    {
+      "stage": "010l",
+      "title": "Fourier diffeomorphisms",
+      "scope": "Finite modes",
+      "sources": [
+        "proofs/DoubleStokes010l.lean",
+        "proofs/FourierConstraints010l.lean",
+        "proofs/FourierDiffeo010l.lean"
+      ]
+    },
+    {
+      "stage": "010m",
+      "title": "Two-site canonical",
+      "scope": "Finite canonical model",
+      "sources": [
+        "proofs/CanonicalTwoSite010m.lean",
+        "proofs/QuadraticTransport010m.lean"
+      ]
+    },
+    {
+      "stage": "010n",
+      "title": "Canonical Fourier fields",
+      "scope": "Finite Fourier-field",
+      "sources": [
+        "proofs/FourierCanonical010n.lean",
+        "proofs/FourierGradient010n.lean",
+        "proofs/FourierHamiltonian010n.lean",
+        "proofs/FourierNormalBracket010n.lean"
+      ]
+    },
+    {
+      "stage": "010o",
+      "title": "Six-bracket ledger",
+      "scope": "Conditional SmoothCompletion",
+      "sources": [
+        "proofs/CotangentLift010o.lean",
+        "proofs/FunctionalClosure010o.lean",
+        "proofs/GaugeEnergy010o.lean",
+        "proofs/ImprovedMaxwell010o.lean",
+        "proofs/SinglePoisson010o.lean",
+        "proofs/SmoothTransport010o.lean"
+      ]
+    },
+    {
+      "stage": "010p",
+      "title": "Nonorthonormal ADM",
+      "scope": "Finite local, not global C∞",
+      "sources": [
+        "proofs/ADMGradient010p.lean",
+        "proofs/DeWittCovariant010p.lean",
+        "proofs/MetricShift010p.lean"
+      ]
+    },
+    {
+      "stage": "010q",
+      "title": "Non-Abelian gap test",
+      "scope": "Exact abstract countermodel",
+      "sources": [
+        "proofs/YMDiracGapAudit010q.lean"
+      ]
+    },
+    {
+      "stage": "010r",
+      "title": "Two-sided spectral refusal",
+      "scope": "Logical independence",
+      "sources": [
+        "proofs/YMGapRefusal010r.lean"
+      ]
+    },
+    {
+      "stage": "010s",
+      "title": "Source attachment",
+      "scope": "Finite address attachment",
+      "sources": [
+        "proofs/FieldAttachment010s.lean"
+      ]
+    },
+    {
+      "stage": "010t",
+      "title": "Rational scalar floor",
+      "scope": "Finite rational / smooth analysis separate",
+      "sources": [
+        "proofs/PrimeRationalSymplectic010t.lean"
+      ]
+    },
+    {
+      "stage": "010u",
+      "title": "Jurisdictional return",
+      "scope": "Universal over declared jurisdictions",
+      "sources": [
+        "proofs/UniversalClosure010u.lean"
+      ]
+    }
+  ],
+  "compiler_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607",
+  "archive_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536",
+  "strength": "Individual source-scoped Lean theorems; complete 45-module import compilation. Conditional C-infinity SmoothCompletion remains separately open.",
+  "axiomaticBuild": "Reference reports only; AxiomaticBuild.lean not supplied with 010u."
+}
