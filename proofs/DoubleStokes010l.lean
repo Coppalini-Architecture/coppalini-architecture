@@ -114,6 +114,12 @@ theorem three_dimensional_curvature_boundary_ledger
   have h20 := second_integration_by_parts s 2 0 N (h 2 0)
   have h21 := second_integration_by_parts s 2 1 N (h 2 1)
   have h22 := second_integration_by_parts s 2 2 N (h 2 2)
+  have hl01 := second_integration_by_parts s 0 0 N (h 1 1)
+  have hl02 := second_integration_by_parts s 0 0 N (h 2 2)
+  have hl10 := second_integration_by_parts s 1 1 N (h 0 0)
+  have hl12 := second_integration_by_parts s 1 1 N (h 2 2)
+  have hl20 := second_integration_by_parts s 2 2 N (h 0 0)
+  have hl21 := second_integration_by_parts s 2 2 N (h 1 1)
   simp only [curvatureVariation, divDivVariation, lapTraceVariation,
     curvatureAdjoint, divDivAdjoint, lapTraceAdjoint,
     firstBoundary, secondBoundary, sum3]
