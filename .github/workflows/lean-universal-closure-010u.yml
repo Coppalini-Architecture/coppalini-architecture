@@ -58,7 +58,7 @@ jobs:
           source = Path("proofs/UniversalClosure010u.lean").read_text()
           log = Path("build/010u-lean.log").read_text()
           claimed = re.findall(r"^#print axioms ([A-Za-z0-9_]+)$", source, re.M)
-          assert len(claimed) == 17, (len(claimed), claimed)
+          assert len(claimed) == 20, (len(claimed), claimed)
           for n in claimed:
               assert ("'UniversalClosure010u." + n + "' ") in log, n
           print(f"010u {len(claimed)}/{len(claimed)} scoped theorem audits present")
