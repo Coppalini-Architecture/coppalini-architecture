@@ -128,10 +128,24 @@ def sampleB : Mat3 :=
 def sampleGamma : Mat3 :=
   fun i j => if i=0 ∧ j=0 then 1 else 0
 
+private theorem sample_axis_cases : ∀ i : Axis,
+    i = 0 ∨ i = 1 ∨ i = 2 := by decide
+
 theorem sample_metric_invertible :
     mul sampleG sampleB = M1 ∧
     mul sampleB sampleG = M1 ∧
-    determinant sampleG = 1 := by decide
+    determinant sampleG = 1 := by
+  constructor
+  · funext i j
+    rcases sample_axis_cases i with rfl | rfl | rfl <;>
+      rcases sample_axis_cases j with rfl | rfl | rfl <;>
+      decide
+  constructor
+  · funext i j
+    rcases sample_axis_cases i with rfl | rfl | rfl <;>
+      rcases sample_axis_cases j with rfl | rfl | rfl <;>
+      decide
+  · decide
 
 theorem sample_volume_response :
     deltaDet sampleG (compatibleDG sampleG sampleGamma) = 2 ∧
