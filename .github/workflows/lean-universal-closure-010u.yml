@@ -1,0 +1,67 @@
+name: Lean universal jurisdictional closure 010u
+
+on:
+  push:
+    paths:
+      - 'proofs/*010*.lean'
+      - 'scripts/compile_lean_010u.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - '.github/workflows/lean-universal-closure-010u.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/*010*.lean'
+      - 'scripts/compile_lean_010u.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - '.github/workflows/lean-universal-closure-010u.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pinned source
+        uses: actions/checkout@v4
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile all transitive source branches
+        shell: bash
+        run: |
+          set -euo pipefail
+          lean --version
+          python3 scripts/compile_lean_010u.py proofs.UniversalClosure010u
+      - name: Fail-closed axioms and source integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/test_verify_lean_010s.py
+          python3 scripts/verify_lean_010s.py \
+            --source proofs/UniversalClosure010u.lean \
+            --log build/010u-lean.log \
+            --hash-file proofs/UniversalClosure010u.lean \
+            --hash-file scripts/compile_lean_010u.py \
+            --hash-file .github/workflows/lean-universal-closure-010u.yml
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          source = Path("proofs/UniversalClosure010u.lean").read_text()
+          log = Path("build/010u-lean.log").read_text()
+          claimed = re.findall(r"^#print axioms ([A-Za-z0-9_]+)$", source, re.M)
+          assert len(claimed) == 17, (len(claimed), claimed)
+          for n in claimed:
+              assert ("'UniversalClosure010u." + n + "' ") in log, n
+          print(f"010u {len(claimed)}/{len(claimed)} scoped theorem audits present")
+          PY
+      - name: Show exact commit
+        run: git rev-parse HEAD
