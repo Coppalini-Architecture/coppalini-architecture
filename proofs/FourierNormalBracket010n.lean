@@ -231,7 +231,7 @@ theorem canonical_normal_normal_fourier
         pair (momentumGradientMode n b) (scalarGradientMode m a)) := by
           simp only [normalPoisson, scalarGradient, momentumGradient,
             pairing, pairOne, doubleSum, List.map_map,
-            Function.comp_apply]
+            Function.comp_def]
     _ = doubleSum φ π (fun a b =>
         pair (scalarGradientMode n a) (momentumGradientMode m b)) -
       doubleSum φ π (fun a b =>
