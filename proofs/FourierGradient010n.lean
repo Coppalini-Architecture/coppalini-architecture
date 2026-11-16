@@ -48,12 +48,10 @@ theorem scalar_gradient_coefficient (n a : Mode) :
       -2*((E 0 (productMode n (E 0 a))).c +
           (E 1 (productMode n (E 1 a))).c +
           (E 2 (productMode n (E 2 a))).c) := by
-  simp only [scalarGradientMode, lapFrequency,
-    productMode, E, freq]
-  simp only [Int.mul_add, Int.add_mul, Int.mul_assoc,
-    Int.neg_mul, Int.mul_neg]
-  simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-  omega
+  simp [scalarGradientMode, lapFrequency, productMode,
+    E, freq, Int.mul_add, Int.add_mul,
+    Int.neg_mul, Int.mul_neg, Int.mul_assoc,
+    Int.mul_comm, Int.mul_left_comm] <;> omega
 
 theorem momentum_mode_read (n a b : Mode) :
     pair (momentumGradientMode n a) b =
@@ -65,6 +63,16 @@ theorem momentum_mode_read (n a b : Mode) :
   · simp only [if_pos h]
     ac_rfl
   · simp [h]
+
+private theorem momentum_one_row (n a : Mode) (r : Polynomial) :
+    (r.map (fun b => pair (momentumGradientMode n a) b)).sum =
+      2*(r.map (fun b => weightedMode n a b)).sum := by
+  induction r with
+  | nil => simp
+  | cons b bs ih =>
+      simp only [List.map_cons, List.sum_cons]
+      rw [momentum_mode_read, ih]
+      omega
 
 theorem momentum_gradient_pairing (n : Mode)
     (π r : Polynomial) :
@@ -78,16 +86,7 @@ theorem momentum_gradient_pairing (n : Mode)
           pairing (momentumGradient n rest) r =
         2*((r.map (fun b => weightedMode n a b)).sum +
           weightedPair n rest r)
-      have hrow :
-          (r.map (fun b => pair (momentumGradientMode n a) b)).sum =
-          2*(r.map (fun b => weightedMode n a b)).sum := by
-        induction r with
-        | nil => simp
-        | cons b bs ihb =>
-            simp only [List.map_cons, List.sum_cons]
-            rw [momentum_mode_read, ihb]
-            omega
-      rw [hrow, ih]
+      rw [momentum_one_row, ih]
       omega
 
 -- A single-mode magnetic-gradient read is the precise Fourier
