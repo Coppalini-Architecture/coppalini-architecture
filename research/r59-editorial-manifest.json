@@ -1,0 +1,35 @@
+{
+  "release": "R59",
+  "date": "2026-11-16",
+  "classification": "Coppalini Architecture — proof-carrying framework for mathematical physics, constraint mechanics, and recognition",
+  "role": "editorial presentation and source navigation; no changes to certified Lean theorem files",
+  "site_parent_commit": "6996eea6255d109f7c281755c557c74360039e32",
+  "proof_pin": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+  "primary_routes": [
+    "/",
+    "/proofs/minimum-mechanics/",
+    "/verify",
+    "/library",
+    "/architecture",
+    "/about",
+    "/formalism"
+  ],
+  "proof": {
+    "modules": 45,
+    "stages": 21,
+    "compiler_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607",
+    "archive_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536",
+    "claim_strength": "source-scoped Lean proofs and one transitive source-compile certificate; 010o SmoothCompletion has named non-instantiated C∞ physical premises"
+  },
+  "archival_snapshots": [
+    "/archive/r58-home.html",
+    "/archive/r58-library.html",
+    "/archive/r58-verify.html",
+    "/archive/r58-constructions.html",
+    "/archive/r58-basis.html"
+  ],
+  "archival_policy": "R58 snapshot pages retain complete legacy detail and are noindex; original Git object tree is permanent evidence; no research PDFs, source files or visual engines deleted",
+  "repaired_legacy_case_aliases": 25,
+  "audit_script": "tools/verify_r59_publication.py",
+  "live_deployment": "requires separate observable confirmation; source commit alone does not prove production deployment"
+}
