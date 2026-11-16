@@ -115,21 +115,17 @@ theorem inverse_response_unique
     (hLeft : mul B g = M1)
     (hFirst : add (mul h B) (mul g X) = M0) :
     X = dInverse B h := by
-  -- Multiply h B + g X = 0 on the left by B, then use Bg=I.
-  have hB : mul B (mul h B) = neg X := by
-    have hx := congrArg (mul B) hFirst
-    rw [mul_add, ← mul_assoc, hLeft, one_mul] at hx
-    have hZero : mul B M0 = M0 := by
-      funext i j
-      simp [mul, M0]
-    rw [hZero] at hx
+  have hx := congrArg (mul B) hFirst
+  rw [mul_add] at hx
+  rw [← mul_assoc B g X, hLeft, one_mul] at hx
+  have hz : mul B M0 = M0 := by
     funext i j
-    have hval := congrFun (congrFun hx i) j
-    simp [add, M0] at hval
-    omega
+    simp [mul, M0]
+  rw [hz] at hx
   funext i j
-  have hval := congrFun (congrFun hB i) j
-  simp [dInverse, neg] at *
+  have hv := congrFun (congrFun hx i) j
+  change (mul B (mul h B)) i j + X i j = 0 at hv
+  change X i j = -((mul B (mul h B)) i j)
   omega
 
 -- The second-order discrepancy is the exact product of two first
@@ -141,6 +137,7 @@ theorem formal_first_order_product
     (g B h : Mat3) (hRight : mul g B = M1) :
     add (mul g B) (add (mul h B) (mul g (dInverse B h))) = M1 := by
   rw [right_inverse_differential g B h hRight, hRight]
+  funext i j
   simp [add, M0]
 
 #print axioms mul_assoc
