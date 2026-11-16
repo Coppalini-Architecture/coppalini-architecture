@@ -1,0 +1,60 @@
+name: Lean smooth attachment and CI audit 010s
+
+on:
+  push:
+    paths:
+      - 'proofs/*010*.lean'
+      - 'scripts/compile_lean_010s.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - '.github/workflows/lean-smooth-attachment-010s.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/*010*.lean'
+      - 'scripts/compile_lean_010s.py'
+      - 'scripts/verify_lean_010s.py'
+      - 'scripts/test_verify_lean_010s.py'
+      - '.github/workflows/lean-smooth-attachment-010s.yml'
+      - 'SHA256SUMS'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+      - name: Pin Lean 4.33.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile transitive 010o-010p-010s source closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          lean --version
+          python3 scripts/compile_lean_010s.py FieldAttachment010s
+      - name: Fail-closed source, axiom, and checksum audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/test_verify_lean_010s.py
+          sources=()
+          for file in proofs/*010?.lean; do sources+=(--source "$file"); done
+          python3 scripts/verify_lean_010s.py "${sources[@]}" \
+            --log build/010s-lean.log \
+            --hash-file proofs/FieldAttachment010s.lean \
+            --hash-file scripts/compile_lean_010s.py \
+            --hash-file scripts/verify_lean_010s.py \
+            --hash-file scripts/test_verify_lean_010s.py \
+            --hash-file .github/workflows/lean-smooth-attachment-010s.yml
+      - name: Print source head
+        shell: bash
+        run: git rev-parse HEAD
