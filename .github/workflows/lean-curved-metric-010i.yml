@@ -1,0 +1,73 @@
+name: Lean Curved Metric 010i
+
+on:
+  push:
+    paths:
+      - 'proofs/MetricInverse010i.lean'
+      - 'proofs/MetricDeterminant010i.lean'
+      - 'proofs/CurvedEH010i.lean'
+      - '.github/workflows/lean-curved-metric-010i.yml'
+      - 'SHA256SUMS'
+  pull_request:
+    paths:
+      - 'proofs/MetricInverse010i.lean'
+      - 'proofs/MetricDeterminant010i.lean'
+      - 'proofs/CurvedEH010i.lean'
+      - '.github/workflows/lean-curved-metric-010i.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Install pinned Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile parent chain and 010i
+        shell: bash
+        run: |
+          set -o pipefail
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/SutureDirac010a.olean proofs/SutureDirac010a.lean | tee /tmp/a.log
+          LEAN_PATH=build lean --root=. -o build/proofs/Maxwell010b.olean proofs/Maxwell010b.lean | tee /tmp/b.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMGravity010c.olean proofs/ADMGravity010c.lean | tee /tmp/c.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ADMFunctional010d.olean proofs/ADMFunctional010d.lean | tee /tmp/d.log
+          LEAN_PATH=build lean --root=. -o build/proofs/JetStokes010e.olean proofs/JetStokes010e.lean | tee /tmp/e1.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierTorus010e.olean proofs/FourierTorus010e.lean | tee /tmp/e2.log
+          LEAN_PATH=build lean --root=. -o build/proofs/CanonicalPoisson010f.olean proofs/CanonicalPoisson010f.lean | tee /tmp/f1.log
+          LEAN_PATH=build lean --root=. -o build/proofs/LinearTransport010f.olean proofs/LinearTransport010f.lean | tee /tmp/f2.log
+          LEAN_PATH=build lean --root=. -o build/proofs/LaurentPoisson010g.olean proofs/LaurentPoisson010g.lean | tee /tmp/g1.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/g2.log
+          LEAN_PATH=build lean --root=. -o build/proofs/ConnectionPalatini010h.olean proofs/ConnectionPalatini010h.lean | tee /tmp/h1.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FlatEH010h.olean proofs/FlatEH010h.lean | tee /tmp/h2.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FlatEHFunctional010h.olean proofs/FlatEHFunctional010h.lean | tee /tmp/h3.log
+          LEAN_PATH=build lean --root=. -o build/proofs/MetricInverse010i.olean proofs/MetricInverse010i.lean | tee /tmp/i1.log
+          if [ -f proofs/MetricDeterminant010i.lean ]; then
+            LEAN_PATH=build lean --root=. -o build/proofs/MetricDeterminant010i.olean proofs/MetricDeterminant010i.lean | tee /tmp/i2.log
+          fi
+          if [ -f proofs/CurvedEH010i.lean ]; then
+            LEAN_PATH=build lean --root=. proofs/CurvedEH010i.lean | tee /tmp/i3.log
+          fi
+      - name: Audit axioms
+        shell: bash
+        run: |
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/{a,b,c,d,e1,e2,f1,f2,g1,g2,h1,h2,h3,i1}.log
+          if [ -f /tmp/i2.log ]; then ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/i2.log; fi
+          if [ -f /tmp/i3.log ]; then ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/i3.log; fi
+      - name: Hash exact source and commit
+        shell: bash
+        run: |
+          sha256sum proofs/MetricInverse010i.lean
+          if [ -f proofs/MetricDeterminant010i.lean ]; then sha256sum proofs/MetricDeterminant010i.lean; fi
+          if [ -f proofs/CurvedEH010i.lean ]; then sha256sum proofs/CurvedEH010i.lean; fi
+          sha256sum .github/workflows/lean-curved-metric-010i.yml
+          git rev-parse HEAD
