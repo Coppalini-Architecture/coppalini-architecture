@@ -5,6 +5,7 @@ on:
     paths:
       - 'proofs/ConnectionPalatini010h.lean'
       - 'proofs/FlatEH010h.lean'
+      - 'proofs/FlatEHFunctional010h.lean'
       - '.github/workflows/lean-palatini-010h.yml'
       - 'SHA256SUMS'
   pull_request:
@@ -46,14 +47,15 @@ jobs:
           LEAN_PATH=build lean --root=. -o build/proofs/LaurentPoisson010g.olean proofs/LaurentPoisson010g.lean | tee /tmp/010g-laurent.log
           LEAN_PATH=build lean --root=. -o build/proofs/FourierPairing010g.olean proofs/FourierPairing010g.lean | tee /tmp/010g-pairing.log
           LEAN_PATH=build lean --root=. -o build/proofs/ConnectionPalatini010h.olean proofs/ConnectionPalatini010h.lean | tee /tmp/010h-palatini.log
-          LEAN_PATH=build lean --root=. proofs/FlatEH010h.lean | tee /tmp/010h-flat.log
+          LEAN_PATH=build lean --root=. -o build/proofs/FlatEH010h.olean proofs/FlatEH010h.lean | tee /tmp/010h-flat.log
+          LEAN_PATH=build lean --root=. proofs/FlatEHFunctional010h.lean | tee /tmp/010h-functional.log
       - name: Axiom audit
         shell: bash
         run: |
-          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010{a,b,c,d}.log /tmp/010e-jet.log /tmp/010e-fourier.log /tmp/010f-canonical.log /tmp/010f-transport.log /tmp/010g-laurent.log /tmp/010g-pairing.log /tmp/010h-palatini.log /tmp/010h-flat.log
+          ! grep -E 'sorryAx|admit|Lean\\.ofReduceBool|axiom ' /tmp/010{a,b,c,d}.log /tmp/010e-jet.log /tmp/010e-fourier.log /tmp/010f-canonical.log /tmp/010f-transport.log /tmp/010g-laurent.log /tmp/010g-pairing.log /tmp/010h-palatini.log /tmp/010h-flat.log /tmp/010h-functional.log
       - name: SHA-256 and commit
         shell: bash
         run: |
-          sha256sum proofs/SutureDirac010a.lean proofs/Maxwell010b.lean proofs/ADMGravity010c.lean proofs/ADMFunctional010d.lean proofs/JetStokes010e.lean proofs/FourierTorus010e.lean proofs/CanonicalPoisson010f.lean proofs/LinearTransport010f.lean proofs/LaurentPoisson010g.lean proofs/FourierPairing010g.lean proofs/ConnectionPalatini010h.lean proofs/FlatEH010h.lean
+          sha256sum proofs/SutureDirac010a.lean proofs/Maxwell010b.lean proofs/ADMGravity010c.lean proofs/ADMFunctional010d.lean proofs/JetStokes010e.lean proofs/FourierTorus010e.lean proofs/CanonicalPoisson010f.lean proofs/LinearTransport010f.lean proofs/LaurentPoisson010g.lean proofs/FourierPairing010g.lean proofs/ConnectionPalatini010h.lean proofs/FlatEH010h.lean proofs/FlatEHFunctional010h.lean
           sha256sum .github/workflows/lean-palatini-010h.yml
           git rev-parse HEAD
