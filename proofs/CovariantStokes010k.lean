@@ -80,7 +80,11 @@ theorem densitized_current_derivative
           gradientIntegrand, covDivergence, volume, traceGamma,
           multiply, plus, JetStokes010e.D,
           JetStokes010e.mul, JetStokes010e.add]
-        <;> (simp only [Int.mul_add, Int.add_mul, Int.mul_assoc]
+        <;> (simp only [
+              Int.mul_left_comm nc 2 jc,
+              Int.mul_left_comm nc (-1) jc,
+              Int.mul_left_comm nc 3 jc,
+              Int.mul_neg, Int.neg_mul]
              <;> omega)
 
 def integral (f : Jet3) : Int := integralJet f
