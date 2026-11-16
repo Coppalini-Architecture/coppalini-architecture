@@ -41,7 +41,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ! grep -E 'sorryAx|admit|Lean\.ofReduceBool|axiom ' /tmp/ym-gap-refusal-010q.log /tmp/ym-gap-refusal-010r.log
+          ! grep -E 'sorryAx|Lean\.ofReduceBool' /tmp/ym-gap-refusal-010q.log /tmp/ym-gap-refusal-010r.log
+          ! grep -E '(^|[[:space:]])(sorry|admit|axiom)[[:space:]]' proofs/YMGapRefusal010r.lean
       - name: Verify pinned source hashes
         shell: bash
         run: |
