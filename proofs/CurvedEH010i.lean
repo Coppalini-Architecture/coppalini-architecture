@@ -70,7 +70,6 @@ theorem determinant_Jacobi_trace
   rw [adjugate_is_det_inverse g B hRight]
   simp only [traceAdjH, traceProduct, scaleMat, Int.mul_add,
     Int.mul_assoc]
-  omega
 
 -- A first-order volume root is declared by two exact algebraic equations.
 structure VolumeRoot (g h : Mat3) where
