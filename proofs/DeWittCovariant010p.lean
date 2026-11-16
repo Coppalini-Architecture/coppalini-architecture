@@ -143,7 +143,7 @@ theorem trace_kinetic_BHB
     calc
       tr (mul g (mul (mul B H) B)) =
         tr (mul (mul g B) (mul H B)) := by
-          rw [mul_assoc, ← mul_assoc B H B, mul_assoc]
+          simp only [mul_assoc]
       _ = tr (mul H B) := by rw [hgB, one_mul]
       _ = lambda B H := by
         rw [tr_mul_comm H B]
@@ -170,7 +170,10 @@ theorem covariant_dewitt_hessian
     _ = -2 * tr (mul P H) := by
       rw [trace_kinetic_B g B P hgB,
         trace_kinetic_BHB g B P H hgB hBg]
-      simp only [Int.mul_neg, Int.neg_mul]
+      simp only [Int.mul_neg]
+      have hc : lambda B H * tau g P = tau g P * lambda B H := by
+        ac_rfl
+      rw [hc]
       omega
 
 #print axioms trace_kinetic_B
