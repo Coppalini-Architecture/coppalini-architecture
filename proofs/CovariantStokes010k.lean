@@ -82,9 +82,10 @@ theorem densitized_current_derivative
           JetStokes010e.mul, JetStokes010e.add,
           Jet3.mk.injEq]
         simp only [Int.mul_add, Int.add_mul, Int.mul_assoc]
-        simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
-        simp only [← Int.mul_assoc]
-        omega
+        first
+        | ac_rfl
+        | (simp only [Int.mul_comm, Int.mul_left_comm, Int.mul_assoc]
+           <;> omega)
 
 def integral (f : Jet3) : Int := integralJet f
 def boundary (i : Axis) (f : Jet3) : Int := boundaryJet i f
@@ -97,7 +98,7 @@ theorem weighted_covariant_stokes_one
   have hStokes := jet_boundary_stokes i (densityCurrent N J)
   rw [densitized_current_derivative i N J] at hStokes
   rw [integralJet_add] at hStokes
-  exact hStokes
+  simpa only [integral, boundary] using hStokes
 
 def sum3 (f : Axis → Int) : Int := f 0 + f 1 + f 2
 
