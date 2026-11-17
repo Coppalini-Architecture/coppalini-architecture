@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'index.html'
+      - 'notice/index.html'
       - 'about.html'
       - 'library.html'
       - 'verify.html'
@@ -17,6 +18,7 @@ on:
       - 'R59_EDITORIAL_RELEASE.md'
       - 'archive/**'
       - 'assets/proof-led-r59.css'
+      - 'assets/notice.css'
       - 'author-page.css'
       - 'language-mechanics.css'
       - 'assets/authors/**'
@@ -28,6 +30,7 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'notice/index.html'
       - 'about.html'
       - 'library.html'
       - 'verify.html'
@@ -41,6 +44,7 @@ on:
       - 'R59_EDITORIAL_RELEASE.md'
       - 'archive/**'
       - 'assets/proof-led-r59.css'
+      - 'assets/notice.css'
       - 'author-page.css'
       - 'language-mechanics.css'
       - 'assets/authors/**'

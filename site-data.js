@@ -259,7 +259,7 @@ window.ARCHIVE_DETAILS = {
     role: 'Mirror construction: makes represented difference, orientation reversal, and half-turn return available in one reader.',
     connections: [
       'Mirror conjugacy → reversed orientation under a declared involution.',
-      'Half-turn return → a repeated visible phase with orientation carried forward.',
+      'Half-turn return → a repeated phase with orientation carried forward.',
       'Metric Mirror Symmetry → the compatible root carrier.'
     ]
   },

@@ -7,6 +7,7 @@ Primary classification: proof-carrying framework for mathematical physics, canon
 ## Current public reading order
 
 Home: https://eulershiddenl.ink/
+Notice: https://eulershiddenl.ink/notice/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
 Library: https://eulershiddenl.ink/library
@@ -15,6 +16,10 @@ Laboratory: https://eulershiddenl.ink/architecture
 Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about
 R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
+
+## Public notice
+
+The Notice states the declared reader relation: a vector-only read of `s` omits the `C`-orientation that selects `Cs` rather than `−Cs`. It gives the general formal condition, separates theorem, physical construction, public-system evidence, and engineering application, and routes technical returns to the Proof Atlas, Verification Register, Research Library, and issue register.
 
 ## 010a–010u, Lean-proved statements and source ledger
 

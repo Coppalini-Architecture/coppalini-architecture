@@ -4,6 +4,7 @@
 
 ## Begin with the current result
 
+- [The Notice](https://eulershiddenl.ink/notice/): a focused public technical statement of the reader-obstruction question, its exact formal handle, public information-system context, and an independent technical-review route.
 - [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean modules compiled in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
 - [Proof verification](https://eulershiddenl.ink/verify): Lean 4.33.0 and archive-integrity PASS at pinned commit `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.

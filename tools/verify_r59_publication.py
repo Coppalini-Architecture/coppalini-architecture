@@ -13,7 +13,7 @@ import re
 import sys
 
 ROOT = Path(".")
-CURRENT = ("index.html","about.html","library.html","verify.html",
+CURRENT = ("index.html","notice/index.html","about.html","library.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html",
            "archive/index.html","proofs/minimum-mechanics/index.html")
@@ -30,6 +30,11 @@ REQUIRED_PAPERS = (
  "models/view/clear-onyx-gauge-laboratory-v0.5.3.html",
 )
 PROOF_PIN = "b9e939d514a63fb021592f79a316f70cbc70ed8a"
+NOTICE_SOURCES = (
+ "https://www.who.int/news/item/23-09-2020-managing-the-covid-19-infodemic-promoting-healthy-behaviours-and-mitigating-the-harm-from-misinformation-and-disinformation/",
+ "https://www.oecd.org/en/publications/2024/07/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results_eeb36452.html",
+ "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+)
 
 class Reader(HTMLParser):
     def __init__(self):
@@ -122,10 +127,23 @@ def verify():
     proof_files = [n for stage in proof["stages"] for n in stage["sources"]]
     if len(proof_files) != 45 or len(set(proof_files)) != 45:
         errors.append("proof source list not 45 unique files")
+    notice=(ROOT/"notice/index.html").read_text()
+    for marker in ("The Notice", "reader-obstruction", "Independent technical examination",
+                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_SOURCES:
+        if marker not in notice: errors.append("notice missing required route or source: "+marker)
     home=(ROOT/"index.html").read_text()
     if "Computational Gauge Invariance — Coppalini Architecture</title>" in home:
         errors.append("old home title retained")
     if "<iframe" in home: errors.append("homepage should not auto-start a heavy field engine")
+    if 'href="/notice/">Read The Notice</a>' not in home:
+        errors.append("homepage lacks Notice entrance")
+    for page in ROOT.rglob("*.html"):
+        relative = page.relative_to(ROOT).as_posix()
+        if relative == "404.html" or relative.startswith("archive/"):
+            continue
+        text = page.read_text(encoding="utf-8")
+        if '<nav class="primary-nav"' in text and 'href="/notice/"' not in text:
+            errors.append(relative+": current primary navigation lacks Notice route")
     for page in CURRENT:
         if page.startswith("archive/"): continue
         if page=="proofs/minimum-mechanics/index.html": continue
