@@ -1,12 +1,13 @@
-# Coppalini Architecture — machine reading map / R59
+# Coppalini Architecture — source-indexed public record
 
 Canonical site: https://eulershiddenl.ink/
 Author: Anthony Vito Coppa
-Primary classification: proof-carrying framework for mathematical physics, canonical mechanics, and formalized pattern recognition.
+Primary classification: independent research and publication record for reference, constraint, exact algebra, computational integrity, and formalized pattern recognition.
 
 ## Current public reading order
 
 Home: https://eulershiddenl.ink/
+Formal Correspondence Ledger: https://eulershiddenl.ink/formal-correspondence/
 Notice: https://eulershiddenl.ink/notice/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
@@ -17,7 +18,11 @@ Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about
 R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
 
-## Public notice
+## Formal correspondence
+
+The Formal Correspondence Ledger gives each principal public claim a handle in the order: public form, Coppalini construction, named relation, receipt, and scope. It links canonical public sources in information theory, control, gauge and canonical mechanics, symmetry, metric physics, provenance, and formal verification to the local construction and its own exact record.
+
+## Standalone Notice
 
 The Notice states the declared reader relation: a vector-only read of `s` omits the `C`-orientation that selects `Cs` rather than `−Cs`. It gives the general formal condition, separates theorem, physical construction, public-system evidence, and engineering application, and routes technical returns to the Proof Atlas, Verification Register, Research Library, and issue register.
 

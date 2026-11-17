@@ -16,7 +16,8 @@ ROOT = Path(".")
 CURRENT = ("index.html","notice/index.html","about.html","library.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html",
-           "archive/index.html","proofs/minimum-mechanics/index.html")
+           "archive/index.html","proofs/minimum-mechanics/index.html",
+           "formal-correspondence/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
            "archive/r58-basis.html")
@@ -127,6 +128,9 @@ def verify():
     proof_files = [n for stage in proof["stages"] for n in stage["sources"]]
     if len(proof_files) != 45 or len(set(proof_files)) != 45:
         errors.append("proof source list not 45 unique files")
+    correspondence = json.loads((ROOT/"research/formal-correspondence-v0.1.json").read_text())
+    if correspondence.get("version") != "0.1" or len(correspondence.get("records", [])) != 7:
+        errors.append("formal correspondence ledger count or version mismatch")
     notice=(ROOT/"notice/index.html").read_text()
     for marker in ("The Notice", "reader-obstruction", "Independent technical examination",
                    "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_SOURCES:
@@ -135,8 +139,16 @@ def verify():
     if "Computational Gauge Invariance — Coppalini Architecture</title>" in home:
         errors.append("old home title retained")
     if "<iframe" in home: errors.append("homepage should not auto-start a heavy field engine")
-    if 'href="/notice/">Read The Notice</a>' not in home:
-        errors.append("homepage lacks Notice entrance")
+    if 'href="/formal-correspondence/">Formal correspondence</a>' not in home:
+        errors.append("homepage lacks formal correspondence entrance")
+    if 'class="notice-feature"' in home:
+        errors.append("homepage retains Notice feature")
+    if "Field Investigations</title>" in home:
+        errors.append("homepage retains obsolete Field Investigations title")
+    correspondence_page = (ROOT/"formal-correspondence/index.html").read_text()
+    for marker in ("Formal Correspondence Ledger", "Public form", "Minimum Mechanics", "Suture"):
+        if marker not in correspondence_page:
+            errors.append("formal correspondence page missing marker: "+marker)
     for page in ROOT.rglob("*.html"):
         relative = page.relative_to(ROOT).as_posix()
         if relative == "404.html" or relative.startswith("archive/"):
