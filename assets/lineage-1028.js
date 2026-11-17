@@ -162,7 +162,7 @@
     image.src = card.art;
     image.alt = `${card.fullName || card.name}. ${card.operation}. ${card.sentence}`;
     hint.className = 'lineage-open-hint';
-    hint.textContent = 'Inspect';
+    hint.textContent = 'Record';
     button.append(image, hint);
     button.addEventListener('click', (event) => open(index, event));
     item.append(button);
