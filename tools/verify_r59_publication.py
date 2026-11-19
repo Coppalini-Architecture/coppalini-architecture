@@ -213,12 +213,52 @@ def verify():
     if "Computational Gauge Invariance — Coppalini Architecture</title>" in home:
         errors.append("old home title retained")
     if "<iframe" in home: errors.append("homepage should not auto-start a heavy field engine")
+    if "Mathematics and physics papers by Anthony Vito Coppa" in home:
+        errors.append("homepage retains withdrawn author-credit copy")
+    for marker in (
+        "Try the lab.",
+        "Three-body problem closure.",
+        "Explore the library.",
+        "Unified field reader: Symmetric Minimum",
+        "Physical reality inside constraint",
+        "Language Mechanics: formal basis of any field written in 2D form.",
+        "No new force or empirical law is claimed.",
+    ):
+        if marker not in home:
+            errors.append("homepage missing reader entrance or scope marker: " + marker)
     if 'href="/formal-correspondence/">Map to the literature</a>' not in home:
         errors.append("homepage lacks map-to-literature entrance")
     if 'class="notice-feature"' in home:
         errors.append("homepage retains Notice feature")
     if "Field Investigations</title>" in home:
         errors.append("homepage retains obsolete Field Investigations title")
+    for architecture_file in ("architecture.html", "architecture/index.html"):
+        architecture = (ROOT/architecture_file).read_text(encoding="utf-8")
+        for marker in (
+            'class="architecture-lab-landing"',
+            'clear-onyx-gauge-laboratory-v0.5.3?embed=1',
+            "Existing field formalism, made visible while it runs.",
+        ):
+            if marker not in architecture:
+                errors.append(architecture_file + ": missing lab-first marker: " + marker)
+    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.3.html").read_text(encoding="utf-8")
+    for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)"):
+        if marker not in lab:
+            errors.append("Gauge & Matter Laboratory missing embed or autostart marker: " + marker)
+    about = (ROOT/"about.html").read_text(encoding="utf-8")
+    for marker in (
+        "Existing field formalism, read together.",
+        "What is closed in the stated record.",
+        "An exact inverse, with its quartic boundary visible.",
+        "Reality, imagination, and form keep distinct offices.",
+    ):
+        if marker not in about:
+            errors.append("About page missing stated scope marker: " + marker)
+    for overstatement in ("global linearization", "global linear straightening"):
+        if overstatement in about:
+            errors.append("About page overstates the local three-body boundary: " + overstatement)
+    if "verified, audited closure" in about:
+        errors.append("About page conflates verified and conditional/source-declared components")
     correspondence_page = (ROOT/"formal-correspondence/index.html").read_text()
     for marker in ("Formal Correspondence Ledger", "Public form", "Minimum Mechanics", "Suture"):
         if marker not in correspondence_page:
