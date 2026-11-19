@@ -109,6 +109,7 @@
 .r59 .r59-correspondence-table td:nth-child(3) { width:40%; color:var(--r59-muted); }
 .r59 .r59-correspondence-table td:last-child { width:24%; font-size:.74rem; }
 .r59 .r59-correspondence-table a { color:var(--ink); font-weight:700; text-decoration-thickness:1px; text-underline-offset:.18em; }
+.r59 .r59-correspondence-table code,.r59 .r59-dark code { white-space:normal; overflow-wrap:anywhere; word-break:break-word; }
 .r59.disclosure-home .page-title { min-height:clamp(15rem,24vw,19rem); }
 .r59.disclosure-home .page-title .shell { padding-top:clamp(3.25rem,5vw,4.35rem); }
 .r59.disclosure-home .page-title h1 { max-width:none; font:650 clamp(2.35rem,4vw,3.7rem)/.95 ui-sans-serif,system-ui,sans-serif; letter-spacing:-.07em; }

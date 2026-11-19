@@ -132,7 +132,7 @@
 .ca-new-paper-links{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--line);font-size:.75rem;font-weight:700}
 .ca-new-paper-links a{color:var(--ink);text-underline-offset:.22em}
 .ca-trust-verification-links{padding:.8rem 0 0}
-@media(max-width:42rem){.ca-new-paper{grid-template-columns:minmax(7rem,33vw) minmax(0,1fr);gap:1.25rem}.ca-new-paper-copy h2{font-size:1.6rem}.ca-new-paper-copy p{font-size:.82rem}.ca-new-paper-copy .ca-new-paper-deck{font-size:.93rem}}
+@media(max-width:42rem){.ca-new-paper{grid-template-columns:minmax(7rem,33vw) minmax(0,1fr);gap:1.25rem}.ca-new-paper-copy h2{font-size:1.6rem}.ca-new-paper-copy p{font-size:.875rem;line-height:1.62}.ca-new-paper-copy .ca-new-paper-deck{font-size:1rem}}
 @media(max-width:27rem){.ca-new-paper{grid-template-columns:1fr}.ca-new-paper-cover{max-width:11rem}}
 
 /* CA-NOV07-PAPER-STYLES:END */

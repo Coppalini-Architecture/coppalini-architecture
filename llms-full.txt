@@ -9,6 +9,7 @@ Primary classification: independent research and publication record for referenc
 Home: https://eulershiddenl.ink/
 Formal Correspondence Ledger: https://eulershiddenl.ink/formal-correspondence/
 Notice: https://eulershiddenl.ink/notice/
+Metric Minimum / Symmetric Minimum reference edition: https://eulershiddenl.ink/papers/symmetric-minimum/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
 Library: https://eulershiddenl.ink/library
@@ -26,12 +27,30 @@ The Formal Correspondence Ledger gives each principal public claim a handle in t
 
 The Notice states the declared reader relation: a vector-only read of `s` omits the `C`-orientation that selects `Cs` rather than `−Cs`. It gives the general formal condition, separates theorem, physical construction, public-system evidence, and engineering application, and routes technical returns to the Proof Atlas, Verification Register, Research Library, and issue register.
 
-## 010a–010u, Lean-proved statements and source ledger
+## Metric Minimum / Symmetric Minimum v1.7.16
+
+Reference edition:
+https://eulershiddenl.ink/papers/symmetric-minimum/
+
+Metric Minimum records the exact connection among three named constructions without adding a new field law. First, the Suture Field source gives \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\): one rank-four coframe supplies the Lorentzian metric and oriented solder flux, with a stated local regular-branch reduction to Einstein–Maxwell. Second, the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\) carries the same metric and electromagnetic data on a spatial slice; the conditional 010o Lean theorem gives the metric shift and gauge adjustment returned by two normal evolutions. Third, the exact signed \(2\times2\) fibre block \(G=[Q,\Omega]\) occurs in \(\hat\eta=G\oplus I_2\oplus I_2\oplus I_2\). Its independently recomputed operations \(Q,J,H,L_{\rm ax}\) supply recurrence, quarter-phase, reflection, and metric-preserving transport on that one coordinate block. The 28-word coordinate register is a source-indexed documentation table, distinct from the \(\binom82=28\) pair reads of a declared eight-address carrier. The release therefore closes the stated coframe relation, its conditional canonical relation, and the exact finite algebra at their declared interfaces. A smooth instance of the seven premises, the root-to-Hamiltonian/observable adapter, and empirical calibration retain their separate open obligations. The release retains the source action and conditions, 45 pinned Lean 4.33.0 modules, the seven-premise six-bracket theorem, an independent 140/140 exact checker, 33 refusal controls, and the repair ledger.
+
+Published release materials:
+
+- PDF: https://eulershiddenl.ink/papers/symmetric-minimum/symmetric_minimum_v1_7_16.pdf
+- TeX: https://eulershiddenl.ink/papers/symmetric-minimum/symmetric_minimum_v1_7_16.tex
+- independent exact checker: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/check_symmetric_minimum_independent.py
+- SHA-256 manifest: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/SHA256SUMS
+- repair ledger: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/repair_ledger_v1_7_16.pdf
+- source-and-check package: https://eulershiddenl.ink/downloads/symmetric-minimum-v1.7.16-source-and-verification.zip
+
+The supplied independent checker re-derives 140 finite exact identities and 33 refusal controls. It is separate from the source’s Lean and field-theory records.
+
+## 010a–010u source ledger
 
 21 stages; 45 transitive Lean 4.33.0 modules. Pinned source commit:
 b9e939d514a63fb021592f79a316f70cbc70ed8a
 
-Compiler and source-integrity receipts:
+Compiler and source-integrity record links:
 https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607
 https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536
 
@@ -50,7 +69,7 @@ https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
 010t: nonzero rational canonical pairing with prime-word order distinction.
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The finite Lean source chain proves its stated finite and local relations at the pinned source. The real/Fréchet SmoothCompletion formalization has a separately typed construction address. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+The source ledger gives the stated finite and local relations at the pinned source. The real/Fréchet SmoothCompletion formalization has a separately typed construction address. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 
@@ -58,7 +77,7 @@ A result must carry:
 1. Jurisdiction and original source authority.
 2. Exact mathematical statement or model definition.
 3. Conditions and actual dependencies.
-4. Source file, verifier or proof and passing receipt.
+4. Source file, verifier or proof, and its check record.
 5. Scope and a typed OPEN field when required.
 
 The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. Universal physical-state and optimal-stopping claims require their own declared carrier and theorem statement.

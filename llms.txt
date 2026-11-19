@@ -1,13 +1,14 @@
-# Coppalini Architecture — reference, constraint, and source-indexed research
+# Coppalini Architecture — mathematics, physics, and source-indexed research
 
-> Coppalini Architecture carries source, condition, operation, verification, and correction in one public record. Field investigation isolates the condition; Architecture carries the constraint.
+> Coppalini Architecture is an independent research and publication record for exact algebra, physics, proof sources, computational checks, and archival materials.
 
 ## Current public record
 
 - [Formal Correspondence Ledger](https://eulershiddenl.ink/formal-correspondence/): named public forms beside Coppalini constructions, exact receipts, and stated scopes.
 - [Home](https://eulershiddenl.ink/): formal lineage, Four Dual Forms, The 3 Body Mirror, Minimum Mechanics, the laboratory, and the library.
-- [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean modules compiled in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
-- [Proof verification](https://eulershiddenl.ink/verify): Lean 4.33.0 and archive-integrity PASS at pinned commit `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
+- [Metric Minimum / Symmetric Minimum v1.7.16](https://eulershiddenl.ink/papers/symmetric-minimum/): a source-addressable connection among three named constructions: the coframe field system \(\Pi\to(g,F_{\rm sol})\to F_{\rm em}\) and its stated regular Einstein–Maxwell reduction; the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\), whose normal bracket returns the metric shift and gauge adjustment under seven named premises; and the exact signed \(2×2\) fibre block \(G=[Q,\Omega]\). \(Q,J,H,L_{\rm ax}\) are independently checked operations on that block. The 28-word coordinate register is distinct from the \(\binom82=28\) pair reads of an eight-address carrier. The root-to-Hamiltonian/observable adapter remains open. The release includes source equations, 45 Lean modules, an independent 140/140 exact checker, 33 refusal controls, SHA-256 manifest, and repair ledger.
+- [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean source modules in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
+- [Proof verification](https://eulershiddenl.ink/verify): reproduction instructions and source-specific compiler, hash, and audit records for the locked version `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.
 - [Four Dual Forms](https://eulershiddenl.ink/library#four-dual-forms-shelf): Gravity–Light, Memory–Motion, Time–Scope, and Horizon–Silence, with individual source records and verification receipt.
 - [The 3 Body Mirror](https://eulershiddenl.ink/papers/the-3-body-mirror.pdf): three-body reconstruction, source, symbolic receipt, and independent receipt.
@@ -19,10 +20,10 @@
 
 ## Current theorem strength
 
-- 010a–010p: finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o is conditional on `SmoothCompletion` and retains its smooth-field realization obligation.
-- 010q–010r: exact abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
-- 010s–010t: verified local source attachment and nonzero finite rational symplectic carrier; ordinary smooth real field completion is a distinct mathematical construction from full Lean formalization.
-- 010u: an inhabited, universally quantified jurisdictional admission and pattern-recognition theorem. Universality is over declared typed carriers; physical applications are carried by separately declared observables and conditions.
+- 010a–010p: source-led finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o is conditional on `SmoothCompletion` and names its smooth-field realization obligation.
+- 010q–010r: source-led abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
+- 010s–010t: local source attachment and a nonzero finite rational symplectic carrier; ordinary smooth real field completion is a distinct mathematical construction from full Lean formalization.
+- 010u: a typed jurisdictional admission and pattern-recognition theorem over declared carriers; physical applications use separately named observables and conditions.
 - `AxiomaticBuild.lean` is carried here by its summary and README as source-report records.
 
 ## Read a claim through its record
@@ -30,9 +31,10 @@
 A public claim travels with its public form, Coppalini construction, exact relation, receipt, and stated scope. The Formal Correspondence Ledger provides the compact handle; source pages retain the equations, hypotheses, programs, and conditions.
 
 - [Pinned proof source tree](https://github.com/Coppalini-Architecture/coppalini-architecture/tree/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs)
-- [Compiler receipt](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607)
-- [Archive receipt](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536)
+- [Compiler record](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607)
+- [Archive record](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536)
 - [SHA-256 manifest](https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/SHA256SUMS)
+- [Symmetric Minimum source and checker](https://eulershiddenl.ink/downloads/symmetric-minimum-v1.7.16-source-and-verification.zip)
 - [Reference ledger](https://eulershiddenl.ink/references)
 - [Recompute Kernel v0.2](https://eulershiddenl.ink/exact/recompute-kernel/): earlier exact-integer verifier.
 

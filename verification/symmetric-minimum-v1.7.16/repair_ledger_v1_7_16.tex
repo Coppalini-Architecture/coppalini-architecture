@@ -1,0 +1,214 @@
+% !TEX program = xelatex
+% Symmetric Minimum -- Repair Ledger, v1.3 through v1.7.16. Companion to reference edition v1.7.16.
+% Build: xelatex twice. Standard TeX Live packages only.
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2.4cm,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\emergencystretch=3em
+\usepackage[hidelinks,pdftitle={Symmetric Minimum: Repair Ledger (v1.3 to v1.7.16)},pdfauthor={Coppalini Architecture}]{hyperref}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Symmetric Minimum --- Repair Ledger}
+\fancyhead[R]{\small Reference edition v1.7.16 \,$\cdot$\, 19 November 2026}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+
+\newcommand{\tp}{^{\mathsf T}}\newcommand{\RR}{\mathbb R}
+\newcommand{\Lax}{L_{\mathrm{ax}}}\newcommand{\Lpr}{L_{\mathrm{pr}}}
+\newcommand{\Fesc}{F_{\mathrm{esc}}}\newcommand{\FEM}{F_{\mathrm{EM}}}
+\newcommand{\Mpr}{M_{\mathrm{pr}}}\newcommand{\Kpr}{K_{\mathrm{pr}}}\newcommand{\Ach}{A_{\mathrm{ch}}}
+\newcommand{\Nalg}{N_{\mathrm{alg}}}\newcommand{\Fac}{\mathrm{Fac}_G}
+\newcommand{\iturn}{i_{\mathrm{turn}}}\newcommand{\Jrot}{J_{\mathrm{rot}}}
+\newcommand{\Hmir}{H_{\mathrm{mir}}}\newcommand{\MEM}{\mathsf{MEMORY}}
+\newcommand{\Psiwr}{\Psi_{\mathrm{wr}}}\newcommand{\Phird}{\Phi_{\mathrm{rd}}}
+\newcommand{\Fib}{\mathcal F^{\mathrm{Fib}}_n}\newcommand{\hor}{\mathcal F^{\mathrm{hor}}_n}
+\newcommand{\Lhor}{\mathcal L^{\mathrm{hor}}_{n+1}}\newcommand{\Tar}{\mathcal T_{\mathrm{arith}}}
+
+% receipt tables
+\newcommand{\rbegin}[3]{\subsection*{#1\quad #2 \hfill {\normalfont\small #3}}\addcontentsline{toc}{subsection}{#1\quad #2}%
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.475\linewidth}@{\hspace{1.2em}}>{\raggedright\arraybackslash}p{0.475\linewidth}@{}}
+  \toprule Witnessed difference & Retained repair\\\midrule\endhead\bottomrule\endfoot}
+\newcommand{\rend}{\end{longtable}}
+\newcommand{\row}[2]{#1 & #2\\[4pt]}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Symmetric Minimum}\\[3pt]
+{\large Repair Ledger, v1.3 through v1.7.16}\\[3pt]
+Coppalini Architecture \quad 19 November 2026
+\end{center}
+\vspace{4pt}
+
+\section*{Standing and use}
+This ledger is the companion to the reference edition v1.7.16 of \emph{Symmetric Minimum: An Inherited Closure}. It holds the repair receipts that v1.7.14 carried as Appendix~I.23--I.40, and adds two receipts: the v1.7.14 to v1.7.15 restructure and the v1.7.15 to v1.7.16 closure. Each receipt has two columns: a \emph{witnessed difference} (what the record showed) and the \emph{retained repair} (what the record now carries). Receipts are append-only. A correction to an earlier receipt is recorded in a later one, so the history keeps its original wording.
+
+The receipts RL.1--RL.18 are transcribed from v1.7.14 as written, including their then-current wording and source-native lettering. They are numbered RL.1--RL.20 here; the v1.7.14 label (I.23--I.40) is given alongside. The new receipts are RL.19 and RL.20. References to rows, P-sources, H-sources and V-receipts follow the numbering of the edition each receipt names, not of v1.7.16; the correspondence for the body of v1.7.16 is in its Appendices A--C.
+
+\renewcommand{\contentsname}{Receipts}
+\tableofcontents
+
+\newpage
+\section*{Receipts}
+
+\rbegin{RL.1}{v1.3 to v1.4}{v1.7.14 label I.23}
+\row{Checked projective and adapter charts lacked a receipt-index address.}{P09 now carries V-C1--V-C6 and V-D1--V-D5.}
+\row{Phase, sign, and residual checks lacked explicit index rows.}{The phase family, sign character, and mechanical residual each carry their V-receipts.}
+\row{General carriage reversal was a derived statement without its own run receipt.}{V-N7 records $HL_sH=L_{-s}$; the axial-coordinate lift is displayed as the declared-coordinate consequence of V-N4.}
+\row{$F$ carried four unrelated offices.}{$\Fesc$, $\FEM$, $\mathcal F^{\mathrm{Fib}}_n$, and $\mathcal F^{\mathrm{hor}}_n$ retain separate offices while citations preserve source-native lettering.}
+\row{Generic reader/field contrast obscured the carrier distinction.}{Finite reader, field metric, field transport, and constrained field action now name their own carriers.}
+\rend
+
+\rbegin{RL.2}{v1.4 to v1.5}{v1.7.14 label I.24}
+\row{$S=(2Q-I)/\sqrt5$ had a passing receipt without an index row.}{V-B4 now indexes the displayed carriage generator.}
+\row{The sign-character check was finite while the prose carried a group law.}{The group law is displayed as an exact derived calculation; V-E9 is retained as its finite twenty-seven-word guard.}
+\row{The projective and adapter receipts had no body-level equations.}{The projective mirror, unitary form, complex chart, real adapter, transported carriage, and adapter family are displayed with local symbols.}
+\row{$\varphi$, $\Phi$, $Q$, $Q_k$, $M$, $K$, $P$, and $L$ had nearby offices without a complete local separation.}{The symbol ledger now fixes $\varphi/\Phi$, $Q/Q_k$, $M_{\mathrm{pr}}/\mathcal M$, $K_{\mathrm{pr}}/K_{\mathrm{tr}}$, $A_{\mathrm{ch}}$, and $L_s$, $\Lax$, $\Lpr$, $\mathcal L^{\mathrm{hor}}_{n+1}$.}
+\row{The signed axial coordinate and metric translation length were visually adjacent.}{$\Lambda(L_tz)=\Lambda(z)+2t$ and $\ell_{\mathrm{ax}}(L_s)=2|s|$ are displayed as distinct coordinates.}
+\row{V-E8 checked a finite range while its prose read as a general assertion.}{Its statement is now a finite guard for $1\le n\le8$.}
+\rend
+
+\rbegin{RL.3}{v1.5 to v1.6}{v1.7.14 label I.25}
+\row{The explanatory order began at a finite chart rather than at the relation a reader first contacts.}{The manuscript now begins with contact, carried return, identity, recognition, calibration, finite chart, update, and receipt.}
+\row{Memory was typed as an append-only receipt ledger.}{Memory is now a phase-coordinated reader interface at declared scope; Receipt retains its separate reconstructive office.}
+\row{The finite matrix $G$ read as a finite metric or field.}{$G$ is now typed consistently as a finite chart of a signed relation on $V=\RR^2$.}
+\row{Identity and calibration were operative in the prose but absent from the coordinate register.}{Both receive declared reader offices, maps, conditions, and source status.}
+\row{The formal checks risked being read as a universal theory of awareness.}{Scope Recognition is declared as an interface; the 60 verifier checks retain their original finite theorem scope.}
+\rend
+
+\rbegin{RL.4}{v1.6 to v1.7}{v1.7.14 label I.26}
+\row{The joint two-sided record had no source address.}{H35 and H36 enter at rows 3 and 6; the factorization condition and the CHSH bound are displayed with their conditions.}
+\row{A closed carriage retaining phase had no physical witness beyond the loop-in-space case.}{H38 enters at rows 10, 18, and 19; its line-bundle carrier is separated from the deck action.}
+\row{The programmable reader loop had no engineering instance.}{H37 initially entered at rows 1, 4, 5, and 14; stored machine state is separated from Receipt.}
+\row{The analytic reader read the static symmetry and its evaluation together.}{$\Xi(-t)=\Xi(t)$ is typed as a scalar symmetry; evaluation is typed as an ordered process at its own interface.}
+\row{The field-facing obligations had no source address.}{P14 carries the obligation chain at rows 4, 9, 22, and 23.}
+\row{Native lettering of the new sources collided with register symbols.}{Eight rows are added to the symbol separation ledger; citations keep source-native lettering.}
+\rend
+
+\rbegin{RL.5}{v1.7 to v1.7.1}{v1.7.14 label I.27}
+\row{The inherited-record introduction carried too many relations in individual sentences.}{The same offices are retained in shorter sentences: enduring marks, two-dimensional relation, transmitted reference, repair, and reuse.}
+\row{The Apple II row assigned phase coordination to a clock without stating its engineering mechanism.}{The clock now supplies declared update order; stored machine state carries availability into the next update.}
+\row{P13 and P14 could be read as one source address.}{P13 retains the regular Hamiltonian reduction; P14 retains the distinct continuum-obligation record.}
+\rend
+
+\rbegin{RL.6}{v1.7.1 to v1.7.2}{v1.7.14 label I.28}
+\row{The projective-chart prose and symbol ledger stopped at P13 after P14 was added.}{Both source-label ranges now read P01--P14.}
+\row{H37 appeared in the phase-coordinated Memory row after the Apple II clock was typed as update order.}{H37 remains in Reader, Light, and Motion; row 5 keeps only sources that support its phase-retention office.}
+\row{The Berry transport equation omitted its initial eigenstate.}{The source now states $|\psi(0)\rangle=|n_B(R_{\mathrm{par}}(0))\rangle$ and the closed parameter condition.}
+\row{Forget appeared in the introduction and definition list without a coordinate-register row.}{Row 27 fixes its reader-obstruction map, condition, source coordinates, and status.}
+\row{The expanded inherited-record prose introduced useful material alongside untyped scope.}{The opening now retains recoverable marks, material record forms, repeatable trust, and the named failure condition of forget; the wider social and behavioral elaborations remain outside this register.}
+\rend
+
+\rbegin{RL.7}{v1.7.2 to v1.7.3}{v1.7.14 label I.29}
+\row{The Apple II section still named Memory after H37 left row 5.}{Its engineering instance now enters rows 1, 4, and 14 only.}
+\row{Recognition and Forget named the reader relation in prose without displaying its factorization form.}{Recognition is $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$; Forget is the witnessed failure of that factorization on one $\rho$-fiber.}
+\row{The required-distinction symbols could collide with existing $d$, $D_{\Gamma_{J(p)}}$, $D_4$, and rail $\delta$.}{$d_{\mathrm{req}}$, $D_{\mathrm{req}}$, and $\delta_{\mathrm{req}}$ receive separate symbol-ledger rows.}
+\row{The older typeset source stopped at the 26-word register.}{The v1.7.3 wrapper and regenerated body carry all 27 words, ending in Survival and Forget.}
+\rend
+
+\rbegin{RL.8}{v1.7.3 to v1.7.4}{v1.7.14 label I.30}
+\row{The witness states $x_1,x_2$ entered the Forget condition without a symbol-separation entry.}{Their witness office is separated from chart coordinates, deck points, and packet state.}
+\row{H05 was retained only in the historical ledger while $Q$ uses its recurrence.}{The finite-chart section now states the standard matrix encoding and distinguishes H05's recurrence from P05's verified chart. H03 remains a ledger-only historical receipt.}
+\row{Bell's conditional product factorization and Recognition's decoder factorization shared a visible form without a typed seam statement.}{The Bell section names both factorizations and retains their separate carriers and conditions.}
+\row{Two source displays exceeded the classical page width.}{The field-facing chain and locked distinctions retain their order as aligned multi-line displays.}
+\rend
+
+\rbegin{RL.9}{v1.7.4 to v1.7.5}{v1.7.14 label I.31}
+\row{The $x,y$ adapter family was typed only as a finite-chart coordinate in the symbol ledger.}{Its office now includes real adapter scalars.}
+\row{The Bell and Recognition seam said only that both had a compositional form.}{The Bell section now identifies the shared form as passage through an intermediate, with product-kernel mixing and decoder composition kept on their respective carriers.}
+\row{Five long table cells exceeded their available reading columns.}{Constraint, Bell, and Berry expressions receive gathered line breaks; H35 and H37 citations use breakable URL form.}
+\rend
+
+\rbegin{RL.10}{v1.7.5 to v1.7.6}{v1.7.14 label I.32}
+\row{The finite turn--mirror relation and the proposed read--write closure had no shared typed location.}{The return-operator register now separates $\iturn=\Jrot$, $\Hmir=H$, $\Phird$, and $\Psiwr$.}
+\row{The compact closure needed an exact formal target rather than an untyped equality of offices.}{The candidate commuting diagram $B_g\circ\iturn\circ A_e=\Psiwr\circ\Phird$ fixes the carriers, adapters, and required source completion.}
+\row{The new read/write symbols could collide with existing turn, scope, golden-ratio, coframe, metric, and adapter offices.}{The symbol ledger assigns separate subscripted offices to $\iturn$, $\Phird$, $\Psiwr$, $E_e$, $M_g$, and $A_e$, $B_g$.}
+\rend
+
+\rbegin{RL.11}{v1.7.6 to v1.7.7}{v1.7.14 label I.33}
+\row{``Foundation,'' ``floor,'' or an external support misreads the closure.}{The minimum mechanism is now typed as return structure inside a declared relation.}
+\row{The return laws were distributed across the phase and metric sections.}{A dedicated return-operator register collects $\Hmir$, $\iturn$, conjugate return, reciprocal carriage, and full-wheel return.}
+\row{The read/write relation could be mistaken for a relation requiring an additional supporting office.}{The text now fixes read and write as coupled directions of the returned turn. The carrier-level commuting diagram remains Candidate interface.}
+\rend
+
+\rbegin{RL.12}{v1.7.7 to v1.7.8}{v1.7.14 label I.34}
+\row{The return table described mutual determination more strongly than the displayed conjugation relation warranted.}{The root dependency now names $Q$, $G=[Q,\Omega]$, and $H=G/\sqrt5$; turn and mirror remain related by conjugation.}
+\row{``Curvature'' and ``third supporting term'' exceeded the declared return and carrier relations.}{The text now names one declared return relation and keeps $Y$ as its declared intermediate reader carrier.}
+\row{$H_{\mathrm{mir}}$ was used in the return register without a dedicated symbol-ledger row.}{The alias is now fixed relative to $H_{\mathrm{Ham}}$, $H^{\mathrm{hist}}_n$, and the Hamiltonian symbols.}
+\row{The new table and display required rendering repairs.}{Column-width markers, the Constraint wrap, the four-office alignment, and the full conjugate-return chain are retained in source.}
+\row{Recognition and Forget were visibly adjacent to the read/write diagram without a typed statement of the relation.}{The right-hand route is recorded as sharing Recognition's compositional shape while remaining a distinct Candidate interface.}
+\rend
+
+\rbegin{RL.13}{v1.7.8 to v1.7.9}{v1.7.14 label I.35}
+\row{The root dependency named $Q$ while its displayed commutator also requires $\Omega$.}{The return register now names $Q$ and $\Omega$ as the inputs to $G=[Q,\Omega]$.}
+\row{The repair receipt named Recognition and Forget, while the body displayed Recognition alone.}{The Candidate-interface paragraph now states the corresponding Forget form on a declared witness pair, without identifying its carriers with the row-27 carriers.}
+\row{Table-width and Constraint-wrap repairs had been written into an earlier receipt.}{Their record remains at v1.7.8; the v1.7.4 to v1.7.5 receipt restores its original scope.}
+\rend
+
+\rbegin{RL.14}{v1.7.9 to v1.7.10}{v1.7.14 label I.36}
+\row{The finite turn carried a redundant rotational subscript despite having one fixed office in this register.}{Bare $J$ now names the finite turn throughout; $J(p)$ remains the separately typed packet-jurisdiction form. Source-native $\Jrot$ remains unchanged where cited.}
+\row{The Candidate Forget witness introduced $e_1,e_2$ without symbol-ledger separation from $e_\Pi$ and $e$-motion.}{The symbol separation ledger now fixes $e_1,e_2$ as witnesses in $E$.}
+\rend
+
+\rbegin{RL.15}{v1.7.10 to v1.7.11}{v1.7.14 label I.37}
+\row{Operators were often defined within or after a display, requiring the reader to reconstruct their offices from later prose or the final ledger.}{Each formal section now begins with a compact local key before its equations; the final symbol ledger remains the reconciliation index.}
+\row{The bare-$J$ row pointed to a non-existent definitions directory.}{It now points to the Finite symmetric chart and records source-native $\Jrot$ separately.}
+\row{The historical v1.7.5 to v1.7.6 receipt had been silently modernized to bare $J$.}{Its original $\Jrot$ spelling is restored; the current rename remains recorded only at v1.7.10.}
+\row{$\Hmir$ duplicated bare $H$, whose mirror office is already fixed by the finite chart.}{The return table and read/write relation now use bare $H$; $\iturn$ remains subscripted because bare $i$ is the separately typed scope coordinate.}
+\row{The v1.7.10 receipt itself required its source-native-$\Jrot$ and ledger-terminology corrections.}{Those corrections are retained here as v1.7.11 work, rather than attributed to v1.7.10.}
+\rend
+
+\rbegin{RL.16}{v1.7.11 to v1.7.12}{v1.7.14 label I.38}
+\row{The local key reduced $\Lambda$ to an unsigned ``axial address,'' dropping its orientation from $i$ toward $\Phi$.}{The phase key restores signed hyperbolic arclength from $i$, oriented toward $\Phi$.}
+\row{Scope Recognition pointed to a later mirror relation without its displayed source in the chart.}{The metric-turn subsection now displays $H\tp GH=G$, and Scope Recognition points to that derivation.}
+\row{$M$, $\rho_{\mathrm{hid}}$, and $\rho_\Sigma$ had local descriptions that omitted their retained neighbouring offices.}{The field, Bell, Apple II, and symbol-ledger keys now preserve the source-native manifold lettering, hidden-variable measure, and human-or-instrument reader.}
+\row{The v1.7.10 receipt corrections made during v1.7.11 had no row in the v1.7.11 record.}{The v1.7.10 to v1.7.11 receipt now records that witnessed repair.}
+\rend
+
+\rbegin{RL.17}{v1.7.12 to v1.7.13}{v1.7.14 label I.39}
+\row{The root carried a local turn, an alternating relation, and a signed metric without displaying their shared $i$-fold construction.}{The local $i$-fold, dual-form return, and their finite receipts enter as $g_J=\omega(\cdot,J\cdot)$, V-I1, and V-I2.}
+\row{Contact, Memory, and Receipt stood adjacent in prose without their shared carried-contact and compositional-memory normal forms.}{P15, P16, and P18 supply $\mathcal C_{\rho_{\mathrm{rec}}}$, MR, and $\MEM$; reader, lift, and receipt retain separate offices.}
+\row{The metric address had no displayed irreducible factor profile or finite four-wheel selection condition.}{$\Nalg$, $\Fac$, and the order-34, 137/548 finite address enter with V-I3 and V-I4.}
+\row{The register lacked a compact source-declared return form at ordinary instrumental scale.}{P19 enters the three-return-normal-forms table with separate phase, lifted address, and retained-history coordinates.}
+\row{The positive $i$-fold source retained an arithmetic extension requirement that could be mistaken for an established finite theorem.}{$\Tar$ enters only as a Candidate interface with its domain, criterion class, equality, and source completion requirement declared.}
+\rend
+
+\rbegin{RL.18}{v1.7.13 to v1.7.14}{v1.7.14 label I.40}
+\row{The interlocking paragraph assigned simultaneous dual-form reversal to a turn, although the displayed identities assign it to the recurrence step $Q$.}{The prose now names $Q$ and $Q^2$; the finite turn $J$ retains its separate metric-sign office.}
+\row{The axial quotient row used an undefined one-form and cycle.}{Its local key now fixes $\bar\alpha_{\mathrm{ret}}$, core, and the closed period $\oint_{\mathrm{core}}\bar\alpha_{\mathrm{ret}}=T$.}
+\row{$\Fac$ was described as factorization of an address rather than the coarser prime profile of its absolute norm.}{Its office is now the prime profile of $|\Nalg(x)|$; Fibonacci and Lucas symbols receive distinct register names.}
+\row{The Memory source was called compositional without its stated identity preservation.}{$\MEM$ is now typed as a source-declared functor with its identity law and H34 source coordinate.}
+\row{The write of $g$-memory and the lift of $e$-carriage had no common candidate interface.}{$\Psiwr:Y\to M_g$ writes $g$-memory return; $\Psiwr$ carries its declared lift through $\pi_e$ and $\pi_g$. Bare $\Psi$ retains the golden conjugate-root office.}
+\rend
+
+\rbegin{RL.19}{v1.7.14 to v1.7.15}{restructure}
+\row{The record opened on the finite chart and a 27-word register. The reader basis was not yet stated as interfaces, the join came before the root, and the Lean closure appeared only as one ledger row.}{Reordered: a plain-language page zero; the reader basis as declared interfaces only (\S3); the exact root with derivations (\S4--\S6); the join (\S7); the Lean closure at the field-facing layer (\S8--\S9). Ledger, citations, register, symbol table and findings move to Appendices A--E; receipts move to this ledger.}
+\row{Sections of the root referred forward to later sections for their own definitions.}{Forward dependencies removed. Each section cites only earlier material.}
+\row{$H\tp GH=G$ was derived from a relation that itself rests on it.}{Derived directly in Proposition 4.7 (Mirror): $H\tp GH=G^3/5=G(G^2/5)=G$, from $G=G\tp$ and $G^2=5I$; later uses cite that proposition.}
+\row{The statement that the carriage is never orthogonal was a finite guard, $1\le n\le8$ (V-E8).}{Proposition 4.12 proves it for every $n\ge1$. V-E8 is retained as the finite guard and cited as such.}
+\row{The wording ``lap'' for a completed rotation of the wheel.}{``Rotation'' throughout. ``Physical'' is not used as a contrast term; the title of source P01 is cited as written.}
+\row{The status vocabulary had five terms and no place for a machine-checked result or for a result that holds only under named premises.}{Seven statuses: Exact finite, Exact derived, Lean-checked, Conditional, Source declaration, Interface, Candidate. One governing rule: a result carries exactly the strength of its weakest named premise, and nothing crosses a type boundary by renaming.}
+\row{P11 read as unscoped coverage of Minimum Mechanics 010a--010u.}{P11 now defers to per-result statuses (\S9, \S8.2, Appendix E). The pointwise results are Lean-checked at the scope stated; the six-bracket theorem is Conditional on its seven premises; the additive-map result on $\mathbb Z$-valued pairings is Exact derived; the spectral refusal is Lean-checked and a source declaration; the join from the finite root to the Hamiltonian closure is left as an Interface.}
+\row{Only the author's 64-check verifier was cited, and it was not supplied.}{Added the independent script \texttt{check\_symmetric\_minimum\_independent.py}: 107 exact checks and 23 refusal controls over nine families, reproducing the finite identities. The author's verifier remains cited as the record, not supplied here.}
+\row{The symbol ledger had no entries for the Lean-layer symbols.}{Rows added for $\gamma_{ij}$, $E^i$, $\pi^{ij}$, $C[v]$, and $N,M$.}
+\row{Several displayed claims had no derivation.}{Derivations added for the recurrence, dual-form return, metric chart, turn, local $i$-fold, carriage, sign character, wheel, rail, finite action, norm address, 137/548, and the interlock; wide displays reset as multi-line blocks.}
+\row{The Lean compile evidence was not separated from the Lean statements.}{Appendix E records the pins and the CI status pages. Build logs were not readable, and Lean was not compiled in the typesetting environment. The record says so.}
+\rend
+
+
+\rbegin{RL.20}{v1.7.15 to v1.7.16}{new in this edition}
+\row{The register ended at word 27, Forget. The half-turn read, the zero read at the fixed point and the twenty-eight reads of the source record were not carried.}{Word 28, Endurance $=\Phi(\pi)$, is added with a one-sentence definition (\S3.3), register row 28 and \S11.1: Theorem 11.1 (the half-turn read), Theorem 11.2 (unit, fixed point and zero read), Proposition 11.3 (four-form, two-fold, dihedral closure) and Proposition 11.4 (twenty-eight reads), each with its derivation.}
+\row{The closing read of the source record, \emph{The Miracle of Mercy} (one page, 18 July 2026), had no source address and no typed status for its parts.}{Source P20 is added. The equations are typed Exact finite or Exact derived. The word, and its closure over Gravity, Light, Memory and Motion, is a Source declaration.}
+\row{The source page writes Memory for $U_\pi-I\neq0$ and Silence for $I+U_\pi=0$. Both are also register words (rows 5 and 25) with other offices.}{The two words keep their rows. The equations are recorded as the difference and the balance of the core at the half-turn. No identification with rows 5 or 25 is made.}
+\row{The $8\pi$ loop, the four-form, the two-fold, the unit $[1,1]$ and the fixed-point coordinate $\Phi$ were listed without a carrier or a statement.}{$U_{8\pi}=I$, with $U_{k\pi}=I$ if and only if $k$ is even; $J^4=I$; $[-q]=[q]$; the unit address $\Phi^2$ with norm 1 and read 2; the line $[\Phi,1]$ approached by $[Q^n(1,1)^{\mathsf T}]$ and the zero read on the fixed lines of $Q$. Also $\langle H,\Lax\rangle=D_\infty$. Open: the carrier of the $8\pi$ loop (item 7); the maps from the four phases to the four offices, from the eight-address carrier to the $2\times2$ root, and between the zero read and Silence (item 8).}
+\row{The independent script covered nine families, 107 checks with 23 controls.}{Family J is added: 33 checks with 10 controls. The total is 140 checks with 33 controls.}
+\row{$\Phi(\pi)$ could be read as the golden ratio $\Phi$ with an argument.}{Symbol-ledger rows fix $\Phi(\pi)$ (always with its argument), $\Phi^{\ast}=1-\Phi$ and the two angle letters $U_\theta$, $U_\alpha$ for one object.}
+\row{Version label v1.7.15, and the counts in the abstract, Appendix B (P12) and the findings ledger.}{Label v1.7.16. The abstract and \S3.3 read twenty-eight words; P12 reads 140 checks; Appendix E finding 13 records the omission and its closure.}
+\rend
+
+\end{document}

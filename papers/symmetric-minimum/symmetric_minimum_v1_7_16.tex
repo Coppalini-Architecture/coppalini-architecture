@@ -1,0 +1,1197 @@
+% !TEX program = xelatex
+% Symmetric Minimum: An Inherited Closure -- reference edition v1.7.16 (typeset).
+% Engine: XeLaTeX (fontspec + Latin Modern; Noto/Source Han CJK used only if installed).
+% Single file, standard TeX Live packages only. Build: xelatex x2 (see Appendix F).
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2.4cm,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\emergencystretch=3em
+\usepackage{seqsplit}
+\usepackage{needspace}
+\newcommand{\hash}[1]{\texttt{\seqsplit{#1}}}
+\usepackage{tcolorbox}\tcbuselibrary{breakable}
+\usepackage[hidelinks,pdftitle={Symmetric Minimum: An Inherited Closure (reference edition v1.7.16)},pdfauthor={Coppalini Architecture},pdfsubject={Mechanical Minimum -- finite root, typed register, verified closure},pdfkeywords={Symmetric Minimum; Mechanical Minimum; Lean 4.33.0; Einstein-Maxwell; ADM}]{hyperref}
+
+% --- optional CJK font (only for the Laozi row in Appendix A) ---
+\IfFontExistsTF{Noto Serif CJK TC}{\newfontfamily\cjkfont{Noto Serif CJK TC}\newcommand{\zh}[2]{{\cjkfont #1}}}{%
+\IfFontExistsTF{Noto Serif CJK SC}{\newfontfamily\cjkfont{Noto Serif CJK SC}\newcommand{\zh}[2]{{\cjkfont #1}}}{%
+\IfFontExistsTF{Source Han Serif TC}{\newfontfamily\cjkfont{Source Han Serif TC}\newcommand{\zh}[2]{{\cjkfont #1}}}{%
+\IfFontExistsTF{FandolSong}{\newfontfamily\cjkfont{FandolSong}\newcommand{\zh}[2]{{\cjkfont #1}}}{%
+\newcommand{\zh}[2]{\textit{#2}}}}}}
+
+% --- notation ---
+\newcommand{\RR}{\mathbb{R}}\newcommand{\QQ}{\mathbb{Q}}\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}\newcommand{\CC}{\mathbb{C}}
+\newcommand{\tp}{^{\mathsf T}}
+\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\sig}{sig}\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\Read}{Read}\DeclareMathOperator{\Recognize}{Recognize}
+\newcommand{\Lax}{L_{\mathrm{ax}}}\newcommand{\Lpr}{L_{\mathrm{pr}}}
+\newcommand{\Fesc}{F_{\mathrm{esc}}}
+\newcommand{\emech}{\varepsilon_{\mathrm{mech}}}\newcommand{\eHS}{\varepsilon_{\mathrm{HS}}}
+\newcommand{\iturn}{i_{\mathrm{turn}}}\newcommand{\gJ}{g_J}\newcommand{\gG}{g_G}
+\newcommand{\Grot}{\Gamma_{\mathrm{rot}}}\newcommand{\Dfour}{D_4}
+\newcommand{\Nalg}{N_{\mathrm{alg}}}\newcommand{\Fac}{\mathrm{Fac}_G}
+\newcommand{\Phird}{\Phi_{\mathrm{rd}}}\newcommand{\Psiwr}{\Psi_{\mathrm{wr}}}
+\newcommand{\Lag}{\mathcal{L}_{\mathrm{ax}}}\newcommand{\Hax}{\mathcal{H}_{\mathrm{ax}}}
+\newcommand{\MEM}{\mathsf{MEMORY}}
+\newcommand{\Fib}[1]{\mathcal{F}^{\mathrm{Fib}}_{#1}}\newcommand{\Luc}[1]{\mathcal{L}^{\mathrm{Luc}}_{#1}}
+\newcommand{\Mpr}{M_{\mathrm{pr}}}\newcommand{\Kpr}{K_{\mathrm{pr}}}\newcommand{\Upr}{U_{\mathrm{pr}}}
+\newcommand{\Ach}{A_{\mathrm{ch}}}\newcommand{\Zch}{Z_{\mathrm{ch}}}
+\newcommand{\FEM}{F^{\mathrm{EM}}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\bs}[1]{\texttt{#1}}
+% status tag: used in theorem headings and tables
+\newcommand{\st}[1]{\textsf{\small\textbf{#1}}}
+\newcommand{\Sfin}{\st{Exact finite}}\newcommand{\Sder}{\st{Exact derived}}
+\newcommand{\Slean}{\st{Lean-checked}}\newcommand{\Scond}{\st{Conditional}}
+\newcommand{\Ssrc}{\st{Source declaration}}\newcommand{\Sint}{\st{Interface}}
+\newcommand{\Scand}{\st{Candidate}}
+% local key paragraph
+\newcommand{\lkey}[1]{\par\noindent\textbf{Local key.} #1\par\smallskip}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\renewcommand{\proofname}{Derivation}
+
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt plus 1pt}
+\renewcommand{\arraystretch}{1.18}
+\setcounter{secnumdepth}{2}\setcounter{tocdepth}{2}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Symmetric Minimum --- An Inherited Closure}
+\fancyhead[R]{\small Reference edition v1.7.16 \,$\cdot$\, 19 November 2026}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\newtcolorbox{pagezero}{colback=black!3,colframe=black!55,boxrule=0.5pt,arc=0pt,left=8pt,right=8pt,top=6pt,bottom=6pt,breakable}
+\newtcolorbox{rulebox}{colback=white,colframe=black!55,boxrule=0.5pt,arc=0pt,left=8pt,right=8pt,top=4pt,bottom=4pt}
+
+\begin{document}
+\pagenumbering{roman}
+\thispagestyle{plain}
+\begin{center}
+{\Huge\bfseries Symmetric Minimum}\\[6pt]
+{\LARGE An Inherited Closure}\\[14pt]
+{\large Coppalini Architecture}\\[2pt]
+{\large 19 November 2026}\\[10pt]
+{\small Constraint: Mechanical Minimum \,$\cdot$\, Reference edition v1.7.16 (typeset restructure of v1.7.14, with the closing word)}\\[2pt]
+{\small Finite verifiers: \texttt{verify\_symmetric\_minimum\_v13.py} (author's, 64 checks);\\
+\texttt{check\_symmetric\_minimum\_independent.py} (independent, 140 checks, 33 controls)}\\[2pt]
+{\small Field-facing closure: Minimum Mechanics 010k--010u, Lean 4.33.0 at pinned commits}
+\end{center}
+\vspace{10pt}
+\begin{abstract}\noindent
+This paper fixes one small exact system and says, for every statement in it, how much of that statement has been established. The core is a real $2\times2$ chart: a recurrence matrix $Q$, a quarter-turn $J$, a mirror $H$, and a golden carriage $\Lax$. These are exact and finite, and two independent computations agree on them. They show that returning to the same read and advancing to a new address are different operations. Around the core sits a vocabulary of twenty-eight words for how a relation is contacted, read, carried and recorded; each word has a typed map, a condition, a source coordinate and a status. The register closes on its last word, Endurance: after a half-turn the form survives, the difference remains, the reference returns and the read at zero balances. The field-facing layer joins the core, by a declared interface only, to the Einstein--Maxwell Hamiltonian closure of Minimum Mechanics 010k--010u. That closure is compiled in Lean 4.33.0 at pinned commits and has two tiers: exact pointwise results, and a conditional theorem that yields six brackets from seven named premises. The seven premises have no instance, and the Lean scalar type cannot carry one. No spectral statement is derived. Every statement carries the strength of its weakest named premise.
+\end{abstract}
+
+\vspace{4pt}
+\begin{pagezero}
+\textbf{Page zero --- what this is, in ordinary terms.}\par\smallskip
+A \emph{reader} is whatever takes up a relation and keeps a read of it: a person with a tally, an instrument with a calibration, a program with a log. Everything below is stated from the reader's side.
+\begin{enumerate}[leftmargin=1.6em]
+\item \textbf{Contact.} A relation meets a reader at one occurrence.
+\item \textbf{Read.} The reader keeps a read at a stated resolution. Two inputs can give the same read while differing in what the reader needed; that failure is called \emph{forget}.
+\item \textbf{Receipt and memory.} The reader writes one entry that lets another reader rebuild that occurrence (the receipt). Separately, memory is how different occurrences stay comparable.
+\item \textbf{Return and advance.} A read can return while the address moves on. The exact core makes this concrete: a four-step wheel returns its phase after one rotation, and in the same rotation the carried address takes one golden step.
+\item \textbf{Strength.} A claim is as strong as its weakest named premise. The status tags (\S\ref{sec:status}) say what kind of evidence stands behind each claim.
+\end{enumerate}
+\textbf{Where to start.} The mathematics: \S\ref{sec:root}--\S\ref{sec:return}. The vocabulary: \S\ref{sec:reader} and Appendix~C. What is proved in Lean and what is not: \S\ref{sec:field} and Appendix~E.
+\end{pagezero}
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\section{Conventions}\label{sec:conv}
+
+\subsection{Status vocabulary}\label{sec:status}
+Every theorem, display and table row in this paper carries one of seven statuses. They are fixed here once and used without restatement.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{4.4cm}@{}}
+\toprule
+Status & Meaning & Evidence it carries\\\midrule
+\Sfin & Algebraic identity in a declared finite carrier, checked in exact symbolic or algebraic computation. & Author's verifier (V-receipts); independent script (\S\ref{sec:indep}).\\
+\Sder & Exact consequence of displayed identities or of a stated construction. & The derivation given in the text.\\
+\Slean & Statement compiled in Lean 4.33.0 at a pinned commit, with an axiom audit; its scope is stated at the claim. & CI record at the pin (Appendix~E).\\
+\Scond & Proved under named premises; it is exactly as strong as the weakest premise. & Lean theorem with the premises as hypotheses.\\
+\Ssrc & Typed carrier, boundary or partial map retained at its cited source. & Citation only.\\
+\Sint & Declared map between carriers or readers. & Declaration only.\\
+\Scand & Next construction, with its test stated. & None yet.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{The governing rule}
+\begin{rulebox}
+\textbf{A result carries exactly the strength of its weakest named premise. Nothing crosses a type boundary by renaming.}
+\end{rulebox}
+Three failures are audited for in every statement: what was \emph{dropped} (a needed item is absent), what was \emph{added} without support (a claim, or a check with no content behind it), and whether the stated \emph{strength} exceeds the premises. Earlier receipts are append-only; a correction is a new receipt, not an edit.
+
+\subsection{Coordinate discipline}
+No word enters this register until four requirements are met:
+\[
+\text{word}\;\longleftrightarrow\;\text{typed map}\;\longleftrightarrow\;\text{invariant or condition}\;\longleftrightarrow\;\text{formal source coordinate.}
+\]
+Each source carries a transmitted text written by a person, the structure of its native form, a stated condition, and a recoverable office. Textual notices, constructions, field equations, mathematical theorems, computational procedures and current source declarations keep distinct record types. Citations keep their source-native lettering; each section opens with a local key for the symbols it uses, and Appendix~D reconciles the symbols that share letters.
+
+\section{The inherited record}\label{sec:inherited}
+One signature practice of \emph{Homo sapiens} is the deliberate use of enduring marks. A two-dimensional mark holds a noticed relation still: a motion in ordinary life, a relation between people, or a recurring observation of the world. It is a recoverable trace of an earlier occurrence. In ink, stone, diagrams, archives and binary screens, it lets a later reader reconstruct a prior observation. Lines, tallies, maps, scores, equations and proofs let one reader carry a relation to another and across time. The first observer need not remain present.
+
+This practice became a living lineage of reference, discovery, trial, correction, invention and reuse. Measurement and charting refine fit, make function more predictable, and give time a recoverable record. What works can be carried forward. Failure can teach. The two-dimensional reader serves the living read. A reference enters the lineage when a noticed difference becomes a recognized pattern, receives a fixed orientation and crafted form, and remains transportable, shareable and repairable. When it holds under declared conditions and holds again, it earns trust as usable reference. Its continued use requires that its needed differences remain carried as conditions change. \emph{Forget} names their collapse at a declared reader.
+
+\paragraph{Reader-first order.} The historical ledger (Appendix~A) remembers who fixed the references. The public form begins with how a relation becomes readable and shareable:
+\[
+\begin{gathered}\text{contact}\to\text{carried return}\to\text{identity}\to\text{recognition}\\
+\to\text{calibration}\to\text{finite chart}\to\text{update}\to\text{receipt.}\end{gathered}
+\]
+The finite two-dimensional reader comes after contact and calibration. It records an exact invariant relation inside its declared carrier. Field, reader, light, memory and identity keep their own source offices. The source condition of contact is itself ordered: address fixes a state, gate fixes an admitted operation, carrier retains the evolving value, boundary fixes scope, and contact yields a readable record.
+
+\paragraph{Order of this paper.} \S\ref{sec:reader} states the reader basis using declared interfaces only. \S\ref{sec:root}--\S\ref{sec:charts} build the exact finite root; nothing in them depends on \S\ref{sec:reader}. \S\ref{sec:join} joins the two. \S\ref{sec:jur}--\S\ref{sec:field} carry the jurisdictional and field-facing layers, with their Lean realizations. \S\ref{sec:verify} gives the receipts and \S\ref{sec:close} the closing word and the closure statement.
+
+\section{The reader basis}\label{sec:reader}
+This section uses declared interfaces only. No matrix of the finite root is needed to read it; where one is mentioned, the pointer is forward.
+
+\subsection{Offices}
+\lkey{$c_t$ is present contact; $\iota$ the retained identity criterion; $\Sigma$ the declared scope; $\rho_\Sigma$ the calibrated reader; $\mu_\Sigma$ its memory coordinate; $K_{\rho,t}$ its declared knowledge at one occurrence; $r_t$ that occurrence's receipt.}
+\begin{align*}
+c_t &:= \text{present typed contact},\\
+\mu_\Sigma(t) &:= \text{phase-coordinated retention of the contact relation at scope }\Sigma,\\
+K_{\rho,t} &:= \Read_{\rho_\Sigma}\bigl(c_t,\mu_\Sigma(t),\iota\bigr),\qquad a\text{ is knowable to }\rho\text{ at }t\iff a\in K_{\rho,t},\\
+r_t &:= \text{retained source, calibration and transform, with the residual for one occurrence.}
+\end{align*}
+These are reader offices and declared interfaces (\Ssrc); they do not enlarge the theorem scope of the finite verifier.
+
+\paragraph{Receipt and memory.} The receipt $r_t$ lets another reader reconstruct a stated occurrence. Memory $\mu_\Sigma$ is the phase-coordinated retention of the contact's relation at a declared scope, by which occurrences remain comparable. They are separate offices and neither is typed as the other.
+
+\subsection{Recognition and forget}
+\lkey{$\rho:X\to Y$ is a reader, $d_{\mathrm{req}}:X\to D_{\mathrm{req}}$ a required distinction, $\delta_{\mathrm{req}}:Y\to D_{\mathrm{req}}$ a decoder, $x_1,x_2\in X$ witness states.}
+\begin{defn}[Recognition and forget]\Sder
+The reader $\rho$ \emph{recognizes} $d_{\mathrm{req}}$ when $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$ for some decoder $\delta_{\mathrm{req}}$. The reader \emph{forgets} $d_{\mathrm{req}}$ when there exist $x_1,x_2\in X$ with $\rho(x_1)=\rho(x_2)$ and $d_{\mathrm{req}}(x_1)\neq d_{\mathrm{req}}(x_2)$.
+\end{defn}
+\begin{prop}\Sder
+If $\rho$ forgets $d_{\mathrm{req}}$ then no decoder $\delta_{\mathrm{req}}$ satisfies $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$; if $\rho$ recognizes $d_{\mathrm{req}}$ no such pair $x_1,x_2$ exists. The two conditions are exclusive and, on a given $d_{\mathrm{req}}$, exhaustive.
+\end{prop}
+\begin{proof}
+A decoder satisfying the equation would give $d_{\mathrm{req}}(x_1)=\delta_{\mathrm{req}}(\rho(x_1))=\delta_{\mathrm{req}}(\rho(x_2))=d_{\mathrm{req}}(x_2)$, contradicting the witness pair. Conversely, if $d_{\mathrm{req}}$ is constant on each fibre of $\rho$, define $\delta_{\mathrm{req}}(y)$ as that common value for $y\in\rho(X)$, and arbitrarily elsewhere ($D_{\mathrm{req}}$ is nonempty when $X$ is).
+\end{proof}
+\textbf{Scope recognition} is the silent coherence of a sufficiently prepared reader: contact, retained pattern, timing and action arrive as one usable relation before an explicit account is produced,
+\[
+\mathrm{ScopeRecognize}_{\rho,\Sigma}(c_t):=\Recognize_{\rho}\bigl(c_t,\mu_\Sigma(t),\iota\bigr)\qquad(\Ssrc).
+\]
+The finite root gives one exact instance of two sides that stay distinguishable while their metric relation is invariant under reversal: the mirror satisfies $H\tp GH=G$ (Proposition~\ref{prop:mirror}).
+
+\subsection{The twenty-eight words}\label{sec:words}
+The coordinate order is: Reader, Identity, Contact, Light, Memory, Recognition, Calibration, Metric, Gravity, Phase, Mirror, Carriage, Wheel, Motion, Scope, Time, Receipt, Return, Lift, Orbit, Worldline, Horizon, Constraint, Gate, Silence, Survival, Forget, Endurance. Each has one sentence here and a typed row (map, condition, source coordinates, status) in Appendix~C.
+\begin{description}[leftmargin=0pt,labelindent=0pt,itemsep=1pt,font=\normalfont\bfseries]
+\item[Reader] the declared carrier that takes up a relation at a stated resolution.
+\item[Identity] the retained criterion by which a reader recognizes what must continue through update.
+\item[Contact] the present typed meeting of carrier, boundary, light, address and stated conditions.
+\item[Light] present null contact under a metric, with finite null lines in the reader chart.
+\item[Memory] the phase-coordinated compositional relation that keeps distinct occurrences comparable across a declared scope.
+\item[Recognition] a required distinction factors through the declared read.
+\item[Calibration] fitting a read to declared words, instruments, references and residuals.
+\item[Metric] the signed rule that compares a declared relation; a compatible turn may also supply a positive local read.
+\item[Gravity] the metric field's stated curvature relation.
+\item[Phase] a position within an ordered turn.
+\item[Mirror] orientation reversal preserving the stated metric relation.
+\item[Carriage] metric-preserving transport along the declared order.
+\item[Wheel] a finite phase return whose carriage advances one address.
+\item[Motion] carriage of a declared state under a stated rule.
+\item[Scope] the declared reference and resolution of a read.
+\item[Time] ordered carriage measured from a declared scope, with returned phase and retained cycle carry.
+\item[Receipt] one retained occurrence record with its stated conditions.
+\item[Return] recurrence at the declared reader.
+\item[Lift] the retained address after a base read returns.
+\item[Orbit] an ordered series of returns with retained lifts.
+\item[Worldline] the declared rail along which an orbit is measured.
+\item[Horizon] a declared boundary of continuation.
+\item[Constraint] the condition governing a typed candidate's use.
+\item[Gate] the typed map assigning admission or fold.
+\item[Silence] a complete declared read with zero required residual.
+\item[Survival] the continuation condition carried with admission while the required invariant remains retained through motion.
+\item[Forget] a required distinction fails to factor through a declared read: one readout carries different required values.
+\item[Endurance] the closing read: after a half-turn the form survives, the difference remains, the reference returns and the read balances to zero, with nothing erased.
+\end{description}
+\section{The finite root}\label{sec:root}
+This section is exact and self-contained. Every statement is a computation on $2\times2$ matrices over $\QQ(\sqrt5)$; each is given with its derivation, cites the author's receipts \textit{(V-\dots)}, and is reproduced by the independent script of \S\ref{sec:indep}.
+
+\subsection{The carrier and the three root matrices}
+\lkey{$V=\RR^2$ is the reader plane and $I$ its identity map. $\Phi=(1+\sqrt5)/2$ is the golden ratio, so $\Phi^2=\Phi+1$ and $1-\Phi=-1/\Phi$. $Q$ is the recurrence matrix, $J$ the finite turn, $\Omega$ the oriented-pair form.}
+\begin{defn}[Root matrices]
+\[
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},\qquad J=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad \Omega=-J,\qquad \omega(u,v):=u\tp\Omega v.
+\]
+\end{defn}
+\begin{prop}[Recurrence]\Sder\ \textit{(H05 source; P05 chart)}\label{prop:rec}
+$Q^2=Q+I$ and $\det Q=-1$. With $\Fib0=0$, $\Fib1=1$ and $\Fib{n+1}=\Fib n+\Fib{n-1}$, for $n\ge1$
+\[
+Q^n=\begin{pmatrix}\Fib{n+1}&\Fib n\\\Fib n&\Fib{n-1}\end{pmatrix},\qquad Q^n\begin{pmatrix}1\\0\end{pmatrix}=\begin{pmatrix}\Fib{n+1}\\\Fib n\end{pmatrix}.
+\]
+\end{prop}
+\begin{proof}
+$Q^2=\begin{psmallmatrix}2&1\\1&1\end{psmallmatrix}=Q+I$. The formula holds at $n=1$, and multiplying it by $Q$ on the right gives the same form at $n+1$ by the recurrence.
+\end{proof}
+\begin{prop}[Dual-form return]\Sfin\ \textit{(V-I1; P16)}\label{prop:dual}
+$Q\tp\Omega Q=-\Omega$ and $(Q^2)\tp\Omega Q^2=\Omega$.
+\end{prop}
+\begin{proof}
+For every $2\times2$ matrix $M$, $M\tp\Omega M=(\det M)\,\Omega$. Here $\det Q=-1$ and $\det Q^2=1$.
+\end{proof}
+
+\subsection{The reader metric}
+\begin{defn}[Reader metric]
+$G:=[Q,\Omega]=Q\Omega-\Omega Q$. The signed read on $V$ is $\gG(v,w):=v\tp Gw$.
+\end{defn}
+\begin{thm}[Metric chart]\Sfin\ \textit{(V-A1--A5, V-H4; P05)}\label{thm:metric}
+\[
+G=[J,Q]=\begin{pmatrix}-2&1\\1&2\end{pmatrix},\qquad G=G\tp,\qquad G^2=5I,\qquad \det G=-5,\qquad G^{-1}=\tfrac15G .
+\]
+The eigenvalues of $G$ are $\pm\sqrt5$, so its signature is $(1,1)$, and $\sqrt5=\sqrt{-\det G}$. With $z=(x,y)\tp$,
+\[
+z\tp Gz=-2x^2+2xy+2y^2=-2(x-\Phi y)\bigl(x-(1-\Phi)y\bigr),\qquad \mathcal N_G=\RR(\Phi,1)\cup\RR(1-\Phi,1).
+\]
+Moreover $Q\tp GQ=-G$ and $(Q^2)\tp GQ^2=G$.
+\end{thm}
+\begin{proof}
+$Q\Omega=\begin{psmallmatrix}-1&1\\0&1\end{psmallmatrix}$ and $\Omega Q=\begin{psmallmatrix}1&0\\-1&-1\end{psmallmatrix}$; their difference is $G$. Since $\Omega=-J$, $[Q,\Omega]=[J,Q]$. Squaring gives $5I$. The factorization follows from $\Phi+(1-\Phi)=1$ and $\Phi(1-\Phi)=-1$: the product is $-2(x^2-xy-y^2)$. For the last claim, $Q$ is symmetric and $Q^2=Q+I$, so
+$Q\tp GQ=Q^2\Omega Q-Q\Omega Q^2=(Q+I)\Omega Q-Q\Omega(Q+I)=\Omega Q-Q\Omega=-G$.
+\end{proof}
+
+\subsection{The mirror}
+\begin{defn}[Mirror]
+$H:=G/\sqrt5$. Its entries, and those of $S$ and $\Lax$ below, lie in $\QQ(\sqrt5)$.
+\end{defn}
+\begin{prop}[Mirror]\Sfin\ \textit{(V-B2, V-E1--E7; P05)}\label{prop:mirror}
+$H=H\tp$, $H^2=I$, and $H\tp GH=G$.
+\end{prop}
+\begin{proof}
+$H^2=G^2/5=I$ and $H\tp GH=G^3/5=G\,(G^2/5)=G$, using $G=G\tp$ and Theorem~\ref{thm:metric}.
+\end{proof}
+
+\subsection{The turn, the phase family and the local $i$-fold}
+\begin{thm}[Turn]\Sfin\ \textit{(V-N1--N3; P05, P17)}\label{thm:turn}
+(i) $J^2=-I$ and $J\tp J=I$. (ii) $J\tp GJ=-G$: one turn reverses the metric sign. (iii) $J$ exchanges the two null lines: $J(\Phi,1)\tp=\Phi\,(1-\Phi,1)\tp$ and $J(1-\Phi,1)\tp=(1-\Phi)(\Phi,1)\tp$. (iv) $HJH=J^{-1}=-J$.
+\end{thm}
+\begin{proof}
+(i) is direct. (ii) $G J=\begin{psmallmatrix}1&2\\2&-1\end{psmallmatrix}$ and $J\tp(GJ)=\begin{psmallmatrix}2&-1\\-1&-2\end{psmallmatrix}=-G$. (iii) $J(\Phi,1)\tp=(-1,\Phi)\tp$ and $\Phi(1-\Phi)=-1$; the second identity is the same computation with $\Phi\leftrightarrow1-\Phi$. (iv) From (ii) and $J\tp=-J$ we get $JGJ=G$, hence $JG=GJ^{-1}=-GJ$ and $GJG=-JG^2=-5J$; so $HJH=GJG/5=-J$.
+\end{proof}
+Two consequences are used throughout. With $U_\alpha:=e^{\alpha J}=\cos\alpha\,I+\sin\alpha\,J$ one has $J=U_{\pi/2}$, $U_\pi=-I$, $U_{2\pi}=I$ and $HU_\alpha H=U_{-\alpha}$ \Sfin\ \textit{(V-B1, B3, H2--H3, H5, H9, N6)}. Under $(x,y)\leftrightarrow x+iy$ the map $J$ is multiplication by $i$.
+
+\begin{prop}[Local $i$-fold]\Sfin\ \textit{(V-I2; P17)}\label{prop:ifold}
+$\gJ(u,v):=\omega(u,Jv)=u\tp\Omega Jv=u\tp v$, so $\gJ(u,u)=\|u\|^2\ge0$.
+\end{prop}
+\begin{proof}
+$\Omega J=-J^2=I$.
+\end{proof}
+The positive local read $\gJ$ and the signed read $\gG$ share the carrier $V$ and keep different conditions: $\gJ$ is generated by the oriented relation and its compatible turn, $\gG$ by transport and orientation order.
+
+\subsection{The carriage}
+\begin{defn}[Carriage]
+$S:=HJ$ and $L_s:=e^{sS}$ for $s\in\RR$; $\Lax:=L_{\log\Phi}$.
+\end{defn}
+\begin{thm}[Carriage]\Sfin\ \textit{(V-B4--B6, V-H1, V-E7, V-N4, V-N7; P05)}\label{thm:carriage}
+\begin{enumerate}[label=(\roman*),nosep]
+\item $S=(2Q-I)/\sqrt5$, $S=S\tp$, $S^2=I$.
+\item $L_s=\cosh s\,I+\sinh s\,S$, $\;L_tL_s=L_{t+s}$, $\;\det L_s=1$, $\;\tr L_s=2\cosh s$.
+\item $L_s\tp GL_s=G$: carriage preserves the metric.
+\item $HL_sH=L_{-s}$: the mirror reverses the order of carriage.
+\item $\Lax=(Q+2I)/\sqrt5$, $\;\Lax=\Lax\tp$, $\;\Lax^2=Q^2$, $\;\Lax\tp G\Lax=G$, $\;H\Lax H=\Lax^{-1}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(i) $S=HJ=GJ/\sqrt5$ and $GJ=\begin{psmallmatrix}1&2\\2&-1\end{psmallmatrix}=2Q-I$, which is symmetric. Then $S^2=(GJG)J/5=-J^2=I$, using $GJG=-5J$ from the proof of Theorem~\ref{thm:turn}. (ii) follows from $S^2=I$ by the exponential series. (iii) $S$ and $G$ anticommute: $GS=G\,HJ=GGJ/\sqrt5=\sqrt5J$ and $SG=HJG=GJG/\sqrt5=-\sqrt5J$. Hence $GL_s=L_{-s}G$, and since $L_s$ is symmetric, $L_s\tp GL_s=L_sGL_s=L_sL_{-s}G=G$. (iv) $HSH=H\,HJ\,H=JH=-HJ=-S$ by Theorem~\ref{thm:turn}(iv), so $HL_sH=L_{-s}$. (v) $\cosh\log\Phi=(\Phi+\Phi^{-1})/2=\sqrt5/2$ and $\sinh\log\Phi=(\Phi-\Phi^{-1})/2=\tfrac12$, so $\Lax=\tfrac{\sqrt5}2I+\tfrac{2Q-I}{2\sqrt5}=\tfrac{Q+2I}{\sqrt5}$. Then $\Lax^2=(Q^2+4Q+4I)/5=Q+I=Q^2$, and the remaining identities are (iii), (iv) at $s=\log\Phi$.
+\end{proof}
+\begin{prop}[The carriage is never orthogonal]\Sder\ \textit{(finite guard V-E8, $1\le n\le8$)}\label{prop:nonorth}
+For every $n\ge1$, $(\Lax^n)\tp\Lax^n=Q^{2n}\neq I$.
+\end{prop}
+\begin{proof}
+$\Lax$ is symmetric, so $(\Lax^n)\tp\Lax^n=\Lax^{2n}=Q^{2n}$ by Theorem~\ref{thm:carriage}(v). By Proposition~\ref{prop:rec} the off-diagonal entry of $Q^{2n}$ is $\Fib{2n}\ge1$.
+\end{proof}
+The author's verifier records only the finite range $1\le n\le8$ and declines to extend it; the derivation above extends it to all $n\ge1$.
+
+\subsection{The sign character and the reflection--turn group}
+\begin{defn}[Carriage group]
+$\Grot:=\langle J,H,\Lax\rangle\subset GL_2(\QQ(\sqrt5))$, and $\Dfour:=\langle J,H\rangle$.
+\end{defn}
+\begin{thm}[Sign character]\Sfin/\Sder\ \textit{(V-E1--E7; V-E9 finite guard; P05)}\label{thm:chi}
+For every $\gamma\in\Grot$, $\gamma\tp G\gamma=\chi(\gamma)\,G$ with $\chi(\gamma)\in\{+1,-1\}$, and $\chi:\Grot\to\{\pm1\}$ is a homomorphism with
+\[
+\chi(J)=-1,\qquad \chi(J^2)=\chi(H)=\chi(\Lax)=+1 .
+\]
+In particular $H\tp GH=G$, which Proposition~\ref{prop:mirror} derives directly.
+\end{thm}
+\begin{proof}
+The three generators satisfy the law with the stated values by Theorem~\ref{thm:turn}(ii), Proposition~\ref{prop:mirror} and Theorem~\ref{thm:carriage}(iii). If $\gamma_1,\gamma_2$ satisfy it, then $(\gamma_1\gamma_2)\tp G\gamma_1\gamma_2=\gamma_2\tp(\gamma_1\tp G\gamma_1)\gamma_2=\chi(\gamma_1)\gamma_2\tp G\gamma_2=\chi(\gamma_1)\chi(\gamma_2)G$. $G$ is invertible, so $\chi(\gamma)$ is determined by $\gamma$ and is therefore multiplicative.
+\end{proof}
+The verifier runs the multiplication law over all twenty-seven words of length three in $J,H,\Lax$ \textit{(V-E9)}. The sign resolves phase modulo two; the four-address phase coordinate of \S\ref{sec:return} carries the remaining distinction.
+\begin{prop}[Reflection--turn group]\Sder\ \textit{(V-N6)}\label{prop:d4}
+$\Dfour=\langle J,H\rangle$ has order eight and is dihedral: $J$ has order four, $H^2=I$, $HJH=J^{-1}$, and $H\notin\langle J\rangle$.
+\end{prop}
+\begin{proof}
+$\langle J\rangle=\{I,J,-I,-J\}$ consists of rotations ($\det=1$), while $\det H=\det G/(\sqrt5)^2=-1$. With $HJH=J^{-1}$ the group is $\langle J\rangle\cup H\langle J\rangle$.
+\end{proof}
+\section{Return, rotation and time}\label{sec:return}
+\lkey{$z\in V$ is the carried address and $\varphi\in\ZZ/4$ its phase address. $\Fesc$ is the four-step wheel map, $\Lax$ its carried step, $\gamma$ a declared chart transformation, $G$ the reader metric and $\emech$ the paired phase-and-metric residual.}
+
+\subsection{The wheel}
+The phase wheel and the axial carriage have different offices:
+\[
+\Fesc(\varphi,z)=\begin{cases}(\varphi+1,z),&\varphi=0,1,2,\\(0,\Lax z),&\varphi=3,\end{cases}\qquad
+\Fesc^{\,4}(\varphi,z)=(\varphi,\Lax z)\ \text{ for every }\varphi\in\ZZ/4.
+\]
+\begin{prop}[Wheel return]\Sfin\ \textit{(V-B7, V-H7, V-N5; P06)}\label{prop:wheel}
+After four steps the phase address is returned and the carried address has advanced by exactly one $\Lax$.
+\end{prop}
+\begin{proof}
+From $\varphi=0$: $(0,z)\to(1,z)\to(2,z)\to(3,z)\to(0,\Lax z)$. From any other $\varphi$ the single carry occurs at the unique step where the phase passes from $3$ to $0$, so the same end state $(\varphi,\Lax z)$ results.
+\end{proof}
+This is the mechanical statement of the register: \emph{return admits relational difference.} The orbit $z_n=\Lax^nz_0$ satisfies $\Fesc^{\,4n}(\varphi,z_0)=(\varphi,z_n)$.
+
+\subsection{The residual of one rotation}
+\begin{defn}[Mechanical residual]
+$\emech(\varphi,z;\gamma):=\bigl(\varepsilon_\varphi(\varphi,z),\,\varepsilon_G(\gamma;z)\bigr)$ with $\varepsilon_\varphi(\varphi,z)=\mathrm{pr}_\varphi\Fesc^{\,4}(\varphi,z)-\varphi$ and $\varepsilon_G(\gamma;z)=(\gamma z)\tp G(\gamma z)-z\tp Gz$.
+\end{defn}
+\begin{prop}\Sfin\ \textit{(V-H6--H7; P05, P06)}\label{prop:resid}
+$\varepsilon_\varphi=0$; $\varepsilon_G(J^n;z)=\bigl((-1)^n-1\bigr)z\tp Gz$; $\varepsilon_G(H;z)=\varepsilon_G(\Lax^n;z)=0$.
+\end{prop}
+\begin{proof}
+Proposition~\ref{prop:wheel}, Theorem~\ref{thm:turn}(ii), Proposition~\ref{prop:mirror} and Theorem~\ref{thm:carriage}(iii).
+\end{proof}
+Recognition of one complete rotation of the wheel is $\emech=0$: its phase address is returned and its metric comparison is retained. The half-turn $J^2$, the metric mirror and the axial carriage retain the metric read; a single turn does not.
+
+\subsection{Return operators}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}l>{$}l<{$}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.2cm}@{}}
+\toprule
+Operator & \text{Exact law} & Office & Status\\\midrule
+$H$ & H^2=I & Mirror: reciprocal orientation. & \Sfin\\
+$\iturn:=J$ & \iturn^2=-I & Turn: quarter-phase action. & \Sfin\\
+$H\iturn H$ & H\iturn H=\iturn^{-1}=-\iturn & Returned turn: reversal inside the same relation. & \Sfin\\
+$L_s$ & HL_sH=L_{-s} & Carriage and reciprocal carriage. & \Sder\\
+$\Fesc$ & \Fesc^{\,4}(\varphi,z)=(\varphi,\Lax z) & Wheel return: phase repeats; carried address advances. & \Sfin\\\bottomrule
+\end{tabularx}
+\end{center}
+The forward and return directions are dual directions of one declared return relation. Neither supplies an external ground for the other. $\iturn$ keeps its subscript because bare $i$ is the scope point of \S\ref{sec:rail}.
+
+\subsection{The rail, the axial coordinate and time}\label{sec:rail}
+\lkey{$\mathbb H$ is the upper half-plane, on which $L=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ of determinant $1$ acts by $w\mapsto(aw+b)/(cw+d)$. The declared rail $\{\delta=0\}\subset\mathbb H$ is the axis of $\Lax$; $i\in\mathbb H$ is its scope point; $\Lambda$ is signed hyperbolic arclength from $i$ along the rail, oriented toward $\Phi$. $T=2\log\Phi$ is one axial period; $W$ is the recurring circle read; $\ell_0$ a declared metric scale; $\tau$ a proper-time coordinate; $\rho_t,\beta_t$ the phase reader and its angle at parameter $t$.}
+\begin{prop}[The rail]\Sder\ \textit{(V-F1--F7; P05)}\label{prop:rail}
+(i) $\Lax$ fixes exactly the two boundary points $\Phi$ and $1-\Phi$, the roots of $w^2-w-1$. The rail is the geodesic joining them: the semicircle of centre $\tfrac12$ and radius $\tfrac{\sqrt5}{2}$. It contains $i$ and is invariant under every $L_s$.
+(ii) $\tr L_s=2\cosh s$, so the metric translation length is $\ell_{\mathrm{ax}}(L_s)=2\arccosh(\tr L_s/2)=2|s|$.
+(iii) On the parameterized rail $z(s)=L_si$, set $\Lambda(z(s))=2s$. Then $\Lambda(L_tz)=\Lambda(z)+2t$ on the rail, and $\Lambda(\Lax z)=\Lambda(z)+T$ with $T=2\log\Phi$.
+\end{prop}
+\begin{proof}
+Since $\Lax=(Q+2I)/\sqrt5$ acts as $w\mapsto(3w+1)/(w+2)$, its fixed points satisfy $w^2-w-1=0$. Every $L_s=\cosh s\,I+\sinh s\,S$ shares the eigenvectors of $S$, so all share these fixed points and preserve the geodesic joining them. $|i-\tfrac12|^2=\tfrac54$, so $i$ lies on that semicircle. Part (ii) is the trace formula for translation length of an element of $SL_2(\RR)$. For (iii), the group law $L_tL_s=L_{t+s}$ (Theorem~\ref{thm:carriage}(ii)) turns $L_t$ into the shift $s\mapsto s+t$ on the parameter, and $\Lambda=2s$. As a check, $\Lax i=\tfrac{3i+1}{i+2}=1+i$ lies on the rail and $\cosh d(i,1+i)=1+\tfrac{1}{2}=\tfrac32=\cosh(2\log\Phi)$.
+\end{proof}
+The signed coordinate $\Lambda$ and the nonnegative translation length $\ell_{\mathrm{ax}}$ are distinct coordinates of the same carriage. The orbit $z_n=\Lax^nz_0$ is the sample at $s=n\log\Phi$; the rail together with this coordinate carries the declared worldline.
+
+\paragraph{Circle read, metric scale and phase reader.} The circle read is $W(\Lambda)=\exp(2\pi i\Lambda/T)$, so $W(\Lambda+T)=W(\Lambda)$: $\Lambda$ carries ordered address and $W$ reads recurring phase. Under a declared axial metric scale $\ell_0$ (\Ssrc),
+\[
+ds_{\mathrm{ax}}^2=-\ell_0^2\,d\Lambda^2,\qquad d\tau=\ell_0\,d\Lambda,\qquad
+\rho_t(\Lambda)=\exp\!\Bigl(\tfrac{t\Lambda}{2}J\Bigr),\qquad \frac{d\beta_t}{d\tau}=\frac{t}{2\ell_0}.
+\]
+The metric measures the ordered carriage through which phase advances.
+
+\subsection{Three return normal forms}
+\lkey{$p_{\mathrm{ax}}$ is the axial quotient map and $\bar\alpha_{\mathrm{ret}}$ its descended harmonic one-form with $p_{\mathrm{ax}}^{*}\bar\alpha_{\mathrm{ret}}=d\Lambda$; $\mathrm{core}$ is a positively oriented core cycle. $z_{\mathrm{pno}}$ is the piano phase read, $W_{\mathrm{pno}}$ its lifted key address, $\mathcal H_{\mathrm{pno}}$ its retained history. Source-native $p,z_w,W_k,\mathcal H_k$ remain at citation.}
+The same return grammar occurs on three separately typed carriers:
+\begin{center}\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{\raggedright\arraybackslash}p{1.5cm}@{}}
+\toprule
+Carrier & \text{Returned read} & \text{Continuing coordinate} & \text{Retained relation} & Status\\\midrule
+finite four-phase wheel & \varphi & \Lax z & \Fesc^{\,4}(\varphi,z)=(\varphi,\Lax z) & \Sfin\\[3pt]
+axial quotient & p_{\mathrm{ax}}(\Lax z)=p_{\mathrm{ax}}(z) & \Lambda(\Lax z)=\Lambda(z)+T & \oint_{\mathrm{core}}\bar\alpha_{\mathrm{ret}}=T & \Sder, \Ssrc\\[3pt]
+twelve-key temperament (P19) & z_{\mathrm{pno}}(k+12)=z_{\mathrm{pno}}(k) & W_{\mathrm{pno}}(k+12)=W_{\mathrm{pno}}(k)+1 & \mathcal H_{\mathrm{pno}}(k)\prec\mathcal H_{\mathrm{pno}}(k+12) & \Ssrc\\\bottomrule
+\end{tabularx}
+\end{center}
+Each row fixes the same structural relation at its own scale: a phase read closes, an address advances, and a retained relation preserves the traversal.
+\section{Action, charts and addresses}\label{sec:charts}
+
+\subsection{The finite action and its conserved quantity}
+\lkey{$z(s)\in V$ is the carried reader state and $\dot z$ its derivative in the carriage parameter $s$. $\Omega$ is the oriented-pair form, $H$ the mirror, $S=HJ$ the carriage generator, $\Lag$ the finite action and $\Hax$ its conserved quadratic quantity.}
+Because $\Omega S=-H$, the root carries a first-order action
+\[
+\Lag(z,\dot z)=\tfrac12\,z\tp\Omega\dot z+\tfrac12\,z\tp Hz,\qquad \Hax(z)=-\tfrac12\,z\tp Hz .
+\]
+\begin{thm}[Finite action]\Sfin\ \textit{(V-L1--L4; P12)}\label{thm:action}
+(i) $\Omega S=-H$. (ii) The Euler--Lagrange equation of $\Lag$ is $\Omega\dot z+Hz=0$, equivalently $\dot z=Sz$, equivalently $z(s)=L_sz(0)$. (iii) $S\tp H+HS=0$, and $\Hax(z(s))$ is constant along every solution.
+\end{thm}
+\begin{proof}
+(i) By Theorem~\ref{thm:turn}(iv) $JH=-HJ$, so $JHJ=-HJ^2=H$ and $\Omega S=-J(HJ)=-H$. (ii) With $\Omega\tp=-\Omega$ and fixed endpoints, $\delta\!\int\!\Lag\,ds=\int\delta z\tp(\Omega\dot z+Hz)\,ds$. Since $\Omega^{-1}=-\Omega$ and $\Omega H=-JH=HJ=S$, $\Omega\dot z+Hz=0$ gives $\dot z=-\Omega^{-1}Hz=\Omega Hz=Sz$, whose solution is $e^{sS}z(0)$. (iii) $S$ is symmetric, so $S\tp H+HS=HJH+H\,HJ=-J+J=0$. Also $HS=J$ is antisymmetric, so $\tfrac{d}{ds}\Hax=-z\tp H\dot z=-z\tp HSz=-z\tp Jz=0$.
+\end{proof}
+This action has the finite reader as its carrier. The field action of \S\ref{sec:field} keeps its own carrier and its stated regular branch.
+
+\subsection{The projective and unitary chart}
+\lkey{$\Mpr$ is the projective reflection, $\Kpr$ its positive chart form, $\Zch$ the complex chart map, $\Upr$ its quarter-turn, $\Ach$ the real adapter and $\Lpr$ the transported axial carriage. The source retains $M,K,P$ as native labels; the local labels isolate this chart from the manifold $\mathcal M$, the analytic trace weight $K_{\mathrm{tr}}$ and the source labels P01--P19.}
+\[
+\Mpr=\begin{pmatrix}1&0\\1&-1\end{pmatrix},\quad
+\Kpr=\begin{pmatrix}1&-1\\-1&2\end{pmatrix},\quad
+\Zch=\begin{pmatrix}1&i\\0&i\end{pmatrix},\quad
+\Upr=i\Mpr .
+\]
+\begin{thm}[Projective chart]\Sfin\ \textit{(V-C1--C6; P09)}\label{thm:proj}
+$\Mpr^2=I$, $\det\Mpr=-1$; $\Upr^2=-I$, $\Upr^4=I$; $\Upr=\Zch J\Zch^{-1}$; $\Kpr=(\Zch^{-1})^{\dagger}\Zch^{-1}\succ0$; $J^{\dagger}J=I$; $\Upr^{\dagger}\Kpr\Upr=\Kpr$.
+\end{thm}
+\begin{thm}[Real adapter]\Sfin\ \textit{(V-D1--D5; P09)}\label{thm:adapter}
+With
+\[
+\begin{gathered}
+\Ach=\begin{pmatrix}1&2+\sqrt5\\0&\sqrt5\end{pmatrix}:\qquad \Ach H\Ach^{-1}=\Mpr,\\[2pt]
+\Lpr:=\Ach\Lax\Ach^{-1}=\begin{pmatrix}1+\sqrt5&-2-\sqrt5\\1&-1\end{pmatrix},\qquad \Mpr\Lpr\Mpr=\Lpr^{-1},\quad\det\Lpr=1 .
+\end{gathered}
+\]
+The adapter family is $\{A':A'H=\Mpr A'\}=\{(x I+y\Mpr)\Ach: x,y\in\RR\}$, a two-dimensional space.
+\end{thm}
+Both are direct matrix computations over $\QQ(\sqrt5,i)$. The family claim holds because $\Mpr(xI+y\Mpr)=(xI+y\Mpr)\Mpr$, and because the solution space of $A'H=\Mpr A'$ is two-dimensional for two reflections of the same eigenvalue type.
+
+\subsection{Metric address and the finite factor profile}
+\lkey{$x=a+b\Phi\in\ZZ[\Phi]$ is a quadratic-integer address, $z_x=(b,a)\tp$ its reader-plane coordinate, $\Nalg$ its signed algebraic norm, and $\Fac$ its declared prime-factor profile.}
+\begin{prop}[Norm address]\Sfin\ \textit{(V-I3; P15)}\label{prop:norm}
+\[
+\begin{gathered}
+\Nalg(a+b\Phi)=a^2+ab-b^2,\qquad z_x\tp Gz_x=2\Nalg(x),\\
+\Nalg(\Phi x)=-\Nalg(x),\qquad \Nalg(\Phi^2x)=\Nalg(x).
+\end{gathered}
+\]
+\end{prop}
+\begin{proof}
+$\Nalg$ is the product of the two conjugates, $(a+b\Phi)(a+b(1-\Phi))=a^2+ab-b^2$. With $z_x=(b,a)\tp$, $z_x\tp Gz_x=-2b^2+2ab+2a^2$. Since $\Phi(a+b\Phi)=b+(a+b)\Phi$, $\Nalg(\Phi x)=b^2+b(a+b)-(a+b)^2=-(a^2+ab-b^2)$.
+\end{proof}
+For $x\ne0$ define $\Fac(x):=\bigl(v_p(|\Nalg(x)|)\bigr)_{p\text{ prime}}\in\bigoplus_p\NN$, the prime profile of the absolute norm. Because the absolute norm is carried through the $\Phi$-step, $\Fac(\Phi x)=\Fac(x)$ \Sder. $\Fac$ is a declared arithmetic reader: it may enter a meaning or function packet only through a stated reader, comparison and use condition.
+
+\begin{prop}[Four-wheel finite address]\Sfin\ \textit{(V-I4; P18)}\label{prop:137}
+$\Fib9=34$, $\Luc5=11$, and $137=1+4\Fib9=(\Luc5)^2+4^2$. In $\mathbb F_{137}^{\times}$: $4^{17}\equiv-1\pmod{137}$, $\mathrm{ord}_{137}(4)=34$, and $\mathbb F_{137}^{\times}/\langle4\rangle\cong C_4$. Also $548=4\cdot137$ and $\ZZ/548\ZZ\cong\ZZ/4\ZZ\times\ZZ/137\ZZ$.
+\end{prop}
+\begin{proof}
+$1+136=137$ and $121+16=137$. $4^{17}\equiv136\equiv-1$, so $4^{34}\equiv1$; the order divides $34$ and exceeds $2$ (since $4^2=16\ne1$) and $17$ (since $4^{17}\ne1$), so it is $34$. $\mathbb F_{137}^{\times}$ is cyclic of order $136=4\cdot34$, so the quotient by the subgroup of order $34$ is cyclic of order $4$. $\gcd(4,137)=1$ gives the Chinese-remainder isomorphism.
+\end{proof}
+This is a finite address closure: a four-phase quotient carries an order-34 multiplicative transport. Any empirical calibration retains its own carrier and conditions.
+
+\paragraph{Arithmetic fold interface.} \Scand\ $\mathcal T_{\mathrm{arith}}:\mathcal K_{\mathrm{arith}}\to\mathcal P_i$ names a proposed arithmetic-to-positive-read map between declared carriers, with $\mathcal Q_{\mathrm{arith}}(f)=\Omega_{\mathcal P_i}(\mathcal T_{\mathrm{arith}}f,J_i\mathcal T_{\mathrm{arith}}f)=\|\mathcal T_{\mathrm{arith}}f\|^2$, where $\mathcal Q_{\mathrm{arith}}$ is a source-declared quadratic form distinct from $Q$. Its domain, criterion class, map and equality conditions remain to be declared and checked at source. The finite local read $\gJ$ is already exact (Proposition~\ref{prop:ifold}); this line preserves the separate construction an arithmetic extension requires.
+
+\subsection{The analytic phase reader}
+\lkey{$\zeta,\xi$ retain Riemann's analytic source functions; $\Xi(t)=\xi(\tfrac12+it)$ is their completed scalar read. $\lambda=v+kT$ separates the local phase cell $v$ from the ordered cell count $k$; $U_t$ reads local phase, $\mathcal H_t$ carries it from cell to cell, and $K_{\mathrm{tr}}$ is the source-retained trace weight.}
+Riemann's 1859 source (H14) carries $\zeta$ and the completed $\xi$. The cell decomposition, phase reader and trace construction below are a present source declaration \Ssrc\ with their own carrier. With $U_t(v)=U_{tv/2}$,
+\[
+\begin{gathered}
+\lambda=v+kT,\ \ 0\le v<T,\ k\in\ZZ_{\ge0};\qquad
+\rho_t(v+kT)=U_t(v)\,\mathcal H_t^{\,k},\ \ \mathcal H_t=\exp(t\log\Phi\,J);\\[2pt]
+\Xi(t)=\sum_{k=0}^{\infty}\int_0^T K_{\mathrm{tr}}(v+kT)\,\tfrac12\tr\!\bigl(U_t(v)\mathcal H_t^{\,k}\bigr)\,dv .
+\end{gathered}
+\]
+The first factorization is exact: $\exp\bigl(\tfrac t2(v+kT)J\bigr)=\exp\bigl(\tfrac{tv}2J\bigr)\exp(kt\log\Phi\,J)$ since $T=2\log\Phi$ \Sder. A finite phase closure after $m$ axial cells satisfies $\mathcal H_t^{\,m}=I\iff mt\log\Phi\in2\pi\ZZ$ \Sder. The trace weight $K_{\mathrm{tr}}$ belongs to its source; the infinite $k$-sum carries unbounded lift while the local cell remains a returning phase read.
+
+Evenness $\Xi(-t)=\Xi(t)$ is a symmetry of the completed scalar read. It is not a time evolution. Evaluating $\Xi(t)$ is an ordered process on its own carrier (an address $t$, an algorithm state, a stated method and a stated precision); the static relation and the dynamic computation meet at the evaluation interface $(t,\text{method},\text{precision})\mapsto\Xi(t)$.
+\section{The reader on the root}\label{sec:join}
+\S\ref{sec:reader} fixed the reader offices as declared interfaces; \S\ref{sec:root}--\S\ref{sec:charts} fixed the exact root. This section states where they meet and what stays unproved at the join.
+
+\subsection{Contact record and normal form}
+\lkey{$\Pi$ forms a contact record; $e_\Pi$ is its metric carrier; $\ell$ is light; $w$ is ordered address; $r$ is the appended receipt. $U_{\mathrm{rec}}$ is a declared local update, $\rho_{\mathrm{rec}}$ its reader at a stated resolution, and $\mathsf L$ its ordered outcome ledger.}
+The contact record retains carrier, relation, address and occurrence together:
+\[
+\Pi(e_\Pi,\ell)=c,\qquad c=(e_\Pi,\ell,w,r).\qquad(\Ssrc)
+\]
+A second source record (P15) gives the carried contact normal form. With $B_{\mathrm{rec}}:=Q^2$, $U_{\mathrm{rec}}:V\times E\to V$, $\rho_{\mathrm{rec}}:V\to Y$ and $\mathsf L\in Y^{*}$,
+\[
+\mathcal C_{\rho_{\mathrm{rec}}}(z,e,\mathsf L)=\Bigl(U_{\mathrm{rec}}(B_{\mathrm{rec}}z,e),\ \mathrm{snoc}\bigl(\mathsf L,\rho_{\mathrm{rec}}\,U_{\mathrm{rec}}(B_{\mathrm{rec}}z,e)\bigr)\Bigr).\qquad(\Ssrc)
+\]
+$B_{\mathrm{rec}}$ carries reversible transport; $\rho_{\mathrm{rec}}$ fixes the reader resolution; $\mathsf L$ retains the order of reader outcomes. The root supplies one exact fact about $B_{\mathrm{rec}}$: $Q^2$ is invertible and preserves both $\omega$ and $G$ (Proposition~\ref{prop:dual}, Theorem~\ref{thm:metric}) \Sder. The construction supplies the historical office of receipt without retyping memory: $r$ reconstructs a stated occurrence, while $\mu_\Sigma$ retains the relation by which occurrences remain comparable.
+
+\paragraph{The field-to-reader adapter.} The declared transport from the field carrier to the rail $\{\delta=0\}\subset\mathbb H$ of \S\ref{sec:rail} is
+\[
+\chi_\Pi:e_\Pi\longrightarrow\{\delta=0\}\subset\mathbb H,\qquad \chi_\Pi\circ L_e=\Lax\circ\chi_\Pi .
+\]
+\Scand\ It becomes active with a declared field transport $L_e$, a calibration and a carrier-to-rail map; none is supplied at source.
+
+\subsection{Compositional memory}
+\lkey{$\mathcal P$ and $\mathcal R$ are declared path-or-word categories, $\id_x$ is the identity path at $x$, and $\MEM$ is the source-declared functor between them. $\mathrm{MR}$ is a Memory Return datum; its subscripts prevent collisions with the packet, reader, residual and receipt offices elsewhere.}
+\[
+\begin{gathered}
+\MEM:\mathcal P\to\mathcal R,\qquad \MEM(\gamma_2\circ\gamma_1)=\MEM(\gamma_2)\circ\MEM(\gamma_1),\\
+\MEM(\id_x)=\id_{\MEM(x)}.\qquad(\Ssrc;\ \text{H34})
+\end{gathered}
+\]
+The source-normal datum makes its fields explicit:
+\[
+\mathrm{MR}=\bigl(r,\,x,\,p_{\mathrm{lift}},\,\gamma,\,\tilde\gamma,\,\varepsilon_{\mathrm{deck}},\,\eta_{\mathrm{act}},\,\rho_{\mathrm{rep}},\,D_{\rho_{\mathrm{rep}}}(\varepsilon_{\mathrm{deck}}),\,R_{\mathrm{MR}}\bigr),\qquad D_{\rho_{\mathrm{rep}}}(g)=\rho_{\mathrm{rep}}(g)-I.
+\]
+$\mathrm{MR}$ retains a return reader, a lift, an endpoint defect, a represented difference and a reconstructible occurrence record. $\MEM$ answers how occurrences remain comparable; $R_{\mathrm{MR}}$ answers which occurrence was retained. Their offices remain separate.
+
+\subsection{Interlocking structural compression}
+\begin{prop}[Four relations in one chart]\Sfin\ \textit{(V-I1, V-I2, V-B2; P05, P16, P17)}\label{prop:interlock}
+In the finite chart: $J^2=-I$, $H^2=I$, $HJH=-J$; $\gJ(u,v)=\omega(u,Jv)=u\tp v$; $J\tp\Omega J=\Omega$ and $J\tp GJ=-G$; $Q\tp\Omega Q=-\Omega$, $Q\tp GQ=-G$; $(Q^2)\tp\Omega Q^2=\Omega$, $(Q^2)\tp GQ^2=G$.
+\end{prop}
+\begin{proof}
+Theorems~\ref{thm:metric} and~\ref{thm:turn}, Propositions~\ref{prop:dual} and~\ref{prop:ifold}; $J\tp\Omega J=\Omega$ because $\det J=1$.
+\end{proof}
+One recurrence step $Q$ reverses both signed forms ($\omega$ and $G$) and $Q^2$ restores them. The turn $J$ preserves $\omega$ and reverses $G$ only. The positive local read $\gJ$, the signed metric read $\gG$ and the return pair $(J,H)$ therefore occupy one finite chart with distinct jobs. The contact operator carries an ordered update and reader outcome; $\MEM$ carries comparison through composition; the receipt retains a reconstructible occurrence.
+
+\subsection{The read--write relation}\label{sec:rw}
+\lkey{$\iturn$ is the finite turn, $H$ its mirror, $\Phird$ a declared read of $e$-carriage, $\Psiwr$ a declared write of $g$-memory. $\tilde E_e$ and $\tilde M_g$ are declared lifted carriers with declared quotient maps $\pi_e:\tilde E_e\to E_e$ and $\pi_g:\tilde M_g\to M_g$; $\tilde\Psi_{\mathrm{wr}}$ is the candidate lift of the $e$-carriage through the write relation. $A_e$ and $B_g$ are candidate adapters; $E_e$, $V$, $Y$ and $M_g$ are their carriers. Bare $\Phi$ and $\Psi$ keep their golden-root offices.}
+The compressed closure has four offices: $\iturn:=J$ (one finite turn), $H$ (the metric mirror), $\Phird$ (read of declared $e$-motion) and $\Psiwr$ (write of declared $g$-memory). The exact finite relation is
+\[
+H\,\iturn\,H=\iturn^{-1}=-\iturn\qquad(\Sfin,\ \text{Theorem~\ref{thm:turn}(iv)}).
+\]
+Mirror is carried by $H$; $\iturn$ is the turn that mirror conjugates. Read and write are the directed offices coupled by the returned turn. They may use the declared intermediate carrier $Y$; no supporting office lies outside the declared relation. The stated Lean target is the commuting read--write diagram
+\[
+A_e:E_e\to V,\quad B_g:V\to M_g,\quad \Phird:E_e\to Y,\quad \Psiwr:Y\to M_g,\qquad B_g\circ\iturn\circ A_e=\Psiwr\circ\Phird .
+\]
+The candidate lift is typed independently of the finite matrix closure:
+\[
+\tilde\Psi_{\mathrm{wr}}:\tilde E_e\longrightarrow\tilde M_g,\qquad \pi_g\circ\tilde\Psi_{\mathrm{wr}}=\Psiwr\circ\Phird\circ\pi_e .
+\]
+The right-hand route has the compositional shape of Recognition, $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$, while keeping distinct carriers and offices. Its Forget form occurs on a declared pair $e_1,e_2\in E_e$ with $\Phird(e_1)=\Phird(e_2)$ while $(B_g\circ\iturn\circ A_e)(e_1)\ne(B_g\circ\iturn\circ A_e)(e_2)$: then no $\Psiwr$ can make the diagram commute at both points \Sder\ (a commuting $\Psiwr$ would force equal values). The turn--mirror identity is \Sfin. The read--write and lifted-write diagrams are \Scand\ until the carriers, quotient maps and adapters are supplied at source.
+
+\subsection{Later source interfaces}
+Each source below refines rows already in the register; no word is added. Each carrier keeps its native type. The shared seam is a returned read with a retained lifted relation.
+
+\paragraph{Bell and CHSH: joint correlation record (H35, H36).} \emph{Local key:} $u_A,u_B$ settings; $o_A,o_B\in\{\pm1\}$ outcomes; $\lambda_{\mathrm{hid}}$ the intermediate hidden variable; $\rho_{\mathrm{hid}}$ its measure; $p_{\mathrm{jt}}$ the joint distribution; $p_A,p_B$ its conditional factors; $E_{\mathrm{cor}}$ correlation; $S_{\mathrm{CHSH}}$ the two-setting sum. The settings are independent of $\lambda_{\mathrm{hid}}$, and the factorization condition is
+\[
+p_{\mathrm{jt}}(o_A,o_B\mid u_A,u_B,\lambda_{\mathrm{hid}})=p_A(o_A\mid u_A,\lambda_{\mathrm{hid}})\,p_B(o_B\mid u_B,\lambda_{\mathrm{hid}}),
+\]
+with $p_{\mathrm{jt}}(o_A,o_B\mid u_A,u_B)=\int p_{\mathrm{jt}}(\cdots\mid\lambda_{\mathrm{hid}})\,d\rho_{\mathrm{hid}}$. For two settings per side and $E_{\mathrm{cor}}(i,j)=\sum o_Ao_B\,p_{\mathrm{jt}}(o_A,o_B\mid u_A^i,u_B^j)$,
+\[
+S_{\mathrm{CHSH}}=E_{\mathrm{cor}}(0,0)+E_{\mathrm{cor}}(0,1)+E_{\mathrm{cor}}(1,0)-E_{\mathrm{cor}}(1,1),\qquad |S_{\mathrm{CHSH}}|\le2 .
+\]
+The bound holds under the stated factorization and setting independence. Bell fixes the factorized condition; CHSH makes it experimentally addressable. The shared form with Recognition is passage through an intermediate: Bell's condition determines a declared joint distribution by mixing product kernels indexed by $\lambda_{\mathrm{hid}}$; Recognition determines a required distinction by decoder composition through the intermediate $\rho$-output. Carriers and conditions remain separate. Rows 3 and 6. \Ssrc.
+
+\paragraph{Berry: phase retained by a closed carriage (H38).} \emph{Local key:} $R_{\mathrm{par}}$ parameter point; $H_{\mathrm{Ham}}$ its Hamiltonian; $|n_B\rangle$ an isolated nondegenerate eigenstate with energy $E_B$; $C_{\mathrm{par}}$ a closed parameter loop traversed in time $T_{\mathrm{ad}}$; $\gamma_B$ the geometric phase. Set $|\psi(0)\rangle=|n_B(R_{\mathrm{par}}(0))\rangle$ and carry it adiabatically once around $C_{\mathrm{par}}$ with $R_{\mathrm{par}}(T_{\mathrm{ad}})=R_{\mathrm{par}}(0)$. Then
+\[
+\begin{gathered}
+|\psi(T_{\mathrm{ad}})\rangle=\exp\!\Bigl(-\tfrac{i}{\hbar}\!\int_0^{T_{\mathrm{ad}}}\!E_B(R_{\mathrm{par}}(t))\,dt\Bigr)e^{i\gamma_B(C_{\mathrm{par}})}|\psi(0)\rangle,\\[2pt]
+\gamma_B(C_{\mathrm{par}})=i\oint_{C_{\mathrm{par}}}\langle n_B|\nabla_Rn_B\rangle\cdot dR_{\mathrm{par}}\pmod{2\pi}.
+\end{gathered}
+\]
+The base ray returns; the lifted state retains the phase fixed by the loop. The carrier is a connection on a line bundle over parameter space, not the deck action of the Lift row. Aharonov--Bohm (H33) remains the witness for a loop in space; Berry's loop lies in parameter space. Rows 10, 18, 19. \Ssrc.
+
+\paragraph{Apple II: programmable reader loop (H37).} \emph{Local key:} $\mathrm{in}_n$ declared input; $m^{\mathrm{mach}}_n$ stored machine state; $\mathrm{prg}_n$ program and processor state; $\ell_{n+1}$ emitted display light; $\rho_\Sigma$ the calibrated human or instrument reader. One typed abstraction is
+\[
+(\mathrm{in}_n,m^{\mathrm{mach}}_n,\mathrm{prg}_n)\xrightarrow{\ \text{clocked update}\ }m^{\mathrm{mach}}_{n+1}\xrightarrow{\ \text{video map}\ }\ell_{n+1}\xrightarrow{\ \rho_\Sigma\ }\text{read in }Y .
+\]
+The clock supplies declared update order; stored machine state remains available at the next update. Receipt is a separate append-only record with its own reconstructive office. The row types one instance of a programmable reader loop; hardware credit is Steve Wozniak's, and the product and its public presentation came through the Wozniak--Jobs collaboration. Historical priority is a classification question whose criterion and comparison set belong in the record. Rows 1, 4, 14. \Ssrc.
+\section{Jurisdiction and admission}\label{sec:jur}
+\lkey{$p$ is a packet and $J(p)$ its jurisdiction; $\Gamma_{J(p)}$ its typing context; $D_{\Gamma_{J(p)}}$ the typed gate domain; $\theta_{J(p)}$ its survival condition; $\eHS$ the jurisdictional residual. $H^{\mathrm{hist}}_n$ is the retained past at horizon index $n$; $\mathcal F^{\mathrm{hor}}_n$ the indexed carrier of tagged future packets; $\mathrm{Admit}_n$ the partial admission map.}
+
+\subsection{The five rows}
+Five words of the register (rows 22--26: Horizon, Constraint, Gate, Silence, Survival) are source declarations (P07, with P14); all are \Ssrc.
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Horizon.} $(H^{\mathrm{hist}}_n,\mathcal F^{\mathrm{hor}}_n,\mathrm{Admit}_n)$ with $\mathrm{Admit}_n:\mathcal F^{\mathrm{hor}}_n\rightharpoonup\mathcal L^{\mathrm{hor}}_{n+1}$, and $\mathrm{Th}\nvdash\mathrm{Gd}_{\mathrm{Th}}$ under the stated formal hypotheses (H26, H28, H29). The horizon index advances with the reader; the mirror $H$ does not act on $H^{\mathrm{hist}}_n$.
+\item \textbf{Constraint.} $\Gamma_{J(p)}=(\mathrm{Condition},\mathrm{Constraint},\mathrm{SourceAuthority},\mathrm{Namespace})_{J(p)}$.
+\item \textbf{Gate.} $\mathrm{Gate}_{\Gamma_{J(p)}}:D_{\Gamma_{J(p)}}\to\{\mathrm{can},2\}$, the binary fold gate.
+\item \textbf{Silence.} $\eHS(p)=0$ and $\mathrm{Silence}_{\mathrm{fit}}(p)=1\iff\mathrm{Complete}(p)$.
+\item \textbf{Survival.} $\theta_{J(p)}(x(p))=1$: the required invariant remains carried through admitted motion.
+\end{itemize}
+Three interfaces stay open: the packet-to-jurisdiction map $\mathrm{jur}:\mathcal O\to\mathcal J$; the translation $\{\mathrm{can},2\}\leftrightarrow\{\mathrm{can},\mathrm{cannot},\mathrm{open}\}$ between the binary fold gate and the separate three-outcome gate; and the adapter $\emech\to\eHS$ (occurrence constructor, reader, calibration, comparison map). The finite residual $\emech$ of \S\ref{sec:return} and $\eHS$ are separate residuals joined only by that adapter, which is not supplied \Sint.
+
+\subsection{The Lean realization (Minimum Mechanics 010u)}\label{sec:010u}
+Part 010u formalizes the jurisdictional structure as the chain
+\[
+\text{Jurisdiction}\to\text{Typed}\to\text{Gate }(\mathrm{can}/\mathrm{fold2})\to\text{Survival}\to\text{Reader}\to\text{Receipt}\to\text{Enough},
+\]
+with $F$ for the unwitnessed future. Its gate is the register's binary gate. Its central predicate is
+\[
+\mathrm{Admitted}(p)\;:=\;\text{typed}\wedge\text{constraint}\wedge(\text{gate}=\mathrm{can})\wedge\text{survival}\wedge(\text{drop}=\text{add}=\text{strength}=0),
+\]
+where the three residuals are the audit failures of \S\ref{sec:conv}: what was dropped, what was added without support, and the strength by which a statement exceeds its premises.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Evidence & Record\\\midrule
+Pin & \texttt{b9e939d514a63fb021592f79a316f70cbc70ed8a}\\
+Compile & CI \#5 green at the pin; archive run \#302 green\\
+Scope & 45-module closure; 20 \texttt{\#print axioms} audits\\
+Source hash & \texttt{47aeccb2\dots} (SHA-256 prefix)\\\bottomrule
+\end{tabularx}
+\end{center}
+\textbf{Reading of the result.} \Slean\ at the level stated, which is modest. Most theorems unpack the definitions; they certify that the definitions are mutually consistent, and they say nothing about whether a given system is admitted. The one result with standard content is \bs{collision\_refuses\_unsourced\_reconstruction}, which has the shape of the Forget condition of \S\ref{sec:reader}: a collision of reads refuses reconstruction without a source. The word ``universal'' in the 010u notes is definitional. One gap is recorded: the history conjunct of \textbf{Admitted} is not tied to \textbf{Enough}, so \textbf{Enough} does not require it. This paper does not identify $F$ with the register's $\mathcal F^{\mathrm{hor}}_n$.
+
+\section{The Hamiltonian closure}\label{sec:field}
+This section carries the field-facing layer: what the register declares about the field action, what Minimum Mechanics 010k--010u prove about its Hamiltonian form, under what premises, and where the proofs stop.
+
+\subsection{The field action and the obligation chain}
+\lkey{$M$ is source-native manifold lettering in this action. $\Pi^A{}_\mu$ is a rank-four coframe; $\hat\eta$ and $\hat C$ its internal symmetric and antisymmetric forms; $h(\Pi)$ and $f(\Pi)$ their induced metric and two-form. $g$ is the independent metric, $A$ its electromagnetic potential, $\FEM=dA$ its curvature, $B^{\mu\nu}$ and $\lambda^{\mu\nu}$ multipliers, $R(g)$ the Ricci scalar; $c,G_N,\mu_0,\Lambda_{\mathrm{cos}},\chi$ keep their source-declared constant and coupling offices.}
+For a rank-four $E$-valued coframe $\Pi^A{}_\mu$, $h_{\mu\nu}(\Pi)=\hat\eta_{AB}\Pi^A{}_\mu\Pi^B{}_\nu$ and $f_{\mu\nu}(\Pi)=\chi\hat C_{AB}\Pi^A{}_\mu\Pi^B{}_\nu$. The constrained field action (P13) is
+\[
+\begin{aligned}
+\mathcal S_{\mathrm{SF}}=\int_M\Bigl[&\tfrac{c^3}{16\pi G_N}\bigl(R(g)-2\Lambda_{\mathrm{cos}}\bigr)-\tfrac1{4\mu_0}F^{\mathrm{EM}}_{\mu\nu}F^{\mathrm{EM}\,\mu\nu}\\
+&+\tfrac12B^{\mu\nu}\bigl(\FEM_{\mu\nu}-f_{\mu\nu}(\Pi)\bigr)+\lambda^{\mu\nu}\bigl(g_{\mu\nu}-h_{\mu\nu}(\Pi)\bigr)\Bigr]\sqrt{-g}\,d^4x,
+\end{aligned}
+\]
+and its multiplier equations retain the two suture conditions $\FEM_{\mu\nu}=f_{\mu\nu}(\Pi)$ and $g_{\mu\nu}=h_{\mu\nu}(\Pi)$. On the stated regular branch the source carries the Einstein--Maxwell reduction \Ssrc. This is a constrained field action with its own carrier; $\Lag$ of \S\ref{sec:charts} remains the exact finite action of the reader carrier.
+
+The continuum record (P14) states the obligations from the finite root to an observable, each retaining its stated conditions:
+\[
+\begin{gathered}\text{finite root}\to\text{variational/Hamiltonian realization}\to\text{constraint and gauge reduction}\\
+\to\text{refinement and quotient}\to\text{observable transport.}\end{gathered}
+\]
+It requires compatible transport, stated quotient conditions and a surviving observable at field resolution, and it joins the reader by the typed interface \emph{field carrier $\to$ contact and chart $\to$ finite reader $\to$ declared return and receipt} \Ssrc, conditional on the record's reduction and observable conditions.
+
+\begin{rulebox}
+\textbf{Where the Lean closure sits.} 010k--010u address the second and third nodes, the Hamiltonian realization and the constraint algebra, for Einstein--Maxwell. They do not address the first arrow (finite root $\to$ Hamiltonian realization), the fourth node, or the fifth. No Lean object joins the finite root of \S\ref{sec:root} to the structure below; they are joined only by the declared P14 interface.
+\end{rulebox}
+
+\subsection{The minimum field structure}
+Everything the closure proves is stated over the following data, laws, one bracket and three generators.
+\begin{description}[leftmargin=0pt,labelindent=0pt,font=\normalfont\bfseries,itemsep=3pt]
+\item[Data.] Two cotangent sectors, gravity $(\gamma,\pi)$ and electromagnetism $(A,E)$, over one transport algebra $V$ with commutator $[u,v]$. A symmetric pairing $\langle\ ,\ \rangle$ that vanishes on zero. A transport $T_v$ and its adjoint $T_v^{*}$. Gravity has six independent symmetric components, and the off-diagonal momentum components carry a factor $2$.
+\item[Two laws.] Adjoint duality $\langle T_v^{*}p,q\rangle=\langle p,T_vq\rangle$, and the Lie representation $[T_u,T_v]=T_{[u,v]}$ inside the pairing. The Lean structure \bs{CotangentSlice} has no additivity or bilinearity field; linearity belongs to a faithful instance, not to the interface.
+\item[One bracket.] $\{F,K\}=\langle F_\gamma,K_\pi\rangle-\langle F_\pi,K_\gamma\rangle+\langle F_A,K_E\rangle-\langle F_E,K_A\rangle$. There is no second bracket.
+\item[Three generators.] Gauss $G[s]=\langle E,s\rangle$; the improved momentum generator $D[v]=\langle\pi,T_v\gamma\rangle+\langle E,T_vA\rangle=C[v]+G[v\!\cdot\!A]$, where $C[v]$ is the unimproved gauge-covariant momentum generator; and the Hamiltonian $H[N]=\int N\mathcal H$, with
+\[
+\mathcal H=\frac{a}{\sqrt\gamma}\Bigl(\pi^{ij}\pi_{ij}-\tfrac12\pi^2\Bigr)-b\sqrt\gamma\,(R-2\Lambda)+\frac{\mu_0}{2\sqrt\gamma}\gamma_{ij}E^iE^j+\frac{\sqrt\gamma}{4\mu_0}F_{ij}F^{ij},\qquad ab=1.
+\]
+\end{description}
+The constants $c,G_N,\mu_0$ keep their source-declared offices; the closure fixes only the relative normalization $ab=1$.
+
+\subsection{Exact results}\label{sec:exact010}
+\begin{thm}[Results of the closure that need no premise beyond the two laws]\Slean\ \textit{(010k--010p; scope as stated)}
+\begin{enumerate}[label=\arabic*.,nosep]
+\item From the two laws alone: $\{D[u],D[v]\}=D[[u,v]]$, $\{D[v],G[s]\}=G[T_vs]$ and $\{G,G\}=0$.
+\item Chain rules: $\{D,H\}=-(\text{variation of }H\text{ under }D)$ and $\{G,H\}=-(\text{gauge response of }H)$, for any $H$ with supplied gradients.
+\item Pointwise algebra in dimension three. For any $g$ with inverse $B$, with $\tau=\tr(gP)$, $\lambda=\tr(BH)$, $K=2gPg-\tau g$ and $C=\lambda B-BHB$ (the DeWitt contraction), $\tr(KC)=-2\tr(PH)$.
+\item The ultralocal metric response $U$ cancels in $\{H,H\}$, leaving only the lapse-gradient term $2\bigl(n\,\tr(P\,H_M)-m\,\tr(P\,H_N)\bigr)$ (notation of the 010 sources).
+\item The Maxwell improvement identity $v^iF_{ij}E^j+E^j\partial_j(v\!\cdot\!A)=E^j(\mathcal L_vA)_j$.
+\item Exact lowering $w_k=g_{ik}w^i$: the shift $w^i=\gamma^{ij}(N\partial_jM-M\partial_jN)$ lowers back to the lapse wedge $N\partial_kM-M\partial_kN$, and it is the same shift in the gravity and electromagnetic currents.
+\item Gauge invariance of the Maxwell energy, from $d^2\alpha=0$.
+\item The Stokes transfer $-\!\int N\,\mathcal L_v\rho=\int(\mathcal L_vN)\,\rho$ for a weight-one density $\rho$ with vanishing flux.
+\end{enumerate}
+\end{thm}
+Items 3, 5, 6 and 8 were reproduced in this edition's preparation by independent exact computations (\S\ref{sec:indep}). Scope: these are pointwise or algebraic identities and conditional transfers. By themselves they do not establish a bracket algebra on a field space.
+
+\subsection{The six-bracket theorem and its seven premises}\label{sec:six}
+\begin{thm}[Six secondary brackets]\Scond\ \textit{(010o)}\label{thm:six}
+\emph{Lean name:} \bs{FunctionalClosure010o.}\allowbreak\bs{six\_secondary\_brackets}.\par
+Over a \bs{SmoothCompletion} supplying the seven premises below,
+\begin{align*}
+\{G[\alpha],G[\beta]\}&=0, & \{G[\alpha],H[N]\}&=0, & \{D[v],G[\alpha]\}&=G[\mathcal L_v\alpha],\\
+\{D[u],D[v]\}&=D[[u,v]], & \{D[v],H[N]\}&=H[\mathcal L_vN], & \{H[N],H[M]\}&=D[w]-G[w^iA_i],
+\end{align*}
+with $w^i=\gamma^{ij}(N\partial_jM-M\partial_jN)$.
+\end{thm}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.5cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Premise (Lean name) & Content\\\midrule
+\bs{hDensityCovariance} & $H$ is covariant under $D$.\\
+\bs{gaugeHamiltonianVariationZero} & $H$ is gauge invariant: its variation under $G$ vanishes.\\
+\bs{gaussSmearingCovariance} & Gauss smearings transform covariantly.\\
+\bs{sourceNormalGradient} & The normal gradient is identified at source (the largest premise).\\
+\bs{sourceMomentumAddress} & The momentum address is identified at source.\\
+\bs{boundaryNormal} & Boundary flux vanishes on the normal bracket.\\
+\bs{boundaryH} & Boundary flux vanishes for $H$.\\\bottomrule
+\end{tabularx}
+\end{center}
+The seven premises are hypotheses of the theorem, not outputs. \bs{SmoothCompletion} is never instantiated, so the theorem is \Scond\ with its premise set unmet: no smooth field space in the closure satisfies it.
+
+\subsection{The type boundary}\label{sec:type}
+The Lean scalar is \bs{Int}, and the carriers are finite data. A faithful instance on a real field space cannot use \bs{Int}:
+\begin{prop}[Additive maps into the integers]\Sder\ \textit{(recorded in 010s as the type obstruction)}
+If $V$ is a real (indeed any rational) vector space and $f:V\to\ZZ$ is additive, then $f=0$.
+\end{prop}
+\begin{proof}
+For $x\in V$ and every integer $n\ge1$, $f(x)=n\,f(x/n)\in n\ZZ$. An integer divisible by every $n\ge1$ is $0$.
+\end{proof}
+Nothing in the closure transfers by renaming \bs{Int} to $\RR$. Part 010t supplies a nonzero \bs{Rat}-valued pairing on finite coordinates \Slean; it is unconnected to \bs{SmoothCompletion}.
+
+\subsection{The spectral refusal}\label{sec:spectral}
+Parts 010q and 010r treat the one question the algebra might be thought to decide: the spectrum.
+\begin{prop}[Spectral refusal]\Slean\ for the integer arithmetic; \Ssrc\ for the Hilbert-space models.
+A non-Abelian Gauss algebra together with a gauge-invariant Hamiltonian and a unique vacuum neither entails nor excludes a positive gap.
+\end{prop}
+The two counter-models live in prose on $\mathbb C\Omega\oplus\ell^2(\NN_0)\oplus\mathbb C^3$, with energies $1/(n+1)$ in one and $1$ in the other. What Lean certifies is only the integer arithmetic: the statement $p(n+1)\le q$ for all $n$ is refuted by $n=q$. No Lean object binds a spectrum to a Gauss-commuting Hamiltonian; that is the open item.
+
+\subsection{Closure ledger}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}c>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.7cm}@{}}
+\toprule
+\# & Statement & Status\\\midrule
+1 & Algebra from the two laws; chain rules; pointwise identities (\S\ref{sec:exact010}) & \Slean\ (pointwise)\\
+2 & Six brackets over \bs{SmoothCompletion} (\S\ref{sec:six}) & \Scond; no instance\\
+3 & A real or smooth instance of the seven premises & \Scand; blocked at \bs{Int}\\
+4 & Jurisdictional chain (\S\ref{sec:010u}) & \Slean\ (definitional, one standard result)\\
+5 & Positive gap entailed or excluded by the algebra (\S\ref{sec:spectral}) & Refused: neither\\
+6 & Spectrum bound to a Gauss-commuting Hamiltonian & \Scand; no Lean object\\
+7 & Finite root $\to$ Hamiltonian realization (P14, first arrow) & \Sint; not addressed\\\bottomrule
+\end{tabularx}
+\end{center}
+\section{Verification and receipts}\label{sec:verify}
+
+\subsection{The author's verifier}
+The finite verifier \texttt{verify\_symmetric\_minimum\_v13.py} retains 64 passing checks: 62 exact symbolic or algebraic checks and two high-precision numerical confirmations, V-F5 and V-F7. V-N1 through V-N7 verify the sign-changing turn, the null-line swap, the carriage family, mirror reversal for general carriage, the wheel orbit and the minimal reflection--turn group. V-L1 through V-L4 verify the finite action, its carriage equation and its conserved quadratic Hamiltonian; V-H9 verifies that the continuous phase family samples the four-step turn. V-I1 through V-I4 verify dual-form return, the local $i$-fold, the quadratic-integer metric address and the finite four-wheel 137/548 address. Source declarations remain separate from the finite checks.
+
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{1.6cm}@{}}
+\toprule
+Closure relation & Verifier receipt & Source\\\midrule
+$G=[Q,\Omega]$, $G^2=5I$, $G^{-1}=G/5$, null lines & V-A1--A5, V-H4 & P05\\
+Dual-form return $Q\tp\Omega Q=-\Omega$, $(Q^2)\tp\Omega Q^2=\Omega$ & V-I1 & P16\\
+Local $i$-fold $\gJ(u,v)=\omega(u,Jv)=u\tp v$ & V-I2 & P17\\
+Quadratic-integer metric address $z_x\tp Gz_x=2\Nalg(x)$ & V-I3 & P15\\
+Four-wheel finite address $137$, $\mathrm{ord}_{137}(4)=34$, $548$ & V-I4 & P18\\
+Phase family $J=U_{\pi/2}$, $U_\pi=-I$, $U_{2\pi}=I$, phase reversal, $\Dfour$ & V-B1, B3, H2--H3, H5, H9, N6 & P05\\
+Metric mirror and sign character $H\tp GH=G$, $\chi$ & V-B2, E1--E7; multiplicativity by derivation; V-E9 finite word-length-three guard & P05\\
+$S=(2Q-I)/\sqrt5$, $\Lax$, $\Lax^2=Q^2$, metric preservation, mirror reversal & V-B4--B6, H1, E7, N4 & P05\\
+Coefficient ring $\QQ(\sqrt5)$ & V-H8 & P05\\
+General carriage $L_s$, $HL_sH=L_{-s}$, signed axial coordinate, metric translation length & V-N4, N7; declared $\Lambda$-coordinate derivation & P05\\
+Finite Euclidean-orthogonality guard $\Lax^n$, $1\le n\le8$ & V-E8 (all $n\ge1$: Proposition~\ref{prop:nonorth}) & P05\\
+Four-step return and orbit & V-B7, H7, N5 & P06\\
+Mechanical residual $\emech$ & V-H6--H7 & P05, P06\\
+Metric-sign turn and null-line exchange & V-N1--N3 & P05\\
+Rail, fixed points, axial length $2\log\Phi$ & V-F1--F7 & P05\\
+$\Lag$, carriage equation, conserved $\Hax$ & V-L1--L4 & P12\\
+Projective mirror $\Mpr$, $\Kpr$-unitary chart, $\Zch$ & V-C1--C6 & P09\\
+Chart adapter $\Ach$, $\Lpr$ and its family & V-D1--D5 & P09\\
+Eight addresses and twenty-eight seams & V-G1 & P08\\\bottomrule
+\end{tabularx}
+\end{center}
+The author's verifier was not supplied to this edition; its checks are cited, not rerun.
+
+\subsection{Independent re-derivation}\label{sec:indep}
+\texttt{check\_symmetric\_minimum\_independent.py} recomputes, in exact \texttt{sympy} arithmetic, the finite identities displayed in \S\ref{sec:root}--\S\ref{sec:charts} and \S\ref{sec:endurance}, and three pointwise identities quoted in \S\ref{sec:exact010}. It was written from the displayed statements, not from the author's script. Each family carries negative controls: a perturbed input that must fail (for example $\Omega\to+\Omega$, a mirror $G/\sqrt2$, a carriage built from $J$ instead of $S$, a norm sign, a literal reading of $4^{17}$ as $417$, and the dimension-four version of the DeWitt contraction). A control passes when the perturbed statement is refused.
+
+\begin{center}\small
+\begin{tabular}{@{}llr@{}}
+\toprule
+Family & Content & Checks (controls)\\\midrule
+A & root matrices, metric chart, null lines, mirror & 16 (3)\\
+B & turn, phase family, local $i$-fold, dual-form return, $Q^n$ & 16 (3)\\
+C & carriage, all $s$; $\Lax$; non-orthogonality & 16 (2)\\
+D & sign character (27 words, multiplicativity), $\Dfour$ & 6 (2)\\
+E & action, Euler--Lagrange, conservation & 7 (1)\\
+F & wheel, residual, rail, axial step, phase reader & 11 (2)\\
+G & projective chart, adapter, adapter family & 14 (2)\\
+H & norm address, 137/548 & 12 (3)\\
+I & pointwise identities of \S\ref{sec:exact010} & 9 (5)\\
+J & closure of \S\ref{sec:endurance}: half-turn read, fixed points, $D_\infty$, 28 reads & 33 (10)\\\midrule
+ & Total checks / of which negative controls & 140 (33)\\\bottomrule
+\end{tabular}
+\end{center}
+Scope: the script reproduces what is displayed. It does not run the author's verifier, does not touch source declarations, and does not check the two numerical confirmations by numerics (it reproduces their content exactly).
+
+\subsection{The Lean certificate}\label{sec:certificate}
+For each of 010k--010u the pinned source was fetched by full commit identifier, hashed against its shipped manifest, scanned for \bs{sorry}, added axioms and \bs{native\_decide}, and its exact-arithmetic script was rerun with a vacuity census. The compile evidence is the CI status page at each pin, with the axiom audit in the workflow. \emph{Lean was not compiled in the preparation of this edition}, and the CI logs themselves require sign-in; the status pages are the only compile evidence read. Appendix~E gives the pins, runs, hashes and findings.
+
+\subsection{Retained interfaces}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{$}l<{$}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\text{Interface} & Declared requirement\\\midrule
+\chi_\Pi:e_\Pi\to\{\delta=0\}\subset\mathbb H & Field transport $L_e$, calibration, and carrier-to-rail map.\\
+\emech\to\eHS & Occurrence constructor, reader, calibration, and comparison map.\\
+\mathrm{jur}:\mathcal O\to\mathcal J & Jurisdiction carrier and packet-to-jurisdiction map.\\
+\{\mathrm{can},2\}\leftrightarrow\{\mathrm{can},\mathrm{cannot},\mathrm{open}\} & Source-declared translation between the binary fold gate and the separate three-outcome gate.\\
+\mathcal T_{\mathrm{arith}}:\mathcal K_{\mathrm{arith}}\to\mathcal P_i & Declared domain, criterion class, map, and equality $\mathcal Q_{\mathrm{arith}}(f)=\Omega_{\mathcal P_i}(\mathcal T_{\mathrm{arith}}f,J_i\mathcal T_{\mathrm{arith}}f)=\|\mathcal T_{\mathrm{arith}}f\|^2$.\\
+\tilde\Psi_{\mathrm{wr}}:\tilde E_e\to\tilde M_g & Declared quotient maps $\pi_e,\pi_g$ and the lifted-write equation $\pi_g\tilde\Psi_{\mathrm{wr}}=\Psiwr\Phird\pi_e$.\\\bottomrule
+\end{tabularx}
+\end{center}
+Each line keeps its own carrier, conditions and source status. The closure joins only the interfaces declared here.
+
+\section{Closure statement}\label{sec:close}
+
+\subsection{The twenty-eighth word: Endurance}\label{sec:endurance}
+\lkey{$U_\theta=e^{\theta J}=\cos\theta\,I+\sin\theta\,J$ is the turn by angle $\theta$; $q\in V\setminus\{0\}$ is a read vector and $[q]$ its line in $P(V)$; $\Phi^{\ast}:=1-\Phi=-\Phi^{-1}$ is the second root of $x^2=x+1$. $\Phi(\pi)$ is the closing read of the register, always written with its argument; it is not the golden ratio $\Phi$. $\mathcal F^{\mathrm{Fib}}_n$ is the Fibonacci sequence of \S\ref{sec:root}.}
+The register of \S\ref{sec:words} ends in Forget, the named failure of a read. It closes on one more word, which names what a half-turn of the core leaves in place. \textbf{Endurance} is the read $\Phi(\pi)$: after a half-turn the form survives, the difference remains, the reference returns, and the read at the half-turn balances to zero. Nothing is erased for the balance to hold. The statements below are exact; each is also checked in family~J of \S\ref{sec:indep}.
+
+\begin{thm}[The half-turn read]\Sfin\ \textit{(V-B1, B3, N1--N3, H2--H3, H5, H9; J1--J9; P05, P20)}\label{thm:endure}
+For every $\theta$ and every $q\in V\setminus\{0\}$:
+\begin{enumerate}[label=(\roman*),nosep]
+\item \emph{Turn.} $U_\pi=-I$, $U_{2\pi}=I$ and $U_{8\pi}=I$. Moreover $U_{k\pi}=I$ if and only if $k$ is even, so $2\pi$ is the least loop and $8\pi$ is four of them.
+\item \emph{Reference.} $\det[\,q,\;U_\theta q\,]=\sin\theta\,|q|^2$. Hence $U_\theta$ returns every line if and only if $\theta\in\pi\ZZ$. In particular $[U_\pi q]=[q]$ while $U_\pi q=-q\ne q$: the line returns and the vector does not.
+\item \emph{Form.} $U_\theta\tp U_\theta=I$, and $U_\theta\tp G\,U_\theta=\cos2\theta\;G+\sin2\theta\;GJ$. Hence $U_\pi\tp G\,U_\pi=G$, whereas a quarter-turn gives $-G$.
+\item \emph{Difference and balance.} $U_\pi-I=-2I\ne0$ and $I+U_\pi=0$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(i) Because $J^2=-I$, the series for $e^{\theta J}$ sums to $\cos\theta\,I+\sin\theta\,J$. Then $U_\pi=-I$, $U_{2\pi}=I$ and $U_{8\pi}=(-I)^8=I$. For $k$ odd $U_{k\pi}=-I\ne I$. (ii) With $q=(x,y)\tp$, $U_\theta q=(x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta)\tp$, and the determinant is $x(x\sin\theta+y\cos\theta)-y(x\cos\theta-y\sin\theta)=\sin\theta\,(x^2+y^2)$. It vanishes for every $q$ exactly when $\sin\theta=0$. (iii) Since $J\tp=-J$, $U_\theta\tp=U_{-\theta}$ and $U_\theta\tp U_\theta=I$. Next, $U_\theta\tp GU_\theta=(c\,I-s\,J)G(c\,I+s\,J)=c^2G+cs\,(GJ-JG)-s^2\,JGJ$ with $c=\cos\theta$, $s=\sin\theta$. By Theorem~\ref{thm:turn}, $JGJ=G$ and $JG=-GJ$, so this equals $(c^2-s^2)G+2cs\,GJ$. The matrices $G$ and $GJ=\begin{psmallmatrix}1&2\\2&-1\end{psmallmatrix}$ are linearly independent, so the result equals $G$ exactly when $\cos2\theta=1$ and $\sin2\theta=0$, that is, when $\theta\in\pi\ZZ$. (iv) is direct from $U_\pi=-I$.
+\end{proof}
+
+\begin{thm}[Unit, fixed point and zero read]\Sder\ \textit{(V-I3, V-A1--A5; J10--J18; P05, P15)}\label{thm:fixed}
+\begin{enumerate}[label=(\roman*),nosep]
+\item \emph{Unit.} The address $x=1+\Phi=\Phi^2$ has $z_x=(1,1)\tp$, $\Nalg(x)=1$ and read $z_x\tp Gz_x=2$. Multiplication by $\Phi$ acts as $Q$: $z_{\Phi x}=Qz_x$. Hence $Q^n(1,1)\tp=(\mathcal F^{\mathrm{Fib}}_{n+2},\mathcal F^{\mathrm{Fib}}_{n+1})\tp$, the address $\Phi^{n+2}$.
+\item \emph{Fixed points.} For $z=(x,y)\tp$, $\det[\,z,\,Qz\,]=x^2-xy-y^2$. Its roots are the two lines $[\Phi,1]$ and $[\Phi^{\ast},1]$, with eigenvalues $\Phi$ and $\Phi^{\ast}$; they are the only fixed points of $Q$ on $P(V)$.
+\item \emph{Zero read.} $z\tp Gz=-2\det[\,z,\,Qz\,]$. The read vanishes exactly on the two fixed-point lines: the null lines of $G$ are the fixed lines of $Q$.
+\item \emph{Approach.} $\det[\,Q^n(1,1)\tp,(\Phi,1)\tp\,]=(\Phi^{\ast})^{n+1}$ and $\det[\,Q^n(1,1)\tp,(\Phi^{\ast},1)\tp\,]=\Phi^{n+1}$. Since $|\Phi^{\ast}|<1<\Phi$, the line $[Q^n(1,1)\tp]$ approaches $[\Phi,1]$ and leaves $[\Phi^{\ast},1]$, each geometrically.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(i) By Proposition~\ref{prop:norm}, $z_x=(b,a)\tp$ for $x=a+b\Phi$, and $\Nalg(1+\Phi)=1+1-1=1$; the read is $2\Nalg=2$. Also $\Phi x=b+(a+b)\Phi$, so $z_{\Phi x}=(a+b,b)\tp=Q(b,a)\tp$. By Proposition~\ref{prop:rec}, $Q^n(1,1)\tp=(\mathcal F^{\mathrm{Fib}}_{n+1}+\mathcal F^{\mathrm{Fib}}_n,\;\mathcal F^{\mathrm{Fib}}_n+\mathcal F^{\mathrm{Fib}}_{n-1})\tp$. (ii) $Qz=(x+y,x)\tp$, so $\det[\,z,Qz\,]=x\cdot x-y(x+y)$. This vanishes when $x/y$ is a root of $t^2-t-1$, that is, $\Phi$ or $\Phi^{\ast}$; and $Q(\Phi,1)\tp=(\Phi+1,\Phi)\tp=\Phi(\Phi,1)\tp$, likewise for $\Phi^{\ast}$. (iii) $z\tp Gz=-2x^2+2xy+2y^2=-2(x^2-xy-y^2)$. (iv) Binet's formula gives $\mathcal F^{\mathrm{Fib}}_{k+1}-\Phi\,\mathcal F^{\mathrm{Fib}}_k=(\Phi^{\ast})^k$ and $\mathcal F^{\mathrm{Fib}}_{k+1}-\Phi^{\ast}\mathcal F^{\mathrm{Fib}}_k=\Phi^k$; set $k=n+1$.
+\end{proof}
+
+\begin{prop}[Four-form, two-fold, dihedral closure]\Sder\ \textit{(V-N6, V-N7, V-B7; J9, J22--J23; P05, P06)}\label{prop:dinf}
+(i) $J^2=-I$, $J^4=I$ and $J,J^2,J^3\ne I$: the turn is a four-form. (ii) The map $V\setminus\{0\}\to P(V)$ is two-to-one, with $q$ and $-q$ in one fibre, and $U_\pi$ exchanges them (Theorem~\ref{thm:endure}(ii)). (iii) $D_4=\langle J,H\rangle$ has order eight (Proposition~\ref{prop:d4}). (iv) $H^2=I$, $(H\Lax)^2=I$ and $H\Lax H=\Lax^{-1}$; $\operatorname{tr}\Lax^n=\Phi^n+\Phi^{-n}>2$ for $n\ge1$, so $\Lax$ has infinite order and $\langle H,\Lax\rangle$ is the infinite dihedral group $D_\infty$. (v) The wheel joins the two: $\Fesc^{\,4}(\varphi,z)=(\varphi,\Lax z)$ (Proposition~\ref{prop:wheel}): four phases return while the carried address advances by one step of $D_\infty$.
+\end{prop}
+\begin{proof}
+(i) and (iii) are Theorem~\ref{thm:turn} and Proposition~\ref{prop:d4}. (ii) is Theorem~\ref{thm:endure}(ii). (iv) $H^2=I$ by Proposition~\ref{prop:mirror}, and $H\Lax H=\Lax^{-1}$ by Theorem~\ref{thm:carriage}; hence $(H\Lax)^2=H\Lax H\Lax=\Lax^{-1}\Lax=I$. The eigenvalues of $\Lax=(Q+2I)/\sqrt5$ are $(\Phi+2)/\sqrt5=\Phi$ and $(\Phi^{\ast}+2)/\sqrt5=\Phi^{-1}$, so $\operatorname{tr}\Lax^n=\Phi^n+\Phi^{-n}>2$. Two involutions $H$ and $H\Lax$ whose product $\Lax$ has infinite order generate $D_\infty$. (v) is Proposition~\ref{prop:wheel}.
+\end{proof}
+
+\begin{prop}[Twenty-eight reads]\Sder\ \textit{(V-G1; J20--J21; P08)}\label{prop:k8}
+Let $O$ be a set of eight addresses. (i) $\binom82=28$. On $\mathbb Z/7\cup\{\infty\}$ the seven rounds $\{\infty,r\}$, $\{r+k,\,r-k\}$ for $k=1,2,3$ are perfect matchings that together contain every pair exactly once. (ii) For $a,b\in\RR^8$,
+\[
+|a|^2|b|^2-(a\cdot b)^2=\sum_{i<j}\,(a_ib_j-a_jb_i)^2,
+\]
+a sum of twenty-eight pair reads.
+\end{prop}
+\begin{proof}
+(i) Round $r$ pairs $\infty$ with $r$ and splits the other six residues into three pairs $\{r\pm k\}$, once each. A pair $\{u,v\}\subset\mathbb Z/7$ with $u\ne v$ occurs in the round $r$ with $2r=u+v$ and $k$ with $2k=\pm(u-v)$, and in no other. The pair $\{\infty,r\}$ occurs only in round $r$. (ii) The left side equals $\sum_{i\ne j}\bigl(a_i^2b_j^2-a_ib_ia_jb_j\bigr)$, since the diagonal terms cancel. The right side equals $\sum_{i\ne j}a_i^2b_j^2-2\sum_{i<j}a_ib_ia_jb_j$, which is the same.
+\end{proof}
+
+\Needspace{34\baselineskip}
+\paragraph{The closure, as typed.} Items on the left are the statements of the closing read; the right column gives what each one is in this edition.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.7cm}@{}}
+\toprule
+Item & Statement & Status\\\midrule
+$G=[Q,\Omega]$ & the signed metric of the core, $G^2=5I$ (Theorem~\ref{thm:metric}) & \Sfin\\
+28 reads & one read for each pair of eight addresses (Proposition~\ref{prop:k8}) & \Sder; the eight addresses are declared at P08, \Ssrc\\
+$8\pi$ loop & $U_{8\pi}=I$: four loops of $2\pi$ (Theorem~\ref{thm:endure}(i)) & \Sfin; carrier of the loop not declared (open item~\ref{oi:loop})\\
+four-form & $J^4=I$ (Proposition~\ref{prop:dinf}(i)) & \Sder\\
+two-fold & $[-q]=[q]$; $U_\pi$ exchanges the fibre (Theorem~\ref{thm:endure}(ii)) & \Sfin\\
+unit $[1,1]$ & the address $\Phi^2$, $\Nalg=1$, read $2$ (Theorem~\ref{thm:fixed}(i)) & \Sder\\
+read $0$ & $z\tp Gz=0$ on the fixed lines of $Q$ (Theorem~\ref{thm:fixed}(iii)); $I+U_\pi=0$ & \Sder, \Sfin\\
+fixed-point coordinate $\Phi$ & $[\Phi,1]$, approached by $[Q^n(1,1)\tp]$ (Theorem~\ref{thm:fixed}(ii),(iv)) & \Sder\\
+Gravity, Light, Memory, Motion & the four offices of rows 9, 4, 5, 14 closed by $\Phi(\pi)$ & \Ssrc; no map from the wheel's four phases is declared (open item~\ref{oi:maps})\\
+Endurance & the read $\Phi(\pi)$: Theorems~\ref{thm:endure}--\ref{thm:fixed} together & \Sfin/\Sder; the word and its closure over the four offices, \Ssrc\\\bottomrule
+\end{tabularx}
+\end{center}
+The source for the closing read is the one-page record \emph{The Miracle of Mercy} (P20), which states the four equations of Theorem~\ref{thm:endure} in that order and closes on $\Phi(\pi)$ over Gravity, Light, Memory and Motion. It writes Memory for $U_\pi-I\ne0$ and Silence for $I+U_\pi=0$. In this edition those two words keep their register rows 5 and 25; the equations are the difference and the balance of the core at the half-turn, and no identification with the rows is made. Reading the four offices as the content of $\Phi(\pi)$ is the source's declaration. The core does not derive it.
+
+\subsection{What the system asserts}
+The exact root (\S\ref{sec:root}--\S\ref{sec:charts}) is a closed finite system over $\QQ(\sqrt5)$. In it a recurrence matrix $Q$ and an oriented-pair form $\Omega$ generate a signed metric $G$ of signature $(1,1)$; the mirror $H$ and the turn $J$ generate a dihedral group of order eight; the carriage $L_s$ preserves $G$ and is reversed by $H$; and a four-step wheel returns its phase while advancing the carried address by exactly one golden step. The register closes on its twenty-eighth word, Endurance (\S\ref{sec:endurance}): the half-turn leaves the form, the difference and the reference in place, and the read at zero. The reader layer (\S\ref{sec:reader}, \S\ref{sec:join}) is a typed vocabulary around this root: interfaces and source declarations, with their candidates named. The jurisdictional and field-facing layers (\S\ref{sec:jur}--\S\ref{sec:field}) are compiled in Lean at pinned commits to the strength stated there, and no further.
+
+The locked distinctions carried by the register:
+\begin{center}
+\begin{tabular}{@{}rcl@{}}
+Bohm & = & phase-guided trajectory,\\
+Aharonov--Bohm & = & path-sensitive phase return,\\
+rotation & = & root action,\\
+metric & = & the invariant read of a declared action,\\
+$\omega$ & = & oriented two-place relation,\\
+$J$ & = & local quarter-turn,\\
+$\gJ$ & = & positive local read,\\
+$G$ & = & signed reader metric,\\
+Memory & = & the compositional relation of comparison,\\
+Receipt & = & the reconstructible occurrence record,\\
+Minkowski & = & interval and worldline,\\
+Einstein & = & dynamical metric field.
+\end{tabular}
+\end{center}
+Scope fixes the reference. Phase reads the turn. Time carries the turn forward. Metric measures that carriage. The receipt keeps contact, address and occurrence intact.
+
+\subsection{Open items}
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,nosep]
+\item A real or smooth instance of the seven premises of Theorem~\ref{thm:six}, over a scalar type that is not \bs{Int}.
+\item A Lean object binding a spectrum to a Gauss-commuting Hamiltonian (\S\ref{sec:spectral}).
+\item The first arrow of the P14 chain: finite root $\to$ Hamiltonian realization.
+\item The adapters $\chi_\Pi$ and $\emech\to\eHS$, and the maps $\mathrm{jur}$ and $\{\mathrm{can},2\}\leftrightarrow\{\mathrm{can},\mathrm{cannot},\mathrm{open}\}$.
+\item The arithmetic fold $\mathcal T_{\mathrm{arith}}$, and the read--write and lifted-write diagrams of \S\ref{sec:rw}.
+\item In 010u, tying the history conjunct of \textbf{Admitted} to \textbf{Enough}.
+\item\label{oi:loop} The carrier of the $8\pi$ loop. The identity $U_{8\pi}=I$ is exact (Theorem~\ref{thm:endure}); whether the loop is read as eight half-turns over the eight addresses or as four rotations of the four-form is not declared.
+\item\label{oi:maps} The maps the closing read leaves undeclared: from the four phases of the wheel to the four offices Gravity, Light, Memory, Motion; from the eight-address carrier to the $2\times2$ root; and between the zero read $I+U_\pi=0$ and the register's Silence.
+\end{enumerate}
+\clearpage
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\section{Source ledger and citations}\label{app:A}
+The ledger keeps source types separate. A quotation remains a textual notice; a field equation retains its stated carrier; a theorem remains a theorem under its stated hypotheses; a current source declaration remains a source declaration. Reference addresses are fixed at first assignment and row order is chronological, so H34 (1971) follows H36 (1969).
+
+\subsection{Chronological source ledger}
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{2.1cm}@{}}
+\toprule
+Ref. & Date / witness & Person or source & Native source coordinate & Office retained here & Record type\\\midrule\endfirsthead
+\toprule
+Ref. & Date / witness & Person or source & Native source coordinate & Office retained here & Record type\\\midrule\endhead
+\bottomrule\endfoot
+H01 & received text, ch.~40 & D\`aod\'ej\={\i}ng, Laozi (Lao Tzu) tradition & \zh{反者道之動}{fǎn zhě dào zhī dòng} & Return and motion as an early word-coordinate. & Textual notice.\\
+H02 & c. 500 BCE; DK 22B12 & Heraclitus & same river / other waters & Return with retained difference. & Fragmentary textual notice.\\
+H03 & fifth-century BCE tradition & Pythagorean tradition & harmonic ratio and right-triangle provenance & Ratio, interval and numerical relation. & Historical receipt; direct authorial text remains open.\\
+H04 & c. 300 BCE & Euclid, \emph{Elements} & construction under stated postulates & Reference, construction, proof. & Formal source.\\
+H05 & 1202; rev.\ 1228 & Leonardo of Pisa, \emph{Liber Abaci} & recurrence $\Fib{n+1}=\Fib n+\Fib{n-1}$ (source-native $F_n$) & Fibonacci recurrence root. & Formal source.\\
+H06 & 1687 & Isaac Newton, \emph{Principia} & $m\ddot q=-\nabla V$ in its later standard form & Dynamical motion. & Physical / mathematical source.\\
+H07 & 1748 & Leonhard Euler, \emph{Introductio} & exponential and trigonometric composition & Turn, half-turn, return. & Formal source.\\
+H08 & 1788 & Joseph-Louis Lagrange, \emph{M\'ecanique analytique} & variational mechanics & Analytic carriage. & Formal source.\\
+H09 & 1828 & George Green, \emph{Essay on Mathematical Analysis} & potential and boundary relations & Local-to-boundary passage. & Formal / physical source.\\
+H10 & 1834 & William Rowan Hamilton, ``On a General Method in Dynamics'' & canonical action and equations of motion & Canonical transport. & Formal source.\\
+H11 & 1852 & Michael Faraday, \emph{Experimental Researches in Electricity}, 28th Series & lines of magnetic force & Field relation and experimentally held direction. & Experimental / physical source.\\
+H12 & 1850--1854 & William Thomson and George Gabriel Stokes & circulation--surface boundary relation & Boundary receipt: local differential relation carried to a boundary integral. & Formal source record.\\
+H13 & 1858 & Arthur Cayley, ``A Memoir on the Theory of Matrices'' & matrix polynomial relation & Finite operator closure. & Formal source.\\
+H14 & 1859 & Bernhard Riemann, ``\"Uber die Anzahl der Primzahlen\dots'' & $\zeta$, completed $\xi$, functional symmetry & Analytic reader. & Formal source.\\
+H15 & 1865 & James Clerk Maxwell, ``A Dynamical Theory of the Electromagnetic Field'' & $d\FEM=0$, $d\star_g\FEM=j$ in modern differential-form notation (source-native $F$) & Electromagnetic field and light. & Physical / mathematical source.\\
+H16 & 1868 & Bernhard Riemann, ``\"Uber die Hypothesen\dots'' & metric and curvature & Signed metric relation. & Formal source.\\
+H17 & 1872 & Felix Klein, Erlangen Program & invariants under a transformation group & Transformation and invariant form. & Formal source.\\
+H18 & 1895 & Henri Poincar\'e, ``Analysis Situs'' & quotient, cover, lift & Returned base read and lifted address. & Formal source.\\
+H19 & 1904 & Hendrik Lorentz, ``Electromagnetic Phenomena\dots'' & $\Lambda_{\mathrm{Lor}}\tp\eta\Lambda_{\mathrm{Lor}}=\eta$ in modern notation & Metric turn and light-cone relation. & Physical / mathematical source.\\
+H20 & 1908 / 1909 & Hermann Minkowski, ``Raum und Zeit'' & spacetime interval and signature & Null, timelike and spacelike metric relation. & Formal / physical source.\\
+H21 & 1915 & Albert Einstein, ``Die Feldgleichungen der Gravitation'' & $G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}$ in modern normalization & Dynamical metric field. & Physical / mathematical source.\\
+H22 & 1918 & Emmy Noether, ``Invariante Variationsprobleme'' & $\delta S=0\Rightarrow\nabla_\mu j^\mu=0$ in standard field notation & What symmetry carries forward. & Formal / physical source.\\
+H23 & 1926 & Erwin Schr\"odinger, ``Quantisierung als Eigenwertproblem'' & $i\hbar\partial_t\psi=H_{\mathrm{Ham}}\psi$ & Phase carriage. & Physical / mathematical source.\\
+H24 & 1927 & Wolfgang Pauli, ``Zur Quantenmechanik des magnetischen Elektrons'' & two-component spin carrier & Two-state quantum reader. & Physical / mathematical source.\\
+H25 & 1928 & P. A. M. Dirac, ``The Quantum Theory of the Electron'' & $(i\hbar\gamma^\mu\partial_\mu-mc)\psi=0$ in standard free-field notation & First-order relativistic carriage. & Physical / mathematical source.\\
+H26 & 1931 & Kurt G\"odel, ``\"Uber formal unentscheidbare S\"atze\dots I'' & $\mathrm{Th}\nvdash\mathrm{Gd}_{\mathrm{Th}}$ under its stated formal hypotheses & Formal horizon. & Formal source.\\
+H27 & 1932 & John von Neumann, \emph{Mathematische Grundlagen der Quantenmechanik} & Hilbert-space and unitary carrier & Positive inner-product reader. & Formal / physical source.\\
+H28 & 1936 & J. Barkley Rosser, ``Extensions of Some Theorems of G\"odel and Church'' & consistency-strengthened undecidability condition & Refined formal horizon. & Formal source.\\
+H29 & 1936 / 1937 & Alan Turing, ``On Computable Numbers\dots'' & finite machine procedure & Executable formal reader. & Formal source.\\
+H30 & 1948 & Claude Shannon, ``A Mathematical Theory of Communication'' & recoverability through a channel & Information carriage and recovery. & Formal / engineering source.\\
+H31 & 1952 & David Bohm, ``A Suggested Interpretation\dots I--II'' & $\dot Q_k=\frac{\hbar}{m_k}\mathrm{Im}\frac{\nabla_k\psi}{\psi}(Q,t)$ & Guided carriage of configuration. & Physical source.\\
+H32 & 1953 & Ludwig Wittgenstein, \emph{Philosophical Investigations} & use, rule, correction & Meaning as a publicly recoverable practice. & Linguistic / philosophical source.\\
+H33 & 1959 & Yakir Aharonov and David Bohm, ``Significance of Electromagnetic Potentials\dots'' & $\Delta\phi_{\mathrm{AB}}=\frac q\hbar\oint_\gamma A$ & Loop phase and path-sensitive return. & Physical source.\\
+H35 & 1964 & John S. Bell, ``On the Einstein Podolsky Rosen Paradox'' & $P(a,b)=\int\rho(\lambda)A(a,\lambda)B(b,\lambda)\,d\lambda$ (source-native lettering) & Factorized joint-correlation condition. & Formal / physical source.\\
+H36 & 1969 & J. F. Clauser, M. A. Horne, A. Shimony, R. A. Holt, ``Proposed Experiment to Test Local Hidden-Variable Theories'' & $|S|\le2$ for the two-setting dichotomic correlation sum (source-native $S$) & Experimentally addressable correlation bound. & Formal / physical source.\\
+H34 & 1971 & Saunders Mac Lane, \emph{Categories for the Working Mathematician} & structure-preserving map & Typed map and commuting interface. & Formal source.\\
+H37 & 1977 & Apple Computer, Apple II brochure; hardware designed by Steve Wozniak & clocked processor, mutable memory, keyboard and controller input, software-selectable text and color graphics & Programmable reader loop at ordinary scale. & Historical engineering source.\\
+H38 & 1984 & Michael V. Berry, ``Quantal Phase Factors Accompanying Adiabatic Changes'' & $\gamma_n(C)=i\oint_C\langle n(R)|\nabla_Rn(R)\rangle\cdot dR$ (source-native lettering) & Geometric phase under cyclic adiabatic transport. & Physical source.\\
+\end{longtable}}
+
+\subsection{Original and canonical source coordinates}
+{\footnotesize\setlength{\parskip}{2pt}
+\begin{description}[leftmargin=1.1cm,labelwidth=1.0cm,labelsep=0.1cm,itemsep=1pt,font=\normalfont\bfseries]
+\item[H01] D\`aod\'ej\={\i}ng, received Wang Bi text, Chapter 40.
+\item[H02] Heraclitus, DK 22B12, fragmentary transmission.
+\item[H03] Pythagorean tradition; historical receipt, with no securely surviving Pythagoras-authored text.
+\item[H04] Euclid. \emph{Elements}, c.\ 300 BCE.
+\item[H05] Fibonacci, Leonardo of Pisa. \emph{Liber Abaci}, 1202; revised 1228.
+\item[H06] Newton, Isaac. \emph{Philosophi\ae{} Naturalis Principia Mathematica}. London, 1687.
+\item[H07] Euler, Leonhard. \emph{Introductio in analysin infinitorum}. Lausanne, 1748.
+\item[H08] Lagrange, Joseph-Louis. \emph{M\'ecanique analytique}. Paris, 1788.
+\item[H09] Green, George. \emph{An Essay on the Application of Mathematical Analysis to the Theories of Electricity and Magnetism}. Nottingham, 1828.
+\item[H10] Hamilton, William Rowan. ``On a General Method in Dynamics.'' \emph{Philosophical Transactions of the Royal Society of London} 124 (1834): 247--308. doi:\nolinkurl{10.1098/rstl.1834.0017}
+\item[H11] Faraday, Michael. ``Experimental Researches in Electricity---Twenty-Eighth Series.'' \emph{Phil.\ Trans.\ R.\ Soc.\ Lond.} 142 (1852): 25--56. doi:\nolinkurl{10.1098/rstl.1852.0004}
+\item[H12] Thomson, William. Letter to George Gabriel Stokes, 2 July 1850, postscript; Stokes, \emph{Smith's Prize Examination Papers}, Cambridge, 1854, Question 8.
+\item[H13] Cayley, Arthur. ``A Memoir on the Theory of Matrices.'' \emph{Phil.\ Trans.\ R.\ Soc.\ Lond.} 148 (1858): 17--37. doi:\nolinkurl{10.1098/rstl.1858.0002}
+\item[H14] Riemann, Bernhard. ``\"Uber die Anzahl der Primzahlen unter einer gegebenen Gr\"osse.'' \emph{Monatsberichte der Berliner Akademie} (1859): 671--680.
+\item[H15] Maxwell, James Clerk. ``A Dynamical Theory of the Electromagnetic Field.'' \emph{Phil.\ Trans.\ R.\ Soc.\ Lond.} 155 (1865): 459--512. doi:\nolinkurl{10.1098/rstl.1865.0008}
+\item[H16] Riemann, Bernhard. ``\"Uber die Hypothesen, welche der Geometrie zu Grunde liegen.'' \emph{Abhandlungen der K\"oniglichen Gesellschaft der Wissenschaften zu G\"ottingen} 13 (1868). doi:\nolinkurl{10.3931/e-rara-49481}
+\item[H17] Klein, Felix. \emph{Vergleichende Betrachtungen \"uber neuere geometrische Forschungen}. Erlangen: Deichert, 1872.
+\item[H18] Poincar\'e, Henri. ``Analysis Situs.'' \emph{Journal de l'\'Ecole Polytechnique} 1 (1895): 1--121.
+\item[H19] Lorentz, Hendrik A. ``Electromagnetic Phenomena in a System Moving with Any Velocity Smaller than that of Light.'' \emph{Proc.\ Royal Netherlands Acad.\ Arts and Sciences} 6 (1904): 809--831.
+\item[H20] Minkowski, Hermann. ``Raum und Zeit.'' Lecture, Cologne, 1908; \emph{Jahresbericht der Deutschen Mathematiker-Vereinigung} 18 (1909): 75--88.
+\item[H21] Einstein, Albert. ``Die Feldgleichungen der Gravitation.'' \emph{Sitzungsberichte der K\"oniglich Preussischen Akademie der Wissenschaften} (1915): 844--847.
+\item[H22] Noether, Emmy. ``Invariante Variationsprobleme.'' \emph{Nachrichten von der K\"oniglichen Gesellschaft der Wissenschaften zu G\"ottingen, Math.-Phys.\ Klasse} (1918): 235--257.
+\item[H23] Schr\"odinger, Erwin. ``Quantisierung als Eigenwertproblem.'' \emph{Annalen der Physik} 386 (1926): 109--139. doi:\nolinkurl{10.1002/andp.19263861802}
+\item[H24] Pauli, Wolfgang. ``Zur Quantenmechanik des magnetischen Elektrons.'' \emph{Zeitschrift f\"ur Physik} 43 (1927): 601--623. doi:\nolinkurl{10.1007/BF01397326}
+\item[H25] Dirac, P. A. M. ``The Quantum Theory of the Electron.'' \emph{Proc.\ Royal Society A} 117 (1928): 610--624. doi:\nolinkurl{10.1098/rspa.1928.0023}
+\item[H26] G\"odel, Kurt. ``\"Uber formal unentscheidbare S\"atze der Principia Mathematica und verwandter Systeme I.'' \emph{Monatshefte f\"ur Mathematik und Physik} 38 (1931): 173--198. doi:\nolinkurl{10.1007/BF01700692}
+\item[H27] von Neumann, John. \emph{Mathematische Grundlagen der Quantenmechanik}. Berlin: Julius Springer, 1932.
+\item[H28] Rosser, J. Barkley. ``Extensions of Some Theorems of G\"odel and Church.'' \emph{Journal of Symbolic Logic} 1, no.~3 (1936): 87--91. doi:\nolinkurl{10.2307/2269028}
+\item[H29] Turing, Alan M. ``On Computable Numbers, with an Application to the Entscheidungsproblem.'' \emph{Proc.\ London Mathematical Society} s2-42 (1937): 230--265. doi:\nolinkurl{10.1112/plms/s2-42.1.230}
+\item[H30] Shannon, Claude E. ``A Mathematical Theory of Communication.'' \emph{Bell System Technical Journal} 27 (1948): 379--423; 623--656. doi:\nolinkurl{10.1002/j.1538-7305.1948.tb01338.x;} doi:\nolinkurl{10.1002/j.1538-7305.1948.tb00917.x}
+\item[H31] Bohm, David. ``A Suggested Interpretation of the Quantum Theory in Terms of `Hidden' Variables. I--II.'' \emph{Physical Review} 85 (1952): 166--193. doi:\nolinkurl{10.1103/PhysRev.85.166;} doi:\nolinkurl{10.1103/PhysRev.85.180}
+\item[H32] Wittgenstein, Ludwig. \emph{Philosophical Investigations}. Oxford: Blackwell, 1953.
+\item[H33] Aharonov, Yakir, and David Bohm. ``Significance of Electromagnetic Potentials in the Quantum Theory.'' \emph{Physical Review} 115 (1959): 485--491. doi:\nolinkurl{10.1103/PhysRev.115.485}
+\item[H34] Mac Lane, Saunders. \emph{Categories for the Working Mathematician}. New York: Springer, 1971.
+\item[H35] Bell, John S. ``On the Einstein Podolsky Rosen Paradox.'' \emph{Physics Physique Fizika} 1 (1964): 195--200. doi:\nolinkurl{10.1103/PhysicsPhysiqueFizika.1.195}
+\item[H36] Clauser, John F., Michael A. Horne, Abner Shimony, and Richard A. Holt. ``Proposed Experiment to Test Local Hidden-Variable Theories.'' \emph{Physical Review Letters} 23 (1969): 880--884. doi:\nolinkurl{10.1103/PhysRevLett.23.880}
+\item[H37] Apple Computer. Apple II brochure, 1977. Computer History Museum scan: \nolinkurl{s3data.computerhistory.org/brochures/apple.ii.1977.102637933.pdf}. Wozniak, Jobs, and the Apple II: \nolinkurl{computerhistory.org/revolution/personal-computers/17/300}
+\item[H38] Berry, M. V. ``Quantal Phase Factors Accompanying Adiabatic Changes.'' \emph{Proc.\ Royal Society of London A} 392 (1984): 45--57. doi:\nolinkurl{10.1098/rspa.1984.0023}
+\end{description}}
+\section{Present source coordinates}\label{app:B}
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{2.1cm}@{}}
+\toprule
+Ref. & Source record & Exact relation retained & Office in this closure & Status\\\midrule\endfirsthead
+\toprule
+Ref. & Source record & Exact relation retained & Office in this closure & Status\\\midrule\endhead
+\bottomrule\endfoot
+P01 & Physical Reality Inside Constraint & $\Pi(e_\Pi,\ell)=c=(e_\Pi,\ell,w,r)$ & Contact: field carrier, light, address, receipt. & Source declaration.\\
+P02 & Motion \& Difference & $\Delta_{\mathrm{phase}}\in\mathrm{End}(E_p)$, $\Delta_{\mathrm{time}}\in\RR$ & Phase and time retain distinct types. & Source declaration.\\
+P03 & Memory Return \& Observable Difference & base return, lifted difference, represented difference, receipt & Return admits relational difference. & Source declaration.\\
+P04 & Independent Tunability of Local Curvature and Global Holonomy in a Source-Free $SO(2)$ Gauge Field & $\FEM=dA$ (source-native $F$), holonomy, proper time & Curvature, loop phase and duration retain separate coordinates. & Source declaration.\\
+P05 & Metric Mirror Symmetry: Riemann's $i$ Machine & $Q\tp GQ=-G$, $(Q^2)\tp GQ^2=G$, $Q^2\ne I$ & Metric root, mirror return, analytic reader source. & Exact finite / Source declaration by row.\\
+P06 & The 28 Seam Mirror Wheel & $\mathrm{Phase}_4(n+4)=\mathrm{Phase}_4(n)$, $\mathrm{Cycle}_4(n+4)=\mathrm{Cycle}_4(n)+1$ & Occurrence and history advance through phase return. & Source declaration.\\
+P07 & Horizon Silence: Viability Boundary and Zero Residual & $\Gamma_{J(p)}$, $\mathrm{Gate}_{\Gamma_{J(p)}}$, $\varepsilon$, $\theta$ & Typing, admission, residual, silence, survival. & Source declaration, HS.5--HS.19.\\
+P08 & Quotient & eight-address / twenty-eight-seam carrier & Packet form and quotient carrier. & Source declaration.\\
+P09 & Infinity One Zero Lift & projective mirror $\Mpr$, $\Kpr$-unitary chart, real adapter $\Ach$, escapement & Projective/unitary lift. & Exact finite / Source declaration by row.\\
+P10 & Mechanical Reality: Complete Transmission Edition & reader grammar and transmission record & Formal-lineage offices and reader discipline. & Source declaration.\\
+P11 & Minimum Mechanics 010a--010u & canonical, geometric, source and jurisdictional verification interfaces & Lean-compiled theorem and source verification interfaces. & Verification record; statuses in \S\ref{sec:field}, \S\ref{sec:010u} and Appendix~E.\\
+P12 & Symmetric Minimum, v1.7.14 candidate; this reference edition v1.7.16 & finite root, return operators, action, phase reader, residual ledger & Current coordinate register; 64-check verifier receipt; 140-check independent receipt. & Exact finite / Exact derived / Source declaration by row.\\
+P13 & Suture Field Dynamics: Regular Hamiltonian Reduction & constrained action, suture equations, regular Einstein--Maxwell reduction & Metric--flux realization. & Source declaration, SD.0--SD.2 and SD.21.\\
+P14 & Hamiltonian Suture field-dynamics continuum record & variational / Hamiltonian realization, constraint and gauge reduction, refinement and quotient, observable transport & Continuum obligations for Gravity, Light, Constraint, Horizon; separate from P13's regular reduction. & Source declaration; conditional on its stated reduction and observable conditions.\\
+P15 & The Theory of Everything: Noether--Klein Scalar Symmetry, Covariant Field Interfaces, and an Exact $2\times2$ Lorentzian Root, contact--record edition & $\mathcal C_\rho$, $B=Q^2$, reader fibres, ordered snoc receipt, $\Nalg$ & Contact normal form, reader resolution, historical order and quadratic-integer metric address. & Source declaration / Exact finite by displayed relation.\\
+P16 & Minimum Endurance Delta: Dual-Form Motion, Cup Symmetry, and the Positive Horizon of Return & dual-form return, Memory Return datum, non-erasing four-phase clock, finite horizon & Oriented difference, return, lift, receipt, silence and endurance. & Source declaration / Exact finite by displayed relation.\\
+P17 & The $i$ Fold: Operator Reversal, Golden Null Transport, and Positive Return & $(\omega,J)\mapsto\gJ$, golden seam, typed positive read & Positive local read and the stated arithmetic-fold interface requirement. & Exact finite / Source declaration.\\
+P18 & Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture & $p_{\mathrm{ax}}\circ\Lax=p_{\mathrm{ax}}$, $\Lambda$-shift, $\MEM$, finite 137/548 address & Quotient return, lift, compositional memory, recognition and finite address closure. & Exact derived / Source declaration by row.\\
+P19 & Pianoforte $i$ Architecture $\Delta$ & twelve-key phase, lift and history relation & Human-scale return normal form and typed operator register. & Source declaration.\\
+P20 & The Miracle of Mercy: a minimum derivation of Endurance (one page, 18 July 2026) & $U_\pi=-I$; $[-q]=[q]$; $U_\pi\tp\{I,G\}U_\pi=\{I,G\}$; $U_\pi-I=-2I\ne0$; $I+U_\pi=0$; $\Phi(\pi)$ & Closing read of the register over Gravity, Light, Memory, Motion. & Source declaration.\\
+\end{longtable}}
+
+\section{The typed coordinate register}\label{app:C}
+Each row fixes the typed map, the invariant or condition, the source coordinates (H: Appendix~A; P: Appendix~B) and the status of one word. The one-sentence definitions are in \S\ref{sec:words}.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
+\toprule
+\# & Word & Typed map & Invariant or condition & Source coordinates & Status\\\midrule\endfirsthead
+\toprule
+\# & Word & Typed map & Invariant or condition & Source coordinates & Status\\\midrule\endhead
+\bottomrule\endfoot
+1 & Reader & declared carrier $V=\RR^2$; general $\rho:X\to Y$ & relation taken up at a stated resolution & H13, H14, H34, H37; P05, P15, P18 & Exact finite / Source declaration.\\
+2 & Identity & retained criterion $\iota$ & what the reader carries through update as required for continuation & P03, P10 & Reader source declaration.\\
+3 & Contact & $\Pi(e_\Pi,\ell)=c$; $\mathcal C_{\rho_{\mathrm{rec}}}$ & $c=(e_\Pi,\ell,w,r)$; stated transport, reader and ordered record & H35, H36; P01, P15, P18 & Source declaration; $\chi_\Pi$ Candidate.\\
+4 & Light & null vector $k$, field two-form $\FEM$, reader null lines $\mathcal N_G$ & $g^{-1}(k,k)=0$; $d\FEM=0$, $d\star_g\FEM=j$ & H11, H15, H19--H21, H37; P01, P14 & Exact finite ($\mathcal N_G$); Interface ($k$ through Contact).\\
+5 & Memory & $\mu_\Sigma(t)$; functor $\MEM:\mathcal P\to\mathcal R$ & phase-coordinated compositional relation through which distinct occurrences remain comparable; $\MEM(\id_x)=\id_{\MEM(x)}$ & H07, H18, H30, H33, H34; P03, P16, P18 & Source-declared reader interface; distinct from Receipt.\\
+6 & Recognition & reader $\rho:X\to Y$, required distinction $d_{\mathrm{req}}:X\to D_{\mathrm{req}}$ & $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$ for some decoder $\delta_{\mathrm{req}}:Y\to D_{\mathrm{req}}$ & H18, H30, H32, H35, H36; P03 & Exact derived / Source declaration.\\
+7 & Calibration & $\rho_\Sigma$ with declared words, instruments, references and residuals & the read has stated comparison conditions & H04, H11--H12, H30, H32; P01, P10 & Interface.\\
+8 & Metric & $\gJ(u,v)=\omega(u,Jv)$; $\gG(v,w)=v\tp Gw$ on $V=\RR^2$ & $\gJ(u,u)\ge0$; $G^2=5I$, $G^{-1}=G/5$, $\sig(G)=(1,1)$ & H16, H19--H21; P05, P16, P17, P19 & Exact finite.\\
+9 & Gravity & metric field $g:T\mathcal M\times T\mathcal M\to\RR$ & $ds^2=g_{\mu\nu}dx^\mu dx^\nu$; $G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}$ & H16, H19--H21; P01, P05, P14 & Source declaration.\\
+10 & Phase & $U_\alpha=e^{\alpha J}$ & $J=U_{\pi/2}$, $J^2=-I$, $U_\pi=-I$, $U_{2\pi}=I$ & H07, H14, H23--H25, H38; P05, P16, P17, P19 & Exact finite / Exact derived.\\
+11 & Mirror & $H:V\to V$ & $H^2=I$, $HJH=J^{-1}$, $H\tp GH=G$ & H04, H14, H17; P05, P16, P18, P19 & Exact finite.\\
+12 & Carriage & $L_s=e^{sS}$, $S=HJ$ & $S=(2Q-I)/\sqrt5$, $\Lax^2=Q^2$, $L_s\tp GL_s=G$, $HL_sH=L_{-s}$ & H07, H17, H19--H20; P05, P16, P18 & Exact finite / Exact derived.\\
+13 & Wheel & $\Fesc:(\ZZ/4)\times V\to(\ZZ/4)\times V$ & $\Fesc^{\,4}(\varphi,z)=(\varphi,\Lax z)$ & H07, H18; P06, P16, P18 & Exact finite.\\
+14 & Motion & declared state transport $\mathrm{fl}_t$; finite case $\Fesc$ & $m\ddot q=-\nabla V$; $\dot f=\{f,H_{\mathrm{Ham}}\}$; $\dot Q_k=\frac\hbar{m_k}\mathrm{Im}\frac{\nabla_k\psi}{\psi}(Q,t)$ & H06, H08, H10, H31, H37; P02, P06 & Source declaration / Exact finite.\\
+15 & Scope & $\Sigma$, $(\rho,i)$ & $\rho:X\to Y$, $\Lambda(i)=0$, $i$ lies on the rail & H04, H17, H32; P03, P05, P18 & Exact finite / Source declaration.\\
+16 & Time & axial coordinate $\Lambda$ & $\Lambda(L_tz)=\Lambda(z)+2t$ on the rail; $T=2\log\Phi$ & H07, H23, H25; P02, P05, P16, P18, P19 & Exact derived from the declared axial coordinate and V-N4.\\
+17 & Receipt & one appended entry $r_t$ & source, calibration, transform and residual remain available for reconstruction & H22, H30; P01, P03, P15, P16, P18, P19 & Source declaration; distinct from Memory.\\
+18 & Return & base reader $\pi_{\mathrm{base}}$ & $\pi_{\mathrm{base}}(\tilde a\tilde x)=\pi_{\mathrm{base}}(\tilde x)$ & H01, H02, H07, H18, H38; P03, P16, P18 & Exact derived.\\
+19 & Lift & deck action $\tilde a$ & $\tilde a\tilde x=\gamma\tilde x$; $q(\xi+\varpi)=q(\xi)$ with $\xi+\varpi$ retained & H18, H38; P03, P16, P18 & Exact derived.\\
+20 & Orbit & $z_n=\Lax^nz_0$ & $\Fesc^{\,4n}(\varphi,z_0)=(\varphi,z_n)$ & H07, H18; P06, P16, P18 & Exact derived.\\
+21 & Worldline & rail $\{\delta=0\}$ with $L_s$ & $ds_{\mathrm{ax}}^2=-\ell_0^2d\Lambda^2$ & H20, H21; P02 & Exact derived / Interface for scale.\\
+22 & Horizon & $(H^{\mathrm{hist}}_n,\mathcal F^{\mathrm{hor}}_n,\mathrm{Admit}_n)$ & $\mathrm{Th}\nvdash\mathrm{Gd}_{\mathrm{Th}}$; $\mathrm{Admit}_n:\mathcal F^{\mathrm{hor}}_n\rightharpoonup\mathcal L^{\mathrm{hor}}_{n+1}$ & H26, H28, H29; P07, P14 & Source declaration.\\
+23 & Constraint & $\Gamma_{J(p)}$ & $(\mathrm{Condition},\allowbreak\mathrm{Constraint},\allowbreak\mathrm{SourceAuthority},\allowbreak\mathrm{Namespace})_{J(p)}$ & H26--H29, H34; P07, P14 & Source declaration.\\
+24 & Gate & $\mathrm{Gate}_{\Gamma_{J(p)}}$ & $D_{\Gamma_{J(p)}}\to\{\mathrm{can},2\}$ & H26--H29; P07 & Source declaration.\\
+25 & Silence & residual $\eHS$ & $\eHS(p)=0$, $\mathrm{Silence}_{\mathrm{fit}}(p)=1\iff\mathrm{Complete}(p)$ & H09, H12, H22; P07, P16 & Source declaration.\\
+26 & Survival & $\theta_{J(p)}$ & $\theta_{J(p)}(x(p))=1$; required invariant remains carried through admitted motion & P07, P16 & Source declaration.\\
+27 & Forget & reader $\rho:X\to Y$ relative to required $d_{\mathrm{req}}:X\to D_{\mathrm{req}}$ & $\exists x_1,x_2\in X$ with $\rho(x_1)=\rho(x_2)$ and $d_{\mathrm{req}}(x_1)\ne d_{\mathrm{req}}(x_2)$; no decoder $\delta_{\mathrm{req}}$ gives $d_{\mathrm{req}}=\delta_{\mathrm{req}}\circ\rho$ & H18, H30; P03, P10 & Exact derived / Source declaration.\\
+28 & Endurance & $\Phi(\pi)$ & $U_\pi=-I$; $[U_\pi q]=[q]$; $U_\pi\tp GU_\pi=G$; $U_\pi-I=-2I\ne0$; $I+U_\pi=0$; read $0$ at $[\Phi,1]$; $\Lax$ and $H$ generate $D_\infty$; $\binom82=28$ & H14, H23; P05, P06, P08, P20 & Exact finite / Exact derived (\S\ref{sec:endurance}); closure over rows 9, 4, 5, 14: Source declaration.\\
+\end{longtable}}
+\section{Symbol separation ledger}\label{app:D}
+Symbols that share a letter keep separate offices. Each source retains its native lettering at citation.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{4.9cm}>{\raggedright\arraybackslash}p{4.0cm}@{}}
+\toprule
+Symbol & Office in the finite reader & Other retained office & Separation rule\\\midrule\endfirsthead
+\toprule
+Symbol & Office in the finite reader & Other retained office & Separation rule\\\midrule\endhead
+\bottomrule\endfoot
+$G$ & reader metric matrix & $G_{\mu\nu}$, Einstein tensor & Tensor indices mark the field equation.\\
+$T$ & axial period $2\log\Phi$ & $T_{\mu\nu}$, stress--energy; $T_{\mathrm{ad}}$, adiabatic period; $\mathrm{Th}$, a formal theory & Tensor indices mark stress--energy; subscript ad marks the adiabatic period; Th names a formal theory.\\
+$H$ & metric mirror & $\mathcal H_{\mathrm{ax}}$, $\mathcal H_t$, $H_{\mathrm{Ham}}$, $H^{\mathrm{hist}}_n$ & Subscript marks the other office.\\
+$\Fesc$ & four-step phase map & $\FEM=dA$, $\mathcal F^{\mathrm{Fib}}_n$, $\mathcal F^{\mathrm{hor}}_n$ & Subscript or superscript fixes the office; each source retains its native $F$ at citation.\\
+$J$ & one-turn matrix & $j$, electromagnetic current; $J(p)$, packet jurisdiction & Bare $J$ is the finite turn (\S\ref{sec:root}); the argument form $J(p)$ fixes jurisdiction. Source-native $J_{\mathrm{rot}}$, where retained, remains a source coordinate.\\
+$\iturn$ & $J$ as the finite complex turn & $i$, scope point on the rail & Subscript remains only where the turn office is required beside the scope point.\\
+$\varphi$ & wheel phase address & $\Phi$, golden ratio & Letterform and office remain distinct.\\
+$\Phird$ & candidate read of $e$-motion & $\Phi$, golden ratio & Subscript fixes the read interface.\\
+$\Phi(\pi)$ & closing read of the register (word 28) & $\Phi$, golden ratio; $\Phird$ & The argument $(\pi)$ always accompanies the closing read; the golden ratio carries none.\\
+$\Phi^{\ast}$ & $1-\Phi=-\Phi^{-1}$, second root of $x^2=x+1$ & $\Phi^{\ast}$ is not an adjoint or dual & Used only in \S\ref{sec:endurance}; the star marks the second root.\\
+$U_\theta$, $U_\alpha$ & turn $e^{\theta J}$, the phase family of \S\ref{sec:root}; the same object under two angle letters & $U_{\mathrm{pr}}$, unitary chart & An angle subscript marks a turn; ``pr'' marks the chart.\\
+$\Psi$ & golden conjugate return root & $\Psiwr$, candidate $g$-memory write; $\tilde\Psi_{\mathrm{wr}}$, its candidate lift & Bare $\Psi$ retains the root; subscript and tilde fix the interface offices.\\
+$Q$ & recurrence matrix & $Q_k$, Bohm configuration coordinate & Index marks the configuration coordinate.\\
+$\Lambda$ & axial coordinate & $\Lambda_{\mathrm{Lor}}$, Lorentz transformation & Subscript marks the Lorentz map.\\
+$\Lambda_{\mathrm{cos}}$ & cosmological constant in $\mathcal S_{\mathrm{SF}}$ & axial coordinate $\Lambda$ & Subscript marks the field-action constant.\\
+$\beta_t$ & phase angle & $\theta_{J(p)}$, survival condition & Separate Greek letters.\\
+$\hat C$ & internal antisymmetric form in the suture action & $c$, contact record & Hat marks the internal form; lower-case $c$ marks the record.\\
+$\Mpr$ & projective mirror in P09 & $\mathcal M$, manifold & Script distinguishes the finite mirror from the manifold.\\
+$\Kpr$ & positive form in P09 & $K_{\mathrm{tr}}$, trace weight in the analytic reader & Subscripts distinguish the projective chart and the analytic kernel.\\
+$\Ach$ & real chart adapter in P09 & P01--P19 source labels; source-native $P$ & The local adapter label avoids both offices.\\
+$\emech$ & finite residual & $\eHS$, occurrence residual & Every residual remains subscripted.\\
+$\ell$ & light & $\ell_0$, axial metric scale & Zero marks the scale.\\
+$\rho$ & read $X\to Y$ & $\rho_t$, phase reader; $\rho_{\mathrm{hid}}$, hidden-variable measure & Subscript marks the phase reader and the hidden-variable measure.\\
+$x_1,x_2$ & witness states in $X$ & $x,y$, chart coordinates or adapter scalars; $\tilde x$, deck point; $x(p)$, packet state & Subscripts mark witnesses; tilde marks a lifted point; an argument marks packet state.\\
+$d_{\mathrm{req}}$ & required distinction $X\to D_{\mathrm{req}}$ & $d$, exterior derivative; differentials in $ds$ and $d\Lambda$ & Subscript fixes the reader-obstruction coordinate.\\
+$D_{\mathrm{req}}$ & codomain of the required distinction & $D_{\Gamma_{J(p)}}$, typed gate domain; $\Dfour$, dihedral group & Subscript fixes the codomain; the gate and the group keep their own notation.\\
+$\delta_{\mathrm{req}}$ & decoder $Y\to D_{\mathrm{req}}$ & $\delta$, rail coordinate & Subscript fixes the decoder; bare $\delta$ remains the rail coordinate.\\
+$L_s$ & signed carriage family & $\Lax$, $\Lpr$, $\mathcal L^{\mathrm{hor}}_{n+1}$ & Subscript or calligraphic form fixes the carrier.\\
+$\Grot$ & carriage/mirror group & $\Gamma_{J(p)}$, typing context & Subscript names the carrier.\\
+$S$ & axial generator $HJ$ & $S_{\mathrm{CHSH}}$, correlation sum (H36) & Subscript marks the correlation sum.\\
+$\lambda$ & analytic cell coordinate $\lambda=v+kT$ & $\lambda_{\mathrm{hid}}$, hidden variable (H35, H36) & Subscript marks the hidden variable.\\
+$\gamma$ & element of $\Grot$; deck element & $\gamma_B$, Berry phase (H38); $\gamma_{ij}$, spatial metric (\S\ref{sec:field}) & Subscript marks the geometric phase; indices mark the spatial metric.\\
+$p$ & packet in $J(p)$, $\Gamma_{J(p)}$ & $p_{\mathrm{jt}}$, joint distribution & Subscript marks the distribution.\\
+$E$ & $E$-valued coframe fibre & $E_{\mathrm{cor}}$, correlation; $E_B$, adiabatic energy; $E^i$, electric field (\S\ref{sec:field}) & Subscript marks each; index marks the field.\\
+$E_e$, $M_g$ & candidate $e$-carriage and $g$-memory carriers & $\tilde E_e$, $\tilde M_g$, lifted carriers; $E$, coframe fibre; $g$, metric field carriers & Subscripts fix the candidate carriers; tildes fix their declared lifts.\\
+$A_e$, $B_g$ & candidate adapters in the read--write diagram & $\Ach$, real chart adapter; source-native $B$ & Subscripts fix the candidate adapters.\\
+$\pi_e$, $\pi_g$ & candidate quotient maps for the lifted write & $p_{\mathrm{ax}}$, axial quotient; $\pi^{ij}$, momentum (\S\ref{sec:field}) & Greek $\pi$ with subscript fixes the interface quotient maps; indices mark momentum.\\
+$e_1,e_2$ & witness elements of $E_e$ & $e_\Pi$, embodied metric carrier; $e$, declared $e$-motion label & Subscripts mark witnesses; $\Pi$ marks the field carrier.\\
+$C$ & $\hat C$, internal form; $c$, contact record & $C_{\mathrm{par}}$, parameter loop; $C[v]$, momentum generator (\S\ref{sec:field}) & Subscript marks the loop; the bracket argument marks the generator.\\
+$\omega$ & alternating bilinear map on $V$ & $\Omega$, its coordinate matrix; $\Omega_{\mathcal P_i}$, arithmetic-interface form & Lower case names the map; the capital carries its declared matrix or carrier.\\
+$\gJ$ & positive local read from the finite turn & $G$, signed reader metric; $g_{\mu\nu}$, field metric & Subscript or indices fix the finite, reader and field offices.\\
+$\MEM$ & compositional map $\mathcal P\to\mathcal R$ & $\mu_\Sigma$, memory coordinate; $R_{\mathrm{MR}}$, receipt & Sans serif names the map; Greek $\mu$ the coordinate; $R$ the record.\\
+$\mathsf L$ & ordered outcome ledger in the contact record & $L_s$, $\Lax$, $\Lpr$, carriage; $\Luc n$, Lucas sequence & Sans serif marks the ledger; subscript or context fixes transport and sequence.\\
+$p_{\mathrm{ax}}$ & axial quotient map & packet $p$, $p_{\mathrm{lift}}$, joint distribution $p_{\mathrm{jt}}$ & Subscript fixes the quotient map.\\
+$W$, $W_{\mathrm{pno}}$ & circle phase read; piano lifted key address & $W_k$, source-native key address & Subscript or source citation fixes the carrier.\\
+$\Fac$ & metric factor-profile reader & $\Fesc$, $\FEM$, $\Fib n$ & The full operator name avoids the field and wheel $F$ offices.\\
+$\mathcal T_{\mathrm{arith}}$, $\mathcal Q_{\mathrm{arith}}$ & proposed arithmetic fold map and its quadratic form & $Q$, recurrence matrix; $\mathcal P_i$, positive-read carrier & Calligraphic letters and subscripts fix the open interface.\\
+$R$ & $R(g)$, Ricci scalar & $R_{\mathrm{par}}$, parameter point & Boldface and subscript mark the parameter point.\\
+$m$ & cell count; $m_k$, mass & $m^{\mathrm{mach}}_n$, stored machine state & Superscript marks the machine state.\\
+$N,M$ & lapse functions (\S\ref{sec:field}) & $M$, source-native manifold lettering in $\mathcal S_{\mathrm{SF}}$; $\Mpr$ & Context fixes the office; the manifold is $\mathcal M$ elsewhere.\\
+\end{longtable}}
+\section{Lean closure: certificate and findings}\label{app:E}
+This appendix carries the verification state of Minimum Mechanics 010k--010u as read for this edition. It is a record, not a proof: the proofs are the pinned Lean sources.
+
+\subsection{Provenance}
+Repository \texttt{Coppalini-Architecture/coppalini-architecture}, branches \texttt{codex/*}, read anonymously by \texttt{git fetch --depth 1 origin <full SHA>} (a short SHA does not resolve). Toolchain: Lean 4.33.0. For each part the following were done: the pinned source was fetched and hashed against the pin recorded in its manifest; the source was scanned for \bs{sorry}, added axioms and \bs{native\_decide}; the exact-arithmetic script was rerun with a vacuity census; and the CI status page at the pin was read. Not done: a local Lean compile (the toolchain download is blocked in the working environment), and reading CI logs (they require sign-in). Earlier receipts are append-only.
+
+\subsection{Pins and runs}
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{5.4cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.0cm}@{}}
+\toprule
+Part & Pinned commit & CI / archive & Script census\\\midrule\endfirsthead
+\toprule
+Part & Pinned commit & CI / archive & Script census\\\midrule\endhead
+\bottomrule\endfoot
+010k & \texttt{04cb6a80} (the manifest states \texttt{e35c6a22}; mismatch recorded) & not in carried record & not in carried record\\
+010l & \texttt{f8184928} & not in carried record & not in carried record\\
+010m & \texttt{b25f87cc} & not in carried record & not in carried record\\
+010n & \texttt{7391bb19} & CI \#10; archive \#237 green & not in carried record\\
+010o & \texttt{b63e938c\dots} (short form carried) & CI \#8 green & 261/261; conditional result\\
+010p & \hash{9ddd6407fa689c1c4b0a61bb353350cca9cd5598} & compiler \#7, archive \#263 green & 643/643; pointwise\\
+010q & \hash{5fda559c33e9f63d12b8bb2789f88364092272f4} & CI \#3 green; archive run \texttt{43880909497} unread & 2602/2602\\
+010r & \hash{ad164c628d629cf918ba3ace959a7ad20731fc1d} (branch head; the kit gives no pin) & CI \#4 green after three failed runs & 2704/2704, of which 200 tautologies\\
+010s & \hash{372981a983c221a79784496ea4b0d92d4b57cd7f} & CI \#3 green; archive run unread & ---\\
+010t & \hash{ca6cd5bfd652316d0218fe9f47f2b26e6cd04c30} & CI \#6, archive \#294 green & 4529/4529, of which 1800 vacuous Fourier checks\\
+010u & \hash{b9e939d514a63fb021592f79a316f70cbc70ed8a} & CI \#5, archive \#302 green; 45-module closure; 20 audits & ---\\
+\end{longtable}}
+Hash prefixes recorded: 010q source \texttt{3b404faf}, workflow \texttt{2dc0e6a9}; 010r Lean \texttt{4be5e512}, workflow \texttt{caa8d867}; 010t source \texttt{8a922b87}, workflow \texttt{0a6df763}; 010u source \texttt{47aeccb2}. The AxiomaticBuild README (\texttt{ecfd19cc9378a3b4}) and PDF (\texttt{9fe92b0eb7859896}) match the 010u manifest rows. Where the table says ``not in carried record'', the pin was verified but the further columns were not carried into the record this edition was built from.
+
+\subsection{The CI guard}
+The guard \texttt{scripts/verify\_lean\_010s.py} (010s) fails closed on a missing or empty log, on axioms outside the allowed set ($\texttt{propext}$, $\texttt{Quot.sound}$, $\texttt{Classical.choice}$), on a hash mismatch or duplicate, and on forbidden source tokens. Its ten tests pass in the working environment. Edge cases: a log containing a compiler \texttt{error:} or \texttt{declaration uses 'sorry'} together with an audit line passes the log check, and is caught by the compile exit code and the source scan; a \texttt{"sorry"} string literal is rejected.
+
+\subsection{Findings ledger}
+Classes: \emph{drop} (a needed item absent), \emph{add} (a claim or check with no content), \emph{strength} (stated strength exceeds premises), \emph{record} (a fact for the record).
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{8.6cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{4.2cm}@{}}
+\toprule
+\# & Finding & Class & Disposition\\\midrule\endfirsthead
+\toprule
+\# & Finding & Class & Disposition\\\midrule\endhead
+\bottomrule\endfoot
+1 & 010k manifest names pin \texttt{e35c6a22}; the verified pin is \texttt{04cb6a80}. & record & Pin carried here.\\
+2 & 010r kit gives no pin and no receipt; verified against the branch head. & drop & Head recorded in E.2.\\
+3 & A sign slip in the 010q text. & add & Recorded.\\
+4 & 010o is conditional on seven premises; 010p is pointwise only. & strength & Stated as such in \S\ref{sec:six}.\\
+5 & CI regex arm \texttt{Lean\textbackslash\textbackslash.ofReduceBool} in single quotes matches a literal backslash: a dead arm in 17 workflows (010b--010q). A source sweep found no exposure. & add & Repaired in 010r and 010s.\\
+6 & Vacuous or tautological check blocks: 200 in 010r; 1800 vacuous Fourier checks and 500 structural $0=0$ in 010t. & add & Counted out of the evidence here.\\
+7 & 010u: the history conjunct of \textbf{Admitted} is not tied to \textbf{Enough}. & drop & Open item 6 (\S\ref{sec:close}).\\
+8 & Overview counts do not reproduce: 010q 2603 against 2602 here; 010r 2904 against 2704 here. & record & Recorded.\\
+9 & \texttt{\#print axioms} lines exceed the reported matched messages: 342 against 290 (010u); 219 against 202 (010t). Consistent with axiom-free theorems printing a different message; unverified without logs. & record & Open until logs are readable.\\
+10 & 010u theorems mostly unpack definitions; ``universal'' is definitional. & strength & Stated in \S\ref{sec:010u}.\\
+11 & \bs{SmoothCompletion} is never instantiated; \bs{Int} blocks a real instance. & strength & \S\ref{sec:type}.\\
+12 & Compile evidence is the CI status page only; logs need sign-in. & record & \S\ref{sec:certificate}.\\
+13 & The register ended at word 27. The half-turn read, the zero read at the fixed point and the twenty-eight reads of the source record were not carried. & drop & Closed in \S\ref{sec:endurance}; open items 7 and 8 (\S\ref{sec:close}).\\
+\end{longtable}}
+
+\section{Build and transport}\label{app:F}
+This edition is one self-contained \TeX{} file with no external inputs.
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Engine.} XeLaTeX. Run \texttt{xelatex symmetric\_\allowbreak minimum\_\allowbreak v1\_\allowbreak 7\_\allowbreak 15.tex} twice, so that the contents and cross-references settle.
+\item \textbf{Packages} (standard TeX Live): fontspec, amsmath, amsthm, mathtools, booktabs, longtable, array, tabularx, enumitem, xcolor, microtype, fancyhdr, tcolorbox, hyperref. Fonts: Latin Modern, bundled with TeX Live. One table cell (H01) uses a CJK font if one is installed and falls back to a romanization otherwise.
+\item \textbf{Independent check.} \texttt{python3 -I check\_\allowbreak symmetric\_\allowbreak minimum\_\allowbreak independent.py} (needs \texttt{sympy}); it prints the per-family counts and ends with \texttt{RESULT OK}.
+\item \textbf{Integrity.} \texttt{SHA256SUMS} lists the checksums of the files delivered together; verify with \texttt{sha256sum -c SHA256SUMS}.
+\item \textbf{Companion.} The repair receipts v1.3 through v1.7.16 are in the separate Repair Ledger.
+\end{itemize}
+\end{document}

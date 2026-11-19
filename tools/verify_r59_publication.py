@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
-"""R59 static publication contract: source provenance, links, route and copy checks.
+"""Static publication contract: source provenance, links, route and copy checks.
 
 No external dependencies. Run at the static-site repository root:
     python3 tools/verify_r59_publication.py
 """
 from __future__ import annotations
+import hashlib
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 import json
 import re
 import sys
+import zipfile
 
 ROOT = Path(".")
 CURRENT = ("index.html","notice/index.html","about.html","library.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
-           "formal-correspondence/index.html")
+           "formal-correspondence/index.html","papers/symmetric-minimum/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
            "archive/r58-basis.html")
@@ -31,6 +33,17 @@ REQUIRED_PAPERS = (
  "models/view/clear-onyx-gauge-laboratory-v0.5.3.html",
 )
 PROOF_PIN = "b9e939d514a63fb021592f79a316f70cbc70ed8a"
+SYMMETRIC_MINIMUM_VERSION = "1.7.16"
+SYMMETRIC_MINIMUM_FILES = {
+ "papers/symmetric-minimum/symmetric_minimum_v1_7_16.pdf": "74af9c4df7221853594c6290df261950d5294b5e9f88c9be015ab72457ae22c1",
+ "papers/symmetric-minimum/symmetric_minimum_v1_7_16.tex": "1b180213be067ebeec79d083ce0776e52e544c5bfc537bf6f099761c3511d965",
+ "verification/symmetric-minimum-v1.7.16/check_symmetric_minimum_independent.py": "a6d6464d5026647c0e788b4be638f8d9fab5e156078d403a8931c5d13af27330",
+ "verification/symmetric-minimum-v1.7.16/repair_ledger_v1_7_16.pdf": "b9f178c2ccee7c8333543d542ee584fbb2da731225a6e158c80674bb0f0fcef4",
+ "verification/symmetric-minimum-v1.7.16/repair_ledger_v1_7_16.tex": "758f4aa49c23e6a653c5fc5a8a6d343b072f30898c3f0d84677d557e0992f481",
+}
+SYMMETRIC_MINIMUM_MANIFEST = "verification/symmetric-minimum-v1.7.16/SHA256SUMS"
+SYMMETRIC_MINIMUM_BUNDLE = "downloads/symmetric-minimum-v1.7.16-source-and-verification.zip"
+SYMMETRIC_MINIMUM_BUNDLE_SHA256 = "3960f7a78edc21805f31672ec126d26c9e474702b6b0d641c0ba5aa2a8e5b4e2"
 NOTICE_SOURCES = (
  "https://www.who.int/news/item/23-09-2020-managing-the-covid-19-infodemic-promoting-healthy-behaviours-and-mitigating-the-harm-from-misinformation-and-disinformation/",
  "https://www.oecd.org/en/publications/2024/07/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results_eeb36452.html",
@@ -87,6 +100,48 @@ def location(path):
         if q.is_file(): return q
     return None
 
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def symmetric_minimum_release(errors):
+    manifest_path = ROOT / SYMMETRIC_MINIMUM_MANIFEST
+    if not manifest_path.is_file():
+        errors.append("Symmetric Minimum release manifest missing")
+        return
+    manifest = {}
+    for line in manifest_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        digest, name = line.split(maxsplit=1)
+        manifest[name.strip()] = digest
+    for relative, expected in SYMMETRIC_MINIMUM_FILES.items():
+        artifact = ROOT / relative
+        if not artifact.is_file():
+            errors.append("Symmetric Minimum artifact missing: " + relative)
+            continue
+        if sha256(artifact) != expected:
+            errors.append("Symmetric Minimum hash mismatch: " + relative)
+        if manifest.get(artifact.name) != expected:
+            errors.append("Symmetric Minimum manifest mismatch: " + artifact.name)
+    bundle = ROOT / SYMMETRIC_MINIMUM_BUNDLE
+    if not bundle.is_file():
+        errors.append("Symmetric Minimum source bundle missing")
+        return
+    if sha256(bundle) != SYMMETRIC_MINIMUM_BUNDLE_SHA256:
+        errors.append("Symmetric Minimum source bundle hash mismatch")
+    try:
+        with zipfile.ZipFile(bundle) as release:
+            names = set(release.namelist())
+            expected_names = set(manifest) | {"SHA256SUMS"}
+            if names != expected_names:
+                errors.append("Symmetric Minimum bundle membership mismatch")
+            for relative, expected in SYMMETRIC_MINIMUM_FILES.items():
+                name = Path(relative).name
+                if name in names and hashlib.sha256(release.read(name)).hexdigest() != expected:
+                    errors.append("Symmetric Minimum bundle artifact mismatch: " + name)
+    except zipfile.BadZipFile:
+        errors.append("Symmetric Minimum source bundle is not a readable ZIP")
+
 def verify():
     errors = []
     aliases = redirects()
@@ -135,12 +190,31 @@ def verify():
     for marker in ("The Notice", "reader-obstruction", "Independent technical examination",
                    "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_SOURCES:
         if marker not in notice: errors.append("notice missing required route or source: "+marker)
+    symmetric_minimum_release(errors)
+    symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
+    for marker in (
+        "Symmetric Minimum", "reference edition v1.7.16", "140/140 exact checks",
+        "33 refusal controls", "hDensityCovariance", "source-and-verification.zip",
+        "Bottom line.", "C(8,2) = 28 pair reads", "word → map → condition → source",
+        "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
+        "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
+        "Source-declared field construction", "Conditional Lean theorem",
+    ):
+        if marker not in symmetric_page:
+            errors.append("Symmetric Minimum page missing marker: " + marker)
+    for placeholder in (
+        "an exact operational closure",
+        "a finite root",
+        "field-facing",
+    ):
+        if placeholder in symmetric_page.lower():
+            errors.append("Symmetric Minimum page retains untyped placeholder: " + placeholder)
     home=(ROOT/"index.html").read_text()
     if "Computational Gauge Invariance — Coppalini Architecture</title>" in home:
         errors.append("old home title retained")
     if "<iframe" in home: errors.append("homepage should not auto-start a heavy field engine")
-    if 'href="/formal-correspondence/">Formal correspondence</a>' not in home:
-        errors.append("homepage lacks formal correspondence entrance")
+    if 'href="/formal-correspondence/">Map to the literature</a>' not in home:
+        errors.append("homepage lacks map-to-literature entrance")
     if 'class="notice-feature"' in home:
         errors.append("homepage retains Notice feature")
     if "Field Investigations</title>" in home:
@@ -165,13 +239,13 @@ def verify():
                  "archive/r58-constructions.html","archive/r58-basis.html"):
         if "<base href=\"/\">" not in (ROOT/page).read_text():
             errors.append(page+": missing archival base correction")
-    print(f"R59 checked {len(CURRENT)} current pages, {len(HISTORY)} archived pages, "
+    print(f"Static candidate checked {len(CURRENT)} current pages, {len(HISTORY)} archived pages, "
           f"{checked} local references, {repairs} backward-compatible redirects, "
-          f"{len(proof_files)} pinned proof source addresses")
+          f"{len(proof_files)} pinned proof source addresses, and Symmetric Minimum v{SYMMETRIC_MINIMUM_VERSION}")
     if errors:
         for e in errors: print("FAIL:",e)
         return 1
-    print("R59 PASS: page structure, source preservation, archival links, noindex and proof scopes")
+    print("PASS: page structure, source preservation, archival links, claim routes, and Symmetric Minimum release hashes")
     return 0
 
 if __name__ == "__main__": raise SystemExit(verify())
