@@ -1,0 +1,114 @@
+{
+  "title": "Formal Correspondence Ledger",
+  "version": "0.2",
+  "updated": "2026-11-20",
+  "supersedes": "https://eulershiddenl.ink/research/formal-correspondence-v0.1.json",
+  "canonical_url": "https://eulershiddenl.ink/research/formal-correspondence-v0.2.json",
+  "reader_url": "https://eulershiddenl.ink/formal-correspondence/",
+  "reading_order": ["public_form", "coppalini_construction", "relation", "receipt_scope"],
+  "status_key": [
+    {"label": "Exact finite", "use": "Identity checked in a declared finite carrier."},
+    {"label": "Exact derived", "use": "Consequence of displayed finite relations."},
+    {"label": "Declared interface", "use": "A named map or carrier boundary whose realization retains its own evidence."},
+    {"label": "Source-declared", "use": "A named construction or office stated in its source."},
+    {"label": "Source-documented classical mathematics", "use": "The smooth T3 construction and its stated calculation."},
+    {"label": "Conditional Lean theorem", "use": "A compiled theorem with named hypotheses."},
+    {"label": "Cited", "use": "A result retained in a named external source."},
+    {"label": "Open", "use": "A required construction with no current realization."}
+  ],
+  "namespace_ledger": {
+    "finite_root": {
+      "carrier": "V = R2",
+      "omega_root": "Ω_root = [[0,1],[-1,0]]",
+      "turn": "J_rot := -Ω_root",
+      "metric": "G_root := [Q, Ω_root] = [[-2,1],[1,2]]",
+      "identity": "G_root^2 = 5I",
+      "status": "Exact finite"
+    },
+    "finite_axial_coordinate": {
+      "source_native_symbol": "λ",
+      "display_symbol": "λ_root",
+      "domain": "V \\ (ell_Phi union ell_Psi) = {a v_Phi + b v_Psi : ab != 0}",
+      "definition": "λ_root(a v_Phi + b v_Psi) = log|a/b|",
+      "transport": "λ_root(L_t z) = λ_root(z) + 2t",
+      "unit_address": "λ_root((1,1)^T) = 2 log Phi",
+      "status": "Exact derived",
+      "boundary": "It is one longitudinal coordinate of the complete signed chart N=(λ,m,kappa,sigma)."
+    },
+    "centered_rail_coordinate": {
+      "carrier": "upper half-plane / rail",
+      "cross_ratio": "xi_ax(w) = (Phi-w)/(w-Psi) = b/a under u(w)=(w,1)^T",
+      "bridge": "Lambda_ax(w) = log Phi + lambda_C(u(w))",
+      "rail_normalization": "Lambda_rail(L_s i) = 2s",
+      "status": "Exact derived",
+      "boundary": "The real-root coordinate is not evaluated at i; the bridge uses complexification."
+    },
+    "einstein_maxwell_field_record": {
+      "spatial_carrier": "Sigma_EM := T3",
+      "one_form_carrier": "Omega^1_dR(Sigma_EM)",
+      "gauss_generator": "G_EM[alpha]",
+      "source_native_symbol": "G[s]",
+      "status": ["Source-documented classical mathematics", "Conditional Lean theorem"]
+    },
+    "jurisdiction": {
+      "symbol": "J_*",
+      "status": "Declared interface",
+      "boundary": "J_* is distinct from J_rot, the finite turn matrix."
+    }
+  },
+  "open": [
+    "A concrete real C-infinity constructor for the original Int-valued SmoothCompletion interface.",
+    "P14, the finite-root-to-variational/Hamiltonian adapter."
+  ],
+  "records": [
+    {
+      "id": "signal",
+      "public_form": {"title": "The Zero Error Capacity of a Noisy Channel", "author": "Claude E. Shannon", "year": 1956, "url": "https://doi.org/10.1109/TIT.1956.1056798"},
+      "coppalini_construction": ["https://eulershiddenl.ink/papers/infinity-one-zero-lift", "https://eulershiddenl.ink/library#four-dual-forms-shelf"],
+      "relation": "Within a declared exact carrier, a record can establish zero residual for a named operation; the channel form separates declared confusable alternatives.",
+      "receipt_scope": {"receipt": "https://eulershiddenl.ink/verification/four-dual-forms/verify_four_papers_v0_3.out", "scope": "Exact zero belongs to the named carrier and check. Measurements retain calibration, residual, and uncertainty."}
+    },
+    {
+      "id": "reader",
+      "public_form": {"title": "On the General Theory of Control Systems", "author": "R. E. Kalman", "year": 1959, "url": "https://doi.org/10.1109/TAC.1959.1104873"},
+      "coppalini_construction": ["https://eulershiddenl.ink/proofs/minimum-mechanics/#reader-obstruction", "https://eulershiddenl.ink/papers/infinity-one-zero-lift", "https://eulershiddenl.ink/papers/occurrence-twenty-eight-seam-reader-011-v0.2.pdf"],
+      "relation": "A reader is sufficient for a declared difference when that difference factors through what the reader retains. A collision of reader outputs with distinct required differences calls for a supplement. Occurrence and the Twenty-Eight-Seam Reader is Language Mechanics 011 / Form 011, the 28-entry typed reader register; it is distinct from The 28 Seam Mirror Wheel, the four-phase carriage construction.",
+      "receipt_scope": {"receipt": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/UniversalClosure010u.lean", "scope": "The compiled witness is finite and read at its declared resolution. Silence is epsilon_HS=0 and, at the half-turn, I+U_pi=0. Endurance Phi(pi) is the compound closing read: form retained, difference retained, reference returned, and Silence. The half-turn identities are Exact finite; the office assignment is Source-declared."}
+    },
+    {
+      "id": "metric",
+      "public_form": {"title": "Die Grundlage der allgemeinen Relativitätstheorie; A Dynamical Theory of the Electromagnetic Field", "authors": ["Albert Einstein", "James Clerk Maxwell"], "years": [1916, 1865], "urls": ["https://doi.org/10.1002/andp.19163540702", "https://doi.org/10.1098/rstl.1865.0008"]},
+      "coppalini_construction": ["https://eulershiddenl.ink/papers/four-dual-forms/gravity-light", "https://eulershiddenl.ink/library#suture-field-shelf"],
+      "relation": "Within V=R2, Q^2=Q+I, Ω_root=[[0,1],[-1,0]], J_rot:=−Ω_root, and G_root:=[Q,Ω_root]=[[-2,1],[1,2]] satisfy G_root^2=5I. Gravity-Light carries the local light-cone condition ds^2=0 at its stated interface.",
+      "receipt_scope": {"receipt": "https://eulershiddenl.ink/verification/four-dual-forms/verify_four_papers_v0_3.out", "scope": "The paper retains its source, field construction, and physical conditions."}
+    },
+    {
+      "id": "canonical",
+      "public_form": {"title": "Generalized Hamiltonian Dynamics; Conservation of Isotopic Spin and Isotopic Gauge Invariance; The Dynamics of General Relativity", "authors": ["P. A. M. Dirac", "C. N. Yang and R. L. Mills", "R. Arnowitt, S. Deser and C. W. Misner"], "urls": ["https://doi.org/10.4153/CJM-1950-012-1", "https://doi.org/10.1103/PhysRev.96.191", "https://arxiv.org/abs/gr-qc/0405109"]},
+      "coppalini_construction": ["https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger", "https://eulershiddenl.ink/proofs/smooth-completion/"],
+      "relation": "In the source-documented classical field record, the Einstein-Maxwell ADM state (gamma, pi; A, E) lives over Sigma_EM:=T3. The 4x4 Dirac block, finite curvature and gauge-variation records, and local canonical brackets carry the normal bracket, shift, and six-bracket relation at their stated interfaces. G_EM[alpha] names the Gauss generator; the pinned source writes this slot G[s].",
+      "receipt_scope": {"receipt": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/FunctionalClosure010o.lean", "scope": "The Lean six-bracket theorem is conditional on seven named SmoothCompletion fields. Separately, the source-documented real C-infinity Einstein-Maxwell carrier on compact boundaryless T3 supplies their classical counterparts and the six brackets; the original Int-valued Lean constructor and P14 finite-root-to-Hamiltonian adapter remain separately open."}
+    },
+    {
+      "id": "symmetry",
+      "public_form": {"title": "Invariante Variationsprobleme", "author": "Emmy Noether", "year": 1918, "url": "https://de.wikisource.org/wiki/Invariante_Variationsprobleme"},
+      "coppalini_construction": ["https://eulershiddenl.ink/proofs/minimum-mechanics/#field-mechanics"],
+      "relation": "Writing G_EM[alpha] for the canonical Gauss generator (the pinned source writes G[s]), the declared spatial transport, Gauss, and Hamiltonian-density generators carry their named bracket laws, including {D[v],G_EM[alpha]}=G_EM[L_v alpha].",
+      "receipt_scope": {"receipt": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/FunctionalClosure010o.lean", "scope": "The interface is read in its stated Einstein-Maxwell ADM variables and completion premises; G_EM is distinct from G_root."}
+    },
+    {
+      "id": "three-body",
+      "public_form": {"title": "Newtonian mechanics / historical source record", "url": "https://www.loc.gov/item/28020872/"},
+      "coppalini_construction": ["https://eulershiddenl.ink/papers/the-3-body-mirror.pdf"],
+      "relation": "Complete relative vectors and known masses determine the declared three-body relative configuration. The equal-mass Euler orbit carries the stated nonlinear inverse and selected Fibonacci conjugacy.",
+      "receipt_scope": {"receipts": ["https://eulershiddenl.ink/verification/the-3-body-mirror/verification-symbolic.txt", "https://eulershiddenl.ink/verification/the-3-body-mirror/verification-independent.txt"], "scope": "Measurement enters through declared masses, ephemeris state vectors, time convention, calibration, and residual."}
+    },
+    {
+      "id": "provenance",
+      "public_form": {"title": "PROV-DM; metrological traceability; Theorem Proving in Lean 4", "authors": ["W3C", "NIST", "Lean community"], "urls": ["https://www.w3.org/TR/prov-dm/", "https://www.nist.gov/metrology/metrological-traceability", "https://docs.lean-lang.org/theorem_proving_in_lean4/"]},
+      "coppalini_construction": ["https://eulershiddenl.ink/verify"],
+      "relation": "Each public record couples a source address, an exact file or theorem statement, a verifier or compiler run, and the scope carried by that result.",
+      "receipt_scope": {"receipts": ["https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607", "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536"], "scope": "A receipt fixes a versioned record and its stated conditions."}
+    }
+  ]
+}

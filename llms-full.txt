@@ -21,7 +21,7 @@ R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-archi
 
 ## Formal correspondence
 
-The Formal Correspondence Ledger gives each principal public claim a handle in the order: public form, Coppalini construction, named relation, receipt, and scope. It links canonical public sources in information theory, control, gauge and canonical mechanics, symmetry, metric physics, provenance, and formal verification to the local construction and its own exact record.
+The Formal Correspondence Ledger gives each principal public claim a handle in the order: public form, Coppalini construction, named relation, receipt, and scope. It links canonical public sources in information theory, control, gauge and canonical mechanics, symmetry, metric physics, provenance, and formal verification to the local construction and its own exact record. Its current namespace ledger distinguishes \(\Omega_{\rm root}\), \(J_{\rm rot}\), and \(G_{\rm root}=[Q,\Omega_{\rm root}]\) from the canonical Gauss generator \(G_{\rm EM}\), and the finite normal-form coordinate \(\lambda_{\rm root}\) from the centered upper-half-plane coordinate \(\Lambda_{\rm ax}\).
 
 ## Standalone Notice
 
@@ -32,7 +32,7 @@ The Notice states the declared reader relation: a vector-only read of `s` omits 
 Reference edition:
 https://eulershiddenl.ink/papers/symmetric-minimum/
 
-Metric Minimum records the exact connection among three named constructions without adding a new field law. First, the Suture Field source gives \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\): one rank-four coframe supplies the Lorentzian metric and oriented solder flux, with a stated local regular-branch reduction to Einstein–Maxwell. Second, the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\) carries the same metric and electromagnetic data on a spatial slice; the conditional 010o Lean theorem gives the metric shift and gauge adjustment returned by two normal evolutions. Third, the exact signed \(2\times2\) fibre block \(G=[Q,\Omega]\) occurs in \(\hat\eta=G\oplus I_2\oplus I_2\oplus I_2\). Its independently recomputed operations \(Q,J,H,L_{\rm ax}\) supply recurrence, quarter-phase, reflection, and metric-preserving transport on that one coordinate block. The 28-word coordinate register is a source-indexed documentation table, distinct from the \(\binom82=28\) pair reads of a declared eight-address carrier. The release therefore closes the stated coframe relation, its conditional canonical relation, and the exact finite algebra at their declared interfaces. A smooth instance of the seven premises, the root-to-Hamiltonian/observable adapter, and empirical calibration retain their separate open obligations. The release retains the source action and conditions, 45 pinned Lean 4.33.0 modules, the seven-premise six-bracket theorem, an independent 140/140 exact checker, 33 refusal controls, and the repair ledger.
+Metric Minimum records the exact connection among three named constructions without adding a new field law. First, the Suture Field source gives \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\): one rank-four coframe supplies the Lorentzian metric and oriented solder flux, with a stated local regular-branch reduction to Einstein–Maxwell. Second, the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\) carries the same metric and electromagnetic data on a spatial slice; the conditional 010o Lean theorem gives the metric shift and gauge adjustment returned by two normal evolutions. A later source-documented classical \(C^\infty\) Einstein–Maxwell construction on compact boundaryless \(\mathbb T^3\) supplies the corresponding seven field-premise roles and six secondary brackets. Two retained open items are a concrete real \(C^\infty\) constructor for the original `Int`-valued Lean interface and P14, the finite-root-to-variational/Hamiltonian adapter. Third, the exact signed \(2\times2\) fibre block \(G_{\rm root}=[Q,\Omega_{\rm root}]\) occurs as the first block of \(\hat\eta=G_{\rm root}\oplus I_2\oplus I_2\oplus I_2\), with \(J_{\rm rot}:=-\Omega_{\rm root}\). Its independently recomputed operations \(Q,J_{\rm rot},H,L_{\rm ax}\) supply recurrence, quarter-phase, reflection, and metric-preserving transport on that one coordinate block. The canonical Gauss generator is separately named \(G_{\rm EM}[\alpha]\), with retained source notation \(G[s]\). The 28-word coordinate register is a source-indexed documentation table, distinct from the \(\binom82=28\) pair reads of a declared eight-address carrier. The release therefore closes the stated coframe relation, the source-documented classical field completion, and the exact finite algebra at their declared interfaces. Empirical calibration retains its separate open obligation. The release retains the source action and conditions, 45 pinned Lean 4.33.0 modules, the seven-premise six-bracket theorem, an independent 140/140 exact checker, 33 refusal controls, and the repair ledger.
 
 Published release materials:
 
@@ -42,6 +42,8 @@ Published release materials:
 - SHA-256 manifest: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/SHA256SUMS
 - repair ledger: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/repair_ledger_v1_7_16.pdf
 - source-and-check package: https://eulershiddenl.ink/downloads/symmetric-minimum-v1.7.16-source-and-verification.zip
+- classical smooth field receipt: https://eulershiddenl.ink/proofs/smooth-completion/
+- machine-readable smooth field record: https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.json
 
 The supplied independent checker re-derives 140 finite exact identities and 33 refusal controls. It is separate from the source’s Lean and field-theory records.
 
@@ -66,10 +68,10 @@ https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
 010p: nonorthonormal pointwise gradient and metric-shift proof.
 010q–010r: exact abstract gapped and accumulating spectrum witnesses for the stated Gauss constraints.
 010s: pointwise 010p / 010o source attachment.
-010t: nonzero rational canonical pairing with prime-word order distinction.
+010t: pinned nonzero rational canonical pairing with prime-word order distinction; a later source record separately supplies the real \(C^\infty\) Einstein–Maxwell field completion on \(\mathbb T^3\).
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The source ledger gives the stated finite and local relations at the pinned source. The real/Fréchet SmoothCompletion formalization has a separately typed construction address. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+The source ledger gives the stated finite and local relations at the pinned source. The later source-documented real/Fréchet field construction closes the classical smooth field level; a concrete real \(C^\infty\) constructor for the original `Int`-valued SmoothCompletion formalization and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 

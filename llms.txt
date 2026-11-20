@@ -4,9 +4,9 @@
 
 ## Current public record
 
-- [Formal Correspondence Ledger](https://eulershiddenl.ink/formal-correspondence/): named public forms beside Coppalini constructions, exact receipts, and stated scopes.
+- [Formal Correspondence Ledger](https://eulershiddenl.ink/formal-correspondence/): named public forms beside Coppalini constructions, exact receipts, stated scopes, and the rooted namespace that distinguishes the finite metric block, the canonical Gauss generator, and the two axial coordinates.
 - [Home](https://eulershiddenl.ink/): formal lineage, Four Dual Forms, The 3 Body Mirror, Minimum Mechanics, the laboratory, and the library.
-- [Metric Minimum / Symmetric Minimum v1.7.16](https://eulershiddenl.ink/papers/symmetric-minimum/): a source-addressable connection among three named constructions: the coframe field system \(\Pi\to(g,F_{\rm sol})\to F_{\rm em}\) and its stated regular Einstein–Maxwell reduction; the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\), whose normal bracket returns the metric shift and gauge adjustment under seven named premises; and the exact signed \(2×2\) fibre block \(G=[Q,\Omega]\). \(Q,J,H,L_{\rm ax}\) are independently checked operations on that block. The 28-word coordinate register is distinct from the \(\binom82=28\) pair reads of an eight-address carrier. The root-to-Hamiltonian/observable adapter remains open. The release includes source equations, 45 Lean modules, an independent 140/140 exact checker, 33 refusal controls, SHA-256 manifest, and repair ledger.
+- [Metric Minimum / Symmetric Minimum v1.7.16](https://eulershiddenl.ink/papers/symmetric-minimum/): a source-addressable connection among three named constructions: the coframe field system \(\Pi\to(g,F_{\rm sol})\to F_{\rm em}\) and its stated regular Einstein–Maxwell reduction; the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\), whose normal bracket returns the metric shift and gauge adjustment under seven named premises; and the exact signed \(2×2\) finite block \(G_{\rm root}=[Q,\Omega_{\rm root}]\), with \(J_{\rm rot}:=-\Omega_{\rm root}\). \(Q,J_{\rm rot},H,L_{\rm ax}\) are independently checked operations on that block. The canonical Gauss generator is separately named \(G_{\rm EM}[\alpha]\) (source notation \(G[s]\)). The 28-word coordinate register is distinct from the \(\binom82=28\) pair reads of an eight-address carrier. The two retained open items are a concrete real \(C^\infty\) constructor for the original `Int`-valued `SmoothCompletion` interface and P14, the finite-root-to-variational/Hamiltonian adapter. The release includes source equations, 45 Lean modules, an independent 140/140 exact checker, 33 refusal controls, SHA-256 manifest, and repair ledger.
 - [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean source modules in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
 - [Proof verification](https://eulershiddenl.ink/verify): reproduction instructions and source-specific compiler, hash, and audit records for the locked version `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [Machine-readable proof index](https://eulershiddenl.ink/research/minimum-mechanics-010u.json): all 21 stages and all 45 exact source paths.
@@ -20,10 +20,11 @@
 
 ## Current theorem strength
 
-- 010a–010p: source-led finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o is conditional on `SmoothCompletion` and names its smooth-field realization obligation.
+- 010a–010p: source-led finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o remains conditional on `SmoothCompletion`.
 - 010q–010r: source-led abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
-- 010s–010t: local source attachment and a nonzero finite rational symplectic carrier; ordinary smooth real field completion is a distinct mathematical construction from full Lean formalization.
+- 010s–010t: local source attachment and a nonzero finite rational symplectic carrier; a later source-documented real C∞ Einstein–Maxwell completion on compact boundaryless T³ supplies the seven classical premise roles and six brackets. Two items remain open: a concrete real C∞ constructor for the original `Int`-valued Lean interface, and P14, the finite-root-to-variational/Hamiltonian adapter.
 - 010u: a typed jurisdictional admission and pattern-recognition theorem over declared carriers; physical applications use separately named observables and conditions.
+- Classical smooth field receipt: https://eulershiddenl.ink/proofs/smooth-completion/ (the seven C∞ field-premise roles and six brackets on compact boundaryless T³; the original `Int`-valued Lean constructor and P14 remain separately open).
 - `AxiomaticBuild.lean` is carried here by its summary and README as source-report records.
 
 ## Read a claim through its record

@@ -19,7 +19,8 @@ CURRENT = ("index.html","notice/index.html","about.html","library.html","verify.
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
-           "formal-correspondence/index.html","papers/symmetric-minimum/index.html")
+           "proofs/smooth-completion/index.html","formal-correspondence/index.html",
+           "papers/symmetric-minimum/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
            "archive/r58-basis.html")
@@ -48,6 +49,16 @@ NOTICE_SOURCES = (
  "https://www.who.int/news/item/23-09-2020-managing-the-covid-19-infodemic-promoting-healthy-behaviours-and-mitigating-the-harm-from-misinformation-and-disinformation/",
  "https://www.oecd.org/en/publications/2024/07/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results_eeb36452.html",
  "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+)
+SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
+SMOOTH_COMPLETION_PREMISES = (
+ "hDensityCovariance",
+ "gaugeHamiltonianVariationZero",
+ "gaussSmearingCovariance",
+ "boundaryH",
+ "sourceNormalGradient",
+ "sourceMomentumAddress",
+ "boundaryNormal",
 )
 
 class Reader(HTMLParser):
@@ -142,6 +153,38 @@ def symmetric_minimum_release(errors):
     except zipfile.BadZipFile:
         errors.append("Symmetric Minimum source bundle is not a readable ZIP")
 
+def smooth_completion_receipt(errors):
+    path = ROOT / SMOOTH_COMPLETION_RECORD
+    if not path.is_file():
+        errors.append("smooth-completion source record missing")
+        return
+    try:
+        record = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append("smooth-completion source record is invalid JSON: " + str(exc))
+        return
+    if record.get("status") != "source-documented classical mathematics":
+        errors.append("smooth-completion record status mismatch")
+    if record.get("reader_handles", {}).get("sequence") != ["Φ", "Ψ", "i", "g", "e", "θ", "Λ"]:
+        errors.append("smooth-completion reader handle sequence mismatch")
+    premises = record.get("premises", [])
+    if [entry.get("name") for entry in premises] != list(SMOOTH_COMPLETION_PREMISES):
+        errors.append("smooth-completion seven-premise order mismatch")
+    for entry in premises:
+        if not all(entry.get(field) for field in ("classical_counterpart", "condition", "source")):
+            errors.append("smooth-completion premise lacks counterpart, condition, or source: " + entry.get("name", "<unnamed>"))
+    if len(record.get("six_secondary_brackets", [])) != 6:
+        errors.append("smooth-completion bracket count mismatch")
+    namespace = record.get("presentation_namespace", {})
+    for key in ("gauss_generator", "finite_root_boundary"):
+        if key not in namespace:
+            errors.append("smooth-completion namespace record missing: " + key)
+    lean = record.get("lean_boundary", {})
+    if "Conditional Lean theorem" not in lean.get("theorem_status", "") or "open" not in lean.get("open", "").lower():
+        errors.append("smooth-completion Lean boundary missing")
+    if "P14" not in record.get("separate_open_obligation", ""):
+        errors.append("smooth-completion P14 boundary missing")
+
 def verify():
     errors = []
     aliases = redirects()
@@ -183,14 +226,22 @@ def verify():
     proof_files = [n for stage in proof["stages"] for n in stage["sources"]]
     if len(proof_files) != 45 or len(set(proof_files)) != 45:
         errors.append("proof source list not 45 unique files")
-    correspondence = json.loads((ROOT/"research/formal-correspondence-v0.1.json").read_text())
-    if correspondence.get("version") != "0.1" or len(correspondence.get("records", [])) != 7:
-        errors.append("formal correspondence ledger count or version mismatch")
+    correspondence_v1 = json.loads((ROOT/"research/formal-correspondence-v0.1.json").read_text())
+    correspondence = json.loads((ROOT/"research/formal-correspondence-v0.2.json").read_text())
+    if correspondence_v1.get("version") != "0.1" or len(correspondence_v1.get("records", [])) != 7:
+        errors.append("formal correspondence v0.1 preservation mismatch")
+    if correspondence.get("version") != "0.2" or len(correspondence.get("records", [])) != 7:
+        errors.append("formal correspondence v0.2 count or version mismatch")
+    namespace = correspondence.get("namespace_ledger", {})
+    for key in ("finite_root", "finite_axial_coordinate", "centered_rail_coordinate", "einstein_maxwell_field_record", "jurisdiction"):
+        if key not in namespace:
+            errors.append("formal correspondence v0.2 missing namespace record: " + key)
     notice=(ROOT/"notice/index.html").read_text()
     for marker in ("The Notice", "reader-obstruction", "Independent technical examination",
                    "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_SOURCES:
         if marker not in notice: errors.append("notice missing required route or source: "+marker)
     symmetric_minimum_release(errors)
+    smooth_completion_receipt(errors)
     symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
     for marker in (
         "Symmetric Minimum", "reference edition v1.7.16", "140/140 exact checks",
@@ -199,6 +250,9 @@ def verify():
         "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
         "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
         "Source-declared field construction", "Conditional Lean theorem",
+        "Closed at the stated classical field level.", "Open in Lean.",
+        "/proofs/smooth-completion/", "Φ · Ψ · i · g · e · θ · Λ",
+        "G<sub>root</sub>", "G<sub>EM</sub>", "λ<sub>root</sub>",
     ):
         if marker not in symmetric_page:
             errors.append("Symmetric Minimum page missing marker: " + marker)
@@ -260,7 +314,7 @@ def verify():
     if "verified, audited closure" in about:
         errors.append("About page conflates verified and conditional/source-declared components")
     correspondence_page = (ROOT/"formal-correspondence/index.html").read_text()
-    for marker in ("Formal Correspondence Ledger", "Public form", "Minimum Mechanics", "Suture"):
+    for marker in ("Formal Correspondence Ledger", "Public form", "Minimum Mechanics", "Suture", "Ω<sub>root</sub>", "G<sub>EM</sub>", "λ<sub>root</sub>", "P14"):
         if marker not in correspondence_page:
             errors.append("formal correspondence page missing marker: "+marker)
     for page in ROOT.rglob("*.html"):

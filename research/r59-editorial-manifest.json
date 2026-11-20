@@ -20,7 +20,17 @@
     "stages": 21,
     "compiler_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607",
     "archive_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536",
-    "claim_strength": "source-scoped Lean proofs and one transitive source-compile certificate; 010o SmoothCompletion has named non-instantiated C∞ physical premises"
+    "claim_strength": "At the R59 freeze: source-scoped Lean proofs and one transitive source-compile certificate; 010o SmoothCompletion has named non-instantiated C∞ physical premises"
+  },
+  "post_r59_smooth_field_update": {
+    "record": "research/smooth-completion-cinf-t3-v0.1.json",
+    "status": "source-documented classical mathematics",
+    "result": "The real C∞ Einstein–Maxwell phase space on compact boundaryless T³ supplies the seven field-level premise roles and six secondary brackets.",
+    "lean_boundary": "Open: a concrete real C∞ constructor for the original Int-valued SmoothCompletion interface; separately, P14, the finite-root-to-variational/Hamiltonian adapter."
+  },
+  "formal_correspondence_update": {
+    "record": "research/formal-correspondence-v0.2.json",
+    "scope": "Namespaced finite root, canonical Gauss generator, smooth field carrier, axial coordinate bridge, status key, and retained open boundaries."
   },
   "archival_snapshots": [
     "/archive/r58-home.html",

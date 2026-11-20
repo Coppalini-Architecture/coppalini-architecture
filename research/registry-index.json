@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "canonical_url": "https://eulershiddenl.ink/research/registry-index.json",
   "canonicalBase": "https://eulershiddenl.ink/",
-  "updated": "2026-11-12",
+  "updated": "2026-11-20",
   "role": "Inventory of source registries, their versions, record identities, and evidence locations.",
   "reading_rule": "Open the named source registry for its statements, hypotheses, results, status, and boundaries. This index preserves those source assignments.",
   "reader_contract": "https://eulershiddenl.ink/research/reader-contract.json",
@@ -77,6 +77,56 @@
       ],
       "source_relative_path_base": "https://eulershiddenl.ink/",
       "verification_manifest_url": "https://eulershiddenl.ink/research/verification-manifest-v0.3.json"
+    },
+    {
+      "id": "smooth-completion-cinf-t3-v0.1",
+      "title": "Classical Smooth Field Completion on T3",
+      "role": "Source-documented real C-infinity Einstein–Maxwell carrier, seven premise-role receipt, and retained Lean boundary",
+      "inventory_status": "current_source_record",
+      "url": "https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.json",
+      "reader_url": "https://eulershiddenl.ink/proofs/smooth-completion/",
+      "source_version": {
+        "version": "0.1",
+        "published": "2026-11-20"
+      },
+      "collection": "premises",
+      "identifier_field": "name",
+      "record_count": 7,
+      "record_ids": [
+        "hDensityCovariance",
+        "gaugeHamiltonianVariationZero",
+        "gaussSmearingCovariance",
+        "boundaryH",
+        "sourceNormalGradient",
+        "sourceMomentumAddress",
+        "boundaryNormal"
+      ],
+      "evidence_location": "The source receipt supplies the real C-infinity carrier, functional derivatives, Stokes conditions, six brackets, and the separate Int-valued Lean boundary."
+    },
+    {
+      "id": "formal-correspondence-v0.2",
+      "title": "Formal Correspondence Ledger",
+      "role": "Public/source correspondence records with rooted namespace, status key, source records, and typed open boundaries",
+      "inventory_status": "current_source_registry",
+      "url": "https://eulershiddenl.ink/research/formal-correspondence-v0.2.json",
+      "reader_url": "https://eulershiddenl.ink/formal-correspondence/",
+      "source_version": {
+        "version": "0.2",
+        "updated": "2026-11-20"
+      },
+      "collection": "records",
+      "identifier_field": "id",
+      "record_count": 7,
+      "record_ids": [
+        "signal",
+        "reader",
+        "metric",
+        "canonical",
+        "symmetry",
+        "three-body",
+        "provenance"
+      ],
+      "evidence_location": "The v0.2 ledger identifies the finite root, the canonical Einstein-Maxwell generator, the finite and upper-half-plane axial coordinates, their status, and the separately open Lean constructor and P14 adapter."
     },
     {
       "id": "r28-preparation-2026-11-05",

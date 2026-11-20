@@ -11,6 +11,19 @@
     "source_documented_model": "A mathematical construction recorded in a source note beside the finite Lean statements it motivates.",
     "physical_interface": "A declared carrier, observable, condition, and receipt path for a physical use of the formal symbols."
   },
+  "presentation_namespace": {
+    "finite_root": "Omega_root=[[0,1],[-1,0]]; J_rot:=-Omega_root; G_root:=[Q,Omega_root].",
+    "field_gauss_generator": "G_EM[alpha] is the ledger presentation name for the pinned source's G[s] slot; it is distinct from G_root.",
+    "smooth_field_carrier": "Sigma_EM:=T3; Omega^1_dR(Sigma_EM) names the one-form carrier in the later source-documented classical record.",
+    "jurisdiction": "J_* names the active jurisdiction and is distinct from J_rot."
+  },
+  "later_smooth_field_completion": {
+    "record": "research/smooth-completion-cinf-t3-v0.1.json",
+    "reader": "https://eulershiddenl.ink/proofs/smooth-completion/",
+    "status": "source-documented classical mathematics",
+    "result": "On compact boundaryless T3, the real C-infinity Einstein-Maxwell phase space supplies the seven classical premise roles and six secondary brackets.",
+    "lean_boundary": "Open: a concrete real C-infinity constructor for the original Int-valued SmoothCompletion interface; separately, P14, the finite-root-to-variational/Hamiltonian adapter."
+  },
   "stages": [
     {
       "stage": "010a",
@@ -157,7 +170,7 @@
     {
       "stage": "010p",
       "title": "Nonorthonormal ADM",
-      "scope": "Finite local; global C∞ realization has a separately typed construction.",
+      "scope": "Pinned source: finite local. A later source-documented global C∞ Einstein–Maxwell construction is separately published and does not alter this Lean scope.",
       "sources": [
         "proofs/ADMGradient010p.lean",
         "proofs/DeWittCovariant010p.lean",
@@ -191,7 +204,7 @@
     {
       "stage": "010t",
       "title": "Rational scalar floor",
-      "scope": "Finite rational / smooth analysis separate",
+      "scope": "Pinned Lean source: finite rational carrier. A later source-documented real C∞ field completion is separate from this Lean module.",
       "sources": [
         "proofs/PrimeRationalSymplectic010t.lean"
       ]
@@ -207,6 +220,6 @@
   ],
   "compiler_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607",
   "archive_run": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536",
-  "strength": "Individual source-scoped Lean theorems; complete 45-module import compilation. The conditional C-infinity SmoothCompletion formalization has its own separately typed construction address.",
+  "strength": "Individual source-scoped Lean theorems; complete 45-module import compilation. A later source-documented classical C-infinity field construction closes the stated smooth field level. Open: a concrete real C-infinity constructor for the original Int-valued SmoothCompletion interface; separately, P14, the finite-root-to-variational/Hamiltonian adapter.",
   "axiomaticBuild": "Reference reports only; AxiomaticBuild.lean not supplied with 010u."
 }

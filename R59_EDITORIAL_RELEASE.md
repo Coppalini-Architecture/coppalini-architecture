@@ -19,7 +19,10 @@ Home → Minimum Mechanics 010a–010u Proof Atlas → Verify / Library / Lab �
 - Compatibility: 25 case-sensitive legacy source/download redirects repair old R58 paper/audit links without deleting the original files.
 
 ## Proof strength
-A single 45-module import-graph compile is proof-theoretic integration, not a newly proved physical unification theorem. The 010o six-bracket theorem remains conditional on SmoothCompletion; 010p/s certify pointwise attachments, 010t proves a nonzero rational symplectic witness, 010q/r refuse the spectral-gap entailment, and 010u proves the jurisdictionally scoped admission/recognition result. The absent AxiomaticBuild.lean is a source report, not a re-certified proof.
+At the R59 freeze, a single 45-module import-graph compile is proof-theoretic integration, not a newly proved physical unification theorem. The 010o six-bracket theorem remains conditional on SmoothCompletion; 010p/s certify pointwise attachments, 010t proves a nonzero rational symplectic witness, 010q/r refuse the spectral-gap entailment, and 010u proves the jurisdictionally scoped admission/recognition result. The absent AxiomaticBuild.lean is a source report, not a re-certified proof.
+
+## Later smooth-field completion
+The later source record [smooth-completion-cinf-t3-v0.1](research/smooth-completion-cinf-t3-v0.1.md) closes the stated classical field level: the real C∞ Einstein–Maxwell phase space on compact boundaryless T³ supplies the seven field-level premise roles and six secondary brackets. It does not change the R59 Lean boundary: the original Int-valued `SmoothCompletion` interface remains conditional and has no nontrivial real C∞ constructor.
 
 ## Source integrity
 No alteration to pinned Lean proof branch b9e939d5.
