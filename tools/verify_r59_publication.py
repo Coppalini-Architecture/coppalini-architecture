@@ -194,7 +194,7 @@ def verify():
     symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
     for marker in (
         "Symmetric Minimum", "reference edition v1.7.16", "140/140 exact checks",
-        "33 refusal controls", "hDensityCovariance", "source-and-verification.zip",
+        "33 altered-input controls", "hDensityCovariance", "source-and-verification.zip",
         "Bottom line.", "C(8,2) = 28 pair reads", "word → map → condition → source",
         "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
         "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
