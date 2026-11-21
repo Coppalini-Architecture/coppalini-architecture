@@ -27,7 +27,7 @@ The Formal Correspondence Ledger gives each principal public claim a handle in t
 
 ## Notice:
 
-Notice: serves the current public record at the scale it can carry. It states the admission rule `Ad(x) ⇒ C_J(x)`: exact finite results, source-documented field records, conditional Lean theorems, versioned publications, and external source reports retain distinct evidence offices. It links the finite Root28 reader, smooth field record, fourteen-release DOI registry, external formalization reader, proof routes, and issue register. Detailed working receipts remain held outside the public claim until an owning record supplies an inspection path and scope.
+Notice: is a civic sign on the conditions that keep shared life readable.
 
 ## Metric Minimum / Symmetric Minimum v1.7.16
 

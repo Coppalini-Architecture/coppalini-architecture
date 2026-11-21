@@ -45,29 +45,20 @@ SYMMETRIC_MINIMUM_FILES = {
 SYMMETRIC_MINIMUM_MANIFEST = "verification/symmetric-minimum-v1.7.16/SHA256SUMS"
 SYMMETRIC_MINIMUM_BUNDLE = "downloads/symmetric-minimum-v1.7.16-source-and-verification.zip"
 SYMMETRIC_MINIMUM_BUNDLE_SHA256 = "3960f7a78edc21805f31672ec126d26c9e474702b6b0d641c0ba5aa2a8e5b4e2"
-NOTICE_RECORDS = (
- "/papers/symmetric-minimum/#root28-reader",
- "/proofs/smooth-completion/",
- "/publication-records",
- "/external-formalization/",
+CIVIC_NOTICE_MARKERS = (
+ "Notice:",
+ "We operate inside a readable condition called reality.",
+ "Each word forms a one-to-one reference.",
+ "A frame admits a reference. A reference admits a center coordinate.",
+ "1 + 1 = 2",
+ "Keep 4. Turn 2. Fold 1. Return 0.",
 )
-NOTICE_READER_LABELS = (
- "Purpose",
- "Evidence",
- "Results",
- "Reports",
- "Boundaries",
- "Review",
- "Use",
-)
-NOTICE_READER_PROMISES = (
- "What this site can show, how you can check it, and where the record stops.",
- "You will learn why a result is only as strong as the source, conditions, and check that support it",
- "You will learn what has been made checkable here, what kind of evidence supports each part, and which next steps are still open.",
- "You will learn how to read an important outside mathematical report without mistaking it for a result of this project.",
- "You will learn the difference between evidence anyone can inspect here and detailed records that remain outside this page",
- "You will learn how to check one claim, report a mistake, or add a correction in a form another reader can follow.",
- "You will learn how to use this record: follow a statement to its evidence, keep its limits visible",
+LANDING_PUBLIC_CONDITIONS = (
+ "Public pathways must be kept free from obstruction.",
+ "Public gathering spaces must be kept safe and free from noise that disturbs the public trust.",
+ "Notices must be timely. Opening and closing times must be declared.",
+ "Public gates must fix reference of the conditions and constraints of the jurisdiction held inside its bounds.",
+ "The speaker holding center of attention must be seen and heard under conditions of readable silence so their audience can measure the meaning of their words and if the direction seems good.",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -351,12 +342,14 @@ def verify():
         if key not in namespace:
             errors.append("formal correspondence v0.2 missing namespace record: " + key)
     notice=(ROOT/"notice/index.html").read_text()
-    for marker in ("Notice:", "reader-obstruction",
-                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_RECORDS + NOTICE_READER_LABELS + NOTICE_READER_PROMISES:
+    for marker in CIVIC_NOTICE_MARKERS:
         if marker not in notice: errors.append("notice missing required marker: "+marker)
-    for marker in ("EARR-001_Review_Packet", "EXTERNAL_ANCHOR_SHA256SUMS", "ExternalAnchorReceipt.lean"):
+    for marker in ("LOCAL_CANDIDATE", "SOURCE_REPORTED", "PENDING_REPLAY", "External Formalization Reader", "EARR-001_Review_Packet", "EXTERNAL_ANCHOR_SHA256SUMS", "ExternalAnchorReceipt.lean"):
         if marker in notice:
-            errors.append("notice exposes a held external-anchor artifact: " + marker)
+            errors.append("notice carries a removed internal-record marker: " + marker)
+    landing=(ROOT/"index.html").read_text()
+    for marker in LANDING_PUBLIC_CONDITIONS:
+        if marker not in landing: errors.append("landing page missing public condition: "+marker)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
     root28_reader_candidate(errors)

@@ -1,4 +1,4 @@
-/* Public notice: direct source, declared evidence office, no alarm styling. */
+/* Civic notice: a public sign, not a record index. */
 .notice-page main { max-width: 73rem; }
 .notice-hero {
   display: grid;
@@ -52,69 +52,23 @@
 .notice-section p { max-width: 52rem; font-size: .97rem; line-height: 1.75; }
 .notice-section .notice-lead { max-width: 47rem; color: var(--ink); font: 1.13rem/1.58 ui-serif, Georgia, Cambria, serif; }
 .notice-equation {
-  max-width: 54rem;
-  margin: 1.35rem 0;
-  padding: 1rem 1.1rem;
-  overflow-x: auto;
+  display: inline-block;
+  margin: .25rem 0 .75rem;
+  padding: .55rem .75rem;
   border-left: 3px solid var(--red);
   background: var(--surface);
   color: var(--ink);
-  font: .91rem/1.8 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font: 1.15rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
 }
-.notice-equation p { margin: 0; font: inherit; }
-.notice-classes {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  margin: 1.5rem 0 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-}
-.notice-classes > div { min-width: 0; padding: 1rem 1.15rem 1.1rem 0; }
-.notice-classes > div:nth-child(even) { padding-left: 1.15rem; border-left: 1px solid var(--r59-rule); }
-.notice-classes > div:nth-child(n + 3) { border-top: 1px solid var(--r59-rule); }
-.notice-classes dt { color: var(--red); font: 750 .65rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .085em; text-transform: uppercase; }
-.notice-classes dd { margin: .48rem 0 0; color: var(--r59-muted); font-size: .84rem; line-height: 1.62; }
-.notice-sources,
-.notice-return-list { max-width: 52rem; margin: 1.3rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--r59-rule); }
-.notice-sources li,
-.notice-return-list li { padding: .85rem 0; border-bottom: 1px solid var(--r59-rule); color: var(--r59-muted); font-size: .9rem; line-height: 1.64; }
-.notice-sources a,
-.notice-return-list a { color: var(--ink); font-weight: 720; }
 .notice-closing { padding-bottom: clamp(3rem, 6vw, 5rem); }
-.notice-closing p:last-child { color: var(--ink); font: 1.07rem/1.58 ui-serif, Georgia, Cambria, serif; }
-.notice-feature {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(14rem, .7fr);
-  gap: clamp(1.5rem, 5vw, 4.5rem);
-  align-items: end;
-  padding: clamp(2.35rem, 4.5vw, 3.8rem) 0;
-  border-bottom: 1px solid var(--line);
-}
-.notice-feature h2 {
-  max-width: 20ch;
-  margin: .3rem 0 .85rem;
-  font: 650 clamp(1.55rem, 3vw, 2.35rem)/1.06 ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -.05em;
-}
-.notice-feature p { max-width: 47rem; margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.68; }
-.notice-feature .notice-lead { max-width: 47rem; margin: 0 0 .75rem; color: var(--ink); font: 1.13rem/1.58 ui-serif, Georgia, Cambria, serif; }
-.notice-feature .notice-feature-side { padding-left: 1.15rem; border-left: 1px solid var(--red); }
-.notice-feature .notice-feature-side p { color: var(--ink); font: .85rem/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
-.notice-feature .disclosure-links { margin-top: 1.2rem; }
+.notice-closing .notice-closing-line { margin-top: 1.35rem; color: var(--ink); font: 700 .78rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .06em; text-transform: uppercase; }
 @media (max-width: 44rem) {
-  .notice-hero,
-  .notice-feature { display: block; padding-block: 2.25rem; }
+  .notice-hero { display: block; padding-block: 2.25rem; }
   .notice-hero h1 { max-width: 9ch; font-size: clamp(2.55rem, 13vw, 3.35rem); }
   .notice-hero .notice-deck { font-size: 1.14rem; }
   .notice-hero .notice-summary { font-size: .94rem; }
-  .notice-signal,
-  .notice-feature .notice-feature-side { display: block; margin-top: 1.5rem; padding: 1rem 0 0; border-top: 1px solid var(--red); border-left: 0; }
+  .notice-signal { display: block; margin-top: 1.5rem; padding: 1rem 0 0; border-top: 1px solid var(--red); border-left: 0; }
   .notice-section { padding-block: 2.35rem; }
   .notice-section h2 { font-size: 1.7rem; }
   .notice-section p { font-size: .95rem; }
-  .notice-classes { grid-template-columns: 1fr; }
-  .notice-classes > div,
-  .notice-classes > div:nth-child(even) { padding: .9rem 0; border-left: 0; border-top: 1px solid var(--r59-rule); }
-  .notice-classes > div:first-child { border-top: 0; }
 }

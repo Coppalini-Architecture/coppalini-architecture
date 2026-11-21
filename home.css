@@ -1,5 +1,11 @@
 .home-page { background: var(--paper); }
 .home-main { padding-top: 0; }
+.home-civic-conditions { max-width: 66rem; }
+.home-civic-conditions h2 { max-width: 24ch; }
+.public-conditions-list { margin: 1.35rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); counter-reset: public-condition; }
+.public-conditions-list li { counter-increment: public-condition; display: grid; grid-template-columns: 2.7rem minmax(0, 1fr); gap: 1rem; padding: .92rem 0; border-top: 1px solid var(--r59-rule); color: var(--ink); font: .98rem/1.58 ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+.public-conditions-list li:first-child { border-top: 0; }
+.public-conditions-list li::before { content: counter(public-condition, decimal-leading-zero); color: var(--red); font: 750 .64rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; }
 .home-hero,
 .four-forms,
 .home-latest-build,
