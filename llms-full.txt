@@ -25,9 +25,9 @@ R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-archi
 
 The Formal Correspondence Ledger gives each principal public claim a handle in the order: public form, Coppalini construction, named relation, receipt, and scope. It links canonical public sources in information theory, control, gauge and canonical mechanics, symmetry, metric physics, provenance, and formal verification to the local construction and its own exact record. Its current namespace ledger distinguishes \(\Omega_{\rm root}\), \(J_{\rm rot}\), and \(G_{\rm root}=[Q,\Omega_{\rm root}]\) from the canonical Gauss generator \(G_{\rm EM}\), and the finite normal-form coordinate \(\lambda_{\rm root}\) from the centered upper-half-plane coordinate \(\Lambda_{\rm ax}\).
 
-## Standalone Notice
+## Notice:
 
-The Notice states the declared reader relation: a vector-only read of `s` omits the `C`-orientation that selects `Cs` rather than `−Cs`. It gives the general formal condition, separates theorem, physical construction, public-system evidence, and engineering application, and routes technical returns to the Proof Atlas, Verification Register, Research Library, and issue register.
+Notice: serves the current public record at the scale it can carry. It states the admission rule `Ad(x) ⇒ C_J(x)`: exact finite results, source-documented field records, conditional Lean theorems, versioned publications, and external source reports retain distinct evidence offices. It links the finite Root28 reader, smooth field record, fourteen-release DOI registry, external formalization reader, proof routes, and issue register. Detailed working receipts remain held outside the public claim until an owning record supplies an inspection path and scope.
 
 ## Metric Minimum / Symmetric Minimum v1.7.16
 

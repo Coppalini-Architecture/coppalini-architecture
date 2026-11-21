@@ -17,7 +17,7 @@
 - [Publication Records](https://eulershiddenl.ink/publication-records): fourteen current Zenodo releases mapped to their fixed edition DOIs, concept handles, and Coppalini reading forms. The register is citation and navigation only; it creates no Zenodo deposition or version.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for reference, constraint, reader, receipt, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
-- [Notice](https://eulershiddenl.ink/notice/): a standalone public technical statement of the reader-obstruction question and an independent technical-review route.
+- [Notice:](https://eulershiddenl.ink/notice/): a served public record that distinguishes exact finite results, source-documented and conditional records, fixed publication identifiers, external source reports, held receipts, and an independent technical-review route.
 - [About](https://eulershiddenl.ink/about): author provenance and public research chronology.
 
 ## Current theorem strength

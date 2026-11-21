@@ -45,10 +45,11 @@ SYMMETRIC_MINIMUM_FILES = {
 SYMMETRIC_MINIMUM_MANIFEST = "verification/symmetric-minimum-v1.7.16/SHA256SUMS"
 SYMMETRIC_MINIMUM_BUNDLE = "downloads/symmetric-minimum-v1.7.16-source-and-verification.zip"
 SYMMETRIC_MINIMUM_BUNDLE_SHA256 = "3960f7a78edc21805f31672ec126d26c9e474702b6b0d641c0ba5aa2a8e5b4e2"
-NOTICE_SOURCES = (
- "https://www.who.int/news/item/23-09-2020-managing-the-covid-19-infodemic-promoting-healthy-behaviours-and-mitigating-the-harm-from-misinformation-and-disinformation/",
- "https://www.oecd.org/en/publications/2024/07/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results_eeb36452.html",
- "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+NOTICE_RECORDS = (
+ "/papers/symmetric-minimum/#root28-reader",
+ "/proofs/smooth-completion/",
+ "/publication-records",
+ "/external-formalization/",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -332,9 +333,14 @@ def verify():
         if key not in namespace:
             errors.append("formal correspondence v0.2 missing namespace record: " + key)
     notice=(ROOT/"notice/index.html").read_text()
-    for marker in ("The Notice", "reader-obstruction", "Independent technical examination",
-                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_SOURCES:
+    for marker in ("Notice:", "reader-obstruction",
+                   "Public record and detailed receipt have different jurisdictions.",
+                   "Independent technical examination",
+                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_RECORDS:
         if marker not in notice: errors.append("notice missing required route or source: "+marker)
+    for marker in ("EARR-001_Review_Packet", "EXTERNAL_ANCHOR_SHA256SUMS", "ExternalAnchorReceipt.lean"):
+        if marker in notice:
+            errors.append("notice exposes a held external-anchor artifact: " + marker)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
     root28_reader_candidate(errors)
