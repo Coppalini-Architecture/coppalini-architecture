@@ -98,6 +98,7 @@
   letter-spacing: -.05em;
 }
 .notice-feature p { max-width: 47rem; margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.68; }
+.notice-feature .notice-lead { max-width: 47rem; margin: 0 0 .75rem; color: var(--ink); font: 1.13rem/1.58 ui-serif, Georgia, Cambria, serif; }
 .notice-feature .notice-feature-side { padding-left: 1.15rem; border-left: 1px solid var(--red); }
 .notice-feature .notice-feature-side p { color: var(--ink); font: .85rem/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
 .notice-feature .disclosure-links { margin-top: 1.2rem; }

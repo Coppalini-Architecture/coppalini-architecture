@@ -51,6 +51,24 @@ NOTICE_RECORDS = (
  "/publication-records",
  "/external-formalization/",
 )
+NOTICE_READER_LABELS = (
+ "Purpose",
+ "Evidence",
+ "Results",
+ "Reports",
+ "Boundaries",
+ "Review",
+ "Use",
+)
+NOTICE_READER_PROMISES = (
+ "What this site can show, how you can check it, and where the record stops.",
+ "You will learn why a result is only as strong as the source, conditions, and check that support it",
+ "You will learn what has been made checkable here, what kind of evidence supports each part, and which next steps are still open.",
+ "You will learn how to read an important outside mathematical report without mistaking it for a result of this project.",
+ "You will learn the difference between evidence anyone can inspect here and detailed records that remain outside this page",
+ "You will learn how to check one claim, report a mistake, or add a correction in a form another reader can follow.",
+ "You will learn how to use this record: follow a statement to its evidence, keep its limits visible",
+)
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
  "hDensityCovariance",
@@ -334,10 +352,8 @@ def verify():
             errors.append("formal correspondence v0.2 missing namespace record: " + key)
     notice=(ROOT/"notice/index.html").read_text()
     for marker in ("Notice:", "reader-obstruction",
-                   "Public record and detailed receipt have different jurisdictions.",
-                   "Independent technical examination",
-                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_RECORDS:
-        if marker not in notice: errors.append("notice missing required route or source: "+marker)
+                   "https://github.com/Coppalini-Architecture/coppalini-architecture/issues") + NOTICE_RECORDS + NOTICE_READER_LABELS + NOTICE_READER_PROMISES:
+        if marker not in notice: errors.append("notice missing required marker: "+marker)
     for marker in ("EARR-001_Review_Packet", "EXTERNAL_ANCHOR_SHA256SUMS", "ExternalAnchorReceipt.lean"):
         if marker in notice:
             errors.append("notice exposes a held external-anchor artifact: " + marker)
