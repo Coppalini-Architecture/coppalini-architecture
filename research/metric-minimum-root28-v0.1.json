@@ -1,0 +1,200 @@
+{
+  "schema": "CoppaliniArchitecture.Root28/v0.1",
+  "title": "Root28: a finite reading-comprehension key for the Metric Minimum",
+  "version": "0.1",
+  "status": "LOCAL_CANDIDATE",
+  "reader_claim": "Root28 checks a declared 7×4 K8 scan, finite root statements, and retention of stated boundaries. It is not a field realization, an optics theorem, or a verification of any external RH formalization.",
+  "source_status_key": {
+    "EXACT_FINITE": "Identity in the declared finite root, checked by the named finite verifier.",
+    "EXACT_DERIVED": "Consequence of declared finite identities in the named source.",
+    "DECLARED_CARRIER": "A source-declared carrier or coordinate whose source status is retained.",
+    "OPEN_BOUNDARY": "A named scope limit or unresolved adapter retained by the reader.",
+    "DECLARED_DISPLAY": "A reader-display convention; it is not a physical colour claim."
+  },
+  "scan": {
+    "carrier": "E(K8) on vertices [∞, 0, 1, 2, 3, 4, 5, 6]",
+    "address_rule": "q ↦ (a,b) = (q mod 7, q mod 4)",
+    "inverse_rule": "(a,b) ↦ q = 8a + 21b mod 28",
+    "row_count": 7,
+    "slot_count": 4,
+    "rows": ["Q", "J_rot", "Omega_root", "G_root", "H", "L_s", "F_esc_Lambda_ax"],
+    "slots": ["carrier", "relation", "read", "boundary"]
+  },
+  "display_projection": {
+    "id": "pi_color",
+    "status": "DECLARED_DISPLAY",
+    "domain": "Z7 row address",
+    "codomain": ["red", "orange", "yellow", "green", "blue", "indigo", "violet"],
+    "boundary": "The color order is a finite display legend. No optical or colorimetric adapter is asserted, and no pre-existing public handle order is replaced."
+  },
+  "sources": {
+    "symmetric_minimum": {
+      "path": "papers/symmetric-minimum/symmetric_minimum_v1_7_16.tex",
+      "scope": "Finite root, carriage, wheel, unit address, half-turn, and typed closure."
+    },
+    "finite_verifier": {
+      "path": "verification/symmetric-minimum-v1.7.16/check_symmetric_minimum_independent.py",
+      "scope": "Independent finite recomputation with refusal controls."
+    },
+    "twenty_eight_scan": {
+      "path": "papers/infinity-one-zero-lift-v0.2/Infinity_One_Zero_Lift.md",
+      "scope": "Eight addressed occurrences, 28 seams, seven matchings, and the Z28 scanner."
+    },
+    "smooth_completion": {
+      "path": "research/smooth-completion-cinf-t3-v0.1.md",
+      "scope": "Source-documented real C-infinity Einstein–Maxwell completion; not an Int-valued Lean instance."
+    },
+    "minimum_endurance": {
+      "path": "papers/minimum-endurance-delta.pdf",
+      "scope": "Source-documented geometric cup; separate from the finite operator realization."
+    }
+  },
+  "cards": [
+    {
+      "id": "ROOT28-A0-B0", "q": 0, "a": 0, "b": 0, "row": "Q", "slot": "carrier",
+      "sentence": "Q = [[1,1],[1,0]] acts on V = R^2.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "root_Q_definition", "boundary": "Declared finite carrier only."
+    },
+    {
+      "id": "ROOT28-A0-B1", "q": 21, "a": 0, "b": 1, "row": "Q", "slot": "relation",
+      "sentence": "Q^2 = Q + I and det(Q) = -1.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "Q_recurrence", "boundary": "Exact recurrence identity."
+    },
+    {
+      "id": "ROOT28-A0-B2", "q": 14, "a": 0, "b": 2, "row": "Q", "slot": "read",
+      "sentence": "Q^n(1,1)^T = (Fib(n+2),Fib(n+1))^T.",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "Q_fibonacci_orbit", "boundary": "The asymptotic read is projective, not literal vector convergence."
+    },
+    {
+      "id": "ROOT28-A0-B3", "q": 7, "a": 0, "b": 3, "row": "Q", "slot": "boundary",
+      "sentence": "This row is the finite recurrence chart; no field-attachment map is included.",
+      "status": "OPEN_BOUNDARY", "source": "symmetric_minimum", "check": "retain_P14_open", "boundary": "P14, the finite-root-to-variational/Hamiltonian adapter, remains open."
+    },
+    {
+      "id": "ROOT28-A1-B0", "q": 8, "a": 1, "b": 0, "row": "J_rot", "slot": "carrier",
+      "sentence": "J_rot = [[0,-1],[1,0]] = -Omega_root.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "J_definition", "boundary": "The root turn is separately named from jurisdiction notation."
+    },
+    {
+      "id": "ROOT28-A1-B1", "q": 1, "a": 1, "b": 1, "row": "J_rot", "slot": "relation",
+      "sentence": "J_rot^2 = -I and J_rot^T J_rot = I.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "J_turn", "boundary": "Exact finite turn relation."
+    },
+    {
+      "id": "ROOT28-A1-B2", "q": 22, "a": 1, "b": 2, "row": "J_rot", "slot": "read",
+      "sentence": "J_rot^T G_root J_rot = -G_root, and J_rot exchanges the two G_root-null lines.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "J_signed_metric_action", "boundary": "Signed metric reversal is retained."
+    },
+    {
+      "id": "ROOT28-A1-B3", "q": 15, "a": 1, "b": 3, "row": "J_rot", "slot": "boundary",
+      "sentence": "J_rot is the root turn and remains distinct from a jurisdiction symbol J.",
+      "status": "OPEN_BOUNDARY", "source": "symmetric_minimum", "check": "retain_J_namespace", "boundary": "No symbol overloading is admitted."
+    },
+    {
+      "id": "ROOT28-A2-B0", "q": 16, "a": 2, "b": 0, "row": "Omega_root", "slot": "carrier",
+      "sentence": "Omega_root = [[0,1],[-1,0]], with omega(u,v) = u^T Omega_root v.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "Omega_definition", "boundary": "Declared oriented-pair form on V."
+    },
+    {
+      "id": "ROOT28-A2-B1", "q": 9, "a": 2, "b": 1, "row": "Omega_root", "slot": "relation",
+      "sentence": "Omega_root^T = -Omega_root and Omega_root^2 = -I.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "Omega_skew_turn", "boundary": "Exact finite oriented-pair relation."
+    },
+    {
+      "id": "ROOT28-A2-B2", "q": 2, "a": 2, "b": 2, "row": "Omega_root", "slot": "read",
+      "sentence": "Q^T Omega_root Q = -Omega_root and (Q^2)^T Omega_root Q^2 = Omega_root.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "Omega_recurrence_character", "boundary": "The sign character is finite and explicit."
+    },
+    {
+      "id": "ROOT28-A2-B3", "q": 23, "a": 2, "b": 3, "row": "Omega_root", "slot": "boundary",
+      "sentence": "Omega_root is the oriented-pair form on V, not the electromagnetic field two-form.",
+      "status": "OPEN_BOUNDARY", "source": "symmetric_minimum", "check": "retain_Omega_namespace", "boundary": "A physical field requires its own declared model and evidence."
+    },
+    {
+      "id": "ROOT28-A3-B0", "q": 24, "a": 3, "b": 0, "row": "G_root", "slot": "carrier",
+      "sentence": "G_root = [Q,Omega_root] = [[-2,1],[1,2]].",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "G_commutator", "boundary": "Declared signed metric of the finite core."
+    },
+    {
+      "id": "ROOT28-A3-B1", "q": 17, "a": 3, "b": 1, "row": "G_root", "slot": "relation",
+      "sentence": "G_root^T = G_root, G_root^2 = 5I, and det(G_root) = -5.",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "G_metric_identities", "boundary": "Exact finite metric spine."
+    },
+    {
+      "id": "ROOT28-A3-B2", "q": 10, "a": 3, "b": 2, "row": "G_root", "slot": "read",
+      "sentence": "z^T G_root z = -2(x-Phi y)(x-(1-Phi)y); its null lines are the two Q-eigenlines.",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "G_null_classifier", "boundary": "Null lines and G-eigenlines retain distinct offices."
+    },
+    {
+      "id": "ROOT28-A3-B3", "q": 3, "a": 3, "b": 3, "row": "G_root", "slot": "boundary",
+      "sentence": "G_root is distinct from the field metric g and the canonical Gauss slot G_EM.",
+      "status": "OPEN_BOUNDARY", "source": "symmetric_minimum", "check": "retain_G_namespace", "boundary": "No shared-letter identification is admitted."
+    },
+    {
+      "id": "ROOT28-A4-B0", "q": 4, "a": 4, "b": 0, "row": "H", "slot": "carrier",
+      "sentence": "H = G_root/sqrt(5).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "H_normalization", "boundary": "Normalized finite mirror representative."
+    },
+    {
+      "id": "ROOT28-A4-B1", "q": 25, "a": 4, "b": 1, "row": "H", "slot": "relation",
+      "sentence": "H^2 = I and H^T G_root H = G_root.",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "H_involution_metric", "boundary": "Derived from the finite metric spine."
+    },
+    {
+      "id": "ROOT28-A4-B2", "q": 18, "a": 4, "b": 2, "row": "H", "slot": "read",
+      "sentence": "H J_rot H = J_rot^(-1).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "H_turn_conjugacy", "boundary": "Mirror conjugacy in the declared root carrier."
+    },
+    {
+      "id": "ROOT28-A4-B3", "q": 11, "a": 4, "b": 3, "row": "H", "slot": "boundary",
+      "sentence": "The finite operator realization does not declare H = K_C for the geometric cup.",
+      "status": "OPEN_BOUNDARY", "source": "minimum_endurance", "check": "retain_cup_adapter_open", "boundary": "Geometric cup remains source-documented; no cross-carrier identity is declared."
+    },
+    {
+      "id": "ROOT28-A5-B0", "q": 12, "a": 5, "b": 0, "row": "L_s", "slot": "carrier",
+      "sentence": "S = H J_rot = (2Q-I)/sqrt(5), and L_s = exp(sS).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "L_generator", "boundary": "Continuous transport remains in its declared finite-root carrier."
+    },
+    {
+      "id": "ROOT28-A5-B1", "q": 5, "a": 5, "b": 1, "row": "L_s", "slot": "relation",
+      "sentence": "L_t L_s = L_(t+s), det(L_s) = 1, and tr(L_s) = 2 cosh(s).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "L_group", "boundary": "Exact source-derived transport law."
+    },
+    {
+      "id": "ROOT28-A5-B2", "q": 26, "a": 5, "b": 2, "row": "L_s", "slot": "read",
+      "sentence": "L_s^T G_root L_s = G_root and H L_s H = L_(-s).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "L_metric_mirror", "boundary": "Metric-preserving carriage with mirror reversal."
+    },
+    {
+      "id": "ROOT28-A5-B3", "q": 19, "a": 5, "b": 3, "row": "L_s", "slot": "boundary",
+      "sentence": "L_ax = L_(log Phi) is a transport matrix, distinct from the axial coordinate Lambda_ax.",
+      "status": "OPEN_BOUNDARY", "source": "symmetric_minimum", "check": "retain_Lax_Lambda_distinction", "boundary": "Matrix transport and scalar coordinate do not share an office."
+    },
+    {
+      "id": "ROOT28-A6-B0", "q": 20, "a": 6, "b": 0, "row": "F_esc_Lambda_ax", "slot": "carrier",
+      "sentence": "F_esc acts on (Z/4) x V; Lambda_ax is the declared signed rail coordinate.",
+      "status": "DECLARED_CARRIER", "source": "symmetric_minimum", "check": "wheel_carrier", "boundary": "Phase and axial coordinates retain different types."
+    },
+    {
+      "id": "ROOT28-A6-B1", "q": 13, "a": 6, "b": 1, "row": "F_esc_Lambda_ax", "slot": "relation",
+      "sentence": "F_esc^4(phi,z) = (phi,L_ax z).",
+      "status": "EXACT_FINITE", "source": "symmetric_minimum", "check": "wheel_four_step", "boundary": "Four phase steps return the phase and advance the axial address."
+    },
+    {
+      "id": "ROOT28-A6-B2", "q": 6, "a": 6, "b": 2, "row": "F_esc_Lambda_ax", "slot": "read",
+      "sentence": "On the declared rail, Lambda_ax(L_t z) = Lambda_ax(z)+2t; hence L_ax advances it by 2 log(Phi).",
+      "status": "EXACT_DERIVED", "source": "symmetric_minimum", "check": "axial_coordinate_advance", "boundary": "Coordinate rule is distinct from the transport matrix."
+    },
+    {
+      "id": "ROOT28-A6-B3", "q": 27, "a": 6, "b": 3, "row": "F_esc_Lambda_ax", "slot": "boundary",
+      "sentence": "Phase return and carried advance remain distinct; no synchronization identifies them with an occurrence counter or physical duration.",
+      "status": "OPEN_BOUNDARY", "source": "twenty_eight_scan", "check": "retain_phase_occurrence_boundary", "boundary": "A synchronization rule, timing convention, and physical model would be separate evidence."
+    }
+  ],
+  "global_boundaries": [
+    "Root28 does not instantiate the Int-valued SmoothCompletion interface; the real C-infinity field record retains its own source-documented status.",
+    "Root28 retains P14 as open.",
+    "Root28 retains the source-declared survival reading Phi(pi) and theta_J=1; it does not derive those offices from finite matrix identities.",
+    "Root28 makes no claim about zeta, RH, external proof authorship, external proof validity, or external replay."
+  ]
+}

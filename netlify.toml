@@ -1,0 +1,3 @@
+[build]
+  command = "python3 -I tools/build_public_stage.py --output public"
+  publish = "public"

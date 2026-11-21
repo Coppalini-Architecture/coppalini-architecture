@@ -12,7 +12,9 @@ Notice: https://eulershiddenl.ink/notice/
 Metric Minimum / Symmetric Minimum reference edition: https://eulershiddenl.ink/papers/symmetric-minimum/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
+External Formalization Reader: https://eulershiddenl.ink/external-formalization/
 Library: https://eulershiddenl.ink/library
+Publication Records: https://eulershiddenl.ink/publication-records
 Language Mechanics: https://eulershiddenl.ink/language-mechanics
 Laboratory: https://eulershiddenl.ink/architecture
 Basis: https://eulershiddenl.ink/formalism
@@ -89,8 +91,18 @@ The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Su
 The current verification page carries the public verification route:
 https://eulershiddenl.ink/verify
 
-The current Library carries thirty-seven non-Language-Mechanics editions:
+## External Formalization Reader
+
+The External Formalization Reader preserves a public formalization record in the order: declared theorem, identified artifact, reported machine check, active condition or caveat, independent replay route, and source-indexed reader receipt. Its present source is the MIT-hosted verification page for a public Lean Riemann-Hypothesis formalization:
+https://math.mit.edu/~drew/grh/
+
+The external theorem carrier is `riemannHypothesis : RiemannHypothesis`. Its status on this site is `SOURCE_REPORTED`; the reader retains the source update time, artifact and hash route, check rows, in-progress checks, and caveats as the external page reports them. The external-artifact replay is `PENDING_REPLAY`. EARR-001 is a finite local reader receipt whose small Lean module is `LOCAL_REPLAYED` (self-attested; R3 retention repair pending because the workflow hash and raw command output are not retained); that local module does not replay, validate, or prove the external formalization. Adapter names may be retained in its current packet, but semantic adapter schemas are not yet declared. This reader page does not publish, link, or distribute the EARR-001 packet; packet release remains gated on §8 of the reader brief. A separate reporting-context index retains selected contemporary journalism, including the Scientific American reporting supplied by the author; journalism supplies context only and does not change theorem, checker, caveat, or replay status.
+
+The current Library carries thirty-eight non-Language-Mechanics editions:
 https://eulershiddenl.ink/library
+
+The citation register maps the fourteen current Zenodo releases to their fixed edition DOIs, concept handles, and local reading forms. It is a reference layer only and creates no Zenodo deposition or version:
+https://eulershiddenl.ink/publication-records
 
 Language Mechanics carries all fourteen direct LM 000–013 source records:
 https://eulershiddenl.ink/language-mechanics#coordinate-register

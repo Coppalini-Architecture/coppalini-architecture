@@ -15,7 +15,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Identity return, carried difference, admissible continuation, and the governing scope of the series.',
     cover: 'art/mirror-family/structure-of-survival.svg',
     pdf: 'papers/the_structure_of_survival_v66.pdf',
-    links: [['papers/structure-of-survival-v66.tex', 'Source ↓'], ['https://doi.org/10.5281/zenodo.23697265', 'DOI ↗']]
+    links: [['papers/structure-of-survival-v66.tex', 'Source ↓'], ['https://doi.org/10.5281/zenodo.23697265', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.23697264', 'All versions ↗']]
   },
   {
     id: 'enough', section: 'principal', code: 'CA-01',
@@ -33,7 +33,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Represented difference, mirror conjugacy, half-turn return, and carried orientation.',
     cover: 'art/mirror-family/mirror-recognition.svg',
     pdf: 'papers/mirror-recognition-v1.0.pdf',
-    links: [['papers/mirror-recognition.pdf', 'Source ↓']]
+    links: [['papers/mirror-recognition.pdf', 'Source ↓'], ['https://doi.org/10.5281/zenodo.24150572', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.24150571', 'All versions ↗']]
   },
   {
     id: 'metric-mirror', section: 'principal', code: 'CA-03',
@@ -42,7 +42,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Fibonacci transport, the split metric, welded involutions, and the exact axial carrier.',
     cover: 'art/mirror-family/metric-mirror-symmetry.svg',
     pdf: 'papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf',
-    links: [['papers/metric-mirror-symmetry.tex', 'Source ↓'], ['https://doi.org/10.5281/zenodo.23478606', 'DOI ↗']]
+    links: [['papers/metric-mirror-symmetry.tex', 'Source ↓'], ['https://doi.org/10.5281/zenodo.23478607', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.23478606', 'All versions ↗']]
   },
   {
     id: 'linear-infinity', section: 'principal', code: 'CA-04',
@@ -51,7 +51,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Projective translation, continuing axial lift, and the harmonic return period.',
     cover: 'art/mirror-family/linear-infinity.svg',
     pdf: 'papers/linear_infinity_canonical_v0_1.pdf',
-    links: []
+    links: [['https://doi.org/10.5281/zenodo.24150517', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.24150516', 'All versions ↗']]
   },
   {
     id: 'time-evolution', section: 'principal', code: 'CA-05',
@@ -68,7 +68,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'An explicit source-free SO(2) witness separating curvature, holonomy, and proper-time difference.',
     cover: 'art/mirror-family/independent-tunability.svg',
     pdf: 'papers/independent-tunability.pdf',
-    links: [['https://doi.org/10.5281/zenodo.21482179', 'DOI ↗']]
+    links: [['https://doi.org/10.5281/zenodo.21482180', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.21482179', 'All versions ↗']]
   },
   {
     id: 'continuum-closure', section: 'principal', code: 'CA-07',
@@ -77,7 +77,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Compatible frame transport, physical-state refinement, and a carried spin-two criterion.',
     cover: 'art/mirror-family/continuum-closure.svg',
     pdf: 'papers/continuum-closure-covariant-lqg-v1.1.pdf',
-    links: [['https://doi.org/10.5281/zenodo.23478785', 'DOI ↗']]
+    links: [['https://doi.org/10.5281/zenodo.23478786', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.23478785', 'All versions ↗']]
   },
   {
     id: 'contact-recognition', section: 'principal', code: 'CA-08',
@@ -86,7 +86,7 @@ window.ARCHIVE_PAPERS = [
     summary: 'Situated contact, typed comparison, admissibility, and returned physical readout.',
     cover: 'art/mirror-family/contact-recognition.svg',
     pdf: 'papers/contact_recognition_continuum.pdf',
-    links: [['https://doi.org/10.5281/zenodo.23479630', 'DOI ↗']]
+    links: [['https://doi.org/10.5281/zenodo.23479630', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.23479629', 'All versions ↗']]
   },
   {
     id: 'exact-reader', section: 'principal', code: 'CA-09',
@@ -155,7 +155,7 @@ window.ARCHIVE_PAPERS = [
   {
     id: 'lm-011', section: 'basis', code: 'LM 011', title: 'Occurrence and the Twenty-Eight-Seam Reader', status: 'Version 0.2',
     summary: 'Addressed occurrence and the finite comparison schedule of twenty-eight seams.',
-    cover: 'art/language-mechanics/occurrence-seam-reader.svg', pdf: 'papers/occurrence-twenty-eight-seam-reader-011-v0.2.pdf', links: []
+    cover: 'art/language-mechanics/occurrence-seam-reader.svg', pdf: 'papers/occurrence-twenty-eight-seam-reader-011-v0.2.pdf', links: [['https://doi.org/10.5281/zenodo.24150567', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.24150566', 'All versions ↗']]
   },
   {
     id: 'lm-012', section: 'basis', code: 'LM 012', title: 'Language Mechanics: Axiomatic Closure', status: 'Edition 1.0 · 1 Nov 2026',
@@ -188,7 +188,7 @@ window.ARCHIVE_PAPERS = [
   {
     id: 'motion-difference', section: 'supporting', code: 'S 04', title: 'Motion and Difference', status: '17 Jul 2026',
     summary: 'A record of motion through addressed difference.',
-    cover: 'art/mirror-family/motion-and-difference.svg', pdf: 'papers/motion-and-difference-2026-07-17.pdf', links: []
+    cover: 'art/mirror-family/motion-and-difference.svg', pdf: 'papers/motion-and-difference-2026-07-17.pdf', links: [['https://doi.org/10.5281/zenodo.22780641', 'Edition DOI ↗'], ['https://doi.org/10.5281/zenodo.22780640', 'All versions ↗']]
   },
   {
     id: 'clear-onyx', section: 'supporting', code: 'S 05', title: 'Clear_Onyx Computational Kernel Briefing', status: '5 Aug 2026',

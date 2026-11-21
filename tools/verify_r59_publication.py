@@ -15,9 +15,9 @@ import sys
 import zipfile
 
 ROOT = Path(".")
-CURRENT = ("index.html","notice/index.html","about.html","library.html","verify.html",
+CURRENT = ("index.html","notice/index.html","about.html","library.html","publication-records.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
-           "language-mechanics.html",
+           "language-mechanics.html","external-formalization/index.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
            "proofs/smooth-completion/index.html","formal-correspondence/index.html",
            "papers/symmetric-minimum/index.html")
@@ -59,6 +59,13 @@ SMOOTH_COMPLETION_PREMISES = (
  "sourceNormalGradient",
  "sourceMomentumAddress",
  "boundaryNormal",
+)
+ROOT28_MANIFEST = "research/metric-minimum-root28-v0.1.json"
+ROOT28_ARTIFACTS = (
+ "research/metric-minimum-root28-v0.1.md",
+ "proofs/Root28Reader.lean",
+ "verification/root28/check_root28.py",
+ "verification/root28/ROOT28_RECEIPT_v0.1.md",
 )
 
 class Reader(HTMLParser):
@@ -185,6 +192,94 @@ def smooth_completion_receipt(errors):
     if "P14" not in record.get("separate_open_obligation", ""):
         errors.append("smooth-completion P14 boundary missing")
 
+def root28_reader_candidate(errors):
+    manifest_path = ROOT / ROOT28_MANIFEST
+    if not manifest_path.is_file():
+        errors.append("Root28 manifest missing")
+        return
+    for relative in ROOT28_ARTIFACTS:
+        if not (ROOT / relative).is_file():
+            errors.append("Root28 artifact missing: " + relative)
+    try:
+        record = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append("Root28 manifest is invalid JSON: " + str(exc))
+        return
+    if record.get("schema") != "CoppaliniArchitecture.Root28/v0.1":
+        errors.append("Root28 schema mismatch")
+    if record.get("status") != "LOCAL_CANDIDATE":
+        errors.append("Root28 candidate status mismatch")
+    scan = record.get("scan", {})
+    if scan.get("rows") != ["Q", "J_rot", "Omega_root", "G_root", "H", "L_s", "F_esc_Lambda_ax"]:
+        errors.append("Root28 row sequence mismatch")
+    if scan.get("slots") != ["carrier", "relation", "read", "boundary"]:
+        errors.append("Root28 slot sequence mismatch")
+    if scan.get("row_count") != 7 or scan.get("slot_count") != 4 or len(record.get("cards", [])) != 28:
+        errors.append("Root28 7x4 card count mismatch")
+    projection = record.get("display_projection", {})
+    if projection.get("id") != "pi_color" or projection.get("status") != "DECLARED_DISPLAY":
+        errors.append("Root28 display projection status mismatch")
+    if len(projection.get("codomain", [])) != 7 or len(set(projection.get("codomain", []))) != 7:
+        errors.append("Root28 display projection cardinality mismatch")
+    boundaries = "\n".join(record.get("global_boundaries", []))
+    for marker in ("SmoothCompletion", "P14", "zeta", "RH", "external proof"):
+        if marker.lower() not in boundaries.lower():
+            errors.append("Root28 boundary missing: " + marker)
+    page = (ROOT / "papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
+    for marker in (
+        'id="root28-reader"',
+        "Root28 is a local candidate",
+        "28/28 reader obligations; 8/8 refusal controls.",
+        "The seven-colour order is a declared display legend",
+        "original <code>Int</code>-valued interface and P14 remain open",
+        "/research/metric-minimum-root28-v0.1.md",
+        "/research/metric-minimum-root28-v0.1.json",
+        "/proofs/Root28Reader.lean",
+        "/verification/root28/check_root28.py",
+        "/verification/root28/ROOT28_RECEIPT_v0.1.md",
+    ):
+        if marker not in page:
+            errors.append("Symmetric Minimum page missing Root28 marker: " + marker)
+
+def external_reader_release_boundary(errors):
+    page = (ROOT / "external-formalization/index.html").read_text(encoding="utf-8")
+    required = (
+        "SOURCE_REPORTED",
+        "PENDING_REPLAY",
+        "LOCAL_REPLAYED · self-attested",
+        "semantic adapter schema is not declared",
+        "This page does not publish, link, or distribute the EARR-001 packet.",
+    )
+    for marker in required:
+        if marker not in page:
+            errors.append("external reader missing release-boundary marker: " + marker)
+    packet_paths = (
+        "/verification/external-anchor-receipt/",
+        "/proofs/ExternalAnchorReceipt.lean",
+        "EXTERNAL_ANCHOR_SHA256SUMS",
+        "EARR-001_Review_Packet",
+    )
+    for marker in packet_paths:
+        if marker in page:
+            errors.append("external reader publishes or links a gated EARR packet path: " + marker)
+    semantic_adapter_markers = (
+        "A_clock_to_occurrence",
+        "A_clock_to_measurement",
+        "A_CA_to_zeta",
+        "A_zeta_to_RH",
+        "OPEN adapter",
+    )
+    for marker in semantic_adapter_markers:
+        if marker in page:
+            errors.append("external reader promotes a retained adapter name into page semantics: " + marker)
+    for name in ("llms.txt", "llms-full.txt"):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        if "does not publish, link, or distribute the EARR-001 packet" not in text:
+            errors.append(name + ": missing packet-withheld declaration")
+        for marker in packet_paths:
+            if marker in text:
+                errors.append(name + ": exposes a gated EARR packet path: " + marker)
+
 def verify():
     errors = []
     aliases = redirects()
@@ -242,6 +337,8 @@ def verify():
         if marker not in notice: errors.append("notice missing required route or source: "+marker)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
+    root28_reader_candidate(errors)
+    external_reader_release_boundary(errors)
     symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
     for marker in (
         "Symmetric Minimum", "reference edition v1.7.16", "140/140 exact checks",

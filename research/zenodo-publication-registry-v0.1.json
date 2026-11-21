@@ -1,0 +1,183 @@
+{
+  "schema": "coppalini/zenodo-publication-registry/v0.1",
+  "title": "Coppalini Architecture Zenodo Publication Registry",
+  "status": "LOCAL_RECONCILED",
+  "scope": "A citation and navigation registry for the current Zenodo releases represented on Coppalini Architecture reading surfaces. It records public metadata and stable identifiers; it does not create, amend, or publish a Zenodo deposition, and it makes no additional mathematical or empirical claim.",
+  "live_metadata_audit": {
+    "date": "2026-11-21",
+    "authority": "Zenodo published-record metadata",
+    "inventory_query": "https://zenodo.org/api/records?q=creators.name%3A%22Coppa%2C%20Anthony%20Vito%22&size=25&all_versions=false&status=published",
+    "current_release_count": 14,
+    "historical_version_count": 1,
+    "historical_versions": [
+      {
+        "title": "Infinity One Zero Lift: The Normal Form of Projective Memory",
+        "version": "0.1",
+        "doi": "10.5281/zenodo.24150161",
+        "record_url": "https://zenodo.org/records/24150161",
+        "published": "2026-11-12"
+      }
+    ]
+  },
+  "identifier_policy": {
+    "citation_target": "Use version_doi and record_url for a fixed cited edition.",
+    "continuity_target": "concept_doi resolves to the current version of a Zenodo release and is retained for version-chain navigation.",
+    "checksum_scope": "This registry records public identifiers and metadata only. File-level checksum records, where retained, remain within their own release-specific boundary."
+  },
+  "records": [
+    {
+      "key": "independent-tunability",
+      "title": "Independent Tunability of Local Curvature and Global Holonomy in a Source-Free SO(2) Gauge Field.",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-07-22",
+      "version_doi": "10.5281/zenodo.21482180",
+      "record_url": "https://zenodo.org/records/21482180",
+      "concept_doi": "10.5281/zenodo.21482179",
+      "site_forms": ["/papers/independent-tunability.pdf", "/diagrams/independent-tunability", "/library#records-compatibility-shelf"]
+    },
+    {
+      "key": "motion-and-difference",
+      "title": "Motion And Difference",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-07-17",
+      "version_doi": "10.5281/zenodo.22780641",
+      "record_url": "https://zenodo.org/records/22780641",
+      "concept_doi": "10.5281/zenodo.22780640",
+      "site_forms": ["/papers/motion-and-difference-2026-07-17.pdf", "/diagrams/motion-and-difference", "/library#root-return-shelf"]
+    },
+    {
+      "key": "metric-mirror-symmetry",
+      "title": "Metric Mirror Symmetry",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-09-09",
+      "version_doi": "10.5281/zenodo.23478607",
+      "record_url": "https://zenodo.org/records/23478607",
+      "concept_doi": "10.5281/zenodo.23478606",
+      "site_forms": ["/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf", "/diagrams/metric-mirror-symmetry", "/library#foundation-shelf"]
+    },
+    {
+      "key": "continuum-closure",
+      "title": "Continuum Closure in Covariant Loop Quantum Gravity",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-09-02",
+      "version_doi": "10.5281/zenodo.23478786",
+      "record_url": "https://zenodo.org/records/23478786",
+      "concept_doi": "10.5281/zenodo.23478785",
+      "site_forms": ["/papers/continuum-closure-covariant-lqg-v1.1.pdf", "/diagrams/continuum-closure", "/library#interfaces-shelf"]
+    },
+    {
+      "key": "contact-recognition",
+      "title": "Contact Recognition: A Typed Architecture for Compatible Curved Geometry and Refinement-Stable Physical Readout",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-09-24",
+      "version_doi": "10.5281/zenodo.23479630",
+      "record_url": "https://zenodo.org/records/23479630",
+      "concept_doi": "10.5281/zenodo.23479629",
+      "site_forms": ["/papers/contact_recognition_continuum.pdf", "/diagrams/contact-recognition", "/library#foundation-shelf"]
+    },
+    {
+      "key": "structure-of-survival",
+      "title": "The Structure Of Survival",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-10-27",
+      "version_doi": "10.5281/zenodo.23697265",
+      "record_url": "https://zenodo.org/records/23697265",
+      "concept_doi": "10.5281/zenodo.23697264",
+      "site_forms": ["/papers/the_structure_of_survival_v66.pdf", "/diagrams/structure-of-survival", "/library#foundation-shelf"]
+    },
+    {
+      "key": "three-body-mirror",
+      "title": "The 3 Body Mirror: Exact Return, Fibonacci Conjugacy, and the Nonlinear Boundary",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-11-07",
+      "version_doi": "10.5281/zenodo.24043084",
+      "record_url": "https://zenodo.org/records/24043084",
+      "concept_doi": "10.5281/zenodo.24043083",
+      "site_forms": ["/papers/the-3-body-mirror.pdf", "/library#field-boundaries-shelf"]
+    },
+    {
+      "key": "four-dual-forms",
+      "title": "Gravity Light, Memory Motion, Time Scope, Horizon Silence: Four Dual Forms, One Root Algebraic Identity",
+      "resource_type": "Preprint",
+      "version": null,
+      "published": "2026-11-09",
+      "version_doi": "10.5281/zenodo.24073596",
+      "record_url": "https://zenodo.org/records/24073596",
+      "concept_doi": "10.5281/zenodo.24073595",
+      "site_forms": ["/papers/four-dual-forms/gravity-light", "/papers/four-dual-forms/memory-motion", "/papers/four-dual-forms/time-scope", "/papers/four-dual-forms/horizon-silence", "/library#four-dual-forms-shelf"]
+    },
+    {
+      "key": "nop-workbench",
+      "title": "NOP Return / Memory Workbench: Exact Metric Mirror Coordinates and an Empirical Interface for the Normobaric Oxygen Paradox",
+      "resource_type": "Software",
+      "version": "0.2.0",
+      "published": "2026-11-12",
+      "version_doi": "10.5281/zenodo.24148946",
+      "record_url": "https://zenodo.org/records/24148946",
+      "concept_doi": "10.5281/zenodo.24148945",
+      "site_forms": ["/nop/", "/nop/demonstration", "/library#field-boundaries-shelf"]
+    },
+    {
+      "key": "linear-infinity",
+      "title": "Linear Infinity: Return Without Erasure in a Minimum Two-Form Architecture",
+      "resource_type": "Preprint",
+      "version": "0.1",
+      "published": "2026-08-13",
+      "version_doi": "10.5281/zenodo.24150517",
+      "record_url": "https://zenodo.org/records/24150517",
+      "concept_doi": "10.5281/zenodo.24150516",
+      "site_forms": ["/papers/linear_infinity_canonical_v0_1.pdf", "/diagrams/linear-infinity", "/library#root-return-shelf"]
+    },
+    {
+      "key": "mirror-escapement-time-lift",
+      "title": "Mirror Escapement Time Lift",
+      "resource_type": "Preprint",
+      "version": "0.1",
+      "published": "2026-08-22",
+      "version_doi": "10.5281/zenodo.24150565",
+      "record_url": "https://zenodo.org/records/24150565",
+      "concept_doi": "10.5281/zenodo.24150564",
+      "site_forms": ["/papers/mirror-escapement-time-lift.pdf", "/library#records-compatibility-shelf"]
+    },
+    {
+      "key": "twenty-eight-seam-reader",
+      "title": "Occurrence and the Twenty-Eight-Seam Reader: Finite Addressing, Pairwise Difference, and a Complete 7 × 4 Scan",
+      "resource_type": "Preprint",
+      "version": "0.2",
+      "published": "2026-08-29",
+      "version_doi": "10.5281/zenodo.24150567",
+      "record_url": "https://zenodo.org/records/24150567",
+      "concept_doi": "10.5281/zenodo.24150566",
+      "site_forms": ["/papers/occurrence-twenty-eight-seam-reader-011-v0.2.pdf", "/diagrams/lm-occurrence-seam-reader", "/language-mechanics#lm-011"]
+    },
+    {
+      "key": "mirror-recognition",
+      "title": "Mirror Recognition: The Minimum Symmetric Field Closure",
+      "resource_type": "Preprint",
+      "version": "1.0",
+      "published": "2026-09-11",
+      "version_doi": "10.5281/zenodo.24150572",
+      "record_url": "https://zenodo.org/records/24150572",
+      "concept_doi": "10.5281/zenodo.24150571",
+      "site_forms": ["/papers/mirror-recognition-v1.0.pdf", "/diagrams/mirror-recognition", "/library#root-return-shelf"]
+    },
+    {
+      "key": "infinity-one-zero-lift",
+      "title": "Infinity One Zero Lift: The Normal Form of Projective Memory",
+      "resource_type": "Preprint",
+      "version": "0.2",
+      "published": "2026-11-12",
+      "version_doi": "10.5281/zenodo.24150613",
+      "record_url": "https://zenodo.org/records/24150613",
+      "concept_doi": "10.5281/zenodo.24150160",
+      "site_forms": ["/papers/infinity-one-zero-lift", "/papers/infinity-one-zero-lift-v0.2.pdf", "/library#interfaces-shelf"]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Anthony Vito Coppa">
+<meta name="description" content="A source-indexed reader for the public Riemann-Hypothesis Lean formalization record: theorem carrier, artifacts, reported checks, caveats, and replay route.">
+<link rel="canonical" href="https://eulershiddenl.ink/external-formalization/">
+<title>External Formalization Reader — Coppalini Architecture</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/coppalini-seam-matrix-favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f7f3eb">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/proof-led-r59.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"External Formalization Reader","url":"https://eulershiddenl.ink/external-formalization/","isPartOf":{"@type":"WebSite","name":"Coppalini Architecture","url":"https://eulershiddenl.ink/"},"creator":{"@type":"Person","name":"Anthony Vito Coppa"}}</script>
+</head>
+<body class="r59 disclosure-page external-formalization-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/notice/">Notice</a><a href="/proofs/minimum-mechanics/">Proofs</a><a href="/language-mechanics">Language</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture">Lab</a><a href="/about">About</a></nav></div></header>
+<main id="main">
+<section class="r59-hero">
+  <div>
+    <p class="eyebrow">External formalization reader / public source record</p>
+    <h1>Read the formalization at its source.</h1>
+    <p class="lead">A public Lean claim becomes readable through five linked records: its theorem statement, source artifact, reported machine checks, stated caveats, and an independent replay route.</p>
+    <p class="sublead">The reader preserves the source record in its native form and makes its evidence status, conditions, and inspection path explicit.</p>
+    <div class="r59-actions"><a href="https://math.mit.edu/~drew/grh/">Open the external verification page</a><a class="secondary" href="/verify">Read Coppalini verification</a></div>
+  </div>
+  <aside class="hero-side"><span class="mini-label">Current source record</span><span class="mono">SOURCE_REPORTED<br>2026-11-20 22:05 UTC<br>external replay · PENDING_REPLAY</span><small>The external page owns the theorem statement, artifacts, and reported results. This page preserves their address, conditions, and replay route.</small></aside>
+</section>
+
+<section class="r59-section" aria-labelledby="status-title">
+  <p class="eyebrow">Source identity / current status</p>
+  <h2 id="status-title">One record, distinct offices.</h2>
+  <dl class="external-reader-status" aria-label="External formalization reader status">
+    <div><dt>Theorem carrier</dt><dd><code>riemannHypothesis : RiemannHypothesis</code></dd></div>
+    <div><dt>External record</dt><dd><code>SOURCE_REPORTED</code></dd></div>
+    <div><dt>External-artifact replay</dt><dd><code>PENDING_REPLAY</code></dd></div>
+    <div><dt>EARR-001 local Lean module</dt><dd><code>LOCAL_REPLAYED · self-attested</code></dd></div>
+  </dl>
+  <p class="section-lead">The MIT-hosted checker page reports a public Lean formalization of the Riemann Hypothesis and related Dirichlet <i>L</i>-function statements. Coppalini Architecture supplies a source-indexed reader: artifact identity, evidence status, conditions, caveats, and an independent inspection route.</p>
+</section>
+
+<section class="r59-section" aria-labelledby="carrier-title">
+  <p class="eyebrow">Native theorem carrier</p>
+  <h2 id="carrier-title">The statement stays in its native system.</h2>
+  <p class="section-lead">The source displays Mathlib’s own definition of <code>RiemannHypothesis</code>. This reader retains that declaration as the theorem carrier rather than translating it into an Architecture theorem.</p>
+  <pre class="math-block external-reader-code"><code>def RiemannHypothesis : Prop :=
+  ∀ (s : ℂ) (_ : riemannZeta s = 0)
+    (_ : ¬∃ n : ℕ, s = -2 * (n + 1))
+    (_ : s ≠ 1), s.re = 1 / 2</code></pre>
+  <div class="r59-inline-links"><a href="https://math.mit.edu/~drew/grh/#what-was-verified">Open the source statement</a><a href="https://github.com/Deicyde/riemann-hypothesis">Open the source mirror</a></div>
+</section>
+
+<section class="r59-section" aria-labelledby="record-title">
+  <p class="eyebrow">Reported verification record</p>
+  <h2 id="record-title">Artifacts, checks, and conditions remain separate.</h2>
+  <div class="external-reader-grid">
+    <article class="r59-card"><span class="mini-label">Source artifacts</span><h3>Archive and hash route</h3><p>The source page identifies the archive, exports, manifests, logs, toolchain versions, and SHA-256 values needed to identify the reported run.</p><p><a href="https://math.mit.edu/~drew/grh/#downloads">Open artifacts and hashes</a></p></article>
+    <article class="r59-card"><span class="mini-label">Reported checks</span><h3>Machine results at the stated update</h3><p>The page reports 175,187 compiled modules, an axiom audit, Lean-kernel replay, nanoda, con-leche, lean4lean, and comparator rows. Each is retained as a source-reported status, not collapsed into one badge.</p><p><a href="https://math.mit.edu/~drew/grh/#summary">Open the source check table</a></p></article>
+    <article class="r59-card"><span class="mini-label">Active conditions</span><h3>Completion and caveats share one record</h3><p>At the source update, the default and paranoid Lean-kernel export replays and the end-to-end <code>lake comparator</code> run remained active. The direct-build, export-provenance, and comparison caveats remain adjacent to reported passes.</p><p><a href="https://math.mit.edu/~drew/grh/#caveats">Read source caveats</a></p></article>
+    <article class="r59-card"><span class="mini-label">Independent inspection</span><h3>Follow the public replay route</h3><p>External checker page → source archive and hashes → selected independent checker → output comparison → source-indexed reader receipt.</p><p><a href="https://math.mit.edu/~drew/grh/#check-it-yourself">Read the external replay route</a> · <a href="https://alpo.ge/remark.pdf">Read the announcement</a></p></article>
+  </div>
+</section>
+
+<section class="r59-section" aria-labelledby="reporting-title">
+  <p class="eyebrow">Reporting context / secondary records</p>
+  <h2 id="reporting-title">Public reporting carries context, not verification authority.</h2>
+  <p class="section-lead">The reporting record preserves the public event around the release: its announcement, reception, and active review. It remains distinct from the theorem carrier, source artifact, checker table, caveats, and replay receipt.</p>
+  <div class="external-reader-grid">
+    <article class="r59-card"><span class="mini-label">Scientific American · 20 Nov 2026</span><h3>Initial report and same-day update</h3><p>Joseph Howlett’s initial report records the public claim and Lean release. A later report by Clara Moskowitz and Lee Billings records independent recompilation while retaining comparator, redefinition, and kernel-path checks as outstanding.</p><p><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Read the initial report</a> · <a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/">Read the update</a></p></article>
+    <article class="r59-card"><span class="mini-label">Nature · 20 Nov 2026</span><h3>Scientific-news coverage</h3><p>Nature reports the claimed result as an announcement requiring rigorous checking, with the mathematical response and interpretation still in progress.</p><p><a href="https://www.nature.com/articles/d41586-026-03812-7">Read the report</a></p></article>
+    <article class="r59-card"><span class="mini-label">Associated Press · 21 Nov 2026</span><h3>General-news record</h3><p>The AP report records the announcement, the Lean artifact, and the institutional fact that assessment of a claimed solution takes time.</p><p><a href="https://apnews.com/article/4fe8b69a891f160f9e7f0c85af8c55c8">Read the report</a></p></article>
+    <article class="r59-card"><span class="mini-label">Quanta Magazine · 20 Nov 2026</span><h3>Mathematics reporting</h3><p>Quanta documents the release and the contemporaneous effort to inspect its formal record, keeping the public mathematical question separate from the announcement itself.</p><p><a href="https://www.quantamagazine.org/updates/transformation/">Read the report</a></p></article>
+  </div>
+  <div class="r59-note external-reader-note"><p><strong>Office.</strong> These are selected contemporaneous secondary reports retrieved 2026-11-21. They do not supply the Lean theorem carrier, source artifact identity, machine-check outcome, caveat disposition, or independent replay receipt. The statuses <code>SOURCE_REPORTED</code> and <code>PENDING_REPLAY</code> remain unchanged.</p></div>
+</section>
+
+<section class="r59-section" aria-labelledby="reader-title">
+  <p class="eyebrow">Coppalini Architecture / reader office</p>
+  <h2 id="reader-title">Disclosure closure keeps each relation at its earned strength.</h2>
+  <div class="r59-flow" aria-label="External formalization disclosure sequence"><span>Declared theorem</span><b>→</b><span>Identified artifact</span><b>→</b><span>Reported machine check</span><b>→</b><span>Independent replay route</span><b>→</b><span>Source-indexed reader receipt</span></div>
+  <p class="r59-smallprint">Each statement retains its source, condition, status, and check route. The external source carries its theorem statement, artifacts, and reported checker results. This reader carries their public address, stated conditions, and a clean route for independent inspection.</p>
+  <div class="r59-note external-reader-note"><p><strong>Local reader boundary.</strong> EARR-001 is a finite external-anchor receipt. Its small local Lean module is <code>LOCAL_REPLAYED · self-attested</code>; R3’s retention repair remains pending because the workflow hash and raw command output are not retained. That local replay does not replay, validate, or prove the external Riemann-Hypothesis formalization.</p><p><strong>External-artifact boundary.</strong> The external formalization remains <code>SOURCE_REPORTED</code> / <code>PENDING_REPLAY</code> until a separately retained artifact replay supplies its own transcript. R14’s semantic-schema repair remains required before adapter names can carry a semantic adapter claim.</p><p><strong>Packet boundary.</strong> This page does not publish, link, or distribute the EARR-001 packet. Packet release remains gated on Section 8 of the reader brief.</p><p><strong>Adapter boundary.</strong> Adapter names are retained; semantic adapter schema is not declared.</p></div>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>© 2026 Anthony Vito Coppa · Coppalini Architecture</span><nav><a href="/verify">Verify</a><a href="/library">Library</a><a href="/about">About</a></nav></div></footer>
+</body>
+</html>

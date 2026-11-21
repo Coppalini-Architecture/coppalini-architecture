@@ -1,0 +1,4 @@
+/public/
+/release/
+__pycache__/
+*.py[cod]

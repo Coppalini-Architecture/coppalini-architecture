@@ -69,6 +69,16 @@
 .r59 .r59-proof-table .scope { color:var(--r59-muted); }
 .r59 .r59-note { padding:1.1rem 1.2rem; border-left:3px solid var(--blue); background:#fffdf8; margin:1.3rem 0; }
 .r59 .r59-note p { margin:.45rem 0; font-size:.88rem; }
+.r59 .external-reader-status { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:1.45rem 0; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+.r59 .external-reader-status > div { min-width:0; padding:1rem 1.1rem 1rem 0; }
+.r59 .external-reader-status > div + div { padding-left:1.1rem; border-left:1px solid var(--r59-rule); }
+.r59 .external-reader-status dt { color:var(--red); font:750 .62rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.09em; text-transform:uppercase; }
+.r59 .external-reader-status dd { margin:.45rem 0 0; color:var(--ink); font:650 .78rem/1.55 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+.r59 .external-reader-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:1.55rem 0 0; background:var(--r59-rule); border:1px solid var(--r59-rule); }
+.r59 .external-reader-grid .r59-card { display:flex; min-height:0; flex-direction:column; }
+.r59 .external-reader-grid .r59-card p:last-child { margin-top:auto; }
+.r59 .external-reader-code { max-width:100%; margin:1rem 0; padding:.8rem; background:#f3efe7; border:1px solid var(--r59-rule); color:var(--ink); font-size:.69rem; line-height:1.55; white-space:pre-wrap; overflow-wrap:anywhere; }
+.r59 .external-reader-note { max-width:65rem; }
 .r59 .r59-ledger { scroll-margin-top:1rem; }
 .r59 .r59-ledger-entry { margin:2.35rem 0 0; padding:1.45rem 0 0; border-top:2px solid var(--ink); }
 .r59 .r59-ledger-entry > h3 { margin:.38rem 0 1.15rem; font-size:clamp(1.45rem,3vw,2.2rem); letter-spacing:-.02em; }
@@ -139,6 +149,16 @@
 .r59 details p { font-size:.87rem; color:var(--r59-muted); }
 @media(max-width:58rem){.r59 .r59-hero { grid-template-columns:1fr; }.r59 .hero-side { max-width:45rem; }.r59 .r59-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.r59.disclosure-page .hero-side { border-left:0; border-top:1px solid var(--red); padding:1rem 0 0; }.r59 .r59-correspondence-table { table-layout:auto; }}
 @media(max-width:39rem){.r59 .r59-grid,.r59 .r59-split,.r59 .r59-ledger-columns,.r59 .disclosure-key,.r59 .r59-status-key { grid-template-columns:1fr; }.r59 .r59-feature { grid-template-columns:minmax(6rem,8.5rem) minmax(0,1fr); }.r59 .r59-list li { grid-template-columns:1fr; }.r59 .r59-list li .right { justify-self:start; text-align:left; }.r59 .r59-proof-table,.r59 .r59-correspondence-table { display:block; overflow-x:auto; }.r59 .r59-proof-table td { min-width:12rem; }.r59 .r59-correspondence-table th,.r59 .r59-correspondence-table td { min-width:10rem; }.r59 .r59-statline { gap:1rem; }.r59 .r59-hero h1 { font-size:clamp(2.3rem,10vw,3.6rem); }.r59 .architecture-lab-landing iframe { height:max(28rem,72svh); }.r59 .disclosure-key > div,.r59 .disclosure-key > div + div { padding:.9rem 0; border-left:0; border-top:1px solid var(--r59-rule); }.r59 .disclosure-key > div:first-child { border-top:0; }.r59 .r59-status-key p,.r59 .r59-status-key p:nth-child(3n+2),.r59 .r59-status-key p:nth-child(3n+3) { padding:.8rem 0; border-left:0; border-top:1px solid var(--r59-rule); }.r59 .r59-status-key p:first-child { border-top:0; }.r59 .disclosure-links { display:grid; grid-template-columns:1fr; }.r59 .disclosure-links a,.r59 .disclosure-links a + a { margin:0; padding:.72rem 0; border-left:0; border-top:1px solid var(--r59-rule); }.r59 .disclosure-links a:first-child { border-top:0; }}
+@media(max-width:58rem){
+  .r59 .external-reader-status{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .r59 .external-reader-status > div:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--r59-rule);}
+  .r59 .external-reader-status > div:nth-child(4){border-top:1px solid var(--r59-rule);}
+}
+@media(max-width:39rem){
+  .r59 .external-reader-grid,.r59 .external-reader-status{grid-template-columns:1fr;}
+  .r59 .external-reader-status > div,.r59 .external-reader-status > div + div,.r59 .external-reader-status > div:nth-child(3),.r59 .external-reader-status > div:nth-child(4){padding:.8rem 0;border-left:0;border-top:1px solid var(--r59-rule);}
+  .r59 .external-reader-status > div:first-child{border-top:0;}
+}
 /* Phone repair: the proof atlas hero must enter one column before its pinned
    receipt is read.  The original 58rem rule remains; this hard layout rule
    protects against later display-grid declarations in page-specific CSS. */

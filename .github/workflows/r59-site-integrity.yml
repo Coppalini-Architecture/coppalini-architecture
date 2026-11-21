@@ -7,12 +7,23 @@ on:
       - 'notice/index.html'
       - 'about.html'
       - 'library.html'
+      - 'publication-records.html'
       - 'verify.html'
       - 'architecture.html'
       - 'architecture/index.html'
       - 'formalism.html'
       - 'language-mechanics.html'
+      - 'site-data.js'
       - 'proofs/minimum-mechanics/index.html'
+      - 'papers/symmetric-minimum/index.html'
+      - 'research/metric-minimum-root28-v0.1.json'
+      - 'research/metric-minimum-root28-v0.1.md'
+      - 'research/zenodo-publication-registry-v0.1.json'
+      - 'proofs/Root28Reader.lean'
+      - 'proofs/ExternalAnchorReceipt.lean'
+      - 'verification/root28/**'
+      - 'verification/zenodo-publication-registry/**'
+      - 'verification/external-anchor-receipt/**'
       - 'research/minimum-mechanics-010u.json'
       - 'research/r59-editorial-manifest.json'
       - 'R59_EDITORIAL_RELEASE.md'
@@ -23,9 +34,15 @@ on:
       - 'language-mechanics.css'
       - 'assets/authors/**'
       - '_redirects'
+      - '.gitignore'
+      - 'netlify.toml'
+      - 'EXTERNAL_ANCHOR_SHA256SUMS'
+      - 'EXTERNAL_ANCHOR_COMPILER_RECEIPT.md'
+      - 'build/**'
       - 'llms*.txt'
       - 'sitemap.xml'
       - 'tools/verify_r59_publication.py'
+      - 'tools/build_public_stage.py'
       - '.github/workflows/r59-site-integrity.yml'
   pull_request:
     paths:
@@ -33,12 +50,23 @@ on:
       - 'notice/index.html'
       - 'about.html'
       - 'library.html'
+      - 'publication-records.html'
       - 'verify.html'
       - 'architecture.html'
       - 'architecture/index.html'
       - 'formalism.html'
       - 'language-mechanics.html'
+      - 'site-data.js'
       - 'proofs/minimum-mechanics/index.html'
+      - 'papers/symmetric-minimum/index.html'
+      - 'research/metric-minimum-root28-v0.1.json'
+      - 'research/metric-minimum-root28-v0.1.md'
+      - 'research/zenodo-publication-registry-v0.1.json'
+      - 'proofs/Root28Reader.lean'
+      - 'proofs/ExternalAnchorReceipt.lean'
+      - 'verification/root28/**'
+      - 'verification/zenodo-publication-registry/**'
+      - 'verification/external-anchor-receipt/**'
       - 'research/minimum-mechanics-010u.json'
       - 'research/r59-editorial-manifest.json'
       - 'R59_EDITORIAL_RELEASE.md'
@@ -49,7 +77,15 @@ on:
       - 'language-mechanics.css'
       - 'assets/authors/**'
       - '_redirects'
+      - '.gitignore'
+      - 'netlify.toml'
+      - 'EXTERNAL_ANCHOR_SHA256SUMS'
+      - 'EXTERNAL_ANCHOR_COMPILER_RECEIPT.md'
+      - 'build/**'
+      - 'sitemap.xml'
+      - 'llms*.txt'
       - 'tools/verify_r59_publication.py'
+      - 'tools/build_public_stage.py'
       - '.github/workflows/r59-site-integrity.yml'
   workflow_dispatch:
 
@@ -67,6 +103,11 @@ jobs:
       - name: Audit the R59 public content, links and provenance
         run: |
           set -euo pipefail
+          python3 -I verification/root28/check_root28.py --self-test
+          python3 -I verification/zenodo-publication-registry/check_zenodo_publication_registry.py
           python3 tools/verify_r59_publication.py
+          python3 -I tools/build_public_stage.py --output "$RUNNER_TEMP/coppalini-public"
+          test ! -e "$RUNNER_TEMP/coppalini-public/verification/external-anchor-receipt"
+          test ! -e "$RUNNER_TEMP/coppalini-public/proofs/ExternalAnchorReceipt.lean"
       - name: Show source commit
         run: git rev-parse HEAD

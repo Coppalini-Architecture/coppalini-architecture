@@ -1,0 +1,58 @@
+name: Lean Root28 finite reader
+
+on:
+  push:
+    paths:
+      - 'papers/symmetric-minimum/index.html'
+      - 'research/metric-minimum-root28-v0.1.json'
+      - 'research/metric-minimum-root28-v0.1.md'
+      - 'proofs/Root28Reader.lean'
+      - 'verification/root28/**'
+      - '.github/workflows/lean-root28-reader.yml'
+  pull_request:
+    paths:
+      - 'papers/symmetric-minimum/index.html'
+      - 'research/metric-minimum-root28-v0.1.json'
+      - 'research/metric-minimum-root28-v0.1.md'
+      - 'proofs/Root28Reader.lean'
+      - 'verification/root28/**'
+      - '.github/workflows/lean-root28-reader.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reader:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read source
+        uses: actions/checkout@v4
+
+      - name: Install Lean 4.33.0
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.33.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Check Root28 reader receipt
+        shell: bash
+        run: python3 -I verification/root28/check_root28.py --self-test
+
+      - name: Kernel elaboration
+        shell: bash
+        run: |
+          lean --version
+          mkdir -p build/proofs
+          lean --root=. -o build/proofs/Root28Reader.olean proofs/Root28Reader.lean
+
+      - name: Report source provenance
+        shell: bash
+        run: |
+          sha256sum research/metric-minimum-root28-v0.1.json
+          sha256sum research/metric-minimum-root28-v0.1.md
+          sha256sum proofs/Root28Reader.lean
+          sha256sum verification/root28/check_root28.py
+          sha256sum .github/workflows/lean-root28-reader.yml
+          git rev-parse HEAD

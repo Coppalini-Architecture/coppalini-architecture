@@ -81,6 +81,7 @@
 /archive/r58-verify.html  /verify  301!
 /archive/r58-constructions.html  /architecture  301!
 /archive/r58-basis.html  /formalism  301!
+/publication-records.html  /publication-records  301!
 
 # R59 repair: preserve historical case-sensitive paper/source download URLs.
 /downloads/NATIVE_DOMAIN_ADAPTER_ATLAS_v0_3.zip  /downloads/native_domain_adapter_atlas_v0_3.zip  301!
