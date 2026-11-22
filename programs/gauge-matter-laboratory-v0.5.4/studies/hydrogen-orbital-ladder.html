@@ -1,0 +1,1480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clear Onyx — Hydrogen Orbital Ladder</title>
+<style>
+:root{
+  color-scheme:dark;
+  --background:#08090d;--foreground:#e8e4d6;--muted:#151a22;
+  --muted-foreground:#9299a5;--border:#29303a;--viz-series-1:#d7b36a;
+  --viz-series-2:#7fa4c4;--accent:#d7b36a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--background);color:var(--foreground)}
+body{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+main{max-width:820px;margin:0 auto;padding:22px 20px 48px}
+header{margin:0 auto 16px;max-width:736px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:22px;font-weight:500;margin:0 0 6px;color:var(--accent)}
+header p{margin:0;color:var(--muted-foreground);line-height:1.55;font-size:12px}
+.viz-controls{display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap}
+.btn,.form-select,.form-range{font:inherit}
+.btn{border:1px solid var(--border);border-radius:4px;background:#11161d;color:var(--foreground);padding:7px 12px;cursor:pointer}
+.btn-primary{border-color:#806f45;color:#f0dfb4}
+.form-label{color:var(--muted-foreground);display:flex;align-items:center;gap:6px}
+.form-select{background:#10151c;color:var(--foreground);border:1px solid var(--border);border-radius:4px;padding:5px 7px}
+.form-check{display:inline-flex;align-items:center;gap:6px;color:var(--muted-foreground)}
+.form-check-input{accent-color:var(--accent)}
+.form-range{accent-color:var(--accent)}
+.text-small{font-size:11px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+footer{max-width:736px;margin:18px auto 0;padding-top:10px;border-top:1px solid var(--border);color:var(--muted-foreground);font-size:10px;line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>Hydrogen Orbital Ladder</h1>
+<p>Ideal protium · reduced-mass Coulomb Hamiltonian · selected circular components · finite coherent preparation. The displayed field is a computed state read and probability current, not an electron trajectory or emitted light.</p>
+</header>
+<div id="hydrogen-orbital-ladder-v02">
+  <div class="hol-stage">
+    <canvas id="hol-canvas-v02" width="680" height="680" role="img" aria-label="A false-color equatorial probability field for one electron in ideal protium, coherently prepared across selected axial circular Coulomb components. The positive branch uses m-l at or above zero; MirrorY compares it with the corresponding negative-m-l branch. This is a state field and probability current, not an electron trajectory or emitted light."></canvas>
+    <span id="hol-theme-probe-v02" class="hol-probe" aria-hidden="true"></span>
+  </div>
+
+  <div class="viz-controls hol-controls" aria-label="Hydrogen orbital preparation and evolution controls">
+    <button id="hol-evolve-v02" class="btn btn-primary" type="button" aria-pressed="true">HOLD</button>
+    <label class="form-label" for="hol-read-v02">Read
+      <select id="hol-read-v02" class="form-select">
+        <option value="field">density + phase</option>
+        <option value="mirror">ρ₊ − ρ₋ · MirrorY · mₗ↔−mₗ</option>
+      </select>
+    </label>
+    <label class="form-check form-switch" for="hol-3d-v02">
+      <input id="hol-3d-v02" class="form-check-input" type="checkbox" checked>
+      <span class="form-check-label">prepare 3d · mₗ=+2</span>
+    </label>
+    <label class="form-check form-switch" for="hol-4f-v02">
+      <input id="hol-4f-v02" class="form-check-input" type="checkbox" checked>
+      <span class="form-check-label">prepare 4f · mₗ=+3</span>
+    </label>
+    <label class="form-label hol-return-control" for="hol-return-v02">Ray-return position <span id="hol-return-value-v02" class="hol-value">0.000 / 108 beats</span>
+      <input id="hol-return-v02" class="form-range" type="range" min="0" max="1000" step="1" value="0">
+    </label>
+  </div>
+
+  <div class="hol-readout text-small" aria-label="Prepared hydrogen state">
+    <span id="hol-support-v02">¹H · 1e⁻ · 1s · mₗ=0 + 2p · mₗ=+1 + 3d · mₗ=+2 + 4f · mₗ=+3</span>
+    <span id="hol-energy-v02">⟨E⟩ −4.840 eV</span>
+    <span id="hol-spread-v02">energy spread σE 5.143 eV</span>
+    <span id="hol-ray-v02">ray return 108 × T₂₁ · 43.79 fs</span>
+    <span id="hol-vector-v02">fixed-zero representative return 108 × T₂₁</span>
+  </div>
+
+  <div class="hol-energy" role="img" aria-label="Fixed ideal hydrogen Coulomb eigenvalues. Filled dots mark populated levels; the vertical marker is the prepared state's mean energy.">
+    <div class="hol-energy-grid">
+      <div id="hol-energy-labels-v02" class="hol-energy-labels text-small"></div>
+      <div id="hol-energy-plot-v02" class="hol-energy-plot">
+        <div id="hol-energy-levels-v02" class="hol-energy-levels"></div>
+        <span id="hol-energy-mean-v02" class="hol-mean-line" aria-hidden="true"></span>
+        <span id="hol-energy-mean-label-v02" class="hol-mean-label text-small">mean</span>
+        <span class="hol-energy-min text-small">−E<sub>H</sub></span>
+        <span class="hol-energy-zero text-small">0 eV</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="hol-status-v02" class="hol-status text-small">¹H · Z=1 · one electron · fixed reduced-mass Coulomb eigenvalues · selected circular components · one ray return shown over 24 s</div>
+  <div id="hol-live-v02" class="sr-only" aria-live="polite">Four-level hydrogen state prepared at time zero.</div>
+</div>
+
+<style>
+#hydrogen-orbital-ladder-v02 {
+  width: 100%;
+  max-width: 736px;
+  margin-inline: auto;
+  color: var(--foreground);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-stage {
+  width: min(100%, 680px);
+  margin-inline: auto;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+#hydrogen-orbital-ladder-v02 canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-controls {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-return-control {
+  flex: 1 1 250px;
+  max-width: 330px;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-return-control .form-range {
+  width: 100%;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-value,
+#hydrogen-orbital-ladder-v02 .hol-readout,
+#hydrogen-orbital-ladder-v02 .hol-status {
+  font-variant-numeric: tabular-nums;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-readout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-grid {
+  display: grid;
+  grid-template-columns: minmax(112px, 156px) minmax(0, 1fr);
+  gap: 12px;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-labels,
+#hydrogen-orbital-ladder-v02 .hol-energy-levels {
+  display: grid;
+  grid-template-rows: repeat(4, 28px);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-label {
+  display: flex;
+  align-items: center;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-plot {
+  position: relative;
+  min-width: 0;
+  padding-bottom: 24px;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-level-row {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-level-dot {
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  translate: -50% -50%;
+  border: 1px solid var(--muted-foreground);
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-level-dot.is-active {
+  background: var(--viz-series-1);
+  border-color: var(--foreground);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-mean-line {
+  position: absolute;
+  top: 0;
+  bottom: 24px;
+  width: 2px;
+  translate: -1px 0;
+  background: var(--viz-series-2);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-mean-label,
+#hydrogen-orbital-ladder-v02 .hol-energy-min,
+#hydrogen-orbital-ladder-v02 .hol-energy-zero {
+  position: absolute;
+  bottom: 0;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-mean-label {
+  translate: -50% 0;
+  color: var(--foreground);
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-min {
+  left: 0;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-energy-zero {
+  right: 0;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-status {
+  margin-top: 7px;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+#hydrogen-orbital-ladder-v02 .hol-probe {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@media (max-width: 520px) {
+  #hydrogen-orbital-ladder-v02 .hol-return-control {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  #hydrogen-orbital-ladder-v02 .hol-energy-grid {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hydrogen-orbital-ladder-v02 canvas {
+    animation: none;
+  }
+}
+
+</style>
+
+<script>
+(function (root, factory) {
+  "use strict";
+  const api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  root.HydrogenKernelV01 = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+
+  const SCHEMA = "architecture-of-silence.minimum-hydrogen-dynamics/v1";
+  const RECEIPT_SCHEMA = "architecture-of-silence.axial-path-lift-receipt/v1";
+  const TAU = 2 * Math.PI;
+  const SQRT_PI = Math.sqrt(Math.PI);
+  const EXPECTATION_RADIUS_AH = 128 / 243;
+  const ZETA_MAX = 1 / (6 * Math.PI * Math.E);
+
+  // 2022 CODATA inputs, used only to state the declared reduced-mass model.
+  const CONSTANTS = Object.freeze({
+    electronMassKg: 9.1093837139e-31,
+    protonMassKg: 1.67262192595e-27,
+    bohrRadiusM: 5.29177210544e-11,
+    rydbergEnergyEv: 13.60569312299,
+    hbarEvS: 6.582119569e-16
+  });
+
+  function assert(condition, message) {
+    if (!condition) throw new TypeError(message);
+  }
+
+  function mod(value, modulus) {
+    return ((value % modulus) + modulus) % modulus;
+  }
+
+  function clamp(value, minimum, maximum) {
+    return Math.min(maximum, Math.max(minimum, value));
+  }
+
+  function freezeDeep(value) {
+    if (value && typeof value === "object" && !Object.isFrozen(value)) {
+      Object.freeze(value);
+      for (const item of Object.values(value)) freezeDeep(item);
+    }
+    return value;
+  }
+
+  function multiplyComplex(aRe, aIm, bRe, bIm) {
+    return { re: aRe * bRe - aIm * bIm, im: aRe * bIm + aIm * bRe };
+  }
+
+  function reducedMassModel() {
+    const me = CONSTANTS.electronMassKg;
+    const mp = CONSTANTS.protonMassKg;
+    const ratio = mp / (me + mp);
+    const reducedMassKg = me * ratio;
+    const bohrRadiusM = CONSTANTS.bohrRadiusM / ratio;
+    const rydbergEnergyEv = CONSTANTS.rydbergEnergyEv * ratio;
+    const beatEnergyEv = 0.75 * rydbergEnergyEv;
+    const angularFrequencyRadS = beatEnergyEv / CONSTANTS.hbarEvS;
+    const beatPeriodS = TAU / angularFrequencyRadS;
+    return freezeDeep({
+      regime: "center-of-mass-separated, field-free, nonrelativistic reduced-mass Coulomb model",
+      reducedMassKg,
+      reducedMassElectronRatio: ratio,
+      bohrRadiusM,
+      rydbergEnergyEv,
+      beatEnergyEv,
+      angularFrequencyRadS,
+      beatPeriodS,
+      horizonRadiusAh: 12
+    });
+  }
+
+  const MODEL = reducedMassModel();
+
+  // Dimensionless normalized basis functions in X = r / a_H.
+  function basisAt(x, y, z, handedness) {
+    assert(handedness === 1 || handedness === -1, "Handedness must be +1 or -1.");
+    const radius = Math.hypot(x, y, z);
+    const s = Math.exp(-radius) / SQRT_PI;
+    const f = Math.exp(-0.5 * radius) / (8 * SQRT_PI);
+    return {
+      radius,
+      s,
+      f,
+      p: { re: f * x, im: f * handedness * y }
+    };
+  }
+
+  // Exact spectral propagation of (1s + exp(-i tau) 2p,m=h) / sqrt(2).
+  // The omitted common energy phase cannot affect the displayed observables.
+  function sample(x, y, z, phase, handedness = 1) {
+    const basis = basisAt(x, y, z, handedness);
+    const qRe = Math.cos(phase);
+    const qIm = -Math.sin(phase);
+    const qp = multiplyComplex(qRe, qIm, basis.p.re, basis.p.im);
+    const psiRe = (basis.s + qp.re) / Math.SQRT2;
+    const psiIm = qp.im / Math.SQRT2;
+    const density = psiRe * psiRe + psiIm * psiIm;
+    const basisCarrier = basis.s * basis.s + basis.p.re * basis.p.re + basis.p.im * basis.p.im;
+    const visibility = basisCarrier > Number.MIN_VALUE
+      ? clamp(2 * basis.s * Math.hypot(basis.p.re, basis.p.im) / basisCarrier, 0, 1)
+      : 0;
+
+    return {
+      psi: { re: psiRe, im: psiIm },
+      density,
+      localPhase: Math.atan2(psiIm, psiRe),
+      visibility,
+      interference: density - 0.5 * basisCarrier,
+      radius: basis.radius
+    };
+  }
+
+  function densityClosedForm(x, y, z, phase, handedness = 1) {
+    const basis = basisAt(x, y, z, handedness);
+    const pSquared = basis.f * basis.f * (x * x + y * y);
+    const cross = 2 * basis.s * basis.f * (
+      x * Math.cos(phase) + handedness * y * Math.sin(phase)
+    );
+    return 0.5 * (basis.s * basis.s + pSquared + cross);
+  }
+
+  // Difference between the two exact reflected branches. The half-angle
+  // adapter phase = 2 * theta exposes the Heavy Horizon sin(2 theta) factor.
+  function mirrorZeta(x, y, z, theta) {
+    const radius = Math.hypot(x, y, z);
+    return y * Math.exp(-1.5 * radius) * Math.sin(2 * theta) / (4 * Math.PI);
+  }
+
+  function branchDifference(x, y, z, phase) {
+    return densityClosedForm(x, y, z, phase, 1)
+      - densityClosedForm(x, y, z, phase, -1);
+  }
+
+  function expectationPosition(phase, handedness = 1) {
+    assert(handedness === 1 || handedness === -1, "Handedness must be +1 or -1.");
+    return {
+      x: EXPECTATION_RADIUS_AH * Math.cos(phase),
+      y: handedness * EXPECTATION_RADIUS_AH * Math.sin(phase),
+      z: 0
+    };
+  }
+
+  // Dimensionless probability current J = Im(psi* grad_X psi).
+  // Physical current is (hbar / (mu a_H^4)) J.
+  function probabilityCurrent(x, y, z, phase, handedness = 1) {
+    const basis = basisAt(x, y, z, handedness);
+    const radius = basis.radius;
+    const invRadius = radius > 0 ? 1 / radius : 0;
+    const qRe = Math.cos(phase);
+    const qIm = -Math.sin(phase);
+    const qp = multiplyComplex(qRe, qIm, basis.p.re, basis.p.im);
+    const psi = {
+      re: (basis.s + qp.re) / Math.SQRT2,
+      im: qp.im / Math.SQRT2
+    };
+
+    const pFactorRe = x;
+    const pFactorIm = handedness * y;
+    const axes = [
+      { radial: x, directRe: 1, directIm: 0 },
+      { radial: y, directRe: 0, directIm: handedness },
+      { radial: z, directRe: 0, directIm: 0 }
+    ];
+    const current = [];
+
+    for (const axis of axes) {
+      const ds = -basis.s * axis.radial * invRadius;
+      const radialScale = -0.5 * axis.radial * invRadius;
+      const dpRe = basis.f * (axis.directRe + radialScale * pFactorRe);
+      const dpIm = basis.f * (axis.directIm + radialScale * pFactorIm);
+      const qdp = multiplyComplex(qRe, qIm, dpRe, dpIm);
+      const gradientRe = (ds + qdp.re) / Math.SQRT2;
+      const gradientIm = qdp.im / Math.SQRT2;
+      current.push(psi.re * gradientIm - psi.im * gradientRe);
+    }
+
+    return { x: current[0], y: current[1], z: current[2] };
+  }
+
+  function displayTone(density) {
+    const intensity = clamp(2 * Math.PI * density, 0, 1);
+    return Math.log1p(31 * intensity) / Math.log(32);
+  }
+
+  function phaseDisplayChroma(visibility) {
+    return 0.2 * clamp(visibility, 0, 1);
+  }
+
+  function seamDisplayChroma(zeta) {
+    return 0.2 * Math.min(1, Math.abs(zeta) / ZETA_MAX);
+  }
+
+  // Renderer-only map between the physical Cartesian plane and a unit disk:
+  // R = r/a_H = horizon * u^2. Cartesian +Y remains up in this API.
+  function physicalToQuadraticDisplay(x, y, horizon = 12) {
+    assert(Number.isFinite(horizon) && horizon > 0, "Display horizon must be positive.");
+    const radius = Math.hypot(x, y);
+    if (radius === 0) return { x: 0, y: 0, u: 0 };
+    const u = Math.sqrt(radius / horizon);
+    return { x: u * x / radius, y: u * y / radius, u };
+  }
+
+  function quadraticDisplayToPhysical(displayX, displayY, horizon = 12) {
+    assert(Number.isFinite(horizon) && horizon > 0, "Display horizon must be positive.");
+    const u = Math.hypot(displayX, displayY);
+    if (u === 0) return { x: 0, y: 0, radius: 0 };
+    const radius = horizon * u * u;
+    return {
+      x: radius * displayX / u,
+      y: radius * displayY / u,
+      radius
+    };
+  }
+
+  // Pushes a physical vector through F(r)=r/(sqrt(horizon)*sqrt(|r|)).
+  function pushForwardQuadraticDisplay(x, y, vectorX, vectorY, horizon = 12) {
+    assert(Number.isFinite(horizon) && horizon > 0, "Display horizon must be positive.");
+    const radius = Math.hypot(x, y);
+    if (radius === 0) return { x: 0, y: 0 };
+    const dot = x * vectorX + y * vectorY;
+    const scale = 1 / Math.sqrt(horizon * radius);
+    const correction = 0.5 * dot / (radius * radius);
+    return {
+      x: scale * (vectorX - correction * x),
+      y: scale * (vectorY - correction * y)
+    };
+  }
+
+  function exactQuarterPhase(index) {
+    const table = Object.freeze([
+      Object.freeze({ cos: 1, sin: 0 }),
+      Object.freeze({ cos: 0, sin: 1 }),
+      Object.freeze({ cos: -1, sin: 0 }),
+      Object.freeze({ cos: 0, sin: -1 })
+    ]);
+    return table[mod(index, 4)];
+  }
+
+  function spinLift(physicalAngle) {
+    const alpha = physicalAngle / 2;
+    return {
+      physicalAngle,
+      coveringAngle: alpha,
+      diagonal: [
+        { re: Math.cos(alpha), im: -Math.sin(alpha) },
+        { re: Math.cos(alpha), im: Math.sin(alpha) }
+      ]
+    };
+  }
+
+  // Standard active Pauli-adjoint convention:
+  // sigma(p(U)v) = U sigma(v) U^dagger.
+  function projectAxialLiftToSO3(lift) {
+    assert(lift && Array.isArray(lift.diagonal) && lift.diagonal.length === 2, "An axial diagonal spin lift is required.");
+    const top = lift.diagonal[0];
+    const physicalAngle = -2 * Math.atan2(top.im, top.re);
+    const cosine = Math.cos(physicalAngle);
+    const sine = Math.sin(physicalAngle);
+    return [
+      [cosine, -sine, 0],
+      [sine, cosine, 0],
+      [0, 0, 1]
+    ];
+  }
+
+  function defectFromDeck(deck) {
+    assert(deck === 1 || deck === -1, "Central deck value must be +1 or -1.");
+    return deck - 1;
+  }
+
+  function composeDefects(first, second) {
+    return first + second + first * second;
+  }
+
+  function canonicalAxialPath(direction = 1) {
+    assert(direction === 1 || direction === -1, "Turn direction must be +1 or -1.");
+    return freezeDeep({
+      schema: "architecture-of-silence.canonical-axial-loop/v1",
+      parameter: { symbol: "s", interval: [0, 1] },
+      axis: [0, 0, 1],
+      direction,
+      coverMap: "p: SU(2) -> SO(3), restricted to the chosen axial torus",
+      basePath: {
+        group: "SO(3)",
+        expression: "R_z(direction * 2pi * s)",
+        basepoint: "+I_3",
+        start: "+I_3",
+        end: "+I_3"
+      },
+      liftedPath: {
+        group: "SU(2)",
+        expression: "diag(exp(-i * direction * pi * s), exp(i * direction * pi * s))",
+        initialSheet: "+I_2",
+        endpoint: "-I_2"
+      },
+      endpointEquation: "gammaLift(1) = (-I_2) * gammaLift(0)",
+      projectionWitness: "theta_physical(s) = 2 * alpha_covering(s)",
+      continuityWitness: "analytic one-parameter subgroup",
+      sheetWitness: "changing the initial sheet multiplies both lifted endpoints by -I_2 and preserves the deck element",
+      homotopyClass: "nontrivial generator of pi_1(SO(3))",
+      concatenationWitness: "deck(gamma_1 * gamma_2) = deck(gamma_1) * deck(gamma_2)",
+      evidence: "exact symbolic path; no sampled reconstruction"
+    });
+  }
+
+  function evaluateAxialPath(pathSpec, parameter) {
+    assert(pathSpec && pathSpec.schema === "architecture-of-silence.canonical-axial-loop/v1", "A canonical axial path is required.");
+    assert(Number.isFinite(parameter) && parameter >= 0 && parameter <= 1, "Path parameter must lie in [0,1].");
+    const direction = pathSpec.direction;
+    const physicalAngle = direction * TAU * parameter;
+    const coveringAngle = direction * Math.PI * parameter;
+    const cosine = Math.cos(physicalAngle);
+    const sine = Math.sin(physicalAngle);
+    return freezeDeep({
+      parameter,
+      physicalAngle,
+      coveringAngle,
+      baseSO3: [
+        [cosine, -sine, 0],
+        [sine, cosine, 0],
+        [0, 0, 1]
+      ],
+      liftSU2: [
+        [{ re: Math.cos(coveringAngle), im: -Math.sin(coveringAngle) }, { re: 0, im: 0 }],
+        [{ re: 0, im: 0 }, { re: Math.cos(coveringAngle), im: Math.sin(coveringAngle) }]
+      ]
+    });
+  }
+
+  function createReturnLedger() {
+    return freezeDeep({ schema: SCHEMA, completedTurns: 0, cumulativeDeck: 1, receipts: [] });
+  }
+
+  function appendPhysicalTurn(ledger, direction = 1) {
+    assert(ledger && ledger.schema === SCHEMA, "A minimum hydrogen return ledger is required.");
+    assert(direction === 1 || direction === -1, "Turn direction must be +1 or -1.");
+    const previousDeck = ledger.cumulativeDeck;
+    const loopDeck = -1;
+    const cumulativeDeck = previousDeck * loopDeck;
+    const receipt = freezeDeep({
+      schema: RECEIPT_SCHEMA,
+      kind: "LoopLift",
+      sequence: ledger.receipts.length,
+      physicalTurn: direction * TAU,
+      coveringTurn: direction * Math.PI,
+      loopDeck,
+      cumulativeDeck,
+      loopDefectScalar: defectFromDeck(loopDeck),
+      cumulativeDefectScalar: defectFromDeck(cumulativeDeck),
+      path: canonicalAxialPath(direction),
+      priorSequence: ledger.receipts.length ? ledger.receipts.length - 1 : null
+    });
+    return freezeDeep({
+      schema: SCHEMA,
+      completedTurns: ledger.completedTurns + 1,
+      cumulativeDeck,
+      receipts: [...ledger.receipts, receipt]
+    });
+  }
+
+  function encodePathReceipt(receipt) {
+    assert(receipt && receipt.schema === RECEIPT_SCHEMA, "An axial path-lift receipt is required.");
+    return JSON.stringify(receipt);
+  }
+
+  function validatePathReceipt(receipt) {
+    assert(receipt && receipt.schema === RECEIPT_SCHEMA, "Encoded receipt has the wrong schema.");
+    const allowedKeys = [
+      "schema", "kind", "sequence", "physicalTurn", "coveringTurn",
+      "loopDeck", "cumulativeDeck", "loopDefectScalar",
+      "cumulativeDefectScalar", "path", "priorSequence"
+    ].sort();
+    assert(JSON.stringify(Object.keys(receipt).sort()) === JSON.stringify(allowedKeys), "Encoded receipt has an inadmissible field set.");
+    assert(receipt.kind === "LoopLift", "Encoded receipt has the wrong occurrence kind.");
+    assert(Number.isInteger(receipt.sequence) && receipt.sequence >= 0, "Encoded receipt has an invalid sequence.");
+    const direction = Math.sign(receipt.physicalTurn);
+    assert(direction === 1 || direction === -1, "Encoded receipt has an invalid direction.");
+    assert(receipt.physicalTurn === direction * TAU, "Encoded receipt has an invalid physical turn.");
+    assert(receipt.coveringTurn === direction * Math.PI, "Encoded receipt has an invalid covering turn.");
+    assert(receipt.loopDeck === -1, "Encoded receipt has an invalid loop deck value.");
+    const expectedCumulativeDeck = receipt.sequence % 2 === 0 ? -1 : 1;
+    assert(receipt.cumulativeDeck === expectedCumulativeDeck, "Encoded receipt has an invalid cumulative deck value.");
+    assert(receipt.loopDefectScalar === -2, "Encoded receipt has an invalid loop defect coefficient.");
+    assert(receipt.cumulativeDefectScalar === defectFromDeck(expectedCumulativeDeck), "Encoded receipt has an invalid cumulative defect coefficient.");
+    const expectedPrior = receipt.sequence === 0 ? null : receipt.sequence - 1;
+    assert(receipt.priorSequence === expectedPrior, "Encoded receipt has an invalid prior sequence.");
+    const expectedPath = canonicalAxialPath(direction);
+    assert(JSON.stringify(receipt.path) === JSON.stringify(expectedPath), "Encoded receipt does not contain the canonical path witness.");
+    return true;
+  }
+
+  function decodePathReceipt(encoded) {
+    assert(typeof encoded === "string", "Encoded receipt must be a string.");
+    const receipt = JSON.parse(encoded);
+    validatePathReceipt(receipt);
+    return freezeDeep(receipt);
+  }
+
+  const H_HE_REFERENCE = freezeDeep({
+    kind: "GroundSpectroscopyReferenceSeam",
+    source: {
+      kind: "AtomicReference",
+      isotope: "1H",
+      occupancy: "1s^1",
+      term: "2S_1/2",
+      electronicJ: 0.5,
+      centralCharacter: { identity: 1, centralGenerator: -1 },
+      z2piValue: -1,
+      shell: "open"
+    },
+    target: {
+      kind: "AtomicReference",
+      isotope: "4He",
+      occupancy: "1s^2",
+      term: "1S_0",
+      electronicJ: 0,
+      centralCharacter: { identity: 1, centralGenerator: 1 },
+      z2piValue: 1,
+      shell: "closed"
+    },
+    edge: {
+      kind: "RefStep",
+      description: "open first shell to closed first shell",
+      isPhysicalEvolution: false
+    },
+    exclusions: [
+      "not physical H-to-He evolution",
+      "not H2Molecule",
+      "not HydrogenPairOccurrence",
+      "not HeavyHorizonH2",
+      "not a Berry phase"
+    ]
+  });
+
+  return freezeDeep({
+    SCHEMA,
+    RECEIPT_SCHEMA,
+    TAU,
+    EXPECTATION_RADIUS_AH,
+    ZETA_MAX,
+    CONSTANTS,
+    MODEL,
+    H_HE_REFERENCE,
+    mod,
+    basisAt,
+    sample,
+    densityClosedForm,
+    mirrorZeta,
+    branchDifference,
+    expectationPosition,
+    probabilityCurrent,
+    displayTone,
+    phaseDisplayChroma,
+    seamDisplayChroma,
+    physicalToQuadraticDisplay,
+    quadraticDisplayToPhysical,
+    pushForwardQuadraticDisplay,
+    exactQuarterPhase,
+    spinLift,
+    projectAxialLiftToSO3,
+    defectFromDeck,
+    composeDefects,
+    canonicalAxialPath,
+    evaluateAxialPath,
+    createReturnLedger,
+    appendPhysicalTurn,
+    encodePathReceipt,
+    validatePathReceipt,
+    decodePathReceipt
+  });
+});
+
+</script>
+
+<script>
+(function (root, factory) {
+  "use strict";
+  const parent = root.HydrogenKernelV01
+    || (typeof require === "function" ? require("../witnesses/hydrogen_kernel_v01.js") : null);
+  const api = factory(parent);
+  if (typeof module === "object" && module.exports) module.exports = api;
+  root.HydrogenOrbitalLadderV02 = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function (parent) {
+  "use strict";
+
+  if (!parent) throw new TypeError("HydrogenKernelV01 parent is required.");
+
+  const SCHEMA = "architecture-of-silence.hydrogen-orbital-ladder/v2";
+  const SQRT_PI = Math.sqrt(Math.PI);
+  const ALLOWED = Object.freeze([1, 2, 3, 4]);
+  const ORBITALS = Object.freeze({
+    1: Object.freeze({ n: 1, l: 0, mAbs: 0, label: "1s", stateLabel: "1s · mₗ=0", coefficient: 1 / SQRT_PI, phaseNumerator: 0, phaseDenominator: 1 }),
+    2: Object.freeze({ n: 2, l: 1, mAbs: 1, label: "2p", stateLabel: "2p · mₗ=+1", coefficient: 1 / (8 * SQRT_PI), phaseNumerator: 1, phaseDenominator: 1 }),
+    3: Object.freeze({ n: 3, l: 2, mAbs: 2, label: "3d", stateLabel: "3d · mₗ=+2", coefficient: 1 / (162 * SQRT_PI), phaseNumerator: 32, phaseDenominator: 27 }),
+    4: Object.freeze({ n: 4, l: 3, mAbs: 3, label: "4f", stateLabel: "4f · mₗ=+3", coefficient: 1 / (6144 * SQRT_PI), phaseNumerator: 5, phaseDenominator: 4 })
+  });
+
+  function assert(condition, message) {
+    if (!condition) throw new TypeError(message);
+  }
+
+  function clamp(value, minimum, maximum) {
+    return Math.min(maximum, Math.max(minimum, value));
+  }
+
+  function freezeDeep(value) {
+    if (value && typeof value === "object" && !Object.isFrozen(value)) {
+      Object.freeze(value);
+      for (const item of Object.values(value)) freezeDeep(item);
+    }
+    return value;
+  }
+
+  function complexMultiply(a, b) {
+    return { re: a.re * b.re - a.im * b.im, im: a.re * b.im + a.im * b.re };
+  }
+
+  function complexAdd(a, b) {
+    return { re: a.re + b.re, im: a.im + b.im };
+  }
+
+  function complexScale(value, scale) {
+    return { re: value.re * scale, im: value.im * scale };
+  }
+
+  function complexPower(base, exponent) {
+    let result = { re: 1, im: 0 };
+    for (let index = 0; index < exponent; index++) result = complexMultiply(result, base);
+    return result;
+  }
+
+  function isNormalizedActive(active) {
+    return Array.isArray(active)
+      && active.length >= 2
+      && active[0] === 1
+      && active[1] === 2
+      && active.every((n, index) => ALLOWED.includes(n) && (index === 0 || active[index - 1] < n));
+  }
+
+  function normalizeActive(active) {
+    if (Object.isFrozen(active) && isNormalizedActive(active)) return active;
+    assert(Array.isArray(active), "Active orbital support must be an array.");
+    const normalized = Array.from(new Set(active)).sort((left, right) => left - right);
+    assert(normalized.includes(1) && normalized.includes(2), "The sealed 1s and 2p parent support must remain active.");
+    assert(normalized.every(n => ALLOWED.includes(n)), "Only the declared n=1..4 ladder is available.");
+    return Object.freeze(normalized);
+  }
+
+  function orbitalSpatial(n, x, y, zCoordinate, mSign = 1) {
+    assert(mSign === 1 || mSign === -1, "Azimuthal sign must be +1 or -1.");
+    const orbital = ORBITALS[n];
+    assert(orbital, "Unknown hydrogen orbital.");
+    const radius = Math.hypot(x, y, zCoordinate);
+    const xy = { re: x, im: mSign * y };
+    const monomial = complexPower(xy, orbital.l);
+    const lowerPower = orbital.l > 0 ? complexPower(xy, orbital.l - 1) : { re: 0, im: 0 };
+    const envelope = orbital.coefficient * Math.exp(-radius / orbital.n);
+    const value = complexScale(monomial, envelope);
+    const invRadius = radius > 0 ? 1 / radius : 0;
+    const directX = complexScale(lowerPower, orbital.l);
+    const directY = complexMultiply(
+      complexScale(lowerPower, orbital.l),
+      { re: 0, im: mSign }
+    );
+    const radialX = -x * invRadius / orbital.n;
+    const radialY = -y * invRadius / orbital.n;
+    const radialZ = -zCoordinate * invRadius / orbital.n;
+    const gradientX = complexScale(complexAdd(directX, complexScale(monomial, radialX)), envelope);
+    const gradientY = complexScale(complexAdd(directY, complexScale(monomial, radialY)), envelope);
+    const gradientZ = complexScale(monomial, envelope * radialZ);
+    return {
+      radius,
+      value,
+      gradient: [gradientX, gradientY, gradientZ],
+      // The 1s Coulomb cusp has no classical Cartesian gradient at R=0.
+      // The zero vector above is only a weak-gradient representative used
+      // inside the separately well-defined continuous current extension.
+      gradientDefined: !(n === 1 && radius === 0)
+    };
+  }
+
+  function relativePhaseRatio(n) {
+    const orbital = ORBITALS[n];
+    assert(orbital, "Unknown hydrogen orbital.");
+    return freezeDeep({
+      numerator: orbital.phaseNumerator,
+      denominator: orbital.phaseDenominator,
+      value: orbital.phaseNumerator / orbital.phaseDenominator
+    });
+  }
+
+  function sampleState(activeInput, x, y, zCoordinate, basePhase, mSign = 1) {
+    const active = normalizeActive(activeInput);
+    const amplitudeScale = 1 / Math.sqrt(active.length);
+    let psi = { re: 0, im: 0 };
+    const gradient = [{ re: 0, im: 0 }, { re: 0, im: 0 }, { re: 0, im: 0 }];
+    let incoherentDensity = 0;
+    let gradientDefined = true;
+
+    for (const n of active) {
+      const spatial = orbitalSpatial(n, x, y, zCoordinate, mSign);
+      gradientDefined = gradientDefined && spatial.gradientDefined;
+      const ratio = ORBITALS[n].phaseNumerator / ORBITALS[n].phaseDenominator;
+      const angle = -ratio * basePhase;
+      const timeFactor = { re: Math.cos(angle), im: Math.sin(angle) };
+      const amplitude = complexScale(complexMultiply(timeFactor, spatial.value), amplitudeScale);
+      psi = complexAdd(psi, amplitude);
+      for (let axis = 0; axis < 3; axis++) {
+        gradient[axis] = complexAdd(
+          gradient[axis],
+          complexScale(complexMultiply(timeFactor, spatial.gradient[axis]), amplitudeScale)
+        );
+      }
+      incoherentDensity += amplitudeScale * amplitudeScale
+        * (spatial.value.re * spatial.value.re + spatial.value.im * spatial.value.im);
+    }
+
+    const density = psi.re * psi.re + psi.im * psi.im;
+    const probabilityCurrent = gradient.map(component => psi.re * component.im - psi.im * component.re);
+    const contrastDenominator = density + incoherentDensity;
+    const coherenceContrast = contrastDenominator > Number.MIN_VALUE
+      ? clamp(Math.abs(density - incoherentDensity) / contrastDenominator, 0, 1)
+      : 0;
+
+    return {
+      active,
+      psi,
+      density,
+      incoherentDensity,
+      coherenceContrast,
+      localPhase: density > 0 ? Math.atan2(psi.im, psi.re) : null,
+      gradientDefined,
+      probabilityCurrent: { x: probabilityCurrent[0], y: probabilityCurrent[1], z: probabilityCurrent[2] }
+    };
+  }
+
+  function mirrorDifference(active, x, y, zCoordinate, basePhase) {
+    return sampleState(active, x, y, zCoordinate, basePhase, 1).density
+      - sampleState(active, x, y, zCoordinate, basePhase, -1).density;
+  }
+
+  function greatestCommonDivisor(a, b) {
+    let left = Math.abs(a);
+    let right = Math.abs(b);
+    while (right) [left, right] = [right, left % right];
+    return left;
+  }
+
+  function leastCommonMultiple(a, b) {
+    return Math.abs(a * b) / greatestCommonDivisor(a, b);
+  }
+
+  function rayRecurrenceBeats(activeInput) {
+    const active = normalizeActive(activeInput);
+    return active.reduce(
+      (multiple, n) => leastCommonMultiple(multiple, ORBITALS[n].phaseDenominator),
+      1
+    );
+  }
+
+  // Absolute Coulomb phases in units of the sealed 1s-2p beat period obey
+  // exp(i * 2pi * 4k / (3n^2)).  This recurrence depends on the declared
+  // zero of the Hamiltonian; the ray recurrence above is the observable one.
+  function vectorRecurrenceBeats(activeInput) {
+    const active = normalizeActive(activeInput);
+    return active.reduce((multiple, n) => {
+      const denominator = 3 * n * n;
+      return leastCommonMultiple(multiple, denominator / greatestCommonDivisor(4, denominator));
+    }, 1);
+  }
+
+  function energySummary(activeInput) {
+    const active = normalizeActive(activeInput);
+    const count = active.length;
+    const meanBindingRatio = active.reduce((sum, n) => sum + 1 / (n * n), 0) / count;
+    const secondMomentRatio = active.reduce((sum, n) => sum + 1 / Math.pow(n, 4), 0) / count;
+    const varianceRatio = Math.max(0, secondMomentRatio - meanBindingRatio * meanBindingRatio);
+    const rayBeats = rayRecurrenceBeats(active);
+    const vectorBeats = vectorRecurrenceBeats(active);
+    return freezeDeep({
+      active,
+      eigenvaluesEv: active.map(n => -parent.MODEL.rydbergEnergyEv / (n * n)),
+      expectationEv: -parent.MODEL.rydbergEnergyEv * meanBindingRatio,
+      bindingExpectationRatio: meanBindingRatio,
+      varianceEvSquared: parent.MODEL.rydbergEnergyEv * parent.MODEL.rydbergEnergyEv * varianceRatio,
+      standardDeviationEv: parent.MODEL.rydbergEnergyEv * Math.sqrt(varianceRatio),
+      rayRecurrenceBeats: rayBeats,
+      rayRecurrenceSeconds: rayBeats * parent.MODEL.beatPeriodS,
+      vectorRecurrenceBeats: vectorBeats,
+      vectorRecurrenceSeconds: vectorBeats * parent.MODEL.beatPeriodS
+    });
+  }
+
+  function fixedEnergyLevels() {
+    return freezeDeep(ALLOWED.map(n => ({
+      n,
+      label: ORBITALS[n].label,
+      stateLabel: ORBITALS[n].stateLabel,
+      bindingRatio: 1 / (n * n),
+      energyEv: -parent.MODEL.rydbergEnergyEv / (n * n)
+    })));
+  }
+
+  function stateSignature(activeInput) {
+    return normalizeActive(activeInput).map(n => ORBITALS[n].stateLabel).join(" + ");
+  }
+
+  return freezeDeep({
+    SCHEMA,
+    ORBITALS,
+    ALLOWED,
+    normalizeActive,
+    orbitalSpatial,
+    relativePhaseRatio,
+    sampleState,
+    mirrorDifference,
+    rayRecurrenceBeats,
+    vectorRecurrenceBeats,
+    energySummary,
+    fixedEnergyLevels,
+    stateSignature
+  });
+});
+
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  const root = document.getElementById("hydrogen-orbital-ladder-v02");
+  if (!root || !globalThis.HydrogenKernelV01 || !globalThis.HydrogenOrbitalLadderV02) return;
+
+  const parent = globalThis.HydrogenKernelV01;
+  const ladder = globalThis.HydrogenOrbitalLadderV02;
+  const canvas = root.querySelector("#hol-canvas-v02");
+  const context = canvas.getContext("2d", { alpha: true });
+  const evolveButton = root.querySelector("#hol-evolve-v02");
+  const readSelect = root.querySelector("#hol-read-v02");
+  const threeToggle = root.querySelector("#hol-3d-v02");
+  const fourToggle = root.querySelector("#hol-4f-v02");
+  const returnInput = root.querySelector("#hol-return-v02");
+  const returnValue = root.querySelector("#hol-return-value-v02");
+  const supportReadout = root.querySelector("#hol-support-v02");
+  const energyReadout = root.querySelector("#hol-energy-v02");
+  const spreadReadout = root.querySelector("#hol-spread-v02");
+  const rayReadout = root.querySelector("#hol-ray-v02");
+  const vectorReadout = root.querySelector("#hol-vector-v02");
+  const energyLabels = root.querySelector("#hol-energy-labels-v02");
+  const energyLevels = root.querySelector("#hol-energy-levels-v02");
+  const meanLine = root.querySelector("#hol-energy-mean-v02");
+  const meanLabel = root.querySelector("#hol-energy-mean-label-v02");
+  const status = root.querySelector("#hol-status-v02");
+  const live = root.querySelector("#hol-live-v02");
+  const probe = root.querySelector("#hol-theme-probe-v02");
+
+  const TAU = 2 * Math.PI;
+  const HORIZON_AH = 32;
+  const MAIN_SIZE = 680;
+  const MAIN_CENTER = MAIN_SIZE / 2;
+  const MAIN_FIELD_RADIUS = 288;
+  const FIELD_SIZE = 384;
+  const FIELD_RADIUS = 178;
+  const RETURN_WALL_SECONDS = 24;
+  const reducedMotion = Boolean(globalThis.matchMedia
+    && globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  const fieldCanvas = document.createElement("canvas");
+  fieldCanvas.width = FIELD_SIZE;
+  fieldCanvas.height = FIELD_SIZE;
+  const fieldContext = fieldCanvas.getContext("2d", { alpha: true });
+  const fieldImage = fieldContext.createImageData(FIELD_SIZE, FIELD_SIZE);
+  const geometry = buildGeometry();
+  const levels = buildEnergyLadder();
+
+  let active = ladder.normalizeActive([1, 2, 3, 4]);
+  let summary = ladder.energySummary(active);
+  let progress = 0;
+  let completedRayReturns = 0;
+  let running = !reducedMotion;
+  let displayMode = "field";
+  let lastTimestamp = null;
+  let lastFieldTimestamp = -Infinity;
+  let fieldDirty = true;
+  let theme = readTheme();
+  let themeSignature = theme.signature;
+
+  function buildGeometry() {
+    const count = FIELD_SIZE * FIELD_SIZE;
+    const mask = new Uint8Array(count);
+    const x = new Float32Array(count);
+    const y = new Float32Array(count);
+    const radius = new Float32Array(count);
+    const basis = {};
+    for (const n of ladder.ALLOWED) {
+      basis[n] = { re: new Float32Array(count), im: new Float32Array(count) };
+    }
+
+    for (let py = 0; py < FIELD_SIZE; py++) {
+      for (let px = 0; px < FIELD_SIZE; px++) {
+        const index = py * FIELD_SIZE + px;
+        const displayX = (px + 0.5 - FIELD_SIZE / 2) / FIELD_RADIUS;
+        const displayY = -(py + 0.5 - FIELD_SIZE / 2) / FIELD_RADIUS;
+        if (Math.hypot(displayX, displayY) > 1) continue;
+        const physical = parent.quadraticDisplayToPhysical(displayX, displayY, HORIZON_AH);
+        const X = physical.x;
+        const Y = physical.y;
+        const R = physical.radius;
+        mask[index] = 1;
+        x[index] = X;
+        y[index] = Y;
+        radius[index] = R;
+
+        const powers = [
+          [1, 0],
+          [X, Y],
+          [X * X - Y * Y, 2 * X * Y],
+          [X * X * X - 3 * X * Y * Y, 3 * X * X * Y - Y * Y * Y]
+        ];
+        for (const n of ladder.ALLOWED) {
+          const scale = ladder.ORBITALS[n].coefficient * Math.exp(-R / n);
+          basis[n].re[index] = scale * powers[n - 1][0];
+          basis[n].im[index] = scale * powers[n - 1][1];
+        }
+      }
+    }
+    return { mask, x, y, radius, basis };
+  }
+
+  function buildEnergyLadder() {
+    const fixed = ladder.fixedEnergyLevels();
+    const dotByN = new Map();
+    for (const level of fixed) {
+      const label = document.createElement("div");
+      label.className = "hol-energy-label";
+      label.textContent = level.stateLabel + " · " + formatSigned(level.energyEv, 3) + " eV";
+      energyLabels.appendChild(label);
+
+      const row = document.createElement("div");
+      row.className = "hol-level-row";
+      const dot = document.createElement("span");
+      dot.className = "hol-level-dot";
+      dot.style.left = (100 * (level.energyEv + parent.MODEL.rydbergEnergyEv) / parent.MODEL.rydbergEnergyEv).toFixed(5) + "%";
+      dot.setAttribute("aria-hidden", "true");
+      row.appendChild(dot);
+      energyLevels.appendChild(row);
+      dotByN.set(level.n, dot);
+    }
+    return { fixed, dotByN };
+  }
+
+  function resolveCssColor(name, fallback) {
+    const value = getComputedStyle(root).getPropertyValue(name).trim();
+    return value || fallback;
+  }
+
+  function colorToLuminance(value) {
+    const test = document.createElement("canvas").getContext("2d");
+    test.canvas.width = 1;
+    test.canvas.height = 1;
+    test.fillStyle = value;
+    test.fillRect(0, 0, 1, 1);
+    const pixel = test.getImageData(0, 0, 1, 1).data;
+    return (0.2126 * pixel[0] + 0.7152 * pixel[1] + 0.0722 * pixel[2]) / 255;
+  }
+
+  function readTheme() {
+    const background = getComputedStyle(probe).backgroundColor || resolveCssColor("--background", "rgb(10,10,12)");
+    const foreground = getComputedStyle(probe).color || resolveCssColor("--foreground", "rgb(230,230,232)");
+    const muted = resolveCssColor("--muted-foreground", foreground);
+    const border = resolveCssColor("--border", muted);
+    const series1 = resolveCssColor("--viz-series-1", foreground);
+    const signature = [background, foreground, muted, border, series1].join("|");
+    return { background, foreground, muted, border, series1, dark: colorToLuminance(background) < 0.52, signature };
+  }
+
+  function linearToSrgb(value) {
+    const encoded = value <= 0.0031308
+      ? 12.92 * value
+      : 1.055 * Math.pow(Math.max(0, value), 1 / 2.4) - 0.055;
+    return Math.round(255 * Math.min(1, Math.max(0, encoded)));
+  }
+
+  function oklchToRgb(lightness, chroma, hueDegrees) {
+    const hue = hueDegrees * Math.PI / 180;
+    const a = chroma * Math.cos(hue);
+    const b = chroma * Math.sin(hue);
+    const l0 = lightness + 0.3963377774 * a + 0.2158037573 * b;
+    const m0 = lightness - 0.1055613458 * a - 0.0638541728 * b;
+    const s0 = lightness - 0.0894841775 * a - 1.291485548 * b;
+    const l = l0 * l0 * l0;
+    const m = m0 * m0 * m0;
+    const s = s0 * s0 * s0;
+    return [
+      linearToSrgb(4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s),
+      linearToSrgb(-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s),
+      linearToSrgb(-0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s)
+    ];
+  }
+
+  function basePhase() {
+    return progress * summary.rayRecurrenceBeats * TAU;
+  }
+
+  function renderField() {
+    const pixels = fieldImage.data;
+    const phase = basePhase();
+    const amplitudeScale = 1 / Math.sqrt(active.length);
+    const time = {};
+    for (const n of active) {
+      const ratio = ladder.ORBITALS[n].phaseNumerator / ladder.ORBITALS[n].phaseDenominator;
+      const angle = -ratio * phase;
+      time[n] = { cos: Math.cos(angle), sin: Math.sin(angle) };
+    }
+
+    for (let index = 0; index < geometry.mask.length; index++) {
+      const pixelIndex = index * 4;
+      if (!geometry.mask[index]) {
+        pixels[pixelIndex + 3] = 0;
+        continue;
+      }
+
+      let plusRe = 0;
+      let plusIm = 0;
+      let minusRe = 0;
+      let minusIm = 0;
+      let incoherentDensity = 0;
+      for (const n of active) {
+        const spatialRe = geometry.basis[n].re[index];
+        const spatialIm = geometry.basis[n].im[index];
+        const cosine = time[n].cos;
+        const sine = time[n].sin;
+        plusRe += amplitudeScale * (cosine * spatialRe - sine * spatialIm);
+        plusIm += amplitudeScale * (sine * spatialRe + cosine * spatialIm);
+        minusRe += amplitudeScale * (cosine * spatialRe + sine * spatialIm);
+        minusIm += amplitudeScale * (sine * spatialRe - cosine * spatialIm);
+        incoherentDensity += amplitudeScale * amplitudeScale * (spatialRe * spatialRe + spatialIm * spatialIm);
+      }
+
+      const plusDensity = plusRe * plusRe + plusIm * plusIm;
+      const minusDensity = minusRe * minusRe + minusIm * minusIm;
+      // Fixed logarithmic reader: no frame-by-frame normalization.  The
+      // reference ceiling 1/pi is the normalized 1s origin density.
+      const tone = Math.pow(Math.min(1,
+        Math.log1p(1e6 * plusDensity) / Math.log1p(1e6 / Math.PI)
+      ), 0.8);
+      let lightness;
+      let chroma;
+      let hue;
+
+      if (displayMode === "mirror") {
+        const difference = plusDensity - minusDensity;
+        const magnitude = Math.min(1,
+          Math.log1p(1e6 * Math.abs(difference)) / Math.log1p(1e4)
+        );
+        lightness = theme.dark
+          ? 0.075 + 0.84 * Math.max(0.18 * tone, magnitude)
+          : 0.98 - 0.74 * Math.max(0.18 * tone, magnitude);
+        chroma = 0.035 + 0.17 * magnitude;
+        hue = difference >= 0 ? 48 : 248;
+      } else {
+        const contrastDenominator = plusDensity + incoherentDensity;
+        const coherence = contrastDenominator > Number.MIN_VALUE
+          ? Math.min(1, Math.abs(plusDensity - incoherentDensity) / contrastDenominator)
+          : 0;
+        lightness = theme.dark ? 0.07 + 0.86 * tone : 0.98 - 0.73 * tone;
+        const phaseGate = Math.min(1, tone / 0.08);
+        chroma = (0.035 + 0.17 * coherence) * phaseGate;
+        hue = plusDensity > 0
+          ? (Math.atan2(plusIm, plusRe) * 180 / Math.PI + 310 + 360) % 360
+          : 0;
+      }
+
+      const rgb = oklchToRgb(lightness, chroma, hue);
+      pixels[pixelIndex] = rgb[0];
+      pixels[pixelIndex + 1] = rgb[1];
+      pixels[pixelIndex + 2] = rgb[2];
+      pixels[pixelIndex + 3] = Math.round(255 * Math.min(1, 0.16 + 1.08 * tone));
+    }
+    fieldContext.putImageData(fieldImage, 0, 0);
+    fieldDirty = false;
+  }
+
+  function pointAt(angle, radius) {
+    return { x: MAIN_CENTER + Math.cos(angle) * radius, y: MAIN_CENTER - Math.sin(angle) * radius };
+  }
+
+  function drawRing(radius, stroke, alpha, width) {
+    context.save();
+    context.globalAlpha = alpha;
+    context.strokeStyle = stroke;
+    context.lineWidth = width;
+    context.beginPath();
+    context.arc(MAIN_CENTER, MAIN_CENTER, radius, 0, TAU);
+    context.stroke();
+    context.restore();
+  }
+
+  function drawReturnRail() {
+    const radius = MAIN_FIELD_RADIUS + 13;
+    drawRing(radius, theme.border, 0.8, 1);
+    context.save();
+    context.strokeStyle = theme.border;
+    context.fillStyle = theme.muted;
+    context.font = "12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    const labels = ["0", "¼L", "½L", "¾L"];
+    for (let index = 0; index < 4; index++) {
+      const angle = Math.PI / 2 - index * Math.PI / 2;
+      const inner = pointAt(angle, radius - 5);
+      const outer = pointAt(angle, radius + 5);
+      context.beginPath();
+      context.moveTo(inner.x, inner.y);
+      context.lineTo(outer.x, outer.y);
+      context.stroke();
+      const label = pointAt(angle, radius + 19);
+      context.fillText(labels[index], label.x, label.y);
+    }
+    const markerAngle = Math.PI / 2 - progress * TAU;
+    const marker = pointAt(markerAngle, radius);
+    context.fillStyle = theme.series1;
+    context.beginPath();
+    context.arc(marker.x, marker.y, 4, 0, TAU);
+    context.fill();
+    context.restore();
+  }
+
+  function drawCurrentField() {
+    if (displayMode !== "field") return;
+    const phase = basePhase();
+    const rings = [1.1, 2.1, 3.6, 5.8, 8.7, 12.5, 17.2, 23.4, 29.2];
+    context.save();
+    context.strokeStyle = theme.foreground;
+    context.globalAlpha = theme.dark ? 0.27 : 0.22;
+    context.lineWidth = 0.8;
+    for (let ringIndex = 0; ringIndex < rings.length; ringIndex++) {
+      const physicalRadius = rings[ringIndex];
+      const count = 10 + ringIndex * 2;
+      for (let index = 0; index < count; index++) {
+        const angle = index * TAU / count + ringIndex * 0.19;
+        const x = physicalRadius * Math.cos(angle);
+        const y = physicalRadius * Math.sin(angle);
+        const sample = ladder.sampleState(active, x, y, 0, phase, 1);
+        const current = sample.probabilityCurrent;
+        const magnitude = Math.hypot(current.x, current.y);
+        if (!(magnitude > 1e-13)) continue;
+        const mappedPoint = parent.physicalToQuadraticDisplay(x, y, HORIZON_AH);
+        const mappedCurrent = parent.pushForwardQuadraticDisplay(x, y, current.x, current.y, HORIZON_AH);
+        const mappedMagnitude = Math.hypot(mappedCurrent.x, mappedCurrent.y);
+        if (!(mappedMagnitude > 1e-15)) continue;
+        const screenX = MAIN_CENTER + mappedPoint.x * MAIN_FIELD_RADIUS;
+        const screenY = MAIN_CENTER - mappedPoint.y * MAIN_FIELD_RADIUS;
+        const length = Math.min(10, 2.2 + 45 * Math.sqrt(magnitude));
+        const unitX = mappedCurrent.x / mappedMagnitude;
+        const unitY = -mappedCurrent.y / mappedMagnitude;
+        context.beginPath();
+        context.moveTo(screenX - unitX * length * 0.35, screenY - unitY * length * 0.35);
+        context.lineTo(screenX + unitX * length * 0.65, screenY + unitY * length * 0.65);
+        context.stroke();
+      }
+    }
+    context.restore();
+  }
+
+  function drawNucleus() {
+    context.save();
+    context.fillStyle = theme.background;
+    context.strokeStyle = theme.foreground;
+    context.globalAlpha = 0.9;
+    context.lineWidth = 1;
+    context.beginPath();
+    context.arc(MAIN_CENTER, MAIN_CENTER, 4.2, 0, TAU);
+    context.fill();
+    context.stroke();
+    context.restore();
+  }
+
+  function drawFrame() {
+    context.clearRect(0, 0, MAIN_SIZE, MAIN_SIZE);
+    context.fillStyle = theme.background;
+    context.fillRect(0, 0, MAIN_SIZE, MAIN_SIZE);
+    context.save();
+    context.beginPath();
+    context.arc(MAIN_CENTER, MAIN_CENTER, MAIN_FIELD_RADIUS, 0, TAU);
+    context.clip();
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = "high";
+    context.drawImage(fieldCanvas, MAIN_CENTER - MAIN_FIELD_RADIUS, MAIN_CENTER - MAIN_FIELD_RADIUS, MAIN_FIELD_RADIUS * 2, MAIN_FIELD_RADIUS * 2);
+    context.restore();
+    drawRing(MAIN_FIELD_RADIUS, theme.foreground, 0.24, 1);
+    drawCurrentField();
+    drawNucleus();
+    drawReturnRail();
+  }
+
+  function formatFemtoseconds(seconds) {
+    return (seconds * 1e15).toFixed(seconds * 1e15 < 10 ? 3 : 2) + " fs";
+  }
+
+  function formatSigned(value, digits) {
+    return value.toFixed(digits).replace("-", "−");
+  }
+
+  function updateEnergyLadder() {
+    const activeSet = new Set(active);
+    for (const level of levels.fixed) {
+      levels.dotByN.get(level.n).classList.toggle("is-active", activeSet.has(level.n));
+    }
+    const percent = 100 * (summary.expectationEv + parent.MODEL.rydbergEnergyEv) / parent.MODEL.rydbergEnergyEv;
+    meanLine.style.left = percent.toFixed(5) + "%";
+    meanLabel.style.left = percent.toFixed(5) + "%";
+    meanLabel.textContent = "mean " + formatSigned(summary.expectationEv, 3) + " eV";
+  }
+
+  function updateReadout(announcement) {
+    const beatPosition = progress * summary.rayRecurrenceBeats;
+    returnValue.textContent = beatPosition.toFixed(3) + " / " + summary.rayRecurrenceBeats + " beats";
+    returnInput.value = String(Math.round(progress * 1000));
+    supportReadout.textContent = "¹H · 1e⁻ · " + ladder.stateSignature(active);
+    energyReadout.textContent = "⟨E⟩ " + formatSigned(summary.expectationEv, 3) + " eV";
+    spreadReadout.textContent = "energy spread σE " + summary.standardDeviationEv.toFixed(3) + " eV";
+    rayReadout.textContent = "ray return " + summary.rayRecurrenceBeats + " × T₂₁ · " + formatFemtoseconds(summary.rayRecurrenceSeconds);
+    vectorReadout.textContent = "fixed-zero representative return " + summary.vectorRecurrenceBeats + " × T₂₁ · declared Coulomb E=0";
+    evolveButton.textContent = running ? "HOLD" : "EVOLVE";
+    evolveButton.setAttribute("aria-pressed", running ? "true" : "false");
+    status.textContent = displayMode === "mirror"
+      ? "MirrorY exchanges mₗ↔−mₗ in the selected z-axis basis · not parity or time reversal · one ray return shown over 24 s"
+      : "¹H · Z=1 · one electron · fixed Coulomb eigenvalues · selected circular components · one ray return shown over 24 s";
+    updateEnergyLadder();
+    if (announcement) live.textContent = announcement;
+  }
+
+  function applyPreparation() {
+    const next = [1, 2];
+    if (threeToggle.checked) next.push(3);
+    if (fourToggle.checked) next.push(4);
+    active = ladder.normalizeActive(next);
+    summary = ladder.energySummary(active);
+    progress = 0;
+    completedRayReturns = 0;
+    running = false;
+    fieldDirty = true;
+    updateReadout("Prepared " + ladder.stateSignature(active) + " with equal phase-aligned amplitudes; evolution held at time zero.");
+    renderField();
+    drawFrame();
+  }
+
+  evolveButton.addEventListener("click", function () {
+    running = !running;
+    lastTimestamp = null;
+    updateReadout(running ? "Closed Coulomb evolution running." : "Evolution held at the current relative phase.");
+  });
+
+  readSelect.addEventListener("change", function () {
+    displayMode = readSelect.value === "mirror" ? "mirror" : "field";
+    fieldDirty = true;
+    renderField();
+    drawFrame();
+  });
+
+  threeToggle.addEventListener("change", applyPreparation);
+  fourToggle.addEventListener("change", applyPreparation);
+
+  returnInput.addEventListener("input", function () {
+    progress = Number(returnInput.value) / 1000;
+    running = false;
+    fieldDirty = true;
+    updateReadout("Ray-return position set to " + (progress * summary.rayRecurrenceBeats).toFixed(3) + " base beats; evolution held.");
+    renderField();
+    drawFrame();
+  });
+
+  function frame(timestamp) {
+    const nextTheme = readTheme();
+    if (nextTheme.signature !== themeSignature) {
+      theme = nextTheme;
+      themeSignature = nextTheme.signature;
+      fieldDirty = true;
+    }
+    if (lastTimestamp === null) lastTimestamp = timestamp;
+    const elapsed = Math.min(0.1, Math.max(0, (timestamp - lastTimestamp) / 1000));
+    lastTimestamp = timestamp;
+    if (running) {
+      progress += elapsed / RETURN_WALL_SECONDS;
+      if (progress >= 1) {
+        const returns = Math.floor(progress);
+        completedRayReturns += returns;
+        progress -= returns;
+        live.textContent = "Exact prepared ray returned; " + completedRayReturns + " displayed returns completed.";
+      }
+      fieldDirty = true;
+    }
+    if (fieldDirty && (timestamp - lastFieldTimestamp >= 66 || !running)) {
+      renderField();
+      lastFieldTimestamp = timestamp;
+      updateReadout();
+    }
+    drawFrame();
+    globalThis.requestAnimationFrame(frame);
+  }
+
+  updateReadout("Four-level hydrogen state prepared at time zero.");
+  renderField();
+  drawFrame();
+  globalThis.requestAnimationFrame(frame);
+})();
+
+</script>
+
+<footer>Standalone repository shell. No framework, server, account, network request, prerecorded animation, or external scientific package.</footer>
+</main>
+</body>
+</html>

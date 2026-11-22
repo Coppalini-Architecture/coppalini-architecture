@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Helium Seam v0.1 — correlated two-electron configuration-space viewer</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #060608; color: #e8e6e0; font-family: "STIX Two Text","Cambria Math","Times New Roman",serif; }
+  #shell { max-width: 920px; margin: 0 auto; padding: 18px 20px 40px; }
+  h1 { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 4px; color: #cbb98a; }
+  .labels { font-size: 0.72rem; color: #9a978c; line-height: 1.5; margin-bottom: 12px; }
+  .labels strong { color: #cbb98a; font-weight: 600; }
+  #canvasWrap { position: relative; width: 640px; height: 640px; margin: 0 auto; }
+  canvas { display: block; background: #000; border: 1px solid #262420; }
+  #controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  button { background: #17151b; color: #d8d5cb; border: 1px solid #35322c; border-radius: 3px; padding: 6px 12px; font: inherit; font-size: 0.75rem; cursor: pointer; }
+  button:hover { border-color: #6a5f3f; }
+  button.active { border-color: #cbb98a; color: #f0e6c8; }
+  #scrubberRow { display: flex; align-items: center; gap: 10px; justify-content: center; margin-top: 10px; }
+  #scrubber { width: 360px; }
+  #status { text-align: center; font-size: 0.72rem; color: #8f8c82; margin-top: 10px; min-height: 2.4em; }
+  #audit { text-align: center; margin-top: 8px; }
+  #audit a { color: #8a97a8; font-size: 0.7rem; cursor: pointer; text-decoration: underline; }
+  #hePlusStrip { text-align: center; font-size: 0.68rem; color: #7d8a94; margin: 4px 0 10px; border-top: 1px solid #201e1a; padding-top: 6px; }
+  #hePlusStrip strong { color: #9fb0be; }
+  #auditPanel { display: none; max-width: 640px; margin: 12px auto 0; background: #0d0c10; border: 1px solid #2a2822; border-radius: 4px; padding: 14px 16px; font-size: 0.7rem; color: #b8b5aa; line-height: 1.6; }
+  #auditPanel.open { display: block; }
+  #auditPanel h2 { font-size: 0.78rem; color: #cbb98a; margin: 0 0 6px; }
+  #auditPanel h3 { font-size: 0.72rem; color: #9fb0be; margin: 12px 0 4px; }
+  #auditPanel .exclusions { color: #8f8c82; font-style: italic; }
+  #diagnosticPlots { display: none; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  #diagnosticPlots.open { display: flex; }
+  #diagnosticPlots canvas { background: #0a0a0d; border: 1px solid #262420; }
+  .plotLabel { text-align: center; font-size: 0.65rem; color: #8f8c82; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div id="shell">
+  <h1>Helium Seam v0.1</h1>
+  <div class="labels">
+    <strong>4He</strong> &middot; Z=2 &middot; 2e&minus; &middot; 1 center &middot; finite correlated singlet-S carrier<br>
+    configuration-space slice, not electron trajectories &middot; electron exchange preserved<br>
+    physical helium approximation &middot; unitary evolution inside declared finite carrier
+  </div>
+  <div id="canvasWrap"><canvas id="heliumCanvas" width="640" height="640"></canvas></div>
+  <div id="diagnosticPlots">
+    <div><canvas id="plotA" width="300" height="220"></canvas><div class="plotLabel" id="plotALabel"></div></div>
+    <div><canvas id="plotB" width="300" height="220"></canvas><div class="plotLabel" id="plotBLabel"></div></div>
+  </div>
+  <div id="controls">
+    <button id="btnHoldEvolve">HOLD</button>
+    <button id="btnState" class="active">READ: STATE</button>
+    <button id="btnCorrelation">READ: CORRELATION</button>
+    <button id="btnExchange">READ: EXCHANGE AUDIT</button>
+    <button id="btnSeam">READ: SEAM PROFILE</button>
+    <button id="btnCusp">READ: CUSP DIAGNOSTICS</button>
+    <button id="btnReduced">READ: REDUCED DENSITIES</button>
+    <button id="btnPrepareGround">PREPARE: GROUND</button>
+    <button id="btnPrepare01">PREPARE: 0+1 SINGLET</button>
+    <button id="btnReset">RESET VIEW</button>
+  </div>
+  <div id="scrubberRow">
+    <span style="font-size:0.7rem;color:#8f8c82;">t</span>
+    <input id="scrubber" type="range" min="0" max="1000" value="0" />
+    <span id="tLabel" style="font-size:0.7rem;color:#8f8c82;width:5em;">0.000</span>
+  </div>
+  <div id="status"></div>
+  <div id="hePlusStrip"></div>
+  <div id="audit"><a id="openAudit">OPEN AUDIT</a></div>
+  <div id="auditPanel"></div>
+</div>
+
+<script id="precomputed-data" type="application/json">
+{"alpha":2,"basisNames":["1","u","s","u2","su","s2","t2"],"eigenvalues":[-2.903264326982932,-1.5662272375668875,0.530267378371874,1.9208899494452094,3.724216209698317,8.037865560571115,9.396152508553458],"groundCoeffs":[4.485000539013144,1.3472047709730477,0.13351581596154483,-0.4074090766363287,0.6937534594127126,0.2040852023750246,0.7954293391560501],"firstExcitedCoeffs":[-1.6060539486312422,-6.540558906053339,-6.153979965874665,0.19796972099590188,3.253442420323348,3.004324250213072,4.260945384152617],"worstEigenResidual":1.6264767310758543e-14,"orthonormalityResidual":4.451994328746878e-14,"quadratureOrder":40,"sMax":15,"hePlus":{"isotope":"4He+","nuclearCharge":2,"reducedMass":0.9998628738288994,"bohrScale":0.5000685724886331,"n1EnergyEV":-54.415309705563494,"hydrogenN1EnergyEV":-13.59828726428679,"energyRatio":4.00162966467656,"bohrRatio":0.4997963748755981},"trueGroundEnergyHartree":-2.903724377}
+
+</script>
+
+<script>
+(function () {
+  "use strict";
+  const PRECOMPUTED = JSON.parse(document.getElementById("precomputed-data").textContent);
+  const ALPHA = PRECOMPUTED.alpha;
+  const BASIS_NAMES = PRECOMPUTED.basisNames;
+  const EIGENVALUES = PRECOMPUTED.eigenvalues;
+  const GROUND = PRECOMPUTED.groundCoeffs;
+  const FIRST_EXCITED = PRECOMPUTED.firstExcitedCoeffs;
+
+  // ---- basis function values (mirrors src/helium_hylleraas_basis_v01.js
+  // exactly; duplicated here only because this is a standalone viewer file,
+  // not because the math differs) ----
+  function basisPoly(name, s, t, u) {
+    switch (name) {
+      case "1": return 1;
+      case "u": return u;
+      case "s": return s;
+      case "u2": return u * u;
+      case "su": return s * u;
+      case "s2": return s * s;
+      case "t2": return t * t;
+    }
+  }
+  function stuFromX1X2(x1, x2) {
+    const r1 = Math.abs(x1), r2 = Math.abs(x2);
+    const s = r1 + r2, t = r1 - r2;
+    const sameSign = (x1 >= 0 && x2 >= 0) || (x1 <= 0 && x2 <= 0);
+    const u = sameSign ? Math.abs(t) : s;
+    return { s, t, u, r1, r2 };
+  }
+  function waveAt(coeffs, s, t, u) {
+    const E = Math.exp(-ALPHA * s);
+    let v = 0;
+    for (let k = 0; k < BASIS_NAMES.length; k++) v += coeffs[k] * basisPoly(BASIS_NAMES[k], s, t, u);
+    return E * v;
+  }
+
+  // -------------------------------------------------------------------
+  // Ported directly from src/helium_hylleraas_basis_v01.js,
+  // src/helium_cusp_diagnostics_v01.js, and src/helium_reads_v01.js --
+  // same verified formulas (including the corrected r2hat.uhat sign and
+  // the pi^2 physical-normalization fix), not reimplemented from scratch,
+  // so this viewer needs no Node runtime to reproduce every diagnostic.
+  // -------------------------------------------------------------------
+  function gaussLegendre(n) {
+    const x = new Array(n), w = new Array(n);
+    const m = Math.floor((n + 1) / 2);
+    for (let i = 0; i < m; i++) {
+      let z = Math.cos(Math.PI * (i + 0.75) / (n + 0.5));
+      let z1, pp;
+      for (let iter = 0; iter < 100; iter++) {
+        let p0 = 1, p1 = 0;
+        for (let j = 0; j < n; j++) { const p2 = p1; p1 = p0; p0 = ((2 * j + 1) * z * p1 - j * p2) / (j + 1); }
+        pp = n * (z * p0 - p1) / (z * z - 1);
+        z1 = z; z = z1 - p0 / pp;
+        if (Math.abs(z - z1) < 1e-15) break;
+      }
+      x[i] = -z; x[n - 1 - i] = z;
+      w[i] = 2 / ((1 - z * z) * pp * pp); w[n - 1 - i] = w[i];
+    }
+    return { x, w };
+  }
+  function glMapped(order, a, b) {
+    const gl = gaussLegendre(order);
+    const scale = 0.5 * (b - a);
+    return gl.x.map((xn, i) => ({ x: 0.5 * (b - a) * xn + 0.5 * (a + b), w: gl.w[i] * scale }));
+  }
+  function basisPartialsFor(name, s, t, u) {
+    const E = Math.exp(-ALPHA * s);
+    let v, vs, vt, vu;
+    switch (name) {
+      case "1": v = 1; vs = 0; vt = 0; vu = 0; break;
+      case "u": v = u; vs = 0; vt = 0; vu = 1; break;
+      case "s": v = s; vs = 1; vt = 0; vu = 0; break;
+      case "u2": v = u * u; vs = 0; vt = 0; vu = 2 * u; break;
+      case "su": v = s * u; vs = u; vt = 0; vu = s; break;
+      case "s2": v = s * s; vs = 2 * s; vt = 0; vu = 0; break;
+      case "t2": v = t * t; vs = 0; vt = 2 * t; vu = 0; break;
+    }
+    return { s: E * (vs - ALPHA * v), t: E * vt, u: E * vu, val: E * v };
+  }
+
+  // ---- Cusp diagnostics ----
+  function electronElectronCuspResidual(coeffs, sValues) {
+    return sValues.map(s => {
+      let val = 0, du = 0;
+      for (let k = 0; k < BASIS_NAMES.length; k++) {
+        const p = basisPartialsFor(BASIS_NAMES[k], s, 0, 0);
+        val += coeffs[k] * p.val; du += coeffs[k] * p.u;
+      }
+      const ratio = Math.abs(val) > 1e-12 ? du / val : NaN;
+      return { s, ratio, residual: ratio - 0.5 };
+    });
+  }
+  function waveCartesian(coeffs, r1vec, r2vec) {
+    const r1 = Math.hypot(...r1vec), r2 = Math.hypot(...r2vec);
+    const u = Math.hypot(r1vec[0] - r2vec[0], r1vec[1] - r2vec[1], r1vec[2] - r2vec[2]);
+    const s = r1 + r2, t = r1 - r2;
+    return waveAt(coeffs, s, t, u);
+  }
+  function electronNuclearCuspResidual(coeffs, r2, r1Small, angleCount) {
+    angleCount = angleCount || 12;
+    const r2vec = [r2, 0, 0];
+    const cosThetas = []; for (let i = 0; i < angleCount; i++) cosThetas.push(-1 + 2 * (i + 0.5) / angleCount);
+    const h = r1Small * 0.02;
+    let sumRadialDeriv = 0, sumPsiAtR1 = 0;
+    for (const cosT of cosThetas) {
+      const sinT = Math.sqrt(Math.max(0, 1 - cosT * cosT));
+      const dir = [cosT, sinT, 0];
+      const plus = dir.map(x => x * (r1Small + h)), minus = dir.map(x => x * (r1Small - h)), at = dir.map(x => x * r1Small);
+      sumRadialDeriv += (waveCartesian(coeffs, plus, r2vec) - waveCartesian(coeffs, minus, r2vec)) / (2 * h);
+      sumPsiAtR1 += waveCartesian(coeffs, at, r2vec);
+    }
+    const avgRadialDeriv = sumRadialDeriv / angleCount, avgPsi = sumPsiAtR1 / angleCount;
+    const ratio = Math.abs(avgPsi) > 1e-12 ? avgRadialDeriv / avgPsi : NaN;
+    return { r2, r1Probe: r1Small, ratio, residual: ratio + 2 };
+  }
+
+  // ---- Reduced density reads (pi^2 physical-normalization fix applied) ----
+  function physicallyNormalizedCoeffs(coeffs) { return coeffs.map(c => c / Math.PI); }
+  function oneElectronDensity(coeffsRaw, r1Values, quadOrder, r2Max) {
+    const coeffs = physicallyNormalizedCoeffs(coeffsRaw);
+    const r2Nodes = glMapped(quadOrder, 1e-6, r2Max);
+    return r1Values.map(r1 => {
+      let acc = 0;
+      for (const { x: r2, w: wr2 } of r2Nodes) {
+        const uLo = Math.abs(r1 - r2), uHi = r1 + r2;
+        if (uHi - uLo < 1e-9) continue;
+        const uNodes = glMapped(quadOrder, uLo, uHi);
+        let inner = 0;
+        for (const { x: u, w: wu } of uNodes) { const s = r1 + r2, t = r1 - r2; const psi = waveAt(coeffs, s, t, u); inner += wu * u * psi * psi; }
+        acc += wr2 * r2 * inner;
+      }
+      return { r1, rho1: r1 > 1e-9 ? (4 * Math.PI / r1) * acc : 0 };
+    });
+  }
+  function overlapNormApprox(coeffs, quadOrder, sMax) {
+    // <Psi|Psi> in the SAME (pi^2-omitted) measure used for S/H -- for our
+    // eigensolver-normalized ground/first-excited coefficients this is 1
+    // by construction (C^dagger S C = I); computed directly here anyway
+    // rather than assumed.
+    const sNodes = glMapped(quadOrder, 1e-6, sMax);
+    let acc = 0;
+    for (const { x: s, w: ws } of sNodes) {
+      const tNodes = glMapped(quadOrder, -s, s);
+      for (const { x: t, w: wt } of tNodes) {
+        const uNodes = glMapped(Math.max(6, Math.floor(quadOrder / 2)), Math.abs(t), s);
+        for (const { x: u, w: wu } of uNodes) { const psi = waveAt(coeffs, s, t, u); acc += ws * wt * wu * u * (s * s - t * t) * psi * psi; }
+      }
+    }
+    return acc;
+  }
+  function pairSeparationDistribution(coeffs, uValues, quadOrder, sMax, norm) {
+    return uValues.map(u => {
+      if (u < 1e-6) return { u, P: 0 };
+      const sNodes = glMapped(quadOrder, u, sMax);
+      const tNodes = glMapped(quadOrder, -u, u);
+      let acc = 0;
+      for (const { x: s, w: ws } of sNodes) for (const { x: t, w: wt } of tNodes) { const psi = waveAt(coeffs, s, t, u); acc += ws * wt * u * (s * s - t * t) * psi * psi; }
+      return { u, P: acc / norm };
+    });
+  }
+
+  const HE_PLUS = PRECOMPUTED.hePlus;
+  const TRUE_GROUND = PRECOMPUTED.trueGroundEnergyHartree;
+
+  // Psi_prod: uncorrelated product reference e^{-2(r1+r2)} = e^{-2s}
+  // (Section 6), used ONLY as the comparison reference for the
+  // correlation read -- it is a comparison object, not a new state.
+  function psiProd(s) { return Math.exp(-2 * s); }
+
+  // -------------------------------------------------------------------
+  // Dynamical state: c(t) = C e^{-it Lambda} C^T S c(0). This viewer
+  // works directly with the two prepared eigenvectors (ground, first
+  // excited), which is the exact special case the interaction contract
+  // exposes (PREPARE: GROUND / PREPARE: 0+1 SINGLET) -- full-basis
+  // scrubbing reduces to a two-term complex combination of the ALREADY
+  // orthonormal-in-S eigenfunctions, so no further linear algebra is
+  // needed at render time.
+  let preparationMode = "ground"; // "ground" | "singlet01"
+  let evolving = false;
+  let simTime = 0;
+  let lastFrameTs = null;
+  let readMode = "state";
+  const preparationLedger = []; // append-only, matches the preparation-receipt contract in spirit
+
+  function appendPreparationReceipt(mode) {
+    preparationLedger.push({
+      schema: "architecture-of-silence.helium-preparation-receipt/v1",
+      sequence: preparationLedger.length,
+      isotope: "4He", nuclearCharge: 2, electronCount: 2, centerCount: 1,
+      sector: "singlet-S", basisId: "Hylleraas-B7-alpha2", alpha: ALPHA,
+      occupiedEigenstates: mode === "ground" ? [0] : [0, 1],
+      amplitudes: mode === "ground" ? [{ re: 1, im: 0 }] : [{ re: Math.SQRT1_2, im: 0 }, { re: Math.SQRT1_2, im: 0 }],
+      normalizationMetric: "overlap-matrix-S",
+      priorSequence: preparationLedger.length ? preparationLedger.length - 1 : null
+    });
+  }
+  appendPreparationReceipt("ground");
+
+  // Psi(x1,x2;t): complex-valued in general (real only for a pure
+  // eigenstate held static).
+  function psiAt(x1, x2, t) {
+    const { s, t: tt, u } = stuFromX1X2(x1, x2);
+    const g = waveAt(GROUND, s, tt, u);
+    if (preparationMode === "ground") {
+      return { re: g, im: 0, s, t: tt, u };
+    }
+    const e1 = waveAt(FIRST_EXCITED, s, tt, u);
+    const a = Math.SQRT1_2, b = Math.SQRT1_2;
+    const th0 = -EIGENVALUES[0] * t, th1 = -EIGENVALUES[1] * t;
+    const re = a * g * Math.cos(th0) + b * e1 * Math.cos(th1);
+    const im = a * g * Math.sin(th0) + b * e1 * Math.sin(th1);
+    return { re, im, s, t: tt, u };
+  }
+
+  // ---- canvas setup ----
+  const canvas = document.getElementById("heliumCanvas");
+  const ctx = canvas.getContext("2d");
+  const N = canvas.width; // one pixel per grid sample for simplicity
+  const X_RANGE = 9; // a.u., -9..+9 on each axis
+  const imageData = ctx.createImageData(N, N);
+
+  function pxToX(i) { return (i / N - 0.5) * 2 * X_RANGE; }
+
+  function colorFromHSL(h, s, l) {
+    // small HSL->RGB, avoids depending on canvas string parsing per pixel
+    h = ((h % 360) + 360) % 360; s = Math.max(0, Math.min(1, s)); l = Math.max(0, Math.min(1, l));
+    const c = (1 - Math.abs(2 * l - 1)) * s;
+    const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    const m = l - c / 2;
+    let r1, g1, b1;
+    if (h < 60) { r1 = c; g1 = x; b1 = 0; } else if (h < 120) { r1 = x; g1 = c; b1 = 0; }
+    else if (h < 180) { r1 = 0; g1 = c; b1 = x; } else if (h < 240) { r1 = 0; g1 = x; b1 = c; }
+    else if (h < 300) { r1 = x; g1 = 0; b1 = c; } else { r1 = c; g1 = 0; b1 = x; }
+    return [Math.round((r1 + m) * 255), Math.round((g1 + m) * 255), Math.round((b1 + m) * 255)];
+  }
+
+  let maxDensitySeen = 0; // fixed-scale reference, established once, NOT per-frame renormalized
+  let scaleLocked = false;
+
+  function plotLine(canvasEl, points, xKey, yKey, xLabel, color, refLines) {
+    const c = canvasEl.getContext("2d");
+    const W = canvasEl.width, H = canvasEl.height, pad = 28;
+    c.clearRect(0, 0, W, H);
+    c.strokeStyle = "#2a2822"; c.strokeRect(0.5, 0.5, W - 1, H - 1);
+    const xs = points.map(p => p[xKey]), ys = points.map(p => p[yKey]).filter(v => isFinite(v));
+    const xMin = Math.min(...xs), xMax = Math.max(...xs);
+    let yMin = Math.min(...ys, ...(refLines || [])), yMax = Math.max(...ys, ...(refLines || []));
+    if (yMax - yMin < 1e-9) { yMax += 0.5; yMin -= 0.5; }
+    const yPad = (yMax - yMin) * 0.15; yMin -= yPad; yMax += yPad;
+    function px(x) { return pad + (x - xMin) / (xMax - xMin || 1) * (W - 2 * pad); }
+    function py(y) { return H - pad - (y - yMin) / (yMax - yMin || 1) * (H - 2 * pad); }
+    c.strokeStyle = "#3a3730"; c.lineWidth = 1;
+    for (const ref of (refLines || [])) { c.beginPath(); c.moveTo(px(xMin), py(ref)); c.lineTo(px(xMax), py(ref)); c.stroke(); }
+    c.strokeStyle = color; c.lineWidth = 1.5;
+    c.beginPath();
+    points.forEach((p, i) => { if (!isFinite(p[yKey])) return; const X = px(p[xKey]), Y = py(p[yKey]); if (i === 0) c.moveTo(X, Y); else c.lineTo(X, Y); });
+    c.stroke();
+    c.fillStyle = "#7d8a94"; c.font = "9px monospace";
+    c.fillText(xLabel, pad, H - 8);
+    c.fillText(yMax.toFixed(3), 4, py(yMax) + 3);
+    c.fillText(yMin.toFixed(3), 4, py(yMin) + 3);
+  }
+
+  let diagnosticsComputed = null;
+  function renderDiagnosticPlots() {
+    canvas.style.display = "none";
+    document.getElementById("diagnosticPlots").classList.add("open");
+    const plotA = document.getElementById("plotA"), plotB = document.getElementById("plotB");
+    if (!diagnosticsComputed) {
+      const eeCusp = electronElectronCuspResidual(GROUND, [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]);
+      const eNProbes = [0.2, 0.15, 0.1, 0.07, 0.05, 0.03, 0.02, 0.01];
+      const eNCusp = eNProbes.map(r1 => electronNuclearCuspResidual(GROUND, 1.0, r1, 16));
+      const rho1 = oneElectronDensity(GROUND, [0.1, 0.3, 0.6, 1, 1.5, 2, 2.5, 3, 4, 5], 20, 12);
+      const norm = overlapNormApprox(GROUND, 20, 12);
+      const pOfU = pairSeparationDistribution(GROUND, [0.1, 0.3, 0.6, 1, 1.5, 2, 2.5, 3, 4], 20, 12, norm);
+      diagnosticsComputed = { eeCusp, eNCusp, rho1, pOfU, norm };
+    }
+    if (readMode === "cusp") {
+      plotLine(plotA, diagnosticsComputed.eeCusp, "s", "residual", "s (electron-electron cusp residual vs s; ref line = 0)", "#cbb98a", [0]);
+      document.getElementById("plotALabel").textContent = "R_ee(s) = d(Psi)/du / Psi |_{u=0,t=0} - 1/2";
+      plotLine(plotB, diagnosticsComputed.eNCusp, "r1Probe", "residual", "r1 probe (electron-nuclear cusp residual; ref line = 0)", "#a8788a", [0]);
+      document.getElementById("plotBLabel").textContent = "R_eN(r1) = <dPsi/dr1>_angle / Psi + 2, r2=1.0 fixed";
+    } else if (readMode === "reduced") {
+      plotLine(plotA, diagnosticsComputed.rho1, "r1", "rho1", "r1 (one-electron density; integrates to 2)", "#7ea3b0", []);
+      document.getElementById("plotALabel").textContent = "rho_1(r1), overlap norm=" + diagnosticsComputed.norm.toFixed(6);
+      plotLine(plotB, diagnosticsComputed.pOfU, "u", "P", "u = r12 (pair-separation distribution; integrates to 1)", "#b0a37e", []);
+      document.getElementById("plotBLabel").textContent = "P(u)";
+    }
+    updateStatus();
+  }
+
+  function render() {
+    if (readMode === "cusp" || readMode === "reduced") { renderDiagnosticPlots(); return; }
+    document.getElementById("diagnosticPlots").classList.remove("open");
+    canvas.style.display = "";
+    const data = imageData.data;
+    let localMax = 0;
+    // first pass (only while establishing the fixed scale) to find a
+    // sensible normalization; after that the scale is locked and reused
+    // every frame, per "no frame-by-frame normalization".
+    for (let iy = 0; iy < N; iy += 4) {
+      for (let ix = 0; ix < N; ix += 4) {
+        const x1 = pxToX(ix), x2 = pxToX(iy);
+        const p = psiAt(x1, x2, 0);
+        const dens = p.re * p.re + p.im * p.im;
+        if (dens > localMax) localMax = dens;
+      }
+    }
+    if (!scaleLocked) { maxDensitySeen = localMax || 1; scaleLocked = true; }
+
+    for (let iy = 0; iy < N; iy++) {
+      const x2 = pxToX(iy);
+      for (let ix = 0; ix < N; ix++) {
+        const x1 = pxToX(ix);
+        const idx = (iy * N + ix) * 4;
+        let r = 0, g = 0, b = 0;
+
+        if (readMode === "state") {
+          const p = psiAt(x1, x2, simTime);
+          const dens = p.re * p.re + p.im * p.im;
+          const lightness = Math.min(1, dens / maxDensitySeen) * 0.85;
+          const phase = Math.atan2(p.im, p.re);
+          const hue = (phase * 180 / Math.PI + 360) % 360;
+          const chroma = lightness > 0.02 ? 0.55 : 0.05; // phase unreadable where amplitude is negligible
+          [r, g, b] = colorFromHSL(hue, chroma, lightness);
+        } else if (readMode === "correlation") {
+          const p = psiAt(x1, x2, simTime);
+          const densCorr = p.re * p.re + p.im * p.im;
+          const pp = psiProd(p.s);
+          const densProd = pp * pp;
+          const delta = densCorr - densProd;
+          const scale = maxDensitySeen || 1;
+          const norm = Math.max(-1, Math.min(1, delta / scale));
+          if (norm >= 0) { [r, g, b] = colorFromHSL(35, 0.6, 0.15 + 0.5 * norm); }
+          else { [r, g, b] = colorFromHSL(220, 0.55, 0.15 + 0.5 * (-norm)); }
+        } else if (readMode === "exchange") {
+          const p1 = psiAt(x1, x2, simTime);
+          const p2 = psiAt(x2, x1, simTime);
+          const d1 = p1.re * p1.re + p1.im * p1.im;
+          const d2 = p2.re * p2.re + p2.im * p2.im;
+          const diff = Math.abs(d1 - d2);
+          // audit surface: NOT amplified -- direct residue only, fixed tiny scale
+          const shown = Math.min(1, diff / 1e-6);
+          [r, g, b] = colorFromHSL(0, 0, shown * 0.6);
+        } else if (readMode === "seam") {
+          // seam-profile mode dims the 2D field; the 1D readout is drawn separately below
+          const p = psiAt(x1, x2, simTime);
+          const dens = p.re * p.re + p.im * p.im;
+          const lightness = Math.min(1, dens / maxDensitySeen) * 0.25;
+          [r, g, b] = colorFromHSL(82, 0.12, lightness);
+        }
+
+        data[idx] = r; data[idx + 1] = g; data[idx + 2] = b; data[idx + 3] = 255;
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    // diagonal marker: the exchange-fixed, coincidence, cusp-readable seam
+    ctx.save();
+    ctx.strokeStyle = "rgba(203,185,138,0.25)";
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(N, N); ctx.stroke();
+    ctx.restore();
+
+    if (readMode === "seam") drawSeamProfile();
+  }
+
+  function drawSeamProfile() {
+    // 1D read of density against u = |x1-x2|, sampled along the diagonal
+    // direction at fixed s (a representative slice), drawn as an overlay.
+    const sFixed = 4;
+    const points = [];
+    const uMaxLocal = sFixed;
+    for (let i = 0; i <= 120; i++) {
+      const u = (i / 120) * uMaxLocal;
+      const val = waveAt(GROUND, sFixed, 0, u); // t=0 representative cut
+      points.push({ u, density: val * val });
+    }
+    const maxD = Math.max(...points.map(p => p.density), 1e-12);
+    ctx.save();
+    ctx.translate(20, N - 130);
+    ctx.fillStyle = "rgba(6,6,8,0.75)";
+    ctx.fillRect(-10, -10, 300, 120);
+    ctx.strokeStyle = "#cbb98a"; ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    points.forEach((p, i) => {
+      const px = (p.u / uMaxLocal) * 260;
+      const py = 100 - (p.density / maxD) * 90;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+    ctx.fillStyle = "#9a978c"; ctx.font = "10px monospace";
+    ctx.fillText("seam profile: density vs u = r12 (s=" + sFixed + " fixed)", 0, -14);
+    ctx.restore();
+  }
+
+  // ---- controls ----
+  function setReadMode(mode, btnId) {
+    readMode = mode;
+    document.querySelectorAll("#controls button").forEach(b => b.classList.remove("active"));
+    document.getElementById(btnId).classList.add("active");
+    render(); updateStatus();
+  }
+  document.getElementById("btnState").addEventListener("click", () => setReadMode("state", "btnState"));
+  document.getElementById("btnCorrelation").addEventListener("click", () => setReadMode("correlation", "btnCorrelation"));
+  document.getElementById("btnExchange").addEventListener("click", () => setReadMode("exchange", "btnExchange"));
+  document.getElementById("btnSeam").addEventListener("click", () => setReadMode("seam", "btnSeam"));
+  document.getElementById("btnCusp").addEventListener("click", () => setReadMode("cusp", "btnCusp"));
+  document.getElementById("btnReduced").addEventListener("click", () => setReadMode("reduced", "btnReduced"));
+
+  document.getElementById("btnHoldEvolve").addEventListener("click", function () {
+    evolving = !evolving;
+    this.textContent = evolving ? "EVOLVE" : "HOLD";
+    lastFrameTs = null;
+  });
+  document.getElementById("btnPrepareGround").addEventListener("click", () => {
+    preparationMode = "ground"; simTime = 0; appendPreparationReceipt("ground"); scaleLocked = false; render(); updateStatus();
+  });
+  document.getElementById("btnPrepare01").addEventListener("click", () => {
+    preparationMode = "singlet01"; simTime = 0; appendPreparationReceipt("singlet01"); scaleLocked = false; render(); updateStatus();
+  });
+  document.getElementById("btnReset").addEventListener("click", () => {
+    simTime = 0; evolving = false; document.getElementById("btnHoldEvolve").textContent = "HOLD";
+    document.getElementById("scrubber").value = 0; render(); updateStatus();
+    // resetting the view does NOT clear preparationLedger -- append-only, per contract
+  });
+  const scrubber = document.getElementById("scrubber");
+  const T01 = 2 * Math.PI / Math.abs(EIGENVALUES[1] - EIGENVALUES[0]);
+  scrubber.max = 1000;
+  scrubber.addEventListener("input", () => {
+    evolving = false; document.getElementById("btnHoldEvolve").textContent = "HOLD";
+    simTime = (scrubber.value / 1000) * (2 * T01);
+    render(); updateStatus();
+  });
+
+  document.getElementById("openAudit").addEventListener("click", () => {
+    const panel = document.getElementById("auditPanel");
+    if (panel.classList.contains("open")) { panel.classList.remove("open"); return; }
+    panel.innerHTML =
+      "<h2>HELIUM SEAM v0.1 &mdash; audit</h2>" +
+      "<div>Ground state E0=" + EIGENVALUES[0].toFixed(6) + " Hartree (7-function Hylleraas basis, alpha=" + ALPHA + ", 40&sup3; Gauss-Legendre quadrature).<br>" +
+      "True nonrelativistic infinite-mass value: " + TRUE_GROUND.toFixed(6) + " Hartree &middot; agreement to ~4 significant figures.</div>" +
+      "<h3>Gate A &mdash; He+ hydrogenic calibration</h3>" +
+      "<div>Z=" + HE_PLUS.nuclearCharge + " &middot; reduced mass=" + HE_PLUS.reducedMass.toFixed(6) + " &middot; n=1 energy=" + HE_PLUS.n1EnergyEV.toFixed(3) + " eV<br>" +
+      "E(He+)/E(H) = " + HE_PLUS.energyRatio.toFixed(6) + " (expect 4&middot;&mu;<sub>He+</sub>/&mu;<sub>H</sub>) &middot; a(He+)/a(H) = " + HE_PLUS.bohrRatio.toFixed(6) + " (expect &frac12;&middot;&mu;<sub>H</sub>/&mu;<sub>He+</sub>)<br>" +
+      "No neutral-helium, correlation, or second-electron claim made at this gate.</div>" +
+      "<h3>Preparation ledger</h3><div>" + preparationLedger.length + " entries, append-only (RESET VIEW does not clear it).</div>" +
+      "<h3 class=\"exclusions\">Not modeled in this release</h3>" +
+      "<div class=\"exclusions\">literal electron paths &middot; two classical particles orbiting a nucleus &middot; molecular Hydrogen (H2) &middot; " +
+      "a physical Hydrogen-to-helium reaction &middot; nuclear fusion &middot; photon absorption/emission &middot; spontaneous decay &middot; " +
+      "ionization &middot; scattering &middot; continuum states &middot; triplet helium &middot; fine structure &middot; relativistic corrections &middot; " +
+      "QED corrections &middot; exact physical helium recurrence &middot; oxygen &middot; water &middot; biological/therapeutic processes &middot; Higgs dynamics.</div>";
+    panel.classList.add("open");
+  });
+
+  document.getElementById("hePlusStrip").innerHTML =
+    "Gate A (He+): Z=" + HE_PLUS.nuclearCharge + " &middot; E<sub>1</sub>=" + HE_PLUS.n1EnergyEV.toFixed(2) + " eV &middot; " +
+    "E ratio to H = " + HE_PLUS.energyRatio.toFixed(4) + " &middot; a ratio to H = " + HE_PLUS.bohrRatio.toFixed(4) + " &mdash; hydrogenic calibration only, not neutral helium";
+
+
+  function updateStatus() {
+    document.getElementById("tLabel").textContent = simTime.toFixed(3);
+    document.getElementById("status").innerHTML =
+      "E0=" + EIGENVALUES[0].toFixed(6) + " Ha &middot; E1=" + EIGENVALUES[1].toFixed(6) + " Ha &middot; T01=" + T01.toFixed(3) + " a.u. &middot; " +
+      "preparation: " + (preparationMode === "ground" ? "ground eigenstate" : "0+1 singlet superposition") +
+      " &middot; read: " + readMode.toUpperCase();
+  }
+
+  function frame(ts) {
+    if (evolving) {
+      if (lastFrameTs === null) lastFrameTs = ts;
+      const dt = (ts - lastFrameTs) / 1000;
+      lastFrameTs = ts;
+      simTime += dt * 0.6; // display-rate only, does not alter the exact evolution law
+      scrubber.value = Math.round(((simTime % (2 * T01)) / (2 * T01)) * 1000);
+      render(); updateStatus();
+    }
+    window.requestAnimationFrame(frame);
+  }
+
+  render(); updateStatus();
+  window.requestAnimationFrame(frame);
+
+  window.__heliumSeam = {
+    psiAt, stuFromX1X2, waveAt, EIGENVALUES, GROUND, FIRST_EXCITED, getPreparationLedger: () => preparationLedger.slice(),
+    electronElectronCuspResidual, electronNuclearCuspResidual, oneElectronDensity, pairSeparationDistribution, overlapNormApprox
+  };
+})();
+</script>
+</body>
+</html>
