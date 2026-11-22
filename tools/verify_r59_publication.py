@@ -31,7 +31,7 @@ REQUIRED_PAPERS = (
  "papers/contact_recognition_continuum.pdf",
  "assets/authors/anthony-vito-coppa-camera-self-portrait.jpeg",
  "papers/four-dual-forms/pdf/01_gravity_light.pdf",
- "models/view/clear-onyx-gauge-laboratory-v0.5.3.html",
+ "models/view/clear-onyx-gauge-laboratory-v0.5.4.html",
 )
 PROOF_PIN = "b9e939d514a63fb021592f79a316f70cbc70ed8a"
 SYMMETRIC_MINIMUM_VERSION = "1.7.16"
@@ -402,12 +402,12 @@ def verify():
         architecture = (ROOT/architecture_file).read_text(encoding="utf-8")
         for marker in (
             'class="architecture-lab-landing"',
-            'clear-onyx-gauge-laboratory-v0.5.3?embed=1',
+            'clear-onyx-gauge-laboratory-v0.5.4?embed=1',
             "Existing field formalism, made visible while it runs.",
         ):
             if marker not in architecture:
                 errors.append(architecture_file + ": missing lab-first marker: " + marker)
-    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.3.html").read_text(encoding="utf-8")
+    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.4.html").read_text(encoding="utf-8")
     for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)"):
         if marker not in lab:
             errors.append("Gauge & Matter Laboratory missing embed or autostart marker: " + marker)
