@@ -1,0 +1,108 @@
+{
+  "name": "Clear Onyx Gauge & Matter Laboratory",
+  "version": "0.5.5",
+  "entry": "clear-onyx-gauge-laboratory-v0.5.5.html",
+  "scope": "Finite gauge and matter carriers, including a 2+1D electroweak Higgs-sector lattice with fixed declared SU(2)L x U(1)Y background links and a separate tree-level mass-algebra receipt. Study Reader routes retain separately scoped OPEN readers; SU(3) transport supplies QCD kinematics only and a confinement ensemble remains open.",
+  "files": [
+    {
+      "path": ".openai/hosting.json",
+      "sha256": "b3d544b7fdffb5fdade3a35cdcc144a875a1e5cb7674eb3063fd07d7c6aca2b8"
+    },
+    {
+      "path": "build.mjs",
+      "sha256": "53a0bcce306394cb5da4da2bbe91c301bdca3956311dd3b39dc460203324b9e0"
+    },
+    {
+      "path": "write-manifest.mjs",
+      "sha256": "58023968afc2db2f64829afdd7d1c41aa91d07fdb291ea2702fe4b551709c9b0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d2bd31d2142902fc32224e677f30d97b068a5d05724c61a5b1725b936a5e8415"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "7af2cbecb8ba5e7c472cb9ea96def72259cd53ce93f849b96fa618e92196046d"
+    },
+    {
+      "path": "AUDIT.md",
+      "sha256": "12641316c16d8329ccb9794cad46685c133b5477df6d33c8c881e5618e612fc4"
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "b71e6f68aec062be1b828916050ce1a2e94e5398f5852136e826bd54093b38c0"
+    },
+    {
+      "path": "src/core.js",
+      "sha256": "b9de0c87477e33868d69b5d16c104daa33cb0ac8eed3ee70aa93bc875a13f1ac"
+    },
+    {
+      "path": "src/template.html",
+      "sha256": "8fcea6eb6dba21696698e1fb4b56b0245aeda4ac38c1f33ca1f77f339189ca7e"
+    },
+    {
+      "path": "src/carriers/complex-phi4.js",
+      "sha256": "2c3f98071db589159cd948229a0f7b008f135865a5181d2106833e8b52129707"
+    },
+    {
+      "path": "src/carriers/two-flavour-neutrino.js",
+      "sha256": "619dd9d7137d855f910060f1a9f87abf255e77e594ca5a0bdceb21cb0602b12e"
+    },
+    {
+      "path": "src/carriers/massive-dirac.js",
+      "sha256": "2607fcb744123aca878a6d228e96cbeaefd80507df160031eb770d5e1d4b3ce9"
+    },
+    {
+      "path": "src/carriers/gauge.js",
+      "sha256": "a29e4443585cff4d86e1f3e81cda73d6ab1cdcbaf3f9a5c7623fee55cc658c3b"
+    },
+    {
+      "path": "src/carriers/electroweak-higgs.js",
+      "sha256": "693a489fc11f7b06bfbd430ebcc7e2f95d128c9455a744e0cfff3a459e4787d1"
+    },
+    {
+      "path": "tests/check-v042.cjs",
+      "sha256": "a30ce3fa13af56fe29ec3841f46370be679bd8ab27d658293612d3cc26f56b01"
+    },
+    {
+      "path": "tests/check-v05.cjs",
+      "sha256": "c69fd48350681b99562d96b4b5a6332ee5081a40d421d47a26000af7a4981197"
+    },
+    {
+      "path": "tests/check-browser-bootstrap.cjs",
+      "sha256": "feaa3f85980829a6bf4c5f9b1f2c6d248662521fc04e9de9d6b867c763ead81b"
+    },
+    {
+      "path": "tests/check-study-suite.cjs",
+      "sha256": "488a1501c0ff06973ae4a928a0945539c1005942e440203e05028c67887b8031"
+    },
+    {
+      "path": "tests/check-manifest.cjs",
+      "sha256": "07a8794ffb2aa936caf3919efc9afe015f571956af1a237b569fa50e336cf64a"
+    },
+    {
+      "path": "clear-onyx-gauge-laboratory-v0.5.5.html",
+      "sha256": "62e6090cbcaa2ae0e6b9313e96ab879b8c2b110abf01981fe872b580778f1a44"
+    },
+    {
+      "path": "studies/helium-dynamics.html",
+      "sha256": "c0fd55eb2d35ff97b26af0084e5bf14d1531d13c565037aed58547637fcd57e4"
+    },
+    {
+      "path": "studies/hydrogen-orbital-ladder.html",
+      "sha256": "b05fec1f5e37a66dd62614887683f32f28580e3dca6922b54e86a4b340f20631"
+    },
+    {
+      "path": "studies/lambda-mirror.html",
+      "sha256": "4a90c78981227a3882f77ee6ab89b05e10f55db228cfe3ce94889372593104bb"
+    },
+    {
+      "path": "studies/phi4-domain-study.html",
+      "sha256": "e167e8b0c1a7e4bd419067a567439e78ad39e6984f1be9fc2b5514795ed301ce"
+    },
+    {
+      "path": "studies/water-field.html",
+      "sha256": "390f296a3433624718fec00882e6612e9da776f8e1c9cb696dccf23935fc8469"
+    }
+  ]
+}
