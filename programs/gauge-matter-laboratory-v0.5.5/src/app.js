@@ -26,7 +26,7 @@
     current: $('#current'), audit: $('#audit'), history: $('#history'), particle: $('#particle-label'), scope: canvas,
     metricLabel: $('#metric-label'), energyLabel: $('#energy-label'), currentLabel: $('#current-label'), readHeading: $('#read-heading'),
     phaseLabel: $('#phase-label'), scopeType: $('#scope-type'), studyReader: $('#study-reader'), studyFrame: $('#study-frame'),
-    studyName: $('#study-name'), studyScope: $('#study-scope'), skip: $('.skip')
+    studyName: $('#study-name'), studyScope: $('#study-scope'), returnCarrier: $('#return-to-carrier'), skip: $('.skip')
   };
 
   function setStatus(text) { elements.status.textContent = text; }
@@ -54,6 +54,8 @@
     elements.studyFrame.title = study.title;
     elements.studyName.textContent = study.title;
     elements.studyScope.textContent = 'OPEN visual study · declared finite reader · no admitted main-carrier PASS';
+    const liveLabel = SPECIES[state.type]?.label || 'live carrier';
+    elements.returnCarrier.textContent = `Return to ${liveLabel}`;
     elements.skip.setAttribute('href', '#study-reader');
     setStatus(`${study.title} opened as its own declared study reader. Its controls and receipts remain inside that study.`);
   }
@@ -417,6 +419,12 @@
   }
 
   elements.selector.addEventListener('change', () => switchCarrier(elements.selector.value));
+  elements.returnCarrier.addEventListener('click', () => {
+    if (!state.study) return;
+    const restored = state.type;
+    switchCarrier(restored);
+    setStatus(`${SPECIES[restored].label} restored as the live carrier.`);
+  });
   elements.pause.addEventListener('click', () => {
     if (state.study) { setStatus('Study controls live inside the selected study reader.'); return; }
     state.running = !state.running;

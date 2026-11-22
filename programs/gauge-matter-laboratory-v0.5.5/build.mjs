@@ -21,7 +21,7 @@ const studies = [
 const registry = Object.fromEntries(await Promise.all(studies.map(async ([id, title, file]) => [
   id, { title, srcdoc: await readFile(resolve(root, 'studies', file + '.html'), 'utf8') }
 ])));
-const registryScript = `const ClearOnyxStudyRegistry = Object.freeze(${JSON.stringify(registry).replaceAll('<', '\\u003c')});`;
+const registryScript = `globalThis.ClearOnyxStudyRegistry = Object.freeze(${JSON.stringify(registry).replaceAll('<', '\\u003c')});`;
 const html = template.replace('/*__EXTRA__*/', `${registryScript}\n${phi4}\n${oscillation}\n${dirac}\n${gauge}\n${higgs}`).replace('/*__CORE__*/', core).replace('/*__APP__*/', app);
 const output = resolve(root, 'clear-onyx-gauge-laboratory-v0.5.5.html');
 const previewOutput = resolve(root, 'dist/index.html');

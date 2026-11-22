@@ -10,7 +10,7 @@
     },
     {
       "path": "build.mjs",
-      "sha256": "53a0bcce306394cb5da4da2bbe91c301bdca3956311dd3b39dc460203324b9e0"
+      "sha256": "d9ae7630b11f1549d6909b91a21c63006be5352aa47205218adf931422f6a4c4"
     },
     {
       "path": "write-manifest.mjs",
@@ -30,15 +30,15 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "b71e6f68aec062be1b828916050ce1a2e94e5398f5852136e826bd54093b38c0"
+      "sha256": "921674fc7a28794786ec673ee0f40d75623e8c2cf33b7e47fc4517ee1f1201d9"
     },
     {
       "path": "src/core.js",
-      "sha256": "b9de0c87477e33868d69b5d16c104daa33cb0ac8eed3ee70aa93bc875a13f1ac"
+      "sha256": "074a4261566eef58fa31d74bcb0470a8e27f15d0a890768a39487cf7ae75cddf"
     },
     {
       "path": "src/template.html",
-      "sha256": "8fcea6eb6dba21696698e1fb4b56b0245aeda4ac38c1f33ca1f77f339189ca7e"
+      "sha256": "5a3e53e5058d610d3d88b261b65bdb3ba9dd95419ac3e0ab3ca10442cba09b2a"
     },
     {
       "path": "src/carriers/complex-phi4.js",
@@ -70,11 +70,11 @@
     },
     {
       "path": "tests/check-browser-bootstrap.cjs",
-      "sha256": "feaa3f85980829a6bf4c5f9b1f2c6d248662521fc04e9de9d6b867c763ead81b"
+      "sha256": "0bf4b24925776847cf387d4621b913cc8f3e664c55bfc90103d700e206c581bb"
     },
     {
       "path": "tests/check-study-suite.cjs",
-      "sha256": "488a1501c0ff06973ae4a928a0945539c1005942e440203e05028c67887b8031"
+      "sha256": "7ec7caadbbeb6acd16bed9d2dbb8cc9233c9257061c5b9b80a932db6a0544c07"
     },
     {
       "path": "tests/check-manifest.cjs",
@@ -82,7 +82,7 @@
     },
     {
       "path": "clear-onyx-gauge-laboratory-v0.5.5.html",
-      "sha256": "62e6090cbcaa2ae0e6b9313e96ab879b8c2b110abf01981fe872b580778f1a44"
+      "sha256": "66e7c6112861ac8503122da29ef72fd5b94ea9c2f7f79c919c4479b1f9d83d62"
     },
     {
       "path": "studies/helium-dynamics.html",

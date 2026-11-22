@@ -12,10 +12,11 @@ for (const [id, name] of Object.entries(documents)) { const markup = readFileSyn
 const app = readFileSync(resolve(root, 'src', 'app.js'), 'utf8');
 const template = readFileSync(resolve(root, 'src', 'template.html'), 'utf8');
 const build = readFileSync(resolve(root, 'build.mjs'), 'utf8');
-assert.ok(template.includes('id="study-reader"') && template.includes('id="study-frame"'), 'template exposes one study reader mount');
+assert.ok(template.includes('id="study-reader"') && template.includes('id="study-frame"') && template.includes('id="return-to-carrier"'), 'template exposes one study reader mount');
 assert.equal(template.includes('study-suite'), false, 'template has no parallel study-suite panels');
-assert.ok(app.includes("type.startsWith('study:')") && app.includes('function switchStudy'), 'app dispatches study routes');
+assert.ok(app.includes("type.startsWith('study:')") && app.includes('function switchStudy') && app.includes("returnCarrier.addEventListener('click'"), 'app dispatches study routes and provides a return control');
 assert.ok(app.indexOf("type.startsWith('study:')") < app.indexOf('state.engine = makeEngine(type)'), 'study routes precede the legacy factory');
+assert.ok(build.includes('globalThis.ClearOnyxStudyRegistry'), 'build assigns the registry to the reader runtime');
 for (const id of Object.keys(documents)) { assert.ok(template.includes(`value="study:${id}"`), `selector exposes study:${id}`); assert.ok(build.includes(`'${id}'`), `build registers ${id}`); }
 const phi4 = readFileSync(resolve(root, 'studies', documents['phi4-domain']), 'utf8');
 for (const required of ['reflectedSector','field.map(value => -value)','λₘᵢₙ(Lₕ) − λv²','Quadratic test degenerate','Gradient residual (max)','Hessian residual (max entry)']) assert.ok(phi4.includes(required), `Φ⁴ study retains ${required}`);

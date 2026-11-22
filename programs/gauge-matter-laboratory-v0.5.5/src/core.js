@@ -1,4 +1,4 @@
-/* Clear Onyx Gauge Laboratory v0.5.3 — finite field, gauge, and matter carriers.
+/* Clear Onyx Gauge Laboratory v0.5.5 — finite field, gauge, and matter carriers.
  * Browser and Node compatible. No external dependencies.
  */
 'use strict';
