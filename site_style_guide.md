@@ -70,15 +70,22 @@ The first screen answers, in this order:
 4. Which source, compiler run, or independent check carries that strength.
 5. What a reader can now inspect or compute directly.
 
-Use the status words literally:
+Use the reference edition’s seven status words literally:
 
 | Status | Public meaning |
 | --- | --- |
-| Cited field equation | A native equation with its stated conditions. |
-| Source-declared field construction | A typed carrier, action, or reduction retained in its source. |
-| Conditional Lean theorem | A compiled theorem over its named premise set. |
-| Exact finite identity | A relation re-derived in the stated finite carrier. |
-| Declared interface | A source-to-target map with both offices named. |
+| Exact finite | An algebraic identity checked in the declared finite carrier. |
+| Exact derived | An exact consequence of displayed identities or a stated construction. |
+| Lean-checked | A statement at the pinned Lean source with its stated audit record. |
+| Conditional | A statement whose named premises remain part of its result. |
+| Source declaration | A typed carrier, boundary, or partial map retained at its cited source. |
+| Interface | A declared map between carriers or readers. |
+| Candidate | A next construction with its test stated. |
+
+`Cited`, `source-documented classical mathematics`, `negative control`, and
+`open item` are evidence descriptors or boundary conditions, not additional
+result statuses. The canonical public crosswalk lives at
+`/papers/symmetric-minimum/#status-lineage`.
 
 The Metric Minimum page keeps four source offices visible and separate in its
 opening order:

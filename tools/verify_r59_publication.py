@@ -49,7 +49,8 @@ SYMMETRIC_MINIMUM_BUNDLE_SHA256 = "3960f7a78edc21805f31672ec126d26c9e474702b6b0d
 CIVIC_NOTICE_MARKERS = (
  "Notice:",
  "We operate inside a readable condition called reality.",
- "Each word forms a one-to-one reference.",
+    "Public declaration / local language rule",
+    "In this notice, each term is used as a declared reference.",
  "A frame admits a reference. A reference admits a center coordinate.",
  "1 + 1 = 2",
  "Keep 4. Turn 2. Fold 1. Return 0.",
@@ -69,8 +70,8 @@ UNIFIED_FIELD_CLOSURE_MARKERS = (
  "Lean-checked conditional theorem",
  "Real <code>C∞</code> Einstein–Maxwell data on compact, boundaryless <code>𝕋³</code>",
  "seven named <code>SmoothCompletion</code> premise roles",
- "Open adapters",
-    "Exact continuum closure",
+    "Current build gates",
+    "Exact compatibility closure",
     "Quantum geometry returns through <code>Π</code>",
     "<dt>Condition</dt><dd>Quantum geometry</dd>",
     "<dt>Constraint</dt><dd>Quantum gravity</dd>",
@@ -81,7 +82,8 @@ UNIFIED_FIELD_CLOSURE_MARKERS = (
     "Whole-prime mirror closure",
     "Re(s)&gt;1: ζ(s)=∏<sub>p</sub>(1−p<sup>−s</sup>)<sup>−1</sup>; Ξ(s)=½s(s−1)π<sup>−s/2</sup>Γ(s/2)ζ(s)=Ξ(1−s)",
     "J<sub>ξ</sub>(s)=1−s̄; RH ⇔ ∀ρ∈Z<sub>ξ</sub>, J<sub>ξ</sub>(ρ)=ρ ⇔ Z<sub>ξ</sub><sup>off</sup>=∅",
-    "https://github.com/leanprover-community/riemann-hypothesis/blob/main/src/Main.lean",
+    "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+    "https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Main.lean",
     "https://math.mit.edu/~drew/grh/#what-was-verified",
     "/papers/eternity-time-mirror-zeta.pdf",
 )
@@ -279,8 +281,10 @@ def root28_reader_candidate(errors):
 def external_reader_release_boundary(errors):
     page = (ROOT / "external-formalization/index.html").read_text(encoding="utf-8")
     required = (
-        "SOURCE_REPORTED",
-        "PENDING_REPLAY",
+        "EXTERNALLY CERTIFIED",
+        "Lean and Mathlib communities · 21 November 2026",
+        "40e56bab026552e089d7afcfeff08d2defb9c005",
+        "Not performed by this site",
         "LOCAL_REPLAYED · self-attested",
         "semantic adapter schema is not declared",
         "This page does not publish, link, or distribute the EARR-001 packet.",
@@ -307,6 +311,9 @@ def external_reader_release_boundary(errors):
     for marker in semantic_adapter_markers:
         if marker in page:
             errors.append("external reader promotes a retained adapter name into page semantics: " + marker)
+    for stale in ("SOURCE_REPORTED", "PENDING_REPLAY"):
+        if stale in page:
+            errors.append("external reader retains stale global external status: " + stale)
     for name in ("llms.txt", "llms-full.txt"):
         text = (ROOT / name).read_text(encoding="utf-8")
         if "does not publish, link, or distribute the EARR-001 packet" not in text:
@@ -394,13 +401,14 @@ def verify():
     symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
     for marker in (
         "Symmetric Minimum", "reference edition v1.7.16", "140/140 exact checks",
-        "33 altered-input controls", "hDensityCovariance", "source-and-verification.zip",
+        "33 negative controls", "hDensityCovariance", "source-and-verification.zip",
         "Bottom line.", "C(8,2) = 28 pair reads", "word → map → condition → source",
         "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
         "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
         "Source-declared field construction", "Conditional Lean theorem",
         "Closed at the stated classical field level.", "Open in Lean.",
-        "/proofs/smooth-completion/", "Φ · Ψ · i · g · e · θ · Λ",
+        "/proofs/smooth-completion/", "Public reader handles (site display)",
+        "Ψ · Θ · θ · π · e · Φ · Λ", "id=\"status-lineage\"", "id=\"open-ledger\"",
         "G<sub>root</sub>", "G<sub>EM</sub>", "λ<sub>root</sub>",
     ):
         if marker not in symmetric_page:
@@ -439,31 +447,43 @@ def verify():
         architecture = (ROOT/architecture_file).read_text(encoding="utf-8")
         for marker in (
             'class="architecture-lab-landing"',
-            'clear-onyx-gauge-laboratory-v0.5.6?embed=1',
+            'clear-onyx-gauge-laboratory-v0.5.7?embed=1',
             "One 2D signal aperture. Many declared physical models.",
             "The Signal Frame names exactly what every visible quantity means for the selected model.",
         ):
             if marker not in architecture:
                 errors.append(architecture_file + ": missing lab-first marker: " + marker)
-    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.6.html").read_text(encoding="utf-8")
-    for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)", "ONE VISUAL LANGUAGE · MANY EQUATIONS", "signal-carrier", "rgb-basis"):
+    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.7.html").read_text(encoding="utf-8")
+    for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)", "ONE VISUAL LANGUAGE · MANY EQUATIONS", "signal-carrier", "rgb-basis", "modeEquationResidual", "exact harmonic step"):
         if marker not in lab:
             errors.append("Gauge & Matter Laboratory missing embed or autostart marker: " + marker)
-    source_zip = ROOT / "downloads/clear-onyx-gauge-laboratory-v0.5.6-source.zip"
+    source_zip = ROOT / "downloads/clear-onyx-gauge-laboratory-v0.5.7-source.zip"
     if not source_zip.is_file():
-        errors.append("Gauge & Matter v0.5.6 source package missing")
+        errors.append("Gauge & Matter v0.5.7 source package missing")
     else:
         try:
             with zipfile.ZipFile(source_zip) as package:
                 required = {
-                    "clear-onyx-gauge-laboratory-v0.5.6/clear-onyx-gauge-laboratory-v0.5.6.html",
-                    "clear-onyx-gauge-laboratory-v0.5.6/source-manifest.json",
-                    "clear-onyx-gauge-laboratory-v0.5.6/AUDIT.md",
+                    "clear-onyx-gauge-laboratory-v0.5.7/clear-onyx-gauge-laboratory-v0.5.7.html",
+                    "clear-onyx-gauge-laboratory-v0.5.7/source-manifest.json",
+                    "clear-onyx-gauge-laboratory-v0.5.7/AUDIT.md",
+                    "clear-onyx-gauge-laboratory-v0.5.7/tests/check-water-normal-mode.cjs",
                 }
                 if not required <= set(package.namelist()):
-                    errors.append("Gauge & Matter v0.5.6 source package membership mismatch")
+                    errors.append("Gauge & Matter v0.5.7 source package membership mismatch")
+                else:
+                    prefix = "clear-onyx-gauge-laboratory-v0.5.7/"
+                    bundled = package.read(prefix + "clear-onyx-gauge-laboratory-v0.5.7.html")
+                    if hashlib.sha256(bundled).hexdigest() != sha256(ROOT / "models/view/clear-onyx-gauge-laboratory-v0.5.7.html"):
+                        errors.append("Gauge & Matter v0.5.7 source package entry differs from live laboratory")
+                    manifest = json.loads(package.read(prefix + "source-manifest.json"))
+                    if not any(entry.get("path") == "tests/check-water-normal-mode.cjs" for entry in manifest.get("files", [])):
+                        errors.append("Gauge & Matter v0.5.7 source manifest omits water normal-mode test")
+                    audit = package.read(prefix + "AUDIT.md").decode("utf-8")
+                    if "Water normal-mode receipt" not in audit:
+                        errors.append("Gauge & Matter v0.5.7 source package omits water normal-mode receipt")
         except zipfile.BadZipFile:
-            errors.append("Gauge & Matter v0.5.6 source package is not a readable ZIP")
+            errors.append("Gauge & Matter v0.5.7 source package is not a readable ZIP")
     about = (ROOT/"about.html").read_text(encoding="utf-8")
     for marker in (
         "Existing field formalism, read together.",
