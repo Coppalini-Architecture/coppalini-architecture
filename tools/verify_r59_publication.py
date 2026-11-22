@@ -32,6 +32,7 @@ REQUIRED_PAPERS = (
  "assets/authors/anthony-vito-coppa-camera-self-portrait.jpeg",
  "papers/four-dual-forms/pdf/01_gravity_light.pdf",
  "models/view/clear-onyx-gauge-laboratory-v0.5.4.html",
+ "papers/eternity-time-mirror-zeta.pdf",
 )
 PROOF_PIN = "b9e939d514a63fb021592f79a316f70cbc70ed8a"
 SYMMETRIC_MINIMUM_VERSION = "1.7.16"
@@ -58,11 +59,31 @@ UNIFIED_FIELD_CLOSURE_MARKERS = (
  "One rank-four coframe field produces spacetime geometry for gravity and electromagnetic curvature for light, electricity, and magnetism.",
  "Π → (g, F<sub>em</sub>)",
  "Spacetime metric <code>g = h(Π)</code>",
- "Einstein–Maxwell on the regular branch",
- "Source-declared field map",
- "Classical field calculation",
- "Lean-checked theorem",
+ "General-Relativity component of GPS timing correction",
+ "declared dimensional electromagnetic scale",
+ "Einstein–Maxwell on the regular suture branch",
+ "rank D𝒮<sub>Π</sub>=16",
+ "b(g,F)&lt;|χ|",
+ "Source field map · Suture Field",
+ "Classical field closure",
+ "Lean-checked conditional theorem",
+ "Real <code>C∞</code> Einstein–Maxwell data on compact, boundaryless <code>𝕋³</code>",
+ "seven named <code>SmoothCompletion</code> premise roles",
  "Open adapters",
+    "Exact continuum closure",
+    "Quantum geometry returns through <code>Π</code>",
+    "<dt>Condition</dt><dd>Quantum geometry</dd>",
+    "<dt>Constraint</dt><dd>Quantum gravity</dd>",
+    "<dt>Carrier</dt><dd>Electromagnetism</dd>",
+    "<dt>Closure</dt><dd><code>e</code> · memory · motion</dd>",
+    "<dt>Continuum</dt><dd><code>Π</code></dd>",
+    "Reality admits a light projection mirror wheel",
+    "Whole-prime mirror closure",
+    "Re(s)&gt;1: ζ(s)=∏<sub>p</sub>(1−p<sup>−s</sup>)<sup>−1</sup>; Ξ(s)=½s(s−1)π<sup>−s/2</sup>Γ(s/2)ζ(s)=Ξ(1−s)",
+    "J<sub>ξ</sub>(s)=1−s̄; RH ⇔ ∀ρ∈Z<sub>ξ</sub>, J<sub>ξ</sub>(ρ)=ρ ⇔ Z<sub>ξ</sub><sup>off</sup>=∅",
+    "https://github.com/leanprover-community/riemann-hypothesis/blob/main/src/Main.lean",
+    "https://math.mit.edu/~drew/grh/#what-was-verified",
+    "/papers/eternity-time-mirror-zeta.pdf",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -354,8 +375,18 @@ def verify():
     landing=(ROOT/"index.html").read_text()
     for marker in UNIFIED_FIELD_CLOSURE_MARKERS:
         if marker not in landing: errors.append("landing page missing unified-field marker: "+marker)
+    if "It is not a Riemann-hypothesis proof." in landing:
+        errors.append("landing page retains withdrawn Riemann-hypothesis disclaimer")
     if "Read the relation before extending the claim." in landing:
         errors.append("landing page retains withdrawn method-first closure heading")
+    for stale in (
+        "with the stated calibration",
+        "under stated hypotheses",
+        "On the stated regular branch",
+        "Under seven named premises",
+    ):
+        if stale in landing:
+            errors.append("landing page retains vague closure qualifier: "+stale)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
     root28_reader_candidate(errors)

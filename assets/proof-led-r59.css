@@ -233,7 +233,18 @@
 .r59 .closure-related { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:1.5rem 0 0; border:1px solid var(--r59-rule); background:var(--r59-rule); }
 .r59 .closure-related article { min-width:0; padding:1.15rem 1.2rem; background:var(--surface); }
 .r59 .closure-related h3 { margin:.42rem 0 .55rem; font-size:1.04rem; line-height:1.28; }
+.r59 .closure-related h3 a { color:inherit; text-decoration-color:color-mix(in srgb,currentColor 32%,transparent); text-underline-offset:.16em; }
+.r59 .closure-related h3 a:hover { text-decoration-color:currentColor; }
 .r59 .closure-related p:not(.closure-status) { margin:0; color:var(--r59-muted); font-size:.84rem; line-height:1.63; }
+.r59 .closure-related .closure-equation { margin:.78rem 0 !important; padding:.65rem .72rem; border-left:2px solid var(--red); background:color-mix(in srgb,var(--surface) 84%,var(--red)); color:var(--ink) !important; font-size:.72rem !important; line-height:1.6 !important; overflow-wrap:anywhere; }
+.r59 .closure-card-records { display:flex; flex-wrap:wrap; gap:.42rem .8rem; margin-top:.95rem; padding-top:.8rem; border-top:1px solid var(--r59-rule); }
+.r59 .closure-card-records a { color:var(--red); font:750 .64rem/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.025em; text-decoration-thickness:1px; text-underline-offset:.16em; }
+.r59 .closure-offices { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; margin:.8rem 0 .9rem; border-top:1px solid var(--r59-rule); border-left:1px solid var(--r59-rule); }
+.r59 .closure-offices > div { min-width:0; padding:.55rem .58rem .58rem; border-right:1px solid var(--r59-rule); border-bottom:1px solid var(--r59-rule); }
+.r59 .closure-offices dt { color:var(--red); font:750 .57rem/1.35 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.075em; text-transform:uppercase; }
+.r59 .closure-offices dd { margin:.25rem 0 0; color:var(--ink); font:650 .72rem/1.42 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+.r59 .closure-offices > div:last-child { grid-column:1 / -1; }
+.r59 .closure-related .scope-note { margin-top:.85rem !important; color:var(--r59-muted); font-size:.74rem !important; line-height:1.55 !important; }
 @media(max-width:39rem){.r59 .closure-map-list { grid-template-columns:1fr; }.r59 .closure-map-list li:last-child { grid-column:auto; }}
 @media(max-width:58rem){.r59 .closure-proof-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }}
-@media(max-width:39rem){.r59 .closure-proof-strip,.r59 .closure-related { grid-template-columns:1fr; }}
+@media(max-width:39rem){.r59 .closure-proof-strip,.r59 .closure-related { grid-template-columns:1fr; }.r59 .closure-offices{grid-template-columns:1fr;}.r59 .closure-offices > div:last-child{grid-column:auto;}}

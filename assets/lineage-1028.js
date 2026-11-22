@@ -28,6 +28,14 @@
   let scheduled = 0;
 
   const pad = (number) => String(number).padStart(2, '0');
+  const requestedLineage = () => new URLSearchParams(location.search).get('lineage');
+
+  function clearLineageRequest() {
+    const url = new URL(location.href);
+    if (!url.searchParams.has('lineage')) return;
+    url.searchParams.delete('lineage');
+    history.replaceState(null, '', `${url.pathname}${url.search}${url.hash || '#formal-lineage'}`);
+  }
 
   function displayEquation(value) {
     let output = value;
@@ -141,8 +149,8 @@
   }
 
   function open(index, event) {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
+    if (event?.ctrlKey || event?.metaKey || event?.shiftKey || event?.altKey) return;
+    event?.preventDefault();
     if (typeof dialog?.showModal !== 'function') return;
     opener = cards[index];
     render(index);
@@ -178,6 +186,14 @@
       cards = [...track.querySelectorAll('[data-lineage-card]')];
       updatePosition();
       new ResizeObserver(updatePosition).observe(track);
+      const requested = requestedLineage();
+      const requestedIndex = data.cards.findIndex((card) => card.id === requested);
+      if (requestedIndex >= 0) {
+        requestAnimationFrame(() => {
+          cards[requestedIndex].scrollIntoView({ block: 'nearest', inline: 'center' });
+          open(requestedIndex);
+        });
+      }
     } catch (error) {
       track.replaceChildren();
       const message = document.createElement('p');
@@ -207,7 +223,10 @@
     }
   });
   close.addEventListener('click', closeDialog);
-  dialog.addEventListener('close', () => opener?.focus({ preventScroll: true }));
+  dialog.addEventListener('close', () => {
+    clearLineageRequest();
+    opener?.focus({ preventScroll: true });
+  });
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) closeDialog();
   });
