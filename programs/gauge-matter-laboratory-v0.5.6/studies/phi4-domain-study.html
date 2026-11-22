@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clear Onyx · Φ⁴ Domain Study</title>
+<style>
+:root{color-scheme:dark;--bg:#101315;--panel:#181d20;--line:#303a3e;--muted:#a4b4b9;--ink:#eef4f0;--green:#a9edb7;--blue:#aabffa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+main{max-width:1240px;margin:auto;padding:42px 30px}
+header{border-bottom:1px solid var(--line);padding-bottom:21px;margin-bottom:24px}
+.brand,.label{font:12px ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+h1{font:clamp(40px,7vw,78px)/1.05 Georgia,serif;margin:8px 0 10px;font-weight:400}
+h2{font-size:17px;margin:0 0 12px}
+p{margin:0;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.plot{padding-bottom:15px}
+.plot-head,.legend,.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.plot-head{justify-content:space-between}
+.legend{font-size:12px;color:var(--muted)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:var(--green)}
+.dot.blue{background:var(--blue)}
+canvas{display:block;width:100%;height:clamp(270px,42vw,420px);margin:8px 0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.metrics strong{display:block;font:19px ui-monospace,monospace;margin-top:5px}
+.controls{display:grid;align-content:start;gap:13px}
+.row{display:flex;justify-content:space-between;gap:8px}
+input[type=range],select{width:100%}
+input{accent-color:var(--green)}
+button,select{background:#252e31;color:var(--ink);border:1px solid #455255;border-radius:7px;padding:8px 10px;font:inherit}
+button{cursor:pointer}
+button.primary{background:var(--green);color:#132718;border-color:transparent;font-weight:650}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.lower{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+dl{margin:0}dl div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+dd{margin:0;font:14px ui-monospace,monospace;color:var(--green);text-align:right}
+code{color:var(--ink);overflow-wrap:anywhere}
+@media(max-width:810px){.layout,.lower{grid-template-columns:1fr}main{padding:26px 15px}.panel{padding:15px}.metrics strong{font-size:14px}}
+</style>
+<script type="application/json" id="clear-onyx-signal">{"carrier":"Real signed Φ⁴ field on 64 finite intervals with fixed endpoints.","plane":"x along the lattice; vertical coordinate φ(x).","colourMode":"signed-sector","colour":"Green active state; dashed blue reflected state −φ(x).","meaning":"Kink, antikink, or zero boundary sector.","memory":"Boundary sector, accepted steps, and reflected-sector comparison.","motion":"energy-decreasing discrete gradient relaxation.","check":"state, energy, gradient, Hessian reflection residuals and finite-lattice zero-field spectrum.","scope":"Finite signed-field reader, not a continuum solution or stability theorem."}</script>
+<main>
+<header>
+  <div class="brand">Clear Onyx / Field laboratory</div>
+  <h1>Φ⁴ Domain Study</h1>
+  <p>Signed fields on a one-dimensional lattice with fixed endpoints.</p>
+</header>
+<div data-signal-frame="phi4-domain" hidden></div>
+<div class="layout">
+  <section class="panel plot" aria-labelledby="plot-title">
+    <div class="plot-head">
+      <h2 id="plot-title">Field configuration</h2>
+      <div class="legend"><span><i class="dot"></i>Signed field</span><span id="mirror-key" hidden><i class="dot blue"></i>Reflected field</span></div>
+    </div>
+    <canvas id="plot" role="img" aria-label="Signed field profile across the lattice"></canvas>
+    <div class="metrics">
+      <div><span class="label">Energy</span><strong id="energy"></strong></div>
+      <div><span class="label">Gradient norm</span><strong id="gradient"></strong></div>
+      <div><span class="label">Accepted steps</span><strong id="steps"></strong></div>
+    </div>
+  </section>
+  <section class="panel controls" aria-labelledby="controls-title">
+    <h2 id="controls-title">Prepare &amp; evolve</h2>
+    <label for="sector">Boundary sector (left, right)</label>
+    <select id="sector">
+      <option value="kink">(−1, +1) · kink</option>
+      <option value="antikink">(+1, −1) · antikink</option>
+      <option value="zero">(0, 0) · zero endpoints</option>
+    </select>
+    <label class="row" for="length">Domain length <output id="length-value"></output></label>
+    <input id="length" type="range" min="1" max="16" step=".1" value="10">
+    <label class="row" for="coupling">Quartic coupling λ <output id="coupling-value"></output></label>
+    <input id="coupling" type="range" min=".2" max="4" step=".1" value="1">
+    <div class="actions">
+      <button id="run" class="primary" type="button">Relax</button>
+      <button id="step" type="button">Step</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <label><input id="compare" type="checkbox" checked> Overlay reflected sector</label>
+    <button id="reflect" type="button">Reflect signed state</button>
+    <p id="status" role="status">Prepared field</p>
+  </section>
+  <div class="lower">
+    <section class="panel">
+      <h2>Reflection receipts</h2>
+      <dl>
+        <div><dt>Active → reflected sector</dt><dd id="sectors"></dd></div>
+        <div><dt>Double-reflection residual</dt><dd id="involution"></dd></div>
+        <div><dt>Energy residual</dt><dd id="energy-reflect"></dd></div>
+        <div><dt>Gradient residual (max)</dt><dd id="grad-reflect"></dd></div>
+        <div><dt>Hessian residual (max entry)</dt><dd id="hess-reflect"></dd></div>
+      </dl>
+    </section>
+    <section class="panel">
+      <h2>Zero-field classification</h2>
+      <dl>
+        <div><dt>λₘᵢₙ(Lₕ) − λv²</dt><dd id="gap"></dd></div>
+        <div><dt>Zero-field status</dt><dd id="classification"></dd></div>
+      </dl>
+      <p style="margin-top:12px">64 lattice intervals, v = 1, and interior inner product <code>h Σ uᵢwᵢ</code>. The energy uses edge differences and the interior quartic potential. Relaxation follows the discrete gradient with energy-decreasing steps.</p>
+    </section>
+  </div>
+</div>
+</main>
+<script>
+"use strict";
+const Phi4 = (() => {
+  const intervals = 64;
+  const sectors = Object.freeze({
+    kink: Object.freeze([-1, 1]),
+    antikink: Object.freeze([1, -1]),
+    zero: Object.freeze([0, 0])
+  });
+  const reflectedSector = Object.freeze({kink:"antikink", antikink:"kink", zero:"zero"});
+  function prepare(sector) {
+    const [left, right] = sectors[sector];
+    const field = Float64Array.from({length:intervals + 1}, (_, index) => {
+      const x = index / intervals;
+      return left + (right - left) * x + 0.22 * Math.sin(2 * Math.PI * x) + 0.09 * Math.sin(3 * Math.PI * x);
+    });
+    field[0] = left;
+    field[intervals] = right;
+    return {sector, field};
+  }
+  function reflect({sector, field}) {
+    return {sector:reflectedSector[sector], field:field.map(value => -value)};
+  }
+  // Fixed endpoints contribute through the edge energy and boundary-adjacent stencil.
+  // The quartic term sums over interior degrees of freedom.
+  function evaluate(field, h, lambda) {
+    let energy = 0;
+    let normSquared = 0;
+    const gradient = new Float64Array(intervals - 1);
+    const diagonal = new Float64Array(intervals - 1);
+    const offDiagonal = -1 / h ** 2;
+    for (let i = 1; i <= intervals; i++) {
+      energy += (field[i] - field[i - 1]) ** 2 / (2 * h);
+    }
+    for (let i = 1; i < intervals; i++) {
+      const value = field[i];
+      const displacement = value ** 2 - 1;
+      energy += h * lambda * displacement ** 2 / 4;
+      const derivative = (2 * value - field[i - 1] - field[i + 1]) / h ** 2 + lambda * value * displacement;
+      gradient[i - 1] = derivative;
+      diagonal[i - 1] = -2 * offDiagonal + lambda * (3 * value ** 2 - 1);
+      normSquared += h * derivative ** 2;
+    }
+    return {energy, gradient, norm:Math.sqrt(normSquared), diagonal, offDiagonal};
+  }
+  function step(state, h, lambda) {
+    const read = evaluate(state.field, h, lambda);
+    if (read.norm < 1e-7) return null;
+    let dt = 0.9 / (2 / h ** 2 + lambda * (1 + 3 * Math.max(...state.field.map(Math.abs)) ** 2));
+    for (let attempt = 0; attempt < 20; attempt++) {
+      const field = state.field.slice();
+      read.gradient.forEach((value, i) => { field[i + 1] -= dt * value; });
+      if (evaluate(field, h, lambda).energy < read.energy) return {sector:state.sector, field};
+      dt /= 2;
+    }
+    return null;
+  }
+  function zeroGap(h, lambda) {
+    return 4 * Math.sin(Math.PI / (2 * intervals)) ** 2 / h ** 2 - lambda;
+  }
+  return {intervals, reflectedSector, prepare, reflect, evaluate, step, zeroGap};
+})();
+</script>
+<script>
+const byId = id => document.getElementById(id);
+const sector = byId("sector"), length = byId("length"), coupling = byId("coupling");
+const compare = byId("compare"), canvas = byId("plot"), ctx = canvas.getContext("2d");
+let state = Phi4.prepare(sector.value);
+let accepted = 0;
+let running = false;
+let pendingFrame = null;
+const spacing = () => Number(length.value) / Phi4.intervals;
+const set = (id, text) => { byId(id).textContent = text; };
+const maxDifference = (a,b,sign=1) => Math.max(...a.map((value,i) => Math.abs(value - sign * b[i])));
+function draw(reflected) {
+  const {width, height} = canvas.getBoundingClientRect();
+  const scale = window.devicePixelRatio || 1;
+  canvas.width = Math.round(width * scale);
+  canvas.height = Math.round(height * scale);
+  ctx.setTransform(scale,0,0,scale,0,0);
+  const left = 42, right = width - 18, top = 16, bottom = height - 34;
+  const extent = Math.max(1.25, ...state.field.map(value => 1.1 * Math.abs(value)));
+  const y = value => top + (1 - value / extent) * (bottom - top) / 2;
+  const x = i => left + i * (right - left) / Phi4.intervals;
+  ctx.font = "12px monospace";
+  ctx.fillStyle = "#a4b4b9";
+  for (const value of [-1,0,1]) {
+    ctx.strokeStyle = value === 0 ? "#536467" : "#303a3e";
+    ctx.beginPath(); ctx.moveTo(left,y(value)); ctx.lineTo(right,y(value)); ctx.stroke();
+    ctx.fillText(String(value), 8, y(value) + 4);
+  }
+  ctx.fillText("0",left,bottom + 23);
+  ctx.textAlign = "right";
+  ctx.fillText("x = " + Number(length.value).toFixed(1),right,bottom + 23);
+  ctx.textAlign = "left";
+  function trace(field,color,dashed) {
+    ctx.beginPath();
+    field.forEach((value,i) => { if (i === 0) ctx.moveTo(x(i),y(value)); else ctx.lineTo(x(i),y(value)); });
+    ctx.strokeStyle = color;
+    ctx.lineWidth = dashed ? 2 : 3;
+    ctx.setLineDash(dashed ? [6,6] : []);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = color;
+    for (const index of [0,Phi4.intervals]) {
+      ctx.beginPath(); ctx.arc(x(index),y(field[index]),4,0,2*Math.PI); ctx.fill();
+    }
+  }
+  if (compare.checked) trace(reflected.field,"#aabffa",true);
+  trace(state.field,"#a9edb7",false);
+}
+function render() {
+  const h = spacing(), lambda = Number(coupling.value);
+  const reflection = Phi4.reflect(state);
+  const returned = Phi4.reflect(reflection);
+  const live = Phi4.evaluate(state.field,h,lambda);
+  const mirror = Phi4.evaluate(reflection.field,h,lambda);
+  const gap = Phi4.zeroGap(h,lambda);
+  set("length-value",Number(length.value).toFixed(1));
+  set("coupling-value",lambda.toFixed(1));
+  set("energy",live.energy.toFixed(6));
+  set("gradient",live.norm.toExponential(2));
+  set("steps",accepted);
+  set("sectors",sector.selectedOptions[0].textContent.split(" · ")[0] + " → " +
+    [...sector.options].find(option => option.value === reflection.sector).textContent.split(" · ")[0]);
+  set("involution",returned.sector === state.sector ? maxDifference(state.field,returned.field).toExponential(1) : "Sector mismatch");
+  set("energy-reflect",Math.abs(live.energy - mirror.energy).toExponential(1));
+  set("grad-reflect",maxDifference(live.gradient,mirror.gradient,-1).toExponential(1));
+  set("hess-reflect",Math.max(maxDifference(live.diagonal,mirror.diagonal),Math.abs(live.offDiagonal - mirror.offDiagonal)).toExponential(1));
+  set("gap",gap.toExponential(3));
+  set("classification",state.sector !== "zero" ? "Outside active sector" :
+    Math.abs(gap) < 1e-10 ? "Quadratic test degenerate" : gap < 0 ? "Negative Hessian direction" : "Positive-definite Hessian");
+  byId("mirror-key").hidden = !compare.checked;
+  draw(reflection);
+}
+function stop(message) {
+  running = false;
+  if (pendingFrame !== null) cancelAnimationFrame(pendingFrame);
+  pendingFrame = null;
+  set("run","Relax");
+  set("status",message);
+}
+function advance() {
+  const next = Phi4.step(state,spacing(),Number(coupling.value));
+  if (next === null) return false;
+  state = next;
+  accepted++;
+  return true;
+}
+function tick() {
+  pendingFrame = null;
+  for (let i = 0; i < 24; i++) {
+    if (!advance()) { stop("No further decrease resolved"); break; }
+  }
+  render();
+  if (running) pendingFrame = requestAnimationFrame(tick);
+}
+function reset() {
+  stop("Prepared field");
+  state = Phi4.prepare(sector.value);
+  accepted = 0;
+  render();
+}
+sector.addEventListener("change",reset);
+byId("reset").addEventListener("click",reset);
+for (const input of [length,coupling]) input.addEventListener("input",() => {
+  stop("Parameters updated");
+  accepted = 0;
+  render();
+});
+compare.addEventListener("change",render);
+byId("reflect").addEventListener("click",() => {
+  stop("Signed state reflected");
+  state = Phi4.reflect(state);
+  sector.value = state.sector;
+  render();
+});
+byId("step").addEventListener("click",() => {
+  stop(advance() ? "Accepted one relaxation step" : "No further decrease resolved");
+  render();
+});
+byId("run").addEventListener("click",() => {
+  if (running) { stop("Relaxation paused"); return; }
+  running = true;
+  set("run","Pause");
+  set("status","Relaxing");
+  pendingFrame = requestAnimationFrame(tick);
+});
+new ResizeObserver(render).observe(canvas);
+render();
+</script>
+</html>

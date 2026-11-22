@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Λ Mirror · Clear Onyx</title>
+<style>
+:root{color-scheme:dark;background:#101315;color:#eef4f0;font:16px/1.5 system-ui,sans-serif;--band:#bca2ed}
+*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:32px 20px 60px}
+a,p{color:#aab9bd}h1{font:clamp(40px,8vw,84px)/1 Georgia,serif;margin:.18em 0}h2{font-size:17px;margin:0 0 10px}
+header{border-bottom:1px solid #354044;margin-bottom:16px;padding-bottom:12px}
+.panel{background:#181d20;border:1px solid #354044;border-radius:12px;padding:16px;margin-bottom:12px}
+.controls,.reads,.bands{display:flex;flex-wrap:wrap;gap:10px}.controls{align-items:center}.controls label{flex:1;min-width:165px}
+input{width:100%;accent-color:var(--band)}button{font:inherit;color:inherit;background:#252e31;border:1px solid #536164;border-radius:7px;padding:7px 12px;cursor:pointer}
+:focus-visible{outline:2px solid #bca2ed;outline-offset:3px}
+canvas{display:block;width:100%;height:340px}.reads>div{flex:1 1 130px;color:#b6c3c7}.reads output{display:block;color:#eef4f0;font:16px monospace}
+.bands button{flex:1;min-width:76px;border-bottom:3px solid var(--swatch)}.bands button[aria-pressed=true]{background:#383043}
+code{color:#e5d6ff}summary{cursor:pointer}.accent{color:var(--band)}
+</style>
+<script type="application/json" id="clear-onyx-signal">{"carrier":"Declared real ζ/Ξ display slice and its analytic mirror.","plane":"real s slice around 1/2","colourMode":"registry-band","colour":"Selected rainbow band is registry coordinate ν paired with −ν; it does not encode a function value.","meaning":"The screen samples s and 1−s; ζ and Ξ use separate vertical scales.","memory":"Full turns and selected ν↔−ν pair.","motion":"t advances visible phase; axial reader retains Δ = 2 log(Φ)t.","check":"live Ξ(s)−Ξ(1−s) from independently evaluated displayed values.","scope":"Analytic, planar, and registry mirrors are distinct; Δ′ remains pending source declaration; this finite Euler–Maclaurin display is not an RH certificate."}</script>
+</head>
+<body><main>
+<header>
+<h1>Λ Mirror · Δ′</h1>
+<p>Follow the real ζ → Ξ completion through the mirror at s = ½.</p>
+</header>
+<div data-signal-frame="lambda-mirror" hidden></div>
+<section class="panel" aria-labelledby="completion">
+<h2 id="completion">Function &amp; reflection</h2>
+<canvas id="plot" role="img" aria-label="Real zeta and completed Xi curves, with markers at s and 1 minus s"></canvas>
+<div class="controls">
+<button id="play" type="button">Play</button><button id="step" type="button">Quarter turn</button>
+<label for="phase">Visible phase <input id="phase" type="range" min="0" max=".999" step=".001" value="0"></label>
+</div>
+<div class="reads">
+<div>Input s / mirror<output id="input"></output></div>
+<div>ζ(s)<output id="zeta"></output></div>
+<div>Ξ(s)<output id="xi"></output></div>
+<div>Ξ(s) − Ξ(1−s)<output id="residual"></output></div>
+<div>Lift increment Δ<output id="lift"></output></div>
+<div>Retained turns<output id="turns"></output></div>
+</div>
+</section>
+<section class="panel">
+<h2>Color · Meaning · Memory · Motion</h2>
+<div class="bands" id="bands" aria-label="Meaning registry"></div>
+<p id="band-read"></p>
+<p>Planar metric mirror <output id="metric"></output></p>
+</section>
+<details class="panel">
+<summary>Equations and reading scope</summary>
+<p><code>Ξ(s) = ½s(s−1)π^(−s/2) Γ(s/2) ζ(s)</code> on the displayed real slice. The plot uses separate vertical scales for ζ and Ξ. The live mirror read is the raw numerical difference of the two independently evaluated Ξ values.</p>
+<p>The axial reader uses <code>exp(2πit)</code> and retains <code>Δ = 2 log(Φ) t</code>. The display samples the analytic input by <code>s = ½ + 0.4 cos(2πt)</code>. This is a declared display map. The planar mirror uses <code>H = [[−2, 1], [1, 2]]/√5</code>. The planar metric mirror, the registry reflection ν ↦ −ν, and analytic reflection s ↦ 1−s have distinct carriers.</p>
+<p>Λ is Eternity, the violet enduring-return office. Δ′ is carried in the title pending its source declaration. The axial Δ and analytic residual have their own labels.</p>
+</details>
+</main>
+<script>
+"use strict";
+const Mirror = (() => {
+  function zeta(s) {
+    // Euler–Maclaurin tail from n = 32 through B8.
+    const n = 32;
+    let sum = 0;
+    for (let k = 1; k < n; k++) sum += k ** (-s);
+    let rising = s;
+    const coefficients = [1/12,-1/720,1/30240,-1/1209600];
+    return coefficients.reduce((value, coefficient, i) => {
+      const next = value + coefficient * rising * n ** (-s - 2*i - 1);
+      rising *= (s + 2*i + 1) * (s + 2*i + 2);
+      return next;
+    },sum + n ** (1-s)/(s-1) + 0.5*n ** (-s));
+  }
+  function gamma(s) {
+    const terms = [676.5203681218851,-1259.1392167224028,771.3234287776531,-176.6150291621406,12.507343278686905,-0.13857109526572012,9.984369578019572e-6,1.5056327351493116e-7];
+    const z = s - 1, t = z + 7.5;
+    const a = terms.reduce((sum, term, i) => sum + term/(z+i+1),0.99999999999980993);
+    return Math.sqrt(2*Math.PI) * t ** (z+0.5) * Math.exp(-t) * a;
+  }
+  function xi(s) { return 0.5*s*(s-1)*Math.PI ** (-s/2)*gamma(s/2)*zeta(s); }
+  const liftPeriod = 2*Math.log((1+Math.sqrt(5))/2);
+  function metricMirror([x,y]) { return [(-2*x+y)/Math.sqrt(5),(x+2*y)/Math.sqrt(5)]; }
+  return {zeta,xi,liftPeriod,metricMirror};
+})();
+const get = id => document.getElementById(id);
+const canvas = get("plot"), ctx = canvas.getContext("2d"), phase = get("phase");
+const bands = [
+  ["Ψ",-3,"Red","#ff8787"],["Θ",-2,"Orange","#ffae76"],["θ",-1,"Yellow","#efd277"],
+  ["π",0,"Green","#a9edb7"],["e",1,"Blue","#8cc9ff"],["Φ",2,"Indigo","#a9a8ff"],["Λ",3,"Violet","#bca2ed"]
+];
+const curve = Array.from({length:161},(_,i)=>{
+  const s = 0.1 + 0.8*i/160;
+  return [s,Mirror.zeta(s),Mirror.xi(s)];
+});
+const bandButtons = [];
+let t = 0, selected = 6, frame = null, previous = null;
+for (const [office, value, name, color] of bands) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = office + " · " + name;
+  button.style.setProperty("--swatch",color);
+  button.addEventListener("click",()=>{selected=value+3; render();});
+  get("bands").append(button);
+  bandButtons.push(button);
+}
+function draw(s,color,mirrorColor) {
+  const {width,height} = canvas.getBoundingClientRect(), ratio = devicePixelRatio || 1;
+  canvas.width = Math.round(width*ratio);canvas.height = Math.round(height*ratio);
+  ctx.setTransform(ratio,0,0,ratio,0,0);
+  const x = value => 55 + (width - 72)*(value - 0.1)/0.8;
+  const panes = [[1,30,140,-10,0,"ζ(s)"],[2,200,310,0.497,0.500,"Ξ(s)"]];
+  ctx.font = "12px monospace";
+  for (const [index,top,bottom,low,high,title] of panes) {
+    const y = value => bottom-(bottom-top)*(value-low)/(high-low);
+    ctx.strokeStyle = "#536164";ctx.strokeRect(x(.1),top,x(.9)-x(.1),bottom-top);
+    ctx.fillStyle = "#bcc8cc";
+    ctx.fillText(title,x(.1),top-9);ctx.fillText(String(high),4,top+4);ctx.fillText(String(low),4,bottom);
+    ctx.beginPath();ctx.moveTo(x(.5),top);ctx.lineTo(x(.5),bottom);
+    ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+    ctx.beginPath();
+    curve.forEach((point,i)=>{if(i===0)ctx.moveTo(x(point[0]),y(point[index]));else ctx.lineTo(x(point[0]),y(point[index]));});
+    ctx.strokeStyle="#dce5e4";ctx.stroke();
+    const fn = index===1 ? Mirror.zeta : Mirror.xi;
+    for(const [input,fill] of [[1-s,mirrorColor],[s,color]]){
+      ctx.beginPath();ctx.arc(x(input),y(fn(input)),5,0,2*Math.PI);ctx.fillStyle=fill;ctx.fill();
+    }
+  }
+  ctx.fillStyle="#bcc8cc";
+  for(const [value,label] of [[.1,"0.1"],[.5,"½"],[.9,"0.9"]]) ctx.fillText(label,x(value)-10,height-7);
+}
+function render() {
+  const turn = Math.floor(t), visible = t-turn, s = 0.5+0.4*Math.cos(2*Math.PI*visible);
+  const [office, value, name, color] = bands[selected];
+  const [mirrorOffice,,,mirrorColor] = bands[6-selected];
+  document.documentElement.style.setProperty("--band",color);
+  phase.value=visible;
+  const values = {input:s.toFixed(4)+" / "+(1-s).toFixed(4),zeta:Mirror.zeta(s).toFixed(7),xi:Mirror.xi(s).toFixed(7),
+    residual:(Mirror.xi(s)-Mirror.xi(1-s)).toExponential(2),lift:(Mirror.liftPeriod*t).toFixed(5),turns:turn};
+  for (const [id,text] of Object.entries(values)) get(id).textContent=text;
+  get("band-read").textContent=office+" · "+name+" · ν = "+value+"  ⇄  "+mirrorOffice+" · ν = "+(-value);
+  const vector = [Math.cos(2*Math.PI*visible),Math.sin(2*Math.PI*visible)];
+  const reflected = Mirror.metricMirror(vector);
+  const pair = values => "(" + values.map(value => value.toFixed(3)).join(", ") + ")";
+  get("metric").textContent = pair(vector) + " → " + pair(reflected);
+  bandButtons.forEach((button,i)=>button.setAttribute("aria-pressed",String(i===selected)));
+  draw(s,color,mirrorColor);
+}
+function animate(now) {
+  if(previous!==null)t+=Math.min(now-previous,100)/6000;
+  previous=now;render();frame=requestAnimationFrame(animate);
+}
+get("play").addEventListener("click",()=>{
+  if(frame!==null){cancelAnimationFrame(frame);frame=null;previous=null;get("play").textContent="Play";}
+  else {frame=requestAnimationFrame(animate);get("play").textContent="Pause";}
+});
+get("step").addEventListener("click",()=>{t+=0.25;render();});
+phase.addEventListener("input",()=>{t=Math.floor(t)+Number(phase.value);render();});
+new ResizeObserver(render).observe(canvas);
+render();
+</script>
+</body></html>
