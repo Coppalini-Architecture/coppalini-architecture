@@ -14,11 +14,11 @@
     },
     {
       "path": "write-manifest.mjs",
-      "sha256": "0adedb1c4027d47d567e32b36264a813d1965ae8a70818add9cd0e206fc880dc"
+      "sha256": "c9d455019868b129c6612dfd59d9512ce2b70e61235356a2a0bfb4430d51ebc5"
     },
     {
       "path": "README.md",
-      "sha256": "2aa3b8e8bb54a3ea30a645c60e2892813642eed7ed26f1c9c518ba10ea5cdc0d"
+      "sha256": "fd2fad36709af2724da00806c7a24172d805a391f6bdb6947813e97942b8b3e8"
     },
     {
       "path": "PROVENANCE.md",
@@ -26,11 +26,11 @@
     },
     {
       "path": "AUDIT.md",
-      "sha256": "c4c78776e792367a7352a05ea2274f7e084363b31aa2a0ada27ca78be8f148e8"
+      "sha256": "4024334a51f7dc67224d7ec7814ec711fa05fae24e9ab9a4d4abc412ad81b787"
     },
     {
       "path": "src/app.js",
-      "sha256": "5cc57dc796907dd4502d1a3471eb3e45031fcd0fe4b26837c6bf2c9b5fc2e387"
+      "sha256": "e34d67faf3937ea261a35537bd2058e14ef034fd449acf0424d8c37e2d4f4618"
     },
     {
       "path": "src/core.js",
@@ -38,7 +38,7 @@
     },
     {
       "path": "src/template.html",
-      "sha256": "88eb3a238861fd3ba79a38b365fc103be7326ffcaa48d67355f8dd2dceaa59f7"
+      "sha256": "b1b696474b3f8bd0e45beebc10c7690beaff793fd9ce7e887edbef93729dffad"
     },
     {
       "path": "src/carriers/complex-phi4.js",
@@ -73,12 +73,16 @@
       "sha256": "2fa7ab67a5ade1921f8c518bbfa7559ce14fa53650278b248b99aa7523f1cc57"
     },
     {
+      "path": "tests/check-study-suite.cjs",
+      "sha256": "a4eacaad30f3a1563665b4da74ae073ddd2828042e4860adc3bb93ce25c5f88d"
+    },
+    {
       "path": "tests/check-manifest.cjs",
       "sha256": "6977205ca01cf97ff1736a19769a0eed8d5030451d689cc10e6f1672b3b20112"
     },
     {
       "path": "clear-onyx-gauge-laboratory-v0.5.4.html",
-      "sha256": "d2884f6b1880c2e7d00cb94f8adad8331ec88cffacff5adf46f265ebb8d116f5"
+      "sha256": "f11b5bdbbfa7a5b7a76404c87b38ca1d9962764022d14801b0402541d1c29d7d"
     },
     {
       "path": "studies/helium-dynamics.html",

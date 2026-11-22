@@ -1,6 +1,9 @@
-/* Clear Onyx Gauge Laboratory v0.5.3 — canvas reader and declared controls. */
+/* Clear Onyx Gauge Laboratory v0.5.4 — canvas reader and declared controls. */
 (() => {
   'use strict';
+  if (typeof location !== 'undefined' && new URLSearchParams(location.search).has('embed')) {
+    document.body.classList.add('lab-embed');
+  }
   const Core = ParticleAtlasCore;
   const { SPECIES, makeEngine, hslToRgb, clamp, mod, relative, signed, TAU } = Core;
   const $ = (selector) => document.querySelector(selector);

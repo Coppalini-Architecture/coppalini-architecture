@@ -1,4 +1,15 @@
-# v0.5.3 Audit Ledger
+# v0.5.4 Audit Ledger
+
+## Study-suite integration boundary
+
+| Difference | Reader treatment | Scope preserved |
+|---|---|---|
+| Λ Mirror · Δ′ | standalone completed-zeta / Xi display reader | the analytic reflection, planar metric mirror, and registry reflection retain distinct carriers; Δ′ remains pending its own source declaration |
+| Real 1D Φ⁴ domain field | signed field and fixed boundary sector are retained together | reflection maps a configuration to the reflected sector; no quotient or field-average is used by the solver |
+| Φ⁴ zero-field read | the discrete report displays \(\lambda_{\min}(L_h)-\lambda v^2\) | equality is labelled a degenerate quadratic test rather than an instability conclusion |
+| Hydrogen, helium, and water | standalone study documents inside the suite | their displayed states remain outside the admitted main-carrier PASS receipts |
+
+The Φ⁴ study evaluates its declared finite energy, coordinate gradient, and tridiagonal Hessian before comparing a signed state to its reflected-sector image. Its displayed residuals are numerical reader receipts for the declared mesh and inner product, not a claim of a general smooth quotient or an argmin implementation.
 
 ## Reader-layout change
 

@@ -1,6 +1,6 @@
 # Clear Onyx — Gauge & Matter Laboratory v0.5.4
 
-`clear-onyx-gauge-laboratory-v0.5.4.html` is a self-contained browser laboratory. A model enters the dynamic selector when it has a declared update law and at least one numerical receipt that can fail. The five retained atomic, molecular, and real-1D studies display `OPEN · check not admitted`.
+`clear-onyx-gauge-laboratory-v0.5.4.html` is a self-contained browser laboratory. A model enters the dynamic selector when it has a declared update law and at least one numerical receipt that can fail. The primary selector retains its atomic, molecular, and real-1D studies as `OPEN · check not admitted`; the separate study suite presents Λ Mirror, sector-aware real 1D Φ⁴, hydrogen, helium, and water without promoting them into the admitted carrier receipts.
 
 ## Clear-field reader layout
 
@@ -81,6 +81,7 @@ node write-manifest.mjs
 node tests/check-v042.cjs
 node tests/check-v05.cjs
 node tests/check-browser-bootstrap.cjs
+node tests/check-study-suite.cjs
 node tests/check-manifest.cjs
 ```
 

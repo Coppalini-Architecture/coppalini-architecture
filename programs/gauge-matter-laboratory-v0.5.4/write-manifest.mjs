@@ -22,6 +22,7 @@ const files = [
   'tests/check-v042.cjs',
   'tests/check-v05.cjs',
   'tests/check-browser-bootstrap.cjs',
+  'tests/check-study-suite.cjs',
   'tests/check-manifest.cjs',
   'clear-onyx-gauge-laboratory-v0.5.4.html',
   ...(await readdir(resolve(root, 'studies'))).sort().map(file => 'studies/' + file)
