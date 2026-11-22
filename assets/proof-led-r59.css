@@ -218,12 +218,22 @@
 }
 @media(prefers-reduced-motion:reduce){.r59 *, .r59 *::before,.r59 *::after{scroll-behavior:auto !important;animation:none !important;transition:none !important;}}
 /* R60 · compact public closure map */
-.r59 .home-closure-map h2 { max-width:19ch; }
+.r59 .home-closure-map h2 { max-width:25ch; }
 .r59 .home-closure-map .section-lead { max-width:60rem; }
 .r59 .closure-map-list { list-style:none; padding:0; margin:1.55rem 0 0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; border:1px solid var(--r59-rule); background:var(--r59-rule); }
 .r59 .closure-map-list li { min-width:0; padding:1.25rem 1.2rem 1.3rem; background:var(--surface); }
-.r59 .closure-map-list li:last-child { grid-column:1 / -1; }
+.r59 .closure-map-list li:last-child { grid-column:auto; }
 .r59 .closure-map-list .closure-status { margin:0; color:var(--red); font:750 .62rem/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.085em; text-transform:uppercase; }
 .r59 .closure-map-list h3 { margin:.45rem 0 .55rem; font-size:1.16rem; line-height:1.22; }
 .r59 .closure-map-list p:not(.closure-status) { max-width:49rem; margin:0; color:var(--r59-muted); font-size:.88rem; line-height:1.68; }
+.r59 .closure-proof-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; margin:1px 0 0; border:1px solid var(--r59-rule); background:var(--r59-rule); }
+.r59 .closure-proof-strip > div { min-width:0; padding:1rem 1.1rem; background:var(--surface); }
+.r59 .closure-proof-strip strong { display:block; color:var(--ink); font-size:.79rem; line-height:1.35; }
+.r59 .closure-proof-strip span { display:block; margin-top:.38rem; color:var(--r59-muted); font-size:.77rem; line-height:1.55; }
+.r59 .closure-related { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:1.5rem 0 0; border:1px solid var(--r59-rule); background:var(--r59-rule); }
+.r59 .closure-related article { min-width:0; padding:1.15rem 1.2rem; background:var(--surface); }
+.r59 .closure-related h3 { margin:.42rem 0 .55rem; font-size:1.04rem; line-height:1.28; }
+.r59 .closure-related p:not(.closure-status) { margin:0; color:var(--r59-muted); font-size:.84rem; line-height:1.63; }
 @media(max-width:39rem){.r59 .closure-map-list { grid-template-columns:1fr; }.r59 .closure-map-list li:last-child { grid-column:auto; }}
+@media(max-width:58rem){.r59 .closure-proof-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }}
+@media(max-width:39rem){.r59 .closure-proof-strip,.r59 .closure-related { grid-template-columns:1fr; }}

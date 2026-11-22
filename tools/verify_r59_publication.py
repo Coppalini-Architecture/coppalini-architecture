@@ -53,12 +53,16 @@ CIVIC_NOTICE_MARKERS = (
  "1 + 1 = 2",
  "Keep 4. Turn 2. Fold 1. Return 0.",
 )
-LANDING_PUBLIC_CONDITIONS = (
- "Public pathways must be kept free from obstruction.",
- "Public gathering spaces must be kept safe and free from noise that disturbs the public trust.",
- "Notices must be timely. Opening and closing times must be declared.",
- "Public gates must fix reference of the conditions and constraints of the jurisdiction held inside its bounds.",
- "The speaker holding center of attention must be seen and heard under conditions of readable silence so their audience can measure the meaning of their words and if the direction seems good.",
+UNIFIED_FIELD_CLOSURE_MARKERS = (
+ "Gravity and electromagnetism from one geometric field.",
+ "One rank-four coframe field produces spacetime geometry for gravity and electromagnetic curvature for light, electricity, and magnetism.",
+ "Π → (g, F<sub>em</sub>)",
+ "Spacetime metric <code>g = h(Π)</code>",
+ "Einstein–Maxwell on the regular branch",
+ "Source-declared field map",
+ "Classical field calculation",
+ "Lean-checked theorem",
+ "Open adapters",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -348,8 +352,10 @@ def verify():
         if marker in notice:
             errors.append("notice carries a removed internal-record marker: " + marker)
     landing=(ROOT/"index.html").read_text()
-    for marker in LANDING_PUBLIC_CONDITIONS:
-        if marker not in landing: errors.append("landing page missing public condition: "+marker)
+    for marker in UNIFIED_FIELD_CLOSURE_MARKERS:
+        if marker not in landing: errors.append("landing page missing unified-field marker: "+marker)
+    if "Read the relation before extending the claim." in landing:
+        errors.append("landing page retains withdrawn method-first closure heading")
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
     root28_reader_candidate(errors)
@@ -388,7 +394,7 @@ def verify():
         "Unified field reader: Symmetric Minimum",
         "Physical reality inside constraint",
         "Language Mechanics: formal basis of any field written in 2D form.",
-        "No new force or empirical law is claimed.",
+        "The source field map, classical calculation, Lean conditions, finite checks, and remaining open adapters are shown separately below.",
     ):
         if marker not in home:
             errors.append("homepage missing reader entrance or scope marker: " + marker)
@@ -402,15 +408,31 @@ def verify():
         architecture = (ROOT/architecture_file).read_text(encoding="utf-8")
         for marker in (
             'class="architecture-lab-landing"',
-            'clear-onyx-gauge-laboratory-v0.5.4?embed=1',
-            "Existing field formalism, made visible while it runs.",
+            'clear-onyx-gauge-laboratory-v0.5.6?embed=1',
+            "One 2D signal aperture. Many declared physical models.",
+            "The Signal Frame names exactly what every visible quantity means for the selected model.",
         ):
             if marker not in architecture:
                 errors.append(architecture_file + ": missing lab-first marker: " + marker)
-    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.4.html").read_text(encoding="utf-8")
-    for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)"):
+    lab = (ROOT/"models/view/clear-onyx-gauge-laboratory-v0.5.6.html").read_text(encoding="utf-8")
+    for marker in ("body.lab-embed", "location.search).has('embed')", "requestAnimationFrame(frame)", "ONE VISUAL LANGUAGE · MANY EQUATIONS", "signal-carrier", "rgb-basis"):
         if marker not in lab:
             errors.append("Gauge & Matter Laboratory missing embed or autostart marker: " + marker)
+    source_zip = ROOT / "downloads/clear-onyx-gauge-laboratory-v0.5.6-source.zip"
+    if not source_zip.is_file():
+        errors.append("Gauge & Matter v0.5.6 source package missing")
+    else:
+        try:
+            with zipfile.ZipFile(source_zip) as package:
+                required = {
+                    "clear-onyx-gauge-laboratory-v0.5.6/clear-onyx-gauge-laboratory-v0.5.6.html",
+                    "clear-onyx-gauge-laboratory-v0.5.6/source-manifest.json",
+                    "clear-onyx-gauge-laboratory-v0.5.6/AUDIT.md",
+                }
+                if not required <= set(package.namelist()):
+                    errors.append("Gauge & Matter v0.5.6 source package membership mismatch")
+        except zipfile.BadZipFile:
+            errors.append("Gauge & Matter v0.5.6 source package is not a readable ZIP")
     about = (ROOT/"about.html").read_text(encoding="utf-8")
     for marker in (
         "Existing field formalism, read together.",
