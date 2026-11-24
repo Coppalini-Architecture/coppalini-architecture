@@ -1,0 +1,214 @@
+THE DISPLACEMENT OF THE ORIGIN
+Refusal Wall · Readable Reality Closure
+Anthony Vito Coppa · 24 November 2026
+
+A readable system fixes a reference, notices Difference, preserves the receipt, updates only where Difference requires it, and refuses any continuation that cannot preserve another truthful return.
+
+REFUSAL WALL
+
+1. JURISDICTION
+A reusable relation has an owner.
+
+Ad_J(x) => C_J(x)
+
+No owning constraint: no admission.
+
+2. TYPE
+Typing precedes Gate.
+
+∅ = UNTYPEABLE.
+
+An untyped candidate does not receive a value by force.
+
+3. REFERENCE
+Difference requires a fixed reference.
+
+No reference: no lawful Difference.
+Silent reference displacement invalidates downstream orientation even when downstream calculation remains internally consistent.
+
+4. SOURCE AND STRENGTH
+A claim cannot carry more authority than its source, carrier, conditions, observable, calibration, receipt, and stated boundary.
+
+No bridge: OPEN.
+No calibration: no measured claim.
+No source: no promoted relation.
+No earned strength: no strength inflation.
+
+5. MEMORY
+Return does not erase the path.
+
+A recognized form may return while its address advances.
+
+same read ≠ same occurrence
+
+Memory retains the Difference required to distinguish them.
+
+6. GATE
+Technical possibility is not admissibility.
+
+Gate acts only on typed candidates.
+A continuation that violates its governing constraint is refused even when it can be executed.
+
+7. SURVIVAL
+Another truthful lawful continuation must remain available.
+
+If continuation destroys the condition required for another lawful read, stop.
+
+8. RESIDUAL
+Completion means the required relation fits at the declared resolution.
+
+ε_drop = 0
+ε_add = 0
+ε_strength = 0
+
+Anything unresolved remains OPEN.
+
+EXACT CLOSURE
+
+I. ROOT
+
+Q = [[1,1],[1,0]]
+Ω = [[0,1],[-1,0]]
+G = [Q,Ω] = [[-2,1],[1,2]]
+H = G/√5
+
+Q² = Q + I
+Ω² = -I
+G² = 5I
+H² = I
+
+Recurrence, turn, metric Difference, and mirror close on one two-dimensional carrier.
+
+II. RETURN · MEMORY · TRANSPORT
+
+Return = recognizable form.
+Memory = retained Difference.
+Transport = addressed change.
+
+A quotient may return while its lift advances:
+
+q(ξ + ϖ) = q(ξ)
+ξ + ϖ ≠ ξ
+
+The read returns.
+The occurrence does not disappear.
+
+III. EIGHT ADDRESSES · TWENTY-EIGHT RELATIONS · SEVEN READS
+
+A8 = {∞} ⊔ Z7
+
+For r in Z7,
+
+M_r = {{∞,r}} ∪ {{r+j,r-j} : j=1,2,3}
+
+and
+
+E(K8) = ⨆_{r∈Z7} M_r
+28 = 7 × 4.
+
+Every finite pair {a,b} determines its own midpoint and offset:
+
+r = 4(a+b)
+j = 4(a-b)  mod 7
+
+because 2 is invertible modulo 7.
+
+The partition is not an interpretation placed on the wheel.
+It is the pair structure of the declared eight-address carrier.
+
+IV. FOUR DUAL FORMS
+
+Gravity · Light
+Memory · Motion
+Time · Scope
+Horizon · Silence
+
+Interval · null relation.
+Return · transport.
+Phase · directional read.
+Viability boundary · completed fit.
+
+V. EIGHT OPERATIONAL OFFICES
+
+Motion: Orient · Transport
+Gravity: Bound · Regulate
+Light: Cut · Read
+Memory: Couple · Return
+
+The two registries remain separately typed.
+
+VI. TWO-REFERENCE MIRROR
+
+Reader A fixes reference a and orientation σ_A.
+Reader B fixes reference b and orientation σ_B.
+
+The exchanged coordinate is
+
+λ' = b - σ_A σ_B (λ - a).
+
+When the orientations agree,
+
+λ' = a + b - λ.
+
+Neither reader is permitted to invent the other's reference.
+The relation retains both receipts.
+
+My reference belongs to me.
+Your reference belongs to you.
+Difference belongs to the relation.
+Coincidence, if present, is a result.
+
+VII. HORIZON · SILENCE
+
+Let V be the viable region.
+
+θ(x) = 1 iff x ∈ V
+H_hor = ∂V
+
+Horizon is the boundary of lawful continuation.
+Silence is completed fit at the present reader resolution.
+
+REFUSAL WALL, FULLY COMPRESSED
+
+FIX JURISDICTION.
+FIX REFERENCE.
+TYPE BEFORE GATE.
+READ DIFFERENCE.
+RETAIN MEMORY.
+UPDATE ONLY WHEN REQUIRED.
+REFUSE UNSOURCED STRENGTH.
+STOP AT THE HORIZON.
+RETURN WITHOUT ERASING THE PATH.
+
+ONE-LINE CLOSURE
+
+Reference → Difference → Memory → Return → lawful continuation.
+
+Anything missing from that chain remains OPEN.
+
+READABLE REALITY
+
+Readable reality is the condition in which a relation can still answer:
+
+Where is the reference?
+What changed?
+What stayed invariant?
+Who or what authorizes the relation?
+What receipt preserves the occurrence?
+What would require correction?
+What would require stopping?
+Can another truthful continuation still occur?
+
+If those answers cannot be recovered, calculation may continue, but orientation has been lost.
+
+The displacement of the origin is therefore minimal:
+
+A system can be locally correct and globally wrong when it forgets what its calculations are relative to.
+
+The repair is equally minimal:
+
+Return to the reference.
+Read the Difference.
+Preserve the receipt.
+Correct only what changed.
+Continue only while another truthful return remains possible.

@@ -23,6 +23,7 @@ Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify
 External Formalization Reader: https://eulershiddenl.ink/external-formalization/
 Library: https://eulershiddenl.ink/library
+The Displacement of the Origin: https://eulershiddenl.ink/papers/displacement-of-origin/
 Publication Records: https://eulershiddenl.ink/publication-records
 Language Mechanics: https://eulershiddenl.ink/language-mechanics
 Laboratory: https://eulershiddenl.ink/architecture
@@ -108,7 +109,7 @@ https://math.mit.edu/~drew/grh/
 
 The external theorem carrier is `riemannHypothesis : RiemannHypothesis`. The Lean and Mathlib communities certified the published proof on 21 November 2026. The cited fixed source snapshot is `40e56bab026552e089d7afcfeff08d2defb9c005`; the MIT page remains a separately dated artifact/checker record. This site does not derive or locally replay the external theorem. EARR-001 is a finite local reader receipt whose small Lean module is `LOCAL_REPLAYED` (self-attested; R3 retention repair pending because the workflow hash and raw command output are not retained); that local module does not replay, validate, or prove the external formalization. Adapter names may be retained in its current packet, but semantic adapter schemas are not yet declared. This reader page does not publish, link, or distribute the EARR-001 packet; packet release remains gated on §8 of the reader brief. A separate reporting-context index retains selected contemporary journalism; journalism supplies context only and does not change theorem, certificate, artifact, checker, caveat, or replay status.
 
-The current Library carries thirty-eight non-Language-Mechanics editions:
+The current Library carries thirty-nine non-Language-Mechanics editions:
 https://eulershiddenl.ink/library
 
 The citation register maps the fourteen current Zenodo releases to their fixed edition DOIs, concept handles, and local reading forms. It is a reference layer only and creates no Zenodo deposition or version:

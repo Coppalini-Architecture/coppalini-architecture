@@ -23,6 +23,7 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - [Four Dual Forms](https://eulershiddenl.ink/library#four-dual-forms-shelf): Gravity–Light, Memory–Motion, Time–Scope, and Horizon–Silence, with individual source records and verification receipt.
 - [The 3 Body Mirror](https://eulershiddenl.ink/papers/the-3-body-mirror.pdf): three-body reconstruction, source, symbolic receipt, and independent receipt.
 - [Research Library](https://eulershiddenl.ink/library): current synthesis followed by all non-Language-Mechanics source records in one continuous library.
+- [The Displacement of the Origin](https://eulershiddenl.ink/papers/displacement-of-origin/): refusal wall and irreducible exact-read closure for reference, Difference, memory, return, stopping, the eight-address wheel, and the two-reference mirror.
 - [Publication Records](https://eulershiddenl.ink/publication-records): fourteen current Zenodo releases mapped to their fixed edition DOIs, concept handles, and Coppalini reading forms. The register is citation and navigation only; it creates no Zenodo deposition or version.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for reference, constraint, reader, receipt, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
