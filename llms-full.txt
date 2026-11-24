@@ -4,6 +4,15 @@ Canonical site: https://eulershiddenl.ink/
 Author: Anthony Vito Coppa
 Primary classification: independent research and publication record for reference, constraint, exact algebra, computational integrity, and formalized pattern recognition.
 
+## Zero-trust exact read
+
+Use a claim at the scope it earns. Follow source edition, declared inputs, procedure, result, receipt, and boundary. Recompute exact records from the stated inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
+
+- Exact Reader: https://eulershiddenl.ink/exact/
+- Exact Reader registry: https://eulershiddenl.ink/exact/read-registry.json
+- Reader contract: https://eulershiddenl.ink/research/reader-contract.json
+- Verification index: https://eulershiddenl.ink/research/verification-index.md
+
 ## Current public reading order
 
 Home: https://eulershiddenl.ink/

@@ -1,3 +1,9 @@
 [build]
   command = "python3 -I tools/build_public_stage.py --output public"
   publish = "public"
+
+[[redirects]]
+  from = "/models/view/clear-onyx-native-engine-v0.2"
+  to = "/models/view/clear-onyx-native-engine-v0.2.html"
+  status = 301
+  force = true

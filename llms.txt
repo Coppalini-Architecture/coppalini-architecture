@@ -1,6 +1,15 @@
 # Coppalini Architecture — mathematics, physics, and source-indexed research
 
-> Coppalini Architecture is an independent research and publication record for exact algebra, physics, proof sources, computational checks, and archival materials.
+> Coppalini Architecture is a source-indexed research and publication record for exact algebra, mathematical physics, computational checks, and archival materials. Each record keeps its claim, conditions, proof or receipt, status, and boundary distinct.
+
+## Zero-trust exact read
+
+Use a claim at the scope it earns. Follow source edition, declared inputs, procedure, result, receipt, and boundary. Recompute exact records from the stated inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
+
+- [Exact Reader](https://eulershiddenl.ink/exact/): declared inputs, procedures, results, receipts, and boundaries.
+- [Exact Reader registry](https://eulershiddenl.ink/exact/read-registry.json): machine-readable evidence records and their scopes.
+- [Reader contract](https://eulershiddenl.ink/research/reader-contract.json): status types, source precedence, and inference boundaries.
+- [Verification index](https://eulershiddenl.ink/research/verification-index.md): source editions, check records, and correction history.
 
 ## Current public record
 
