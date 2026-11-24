@@ -26,6 +26,7 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - [The 3 Body Mirror](https://eulershiddenl.ink/papers/the-3-body-mirror.pdf): three-body reconstruction, source, symbolic receipt, and independent receipt.
 - [Research Library](https://eulershiddenl.ink/library): current synthesis followed by all non-Language-Mechanics source records in one continuous library.
 - [The Displacement of the Origin](https://eulershiddenl.ink/papers/displacement-of-origin/): refusal wall and irreducible exact-read closure for reference, Difference, memory, return, stopping, the eight-address wheel, and the two-reference mirror.
+- [MOONLIGHT Minimum Wheel v0.8.3](https://eulershiddenl.ink/moonlight/): exact computational reference reader; immutable artifact SHA-256 `06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40`; 1/2520 core phase, 1/7560 calibrated E-mirror; Gate and Survival evaluators uninstantiated.
 - [Publication Records](https://eulershiddenl.ink/publication-records): fourteen current Zenodo releases mapped to their fixed edition DOIs, concept handles, and Coppalini reading forms. The register is citation and navigation only; it creates no Zenodo deposition or version.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for reference, constraint, reader, receipt, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
