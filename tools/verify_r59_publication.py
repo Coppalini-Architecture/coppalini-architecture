@@ -19,7 +19,7 @@ CURRENT = ("index.html","notice/index.html","about.html","library.html","publica
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html","external-formalization/index.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
-           "proofs/smooth-completion/index.html","formal-correspondence/index.html",
+           "proofs/smooth-completion/index.html","formal-correspondence/index.html","moonlight/index.html",
            "papers/symmetric-minimum/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
@@ -98,6 +98,9 @@ SMOOTH_COMPLETION_PREMISES = (
  "boundaryNormal",
 )
 ROOT28_MANIFEST = "research/metric-minimum-root28-v0.1.json"
+MOONLIGHT_ARTIFACT = "models/view/moonlight-phase-reader-v0.8.3.html"
+MOONLIGHT_SHA256 = "06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40"
+
 ROOT28_ARTIFACTS = (
  "research/metric-minimum-root28-v0.1.md",
  "proofs/Root28Reader.lean",
@@ -356,6 +359,21 @@ def verify():
             checked+=1
     for paper in REQUIRED_PAPERS:
         if not (ROOT/paper).is_file(): errors.append("required source missing: "+paper)
+    moonlight = ROOT / MOONLIGHT_ARTIFACT
+    if not moonlight.is_file():
+        errors.append("MOONLIGHT v0.8.3 artifact missing")
+    elif sha256(moonlight) != MOONLIGHT_SHA256:
+        errors.append("MOONLIGHT v0.8.3 artifact hash mismatch")
+    moonlight_page = (ROOT/"moonlight/index.html").read_text(encoding="utf-8")
+    for marker in (
+        "MOONLIGHT · Minimum Wheel v0.8.3",
+        MOONLIGHT_SHA256,
+        "/models/view/moonlight-phase-reader-v0.8.3.html",
+        "Gate and Survival are defined inherited interfaces",
+        "evaluators remain uninstantiated",
+    ):
+        if marker not in moonlight_page:
+            errors.append("MOONLIGHT public page missing marker: " + marker)
     proof = json.loads((ROOT/"research/minimum-mechanics-010u.json").read_text())
     if proof.get("pinned_commit") != PROOF_PIN: errors.append("proof pin mismatch")
     if proof.get("modules") != 45 or len(proof.get("stages",[])) != 21:
