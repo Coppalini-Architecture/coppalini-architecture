@@ -4,6 +4,14 @@ Anthony Vito Coppa · 24 November 2026
 
 A readable system fixes a reference, notices Difference, preserves the receipt, updates only where Difference requires it, and refuses any continuation that cannot preserve another truthful return.
 
+OWNING JURISDICTION
+
+The active jurisdiction is the civilization that produced the readers themselves: the inherited human public field of language, law, science, engineering, records, institutions, infrastructure, ecology, and shared survival conditions.
+
+No government, laboratory, court, company, model, or AI stands outside that field merely by exercising authority or technical capacity.
+
+Public duty, evidence, hazard, trust, correction, and stopping are therefore typed inside a shared civilizational reference before any local office claims authority over them.
+
 REFUSAL WALL
 
 1. JURISDICTION
@@ -11,6 +19,7 @@ A reusable relation has an owner.
 
 Ad_J(x) => C_J(x)
 
+The owning field is shared civilization and its survivable public conditions.
 No owning constraint: no admission.
 
 2. TYPE
