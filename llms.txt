@@ -48,7 +48,7 @@ Use a claim at the scope it earns. Follow source edition, inputs, procedure, res
 - [Publication Records](https://eulershiddenl.ink/publication-records): fourteen current Zenodo releases mapped to their fixed edition DOIs, concept handles, and Coppalini reading forms. The register is citation and navigation only; it creates no Zenodo deposition or version.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for reference, constraint, reader, receipt, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
-- [Notice:](https://eulershiddenl.ink/notice/): a civic and classical notice on shared readability; it gives the exact return/lift relation and keeps five textual or hermeneutic companions separate from formal proof.
+- [Notice:](https://eulershiddenl.ink/notice/): a civic and classical notice on shared readability; it gives the exact return/lift relation, four mathematical pins (identity, idempotence, quotient/lift, composition order), and five textual or hermeneutic companions kept separate from formal proof.
 - [About](https://eulershiddenl.ink/about): author provenance and public research chronology.
 
 ## Current theorem strength

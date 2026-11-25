@@ -63,6 +63,7 @@
 .notice-classical { max-width: 64rem; }
 .notice-classical h3 { margin: 2.35rem 0 .75rem; font: 650 1.04rem/1.25 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.015em; }
 .notice-contrast { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 1.75rem 0; }
+.notice-pins { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notice-contrast div { padding: 1rem 1.05rem 1.1rem; border: 1px solid var(--r59-rule); background: var(--surface); }
 .notice-contrast dt { color: var(--ink); font: 700 .75rem/1.35 ui-sans-serif, system-ui, sans-serif; letter-spacing: .05em; text-transform: uppercase; }
 .notice-contrast dd { margin: .55rem 0 0; color: var(--r59-muted); font-size: .88rem; line-height: 1.65; }
