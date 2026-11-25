@@ -1,0 +1,98 @@
+{
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Receipt-Release/v0.1",
+  "release": "MOONLIGHT receipts v0.1",
+  "base_commit": "ab3412293348cdc9f49039da7acbb4be43ebba16",
+  "route": "/moonlight/receipts/",
+  "contracts": [
+    "CoppaliniArchitecture.MOONLIGHT-Harmonizer-Receipt/v0.1",
+    "CoppaliniArchitecture.MOONLIGHT-Relax-Receipt/v0.1"
+  ],
+  "sources": [
+    {
+      "file": "harmonizer.js",
+      "upstream_sha256": "4eff82ac5c4010fa5278c7f1eb112c20419af28cf75eac480ef141c76f21bb35",
+      "release_sha256": "6fdb1ef61d6a816a290c2c75b760837366d8a7f9359012b3d3fa5b66e9a2299f",
+      "change": "blank-reader-label predicate only; Python str.strip whitespace set"
+    },
+    {
+      "file": "relax_receipt.js",
+      "upstream_sha256": "165f913683acd81b328c49ec5714fd844a1f0e37bfd814bf9633963c92eb1c92",
+      "release_sha256": "bbef28b1217e0b904be1dd957344d1fcbbb625f6357db23614a76e4d58ca40ae",
+      "change": "blank-reader-label predicate only; Python str.strip whitespace set"
+    },
+    {
+      "file": "harmonizer.py",
+      "upstream_sha256": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+      "release_sha256": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+      "change": "none"
+    },
+    {
+      "file": "relax_receipt.py",
+      "upstream_sha256": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+      "release_sha256": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+      "change": "none"
+    }
+  ],
+  "source_record_status": "Supplied draft records retained byte-for-byte; active source pins are declared here.",
+  "contract_update": {
+    "trace": "phase_step: 2",
+    "checks": "non_expansion",
+    "k": "2..300",
+    "input_d": "[-1/2, 1/2)",
+    "recorded_d": "[-1/2, 1/2]",
+    "checks_office": "assertions about the recomputed transition",
+    "supersedes_prior_assistant_package_sha256": "10e757149a05d9310aa94192ecf77f818fa95bccf5c979d5b61942f1ea78157a"
+  },
+  "new_correction": "JS reader-label blankness uses Python str.strip whitespace class; no arithmetic change.",
+  "o_q4": {
+    "callable_block": "sources/reader_ledger_relax.py",
+    "status": "adapter provided; target ledger registration OPEN"
+  },
+  "retained_boundaries": {
+    "fd020d0": "HOLD",
+    "negphase.py": "canonical bytes OPEN",
+    "rangecompress.py": "canonical bytes OPEN",
+    "operator_receipt.py": "source unavailable",
+    "relax.py": "ab419f8f23ef6a6e reported; source unavailable"
+  },
+  "retained_artifact_pins": {
+    "models/view/moonlight-phase-reader-v0.8.4.html": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb",
+    "moonlight/dome/index.html": "3e363d896c0fae2cc9895aabfb6041a16e5c4b7481fb8253f59e57d208b28c96",
+    "verification/receipts/MOONLIGHT-LAMBDA-001.schema.json": "c85c2f34eb9ff6fd2e01463be9f7eb6afb5414a8eb97ddd24fb5fac59675caad"
+  },
+  "files_sha256": {
+    "RELEASE.md": "d3cf2d8d953f7a37ee8089007fc0e85268b8c7b4a9148e2f1811bda380284382",
+    "examples/harmonizer.json": "22bee9e9d6b0c9d7de293c3d18a2046fa250ced6ed9a0595f6833d14e68a4de5",
+    "examples/relax.json": "4230e1e823133d9d562801877f03099ff7cbadae92e146bf37dad86cc3998d5a",
+    "index.html": "90eec02be0b32d4c147b5b4eddcc2cd21d4303a576a1cd391e6da610a42f96fa",
+    "receipt-checkers.js": "a00e349db6d2d8615306229ee22ef05df04dabd2bc02a839487ee476fd750812",
+    "receipt-reader.css": "eaec3cffb78687b234bb8a4e80f053087405c35f181bc23b15c66335dae6d57e",
+    "receipt-reader.js": "68285fd672c532fb86fa355d8335c0c590676d0c7c45e5cc6b50984834aa3699",
+    "records/HARMONIZER-001.record.md": "6c69a56fc9ffb7d5336672ed940e47a3070c2ec0613d0144ed26134542b7c9c5",
+    "records/RELAX-001.record.md": "0d75b9709527490fbd646f1702de93e15390646b3b1598a4d3025c1c1b9f6685",
+    "records/RELAX-RECEIPT-001.record.md": "f31f6f92ff1f19058946af81797693b4288b08d989f9b32d23d6afa317292788",
+    "sources/harmonizer.js": "6fdb1ef61d6a816a290c2c75b760837366d8a7f9359012b3d3fa5b66e9a2299f",
+    "sources/harmonizer.py": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+    "sources/reader_ledger_relax.py": "2b3faa09faf162de77ec5953fa1e04eb562dc8e2888a7e7a1dec0ff57f110fe9",
+    "sources/relax_receipt.js": "bbef28b1217e0b904be1dd957344d1fcbbb625f6357db23614a76e4d58ca40ae",
+    "sources/relax_receipt.py": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+    "upstream/harm_cli.js": "92b478c72536055694e9cf917a63220b1a3602e511795e0dfab18052d224f097",
+    "upstream/harmonizer.js": "4eff82ac5c4010fa5278c7f1eb112c20419af28cf75eac480ef141c76f21bb35",
+    "upstream/parity.py": "dcb27c1f77b08bf7484403d0eefda547a26ca1801717bcf03c9bd4c26a475813",
+    "upstream/parity_relax.py": "7dc6150badb13497ea95e323aa9df880ec9bccbfb1f3b972955f73ce57b4e40d",
+    "upstream/relax_cli.js": "c610dc17e19144ca0179bc1d01aa1b6194222bec4ef7a8dc723e330105d763d8",
+    "upstream/relax_receipt.js": "165f913683acd81b328c49ec5714fd844a1f0e37bfd814bf9633963c92eb1c92",
+    "upstream/test_independent.py": "13c7117507fafb365212ce871cc9805cfc71a716c8fdf876d9beba8950c92412",
+    "upstream/test_relax_receipt.py": "290708f57a54ef5c09ee73bf02c9fe2b5f0f72d79d858c8dad182cc21ae8d981",
+    "verification/harm_cli.js": "31bc5378f78d1f9e5334a64fdf6f416287da51ff79a4ad6549c2418f6453ad98",
+    "verification/label-parity-results.json": "a65781ee58fbca194b8c75694c7a70c23836c1c41a635ea54d86e951907115c2",
+    "verification/label-parity.patch": "d62d05bc5968f7111397b5eddd3f9de841875a8e24c540113aa171781becb544",
+    "verification/parity.py": "3cce2dda94bef6d2dc076b4bad8364cc1a7fcbe01acf4f527318f6c34a484da9",
+    "verification/parity_relax.py": "5ed19c56f398910842fc8fa3e2ae712c5fe0fa22e9f9738ee4cf72a954146e34",
+    "verification/relax_cli.js": "98a83e3d2e13660e55b9cab68df3c0234027fb783ef6909174ae59e641fcf7fd",
+    "verification/test_independent.py": "e2bee6ca625f65453317f033fac81ffa47410a0b33ed99483ecab9c981a5be2e",
+    "verification/test_reader_label_parity.py": "12630bf496eb5b21b829d9476e8614946789d74cfb8e7cfc417120e5a7458b91",
+    "verification/test_relax_receipt.py": "1acc3d5130e768aa3f81d7a1eeb44281358500cb25c3281009143861782ca722",
+    "verification.json": "a5ee97ddfae84bbabb0ab7a9d304dd4a21e79b3f253ab6e36d1fe9614a6a7117"
+  }
+}

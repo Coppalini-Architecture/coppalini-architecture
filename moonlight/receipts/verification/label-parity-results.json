@@ -1,0 +1,951 @@
+{
+  "status": "PASS",
+  "python_whitespace_codepoints": [
+    "U+0009",
+    "U+000A",
+    "U+000B",
+    "U+000C",
+    "U+000D",
+    "U+001C",
+    "U+001D",
+    "U+001E",
+    "U+001F",
+    "U+0020",
+    "U+0085",
+    "U+00A0",
+    "U+1680",
+    "U+2000",
+    "U+2001",
+    "U+2002",
+    "U+2003",
+    "U+2004",
+    "U+2005",
+    "U+2006",
+    "U+2007",
+    "U+2008",
+    "U+2009",
+    "U+200A",
+    "U+2028",
+    "U+2029",
+    "U+202F",
+    "U+205F",
+    "U+3000"
+  ],
+  "case_count": 88,
+  "cases": [
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0009"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+000A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+000B"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+000C"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+000D"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+001C"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+001D"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+001E"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+001F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0020"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0085"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+00A0"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+1680"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2001"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2002"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2003"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2004"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2005"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2006"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2007"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2008"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2009"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+200A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2028"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+2029"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+202F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+205F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+3000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0009",
+        "U+000A",
+        "U+000B",
+        "U+000C",
+        "U+000D",
+        "U+001C",
+        "U+001D",
+        "U+001E",
+        "U+001F",
+        "U+0020",
+        "U+0085",
+        "U+00A0",
+        "U+1680",
+        "U+2000",
+        "U+2001",
+        "U+2002",
+        "U+2003",
+        "U+2004",
+        "U+2005",
+        "U+2006",
+        "U+2007",
+        "U+2008",
+        "U+2009",
+        "U+200A",
+        "U+2028",
+        "U+2029",
+        "U+202F",
+        "U+205F",
+        "U+3000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0020",
+        "U+0009",
+        "U+000D",
+        "U+000A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+FEFF"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+180E"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+200B"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0000"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0008"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+000E"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+001B"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0041"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+002D",
+        "U+0030",
+        "U+0031"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0020",
+        "U+0009",
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+002D",
+        "U+0030",
+        "U+0031",
+        "U+0085"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0085",
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+001C"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "harmonizer",
+      "label_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+FEFF"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0009"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+000A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+000B"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+000C"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+000D"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+001C"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+001D"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+001E"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+001F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0020"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0085"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+00A0"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+1680"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2001"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2002"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2003"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2004"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2005"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2006"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2007"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2008"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2009"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+200A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2028"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+2029"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+202F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+205F"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+3000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0009",
+        "U+000A",
+        "U+000B",
+        "U+000C",
+        "U+000D",
+        "U+001C",
+        "U+001D",
+        "U+001E",
+        "U+001F",
+        "U+0020",
+        "U+0085",
+        "U+00A0",
+        "U+1680",
+        "U+2000",
+        "U+2001",
+        "U+2002",
+        "U+2003",
+        "U+2004",
+        "U+2005",
+        "U+2006",
+        "U+2007",
+        "U+2008",
+        "U+2009",
+        "U+200A",
+        "U+2028",
+        "U+2029",
+        "U+202F",
+        "U+205F",
+        "U+3000"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0020",
+        "U+0009",
+        "U+000D",
+        "U+000A"
+      ],
+      "python": "INVALID",
+      "javascript": "INVALID",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+FEFF"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+180E"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+200B"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0000"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0008"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+000E"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+001B"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0041"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+002D",
+        "U+0030",
+        "U+0031"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0020",
+        "U+0009",
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+002D",
+        "U+0030",
+        "U+0031",
+        "U+0085"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0085",
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+001C"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    },
+    {
+      "module": "relax",
+      "label_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+0061",
+        "U+0064",
+        "U+0065",
+        "U+0072",
+        "U+FEFF"
+      ],
+      "python": "OK",
+      "javascript": "OK",
+      "matched": true
+    }
+  ]
+}

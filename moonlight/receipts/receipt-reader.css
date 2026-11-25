@@ -1,0 +1,46 @@
+.r59 .receipt-shell { max-width:64rem; padding:3rem 0 4rem; font-size:1rem; }
+.receipt-intro { padding-bottom:1.8rem; border-bottom:1px solid var(--r59-rule); }
+.receipt-intro h1 { max-width:none; font-size:clamp(2.4rem,6vw,4.1rem); }
+.receipt-lead { max-width:48rem; margin:1.1rem 0 0; font-size:1.15rem; line-height:1.6; }
+.receipt-links { display:flex; flex-wrap:wrap; gap:.65rem 1.2rem; margin:1.25rem 0 0; }
+.receipt-links a { font-weight:650; }
+.receipt-reader,.receipt-reading,.receipt-sources { padding-top:2rem; }
+.receipt-shell h2 { font-size:1.65rem; margin:0 0 1.1rem; }
+.receipt-controls { display:flex; align-items:end; flex-wrap:wrap; gap:1rem; }
+.receipt-field { min-width:0; display:grid; gap:.45rem; }
+.receipt-controls .receipt-field { flex:1 1 20rem; }
+.receipt-reader label { font-size:1rem; font-weight:700; }
+.receipt-reader select,.receipt-reader textarea,.receipt-reader button { font:inherit; font-size:1rem; border:1px solid var(--r59-rule); border-radius:.3rem; }
+.receipt-reader select { width:100%; min-height:2.85rem; padding:.65rem 2.4rem .65rem .75rem; color:var(--ink); background:var(--surface); }
+.receipt-reader textarea { width:100%; min-height:18rem; max-height:50rem; padding:.9rem; resize:vertical; line-height:1.55; color:var(--ink); background:#fff; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+.receipt-reader button { min-height:2.85rem; padding:.65rem 1rem; border-color:var(--ink); color:#fff; background:var(--ink); font-weight:700; cursor:pointer; }
+.receipt-reader button:hover { background:var(--blue); border-color:var(--blue); }
+.receipt-reader button.receipt-secondary { background:transparent; color:var(--ink); }
+.receipt-reader button.receipt-secondary:hover { background:var(--surface); }
+.receipt-reader :is(select,textarea,button):focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
+.receipt-note { margin:.8rem 0 1rem; font-size:1rem; color:var(--r59-muted); line-height:1.6; }
+.receipt-result { margin-top:1.35rem; padding:1rem 1.15rem; border:1px solid var(--r59-rule); border-left:4px solid var(--blue); background:var(--surface); }
+.receipt-result strong { display:block; font:700 1.05rem/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+.receipt-result p { margin:.45rem 0 0; line-height:1.6; }
+.receipt-result[data-state="OK"] { border-left-color:var(--green); }
+.receipt-result[data-state="OK_WITH_DELTA"] { border-left-color:var(--violet); }
+.receipt-result[data-state="INVALID"] { border-left-color:var(--red); }
+.receipt-reading,.receipt-sources { margin-top:2rem; border-top:1px solid var(--r59-rule); }
+.receipt-reading p { line-height:1.65; }
+.receipt-shell code { overflow-wrap:anywhere; }
+.receipt-verdicts { margin:0 0 1.25rem; }
+.receipt-verdicts > div { display:grid; grid-template-columns:12rem minmax(0,1fr); gap:.6rem 1rem; padding:.75rem 0; border-bottom:1px solid var(--r59-rule); }
+.receipt-verdicts dt { font:700 1rem/1.55 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+.receipt-verdicts dd { margin:0; line-height:1.6; }
+.receipt-source-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; }
+.receipt-source-grid h3 { font-size:1.25rem; }
+.receipt-source-grid ul { padding-left:1.1rem; margin:.65rem 0 0; }
+.receipt-source-grid li { padding:.2rem 0; }
+@media (max-width:36rem) {
+  .r59 .receipt-shell { padding-top:2rem; }
+  .receipt-controls { align-items:stretch; }
+  .receipt-controls .receipt-field { flex-basis:100%; }
+  .receipt-reader textarea { min-height:20rem; }
+  .receipt-verdicts > div { grid-template-columns:1fr; gap:.3rem; }
+  .receipt-source-grid { grid-template-columns:1fr; }
+}

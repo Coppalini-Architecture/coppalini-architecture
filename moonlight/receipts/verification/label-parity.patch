@@ -1,0 +1,32 @@
+--- upstream/harmonizer.js
++++ release/harmonizer.js
+@@ -55,10 +55,12 @@
+   if (!keys(o, ['s', 'a', 'y']) || !isInt(o.s, 0, 136) || !isInt(o.a, 0, 547) || o.a !== addr(q, o.s)) return false;
+   const y = unfs(o.y); return y !== null && cmp(y, ZERO) >= 0 && cmp(y, [S, 1n]) < 0;
+ };
++// Match Python str.strip() when the entire reader label is whitespace.
++const pythonBlankLabel = text => /^[\u0009-\u000D\u001C-\u0020\u0085\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]*$/.test(text);
+ function checkReceipt(rc) {
+   try {
+     if (!keys(rc, TOP) || rc.schema !== SCHEMA || !same(rc.rule, RULE)) return 'INVALID';
+-    if (!keys(rc.reader, ['label']) || typeof rc.reader.label !== 'string' || !rc.reader.label.trim()) return 'INVALID';
++    if (!keys(rc.reader, ['label']) || typeof rc.reader.label !== 'string' || pythonBlankLabel(rc.reader.label)) return 'INVALID';
+     const i = rc.input;
+     if (!keys(i, ['q', 'x', 'h', 'kappa']) || !isInt(i.q, 0, 3)) return 'INVALID';
+     const x = dec(i.x), h = dec(i.h, ZERO, HALF), k = dec(i.kappa, ZERO, ONE);
+--- upstream/relax_receipt.js
++++ release/relax_receipt.js
+@@ -37,10 +37,12 @@
+   if (!(isInt(o.q, 0, 3) && isInt(o.s, 0, S - 1) && isInt(o.a, 0, N - 1)) || o.a !== addr(o.q, o.s)) return false;
+   const d = unfs(o.d); return d !== null && 2n * (d[0] < 0n ? -d[0] : d[0]) <= d[1];
+ }
++// Match Python str.strip() when the entire reader label is whitespace.
++const pythonBlankLabel = text => /^[\u0009-\u000D\u001C-\u0020\u0085\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]*$/.test(text);
+ function checkReceipt(rc) {
+   try {
+     if (!isObj(rc) || rc.schema !== SCHEMA || !keysIs(rc, TOP) || !same(rc.rule, RULE)) return 'INVALID';
+-    if (!keysIs(rc.reader, ['label']) || typeof rc.reader.label !== 'string' || rc.reader.label.trim() === '') return 'INVALID';
++    if (!keysIs(rc.reader, ['label']) || typeof rc.reader.label !== 'string' || pythonBlankLabel(rc.reader.label)) return 'INVALID';
+     const i = rc.input;
+     if (!keysIs(i, ['q', 's', 'a', 'd', 'k'])) return 'INVALID';
+     if (!(isInt(i.q, 0, 3) && isInt(i.s, 0, S - 1) && isInt(i.a, 0, N - 1) && isInt(i.k, KMIN, KMAX))) return 'INVALID';

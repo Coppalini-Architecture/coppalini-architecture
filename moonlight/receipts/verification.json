@@ -1,0 +1,249 @@
+{
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Receipt-Verification/v0.1",
+  "status": "PASS",
+  "upstream": {
+    "scope": "supplied canonical source and verification suites",
+    "source_manifest": [
+      {
+        "uploaded_name": "harmonizer.py",
+        "stage_name": "harmonizer.py",
+        "sha256": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+        "expected_prefix": "4f9590d8ac612871",
+        "matched": true
+      },
+      {
+        "uploaded_name": "harmonizer.js",
+        "stage_name": "harmonizer.js",
+        "sha256": "4eff82ac5c4010fa5278c7f1eb112c20419af28cf75eac480ef141c76f21bb35",
+        "expected_prefix": "4eff82ac5c4010fa",
+        "matched": true
+      },
+      {
+        "uploaded_name": "relax_receipt(1).py",
+        "stage_name": "relax_receipt.py",
+        "sha256": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+        "expected_prefix": "1a769cf16842e43e",
+        "matched": true
+      },
+      {
+        "uploaded_name": "relax_receipt.js",
+        "stage_name": "relax_receipt.js",
+        "sha256": "165f913683acd81b328c49ec5714fd844a1f0e37bfd814bf9633963c92eb1c92",
+        "expected_prefix": "165f913683acd81b",
+        "matched": true
+      },
+      {
+        "uploaded_name": "RELAX-RECEIPT-001.record.md",
+        "stage_name": "RELAX-RECEIPT-001.record.md",
+        "sha256": "f31f6f92ff1f19058946af81797693b4288b08d989f9b32d23d6afa317292788",
+        "expected_prefix": "f31f6f92ff1f1905",
+        "matched": true
+      },
+      {
+        "uploaded_name": "RELAX-001.record.md",
+        "stage_name": "RELAX-001.record.md",
+        "sha256": "0d75b9709527490fbd646f1702de93e15390646b3b1598a4d3025c1c1b9f6685",
+        "expected_prefix": "0d75b9709527490f",
+        "matched": true
+      },
+      {
+        "uploaded_name": "HARMONIZER-001.record.md",
+        "stage_name": "HARMONIZER-001.record.md",
+        "sha256": "6c69a56fc9ffb7d5336672ed940e47a3070c2ec0613d0144ed26134542b7c9c5",
+        "expected_prefix": "6c69a56fc9ffb7d5",
+        "matched": true
+      },
+      {
+        "archive": "harmonizer-verification.zip",
+        "member": "test_independent.py",
+        "sha256": "13c7117507fafb365212ce871cc9805cfc71a716c8fdf876d9beba8950c92412",
+        "runtime_sha256": "4db2bdd39d26010a1d3ab1f3e0f43a1ae4266b1dc057582a16cd99231af25ab6",
+        "execution_adaptation": "literal path rebasing only"
+      },
+      {
+        "archive": "harmonizer-verification.zip",
+        "member": "parity.py",
+        "sha256": "dcb27c1f77b08bf7484403d0eefda547a26ca1801717bcf03c9bd4c26a475813",
+        "runtime_sha256": "a3f9824f15196ee12ac1513f1d38296592efa34a99eb1558db457f40bcbaab18",
+        "execution_adaptation": "literal path rebasing only"
+      },
+      {
+        "archive": "harmonizer-verification.zip",
+        "member": "harm_cli.js",
+        "sha256": "92b478c72536055694e9cf917a63220b1a3602e511795e0dfab18052d224f097",
+        "runtime_sha256": "92b478c72536055694e9cf917a63220b1a3602e511795e0dfab18052d224f097",
+        "execution_adaptation": "none"
+      },
+      {
+        "archive": "relax-receipt-verification.zip",
+        "member": "test_relax_receipt.py",
+        "sha256": "290708f57a54ef5c09ee73bf02c9fe2b5f0f72d79d858c8dad182cc21ae8d981",
+        "runtime_sha256": "201172b823ab341af47a97fa17c5ac56624906f415e47b2c43ede6f7b3d6e5b7",
+        "execution_adaptation": "literal path rebasing only"
+      },
+      {
+        "archive": "relax-receipt-verification.zip",
+        "member": "parity_relax.py",
+        "sha256": "7dc6150badb13497ea95e323aa9df880ec9bccbfb1f3b972955f73ce57b4e40d",
+        "runtime_sha256": "61f0ace23a2ad21b35b7bce8ad72ec2036d0e8a8bef210cde32b1a266dcc270d",
+        "execution_adaptation": "literal path rebasing only"
+      },
+      {
+        "archive": "relax-receipt-verification.zip",
+        "member": "relax_cli.js",
+        "sha256": "c610dc17e19144ca0179bc1d01aa1b6194222bec4ef7a8dc723e330105d763d8",
+        "runtime_sha256": "c610dc17e19144ca0179bc1d01aa1b6194222bec4ef7a8dc723e330105d763d8",
+        "execution_adaptation": "none"
+      }
+    ],
+    "executions": [
+      {
+        "command": [
+          "python3",
+          "-I",
+          "harmonizer.py"
+        ],
+        "exit_code": 0,
+        "stdout": "random exact cases (q, x, h, kappa):  4000 - y in [0,137), a mod 4 = q, a mod 137 = s: all\nh = 1/2, kappa = 1: y = s for every x (staircase): 2000 cases\ny nondecreasing on the unwrapped line, 5 (h, kappa) pairs x 5480 points\nhonest receipts OK: 300\nwrong recorded output, true delta -> OK_WITH_DELTA: 6000\nsame, empty delta -> INVALID: 6000\nsame, wrong recomputed in delta -> INVALID: 6000\nALL PASS\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "relax_receipt.py"
+        ],
+        "exit_code": 0,
+        "stdout": "honest receipts OK: 400\nwrong recorded output, true delta -> OK_WITH_DELTA: 6000\nsame, empty delta -> INVALID: 6000\nsame, wrong recomputed in delta -> INVALID: 6000\ntype, key, label, range, canonical-fraction, trace and non-dict cases -> INVALID: 31\nALL PASS\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "test_independent.py"
+        ],
+        "exit_code": 0,
+        "stdout": "independent path (argmin over 137 sectors, signed ring offset) agrees: 1500 cases incl. ties\na-output commutes with N2 and N_c (q -> q+2, q -> -q): 2000 cases\ntie rule: every half-integer goes to the larger sector: 137/137\nh < 1/2: y continuous and C^1 across ties (slope 1, gap = 2e + O(e^2)): 5 (h,kappa) x 3 ties x 3 e\nh = 1/2: jump across a tie equals kappa (1, 3/4, 1/10)\nplateau |d|<=h: w = kappa, y = x0 - kappa*d: 1000 cases\nshoulder-span mean slope = (1 - 2(1-kappa)h)/(1 - 2h), >= 1, = 1/(1-2h) at kappa = 1; a finite-difference slope >= it: 400 cases\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "test_relax_receipt.py"
+        ],
+        "exit_code": 0,
+        "stdout": "matrix-power rho_k and CRT addresses agree with the receipt; a -> a+274 (N2); |d'| <= |d|: 3000 cases\nreceipt chains: each recorded output feeds the next input; final offset = d0*Fib_m/Fib_n, phase q0 + 2(n-m):  200 chains\nreceipt offset d' = harmonizer y - s on the plateau (h = 1/2, kappa = 1 - Fib_{k-1}/Fib_k): 1000 cases\nfloat-token integers (12.0, 2.0, 9e0) -> INVALID in the Python checker\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "parity.py"
+        ],
+        "exit_code": 0,
+        "stdout": "value parity (s,a,y,d,w,x0), python Fraction vs JS BigInt: 3000 / 3000\nverdict parity on 1200 generated texts: diffs []\n  edge q 0.0 -> py INVALID | js INVALID\n  edge q 0e0 -> py INVALID | js INVALID\n  edge q -0 -> py OK | js OK\n  edge q 00 -> py INVALID | js INVALID\n  edge q +0 -> py INVALID | js INVALID\n  edge s 2.0 recomputed -> py INVALID | js INVALID\n  edge label tab -> py OK | js OK\n  edge extra ws -> py OK | js OK\nnon-canonical recorded y (-0/1, 0/2, 00/1, +0/1, 0/-1, 0): [('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID')]\ncanonical wrong y 1/2 with true delta: OK_WITH_DELTA | OK_WITH_DELTA\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "parity_relax.py"
+        ],
+        "exit_code": 0,
+        "stdout": "value parity (q,s,a,d',rho,kappa), Fraction vs BigInt: 3000 / 3000\nverdict parity on 4000 generated texts +  12 edge forms: diffs []\n  edge k 12.0 -> py INVALID | js INVALID\n  edge q 2.0 -> py INVALID | js INVALID\n  edge s 9e0 -> py INVALID | js INVALID\n  edge s -0 form -> py INVALID | js INVALID\n  edge q +2 -> py INVALID | js INVALID\n  edge label tab -> py OK | js OK\n  edge extra ws -> py OK | js OK\n  edge phase_step 2.0 -> py INVALID | js INVALID\n  edge phase_step 2e0 -> py INVALID | js INVALID\n  edge checks 1 -> py INVALID | js INVALID\n  edge d -0/1 text -> py INVALID | js INVALID\n  edge d 2/16 text -> py INVALID | js INVALID\nnon-object / malformed texts: both INVALID\n",
+        "stderr": ""
+      }
+    ],
+    "all_commands_exit_zero": true,
+    "path_rebase": "Supplied test scripts contain /home/claude/rr and /home/claude/harm. Execution copies replace only those literal prefixes with this isolated staging directory; originals are retained unchanged."
+  },
+  "release_correction": {
+    "status": "PASS",
+    "scope": "minimal JS blank-reader-label correction",
+    "source_hashes": [
+      {
+        "file": "harmonizer.js",
+        "upstream_sha256": "4eff82ac5c4010fa5278c7f1eb112c20419af28cf75eac480ef141c76f21bb35",
+        "release_sha256": "6fdb1ef61d6a816a290c2c75b760837366d8a7f9359012b3d3fa5b66e9a2299f",
+        "change": "blank-reader-label predicate only; Python str.strip whitespace set"
+      },
+      {
+        "file": "relax_receipt.js",
+        "upstream_sha256": "165f913683acd81b328c49ec5714fd844a1f0e37bfd814bf9633963c92eb1c92",
+        "release_sha256": "bbef28b1217e0b904be1dd957344d1fcbbb625f6357db23614a76e4d58ca40ae",
+        "change": "blank-reader-label predicate only; Python str.strip whitespace set"
+      },
+      {
+        "file": "harmonizer.py",
+        "upstream_sha256": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+        "release_sha256": "4f9590d8ac612871c86ceb34aec986843f68e07c17b46a0e381de98910b9bf6f",
+        "change": "none"
+      },
+      {
+        "file": "relax_receipt.py",
+        "upstream_sha256": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+        "release_sha256": "1a769cf16842e43ef6551d6ccbbff19104f079e8a61a6e91272a1660e9e0dd82",
+        "change": "none"
+      }
+    ],
+    "executions": [
+      {
+        "command": [
+          "python3",
+          "-I",
+          "parity.py"
+        ],
+        "exit_code": 0,
+        "stdout": "value parity (s,a,y,d,w,x0), python Fraction vs JS BigInt: 3000 / 3000\nverdict parity on 1200 generated texts: diffs []\n  edge q 0.0 -> py INVALID | js INVALID\n  edge q 0e0 -> py INVALID | js INVALID\n  edge q -0 -> py OK | js OK\n  edge q 00 -> py INVALID | js INVALID\n  edge q +0 -> py INVALID | js INVALID\n  edge s 2.0 recomputed -> py INVALID | js INVALID\n  edge label tab -> py OK | js OK\n  edge extra ws -> py OK | js OK\nnon-canonical recorded y (-0/1, 0/2, 00/1, +0/1, 0/-1, 0): [('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID'), ('INVALID', 'INVALID')]\ncanonical wrong y 1/2 with true delta: OK_WITH_DELTA | OK_WITH_DELTA\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "parity_relax.py"
+        ],
+        "exit_code": 0,
+        "stdout": "value parity (q,s,a,d',rho,kappa), Fraction vs BigInt: 3000 / 3000\nverdict parity on 4000 generated texts +  12 edge forms: diffs []\n  edge k 12.0 -> py INVALID | js INVALID\n  edge q 2.0 -> py INVALID | js INVALID\n  edge s 9e0 -> py INVALID | js INVALID\n  edge s -0 form -> py INVALID | js INVALID\n  edge q +2 -> py INVALID | js INVALID\n  edge label tab -> py OK | js OK\n  edge extra ws -> py OK | js OK\n  edge phase_step 2.0 -> py INVALID | js INVALID\n  edge phase_step 2e0 -> py INVALID | js INVALID\n  edge checks 1 -> py INVALID | js INVALID\n  edge d -0/1 text -> py INVALID | js INVALID\n  edge d 2/16 text -> py INVALID | js INVALID\nnon-object / malformed texts: both INVALID\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python3",
+          "-I",
+          "test_reader_label_parity.py"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"status\": \"PASS\",\n  \"python_whitespace_codepoints\": [\n    \"U+0009\",\n    \"U+000A\",\n    \"U+000B\",\n    \"U+000C\",\n    \"U+000D\",\n    \"U+001C\",\n    \"U+001D\",\n    \"U+001E\",\n    \"U+001F\",\n    \"U+0020\",\n    \"U+0085\",\n    \"U+00A0\",\n    \"U+1680\",\n    \"U+2000\",\n    \"U+2001\",\n    \"U+2002\",\n    \"U+2003\",\n    \"U+2004\",\n    \"U+2005\",\n    \"U+2006\",\n    \"U+2007\",\n    \"U+2008\",\n    \"U+2009\",\n    \"U+200A\",\n    \"U+2028\",\n    \"U+2029\",\n    \"U+202F\",\n    \"U+205F\",\n    \"U+3000\"\n  ],\n  \"case_count\": 88,\n  \"cases\": [\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0009\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+000A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+000B\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+000C\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+000D\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+001C\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+001D\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+001E\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+001F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0020\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0085\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+00A0\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+1680\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2001\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2002\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2003\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2004\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2005\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2006\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2007\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2008\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2009\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+200A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2028\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+2029\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+202F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+205F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+3000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0009\",\n        \"U+000A\",\n        \"U+000B\",\n        \"U+000C\",\n        \"U+000D\",\n        \"U+001C\",\n        \"U+001D\",\n        \"U+001E\",\n        \"U+001F\",\n        \"U+0020\",\n        \"U+0085\",\n        \"U+00A0\",\n        \"U+1680\",\n        \"U+2000\",\n        \"U+2001\",\n        \"U+2002\",\n        \"U+2003\",\n        \"U+2004\",\n        \"U+2005\",\n        \"U+2006\",\n        \"U+2007\",\n        \"U+2008\",\n        \"U+2009\",\n        \"U+200A\",\n        \"U+2028\",\n        \"U+2029\",\n        \"U+202F\",\n        \"U+205F\",\n        \"U+3000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0020\",\n        \"U+0009\",\n        \"U+000D\",\n        \"U+000A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+FEFF\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+180E\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+200B\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0000\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0008\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+000E\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+001B\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0041\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+002D\",\n        \"U+0030\",\n        \"U+0031\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0020\",\n        \"U+0009\",\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+002D\",\n        \"U+0030\",\n        \"U+0031\",\n        \"U+0085\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0085\",\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+001C\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"harmonizer\",\n      \"label_codepoints\": [\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+FEFF\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0009\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+000A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+000B\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+000C\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+000D\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+001C\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+001D\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+001E\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+001F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0020\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0085\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+00A0\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+1680\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2001\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2002\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2003\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2004\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2005\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2006\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2007\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2008\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2009\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+200A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2028\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+2029\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+202F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+205F\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+3000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0009\",\n        \"U+000A\",\n        \"U+000B\",\n        \"U+000C\",\n        \"U+000D\",\n        \"U+001C\",\n        \"U+001D\",\n        \"U+001E\",\n        \"U+001F\",\n        \"U+0020\",\n        \"U+0085\",\n        \"U+00A0\",\n        \"U+1680\",\n        \"U+2000\",\n        \"U+2001\",\n        \"U+2002\",\n        \"U+2003\",\n        \"U+2004\",\n        \"U+2005\",\n        \"U+2006\",\n        \"U+2007\",\n        \"U+2008\",\n        \"U+2009\",\n        \"U+200A\",\n        \"U+2028\",\n        \"U+2029\",\n        \"U+202F\",\n        \"U+205F\",\n        \"U+3000\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0020\",\n        \"U+0009\",\n        \"U+000D\",\n        \"U+000A\"\n      ],\n      \"python\": \"INVALID\",\n      \"javascript\": \"INVALID\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+FEFF\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+180E\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+200B\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0000\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0008\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+000E\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+001B\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0041\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+002D\",\n        \"U+0030\",\n        \"U+0031\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0020\",\n        \"U+0009\",\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+002D\",\n        \"U+0030\",\n        \"U+0031\",\n        \"U+0085\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0085\",\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+001C\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    },\n    {\n      \"module\": \"relax\",\n      \"label_codepoints\": [\n        \"U+0072\",\n        \"U+0065\",\n        \"U+0061\",\n        \"U+0064\",\n        \"U+0065\",\n        \"U+0072\",\n        \"U+FEFF\"\n      ],\n      \"python\": \"OK\",\n      \"javascript\": \"OK\",\n      \"matched\": true\n    }\n  ]\n}\n",
+        "stderr": ""
+      }
+    ],
+    "algebra_changes": "none",
+    "retained_result_summary": {
+      "harmonizer": {
+        "value_matches": 3000,
+        "value_cases": 3000,
+        "generated_receipt_texts": 1200,
+        "lexical_edge_forms": 8,
+        "verdict_differences": 0
+      },
+      "relax": {
+        "value_matches": 3000,
+        "value_cases": 3000,
+        "generated_receipt_texts": 4000,
+        "lexical_edge_forms": 12,
+        "verdict_differences": 0
+      },
+      "reader_label_regressions": {
+        "matched": 88,
+        "cases": 88,
+        "python_whitespace_codepoints": 29
+      }
+    }
+  },
+  "verification_source_changes": "Portable relative paths; value/verdict parity assertions fail closed. Mathematical test cases retained."
+}
