@@ -16,6 +16,15 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - Verification index: https://eulershiddenl.ink/research/verification-index.md
 - Relational Metrology — Exact Relation Read: https://eulershiddenl.ink/relational-metrology/
 
+## Canonical evidence status
+
+1. **Pinned sources and exact finite checks:** the 45-module ledger retains each theorem's own scope. Separately, the independent Symmetric Minimum checker reports 140/140 finite identities and 33 negative controls.
+2. **Conditional Lean theorem:** `FunctionalClosure010o.six_secondary_brackets` proves six brackets only for a supplied `SmoothCompletion` with seven named premise roles.
+3. **Classical source record:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies field-level counterparts and six brackets under its stated hypotheses; it is distinct from the original Lean interface.
+4. **Open or excluded work:** the original `Int`-valued constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open. The finite SU(3) reader is not a path-integral ensemble, continuum extrapolation, or confinement measurement.
+
+No summary transfers a result between these status classes.
+
 ## Current public reading order
 
 Home: https://eulershiddenl.ink/
@@ -59,7 +68,7 @@ Notice: is a civic sign on the conditions that keep shared life readable.
 Reference edition:
 https://eulershiddenl.ink/papers/symmetric-minimum/
 
-Metric Minimum records the exact connection among three named constructions without adding a new field law. First, the Suture Field source gives \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\): one rank-four coframe supplies the Lorentzian metric and oriented solder flux, with a stated local regular-branch reduction to Einstein–Maxwell. Second, the canonical Einstein–Maxwell state \((\gamma,\pi;A,E)\) carries the same metric and electromagnetic data on a spatial slice; the conditional 010o Lean theorem gives the metric shift and gauge adjustment returned by two normal evolutions. A later source-documented classical \(C^\infty\) Einstein–Maxwell construction on compact boundaryless \(\mathbb T^3\) supplies the corresponding seven field-premise roles and six secondary brackets. Two current build gates are a concrete real \(C^\infty\) constructor for the original `Int`-valued Lean interface and P14, the finite-root-to-variational/Hamiltonian adapter; the reference edition retains its full eight-item source ledger. Third, the exact signed \(2\times2\) fibre block \(G_{\rm root}=[Q,\Omega_{\rm root}]\) occurs as the first block of \(\hat\eta=G_{\rm root}\oplus I_2\oplus I_2\oplus I_2\), with \(J_{\rm rot}:=-\Omega_{\rm root}\). Its independently recomputed operations \(Q,J_{\rm rot},H,L_{\rm ax}\) supply recurrence, quarter-phase, reflection, and metric-preserving transport on that one coordinate block. The canonical Gauss generator is separately named \(G_{\rm EM}[\alpha]\), with retained source notation \(G[s]\). The 28-word coordinate register is a source-indexed documentation table, distinct from the \(\binom82=28\) pair reads of a declared eight-address carrier. The release therefore closes the stated coframe relation, the source-documented classical field completion, and the exact finite algebra at their declared interfaces. Empirical calibration retains its separate open obligation. The release retains the source action and conditions, 45 pinned Lean 4.33.0 modules, the seven-premise six-bracket theorem, an independent 140/140 exact checker, 33 negative controls, and the repair ledger.
+Metric Minimum keeps five distinct records separate: (1) the stated Suture Field coframe map \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\) and its local regular-branch reduction; (2) the 010o Lean theorem, conditional on seven named `SmoothCompletion` premises; (3) the source-documented real \(C^\infty\) Einstein–Maxwell record on compact boundaryless \(\mathbb T^3\), under its stated hypotheses; (4) exact finite \(2\times2\) root relations and their independent checker; and (5) open original-`Int` constructor, P14 finite-root-to-variational/Hamiltonian adapter, and separately scoped physical readouts. The record does not combine these into an unconditional continuum or physical theorem. It retains 45 pinned Lean 4.33.0 modules, the 140/140 finite checker, 33 negative controls, and the linked source and repair records.
 
 Published release materials:
 
@@ -98,7 +107,7 @@ https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
 010t: pinned nonzero rational canonical pairing with prime-word order distinction; a later source record separately supplies the real \(C^\infty\) Einstein–Maxwell field completion on \(\mathbb T^3\).
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The source ledger gives the stated finite and local relations at the pinned source. The later source-documented real/Fréchet field construction closes the classical smooth field level; a concrete real \(C^\infty\) constructor for the original `Int`-valued SmoothCompletion formalization and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+The source ledger gives finite and local relations at the pinned source. The later source-documented real/Fréchet field construction records the classical smooth field result only at its stated scope; it does not instantiate the original `Int`-valued `SmoothCompletion` interface. That constructor and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 
