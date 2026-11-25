@@ -1,0 +1,37 @@
+{
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Harmonizer-Receipt/v0.1",
+  "rule": {
+    "id": "nearest_sector_pull",
+    "tie": "half_up",
+    "profile": "plateau_smoothstep"
+  },
+  "input": {
+    "q": 1,
+    "x": "5.25",
+    "h": "0.5",
+    "kappa": "0.5"
+  },
+  "trace": {
+    "x_mod": "21/4",
+    "d": "1/4",
+    "w": "1/2"
+  },
+  "recomputed": {
+    "s": 5,
+    "a": 5,
+    "y": "41/8"
+  },
+  "recorded": {
+    "s": 5,
+    "a": 5,
+    "y": "41/8"
+  },
+  "checks": {
+    "q_preserved": true,
+    "address_relation": true
+  },
+  "delta": [],
+  "reader": {
+    "label": "example-reader"
+  }
+}

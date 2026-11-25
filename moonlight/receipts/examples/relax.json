@@ -1,0 +1,41 @@
+{
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Relax-Receipt/v0.1",
+  "rule": {
+    "id": "fibonacci_quotient_relax",
+    "schedule": "rho_k=Fib_{k-1}/Fib_k"
+  },
+  "input": {
+    "q": 1,
+    "s": 5,
+    "a": 5,
+    "d": "1/4",
+    "k": 10
+  },
+  "trace": {
+    "rho": "34/55",
+    "kappa": "21/55",
+    "phase_step": 2
+  },
+  "recomputed": {
+    "q": 3,
+    "s": 5,
+    "a": 279,
+    "d": "17/110"
+  },
+  "recorded": {
+    "q": 3,
+    "s": 5,
+    "a": 279,
+    "d": "17/110"
+  },
+  "checks": {
+    "s_preserved": true,
+    "address_relation_input": true,
+    "address_relation_output": true,
+    "non_expansion": true
+  },
+  "delta": [],
+  "reader": {
+    "label": "example-reader"
+  }
+}

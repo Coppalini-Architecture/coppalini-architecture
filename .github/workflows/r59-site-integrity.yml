@@ -36,6 +36,9 @@ on:
       - '_redirects'
       - '.gitignore'
       - 'netlify.toml'
+      - 'moonlight/**'
+      - 'relational-metrology/index.html'
+      - 'tools/verify_moonlight_receipts.py'
       - 'EXTERNAL_ANCHOR_SHA256SUMS'
       - 'EXTERNAL_ANCHOR_COMPILER_RECEIPT.md'
       - 'build/**'
@@ -79,6 +82,9 @@ on:
       - '_redirects'
       - '.gitignore'
       - 'netlify.toml'
+      - 'moonlight/**'
+      - 'relational-metrology/index.html'
+      - 'tools/verify_moonlight_receipts.py'
       - 'EXTERNAL_ANCHOR_SHA256SUMS'
       - 'EXTERNAL_ANCHOR_COMPILER_RECEIPT.md'
       - 'build/**'
@@ -100,12 +106,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Audit the R59 public content, links and provenance
         run: |
           set -euo pipefail
           python3 -I verification/root28/check_root28.py --self-test
           python3 -I verification/zenodo-publication-registry/check_zenodo_publication_registry.py
           python3 tools/verify_r59_publication.py
+          python3 -I tools/verify_moonlight_receipts.py
           python3 -I tools/build_public_stage.py --output public
           test ! -e public/verification/external-anchor-receipt
           test ! -e public/proofs/ExternalAnchorReceipt.lean

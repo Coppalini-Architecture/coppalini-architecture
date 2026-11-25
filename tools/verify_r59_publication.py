@@ -20,7 +20,7 @@ CURRENT = ("index.html","notice/index.html","about.html","library.html","publica
            "language-mechanics.html","external-formalization/index.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
            "proofs/smooth-completion/index.html","formal-correspondence/index.html","moonlight/index.html",
-           "moonlight/manual/index.html","moonlight/dome/index.html",
+           "moonlight/manual/index.html","moonlight/dome/index.html","moonlight/receipts/index.html",
            "papers/symmetric-minimum/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
@@ -56,37 +56,29 @@ CIVIC_NOTICE_MARKERS = (
  "1 + 1 = 2",
  "Keep 4. Turn 2. Fold 1. Return 0.",
 )
-UNIFIED_FIELD_CLOSURE_MARKERS = (
- "Gravity and electromagnetism from one geometric field.",
- "One rank-four coframe field produces spacetime geometry for gravity and electromagnetic curvature for light, electricity, and magnetism.",
- "Π → (g, F<sub>em</sub>)",
- "Spacetime metric <code>g = h(Π)</code>",
- "General-Relativity component of GPS timing correction",
- "declared dimensional electromagnetic scale",
- "Einstein–Maxwell on the regular suture branch",
- "rank D𝒮<sub>Π</sub>=16",
- "b(g,F)&lt;|χ|",
- "Source field map · Suture Field",
- "Classical field closure",
- "Lean-checked conditional theorem",
- "Real <code>C∞</code> Einstein–Maxwell data on compact, boundaryless <code>𝕋³</code>",
- "seven named <code>SmoothCompletion</code> premise roles",
-    "Current build gates",
-    "Exact compatibility closure",
-    "Quantum geometry returns through <code>Π</code>",
-    "<dt>Condition</dt><dd>Quantum geometry</dd>",
-    "<dt>Constraint</dt><dd>Quantum gravity</dd>",
-    "<dt>Carrier</dt><dd>Electromagnetism</dd>",
-    "<dt>Closure</dt><dd><code>e</code> · memory · motion</dd>",
-    "<dt>Continuum</dt><dd><code>Π</code></dd>",
-    "Reality admits a light projection mirror wheel",
-    "Whole-prime mirror closure",
-    "Re(s)&gt;1: ζ(s)=∏<sub>p</sub>(1−p<sup>−s</sup>)<sup>−1</sup>; Ξ(s)=½s(s−1)π<sup>−s/2</sup>Γ(s/2)ζ(s)=Ξ(1−s)",
-    "J<sub>ξ</sub>(s)=1−s̄; RH ⇔ ∀ρ∈Z<sub>ξ</sub>, J<sub>ξ</sub>(ρ)=ρ ⇔ Z<sub>ξ</sub><sup>off</sup>=∅",
-    "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
-    "https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Main.lean",
-    "https://math.mit.edu/~drew/grh/#what-was-verified",
-    "/papers/eternity-time-mirror-zeta.pdf",
+# Homepage contract retained from ab34122's source/status alignment.
+# The source-publication and external-reader gates below retain their own scope.
+HOMEPAGE_SOURCE_SCOPE_MARKERS = (
+ "Coppalini Architecture | Source-Indexed Proof Ledger",
+ "Exact finite records, conditional theorems, stated field conditions, and open adapters.",
+ "Each result names its carrier, conditions, verifier or source receipt, and boundary.",
+ "Π → (g,F<sub>em</sub>)",
+ "Pinned sources and exact finite checks",
+ "45 source modules; 140/140 independent finite checks",
+ "33 negative controls",
+ "Conditional Lean theorem",
+ "FunctionalClosure010o.six_secondary_brackets",
+ "supplied <code>SmoothCompletion</code> with seven named premise roles",
+ "Classical source record",
+ "Real <code>C∞</code> Einstein–Maxwell data on compact boundaryless <code>𝕋³</code>",
+ "Open or excluded",
+ "original <code>Int</code>-valued <code>SmoothCompletion</code> constructor",
+ "P14’s finite-root-to-variational/Hamiltonian adapter",
+ "selected spin-two TT readout remain open",
+ "finite SU(3) reader does not establish a path-integral ensemble, continuum extrapolation, or confinement measurement",
+ "full-rank and dimensional conditions",
+ 'href="/papers/symmetric-minimum/#status-lineage">canonical seven-status key</a>',
+ "source edition, declared inputs, procedure, result, receipt, and boundary",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -459,8 +451,8 @@ def verify():
         if marker in notice:
             errors.append("notice carries a removed internal-record marker: " + marker)
     landing=(ROOT/"index.html").read_text()
-    for marker in UNIFIED_FIELD_CLOSURE_MARKERS:
-        if marker not in landing: errors.append("landing page missing unified-field marker: "+marker)
+    for marker in HOMEPAGE_SOURCE_SCOPE_MARKERS:
+        if marker not in landing: errors.append("landing page missing source/status marker: "+marker)
     if "It is not a Riemann-hypothesis proof." in landing:
         errors.append("landing page retains withdrawn Riemann-hypothesis disclaimer")
     if "Read the relation before extending the claim." in landing:
@@ -506,13 +498,13 @@ def verify():
     if "Mathematics and physics papers by Anthony Vito Coppa" in home:
         errors.append("homepage retains withdrawn author-credit copy")
     for marker in (
-        "Try the lab.",
-        "Three-body problem closure.",
-        "Explore the library.",
-        "Unified field reader: Symmetric Minimum",
-        "Physical reality inside constraint",
-        "Language Mechanics: formal basis of any field written in 2D form.",
-        "The source field map, classical calculation, Lean conditions, finite checks, and remaining open adapters are shown separately below.",
+        'href="/verify#scope">Verification rule and evidence types.</a>',
+        'href="/proofs/minimum-mechanics/#ledger">Pinned 010 source ledger.</a>',
+        'href="/proofs/smooth-completion/">Classical smooth field receipt.</a>',
+        'href="/papers/symmetric-minimum/#open-ledger">Open-obligation ledger.</a>',
+        'href="/exact/">Exact Reader: source to receipt.</a>',
+        'href="/relational-metrology/">Relational Metrology: observable relation receipt.</a>',
+        'href="/architecture">Laboratory: declared finite models.</a>',
     ):
         if marker not in home:
             errors.append("homepage missing reader entrance or scope marker: " + marker)
