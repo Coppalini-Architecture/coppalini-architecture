@@ -136,6 +136,7 @@
 .r59.disclosure-home .page-title h1 { max-width:none; font:650 clamp(2.35rem,4vw,3.7rem)/.95 ui-sans-serif,system-ui,sans-serif; letter-spacing:-.07em; }
 .r59.disclosure-home .page-title-deck { margin-top:1.05rem; font:550 clamp(1rem,1.35vw,1.16rem)/1.45 ui-sans-serif,system-ui,sans-serif; letter-spacing:-.015em; }
 .r59.disclosure-home .page-title-summary { max-width:42rem; font:400 .94rem/1.66 ui-sans-serif,system-ui,sans-serif; }
+.r59.disclosure-home .page-title-orientation { max-width:45rem; margin:1.1rem 0 0; color:var(--r59-muted); font:500 .81rem/1.62 ui-sans-serif,system-ui,sans-serif; }
 .r59.disclosure-home .lineage-heading h2,.r59.disclosure-home .r59-section h2 { font-family:ui-sans-serif,system-ui,sans-serif; letter-spacing:-.042em; }
 .r59.disclosure-home .lineage-heading > p { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.025em; }
 .r59.disclosure-home .disclosure-section { padding-block:clamp(2.4rem,4.5vw,4rem); }
