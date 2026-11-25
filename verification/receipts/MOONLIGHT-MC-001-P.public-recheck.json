@@ -1,0 +1,147 @@
+{
+  "packet": "MOONLIGHT-MC-001-P",
+  "scope": "Public recheck of the redacted derivative only. No result from the private MC-001 receipt is used as evidence about this file.",
+  "carrier": {
+    "name": "moonlight-phase-reader-v0.8.4.html",
+    "sha256": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb",
+    "bytes": 94320,
+    "integrity": "verified (sha256 of the file as checked; published beside the file, not stored inside it)",
+    "kind": "public redacted derivative of moonlight-phase-reader-v0.8.3.html",
+    "parent": {
+      "name": "moonlight-phase-reader-v0.8.3.html",
+      "sha256": "06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40",
+      "status": "superseded by this file; was served publicly until this replacement; file unchanged by this derivation"
+    },
+    "configuration": {
+      "method": "file executed in a headless DOM (jsdom 31.0.1); layout and SVG rendering not visually inspected",
+      "registry": "A8 · Four dual forms",
+      "matching_frame": "M0 · green",
+      "phase_tick": "0 / 2520 turn",
+      "reference_view": "2d",
+      "projection": "none · Minimum wheel",
+      "controls_read": {
+        "registry": "A8",
+        "matching": "0",
+        "view": "2d",
+        "application": "none",
+        "phase": "0"
+      }
+    }
+  },
+  "far_side_reader": {
+    "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+    "raw_clock": "2026-11-25 04:45:05 UTC (sandbox machine clock at record time)",
+    "clock_bound": {
+      "reference": "UTC(NIST) via time.gov display",
+      "epsilon_far_s": "[-2.603893, +3.679149)",
+      "definition": "UTC(NIST) - machine clock",
+      "sample": "one bracketed read on 2026-11-25 near 04:16 UTC; not carried to other times without a continuity witness",
+      "status": "bounded, not tight; interval contains zero"
+    }
+  },
+  "declared": [
+    {
+      "id": "D1",
+      "source": "v0.8.4 'Declared coordinates' table (data-cal-fields) and exported calibration.fields",
+      "value": "a = 0 turns; b = 3991/1080 turns; D_E = diag(1,-1) on E; M = R(b) D_E"
+    },
+    {
+      "id": "D2",
+      "source": "v0.8.4 calibration notice (page) and export",
+      "value": "b is a declared coordinate; no clock, time-standard, or UTC claim is carried"
+    },
+    {
+      "id": "D3",
+      "source": "v0.8.4 provenance block (page and export)",
+      "value": "public redacted derivative of v0.8.3; provenance carries the v0.8.3 parent hash only; time anchor, place and lunar data, and private library references withheld"
+    },
+    {
+      "id": "D4",
+      "source": "v0.8.4 calibration notice (page) and exported calibration.fourDimensional.map_V_to_E",
+      "value": "declared boundary: no map V -> E is supplied or used; root plane V and display plane E stay separate"
+    }
+  ],
+  "computed": [
+    {
+      "id": "C1",
+      "rule": "carrier state after load",
+      "input": "initial controls and exported currentState",
+      "output": "A8, M0 green, tick 0/2520, loops 0, view 2d, projection none; readout 'lambda 0, lambda-prime 3991/1080, visible about 250.333 deg'"
+    },
+    {
+      "id": "C2",
+      "rule": "M(lambda) = 3991/1080 - lambda against the file's own calibratedMirror output (exact fractions)",
+      "input": "ticks 0, 1, 360, 840, 1260, 2519",
+      "output": "all six equal 3991/1080 - n/2520: 3991/1080, 13967/3780, 26857/7560, 3631/1080, 3451/1080, 1019/378"
+    },
+    {
+      "id": "C3",
+      "rule": "M(M(lambda)) = b - (b - lambda)",
+      "input": "6000 ticks n/2520, n in -3000..2999",
+      "output": "equals lambda in every case: True"
+    },
+    {
+      "id": "C4",
+      "rule": "fixed lift = b/2; exported mirror.fixedLift",
+      "input": "3991/1080",
+      "output": "3991/2160; matches export: True"
+    },
+    {
+      "id": "C5",
+      "rule": "b mod 1 and membership in (1/7)Z/Z",
+      "input": "3991/1080",
+      "output": "751/1080 = 751/1080; 7*(751/1080) = 5257/1080, not an integer; not an address of (1/7)Z/Z"
+    },
+    {
+      "id": "C6",
+      "rule": "gcd(3991, 1080)",
+      "input": "3991/1080",
+      "output": "1, so the fraction is reduced; 7560 = 3*2520 carries b as 27937/7560"
+    },
+    {
+      "id": "C7",
+      "rule": "exported A8 matchings M0..M6",
+      "input": "7 matchings",
+      "output": "sizes [4, 4, 4, 4, 4, 4, 4]; union of 28 distinct edges; partition of the 28 edges of K8: True"
+    },
+    {
+      "id": "C8",
+      "rule": "residue scan, v0.8.4 file text and exported record",
+      "input": "43 strings on the file text (31 on the exported record): place, coordinates, lunar datum, time anchor and dates, clock readings, receipt vocabulary, private library IDs and URLs",
+      "output": "0 hits in the export; in the file only the intentional 'withheld' and 'no UTC claim' statements. Only link in the page: the public eulershiddenl.ink papers address."
+    },
+    {
+      "id": "C9",
+      "rule": "derivative fidelity: same driven states on parent and derivative",
+      "input": "initial state and six tick reads",
+      "output": "state objects and calibratedMirror outputs identical. Export differs only in schemaVersion, receipt[0].meta.schemaVersion, provenance, sources (private ids removed), and calibration (clock/place/anchor payload removed)."
+    }
+  ],
+  "claimed": [
+    {
+      "id": "CL1",
+      "statement": "Zodiac frame and human tool lineage projections; color, display, and anthropological associations",
+      "boundary": "declared application and display choices; not computed results"
+    },
+    {
+      "id": "CL2",
+      "statement": "Source titles and section numbers listed under provenance correspond to the author's papers",
+      "boundary": "titles and sections only; private library links removed; not opened or checked here"
+    }
+  ],
+  "open": [
+    {
+      "id": "O1",
+      "needed_to_close": "visual inspection of the rendered page in a browser (this recheck read behavior, not pixels)"
+    },
+    {
+      "id": "O2",
+      "needed_to_close": "independent origin for the published SHA-256 (value and file come from the same publisher)"
+    }
+  ],
+  "delta": [],
+  "return": {
+    "private_record_relation": "none claimed",
+    "next_target": "publish the file and this record together under one Library entry; hash is checked against the published copy after upload"
+  }
+}

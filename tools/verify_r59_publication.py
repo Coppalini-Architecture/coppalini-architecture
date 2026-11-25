@@ -98,8 +98,10 @@ SMOOTH_COMPLETION_PREMISES = (
  "boundaryNormal",
 )
 ROOT28_MANIFEST = "research/metric-minimum-root28-v0.1.json"
-MOONLIGHT_ARTIFACT = "models/view/moonlight-phase-reader-v0.8.3.html"
-MOONLIGHT_SHA256 = "06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40"
+MOONLIGHT_ARTIFACT = "models/view/moonlight-phase-reader-v0.8.4.html"
+MOONLIGHT_RECORD = "verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json"
+MOONLIGHT_SHA256 = "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb"
+MOONLIGHT_LEGACY_ARTIFACT = "/models/view/moonlight-phase-reader-v0.8.3.html"
 
 ROOT28_ARTIFACTS = (
  "research/metric-minimum-root28-v0.1.md",
@@ -361,19 +363,36 @@ def verify():
         if not (ROOT/paper).is_file(): errors.append("required source missing: "+paper)
     moonlight = ROOT / MOONLIGHT_ARTIFACT
     if not moonlight.is_file():
-        errors.append("MOONLIGHT v0.8.3 artifact missing")
+        errors.append("MOONLIGHT v0.8.4 artifact missing")
     elif sha256(moonlight) != MOONLIGHT_SHA256:
-        errors.append("MOONLIGHT v0.8.3 artifact hash mismatch")
+        errors.append("MOONLIGHT v0.8.4 artifact hash mismatch")
+    moonlight_record = ROOT / MOONLIGHT_RECORD
+    if not moonlight_record.is_file():
+        errors.append("MOONLIGHT MC-001-P record missing")
+    else:
+        try:
+            record = json.loads(moonlight_record.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append("MOONLIGHT MC-001-P record is invalid JSON: " + str(exc))
+        else:
+            if record.get("carrier", {}).get("sha256") != MOONLIGHT_SHA256:
+                errors.append("MOONLIGHT MC-001-P carrier hash mismatch")
     moonlight_page = (ROOT/"moonlight/index.html").read_text(encoding="utf-8")
     for marker in (
-        "MOONLIGHT · Minimum Wheel v0.8.3",
+        "MOONLIGHT · Minimum Wheel v0.8.4",
         MOONLIGHT_SHA256,
-        "/models/view/moonlight-phase-reader-v0.8.3.html",
+        "/models/view/moonlight-phase-reader-v0.8.4.html",
+        "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json",
+        "no clock, time-standard, or UTC claim",
         "Gate and Survival are defined inherited interfaces",
         "evaluators remain uninstantiated",
     ):
         if marker not in moonlight_page:
             errors.append("MOONLIGHT public page missing marker: " + marker)
+    for public_ref in ("moonlight/index.html", "library.html", "llms.txt", "llms-full.txt"):
+        public_text = (ROOT / public_ref).read_text(encoding="utf-8")
+        if MOONLIGHT_LEGACY_ARTIFACT in public_text:
+            errors.append(public_ref + ": retains legacy MOONLIGHT reader path")
     proof = json.loads((ROOT/"research/minimum-mechanics-010u.json").read_text())
     if proof.get("pinned_commit") != PROOF_PIN: errors.append("proof pin mismatch")
     if proof.get("modules") != 45 or len(proof.get("stages",[])) != 21:

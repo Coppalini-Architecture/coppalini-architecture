@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>MOONLIGHT · Minimum Wheel · v0.8.3</title>
+<title>MOONLIGHT · Minimum Wheel · v0.8.4</title>
 <style>:root {
   color-scheme: light dark;
   background-color: var(
@@ -1501,7 +1501,7 @@ html>body{padding:0}</style>
 <style>body{box-sizing:border-box;max-width:800px;margin:0 auto;padding:24px 20px 32px!important} @media(max-width:480px){body{padding:16px 12px 24px!important}}</style>
 </head>
 <body>
-<!-- MOONLIGHT v0.8.3. Exact integer phase state; source registries and matching;
+<!-- MOONLIGHT v0.8.4, public redacted derivative of v0.8.3. Exact integer phase state; source registries and matching;
      declared 2D/3D display; independently centered application projections. -->
 <main id="moonlight-phase-reader">
   <style>
@@ -1570,7 +1570,7 @@ html>body{padding:0}</style>
     }
   </style>
   <header>
-    <div class="mpr-heading-line"><h1>MOONLIGHT</h1><span class="mpr-version text-small">v0.8.3 · minimum wheel</span></div>
+    <div class="mpr-heading-line"><h1>MOONLIGHT</h1><span class="mpr-version text-small">v0.8.4 · minimum wheel · public redacted</span></div>
     <p class="mpr-subtitle">Return · Memory · Transport</p>
   </header>
 
@@ -1664,13 +1664,12 @@ html>body{padding:0}</style>
   <section class="mpr-section" aria-labelledby="mpr-calibration-heading">
     <h2 id="mpr-calibration-heading">Calibrated E-mirror</h2>
     <div class="mpr-readout tabular-nums text-small"><span data-cal-lift></span><span data-cal-mirror></span><span data-cal-phase></span></div>
-    <p class="text-small mpr-note">Reads the current lift as λ on this time calibration: λ′ = a + b − λ, with a = 0 and b = 3991/1080 turns. Exact in 1/7560 turn. The wheel above keeps its own tonic mirror.</p>
-    <p class="mpr-formula text-small">λ(t) = (t − t₀)/86400 s · t₀ = t<sub>A</sub> = 2026-11-20 23:42:00 UTC<br>b = 319280/86400 = 3991/1080 = 3 + 751/1080 turns · visible (250 + 1/3)°<br>M = 𝓡(b) D<sub>E</sub> 𝓡(−a) = 𝓡(a+b) D<sub>E</sub> · 𝓡(λ) = e<sup>2πλC</sup> · D<sub>E</sub> = diag(1,−1)</p>
-    <details><summary>Two receipts and adapter</summary><div>
+    <p class="text-small mpr-note">Reads the current lift as λ on this calibration: λ′ = a + b − λ, with a = 0 and b = 3991/1080 turns. Exact in 1/7560 turn. The wheel above keeps its own tonic mirror.</p>
+    <p class="mpr-formula text-small">b = 3991/1080 = 3 + 751/1080 turns · visible (250 + 1/3)°<br>M = 𝓡(b) D<sub>E</sub> 𝓡(−a) = 𝓡(a+b) D<sub>E</sub> · 𝓡(λ) = e<sup>2πλC</sup> · D<sub>E</sub> = diag(1,−1)</p>
+    <details><summary>Declared coordinates</summary><div>
       <div class="table-responsive"><table class="table table-sm"><thead><tr><th>Field</th><th>Value</th><th>Mark</th></tr></thead><tbody data-cal-fields></tbody></table></div>
-      <p class="text-small mpr-note">M depends only on a + b, so it cannot recover the ordered pair (a, b). The record keeps both receipts beside M.</p>
-      <p class="text-small mpr-note">With ε<sub>C</sub> seconds of unknown clock correction, b = 3991/1080 + ε<sub>C</sub>/86400. ε<sub>C</sub> is OPEN, so b is the exact coordinate of the instrument reading and is not verified UTC.</p>
-      <p class="text-small mpr-note">General law: λ′ = b − σ<sub>A</sub>σ<sub>C</sub>(λ − a). Both signs witness increasing clock order, so σ<sub>A</sub>σ<sub>C</sub> = +1. Waxing direction stays in μ<sub>A</sub>. P is the declared civil-day unit of this reader and makes no astronomical claim.</p>
+      <p class="text-small mpr-note">M depends only on a + b, so it cannot recover the ordered pair (a, b). The record keeps both declared coordinates beside M.</p>
+      <p class="text-small mpr-note">b is a declared coordinate of this reader. It carries no clock, time-standard, or UTC claim.</p>
       <p class="text-small mpr-note">a + b = 751/1080 mod 1 is not a multiple of 1/7, so M sends every one of the seven addresses between addresses. The finite matchings are unchanged. Source mirror on Ṽ = V ⊕ E: H<sub>root</sub> ⊕ D<sub>E</sub>. Calibrated mirror: H<sub>root</sub> ⊕ M. Each keeps its own plane; no map V → E is used.</p>
     </div></details>
   </section>
@@ -1701,23 +1700,23 @@ html>body{padding:0}</style>
   </div></details>
   <details><summary>Provenance and display declarations</summary><div>
     <ul class="mpr-source-list text-small">
-      <li><a href="https://chatgpt.com/library?file_id=libfile_41e7482a25f48191a108d6d8f756292d&account_id=personal">Gravity–Light</a> · GL.0–GL.2 · interval, null relation, and exact root.</li>
-      <li><a href="https://chatgpt.com/library?file_id=libfile_ae11d2a8b15c8191af99c7b29aacc3fd&account_id=personal">Memory–Motion</a> · MM.0–MM.0b, MM.9–MM.11 · transport, inverse carriage, and retained return.</li>
-      <li><a href="https://chatgpt.com/library?file_id=libfile_27760d572154819194f5be453c417482&account_id=personal">Time–Scope</a> · TS.0–TS.10 · local phase, projective scope, and mirror covariance.</li>
-      <li><a href="https://chatgpt.com/library?file_id=libfile_d99d85a75d908191b85f7e33fab1ee27&account_id=personal">Horizon–Silence</a> · §§1, 5–8 · viability, completed fit, A8, and seven source matchings.</li>
-      <li><a href="https://chatgpt.com/library?file_id=libfile_58da5bf8167c8191a9e2e4df515e588c&account_id=personal">Structure of Survival</a> · twenty-eight-seam theorem · source matching receipt.</li>
-      <li><a href="https://chatgpt.com/library?file_id=libfile_fde3_f-24014fac0d4481919f174cf960717a2a_025d7c8b39008191b27ea8d29729c11a&account_id=personal">Mirror Recognition</a> · §8 · operational classification receipt.</li>
+      <li>Gravity–Light · GL.0–GL.2 · interval, null relation, and exact root.</li>
+      <li>Memory–Motion · MM.0–MM.0b, MM.9–MM.11 · transport, inverse carriage, and retained return.</li>
+      <li>Time–Scope · TS.0–TS.10 · local phase, projective scope, and mirror covariance.</li>
+      <li>Horizon–Silence · §§1, 5–8 · viability, completed fit, A8, and seven source matchings.</li>
+      <li>Structure of Survival · twenty-eight-seam theorem · source matching receipt.</li>
+      <li>Mirror Recognition · §8 · operational classification receipt.</li>
     </ul>
     <p class="text-small mpr-note">Source carrier (PRIC; Gravity–Light): E = ℝ², Ṽ = ℝ² ⊕ E, so dim Ṽ = 4. G̃ = G ⊕ I₂ and C̃ = C ⊕ C, with sig(G̃) = (3,1). The sevenfold action is ϱ(τ<sup>r</sup>) = I₂ ⊕ R<sub>r</sub>, with R<sub>r</sub> = e<sup>(2πr/7)C</sup> on E. These definitions were supplied by the author; the PRIC document is not linked in this file. The source matching colors are M0 green, M1 blue, M2 indigo, M3 violet, M4 red, M5 orange, M6 yellow. The phase reader retains its own seven-band register and moonlight-yellow tonic. Equal phase spacing is derived: a faithful representation of ℤ₇ in ℝ/ℤ has φ(k) = mk/7 mod 1 with m in {1,…,6}, and R<sub>r</sub> with the orientation of C sets m = 1. Orientation is fixed by C. The public root uses Ω = [[0,1],[−1,0]], and C = −Ω, so the same action is m = −1 in Ω. Color calibration and interpolation, screen projection, zodiac names, and human-tool placement are declared display/application choices.</p>
     <p class="text-small mpr-note">Mirror Recognition §8 distinguishes g, the reader address, from G, the symmetric keep: eight office addresses plus g give nine. The ∞ node is an office address. Application centers retain their separate phase references.</p>
-    <p class="text-small mpr-note">Parent: moonlight-phase-reader-v0.8.2.html<br><span class="mpr-formula">SHA-256 6d12a754588e5f79294efa471677ad4e4968d00ea1bdd8789247ab26772561cb</span><br>Before it: moonlight-phase-reader-v0.8.1.html<br><span class="mpr-formula">SHA-256 3f66a1a1ac24e83a83f2fb49b34ade80941b2d9b6b0faed6bcda5540196b6ca6</span><br>Before it: moonlight-phase-reader-v0.8.html<br><span class="mpr-formula">SHA-256 bc0bf2d0e698dcfe7db8cb25296f306cd589b1c1f5195863cab7a788eae3d295</span><br>Before it: moonlight-phase-reader-v0.7.html<br><span class="mpr-formula">SHA-256 3f43e39d4f5b7e992042021484c3cced11e16913848708b4570b0e1f58145c56</span><br>Before it: moonlight-phase-reader-v0.6.html<br><span class="mpr-formula">SHA-256 69db537346997a457035bd2c9367d4cc72be1878035016b30f8a5f76ebd439ac</span><br>Before it: moonlight-phase-reader-v0.5.html<br><span class="mpr-formula">SHA-256 990dd2e303b98b49892411567aaf85f06fa6646c2b3a7d5dbd9cd08a03872132</span><br>Before it: moonlight-phase-reader-v0.4.html<br><span class="mpr-formula">SHA-256 b71019f5c2099e19839e7ee065f92498ea82500cc462ec4fb1df69ff0e8deef5</span></p>
+    <p class="text-small mpr-note">Public redacted derivative of moonlight-phase-reader-v0.8.3.html (superseded by this file).<br>Parent SHA-256 <span class="mpr-formula">06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40</span><br>This file's own SHA-256 is published beside it. A time anchor, place and lunar data, and private library references are withheld.</p>
     <p class="text-small mpr-note">The symbolic zodiac frame retains twelve positions and an application center. An astronomical calendar would additionally require a declared time standard, frame, ephemeris, and location rule. This file carries no live astronomical, geographic, or physiological measurement input.</p>
   </div></details>
   <details class="mpr-section"><summary>Record · <span data-count></span></summary><div>
     <div class="table-responsive mpr-log"><table class="table table-sm tabular-nums"><thead><tr><th>#</th><th>Operation</th><th class="text-end">Before</th><th class="text-end">After</th><th class="text-end">Change</th></tr></thead><tbody data-log></tbody></table></div>
     <p class="text-small mpr-note">Phase values are signed lifts in turns. The latest 200 events appear here; the full receipt is retained in this page session. Copying includes the registries, sources, application references, and current state. Reloading starts a new session.</p>
     <div class="viz-controls"><button class="btn" type="button" data-copy>Copy full record</button><span class="text-small" data-copied aria-live="polite"></span></div>
-    <textarea class="form-control mpr-copy" data-copytext aria-label="Full v0.8.3 record as JSON" readonly hidden></textarea>
+    <textarea class="form-control mpr-copy" data-copytext aria-label="Full v0.8.4 record as JSON" readonly hidden></textarea>
   </div></details>
 
   <script>
@@ -1750,12 +1749,12 @@ html>body{padding:0}</style>
         {relation:'Light',offices:['Cut','Read']},{relation:'Memory',offices:['Couple','Return']}
       ]);
       const SOURCES = Object.freeze([
-        {id:'GL',libraryFileId:'libfile_41e7482a25f48191a108d6d8f756292d',title:'Gravity–Light',sections:'GL.0–GL.2'},
-        {id:'MM',libraryFileId:'libfile_ae11d2a8b15c8191af99c7b29aacc3fd',title:'Memory–Motion',sections:'MM.0–MM.0b; MM.9–MM.11'},
-        {id:'TS',libraryFileId:'libfile_27760d572154819194f5be453c417482',title:'Time–Scope',sections:'TS.0–TS.10'},
-        {id:'HS',libraryFileId:'libfile_d99d85a75d908191b85f7e33fab1ee27',title:'Horizon–Silence',sections:'1; 5–8'},
-        {id:'SURVIVAL',libraryFileId:'libfile_58da5bf8167c8191a9e2e4df515e588c',title:'Structure of Survival',sections:'twenty-eight-seam theorem'},
-        {id:'MIRROR_RECOGNITION',libraryFileId:'libfile_fde3_f-24014fac0d4481919f174cf960717a2a_025d7c8b39008191b27ea8d29729c11a',title:'Mirror Recognition',sections:'8'}
+        {id:'GL',title:'Gravity–Light',sections:'GL.0–GL.2'},
+        {id:'MM',title:'Memory–Motion',sections:'MM.0–MM.0b; MM.9–MM.11'},
+        {id:'TS',title:'Time–Scope',sections:'TS.0–TS.10'},
+        {id:'HS',title:'Horizon–Silence',sections:'1; 5–8'},
+        {id:'SURVIVAL',title:'Structure of Survival',sections:'twenty-eight-seam theorem'},
+        {id:'MIRROR_RECOGNITION',title:'Mirror Recognition',sections:'8'}
       ]);
       const CORE_FORMS = Object.freeze([
         {names:['Gravity','Light'],sourceId:'GL',definition:'ds²=gμν dxμ dxν; null ds²=0'},
@@ -1791,33 +1790,16 @@ html>body{padding:0}</style>
       }));
       // Time calibration on E. The two receipts stay separate from the mirror they give.
       const CALIBRATION = Object.freeze({
-        AVC:{t:'2026-11-20 18:42:00 EST = 2026-11-20 23:42:00 UTC',bracket:['18:41:55','18:42:00','18:42:01'],x:['Cedar Grove Drive reference','39°57′N, 75°10′W'],place:{placeRole:{value:'past public-park reference fixed as a memory-return coordinate',mark:'AVC DECLARED'},coordinateReceipt:{value:'39°57′N, 75°10′W',mark:'screenshot WITNESSED'},presentLocation:'NOT RECORDED',arithmeticUse:'NONE'},mu:'83.0%, Waxing Gibbous at 18:41:54 EST; waxing direction +1',sigma:1,lambda:'0'},
-        Claude:{t:'2026-11-24 16:23:20 (machine clock, displayed UTC, cut to the second)',x:'OPEN',mu:'OPEN',sigma:1,lambda:'3991/1080',epsilonSeconds:'OPEN'},
-        adapter:{t0:'2026-11-20 23:42:00 UTC',periodSeconds:86400,law:'lambda=(t-t0)/86400',differenceSeconds:319280,sigmaProduct:1},
-        mirror:{operator:'M=Rot(b) D_E Rot(-a)=Rot(a+b) D_E; Rot(x)=exp(2 pi x C); D_E=diag(1,-1)',law:'lambda -> a+b-lambda',general:'lambda -> b-sigmaA sigmaC (lambda-a)',sumTurns:'3991/1080',visibleSum:'751/1080',fixedLift:'3991/2160',uncertainty:'b=3991/1080+epsilon_C/86400',exactDenominator:7560,sevenAddresses:'751/1080 not in (1/7)Z mod 1; no address is sent to an address'},
+        mirror:{operator:'M=Rot(b) D_E Rot(-a)=Rot(a+b) D_E; Rot(x)=exp(2 pi x C); D_E=diag(1,-1)',law:'lambda -> a+b-lambda',sumTurns:'3991/1080',visibleSum:'751/1080',fixedLift:'3991/2160',exactDenominator:7560,sevenAddresses:'751/1080 not in (1/7)Z mod 1; no address is sent to an address'},
         fourDimensional:{source:'H_root ⊕ D_E',calibrated:'H_root ⊕ M',preserves:'G ⊕ I_2',involution:true,map_V_to_E:'none used'},
-        notReconstructible:'M depends on a+b only; receipts are retained separately',
+        notReconstructible:'M depends on a+b only; the declared coordinates are retained beside M',
         fields:[
-          ['AVC · clock bracket','18:41:55 < 18:42:00 < 18:42:01 EST','WITNESSED'],
-          ['AVC · minute seam t_A','2026-11-20 18:42:00 EST = 23:42:00 UTC','DECLARED'],
-          ['AVC · place reference','Cedar Grove Drive','WITNESSED'],
-          ['AVC · placeRole','Past public-park reference fixed as a memory-return coordinate','DECLARED'],
-          ['AVC · coordinateReceipt','39°57′N, 75°10′W (separate screenshot field)','WITNESSED'],
-          ['AVC · presentLocation','none','NOT RECORDED'],
-          ['AVC · arithmeticUse of place','none','NONE'],
-          ['AVC · μ_A','83.0% Waxing Gibbous at 18:41:54; waxing +1','WITNESSED'],
-          ['AVC · σ_A','+1, increasing clock order','WITNESSED'],
-          ['Claude · t_C','2026-11-24 16:23:20, machine clock','WITNESSED'],
-          ['Claude · first reading as b','first reading after the request','DECLARED'],
-          ['Claude · σ_C','+1, second reading 1.507 s later','WITNESSED'],
-          ['Claude · accuracy against UTC','ε_C','OPEN'],
-          ['Claude · location x_C','none','OPEN'],
-          ['Claude · lunar and solar μ_C','none','OPEN'],
-          ['Adapter · t₀ = t_A','2026-11-20 23:42:00 UTC','DECLARED'],
-          ['Adapter · P','86400 s per turn','DECLARED'],
-          ['Adapter · λ','(t − t₀)/P','DEFINED'],
-          ['b, machine','3991/1080 turns','DERIVED'],
-          ['M','𝓡(3991/1080) D_E','DERIVED']
+          ['a','0 turns','DECLARED'],
+          ['b','3991/1080 turns','DECLARED'],
+          ['D_E','diag(1,−1) on E','DECLARED'],
+          ['M','𝓡(3991/1080) D_E','DERIVED'],
+          ['Fixed lift','3991/2160 turn','DERIVED'],
+          ['Clock or UTC claim','none carried','NONE']
         ]
       });
       // 7560 = 3 x 2520 holds both the phase steps and 3991/1080 = 27937/7560.
@@ -1899,12 +1881,12 @@ html>body{padding:0}</style>
       // Reading never changes the record. An unfinished drag is reported as pending.
       function exportRecord() {
         return {
-          schemaVersion:'0.8.3',denominator:PERIOD,
+          schemaVersion:'0.8.4',denominator:PERIOD,
           registries:clone(REGISTRIES),coreAddresses:[...addresses],fourDualForms:clone(CORE_FORMS),operationalClassification:clone(CLASSIFICATION),
           matchings:Array.from({length:7},(_,r) => ({id:`M${r}`,index:r,color:{...matchingColors[r]},edges:matching(r)})),
           phaseRegister:{tonic:'moonlight yellow',tonicHex:palette[0],angularSpacing:{status:'derived',law:'phi(k) = m k/7 mod 1, m in {1,...,6}',from:'faithful representation of Z7 in R/Z',generator:1,generatorFrom:'R_r = exp((2 pi r/7) C) with the orientation of C'},colorRendering:'declared calibration and interpolation between phase addresses',entries:palette.map((hex,i) => ({phaseIndex:i,symbol:glyphs[i],colorName:colorNames[i],hex})),greenThroughViolet:'sample display tuning'},
           applications:clone(APPLICATIONS),activeApplication:activeApp,applicationReferences:{...appCenters},sources:clone(SOURCES),
-          provenance:{parentFile:'moonlight-phase-reader-v0.8.2.html',parentSha256:'6d12a754588e5f79294efa471677ad4e4968d00ea1bdd8789247ab26772561cb',grandparentFile:'moonlight-phase-reader-v0.8.1.html',grandparentSha256:'3f66a1a1ac24e83a83f2fb49b34ade80941b2d9b6b0faed6bcda5540196b6ca6',readerReference:{source:'MIRROR_RECOGNITION §8',g:'reader address',G:'symmetric keep',count:'8 office addresses + g = 9',infinity:'office address',applicationCenters:'separate application reference state'}},
+          provenance:{parentFile:'moonlight-phase-reader-v0.8.3.html',parentSha256:'06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40',derivative:'public redacted derivative; time anchor, place and lunar data, and private library references withheld',readerReference:{source:'MIRROR_RECOGNITION §8',g:'reader address',G:'symmetric keep',count:'8 office addresses + g = 9',infinity:'office address',applicationCenters:'separate application reference state'}},
           qualifiedNames:{A8:REGISTRIES.A8.names.map(n => `A8.${n}`),O8:REGISTRIES.O8.names.map(n => `O8.${n}`),relation:CLASSIFICATION.map(c => `relation.${c.relation}`),house:houseNames.map(n => `house.${n}`),control:['control.return-forward','control.return-backward']},
           mirrorRules:{phase:'t -> -t',application:'t -> 2c-t, c=application center',composition:'application mirror after phase mirror: t -> t+2c',finiteReflection:'R_r: k -> 2r-k mod 7; fixes r and infinity',matching:'M_r agrees with R_r on the other six finite addresses and exchanges r with infinity',reflectionComposition:'R_r after R_s: k -> k+2(r-s) mod 7; generates the dihedral group of order 14'},
           inheritedClosure:clone(INHERITED_CLOSURE),
@@ -2211,7 +2193,7 @@ html>body{padding:0}</style>
       });
       const observer=new ResizeObserver(() => draw(drawnTicks));
       observer.observe(root.querySelector('.mpr-figure'));
-      record('origin',null,ticks,{schemaVersion:'0.8.3',denominator:PERIOD,coreRegistry,matchingFrame,view,applicationReferences:{...appCenters}});
+      record('origin',null,ticks,{schemaVersion:'0.8.4',denominator:PERIOD,coreRegistry,matchingFrame,view,applicationReferences:{...appCenters}});
       show(false);
     })();
   </script>

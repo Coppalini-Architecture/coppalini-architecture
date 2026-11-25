@@ -26,7 +26,7 @@ Verify: https://eulershiddenl.ink/verify
 External Formalization Reader: https://eulershiddenl.ink/external-formalization/
 Library: https://eulershiddenl.ink/library
 The Displacement of the Origin: https://eulershiddenl.ink/papers/displacement-of-origin/
-MOONLIGHT Minimum Wheel v0.8.3: https://eulershiddenl.ink/moonlight/
+MOONLIGHT Minimum Wheel v0.8.4: https://eulershiddenl.ink/moonlight/
 Publication Records: https://eulershiddenl.ink/publication-records
 Language Mechanics: https://eulershiddenl.ink/language-mechanics
 Laboratory: https://eulershiddenl.ink/architecture
@@ -34,13 +34,14 @@ Basis: https://eulershiddenl.ink/formalism
 About: https://eulershiddenl.ink/about
 R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
 
-## MOONLIGHT Minimum Wheel v0.8.3
+## MOONLIGHT Minimum Wheel v0.8.4
 
 Public reader: https://eulershiddenl.ink/moonlight/
-Exact artifact: https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.3.html
-SHA-256: 06d63b1bf476445989ff12e1156763baab9559453fa33aec71c0c18ff2713d40
+Exact artifact: https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html
+MC-001-P record: https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json
+SHA-256: 70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb
 
-MOONLIGHT is a computational reference reader downstream of the Refusal Wall. It keeps the eight-address finite carrier and continuous E-plane separately typed, preserves independent reference receipts, uses a 1/2520-turn core wheel and exact 1/7560-turn calibrated mirror, and records TYPE-before-Gate, Gate, and Survival as inherited defined interfaces. Their MOONLIGHT evaluators are UNINSTANTIATED; this release adds no policy, hazard, geographic, astronomical, physiological, Gate, or Survival evaluator.
+MOONLIGHT is a public redacted computational reference reader downstream of the Refusal Wall. It declares a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
 
 ## Formal correspondence
 
