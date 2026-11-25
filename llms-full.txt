@@ -37,7 +37,7 @@ Use a claim at the scope it earns. Follow source edition, inputs, procedure, res
 
 Home: https://eulershiddenl.ink/
 Formal Correspondence Ledger: https://eulershiddenl.ink/formal-correspondence/
-Notice: https://eulershiddenl.ink/notice/
+Notice (civic and classical): https://eulershiddenl.ink/notice/
 Metric Minimum / Symmetric Minimum reference edition: https://eulershiddenl.ink/papers/symmetric-minimum/
 Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
 Verify: https://eulershiddenl.ink/verify

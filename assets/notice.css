@@ -60,6 +60,17 @@
   color: var(--ink);
   font: 1.15rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
 }
+.notice-classical { max-width: 64rem; }
+.notice-classical h3 { margin: 2.35rem 0 .75rem; font: 650 1.04rem/1.25 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.015em; }
+.notice-contrast { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 1.75rem 0; }
+.notice-contrast div { padding: 1rem 1.05rem 1.1rem; border: 1px solid var(--r59-rule); background: var(--surface); }
+.notice-contrast dt { color: var(--ink); font: 700 .75rem/1.35 ui-sans-serif, system-ui, sans-serif; letter-spacing: .05em; text-transform: uppercase; }
+.notice-contrast dd { margin: .55rem 0 0; color: var(--r59-muted); font-size: .88rem; line-height: 1.65; }
+.notice-contrast code { font-size: .82em; overflow-wrap: anywhere; }
+.notice-source { margin-top: 1.55rem; color: var(--r59-muted); font-size: .89rem !important; }
+.notice-citations { max-width: 55rem; margin: 1rem 0 0; padding-left: 1.25rem; }
+.notice-citations li { margin: 0 0 1rem; padding-left: .2rem; line-height: 1.65; }
+.notice-citations a { white-space: nowrap; }
 .notice-closing { padding-bottom: clamp(3rem, 6vw, 5rem); }
 .notice-closing .notice-closing-line { margin-top: 1.35rem; color: var(--ink); font: 700 .78rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .06em; text-transform: uppercase; }
 @media (max-width: 44rem) {
@@ -71,4 +82,5 @@
   .notice-section { padding-block: 2.35rem; }
   .notice-section h2 { font-size: 1.7rem; }
   .notice-section p { font-size: .95rem; }
+  .notice-contrast { grid-template-columns: 1fr; }
 }
