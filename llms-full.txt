@@ -14,6 +14,7 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - Exact Reader registry: https://eulershiddenl.ink/exact/read-registry.json
 - Reader contract: https://eulershiddenl.ink/research/reader-contract.json
 - Verification index: https://eulershiddenl.ink/research/verification-index.md
+- Relational Metrology: https://eulershiddenl.ink/relational-metrology/
 
 ## Current public reading order
 

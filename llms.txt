@@ -12,6 +12,7 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - [Exact Reader registry](https://eulershiddenl.ink/exact/read-registry.json): machine-readable evidence records and their scopes.
 - [Reader contract](https://eulershiddenl.ink/research/reader-contract.json): status types, source precedence, and inference boundaries.
 - [Verification index](https://eulershiddenl.ink/research/verification-index.md): source editions, check records, and correction history.
+- [Relational Metrology](https://eulershiddenl.ink/relational-metrology/): a browser-local reader for a declared question, timing convention, paired readings, exact decimal residual, and stated-resolution receipt.
 
 ## Current public record
 
