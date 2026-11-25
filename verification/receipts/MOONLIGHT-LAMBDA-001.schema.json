@@ -1,5 +1,5 @@
 {
-  "schema": "CoppaliniArchitecture.MOONLIGHT-Lambda/v0.2",
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Lambda/v0.3",
   "status": "DECLARED public coordination schema; not a measurement protocol",
   "sources": {
     "metric_mirror_symmetry": "/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf",
@@ -8,7 +8,11 @@
       "path": "/models/view/moonlight-phase-reader-v0.8.4.html",
       "sha256": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb"
     },
-    "moonlight_record": "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json"
+    "moonlight_record": "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json",
+    "iris_dome": {
+      "path": "/moonlight/dome/",
+      "sha256": "3e363d896c0fae2cc9895aabfb6041a16e5c4b7481fb8253f59e57d208b28c96"
+    }
   },
   "axial_lift": {
     "period_T": "2 log Phi",
@@ -40,7 +44,38 @@
       "codomain": "a in Z/548Z",
       "law": "a mod 4 = q; a mod 137 = s",
       "geometry": "four phase bands; 137 iris sectors per band",
+      "export": "dome_receipt",
       "feedback": "Display output does not update the MOONLIGHT phase mirror."
+    }
+  },
+  "dome_receipt": {
+    "schema": "CoppaliniArchitecture.MOONLIGHT-Dome-Receipt/v0.1",
+    "status": "DECLARED export record; reader-supplied; nothing is captured automatically",
+    "directed_check": "Dome receipt -> this schema (path, version) -> pinned Dome bytes",
+    "fields": ["source", "dome", "checks", "delta", "reader"],
+    "source": {
+      "schema": "/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json",
+      "version": "v0.3",
+      "note": "The receipt names this schema by path and version only. The Dome hash is pinned in sources.iris_dome, one way."
+    },
+    "dome": {
+      "fields": ["q", "s_input", "s", "a"],
+      "q": "integer, 0..3",
+      "s_input": "optional safe integer",
+      "s": "integer, 0..136",
+      "a": "integer, 0..547",
+      "s_rule": "When s_input is present, require s = s_input mod 137 (non-negative residue). When s_input is omitted, require canonical s in 0..136 directly.",
+      "law": "a = s + 137 * mod(q - s, 4)"
+    },
+    "checks": {
+      "fields": ["a_mod_4_eq_q", "a_mod_137_eq_s"],
+      "rule": "Each value is the truth of the stated equality for the recorded a, and must equal its recomputation."
+    },
+    "delta": {
+      "rule": "Empty when the recorded a equals the recomputation from q and s. Otherwise one entry {recorded_a, recomputed_a}."
+    },
+    "reader": {
+      "label": "REQUIRED non-empty string supplied by the reader; no identity is captured automatically."
     }
   },
   "coordinate_separation": {
