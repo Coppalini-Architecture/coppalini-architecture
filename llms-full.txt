@@ -4,6 +4,23 @@ Canonical site: https://eulershiddenl.ink/
 Author: Anthony Vito Coppa
 Primary classification: independent research and publication record for reference, constraint, exact algebra, computational integrity, and formalized pattern recognition.
 
+## Principal field result
+
+A rank-four coframe maps to the Lorentzian metric, oriented solder flux, and stated electromagnetic field:
+`Π → (g, F_sol) → F_em`.
+
+The source names `g = h(Π)`, `F_sol = f(Π)`, and `F_em = χF_sol`. With its stated Maxwell conditions, on its stated full-rank regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the stated Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
+
+## Proof record and source scope
+
+- **Field construction:** the Suture Field source states the coframe map and the local regular-branch reduction above.
+- **Classical field record:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies the seven field-level completion roles and yields the six secondary brackets under its stated hypotheses.
+- **Exact finite relation:** the separate independent Symmetric Minimum checker recomputes 140/140 finite identities and 33 negative controls; the 45-module ledger retains each source theorem's own scope.
+- **Conditional Lean theorem:** `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets for a supplied `SmoothCompletion` with seven named premise roles.
+- **Named remaining adapters:** the original `Int`-valued `SmoothCompletion` constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open.
+
+The classical field record, finite checker, and conditional Lean theorem are distinct records. Their stated results are not transferred across their declared carriers or hypotheses.
+
 ## Zero-trust exact read
 
 Owning jurisdiction: the inherited human public field of language, law, science, engineering, records, institutions, infrastructure, ecology, and shared survival conditions. No local office, institution, model, or AI stands outside that field merely by exercising authority or technical capacity.
@@ -15,15 +32,6 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - Reader contract: https://eulershiddenl.ink/research/reader-contract.json
 - Verification index: https://eulershiddenl.ink/research/verification-index.md
 - Relational Metrology — Exact Relation Read: https://eulershiddenl.ink/relational-metrology/
-
-## Canonical evidence status
-
-1. **Pinned sources and exact finite checks:** the 45-module ledger retains each theorem's own scope. Separately, the independent Symmetric Minimum checker reports 140/140 finite identities and 33 negative controls.
-2. **Conditional Lean theorem:** `FunctionalClosure010o.six_secondary_brackets` proves six brackets only for a supplied `SmoothCompletion` with seven named premise roles.
-3. **Classical source record:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies field-level counterparts and six brackets under its stated hypotheses; it is distinct from the original Lean interface.
-4. **Open or excluded work:** the original `Int`-valued constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open. The finite SU(3) reader is not a path-integral ensemble, continuum extrapolation, or confinement measurement.
-
-No summary transfers a result between these status classes.
 
 ## Current public reading order
 
