@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A browser-local reader for declared paired measurements, timing conventions, exact decimal residuals, and stated-resolution comparison receipts.">
+  <meta name="description" content="A browser-local reader for declared I-phase scope, paired measurements, timing conventions, exact decimal residuals, and stated-resolution comparison receipts.">
   <link rel="canonical" href="https://eulershiddenl.ink/relational-metrology/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Coppalini Architecture">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/assets/proof-led-r59.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","@id":"https://eulershiddenl.ink/relational-metrology/#page","name":"Relational Metrology · Coppalini Architecture","description":"A browser-local reader for declared paired measurements, timing conventions, exact decimal residuals, and stated-resolution comparison receipts.","url":"https://eulershiddenl.ink/relational-metrology/","isPartOf":{"@type":"WebSite","name":"Coppalini Architecture","url":"https://eulershiddenl.ink/"}}
+  {"@context":"https://schema.org","@type":"WebPage","@id":"https://eulershiddenl.ink/relational-metrology/#page","name":"Relational Metrology · Coppalini Architecture","description":"A browser-local reader for declared I-phase scope, paired measurements, timing conventions, exact decimal residuals, and stated-resolution comparison receipts.","url":"https://eulershiddenl.ink/relational-metrology/","isPartOf":{"@type":"WebSite","name":"Coppalini Architecture","url":"https://eulershiddenl.ink/"}}
   </script>
   <title>Relational Metrology · Coppalini Architecture</title>
   <style>
@@ -30,11 +30,11 @@
   <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/exact/">Exact Reader</a><a href="/verify">Verify</a><a href="/library">Library</a><a href="/formalism">Basis</a></nav></div></header>
   <main id="main" class="metrology-shell">
     <section class="metrology-hero" aria-labelledby="page-title">
-      <p class="eyebrow">Reference · occurrence · comparison · receipt</p>
+      <p class="eyebrow">I-phase · reference · occurrence · comparison · receipt</p>
       <h1 id="page-title">Relational Metrology</h1>
-      <p>Carry a declared question through a common comparison space. Name the reference, timing convention, paired readings, unit, and resolution. The reader returns the exact decimal residual and a local receipt.</p>
-      <p class="metrology-rule">reference → common comparison space → declared reading → receipt → stated boundary</p>
-      <p>A phase may return while its occurrence address advances. The timing convention stays inside the record, and a numerical comparison remains attached to its declared unit and resolution.</p>
+      <p><strong>I phase — declared common reference.</strong> Set a named scope, reference, and common comparison space. Any declared question can then be carried through its timing convention, paired readings, unit, and resolution. The reader returns the exact decimal residual and a local receipt.</p>
+      <p class="metrology-rule">I-phase → occurrence → declared reading → receipt → stated boundary</p>
+      <p>I phase means: compare a reading to the named reference under this receipt. The same declared relation can be read in any window because it is carried by the record, not by an account or a server-side interpretation. A phase may return while its occurrence address advances, and every occurrence remains visible in the receipt.</p>
     </section>
 
     <section class="metrology-grid" aria-label="Relational metrology reader">
@@ -45,6 +45,7 @@
           <fieldset>
             <legend>Reader and relation</legend>
             <label class="wide">Question or relation label<input id="question" type="text" required autocomplete="off" placeholder="Compare the declared readings"></label>
+            <label>I-phase scope<input id="scope" type="text" required autocomplete="off" placeholder="declared global scope"><small>Name the scope of this comparison.</small></label>
             <label>Reference<input id="reference" type="text" required autocomplete="off" placeholder="declared reference"></label>
             <label>Reader label<input id="reader" type="text" required autocomplete="off" placeholder="reader-supplied"></label>
             <label class="wide">Common comparison space<input id="space" type="text" required autocomplete="off" placeholder="declared shared coordinate"></label>
@@ -71,6 +72,7 @@
       <aside class="metrology-card">
         <h2>What the reader establishes</h2>
         <ul class="metrology-key">
+          <li><strong>I-phase declaration</strong>Scope, reference, and common comparison space are named together. Every occurrence remains visible instead of being merged away.</li>
           <li><strong>Exact residual</strong>Right reading minus left reading is computed as a decimal integer relation, with no floating-point rounding.</li>
           <li><strong>Exact zero</strong>The declared residual is exactly zero.</li>
           <li><strong>Equal at stated resolution</strong>The absolute residual is no greater than the supplied resolution.</li>
@@ -124,7 +126,7 @@
 
     const readRecord = () => {
       const text = {
-        question: value('#question'), reference: value('#reference'), reader: value('#reader'), space: value('#space'), timing: value('#timing'),
+        question: value('#question'), scope: value('#scope'), reference: value('#reference'), reader: value('#reader'), space: value('#space'), timing: value('#timing'),
         leftOccurrence: value('#left-occurrence'), rightOccurrence: value('#right-occurrence'), unit: value('#unit'),
       };
       if (Object.values(text).some(item => !item)) return { error: 'Every declared text field is required before a receipt can be exported.' };
@@ -140,10 +142,18 @@
       const equalAtResolution = absoluteResidual <= resolutionAtScale;
       return {
         record: {
-          schema: 'CoppaliniArchitecture.RelationalMetrologyReceipt/v0.1',
-          status: 'DECLARED browser-local comparison record',
+          schema: 'CoppaliniArchitecture.RelationalMetrologyReceipt/v0.2',
+          status: 'DECLARED I-phase browser-local comparison record',
           reader: { label: text.reader },
           question: text.question,
+          i_phase: {
+            phase_label: 'I',
+            phase_meaning: 'declared common reference',
+            evidence_status: 'declared_phase_relation',
+            scope: text.scope,
+            reference: text.reference,
+            comparison_space: text.space,
+          },
           reference: text.reference,
           comparison_space: text.space,
           timing: { convention: text.timing, left_occurrence: text.leftOccurrence, right_occurrence: text.rightOccurrence },
@@ -154,7 +164,7 @@
             exact_zero: exactZero,
             equal_at_stated_resolution: equalAtResolution,
           },
-          boundary: 'Calibration, synchronization, physical model, uncertainty method, and external evidence retain their own declared records.',
+          boundary: 'Scope: an exact declared phase relation on the named comparison space. Physical timing or clock synchronization requires a separately calibrated measurement record.',
         },
         message: exactZero ? 'Exact zero residual. Receipt ready for independent checking.' : equalAtResolution ? 'Equal at the stated resolution. Receipt ready for independent checking.' : 'Open difference at the stated resolution. Receipt records the residual.',
       };
