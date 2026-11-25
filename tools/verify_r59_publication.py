@@ -57,18 +57,18 @@ CIVIC_NOTICE_MARKERS = (
  "Keep 4. Turn 2. Fold 1. Return 0.",
 )
 # Homepage contract: lead with the source field map, then preserve each proof
-# record and named boundary at its own declared scope.
+# record and named boundary at its own carrier and conditions.
 HOMEPAGE_RESULT_SCOPE_MARKERS = (
  "Coppalini Architecture | Gravity &amp; Electromagnetism Field Map",
  "Gravity and electromagnetism from one geometric field.",
  "Π → (g,F<sub>sol</sub>) → F<sub>em</sub>",
- "With the stated Maxwell conditions",
+ "On the Maxwell regular branch",
  "rank D𝒮<sub>Π</sub>=16",
  "b(g,F)&lt;|χ|",
  "Local Einstein–Maxwell reduction",
  "140 finite identities and 33 negative controls",
- "real <code>C∞</code> Einstein–Maxwell record on compact boundaryless <code>𝕋³</code>",
- "six canonical brackets for a supplied <code>SmoothCompletion</code> with seven named premise roles",
+ "real <code>C∞</code> Einstein–Maxwell field construction on compact boundaryless <code>𝕋³</code>",
+ "Given a <code>SmoothCompletion</code> with those seven named roles, Lean proves the six canonical brackets.",
  "original <code>Int</code>-valued <code>SmoothCompletion</code> constructor",
  "P14’s finite-root-to-variational/Hamiltonian adapter",
  "selected spin-two TT readout remain open",
@@ -396,7 +396,7 @@ def verify():
         "/models/view/moonlight-phase-reader-v0.8.4.html",
         "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json",
         "no clock, time-standard, or UTC claim",
-        "Gate and Survival are defined inherited interfaces",
+        "Gate and Survival are inherited interfaces",
         "evaluators remain uninstantiated",
     ):
         if marker not in moonlight_page:
@@ -421,7 +421,7 @@ def verify():
         "four phase bands, 137 sectors per band, 548 visible addresses",
         "const sectors=137",
         "const addressFor=(phase,iris)=>iris+sectors*mod(phase-iris,4)",
-        "Display output does not update the MOONLIGHT phase mirror.",
+        "Rendering this address never updates the MOONLIGHT phase mirror.",
     ):
         if marker not in dome:
             errors.append("MOONLIGHT dome missing marker: " + marker)
@@ -496,8 +496,8 @@ def verify():
         "Bottom line.", "C(8,2) = 28 pair reads", "word → map → condition → source",
         "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
         "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
-        "Source-declared field construction", "Conditional Lean theorem",
-        "Closed at the stated classical field level.", "Open in Lean.",
+        "Coframe field construction", "Conditional Lean theorem",
+        "Classical field closure.", "Open in Lean.",
         "/proofs/smooth-completion/", "Public reader handles (site display)",
         "Ψ · Θ · θ · π · e · Φ · Λ", "id=\"status-lineage\"", "id=\"open-ledger\"",
         "G<sub>root</sub>", "G<sub>EM</sub>", "λ<sub>root</sub>",

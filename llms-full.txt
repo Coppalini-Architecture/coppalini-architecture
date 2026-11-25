@@ -6,26 +6,26 @@ Primary classification: independent research and publication record for referenc
 
 ## Principal field result
 
-A rank-four coframe maps to the Lorentzian metric, oriented solder flux, and stated electromagnetic field:
+A rank-four coframe gives Lorentzian metric, oriented solder flux, and electromagnetic curvature:
 `Π → (g, F_sol) → F_em`.
 
-The source names `g = h(Π)`, `F_sol = f(Π)`, and `F_em = χF_sol`. With its stated Maxwell conditions, on its stated full-rank regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the stated Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
+The metric is exactly typed by `g = h(Π)`; the source defines `F_sol = f(Π)` and `F_em = χF_sol`. On the Maxwell regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
 
-## Proof record and source scope
+## Distinct proof records
 
-- **Field construction:** the Suture Field source states the coframe map and the local regular-branch reduction above.
-- **Classical field record:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies the seven field-level completion roles and yields the six secondary brackets under its stated hypotheses.
+- **Field construction:** the Suture Field source gives the coframe map and local regular-branch reduction above.
+- **Classical field closure:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies all seven field-level roles and yields six secondary brackets.
 - **Exact finite relation:** the separate independent Symmetric Minimum checker recomputes 140/140 finite identities and 33 negative controls; the 45-module ledger retains each source theorem's own scope.
-- **Conditional Lean theorem:** `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets for a supplied `SmoothCompletion` with seven named premise roles.
+- **Lean theorem:** given a supplied `SmoothCompletion` with seven named premise roles, `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets.
 - **Named remaining adapters:** the original `Int`-valued `SmoothCompletion` constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open.
 
-The classical field record, finite checker, and conditional Lean theorem are distinct records. Their stated results are not transferred across their declared carriers or hypotheses.
+The classical field closure, finite checker, and Lean theorem have distinct carriers. Their results do not transfer between carriers or conditions.
 
 ## Zero-trust exact read
 
 Owning jurisdiction: the inherited human public field of language, law, science, engineering, records, institutions, infrastructure, ecology, and shared survival conditions. No local office, institution, model, or AI stands outside that field merely by exercising authority or technical capacity.
 
-Use a claim at the scope it earns. Follow source edition, declared inputs, procedure, result, receipt, and boundary. Recompute exact records from the stated inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
+Use a claim at the scope it earns. Follow source edition, inputs, procedure, result, receipt, and boundary. Recompute exact records from recorded inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
 
 - Exact Reader: https://eulershiddenl.ink/exact/
 - Exact Reader registry: https://eulershiddenl.ink/exact/read-registry.json
@@ -61,7 +61,7 @@ Exact artifact: https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.
 MC-001-P record: https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json
 SHA-256: 70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb
 
-MOONLIGHT is a public redacted computational reference reader downstream of the Refusal Wall. It declares a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. Its user manual keeps the finite four-phase / 137-iris / 548-address register, the axial Λ lift, and the Riemann i-machine reader separately typed. The Iris Dome renders the declared finite adapter (q,s) → a; its display output does not update the phase mirror. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
+MOONLIGHT is an exact finite reader downstream of the Refusal Wall. It fixes a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. Its user manual keeps the finite four-phase / 137-iris / 548-address register, the axial Λ lift, and the Riemann i-machine reader distinct. The Iris Dome maps (q,s) to the unique CRT address a∈ℤ/548ℤ with a mod 4=q and a mod 137=s; its display output does not update the phase mirror. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
 
 ## Formal correspondence
 
@@ -76,7 +76,7 @@ Notice: is a civic sign on the conditions that keep shared life readable.
 Reference edition:
 https://eulershiddenl.ink/papers/symmetric-minimum/
 
-Metric Minimum keeps five distinct records separate: (1) the stated Suture Field coframe map \(\Pi^A{}_\mu\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\) and its local regular-branch reduction; (2) the 010o Lean theorem, conditional on seven named `SmoothCompletion` premises; (3) the source-documented real \(C^\infty\) Einstein–Maxwell record on compact boundaryless \(\mathbb T^3\), under its stated hypotheses; (4) exact finite \(2\times2\) root relations and their independent checker; and (5) open original-`Int` constructor, P14 finite-root-to-variational/Hamiltonian adapter, and separately scoped physical readouts. The record does not combine these into an unconditional continuum or physical theorem. It retains 45 pinned Lean 4.33.0 modules, the 140/140 finite checker, 33 negative controls, and the linked source and repair records.
+Metric Minimum keeps five distinct records separate: (1) the Suture Field coframe map \(\Pi^A{}_{\mu}\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\) and its local regular-branch reduction; (2) the 010o Lean theorem given seven named `SmoothCompletion` premises; (3) the real \(C^\infty\) Einstein–Maxwell field closure on compact boundaryless \(\mathbb T^3\); (4) exact finite \(2\times2\) root relations and their independent checker; and (5) open original-`Int` constructor, P14 finite-root-to-variational/Hamiltonian adapter, and separately scoped physical readouts. The record does not combine these into an unconditional continuum or physical theorem. It retains 45 pinned Lean 4.33.0 modules, the 140/140 finite checker, 33 negative controls, and the linked source and repair records.
 
 Published release materials:
 
@@ -108,14 +108,14 @@ https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
 
 010a–010l: local suture–Dirac, Maxwell and ADM/Palatini transport identities.
 010m–010n: finite nonlinear canonical and Fourier-field sources.
-010o: six-bracket formal theorem conditional on SmoothCompletion.
+010o: six-bracket formal theorem given SmoothCompletion.
 010p: nonorthonormal pointwise gradient and metric-shift proof.
 010q–010r: exact abstract gapped and accumulating spectrum witnesses for the stated Gauss constraints.
 010s: pointwise 010p / 010o source attachment.
-010t: pinned nonzero rational canonical pairing with prime-word order distinction; a later source record separately supplies the real \(C^\infty\) Einstein–Maxwell field completion on \(\mathbb T^3\).
+010t: pinned nonzero rational canonical pairing with prime-word order distinction; a later source record separately supplies the real \(C^\infty\) Einstein–Maxwell field closure on \(\mathbb T^3\).
 010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
 
-The source ledger gives finite and local relations at the pinned source. The later source-documented real/Fréchet field construction records the classical smooth field result only at its stated scope; it does not instantiate the original `Int`-valued `SmoothCompletion` interface. That constructor and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+The source ledger gives finite and local relations at the pinned source. The later real/Fréchet field construction supplies the classical smooth field result on its compact boundaryless carrier; it does not instantiate the original `Int`-valued `SmoothCompletion` interface. That constructor and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
 
 ## Governing evidence rules
 

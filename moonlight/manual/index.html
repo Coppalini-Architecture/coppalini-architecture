@@ -24,7 +24,7 @@
   <main id="main" class="manual-shell">
     <p class="manual-kicker">MOONLIGHT / user manual</p>
     <h1>Read the ring. Keep the lift.</h1>
-    <p class="manual-lead">MOONLIGHT is the finite phase reader. This manual adds three calculators from Metric Mirror Symmetry while retaining the carrier’s A8 and mirror records. It keeps three coordinates distinct: the reader’s phase turn, the Riemann logarithmic variable, and the axial lift. The visible phase may return; the carried address remains in the receipt.</p>
+    <p class="manual-lead"><strong>MOONLIGHT is an exact finite reader.</strong> Its finite register gives a unique Chinese-remainder address from four phase residues and 137 iris residues. Its lift law is exact: <code>F<sup>4</sup>(r,z)=(r,L<sub>ax</sub>z)</code>. The visible phase returns; the carried axial address and its receipt do not. This manual keeps the phase turn, Riemann logarithmic variable, and axial lift distinct.</p>
     <nav class="manual-links" aria-label="MOONLIGHT sources"><a href="/moonlight/">Open MOONLIGHT reader</a><a href="/moonlight/dome/">Open Iris Dome</a><a href="/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json">Read MC-001-P</a><a href="/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json">Open Λ receipt schema</a><a href="/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf">Read Metric Mirror Symmetry</a><a href="/diagrams/metric-mirror-symmetry">Open construction plate</a></nav>
 
     <section class="manual-section" aria-labelledby="machine-title">
@@ -40,8 +40,8 @@
       <p class="manual-kicker">02 / three coordinates</p>
       <h2 id="coordinates-title">Do not silently merge these readers.</h2>
       <div class="manual-grid">
-        <article class="manual-card"><span class="status reader">MOONLIGHT</span><h3>λ<sub>ML</sub></h3><p>The reader’s declared phase turn: <code>tick / 2520</code>. It drives the existing wheel and mirror display.</p></article>
-        <article class="manual-card"><span class="status exact">Riemann reader</span><h3>λ<sub>R</sub></h3><p>The analytic logarithmic variable <code>λ<sub>R</sub> = log x</code> in the stated Ξ-integral and <i>i</i>-phase representation.</p></article>
+        <article class="manual-card"><span class="status reader">MOONLIGHT</span><h3>λ<sub>ML</sub></h3><p>The reader phase turn: <code>tick / 2520</code>. It drives the existing wheel and mirror display.</p></article>
+        <article class="manual-card"><span class="status exact">Riemann reader</span><h3>λ<sub>R</sub></h3><p>The analytic logarithmic variable <code>λ<sub>R</sub> = log x</code> in the source Ξ-integral and <i>i</i>-phase representation.</p></article>
         <article class="manual-card"><span class="status exact">axial lift</span><h3>Λ<sub>ax</sub></h3><p>The unbounded axial coordinate. It advances by <code>T = 2 log Φ</code> under the admitted carriage.</p></article>
       </div>
       <p class="quiet">They share a return-and-lift form. No existing source identifies them as one coordinate.</p>
@@ -58,7 +58,7 @@
         <label>Iris integer s (read mod 137)<input id="iris137" type="number" step="1" value="0" inputmode="numeric"></label>
         <output id="address-output" aria-live="polite"></output>
       </div>
-      <p class="quiet">The Iris Dome declares the display adapter <code>(q,s) → a</code>: four phase bands, 137 iris sectors per band. Its map comes from this register, not from a counted image.</p>
+      <p class="quiet">The Iris Dome renders the exact display adapter <code>(q,s) → a</code>: four phase bands, 137 iris sectors per band. Its map comes from this register, not from a counted image.</p>
     </section>
 
     <section class="manual-section" aria-labelledby="lift-title">
@@ -71,7 +71,7 @@
         <label>Quotient position u ∈ [0, 1)<input id="lift-u" type="number" step="0.001" value="0" inputmode="decimal"></label>
         <output id="lift-output" aria-live="polite"></output>
       </div>
-      <p class="quiet">The source definition <code>Λ(z) = log(Φ / |χ<sub>ax</sub>(z)|)</code> requires declared axial input <code>z</code>. This manual computes the normal form once <code>k</code> and <code>u</code> are supplied; it does not fabricate <code>z</code>.</p>
+      <p class="quiet">The source definition <code>Λ(z) = log(Φ / |χ<sub>ax</sub>(z)|)</code> requires axial input <code>z</code>. This manual computes the normal form once <code>k</code> and <code>u</code> are supplied; it does not fabricate <code>z</code>.</p>
     </section>
 
     <section class="manual-section" aria-labelledby="i-title">
@@ -83,7 +83,7 @@
         <label>Logarithmic variable λ<sub>R</sub><input id="riemann-lambda" type="number" step="any" value="0" inputmode="decimal"></label>
         <output id="riemann-output" aria-live="polite"></output>
       </div>
-      <p class="quiet">This is the paper’s analytic reader for the stated Ξ-integral. It is not a new measurement instrument and it is not the current MOONLIGHT phase slider.</p>
+      <p class="quiet">This is the paper’s analytic reader for the Ξ-integral. It is not a new measurement instrument and it is not the current MOONLIGHT phase slider.</p>
     </section>
 
     <section class="manual-section" aria-labelledby="seam-title">
@@ -98,14 +98,14 @@
       <p class="manual-kicker">07 / shared Λ receipt</p>
       <h2 id="receipt-title">One portable read for independent readers</h2>
       <span class="formula">(source, T, u = [Λ], k, Λ, delta, reader), with Λ = (k + u)T and 0 ≤ u &lt; 1</span>
-      <p>Independent readers can agree on the source, quotient position <code>u = [Λ]</code>, deck address, lift representative, reader, and witnessed Difference. A new reader may recompute the finite 548 address and the Λ normal form without claiming an adapter that has not been declared.</p>
+      <p>Independent readers can agree on the source, quotient position <code>u = [Λ]</code>, deck address, lift representative, reader, and witnessed Difference. A new reader may recompute the finite 548 address and the Λ normal form without claiming an adapter not carried by this record.</p>
     </section>
 
     <section class="manual-section" aria-labelledby="display-title">
       <p class="manual-kicker">08 / display boundary</p>
       <h2 id="display-title">The dome remains an application layer.</h2>
       <span class="status boundary">D4 retained</span>
-      <p>A dome may display an iris index, a four-phase state, an A8 seam, or a visible Λ dial. The display does not supply a map <code>V → E</code>, and no display result feeds back into <code>M</code>. Those relations require their own declared adapter and receipt.</p>
+      <p>A dome may display an iris index, a four-phase state, an A8 seam, or a visible Λ dial. The display does not supply a map <code>V → E</code>, and no display result feeds back into <code>M</code>. Those relations require their own typed adapter and receipt.</p>
     </section>
 
     <footer class="manual-footer"><p><strong>Manual rule:</strong> the ring returns; the carriage continues; the receipt keeps the completed turn.</p><p class="quiet">Sources: Metric Mirror Symmetry / Riemann’s <i>i</i> Machine §§16, 23, 27–28; Mirror Escapement Time Lift; MOONLIGHT v0.8.4 and MC-001-P.</p></footer>

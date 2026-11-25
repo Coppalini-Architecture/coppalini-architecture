@@ -4,28 +4,28 @@
 
 ## Principal field result
 
-A rank-four coframe maps to the Lorentzian metric, oriented solder flux, and stated electromagnetic field:
+A rank-four coframe gives Lorentzian metric, oriented solder flux, and electromagnetic curvature:
 `Π → (g, F_sol) → F_em`.
 
-The source names `g = h(Π)`, `F_sol = f(Π)`, and `F_em = χF_sol`. With its stated Maxwell conditions, on its stated full-rank regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the stated Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
+The metric is exactly typed by `g = h(Π)`; the source defines `F_sol = f(Π)` and `F_em = χF_sol`. On the Maxwell regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
 
-## Proof record and source scope
+## Distinct proof records
 
-- **Field construction:** the Suture Field source states the coframe map and the local regular-branch reduction above.
-- **Classical field record:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies the seven field-level completion roles and yields the six secondary brackets under its stated hypotheses.
+- **Field construction:** the Suture Field source gives the coframe map and local regular-branch reduction above.
+- **Classical field closure:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies all seven field-level roles and yields six secondary brackets.
 - **Exact finite relation:** the separate independent Symmetric Minimum checker recomputes 140/140 finite identities and 33 negative controls; the 45-module ledger retains each source theorem's own scope.
-- **Conditional Lean theorem:** `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets for a supplied `SmoothCompletion` with seven named premise roles.
+- **Lean theorem:** given a supplied `SmoothCompletion` with seven named premise roles, `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets.
 - **Named remaining adapters:** the original `Int`-valued `SmoothCompletion` constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open.
 
-The classical field record, finite checker, and conditional Lean theorem are distinct records. Their stated results are not transferred across their declared carriers or hypotheses.
+The classical field closure, finite checker, and Lean theorem have distinct carriers. Their results do not transfer between carriers or conditions.
 
 ## Zero-trust exact read
 
 Owning jurisdiction: the inherited human public field of language, law, science, engineering, records, institutions, infrastructure, ecology, and shared survival conditions. No local office, institution, model, or AI stands outside that field merely by exercising authority or technical capacity.
 
-Use a claim at the scope it earns. Follow source edition, declared inputs, procedure, result, receipt, and boundary. Recompute exact records from the stated inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
+Use a claim at the scope it earns. Follow source edition, inputs, procedure, result, receipt, and boundary. Recompute exact records from recorded inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
 
-- [Exact Reader](https://eulershiddenl.ink/exact/): declared inputs, procedures, results, receipts, and boundaries.
+- [Exact Reader](https://eulershiddenl.ink/exact/): inputs, procedures, results, receipts, and boundaries.
 - [Exact Reader registry](https://eulershiddenl.ink/exact/read-registry.json): machine-readable evidence records and their scopes.
 - [Reader contract](https://eulershiddenl.ink/research/reader-contract.json): status types, source precedence, and inference boundaries.
 - [Verification index](https://eulershiddenl.ink/research/verification-index.md): source editions, check records, and correction history.
@@ -33,9 +33,9 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 
 ## Current public record
 
-- [Formal Correspondence Ledger](https://eulershiddenl.ink/formal-correspondence/): named public forms beside Coppalini constructions, exact receipts, stated scopes, and the rooted namespace that distinguishes the finite metric block, the canonical Gauss generator, and the two axial coordinates.
+- [Formal Correspondence Ledger](https://eulershiddenl.ink/formal-correspondence/): named public forms beside Coppalini constructions, exact receipts, conditions, and the rooted namespace that distinguishes the finite metric block, the canonical Gauss generator, and the two axial coordinates.
 - [Home](https://eulershiddenl.ink/): formal lineage, Four Dual Forms, The 3 Body Mirror, Minimum Mechanics, the laboratory, and the library.
-- [Metric Minimum / Symmetric Minimum v1.7.16](https://eulershiddenl.ink/papers/symmetric-minimum/): a source-indexed record with separate statuses: a stated coframe map and local regular-branch reduction; a six-bracket Lean theorem conditional on seven named `SmoothCompletion` premises; a source-documented classical `C∞` Einstein–Maxwell record on compact boundaryless `T³`; exact finite `2×2` root relations and their independent checks; and separately open original-`Int` constructor and P14 finite-root-to-variational/Hamiltonian adapter. It does not combine these into an unconditional continuum or physical conclusion.
+- [Metric Minimum / Symmetric Minimum v1.7.16](https://eulershiddenl.ink/papers/symmetric-minimum/): one coframe field map and local regular-branch reduction; a `C∞` Einstein–Maxwell field closure on compact boundaryless `T³`; exact finite `2×2` root relations and independent checks; a Lean theorem given seven named `SmoothCompletion` premises; and separately open original-`Int` constructor and P14 finite-root-to-variational/Hamiltonian adapter. These remain distinct records rather than an unconditional continuum or physical theorem.
 - [Minimum Mechanics 010a–010u](https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger): 45 Lean source modules in one transitive import closure, with a public source ledger for theorem statements, source-documented models, physical interfaces, premises, and exact file links.
 - [Proof verification](https://eulershiddenl.ink/verify): reproduction instructions and source-specific compiler, hash, and audit records for the locked version `b9e939d514a63fb021592f79a316f70cbc70ed8a`.
 - [External Formalization Reader](https://eulershiddenl.ink/external-formalization/): source-indexed reading of the public Riemann-Hypothesis Lean formalization. The Lean and Mathlib communities externally certified the published proof on 21 November 2026; its theorem carrier is Mathlib’s `RiemannHypothesis`, and the cited fixed source snapshot is `40e56bab026552e089d7afcfeff08d2defb9c005`. This site does not derive or locally replay that theorem. The MIT artifact/checker report remains a distinct dated source record. EARR-001’s small local Lean module is `LOCAL_REPLAYED` (self-attested; R3 retention repair pending) and does not replay the external formalization. This reader page does not publish, link, or distribute the EARR-001 packet; packet release remains gated on §8 of the reader brief.
@@ -44,7 +44,7 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 - [The 3 Body Mirror](https://eulershiddenl.ink/papers/the-3-body-mirror.pdf): three-body reconstruction, source, symbolic receipt, and independent receipt.
 - [Research Library](https://eulershiddenl.ink/library): current synthesis followed by all non-Language-Mechanics source records in one continuous library.
 - [The Displacement of the Origin](https://eulershiddenl.ink/papers/displacement-of-origin/): refusal wall and irreducible exact-read closure for reference, Difference, memory, return, stopping, the eight-address wheel, and the two-reference mirror.
-- [MOONLIGHT Minimum Wheel v0.8.4](https://eulershiddenl.ink/moonlight/): public redacted computational reference reader; immutable artifact SHA-256 `70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb`; declares `a = 0`, `b = 3991/1080`, and `D_E`; it carries no clock, time-standard, or UTC claim. [User manual](https://eulershiddenl.ink/moonlight/manual/) separates the four-phase / 137-iris / 548-address register, the axial Λ lift, and the Riemann i-machine reader. [Iris Dome](https://eulershiddenl.ink/moonlight/dome/) is the declared `(q,s) → a` display adapter for the finite register. [MC-001-P](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json) is the separate public recheck.
+- [MOONLIGHT Minimum Wheel v0.8.4](https://eulershiddenl.ink/moonlight/): exact finite reader; immutable artifact SHA-256 `70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb`; fixed public values `a = 0`, `b = 3991/1080`, and `D_E`; no clock, time-standard, or UTC claim. [User manual](https://eulershiddenl.ink/moonlight/manual/) separates the four-phase / 137-iris / 548-address register, axial Λ lift, and Riemann i-machine reader. The exact [Iris Dome](https://eulershiddenl.ink/moonlight/dome/) adapter maps `(q,s)` to the unique `a∈ℤ/548ℤ` with `a mod 4=q` and `a mod 137=s`; rendering never updates the phase mirror. [MC-001-P](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json) is the separate public recheck.
 - [Publication Records](https://eulershiddenl.ink/publication-records): fourteen current Zenodo releases mapped to their fixed edition DOIs, concept handles, and Coppalini reading forms. The register is citation and navigation only; it creates no Zenodo deposition or version.
 - [Language Mechanics](https://eulershiddenl.ink/language-mechanics): the field basis for reference, constraint, reader, receipt, and lawful reuse through change.
 - [Laboratory](https://eulershiddenl.ink/architecture): gauge and matter viewers and source-aware computational programs.
@@ -53,16 +53,16 @@ Use a claim at the scope it earns. Follow source edition, declared inputs, proce
 
 ## Current theorem strength
 
-- 010a–010p: source-led finite and local suture, Maxwell, Palatini, ADM and canonical calculations; the six-bracket theorem in 010o remains conditional on `SmoothCompletion`.
+- 010a–010p: source-led finite and local suture, Maxwell, Palatini, ADM and canonical calculations; given `SmoothCompletion`, 010o proves the six brackets.
 - 010q–010r: source-led abstract two-sided non-entailment of a spectral gap from the named non-Abelian Gauss algebra.
-- 010s–010t: local source attachment and a nonzero finite rational symplectic carrier; a later source-documented real C∞ Einstein–Maxwell completion on compact boundaryless T³ supplies the seven classical premise roles and six brackets. Two items remain open: a concrete real C∞ constructor for the original `Int`-valued Lean interface, and P14, the finite-root-to-variational/Hamiltonian adapter.
-- 010u: a typed jurisdictional admission and pattern-recognition theorem over declared carriers; physical applications use separately named observables and conditions.
+- 010s–010t: local source attachment and a nonzero finite rational symplectic carrier; a later real C∞ Einstein–Maxwell field construction on compact boundaryless T³ supplies all seven classical roles and six brackets. Two items remain open: a concrete real C∞ constructor for the original `Int`-valued Lean interface, and P14, the finite-root-to-variational/Hamiltonian adapter.
+- 010u: a typed jurisdictional admission and pattern-recognition theorem over typed carriers; physical applications use separately named observables and conditions.
 - Classical smooth field receipt: https://eulershiddenl.ink/proofs/smooth-completion/ (the seven C∞ field-premise roles and six brackets on compact boundaryless T³; the original `Int`-valued Lean constructor and P14 remain separately open).
 - `AxiomaticBuild.lean` is carried here by its summary and README as source-report records.
 
 ## Read a claim through its record
 
-A public claim travels with its public form, Coppalini construction, exact relation, receipt, and stated scope. The Formal Correspondence Ledger provides the compact handle; source pages retain the equations, hypotheses, programs, and conditions.
+A public claim travels with its public form, Coppalini construction, exact relation, receipt, and conditions. The Formal Correspondence Ledger provides the compact handle; source pages retain the equations, premises, programs, and conditions.
 
 - [Pinned proof source tree](https://github.com/Coppalini-Architecture/coppalini-architecture/tree/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs)
 - [Compiler record](https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607)

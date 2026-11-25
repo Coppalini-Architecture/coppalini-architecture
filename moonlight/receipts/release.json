@@ -64,7 +64,7 @@
   },
   "retained_artifact_pins": {
     "models/view/moonlight-phase-reader-v0.8.4.html": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb",
-    "moonlight/dome/index.html": "3e363d896c0fae2cc9895aabfb6041a16e5c4b7481fb8253f59e57d208b28c96",
+    "moonlight/dome/index.html": "ef48feb21bff9207aa18364660dc2b2c3694210c78b5d4f3922163470d7a099e",
     "verification/receipts/MOONLIGHT-LAMBDA-001.schema.json": "c85c2f34eb9ff6fd2e01463be9f7eb6afb5414a8eb97ddd24fb5fac59675caad"
   },
   "files_sha256": {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Anthony Vito Coppa">
-  <meta name="description" content="MOONLIGHT Iris Dome: a declared 4 by 137 visual address surface for the 548-address finite register.">
+  <meta name="description" content="MOONLIGHT Iris Dome: an exact 4 by 137 CRT address surface for the 548-address finite register.">
   <link rel="canonical" href="https://eulershiddenl.ink/moonlight/dome/">
   <title>MOONLIGHT Iris Dome — Coppalini Architecture</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -22,7 +22,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/notice/">Notice</a><a href="/proofs/minimum-mechanics/">Proofs</a><a href="/language-mechanics">Language</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture" aria-current="page">Lab</a><a href="/about">About</a></nav></div></header>
   <main id="main" class="dome-shell">
-    <p class="dome-kicker">MOONLIGHT / declared display adapter</p>
+    <p class="dome-kicker">MOONLIGHT / exact CRT display adapter</p>
     <h1>Iris Dome · 548 Address Surface</h1>
     <p class="dome-lead">Select a four-phase residue and an iris sector. The dome carries their unique Chinese-remainder address in ℤ/548ℤ: four phase bands, 137 sectors per band, 548 visible addresses.</p>
     <nav class="dome-links" aria-label="MOONLIGHT dome sources"><a href="/moonlight/">MOONLIGHT reader</a><a href="/moonlight/manual/">User manual</a><a href="/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json">Λ receipt schema</a><a href="/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf">Metric Mirror Symmetry</a></nav>
@@ -37,7 +37,7 @@
         <div class="control"><label for="reader-label">Reader label</label><input id="reader-label" type="text" autocomplete="off" placeholder="reader-supplied"><small>Supplied by the reader and carried unchanged in the receipt.</small></div>
         <div class="control"><button class="receipt-button" id="export-receipt" type="button">Export receipt</button><small class="receipt-status" id="receipt-status" aria-live="polite"></small><label for="receipt-output">Dome receipt</label><textarea class="receipt-output" id="receipt-output" readonly aria-label="Dome receipt"></textarea></div>
         <div class="legend" aria-label="Phase band legend"><span><i class="swatch" style="background:#73cbff;color:#73cbff"></i>q = 0</span><span><i class="swatch" style="background:#af93ff;color:#af93ff"></i>q = 1</span><span><i class="swatch" style="background:#ffd571;color:#ffd571"></i>q = 2</span><span><i class="swatch" style="background:#ff8cc8;color:#ff8cc8"></i>q = 3</span></div>
-        <p class="boundary"><strong>Carriage boundary.</strong> This surface maps <code>(q,s)</code> to finite address <code>a</code> and renders it. Display output does not update the MOONLIGHT phase mirror.</p>
+        <p class="boundary"><strong>Exact address and carriage boundary.</strong> For <code>q∈ℤ/4ℤ</code> and <code>s̄=s mod 137</code>, <code>a=s̄+137((q−s̄) mod 4)∈ℤ/548ℤ</code>; <code>a mod 4=q</code> and <code>a mod 137=s̄</code>. Rendering this address never updates the MOONLIGHT phase mirror.</p>
       </aside>
     </section>
   </main>
