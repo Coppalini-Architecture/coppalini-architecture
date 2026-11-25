@@ -45,8 +45,9 @@
           <fieldset>
             <legend>Reader and relation</legend>
             <label class="wide">Question or relation label<input id="question" type="text" required autocomplete="off" placeholder="Compare the declared readings"></label>
+            <label>Reference<input id="reference" type="text" required autocomplete="off" placeholder="declared reference"></label>
             <label>Reader label<input id="reader" type="text" required autocomplete="off" placeholder="reader-supplied"></label>
-            <label>Common comparison space<input id="space" type="text" required autocomplete="off" placeholder="declared shared coordinate"></label>
+            <label class="wide">Common comparison space<input id="space" type="text" required autocomplete="off" placeholder="declared shared coordinate"></label>
           </fieldset>
           <fieldset>
             <legend>Timing</legend>
@@ -123,7 +124,7 @@
 
     const readRecord = () => {
       const text = {
-        question: value('#question'), reader: value('#reader'), space: value('#space'), timing: value('#timing'),
+        question: value('#question'), reference: value('#reference'), reader: value('#reader'), space: value('#space'), timing: value('#timing'),
         leftOccurrence: value('#left-occurrence'), rightOccurrence: value('#right-occurrence'), unit: value('#unit'),
       };
       if (Object.values(text).some(item => !item)) return { error: 'Every declared text field is required before a receipt can be exported.' };
@@ -143,6 +144,7 @@
           status: 'DECLARED browser-local comparison record',
           reader: { label: text.reader },
           question: text.question,
+          reference: text.reference,
           comparison_space: text.space,
           timing: { convention: text.timing, left_occurrence: text.leftOccurrence, right_occurrence: text.rightOccurrence },
           readings: { left: left.raw, right: right.raw, unit: text.unit, resolution: resolution.raw },
