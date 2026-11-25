@@ -1,42 +1,45 @@
-# MOONLIGHT receipt implementation release v0.1
+# MOONLIGHT draft receipt implementation v0.1 — verification pending
 
-This public release carries HARMONIZER-001 and RELAX-RECEIPT-001. The supplied
-mathematical records remain byte-preserved draft references under `records/`.
-`release.json` binds the active implementations, the preserved upstream bytes,
-the browser adapter, and this release record.
+The carried HARMONIZER-001, RELAX-001, and RELAX-RECEIPT-001 records remain
+`DRAFT, local`: not released, pinned, or gated. This route preserves their
+current implementation bytes and test material for inspection. It does not
+promote those records or establish a closed receipt endpoint.
 
-## Carried correction
+`release.json` is the implementation manifest: it binds the active source
+bytes, preserved upstream bytes, browser adapter, and this status record.
 
-RELAX-RECEIPT-001 supersedes the earlier assistant O-X6 artifact for this release.
-The supplied contract uses `phase_step: 2`, `non_expansion`, its exact rule
-strings, schedule index 2 through 300, and input offset in [-1/2, 1/2).
-Recorded output offsets may include both endpoints. Its check flags assert the
-recomputed transition; complete recorded differences are retained in `delta`.
+## Current implementation and known gaps
 
-The harmonizer canonical-fraction correction rejects `"-0/1"` in both ports.
-Both Python implementations are the exact supplied bytes.
+The current Relax contract uses `phase_step: 2`, `non_expansion`, schedule
+index 2 through 300, and input offset in `[-1/2, 1/2)`. The present code has
+not yet closed its whole stated literal domain:
 
-Prepublication review witnessed a reader-label difference: Python `str.strip()`
-and JavaScript `trim()` classify some whitespace differently. The two release
-JS files now use Python's explicit 29-codepoint whitespace class for the blank
-label predicate. Nonblank labels remain unchanged. This is the only change to
-the supplied calculation modules. Upstream JS bytes remain under `upstream/`;
-the exact change is `verification/label-parity.patch`. Active JS pins are in
-`release.json`; the historical records retain their original source pins.
+- An admitted 200-character Relax input fraction can produce a 324-character
+  recomputed fraction. `make_receipt()` then constructs a receipt that its own
+  checker returns as `INVALID` because output fractions are capped at 200
+  characters.
+- An admitted 64-character Harmonizer decimal can similarly produce derived
+  fraction fields longer than the 200-character cap, and its own honest
+  receipt is rejected.
+- The raw-text ports do not yet reject duplicate JSON object members and
+  normalize raw numeric `-0` through `JSON.parse`; a future source revision
+  must supply canonical raw-text handling.
 
-## Verification
+The source-byte and label-parity work remains useful provenance, but it does
+not close those gaps. The missing `relax.py` byte named by RELAX-001 also
+remains unavailable and unverified here.
 
-The supplied self-checks and independent tests passed. Corrected ports retain
-3,000 value matches each, 1,200 harmonizer and 4,000 relax receipt-text matches,
-and 8 + 12 lexical forms. The added label regression passes 88 cases.
-Exact results and source hashes are retained in `verification.json`.
+## Narrow checks that passed
+
+The supplied self-checks and independent tests passed at their stated sampled
+scope: 3,000 value matches each, 1,200 Harmonizer and 4,000 Relax receipt-text
+comparisons, 8 plus 12 listed lexical forms, and 88 label regressions. Those
+results are retained in `verification.json`; they are not a complete-domain
+promotion.
 
 Portable verification files resolve the adjacent `sources/` directory. The
-parity harnesses additionally assert the comparisons that their supplied
-versions printed. Original verification scripts remain under `upstream/`.
-The browser bundle isolates the two CommonJS modules and carries their exact
-release source bodies. Raw text reaches each module's lexical checker before
-parsing.
+browser bundle isolates the two CommonJS modules and carries their active
+source bodies. Original supplied scripts remain under `upstream/`.
 
 ```bash
 python3 -I sources/harmonizer.py
@@ -58,7 +61,7 @@ The O-Q4 callable block is supplied as `sources/reader_ledger_relax.py`, with
 `check_relax_receipt(receipt)` returning the existing three verdict strings.
 Registration in the owner's unavailable `reader_ledger.py` remains OPEN.
 The held `fd020d0` work and the unresolved negative-phase, range-compression,
-and operator-receipt source choices remain outside this release.
+and operator-receipt source choices remain outside this draft.
 
 `relax.py` was not attached; its `ab419f8f23ef6a6e` prefix is retained as reported
-in RELAX-001, rather than presented as a source byte check from this release.
+in RELAX-001, rather than presented as a source byte check from this draft.

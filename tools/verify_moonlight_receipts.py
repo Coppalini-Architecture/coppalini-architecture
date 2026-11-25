@@ -3,6 +3,7 @@
 import hashlib
 import importlib.util
 import json
+from fractions import Fraction
 from pathlib import Path
 import subprocess
 import sys
@@ -20,6 +21,8 @@ def load(name):
 
 def main():
     release = json.loads((ROOT / "release.json").read_text())
+    assert release["schema"] == "CoppaliniArchitecture.MOONLIGHT-Receipt-Draft-Status/v0.1"
+    assert release["promotion_status"] == "DRAFT_LOCAL_VERIFICATION_PENDING"
     pins = release["files_sha256"]
     actual = {p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*")
               if p.is_file() and "__pycache__" not in p.parts and p.name != "release.json"}
@@ -76,8 +79,19 @@ process.stdout.write(JSON.stringify(results));"""
                             capture_output=True, text=True, check=True)
     label_result = json.loads(labels.stdout)
     assert label_result["status"] == "PASS" and label_result["case_count"] == 88
-    print(f"PASS: {len(pins)} receipt-release file hashes; retained phase reader and Dome pins; exact browser module binding")
-    print(f"PASS: {len(cases)} browser/Python verdict checks; 88 label regressions; reader-ledger callable adapter")
+    relax = load("relax_receipt")
+    long_relax = relax.make_receipt(0, 0, Fraction(1, 10 ** 197), 300, "audit")
+    assert len(long_relax["input"]["d"]) == 200
+    assert len(long_relax["recomputed"]["d"]) == 324
+    assert relax.check(long_relax) == "INVALID"
+    harmonizer = load("harmonizer")
+    long_harmonizer = harmonizer.make_receipt(0, "0." + "0" * 61 + "1", "0", "1", "audit")
+    assert len(long_harmonizer["recomputed"]["y"]) == 310
+    assert len(long_harmonizer["trace"]["w"]) == 371
+    assert harmonizer.check(long_harmonizer) == "INVALID"
+    print(f"PASS: {len(pins)} draft-implementation file hashes; retained phase reader and Dome pins; browser source binding")
+    print(f"PASS: {len(cases)} browser/Python sampled verdict checks; 88 label regressions; reader-ledger callable adapter")
+    print("DRAFT: two admitted-input self-rejection regressions are present and block promotion")
     if "--full" in sys.argv:
         for folder, name in (("sources", "harmonizer.py"), ("sources", "relax_receipt.py"),
                              ("verification", "test_independent.py"), ("verification", "test_relax_receipt.py"),

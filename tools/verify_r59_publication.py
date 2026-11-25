@@ -56,29 +56,24 @@ CIVIC_NOTICE_MARKERS = (
  "1 + 1 = 2",
  "Keep 4. Turn 2. Fold 1. Return 0.",
 )
-# Homepage contract retained from ab34122's source/status alignment.
-# The source-publication and external-reader gates below retain their own scope.
-HOMEPAGE_SOURCE_SCOPE_MARKERS = (
- "Coppalini Architecture | Source-Indexed Proof Ledger",
- "Exact finite records, conditional theorems, stated field conditions, and open adapters.",
- "Each result names its carrier, conditions, verifier or source receipt, and boundary.",
- "Π → (g,F<sub>em</sub>)",
- "Pinned sources and exact finite checks",
- "45 source modules; 140/140 independent finite checks",
- "33 negative controls",
- "Conditional Lean theorem",
- "FunctionalClosure010o.six_secondary_brackets",
- "supplied <code>SmoothCompletion</code> with seven named premise roles",
- "Classical source record",
- "Real <code>C∞</code> Einstein–Maxwell data on compact boundaryless <code>𝕋³</code>",
- "Open or excluded",
+# Homepage contract: lead with the source field map, then preserve each proof
+# record and named boundary at its own declared scope.
+HOMEPAGE_RESULT_SCOPE_MARKERS = (
+ "Coppalini Architecture | Gravity &amp; Electromagnetism Field Map",
+ "Gravity and electromagnetism from one geometric field.",
+ "Π → (g,F<sub>sol</sub>) → F<sub>em</sub>",
+ "With the stated Maxwell conditions",
+ "rank D𝒮<sub>Π</sub>=16",
+ "b(g,F)&lt;|χ|",
+ "Local Einstein–Maxwell reduction",
+ "140 finite identities and 33 negative controls",
+ "real <code>C∞</code> Einstein–Maxwell record on compact boundaryless <code>𝕋³</code>",
+ "six canonical brackets for a supplied <code>SmoothCompletion</code> with seven named premise roles",
  "original <code>Int</code>-valued <code>SmoothCompletion</code> constructor",
  "P14’s finite-root-to-variational/Hamiltonian adapter",
  "selected spin-two TT readout remain open",
- "finite SU(3) reader does not establish a path-integral ensemble, continuum extrapolation, or confinement measurement",
- "full-rank and dimensional conditions",
  'href="/papers/symmetric-minimum/#status-lineage">canonical seven-status key</a>',
- "source edition, declared inputs, procedure, result, receipt, and boundary",
+ "Proof in order of force",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -338,7 +333,10 @@ def verify():
         if not parser.canonical: errors.append(page+": missing canonical")
         if parser.missing_alt: errors.append(f"{page}: missing image alt {parser.missing_alt}")
         if page in HISTORY and not parser.noindex: errors.append(page+": historic page must be noindex")
-        if page in CURRENT and page != "archive/index.html" and parser.noindex: errors.append(page+": current page unexpectedly noindex")
+        if page == "moonlight/receipts/index.html" and not parser.noindex:
+            errors.append(page+": draft receipt page must be noindex")
+        if page in CURRENT and page not in ("archive/index.html", "moonlight/receipts/index.html") and parser.noindex:
+            errors.append(page+": current page unexpectedly noindex")
         for href in parser.links:
             if href.startswith(("https://","http://","mailto:","tel:","data:","//")): continue
             if href.startswith("#"):
@@ -427,6 +425,29 @@ def verify():
     ):
         if marker not in dome:
             errors.append("MOONLIGHT dome missing marker: " + marker)
+    receipt_page = (ROOT / "moonlight/receipts/index.html").read_text(encoding="utf-8")
+    for marker in (
+        "MOONLIGHT Draft Receipt Verifier — Verification Pending",
+        "DRAFT, local",
+        "not released, pinned, or gated",
+        "not a closed receipt endpoint",
+        "Known admitted-input boundary cases remain under correction.",
+        "Verification status and known gaps",
+    ):
+        if marker not in receipt_page:
+            errors.append("MOONLIGHT draft receipt page missing status marker: " + marker)
+    try:
+        receipt_manifest = json.loads((ROOT / "moonlight/receipts/release.json").read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append("MOONLIGHT draft receipt manifest is invalid JSON: " + str(exc))
+    else:
+        if receipt_manifest.get("promotion_status") != "DRAFT_LOCAL_VERIFICATION_PENDING":
+            errors.append("MOONLIGHT draft receipt promotion status mismatch")
+        if len(receipt_manifest.get("known_implementation_gaps", [])) != 4:
+            errors.append("MOONLIGHT draft receipt gap ledger mismatch")
+    sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    if "/moonlight/receipts/" in sitemap:
+        errors.append("MOONLIGHT draft receipt route must not be sitemap-indexed")
     proof = json.loads((ROOT/"research/minimum-mechanics-010u.json").read_text())
     if proof.get("pinned_commit") != PROOF_PIN: errors.append("proof pin mismatch")
     if proof.get("modules") != 45 or len(proof.get("stages",[])) != 21:
@@ -451,20 +472,19 @@ def verify():
         if marker in notice:
             errors.append("notice carries a removed internal-record marker: " + marker)
     landing=(ROOT/"index.html").read_text()
-    for marker in HOMEPAGE_SOURCE_SCOPE_MARKERS:
-        if marker not in landing: errors.append("landing page missing source/status marker: "+marker)
+    for marker in HOMEPAGE_RESULT_SCOPE_MARKERS:
+        if marker not in landing: errors.append("landing page missing result/scope marker: "+marker)
     if "It is not a Riemann-hypothesis proof." in landing:
         errors.append("landing page retains withdrawn Riemann-hypothesis disclaimer")
     if "Read the relation before extending the claim." in landing:
         errors.append("landing page retains withdrawn method-first closure heading")
     for stale in (
-        "with the stated calibration",
-        "under stated hypotheses",
-        "On the stated regular branch",
-        "Under seven named premises",
+        "Source-Indexed Proof Ledger",
+        "Exact finite records, conditional theorems, stated field conditions, and open adapters.",
+        "Four homepage status groups; no transfer across them.",
     ):
         if stale in landing:
-            errors.append("landing page retains vague closure qualifier: "+stale)
+            errors.append("landing page retains superseded process-first marker: "+stale)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
     root28_reader_candidate(errors)
@@ -498,18 +518,16 @@ def verify():
     if "Mathematics and physics papers by Anthony Vito Coppa" in home:
         errors.append("homepage retains withdrawn author-credit copy")
     for marker in (
-        'href="/verify#scope">Verification rule and evidence types.</a>',
-        'href="/proofs/minimum-mechanics/#ledger">Pinned 010 source ledger.</a>',
-        'href="/proofs/smooth-completion/">Classical smooth field receipt.</a>',
-        'href="/papers/symmetric-minimum/#open-ledger">Open-obligation ledger.</a>',
-        'href="/exact/">Exact Reader: source to receipt.</a>',
-        'href="/relational-metrology/">Relational Metrology: observable relation receipt.</a>',
-        'href="/architecture">Laboratory: declared finite models.</a>',
+        'href="/papers/symmetric-minimum/">Field result and source edition.</a>',
+        'href="/proofs/smooth-completion/">Classical Einstein–Maxwell record.</a>',
+        'href="/proofs/minimum-mechanics/#field-mechanics">Canonical theorem and premises.</a>',
+        'href="/verify#scope">Finite checks and verification record.</a>',
+        'href="/formal-correspondence/">External correspondence ledger.</a>',
+        'href="/papers/suture-field/05a_suture_field_dynamics.pdf">Read the regular-branch dynamics</a>',
+        'href="/papers/symmetric-minimum/#open-ledger">Read the remaining source ledger</a>',
     ):
         if marker not in home:
-            errors.append("homepage missing reader entrance or scope marker: " + marker)
-    if 'href="/formal-correspondence/">Map to the literature</a>' not in home:
-        errors.append("homepage lacks map-to-literature entrance")
+            errors.append("homepage missing result/proof entrance: " + marker)
     if 'class="notice-feature"' in home:
         errors.append("homepage retains Notice feature")
     if "Field Investigations</title>" in home:
@@ -575,7 +593,7 @@ def verify():
             errors.append("formal correspondence page missing marker: "+marker)
     for page in ROOT.rglob("*.html"):
         relative = page.relative_to(ROOT).as_posix()
-        if relative == "404.html" or relative.startswith("archive/"):
+        if relative == "404.html" or relative.startswith("archive/") or relative.split("/", 1)[0].startswith("public"):
             continue
         text = page.read_text(encoding="utf-8")
         if '<nav class="primary-nav"' in text and 'href="/notice/"' not in text:

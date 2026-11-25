@@ -1,6 +1,7 @@
 {
-  "schema": "CoppaliniArchitecture.MOONLIGHT-Receipt-Release/v0.1",
-  "release": "MOONLIGHT receipts v0.1",
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Receipt-Draft-Status/v0.1",
+  "implementation": "MOONLIGHT draft receipt implementation v0.1",
+  "promotion_status": "DRAFT_LOCAL_VERIFICATION_PENDING",
   "base_commit": "ab3412293348cdc9f49039da7acbb4be43ebba16",
   "route": "/moonlight/receipts/",
   "contracts": [
@@ -33,7 +34,13 @@
       "change": "none"
     }
   ],
-  "source_record_status": "Supplied draft records retained byte-for-byte; active source pins are declared here.",
+  "source_record_status": "Supplied draft records are retained byte-for-byte. They are not released, pinned, or gated by this implementation manifest.",
+  "known_implementation_gaps": [
+    "An admitted 200-character Relax input can generate a 324-character derived fraction that the current 200-character output parser rejects.",
+    "An admitted Harmonizer decimal can generate derived y or w fraction fields longer than the current 200-character parser bound.",
+    "Raw-text ports do not yet reject duplicate JSON object members or raw numeric -0 before JSON.parse normalizes it.",
+    "RELAX-001 names relax.py hash prefix ab419f8f23ef6a6e, but that source byte is unavailable here."
+  ],
   "contract_update": {
     "trace": "phase_step: 2",
     "checks": "non_expansion",
@@ -61,13 +68,13 @@
     "verification/receipts/MOONLIGHT-LAMBDA-001.schema.json": "c85c2f34eb9ff6fd2e01463be9f7eb6afb5414a8eb97ddd24fb5fac59675caad"
   },
   "files_sha256": {
-    "RELEASE.md": "d3cf2d8d953f7a37ee8089007fc0e85268b8c7b4a9148e2f1811bda380284382",
+    "RELEASE.md": "72fdc593180c2e408383b0a5e9ae0c47be8c2af79e285e9085d90d8779f8d5ab",
     "examples/harmonizer.json": "22bee9e9d6b0c9d7de293c3d18a2046fa250ced6ed9a0595f6833d14e68a4de5",
     "examples/relax.json": "4230e1e823133d9d562801877f03099ff7cbadae92e146bf37dad86cc3998d5a",
-    "index.html": "90eec02be0b32d4c147b5b4eddcc2cd21d4303a576a1cd391e6da610a42f96fa",
+    "index.html": "55365657bd5268cffecbe6e509bbd35e822a90ea17a802be587ee559b53db37c",
     "receipt-checkers.js": "a00e349db6d2d8615306229ee22ef05df04dabd2bc02a839487ee476fd750812",
     "receipt-reader.css": "eaec3cffb78687b234bb8a4e80f053087405c35f181bc23b15c66335dae6d57e",
-    "receipt-reader.js": "68285fd672c532fb86fa355d8335c0c590676d0c7c45e5cc6b50984834aa3699",
+    "receipt-reader.js": "4f64d2a09d6ca7e84183f8dbfe27dda19175217ce259d987a2f36dc37963aecb",
     "records/HARMONIZER-001.record.md": "6c69a56fc9ffb7d5336672ed940e47a3070c2ec0613d0144ed26134542b7c9c5",
     "records/RELAX-001.record.md": "0d75b9709527490fbd646f1702de93e15390646b3b1598a4d3025c1c1b9f6685",
     "records/RELAX-RECEIPT-001.record.md": "f31f6f92ff1f19058946af81797693b4288b08d989f9b32d23d6afa317292788",
@@ -93,6 +100,6 @@
     "verification/test_independent.py": "e2bee6ca625f65453317f033fac81ffa47410a0b33ed99483ecab9c981a5be2e",
     "verification/test_reader_label_parity.py": "12630bf496eb5b21b829d9476e8614946789d74cfb8e7cfc417120e5a7458b91",
     "verification/test_relax_receipt.py": "1acc3d5130e768aa3f81d7a1eeb44281358500cb25c3281009143861782ca722",
-    "verification.json": "a5ee97ddfae84bbabb0ab7a9d304dd4a21e79b3f253ab6e36d1fe9614a6a7117"
+    "verification.json": "291d245fbcdae25df08dbb5c7cb0589316a6c77d8f7b00a7c81b0abd79bc7bca"
   }
 }

@@ -11,13 +11,13 @@
   const exampleButton = document.querySelector('#load-example');
 
   const meanings = {
-    OK: 'The receipt matches the independently recomputed transition.',
-    OK_WITH_DELTA: 'The receipt retains a complete, valid difference between recorded and recomputed outputs. Read its delta.',
-    INVALID: 'The receipt fails the selected contract. Check its schema, types, canonical values, and complete delta.'
+    OK: 'The current draft implementation matches its recomputed transition for this supplied receipt.',
+    OK_WITH_DELTA: 'The current draft implementation retains a complete difference between recorded and recomputed outputs. Read its delta.',
+    INVALID: 'The current draft implementation rejects this receipt. Read the verification status before drawing a conclusion beyond its documented bounds.'
   };
   const domains = {
-    harmonizer: 'Exact nearest-sector pull. Input x, h, and kappa use decimal strings.',
-    relax: 'One N₂ phase step with Fibonacci contraction. The schedule index k is 2…300; input d is a reduced p/q string in [−1/2, 1/2).'
+    harmonizer: 'Draft nearest-sector pull. Input x, h, and kappa use decimal strings; complete-domain receipt verification is pending.',
+    relax: 'Draft N₂ phase step with Fibonacci non-expansion. The schedule index k is 2…300; input d is a reduced p/q string in [−1/2, 1/2). Complete-domain receipt verification is pending.'
   };
   const examples = {
     harmonizer: {
@@ -51,7 +51,7 @@
   }
 
   function resetResult() {
-    show('Ready', 'The current text is ready for checking.');
+    show('Ready', 'The current draft text is ready for an implementation check.');
   }
 
   kind.addEventListener('change', () => {
@@ -61,7 +61,7 @@
   text.addEventListener('input', resetResult);
   exampleButton.addEventListener('click', () => {
     text.value = JSON.stringify(examples[kind.value], null, 2);
-    show('Ready', 'Example loaded with the declared label example-reader. Select Check receipt to run it.');
+    show('Ready', 'Draft example loaded with the declared label example-reader. Select Check receipt to run it.');
   });
   form.addEventListener('submit', event => {
     event.preventDefault();

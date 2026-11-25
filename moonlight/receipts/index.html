@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Anthony Vito Coppa">
-  <meta name="description" content="Check exact MOONLIGHT Harmonizer and Relax receipts. Read the complete recorded and recomputed outputs, retained differences, sources, and verification records.">
+  <meta name="description" content="Draft MOONLIGHT receipt implementations preserved for inspection. HARMONIZER-001 and RELAX receipt records remain local drafts pending complete-domain verification and source pins.">
+  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://eulershiddenl.ink/moonlight/receipts/">
-  <title>MOONLIGHT Receipt Checker — Coppalini Architecture</title>
+  <title>MOONLIGHT Draft Receipt Verifier — Verification Pending</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/coppalini-seam-matrix-favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -23,9 +24,9 @@
   <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/notice/">Notice</a><a href="/proofs/minimum-mechanics/">Proofs</a><a href="/language-mechanics">Language</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture">Lab</a><a href="/about">About</a></nav></div></header>
   <main id="main" class="receipt-shell">
     <header class="receipt-intro">
-      <p class="eyebrow">MOONLIGHT / exact receipts</p>
-      <h1>Check the receipt.</h1>
-      <p class="receipt-lead">Read one Harmonizer or Relax step against its exact rule. The complete recorded and recomputed outputs carry the comparison.</p>
+      <p class="eyebrow">MOONLIGHT / draft receipt verifier</p>
+      <h1>Inspect a draft receipt implementation.</h1>
+      <p class="receipt-lead">The carried HARMONIZER-001, RELAX-001, and RELAX-RECEIPT-001 records remain <strong>DRAFT, local</strong>: not released, pinned, or gated. This page preserves the current implementations for inspection; it is not a closed receipt endpoint.</p>
       <nav class="receipt-links" aria-label="MOONLIGHT"><a href="/moonlight/">MOONLIGHT reader</a><a href="/moonlight/dome/">Iris Dome</a><a href="#sources">Sources and records</a></nav>
     </header>
 
@@ -42,12 +43,12 @@
           </div>
           <button id="load-example" class="receipt-secondary" type="button">Load example</button>
         </div>
-        <p id="receipt-domain" class="receipt-note">Exact nearest-sector pull. Input x, h, and kappa use decimal strings.</p>
+        <p id="receipt-domain" class="receipt-note">Draft nearest-sector pull. Input <code>x</code>, <code>h</code>, and <code>kappa</code> use decimal strings; complete-domain receipt verification remains pending.</p>
         <div class="receipt-field">
           <label for="receipt-text">Receipt JSON</label>
           <textarea id="receipt-text" name="receipt-text" rows="16" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="receipt-input-note" placeholder="Paste one complete receipt here."></textarea>
         </div>
-        <p id="receipt-input-note" class="receipt-note">The checker reads the text exactly as entered. Checking stays in this page; the reader label is carried from the supplied receipt.</p>
+        <p id="receipt-input-note" class="receipt-note">The checker reads the text in this page; its current verdict is an implementation read, not a promotion or source pin. Known admitted-input boundary cases remain under correction.</p>
         <button type="submit">Check receipt</button>
       </form>
       <div id="receipt-result" class="receipt-result" role="status" aria-live="polite" aria-atomic="true" data-state="ready">
@@ -58,18 +59,18 @@
     </section>
 
     <section class="receipt-reading" aria-labelledby="reading-title">
-      <h2 id="reading-title">Read the result</h2>
+      <h2 id="reading-title">Read the current implementation verdict</h2>
       <dl class="receipt-verdicts">
-        <div><dt>OK</dt><dd>The receipt matches the independently recomputed transition.</dd></div>
-        <div><dt>OK_WITH_DELTA</dt><dd>The receipt retains a complete, valid difference between recorded and recomputed outputs.</dd></div>
-        <div><dt>INVALID</dt><dd>The receipt fails the selected contract or an exact assertion.</dd></div>
+        <div><dt>OK</dt><dd>The current implementation matches its recomputed transition for this supplied receipt.</dd></div>
+        <div><dt>OK_WITH_DELTA</dt><dd>The current implementation retains a complete difference between recorded and recomputed outputs.</dd></div>
+        <div><dt>INVALID</dt><dd>The current implementation rejects the receipt. It is not a general verdict beyond the documented draft bounds.</dd></div>
       </dl>
-      <p>The <code>checks</code> field asserts properties of the recomputed transition. With <code>OK_WITH_DELTA</code>, the complete <code>recorded</code> and <code>recomputed</code> outputs in <code>delta</code> carry the observed Difference.</p>
+      <p>The <code>checks</code> field asserts properties of the recomputed transition. With <code>OK_WITH_DELTA</code>, the complete <code>recorded</code> and <code>recomputed</code> outputs in <code>delta</code> carry the observed Difference. The current ports have known literal-bound and raw-JSON canonicalization gaps; the verification record names them.</p>
       <p class="receipt-note">Display-side and one-way. The checker reads no clock coordinate, accesses no Ground, and leaves the MOONLIGHT phase mirror untouched.</p>
     </section>
 
     <section id="sources" class="receipt-sources" aria-labelledby="sources-title">
-      <h2 id="sources-title">Sources and records</h2>
+      <h2 id="sources-title">Draft sources and preserved records</h2>
       <div class="receipt-source-grid">
         <article>
           <h3>Harmonizer</h3>
@@ -80,7 +81,7 @@
           <ul><li><a href="sources/relax_receipt.py" download>Python checker</a></li><li><a href="sources/relax_receipt.js" download>JavaScript checker</a></li><li><a href="records/RELAX-RECEIPT-001.record.md">RELAX-RECEIPT-001 record</a></li><li><a href="records/RELAX-001.record.md">RELAX-001 record</a></li></ul>
         </article>
       </div>
-      <p class="receipt-links"><a href="release.json">Release and source hashes</a><a href="verification.json">Verification receipt</a><a href="sources/reader_ledger_relax.py" download>Reader ledger adapter</a></p>
+      <p class="receipt-links"><a href="release.json">Draft manifest and source hashes</a><a href="verification.json">Verification status and known gaps</a><a href="sources/reader_ledger_relax.py" download>Reader ledger adapter</a></p>
       <p class="receipt-note">O-Q4 · Target-ledger registration remains OPEN. The adapter supplies the checker entry point for the owning reader.</p>
     </section>
   </main>

@@ -1,6 +1,12 @@
 {
   "schema": "CoppaliniArchitecture.MOONLIGHT-Receipt-Verification/v0.1",
-  "status": "PASS",
+  "status": "DRAFT_PENDING_FULL_DOMAIN_REGRESSION",
+  "supplied_suite_status": "PASS",
+  "known_implementation_gaps": [
+    "The sampled suites do not cover every admitted literal. A valid 200-character Relax input produces a 324-character derived output rejected by the current 200-character parser cap.",
+    "A valid 64-character Harmonizer decimal can produce derived output fields longer than the current 200-character parser cap.",
+    "Raw JSON duplicate members and raw numeric -0 are not rejected before current parser normalization."
+  ],
   "upstream": {
     "scope": "supplied canonical source and verification suites",
     "source_manifest": [
