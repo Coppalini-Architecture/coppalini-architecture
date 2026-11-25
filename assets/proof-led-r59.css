@@ -28,6 +28,7 @@
 .r59 .r59-section h2 { max-width:22ch; }
 .r59 .r59-section .section-lead { max-width:51rem; color:var(--r59-muted); font-size:1rem; line-height:1.75; margin:.5rem 0 1.4rem; }
 .r59 .r59-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; margin:1.5rem 0 0; background:var(--r59-rule); border:1px solid var(--r59-rule); }
+.r59 .featured-record-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .r59 .r59-card { min-width:0; padding:1.4rem 1.3rem 1.45rem; background:var(--surface); }
 .r59 .r59-card h3 { font-size:1.2rem; line-height:1.25; margin:.45rem 0 .65rem; }
 .r59 .r59-card p { font-size:.88rem; color:var(--r59-muted); line-height:1.65; }
