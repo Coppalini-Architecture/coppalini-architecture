@@ -20,6 +20,7 @@ CURRENT = ("index.html","notice/index.html","about.html","library.html","publica
            "language-mechanics.html","external-formalization/index.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
            "proofs/smooth-completion/index.html","formal-correspondence/index.html","moonlight/index.html",
+           "moonlight/manual/index.html","moonlight/dome/index.html",
            "papers/symmetric-minimum/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
@@ -100,6 +101,9 @@ SMOOTH_COMPLETION_PREMISES = (
 ROOT28_MANIFEST = "research/metric-minimum-root28-v0.1.json"
 MOONLIGHT_ARTIFACT = "models/view/moonlight-phase-reader-v0.8.4.html"
 MOONLIGHT_RECORD = "verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json"
+MOONLIGHT_MANUAL = "moonlight/manual/index.html"
+MOONLIGHT_DOME = "moonlight/dome/index.html"
+MOONLIGHT_LAMBDA_SCHEMA = "verification/receipts/MOONLIGHT-LAMBDA-001.schema.json"
 MOONLIGHT_SHA256 = "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb"
 MOONLIGHT_LEGACY_ARTIFACT = "/models/view/moonlight-phase-reader-v0.8.3.html"
 
@@ -377,6 +381,24 @@ def verify():
         else:
             if record.get("carrier", {}).get("sha256") != MOONLIGHT_SHA256:
                 errors.append("MOONLIGHT MC-001-P carrier hash mismatch")
+    lambda_schema = ROOT / MOONLIGHT_LAMBDA_SCHEMA
+    if not lambda_schema.is_file():
+        errors.append("MOONLIGHT Lambda schema missing")
+    else:
+        try:
+            lambda_record = json.loads(lambda_schema.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append("MOONLIGHT Lambda schema is invalid JSON: " + str(exc))
+        else:
+            if lambda_record.get("sources", {}).get("moonlight_reader", {}).get("sha256") != MOONLIGHT_SHA256:
+                errors.append("MOONLIGHT Lambda schema carrier hash mismatch")
+            if lambda_record.get("axial_lift", {}).get("period_T") != "2 log Phi":
+                errors.append("MOONLIGHT Lambda schema period mismatch")
+            dome_adapter = lambda_record.get("display_adapter", {}).get("iris_dome", {})
+            if dome_adapter.get("path") != "/moonlight/dome/":
+                errors.append("MOONLIGHT Iris Dome adapter path mismatch")
+            if dome_adapter.get("law") != "a mod 4 = q; a mod 137 = s":
+                errors.append("MOONLIGHT Iris Dome adapter law mismatch")
     moonlight_page = (ROOT/"moonlight/index.html").read_text(encoding="utf-8")
     for marker in (
         "MOONLIGHT · Minimum Wheel v0.8.4",
@@ -393,6 +415,26 @@ def verify():
         public_text = (ROOT / public_ref).read_text(encoding="utf-8")
         if MOONLIGHT_LEGACY_ARTIFACT in public_text:
             errors.append(public_ref + ": retains legacy MOONLIGHT reader path")
+    manual = (ROOT / MOONLIGHT_MANUAL).read_text(encoding="utf-8")
+    for marker in (
+        "MOONLIGHT / user manual",
+        "Four phase · 137 iris · 548 address",
+        "Λ = (k + u)T",
+        "Riemann’s i machine",
+        "D4 retained",
+    ):
+        if marker not in manual:
+            errors.append("MOONLIGHT manual missing marker: " + marker)
+    dome = (ROOT / MOONLIGHT_DOME).read_text(encoding="utf-8")
+    for marker in (
+        "Iris Dome · 548 Address Surface",
+        "four phase bands, 137 sectors per band, 548 visible addresses",
+        "const sectors=137",
+        "const addressFor=(phase,iris)=>iris+sectors*mod(phase-iris,4)",
+        "Display output does not update the MOONLIGHT phase mirror.",
+    ):
+        if marker not in dome:
+            errors.append("MOONLIGHT dome missing marker: " + marker)
     proof = json.loads((ROOT/"research/minimum-mechanics-010u.json").read_text())
     if proof.get("pinned_commit") != PROOF_PIN: errors.append("proof pin mismatch")
     if proof.get("modules") != 45 or len(proof.get("stages",[])) != 21:

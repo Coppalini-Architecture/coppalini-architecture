@@ -1,0 +1,57 @@
+{
+  "schema": "CoppaliniArchitecture.MOONLIGHT-Lambda/v0.2",
+  "status": "DECLARED public coordination schema; not a measurement protocol",
+  "sources": {
+    "metric_mirror_symmetry": "/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf",
+    "mirror_escapement_time_lift": "/papers/mirror-escapement-time-lift.pdf",
+    "moonlight_reader": {
+      "path": "/models/view/moonlight-phase-reader-v0.8.4.html",
+      "sha256": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb"
+    },
+    "moonlight_record": "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json"
+  },
+  "axial_lift": {
+    "period_T": "2 log Phi",
+    "source_definition": "Lambda(z) = log(Phi / |chi_ax(z)|)",
+    "carriage_law": "Lambda(L_ax z) = Lambda(z) + T",
+    "quotient_return": "[Lambda + T] = [Lambda]",
+    "retained_difference": "Lambda + T != Lambda",
+    "normal_form": "Lambda = (k + u) T, k in Z, 0 <= u < 1",
+    "quotient_position": "u = [Lambda] in R/TZ",
+    "receipt_fields": ["source", "T", "u", "k", "Lambda", "delta", "reader"]
+  },
+  "finite_address": {
+    "phase_group": "mu_4 = {1, i, -1, -i}",
+    "iris_group": "mu_137",
+    "address_group": "mu_548",
+    "product": "Z/548Z ~= Z/4Z x Z/137Z",
+    "encoding": "a mod 4 = q; a mod 137 = s",
+    "domains": {
+      "q": "0..3",
+      "s": "0..136",
+      "a": "0..547"
+    }
+  },
+  "display_adapter": {
+    "iris_dome": {
+      "path": "/moonlight/dome/",
+      "status": "DECLARED",
+      "domain": "(q, s) in Z/4Z x Z/137Z",
+      "codomain": "a in Z/548Z",
+      "law": "a mod 4 = q; a mod 137 = s",
+      "geometry": "four phase bands; 137 iris sectors per band",
+      "feedback": "Display output does not update the MOONLIGHT phase mirror."
+    }
+  },
+  "coordinate_separation": {
+    "lambda_ML": "MOONLIGHT phase tick / 2520 turn",
+    "lambda_R": "Riemann logarithmic variable log x",
+    "Lambda_ax": "unbounded axial lift",
+    "rule": "No identity or adapter between these coordinates is supplied by this schema."
+  },
+  "boundaries": {
+    "D4": "No map V -> E is supplied or used.",
+    "dome": "A 137-side visual iris requires its own declared mesh and index adapter.",
+    "feedback": "No display output updates the MOONLIGHT phase mirror."
+  }
+}

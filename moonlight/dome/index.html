@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Anthony Vito Coppa">
+  <meta name="description" content="MOONLIGHT Iris Dome: a declared 4 by 137 visual address surface for the 548-address finite register.">
+  <link rel="canonical" href="https://eulershiddenl.ink/moonlight/dome/">
+  <title>MOONLIGHT Iris Dome — Coppalini Architecture</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/coppalini-seam-matrix-favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#06111e">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/proof-led-r59.css">
+  <style>
+    :root{color-scheme:dark}body{background:#06111e;color:#e8f0fb}.dome-shell{max-width:1160px;margin:0 auto;padding:54px 24px 86px}.dome-kicker{margin:0 0 10px;color:#99bddb;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.dome-lead{max-width:800px;font-size:1.08rem;line-height:1.65;color:#d2e1f0}.dome-links{display:flex;flex-wrap:wrap;gap:14px;margin:20px 0 28px}.dome-links a{color:#d8ecff;font-weight:700}.dome-grid{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(260px,.85fr);gap:24px;align-items:start}.dome-stage{overflow:hidden;border:1px solid rgba(166,205,255,.34);border-radius:20px;background:#06111e;box-shadow:0 32px 72px rgba(0,0,0,.42)}canvas{display:block;width:100%;aspect-ratio:1/1;touch-action:manipulation}.dome-caption{margin:0;padding:13px 17px;border-top:1px solid rgba(166,205,255,.24);background:#030a15;font-size:.92rem;line-height:1.52;color:#c9daec}.dome-panel{border:1px solid rgba(166,205,255,.28);border-radius:16px;background:#0c1c36;padding:20px;box-shadow:0 18px 36px rgba(0,0,0,.22)}.dome-panel h2{margin:0 0 8px;font-size:1.2rem;color:#fff}.dome-panel p{line-height:1.55;color:#c6d8eb}.control{display:grid;gap:7px;margin:17px 0}.control label{font-weight:700;color:#eff7ff}.control input{box-sizing:border-box;width:100%;font:inherit;color:#071321;background:#f8fbff;border:1px solid #abc9e4;border-radius:8px;padding:10px 11px}.phase-row{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.phase-button{appearance:none;border:1px solid rgba(210,230,250,.52);border-radius:8px;padding:9px 5px;font:inherit;font-weight:800;background:#123157;color:#eff7ff;cursor:pointer}.phase-button[aria-pressed="true"]{background:#eaf6ff;color:#06111e;border-color:#fff;box-shadow:0 0 0 2px rgba(153,211,255,.35)}output{display:block;min-height:7.8rem;margin-top:20px;padding:15px;border-radius:10px;background:#030a15;border:1px solid rgba(170,211,255,.22);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.91rem;line-height:1.55;white-space:pre-wrap;color:#d8efff}.boundary{margin-top:20px;padding:14px 15px;border-left:4px solid #6cc7ff;background:#162d4a;line-height:1.55;color:#d4e8fa}.legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:18px;font-size:.88rem;color:#c8d9eb}.legend span{display:flex;align-items:center;gap:7px}.swatch{width:.9rem;height:.9rem;border-radius:50%;box-shadow:0 0 12px currentColor}.site-header,.site-footer{background:#06111e}.site-header{border-bottom-color:rgba(166,205,255,.16)}.site-footer{border-top-color:rgba(166,205,255,.16);color:#b9cde1}@media (max-width:800px){.dome-shell{padding:38px 16px 64px}.dome-grid{grid-template-columns:1fr}.dome-stage{border-radius:15px}.phase-row{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body class="r59">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Coppalini Architecture</a><nav class="primary-nav" aria-label="Primary"><a href="/">Home</a><a href="/notice/">Notice</a><a href="/proofs/minimum-mechanics/">Proofs</a><a href="/language-mechanics">Language</a><a href="/library">Library</a><a href="/verify">Verify</a><a href="/architecture" aria-current="page">Lab</a><a href="/about">About</a></nav></div></header>
+  <main id="main" class="dome-shell">
+    <p class="dome-kicker">MOONLIGHT / declared display adapter</p>
+    <h1>Iris Dome · 548 Address Surface</h1>
+    <p class="dome-lead">Select a four-phase residue and an iris sector. The dome carries their unique Chinese-remainder address in ℤ/548ℤ: four phase bands, 137 sectors per band, 548 visible addresses.</p>
+    <nav class="dome-links" aria-label="MOONLIGHT dome sources"><a href="/moonlight/">MOONLIGHT reader</a><a href="/moonlight/manual/">User manual</a><a href="/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json">Λ receipt schema</a><a href="/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf">Metric Mirror Symmetry</a></nav>
+    <section class="dome-grid" aria-label="Iris dome renderer">
+      <figure class="dome-stage"><canvas id="iris-dome" role="img" aria-label="Four phase bands, each divided into 137 selectable iris sectors."></canvas><figcaption class="dome-caption">Tap or click a cell to read its phase, iris sector, and exact address. The center is a visual reference; the register is carried by the four annular phase bands.</figcaption></figure>
+      <aside class="dome-panel">
+        <h2>Read an address</h2>
+        <p>Choose <code>q ∈ ℤ/4ℤ</code> and integer <code>s</code>. The display reads <code>s mod 137</code>.</p>
+        <div class="control"><label>Phase q</label><div class="phase-row" id="phase-controls"><button class="phase-button" type="button" data-q="0" aria-pressed="true">0 · 1</button><button class="phase-button" type="button" data-q="1" aria-pressed="false">1 · i</button><button class="phase-button" type="button" data-q="2" aria-pressed="false">2 · −1</button><button class="phase-button" type="button" data-q="3" aria-pressed="false">3 · −i</button></div></div>
+        <div class="control"><label for="iris-input">Iris s</label><input id="iris-input" type="number" step="1" value="0" inputmode="numeric"><small>Any safe integer; reduced modulo 137.</small></div>
+        <output id="address-output" aria-live="polite"></output>
+        <div class="legend" aria-label="Phase band legend"><span><i class="swatch" style="background:#73cbff;color:#73cbff"></i>q = 0</span><span><i class="swatch" style="background:#af93ff;color:#af93ff"></i>q = 1</span><span><i class="swatch" style="background:#ffd571;color:#ffd571"></i>q = 2</span><span><i class="swatch" style="background:#ff8cc8;color:#ff8cc8"></i>q = 3</span></div>
+        <p class="boundary"><strong>Carriage boundary.</strong> This surface maps <code>(q,s)</code> to finite address <code>a</code> and renders it. Display output does not update the MOONLIGHT phase mirror.</p>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>© 2026 Anthony Vito Coppa · Coppalini Architecture</span></div></footer>
+  <script>
+  (() => {
+    const sectors=137,phases=[{label:'1',hue:204},{label:'i',hue:259},{label:'−1',hue:43},{label:'−i',hue:332}];
+    const canvas=document.querySelector('#iris-dome'),ctx=canvas.getContext('2d'),input=document.querySelector('#iris-input'),output=document.querySelector('#address-output'),buttons=[...document.querySelectorAll('.phase-button')];
+    let q=0,geometry=null;
+    const mod=(value,base)=>((value%base)+base)%base;
+    const addressFor=(phase,iris)=>iris+sectors*mod(phase-iris,4);
+    const readIris=()=>{const text=input.value.trim(),value=Number(text);if(!/^-?\d+$/.test(text)||!Number.isSafeInteger(value))return null;return mod(value,sectors)};
+    const updateOutput=()=>{const iris=readIris();if(iris===null){output.textContent='Input boundary: s must be a safe integer; valid values are read modulo 137.';return null}const raw=Number(input.value),a=addressFor(q,iris);output.textContent='phase q = '+q+' ('+phases[q].label+')\ninput iris s = '+raw+'; residue = '+iris+'\naddress a = '+a+' mod 548\nchecks: a mod 4 = '+(a%4)+'; a mod 137 = '+(a%sectors);return iris};
+    const wedge=(inner,outer,start,end)=>{ctx.beginPath();ctx.arc(geometry.cx,geometry.cy,outer,start,end);ctx.arc(geometry.cx,geometry.cy,inner,end,start,true);ctx.closePath()};
+    const draw=()=>{if(!geometry)return;const iris=updateOutput();if(iris===null)return;const{width,height,cx,cy,outer}=geometry;ctx.clearRect(0,0,width,height);const sky=ctx.createRadialGradient(cx,cy,outer*.04,cx,cy,outer*1.15);[['#fffef2',0],['#9bc7f4',.08],['#274c86',.25],['#0a1a35',.6],['#020812',1]].forEach(x=>sky.addColorStop(x[1],x[0]));ctx.fillStyle=sky;ctx.fillRect(0,0,width,height);const core=outer*.17,ring=(outer-core)/4,slice=Math.PI*2/sectors;
+      for(let phase=0;phase<4;phase+=1){const inner=core+phase*ring+ring*.045,outerBand=core+(phase+1)*ring-ring*.045,hue=phases[phase].hue;for(let s=0;s<sectors;s+=1){const start=s*slice-Math.PI/2+.002,end=(s+1)*slice-Math.PI/2-.002,chosen=phase===q&&s===iris;wedge(inner,outerBand,start,end);ctx.fillStyle=chosen?'hsla('+hue+',100%,82%,1)':'hsla('+hue+',78%,'+(47+phase*4)+'%,'+(.34+.17*Math.sin((s/sectors)*Math.PI*6+phase))+')';ctx.fill();if(chosen){ctx.save();ctx.shadowColor='hsla('+hue+',100%,85%,.98)';ctx.shadowBlur=23;ctx.fillStyle='hsla('+hue+',100%,88%,.94)';ctx.fill();ctx.restore()}}ctx.beginPath();ctx.arc(cx,cy,inner,0,Math.PI*2);ctx.strokeStyle='hsla('+hue+',92%,84%,.28)';ctx.lineWidth=1;ctx.stroke()}
+      const angle=(iris+.5)*slice-Math.PI/2,selectedRadius=core+(q+.5)*ring;ctx.save();ctx.setLineDash([4,6]);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(angle)*selectedRadius,cy+Math.sin(angle)*selectedRadius);ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=1.25;ctx.stroke();ctx.restore();const light=ctx.createRadialGradient(cx,cy,0,cx,cy,core);[['#fffef2',0],['#d7efff',.42],['rgba(168,210,255,.6)',.72],['rgba(104,159,222,.08)',1]].forEach(x=>light.addColorStop(x[1],x[0]));ctx.beginPath();ctx.arc(cx,cy,core,0,Math.PI*2);ctx.fillStyle=light;ctx.fill();ctx.strokeStyle='rgba(244,251,255,.76)';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle='#071321';ctx.font='700 '+Math.max(13,outer*.06)+'px ui-monospace, monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('a = '+addressFor(q,iris),cx,cy)};
+    const resize=()=>{const rect=canvas.getBoundingClientRect(),scale=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*scale);canvas.height=Math.round(rect.height*scale);ctx.setTransform(scale,0,0,scale,0,0);geometry={width:rect.width,height:rect.height,cx:rect.width/2,cy:rect.height/2,outer:Math.min(rect.width,rect.height)*.45};draw()};
+    const setPhase=(next)=>{q=mod(next,4);buttons.forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.q)===q)));draw()};
+    buttons.forEach(button=>button.addEventListener('click',()=>setPhase(Number(button.dataset.q))));input.addEventListener('input',draw);canvas.addEventListener('click',(event)=>{if(!geometry)return;const rect=canvas.getBoundingClientRect(),dx=event.clientX-rect.left-geometry.cx,dy=event.clientY-rect.top-geometry.cy,radius=Math.hypot(dx,dy),core=geometry.outer*.17,ring=(geometry.outer-core)/4,phase=Math.floor((radius-core)/ring);if(phase<0||phase>3)return;input.value=String(Math.floor(mod(Math.atan2(dy,dx)+Math.PI/2,Math.PI*2)/(Math.PI*2/sectors)));setPhase(phase)});window.addEventListener('resize',resize,{passive:true});resize();
+  })();
+  </script>
+</body>
+</html>

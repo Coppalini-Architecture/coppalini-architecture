@@ -37,11 +37,13 @@ R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-archi
 ## MOONLIGHT Minimum Wheel v0.8.4
 
 Public reader: https://eulershiddenl.ink/moonlight/
+User manual: https://eulershiddenl.ink/moonlight/manual/
+Iris Dome: https://eulershiddenl.ink/moonlight/dome/
 Exact artifact: https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html
 MC-001-P record: https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json
 SHA-256: 70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb
 
-MOONLIGHT is a public redacted computational reference reader downstream of the Refusal Wall. It declares a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
+MOONLIGHT is a public redacted computational reference reader downstream of the Refusal Wall. It declares a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. Its user manual keeps the finite four-phase / 137-iris / 548-address register, the axial Λ lift, and the Riemann i-machine reader separately typed. The Iris Dome renders the declared finite adapter (q,s) → a; its display output does not update the phase mirror. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
 
 ## Formal correspondence
 
