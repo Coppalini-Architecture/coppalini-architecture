@@ -162,11 +162,11 @@ Boundary: The reference ledger supplies citations; it does not extend the claims
 
 URL: https://eulershiddenl.ink/about
 
-Summary: About identifies the project’s reader role: preserving sources and scope while making named formal work, exact algebra, proofs, and checks findable.
+Summary: About traces the public investigation from its author-provenance origin through named source editions, material provenance, formal constructions, proofs, and checks.
 
 Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
 
-Boundary: The site is a reader and source index; its pages preserve each result’s stated carrier, evidence, and boundary.
+Boundary: The chronology and provenance identify sources and lineage; each result retains its own stated carrier, evidence, and boundary.
 
 ## Exact readers and finite checks
 

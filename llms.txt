@@ -43,7 +43,7 @@ Use this index to find the result page; use the full index and that page’s own
 <!-- topology:references -->
 - [Language Mechanics Reference Ledger](https://eulershiddenl.ink/references) — The complete reference ledger for Language Mechanics: Axiomatic Closure.
 <!-- topology:about -->
-- [About the Research](https://eulershiddenl.ink/about) — About the public, source-preserving reader for named mathematical and physical results, exact algebra, Lean proofs, and runnable checks.
+- [About the Research](https://eulershiddenl.ink/about) — Field-investigation record for Coppalini Architecture: dated sources, exact constructions, Lean records, runnable checks, and stated boundaries.
 
 ## Exact readers and finite checks
 

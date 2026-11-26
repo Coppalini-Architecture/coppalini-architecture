@@ -589,7 +589,10 @@ def verify():
             errors.append("Gauge & Matter v0.5.7 source package is not a readable ZIP")
     about = (ROOT/"about.html").read_text(encoding="utf-8")
     for marker in (
-        "Existing field formalism, read together.",
+        "Field investigations, read from their records.",
+        "The record has two sources.",
+        "material-source records for constrained structural response",
+        "not derivational premises for the later finite root or its theorems",
         "What is closed in the stated record.",
         "An exact inverse, with its quartic boundary visible.",
         "Reality, imagination, and form keep distinct offices.",
