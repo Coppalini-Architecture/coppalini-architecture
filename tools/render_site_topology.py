@@ -294,6 +294,21 @@ def validate_manifest(root: Path, manifest: dict, rendered_nav: bool = False) ->
         active = record.get("nav_active")
         if nav_profile == "primary" and active is not None and active not in {item["id"] for item in profiles["primary"]}:
             fail(route_id + ": unknown nav_active item")
+        robots_header = record.get("robots_header")
+        header_noindex = False
+        if robots_header is not None:
+            if not isinstance(robots_header, str) or not robots_header:
+                fail(route_id + ": robots_header must be a non-empty string")
+            if "noindex" not in robots_header.casefold():
+                fail(route_id + ": robots_header must declare noindex")
+            robot_paths = record.get("robots_header_paths", [record["route"]])
+            if not isinstance(robot_paths, list) or not robot_paths or not all(isinstance(item, str) and item.startswith("/") for item in robot_paths):
+                fail(route_id + ": robots_header_paths must be a non-empty route list")
+            for robot_path in robot_paths:
+                values = headers.get(robot_path, {}).get("x-robots-tag", [])
+                if not any(robots_header.casefold() == value.casefold() for value in values):
+                    fail(route_id + ": missing X-Robots-Tag header for " + robot_path)
+            header_noindex = True
         resolved_sources: set[Path] = set()
         for source in source_files:
             path = root_path(root, source, route_id)
@@ -327,7 +342,7 @@ def validate_manifest(root: Path, manifest: dict, rendered_nav: bool = False) ->
             elif metadata.canonicals:
                 fail(route_id + ": canonical must be absent in " + source)
             noindex = any("noindex" in value.casefold() for value in metadata.robots)
-            if discovery == "sitemap" and noindex:
+            if discovery == "sitemap" and (noindex or header_noindex):
                 fail(route_id + ": noindex source cannot be sitemap-discovered")
             if discovery == "exclude" and record.get("area") == "development" and not noindex:
                 fail(route_id + ": development source must be noindex")

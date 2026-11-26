@@ -6,3 +6,16 @@
   Link: <https://eulershiddenl.ink/models/view/clear-onyx-gauge-laboratory-v0.5.7>; rel="canonical"
 /models/view/moonlight-phase-reader-v0.8.4.html
   Link: <https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html>; rel="canonical"
+/models/view/moonlight-phase-reader-v0.8.4
+  Link: <https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html>; rel="canonical"
+
+# Retained 0.5.5 and 0.5.6 artifact bytes remain fetchable for provenance but
+# must not compete with the active 0.5.7 reader in search results.
+/models/view/clear-onyx-gauge-laboratory-v0.5.5
+  X-Robots-Tag: noindex, follow
+/models/view/clear-onyx-gauge-laboratory-v0.5.5.html
+  X-Robots-Tag: noindex, follow
+/models/view/clear-onyx-gauge-laboratory-v0.5.6
+  X-Robots-Tag: noindex, follow
+/models/view/clear-onyx-gauge-laboratory-v0.5.6.html
+  X-Robots-Tag: noindex, follow

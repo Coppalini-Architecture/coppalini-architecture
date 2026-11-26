@@ -144,6 +144,11 @@ def redirects():
         target_norm = target.split("#", 1)[0].rstrip("/") or "/"
         if source_norm == target_norm:
             raise AssertionError(f"normalized self-redirect: {source} -> {target}")
+    normalized_sources = {source.rstrip("/") or "/": source for source in entries}
+    for source, target in entries.items():
+        target_norm = target.split("#", 1)[0].split("?", 1)[0].rstrip("/") or "/"
+        if target_norm in normalized_sources:
+            raise AssertionError(f"redirect chain: {source} -> {target} -> {entries[normalized_sources[target_norm]]}")
     return entries
 
 def location(path):
