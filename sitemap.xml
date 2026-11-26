@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://eulershiddenl.ink/</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/formal-correspondence/</loc><lastmod>2026-11-17</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/notice/</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/proofs/minimum-mechanics/</loc><lastmod>2026-11-20</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/proofs/smooth-completion/</loc><lastmod>2026-11-20</lastmod></url>
+  <!-- Generated from research/site-topology-v0.1.json. -->
+  <url><loc>https://eulershiddenl.ink/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/symmetric-minimum/</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/about</loc><lastmod>2026-11-17</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/architecture</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/library</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/publication-records</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/proofs/smooth-completion/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://eulershiddenl.ink/verify</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/external-formalization/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/library</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/formal-correspondence/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/notice/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/proofs/minimum-mechanics/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://eulershiddenl.ink/formalism</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/language-mechanics</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://eulershiddenl.ink/ledger</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/references</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/about</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://eulershiddenl.ink/exact/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/exact/recompute-kernel/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/models/view/clear-onyx-native-engine-v0.2.html</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/models/view/clear-onyx-gauge-laboratory-v0.5.7</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/nop/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/nop/demonstration</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/exact/matrix-root-g-001/</loc></url>
+  <url><loc>https://eulershiddenl.ink/exact/condition-of-trust-001/</loc></url>
+  <url><loc>https://eulershiddenl.ink/exact/three-body-mirror-001/</loc></url>
+  <url><loc>https://eulershiddenl.ink/relational-metrology/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/moonlight/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/moonlight/manual/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/moonlight/dome/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/four-dual-forms/gravity-light</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/four-dual-forms/memory-motion</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/four-dual-forms/time-scope</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/four-dual-forms/horizon-silence</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/infinity-one-zero-lift</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://eulershiddenl.ink/papers/language-mechanics-axiomatic-closure</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/papers/displacement-of-origin/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://eulershiddenl.ink/physical-reality-inside-constraint/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/exact/matrix-root-g-001/</loc></url>
-  <url><loc>https://eulershiddenl.ink/exact/condition-of-trust-001/</loc></url>
-  <url><loc>https://eulershiddenl.ink/exact/three-body-mirror-001/</loc></url>
-  <url><loc>https://eulershiddenl.ink/papers/displacement-of-origin/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/moonlight/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/moonlight/manual/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/moonlight/dome/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://eulershiddenl.ink/relational-metrology/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/publication-records</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/architecture</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/models/view/clear-onyx-native-engine-v0.2.html</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/models/view/clear-onyx-gauge-laboratory-v0.5.7</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/nop/</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/nop/demonstration</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://eulershiddenl.ink/external-formalization/</loc><lastmod>2026-11-21</lastmod></url>
 </urlset>

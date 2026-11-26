@@ -3,6 +3,7 @@ name: R59 proof-led site integrity
 on:
   push:
     paths:
+      - '**/*.html'
       - 'index.html'
       - 'notice/index.html'
       - 'about.html'
@@ -26,6 +27,8 @@ on:
       - 'verification/external-anchor-receipt/**'
       - 'research/minimum-mechanics-010u.json'
       - 'research/r59-editorial-manifest.json'
+      - 'research/site-area-register-v0.1.json'
+      - 'research/site-topology-v0.1.json'
       - 'R59_EDITORIAL_RELEASE.md'
       - 'archive/**'
       - 'assets/proof-led-r59.css'
@@ -34,6 +37,7 @@ on:
       - 'language-mechanics.css'
       - 'assets/authors/**'
       - '_redirects'
+      - '_headers'
       - '.gitignore'
       - 'netlify.toml'
       - 'moonlight/**'
@@ -46,9 +50,13 @@ on:
       - 'sitemap.xml'
       - 'tools/verify_r59_publication.py'
       - 'tools/build_public_stage.py'
+      - 'tools/verify_site_area_register.py'
+      - 'tools/render_site_topology.py'
+      - 'tools/verify_site_topology.py'
       - '.github/workflows/r59-site-integrity.yml'
   pull_request:
     paths:
+      - '**/*.html'
       - 'index.html'
       - 'notice/index.html'
       - 'about.html'
@@ -72,6 +80,8 @@ on:
       - 'verification/external-anchor-receipt/**'
       - 'research/minimum-mechanics-010u.json'
       - 'research/r59-editorial-manifest.json'
+      - 'research/site-area-register-v0.1.json'
+      - 'research/site-topology-v0.1.json'
       - 'R59_EDITORIAL_RELEASE.md'
       - 'archive/**'
       - 'assets/proof-led-r59.css'
@@ -80,6 +90,7 @@ on:
       - 'language-mechanics.css'
       - 'assets/authors/**'
       - '_redirects'
+      - '_headers'
       - '.gitignore'
       - 'netlify.toml'
       - 'moonlight/**'
@@ -92,6 +103,9 @@ on:
       - 'llms*.txt'
       - 'tools/verify_r59_publication.py'
       - 'tools/build_public_stage.py'
+      - 'tools/verify_site_area_register.py'
+      - 'tools/render_site_topology.py'
+      - 'tools/verify_site_topology.py'
       - '.github/workflows/r59-site-integrity.yml'
   workflow_dispatch:
 

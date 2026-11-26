@@ -1,160 +1,455 @@
+<!-- Generated from research/site-topology-v0.1.json; do not hand-edit. -->
 # Coppalini Architecture — source-indexed public record
 
 Canonical site: https://eulershiddenl.ink/
-Author: Anthony Vito Coppa
-Primary classification: independent research and publication record for reference, constraint, exact algebra, computational integrity, and formalized pattern recognition.
 
-## Principal field result
+This is a result-first, source-indexed public reader. It distinguishes exact finite identities, field constructions, conditional formal theorems, local checks, and stated open adapters rather than collapsing them into one claim.
+Each entry below is a discovery annotation. The linked pages and their cited records remain the authority for mathematical statements, pins, DOIs, statuses, and scope.
 
-A rank-four coframe gives Lorentzian metric, oriented solder flux, and electromagnetic curvature:
-`Π → (g, F_sol) → F_em`.
+## Scope
 
-The metric is exactly typed by `g = h(Π)`; the source defines `F_sol = f(Π)` and `F_em = χF_sol`. On the Maxwell regular branch—`rank D𝒮_Π = 16` and `b(g,F) < |χ|`—the constrained system reduces locally to the Einstein–Maxwell action with canonical state `(γ,π;A,E)`.
+- A finite identity, field construction, conditional theorem, and measurement are distinct kinds of result.
+- Formal Correspondence is an annotation map beside source records; it is not a proof substitute.
+- This site does not derive or locally replay the external Riemann-Hypothesis theorem. It does not publish, link, or distribute the EARR-001 packet.
+- Development, draft receipt work, and held candidates are excluded from this sitemap and LLM discovery index.
 
-## Distinct proof records
+## Start here
 
-- **Field construction:** the Suture Field source gives the coframe map and local regular-branch reduction above.
-- **Classical field closure:** real `C∞` Einstein–Maxwell data on compact boundaryless `T³` supplies all seven field-level roles and yields six secondary brackets.
-- **Exact finite relation:** the separate independent Symmetric Minimum checker recomputes 140/140 finite identities and 33 negative controls; the 45-module ledger retains each source theorem's own scope.
-- **Lean theorem:** given a supplied `SmoothCompletion` with seven named premise roles, `FunctionalClosure010o.six_secondary_brackets` proves six canonical brackets.
-- **Named remaining adapters:** the original `Int`-valued `SmoothCompletion` constructor, P14’s finite-root-to-variational/Hamiltonian adapter, and the selected spin-two TT readout remain open.
+<!-- topology:home -->
+### Gravity & Electromagnetism Field Map
 
-The classical field closure, finite checker, and Lean theorem have distinct carriers. Their results do not transfer between carriers or conditions.
+URL: https://eulershiddenl.ink/
 
-## Zero-trust exact read
+Summary: The public field result is presented first: Π → (g, F_sol) → F_em, with its regular branch, finite checks, source paths, and named open adapters kept distinct.
 
-Owning jurisdiction: the inherited human public field of language, law, science, engineering, records, institutions, infrastructure, ecology, and shared survival conditions. No local office, institution, model, or AI stands outside that field merely by exercising authority or technical capacity.
+Formal basis: [Metric Minimum](https://eulershiddenl.ink/papers/symmetric-minimum/) · [Smooth Completion](https://eulershiddenl.ink/proofs/smooth-completion/) · [Proof Atlas field mechanics](https://eulershiddenl.ink/proofs/minimum-mechanics/#field-mechanics)
 
-Use a claim at the scope it earns. Follow source edition, inputs, procedure, result, receipt, and boundary. Recompute exact records from recorded inputs. For a measurement, follow the named observable, units, calibration, and uncertainty to its evidence.
+Check / record: [Proofs & Verification](https://eulershiddenl.ink/verify)
 
-- Exact Reader: https://eulershiddenl.ink/exact/
-- Exact Reader registry: https://eulershiddenl.ink/exact/read-registry.json
-- Reader contract: https://eulershiddenl.ink/research/reader-contract.json
-- Verification index: https://eulershiddenl.ink/research/verification-index.md
-- Relational Metrology — Exact Relation Read: https://eulershiddenl.ink/relational-metrology/
+Boundary: The original Int-valued SmoothCompletion constructor, P14 adapter, and selected spin-two readout remain separately named open items.
 
-## Current public reading order
+<!-- topology:metric-minimum -->
+### Metric Minimum
 
-Home: https://eulershiddenl.ink/
-Formal Correspondence Ledger: https://eulershiddenl.ink/formal-correspondence/
-Notice: https://eulershiddenl.ink/notice/
-Metric Minimum / Symmetric Minimum reference edition: https://eulershiddenl.ink/papers/symmetric-minimum/
-Proof atlas: https://eulershiddenl.ink/proofs/minimum-mechanics/
-Verify: https://eulershiddenl.ink/verify
-External Formalization Reader: https://eulershiddenl.ink/external-formalization/
-Library: https://eulershiddenl.ink/library
-The Displacement of the Origin: https://eulershiddenl.ink/papers/displacement-of-origin/
-MOONLIGHT Minimum Wheel v0.8.4: https://eulershiddenl.ink/moonlight/
-Publication Records: https://eulershiddenl.ink/publication-records
-Language Mechanics: https://eulershiddenl.ink/language-mechanics
-Laboratory: https://eulershiddenl.ink/architecture
-Basis: https://eulershiddenl.ink/formalism
-About: https://eulershiddenl.ink/about
-R58 source provenance: https://github.com/Coppalini-Architecture/coppalini-architecture/tree/6996eea6255d109f7c281755c557c74360039e32
+URL: https://eulershiddenl.ink/papers/symmetric-minimum/
 
-## MOONLIGHT Minimum Wheel v0.8.4
+Summary: Metric Minimum states the coframe, metric, flux, regular-branch reduction, reader, source files, and verification materials at their declared carriers.
 
-Public reader: https://eulershiddenl.ink/moonlight/
-User manual: https://eulershiddenl.ink/moonlight/manual/
-Iris Dome: https://eulershiddenl.ink/moonlight/dome/
-Exact artifact: https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html
-MC-001-P record: https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json
-SHA-256: 70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb
+Formal basis: [Field closure on T³](https://eulershiddenl.ink/proofs/smooth-completion/) · [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/)
 
-MOONLIGHT is an exact finite reader downstream of the Refusal Wall. It fixes a = 0, b = 3991/1080, and D_E; keeps the eight-address finite carrier and continuous E-plane separately typed; and uses a 1/2520-turn core wheel with a 1/7560-turn phase denominator. The carrier carries no clock, time-standard, or UTC claim. Its user manual keeps the finite four-phase / 137-iris / 548-address register, the axial Λ lift, and the Riemann i-machine reader distinct. The Iris Dome maps (q,s) to the unique CRT address a∈ℤ/548ℤ with a mod 4=q and a mod 137=s; its display output does not update the phase mirror. MC-001-P is a separate public recheck. TYPE-before-Gate, Gate, and Survival remain inherited defined interfaces; their MOONLIGHT evaluators are UNINSTANTIATED.
+Check / record: [Verification index](https://eulershiddenl.ink/verify)
 
-## Formal correspondence
+Boundary: The page distinguishes the stated field construction from its separate conditional Lean boundary and open adapters.
 
-The Formal Correspondence Ledger gives each principal public claim a handle in the order: public form, Coppalini construction, named relation, receipt, and scope. It links canonical public sources in information theory, control, gauge and canonical mechanics, symmetry, metric physics, provenance, and formal verification to the local construction and its own exact record. Its current namespace ledger distinguishes \(\Omega_{\rm root}\), \(J_{\rm rot}\), and \(G_{\rm root}=[Q,\Omega_{\rm root}]\) from the canonical Gauss generator \(G_{\rm EM}\), and the finite normal-form coordinate \(\lambda_{\rm root}\) from the centered upper-half-plane coordinate \(\Lambda_{\rm ax}\).
+<!-- topology:smooth-completion -->
+### Einstein–Maxwell Field Closure on T³
 
-## Notice:
+URL: https://eulershiddenl.ink/proofs/smooth-completion/
 
-Notice: is a civic sign on the conditions that keep shared life readable.
+Summary: The construction records its seven field roles and six canonical secondary brackets, then separates the classical construction from the conditional Lean theorem and remaining obligations.
 
-## Metric Minimum / Symmetric Minimum v1.7.16
+Formal basis: [Metric Minimum](https://eulershiddenl.ink/papers/symmetric-minimum/) · [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/)
 
-Reference edition:
-https://eulershiddenl.ink/papers/symmetric-minimum/
+Source record: [C∞ field record](https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.md)
 
-Metric Minimum keeps five distinct records separate: (1) the Suture Field coframe map \(\Pi^A{}_{\mu}\to(g=h(\Pi),F_{\rm sol}=f(\Pi))\to F_{\rm em}=\chi F_{\rm sol}\) and its local regular-branch reduction; (2) the 010o Lean theorem given seven named `SmoothCompletion` premises; (3) the real \(C^\infty\) Einstein–Maxwell field closure on compact boundaryless \(\mathbb T^3\); (4) exact finite \(2\times2\) root relations and their independent checker; and (5) open original-`Int` constructor, P14 finite-root-to-variational/Hamiltonian adapter, and separately scoped physical readouts. The record does not combine these into an unconditional continuum or physical theorem. It retains 45 pinned Lean 4.33.0 modules, the 140/140 finite checker, 33 negative controls, and the linked source and repair records.
+Check / record: [C∞ field-record checker](https://eulershiddenl.ink/verification/smooth-completion-cinf-v0.1/check_smooth_completion_cinf_record.py)
 
-Published release materials:
+Boundary: The Lean theorem is conditional on the named SmoothCompletion roles; the original constructor and P14 adapter remain open.
 
-- PDF: https://eulershiddenl.ink/papers/symmetric-minimum/symmetric_minimum_v1_7_16.pdf
-- TeX: https://eulershiddenl.ink/papers/symmetric-minimum/symmetric_minimum_v1_7_16.tex
-- independent exact checker: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/check_symmetric_minimum_independent.py
-- SHA-256 manifest: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/SHA256SUMS
-- repair ledger: https://eulershiddenl.ink/verification/symmetric-minimum-v1.7.16/repair_ledger_v1_7_16.pdf
-- source-and-check package: https://eulershiddenl.ink/downloads/symmetric-minimum-v1.7.16-source-and-verification.zip
-- classical smooth field receipt: https://eulershiddenl.ink/proofs/smooth-completion/
-- machine-readable smooth field record: https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.json
+<!-- topology:verify -->
+### Proofs & Verification
 
-The supplied independent checker re-derives 140 finite exact identities and 33 negative controls. It is separate from the source’s Lean and field-theory records.
+URL: https://eulershiddenl.ink/verify
 
-## 010a–010u source ledger
+Summary: Verification routes readers to Lean source, compiler receipts, finite check materials, and an explicitly scoped external-record reader.
 
-21 stages; 45 transitive Lean 4.33.0 modules. Pinned source commit:
-b9e939d514a63fb021592f79a316f70cbc70ed8a
+Formal basis: [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/) · [External Formalization Reader](https://eulershiddenl.ink/external-formalization/)
 
-Compiler and source-integrity record links:
-https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079607
-https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43910079536
+Boundary: Reported checks and runnable finite verifiers do not turn named open adapters into proved results.
 
-Exact source table:
-https://eulershiddenl.ink/research/minimum-mechanics-010u.json
+<!-- topology:library -->
+### Research Library
 
-Exact public ledger:
-https://eulershiddenl.ink/proofs/minimum-mechanics/#ledger
+URL: https://eulershiddenl.ink/library
 
-010a–010l: local suture–Dirac, Maxwell and ADM/Palatini transport identities.
-010m–010n: finite nonlinear canonical and Fourier-field sources.
-010o: six-bracket formal theorem given SmoothCompletion.
-010p: nonorthonormal pointwise gradient and metric-shift proof.
-010q–010r: exact abstract gapped and accumulating spectrum witnesses for the stated Gauss constraints.
-010s: pointwise 010p / 010o source attachment.
-010t: pinned nonzero rational canonical pairing with prime-word order distinction; a later source record separately supplies the real \(C^\infty\) Einstein–Maxwell field closure on \(\mathbb T^3\).
-010u: typed jurisdictional admission/reader/receipt theorem; finite Enough witness.
+Summary: The library is the public reading index for selected sources and published work, retaining the historical catalog while linking active source paths.
 
-The source ledger gives finite and local relations at the pinned source. The later real/Fréchet field construction supplies the classical smooth field result on its compact boundaryless carrier; it does not instantiate the original `Int`-valued `SmoothCompletion` interface. That constructor and P14, the finite-root-to-variational/Hamiltonian adapter, retain separately typed open addresses. AxiomaticBuild.lean remains an external source-report boundary. The co-compiled import graph records source attachment; theorem-level dependencies remain attached to their named premises and conclusions.
+Formal basis: [Publication Records](https://eulershiddenl.ink/publication-records) · [Formal Correspondence](https://eulershiddenl.ink/formal-correspondence/)
 
-## Governing evidence rules
+Boundary: Library inclusion is a reading and source index, not a replacement for a work’s own result, version, or verification record.
 
-A result must carry:
-1. Jurisdiction and original source authority.
-2. Exact mathematical statement or model definition.
-3. Conditions and actual dependencies.
-4. Source file, verifier or proof, and its check record.
-5. Scope and a typed OPEN field when required.
+## Scope, source, and reference
 
-The 010u result defines Admitted(J,x) using typed Gate, governing constraint, Survival and three zero residuals. Its mathematical conclusions are projections and comparisons of those declared premises. Universal physical-state and optimal-stopping claims require their own declared carrier and theorem statement.
+<!-- topology:formal-correspondence -->
+### Formal Correspondence Ledger
 
-## Integrated retained records
+URL: https://eulershiddenl.ink/formal-correspondence/
 
-The current verification page carries the public verification route:
-https://eulershiddenl.ink/verify
+Summary: The ledger maps reader-facing constructions to cited public formal material and declared conditions without presenting correspondence as proof substitution.
 
-## External Formalization Reader
+Formal basis: [Basis & Scope](https://eulershiddenl.ink/formalism) · [Construction Cards](https://eulershiddenl.ink/ledger)
 
-The External Formalization Reader preserves a public formalization record in the order: declared theorem, community certification, fixed source artifact, dated checker record, independent replay route, and source-indexed reader receipt. Its source set includes the Lean and Mathlib communities’ certification statement and the MIT-hosted verification page for a public Lean Riemann-Hypothesis formalization:
-https://leanprover-community.github.io/blog/posts/riemann-hypothesis/
-https://math.mit.edu/~drew/grh/
+Boundary: A correspondence annotation is not itself a theorem, a source pin, or a replacement for the linked record.
 
-The external theorem carrier is `riemannHypothesis : RiemannHypothesis`. The Lean and Mathlib communities certified the published proof on 21 November 2026. The cited fixed source snapshot is `40e56bab026552e089d7afcfeff08d2defb9c005`; the MIT page remains a separately dated artifact/checker record. This site does not derive or locally replay the external theorem. EARR-001 is a finite local reader receipt whose small Lean module is `LOCAL_REPLAYED` (self-attested; R3 retention repair pending because the workflow hash and raw command output are not retained); that local module does not replay, validate, or prove the external formalization. Adapter names may be retained in its current packet, but semantic adapter schemas are not yet declared. This reader page does not publish, link, or distribute the EARR-001 packet; packet release remains gated on §8 of the reader brief. A separate reporting-context index retains selected contemporary journalism; journalism supplies context only and does not change theorem, certificate, artifact, checker, caveat, or replay status.
+<!-- topology:notice -->
+### Notice
 
-The current Library carries thirty-nine non-Language-Mechanics editions:
-https://eulershiddenl.ink/library
+URL: https://eulershiddenl.ink/notice/
 
-The citation register maps the fourteen current Zenodo releases to their fixed edition DOIs, concept handles, and local reading forms. It is a reference layer only and creates no Zenodo deposition or version:
-https://eulershiddenl.ink/publication-records
+Summary: The notice gives the public language rule and a reader-oriented account of reference, return, carried occurrence, and the stated relation to the Displacement essay.
 
-Language Mechanics carries all fourteen direct LM 000–013 source records:
-https://eulershiddenl.ink/language-mechanics#coordinate-register
+Formal basis: [The Displacement of the Origin](https://eulershiddenl.ink/papers/displacement-of-origin/) · [Language Mechanics](https://eulershiddenl.ink/language-mechanics)
 
-The current Home carries the 24-construction formal lineage:
-https://eulershiddenl.ink/#formal-lineage
+Boundary: The notice is an interpretive and civic reading layer; its cited formal pages remain authorities for their constructions.
 
-Standalone exact reading tools:
-https://eulershiddenl.ink/exact/recompute-kernel/
-https://eulershiddenl.ink/exact/
+<!-- topology:proof-atlas -->
+### Minimum Mechanics Proof Atlas
 
-Long-form machine/claim registers remain in /research/ for previous releases with their prior typing retained.
+URL: https://eulershiddenl.ink/proofs/minimum-mechanics/
+
+Summary: The Proof Atlas identifies Lean source modules, reported compiler evidence, theorem scope, and unresolved boundaries rather than presenting one undifferentiated proof claim.
+
+Formal basis: [Proofs & Verification](https://eulershiddenl.ink/verify) · [Field Closure on T³](https://eulershiddenl.ink/proofs/smooth-completion/)
+
+Boundary: The atlas preserves source-reported status and does not close the separately named constructor or adapter obligations.
+
+<!-- topology:formalism -->
+### Basis & Scope
+
+URL: https://eulershiddenl.ink/formalism
+
+Summary: Basis & Scope defines the site’s declared terms for reference, constraints, evidence, reader scope, and the future-horizon boundary.
+
+Formal basis: [Language Mechanics](https://eulershiddenl.ink/language-mechanics) · [Formal Correspondence](https://eulershiddenl.ink/formal-correspondence/)
+
+Boundary: It supplies declared vocabulary and scope; individual results retain their own sources and proof conditions.
+
+<!-- topology:language-mechanics -->
+### Language Mechanics
+
+URL: https://eulershiddenl.ink/language-mechanics
+
+Summary: Language Mechanics provides the public vocabulary for declared reference, pattern, constraint, and reuse, with sources and formal materials kept linked rather than implied.
+
+Formal basis: [Basis & Scope](https://eulershiddenl.ink/formalism) · [Complete Reference Ledger](https://eulershiddenl.ink/references)
+
+Boundary: Language descriptions do not substitute for the independent source, receipt, or proof cited by a particular result.
+
+<!-- topology:ledger -->
+### Construction Cards
+
+URL: https://eulershiddenl.ink/ledger
+
+Summary: The Construction Cards organize named objects by address, witness, dependency, field instance, and source lineage for direct inspection.
+
+Formal basis: [Formal Correspondence](https://eulershiddenl.ink/formal-correspondence/) · [Basis & Scope](https://eulershiddenl.ink/formalism)
+
+Boundary: Cards are readable records and dependency aids; the cited source is authoritative for each construction.
+
+<!-- topology:references -->
+### Language Mechanics Reference Ledger
+
+URL: https://eulershiddenl.ink/references
+
+Summary: This is the source ledger for the Language Mechanics Axiomatic Closure material and its cited references.
+
+Formal basis: [Language Mechanics](https://eulershiddenl.ink/language-mechanics) · [Axiomatic Closure](https://eulershiddenl.ink/papers/language-mechanics-axiomatic-closure)
+
+Boundary: The reference ledger supplies citations; it does not extend the claims of the works it lists.
+
+<!-- topology:about -->
+### About the Research
+
+URL: https://eulershiddenl.ink/about
+
+Summary: About identifies the project’s reader role: preserving sources and scope while making named formal work, exact algebra, proofs, and checks findable.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The site is a reader and source index; its pages preserve each result’s stated carrier, evidence, and boundary.
+
+## Exact readers and finite checks
+
+<!-- topology:exact-reader -->
+### Exact Reader
+
+URL: https://eulershiddenl.ink/exact/
+
+Summary: Exact Reader organizes finite reading around an explicit source edition, input, procedure, result, receipt, and declared limit.
+
+Formal basis: [Recompute Kernel](https://eulershiddenl.ink/exact/recompute-kernel/) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The reader exposes a declared finite procedure; it does not generalize a result beyond its stated source and domain.
+
+<!-- topology:recompute-kernel -->
+### Recompute Kernel v0.2
+
+URL: https://eulershiddenl.ink/exact/recompute-kernel/
+
+Summary: The Recompute Kernel exposes an exact-integer procedure for the stated 2×2 root algebra with a public reader surface.
+
+Formal basis: [Exact Reader](https://eulershiddenl.ink/exact/) · [CA-ALG-001](https://eulershiddenl.ink/exact/matrix-root-g-001/)
+
+Boundary: The kernel is a finite reader for its declared algebra, not a substitute for unrelated field or continuum claims.
+
+<!-- topology:matrix-root -->
+### CA-ALG-001
+
+URL: https://eulershiddenl.ink/exact/matrix-root-g-001/
+
+Summary: CA-ALG-001 supplies the stated finite matrix-root calculation and its exact-reader presentation.
+
+Formal basis: [Exact Reader](https://eulershiddenl.ink/exact/) · [Recompute Kernel](https://eulershiddenl.ink/exact/recompute-kernel/)
+
+Boundary: This is a direct finite integer result at its declared input and does not imply an unlisted generalization.
+
+<!-- topology:condition-trust -->
+### COT-001
+
+URL: https://eulershiddenl.ink/exact/condition-of-trust-001/
+
+Summary: COT-001 presents a finite verifier together with the declared scope for The Condition Of Trust.
+
+Formal basis: [Exact Reader](https://eulershiddenl.ink/exact/) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The page’s finite verification record remains limited to its stated inputs, scope, and controls.
+
+<!-- topology:three-body-exact -->
+### TBM-001
+
+URL: https://eulershiddenl.ink/exact/three-body-mirror-001/
+
+Summary: TBM-001 provides symbolic and independent verification records for the stated Three Body Mirror material.
+
+Formal basis: [Exact Reader](https://eulershiddenl.ink/exact/) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The page reports its named symbolic and finite records without extending them beyond their declared construction.
+
+<!-- topology:relational-metrology -->
+### Relational Metrology
+
+URL: https://eulershiddenl.ink/relational-metrology/
+
+Summary: Relational Metrology evaluates right reading minus left reading as an exact decimal-integer relation from supplied literals: same inputs, same result, with no interpretation attached.
+
+Formal basis: [Exact Reader](https://eulershiddenl.ink/exact/) · [Infinity One Zero Lift](https://eulershiddenl.ink/papers/infinity-one-zero-lift) · [Time Scope](https://eulershiddenl.ink/papers/four-dual-forms/time-scope) · [MOONLIGHT Iris Dome](https://eulershiddenl.ink/moonlight/dome/)
+
+Source record: [Reader contract](https://eulershiddenl.ink/research/reader-contract.json)
+
+Boundary: It is browser-local and display-side: the read is limited to supplied literals, finite arithmetic, and stated observable outputs.
+
+## MOONLIGHT readers
+
+<!-- topology:moonlight -->
+### MOONLIGHT Minimum Wheel v0.8.4
+
+URL: https://eulershiddenl.ink/moonlight/
+
+Summary: MOONLIGHT v0.8.4 is an exact finite public redacted reader: four phase residues and 137 iris residues determine one address in ℤ/548ℤ; four phase steps return the visible phase while the axial lift advances.
+
+Formal basis: [MOONLIGHT User Manual](https://eulershiddenl.ink/moonlight/manual/) · [Iris Dome](https://eulershiddenl.ink/moonlight/dome/)
+
+Source record: [Pinned reader artifact](https://eulershiddenl.ink/models/view/moonlight-phase-reader-v0.8.4.html)
+
+Check / record: [MC-001-P public recheck](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json)
+
+Boundary: Finite and continuous systems remain separate; it makes no clock, time-standard, or UTC claim; Gate and Survival evaluators are uninstantiated; draft receipts and held candidates remain outside discovery.
+
+<!-- topology:moonlight-manual -->
+### MOONLIGHT User Manual
+
+URL: https://eulershiddenl.ink/moonlight/manual/
+
+Summary: The manual states how to use the locked MOONLIGHT reader and its A8, 548-address, axial-lift, and calculator surfaces.
+
+Formal basis: [MOONLIGHT Minimum Wheel](https://eulershiddenl.ink/moonlight/) · [Iris Dome](https://eulershiddenl.ink/moonlight/dome/)
+
+Source record: [MC-001-P public recheck](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json) · [MOONLIGHT Lambda schema](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json)
+
+Boundary: The manual describes the published reader; it does not release unpinned source or draft receipt work.
+
+<!-- topology:iris-dome -->
+### MOONLIGHT Iris Dome
+
+URL: https://eulershiddenl.ink/moonlight/dome/
+
+Summary: The Iris Dome presents a 4 × 137 Chinese-remainder address surface for the 548-address finite register and its declared reader operations.
+
+Formal basis: [MOONLIGHT Minimum Wheel](https://eulershiddenl.ink/moonlight/) · [MOONLIGHT User Manual](https://eulershiddenl.ink/moonlight/manual/) · [Metric Mirror Symmetry](https://eulershiddenl.ink/papers/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf)
+
+Source record: [MOONLIGHT Lambda schema](https://eulershiddenl.ink/verification/receipts/MOONLIGHT-LAMBDA-001.schema.json)
+
+Boundary: The Dome is a display-side finite reader with no phase-mirror writeback; it does not license an untyped feedback map.
+
+## Papers and constructions
+
+<!-- topology:gravity-light -->
+### Gravity Light
+
+URL: https://eulershiddenl.ink/papers/four-dual-forms/gravity-light
+
+Summary: Gravity Light presents its stated metric-invariance and fixed-null-direction construction alongside its source, finite verifier, receipt, and boundary.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The page’s finite verifier and receipt apply to its named construction and declared scope.
+
+<!-- topology:memory-motion -->
+### Memory Motion
+
+URL: https://eulershiddenl.ink/papers/four-dual-forms/memory-motion
+
+Summary: Memory Motion presents its stated return, mirror-transfer, and relative-phase construction with its source, finite verifier, receipt, and boundary.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The finite verifier and receipt remain scoped to the named construction.
+
+<!-- topology:time-scope -->
+### Time Scope
+
+URL: https://eulershiddenl.ink/papers/four-dual-forms/time-scope
+
+Summary: Time Scope presents its stated local-phase and projective-return construction with its source, finite verifier, receipt, and boundary.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The finite verifier and receipt remain scoped to the named construction.
+
+<!-- topology:horizon-silence -->
+### Horizon Silence
+
+URL: https://eulershiddenl.ink/papers/four-dual-forms/horizon-silence
+
+Summary: Horizon Silence presents its stated recognition-at-type-boundary construction with its source, finite verifier, receipt, and boundary.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: The finite verifier and receipt remain scoped to the named construction.
+
+<!-- topology:infinity-one-zero-lift -->
+### Infinity One Zero Lift
+
+URL: https://eulershiddenl.ink/papers/infinity-one-zero-lift
+
+Summary: Infinity One Zero Lift gives its stated normal form for projective return, retained occurrence, four phases, eight addresses, 28 comparisons, and state decoder.
+
+Formal basis: [Language Mechanics](https://eulershiddenl.ink/language-mechanics) · [The Displacement of the Origin](https://eulershiddenl.ink/papers/displacement-of-origin/)
+
+Boundary: The exact normal form is limited to its declared finite reader and state-decoder construction.
+
+<!-- topology:language-mechanics-closure -->
+### Language Mechanics 012: Axiomatic Closure
+
+URL: https://eulershiddenl.ink/papers/language-mechanics-axiomatic-closure
+
+Summary: Language Mechanics 012 states its treatment of written reference, embodied reading, return, carried occurrence, and a finite twenty-eight-seam reader.
+
+Formal basis: [Language Mechanics](https://eulershiddenl.ink/language-mechanics) · [Complete Reference Ledger](https://eulershiddenl.ink/references)
+
+Boundary: The page’s formal reading is limited to its cited sources and finite reader; it does not supply external proof for unlisted claims.
+
+<!-- topology:displacement-origin -->
+### The Displacement of the Origin
+
+URL: https://eulershiddenl.ink/papers/displacement-of-origin/
+
+Summary: The Displacement of the Origin sets out a reader-facing closure in reference, Difference, memory, return, stopping, and the eight-address wheel, with its stated mathematical pins and classical notices.
+
+Formal basis: [Notice](https://eulershiddenl.ink/notice/) · [MOONLIGHT](https://eulershiddenl.ink/moonlight/) · [Exact Reader](https://eulershiddenl.ink/exact/) · [Horizon Silence](https://eulershiddenl.ink/papers/four-dual-forms/horizon-silence)
+
+Source record: [Canonical source text](https://eulershiddenl.ink/papers/displacement-of-origin/displacement-of-origin-v0.2.txt)
+
+Boundary: Return may repeat a read without repeating an occurrence; preserve the path. The exact finite root, eight-address, and mirror relations remain distinct from the essay’s jurisdictional and operational declarations.
+
+<!-- topology:physical-reality -->
+### Physical Reality Inside Constraint
+
+URL: https://eulershiddenl.ink/physical-reality-inside-constraint/
+
+Summary: Physical Reality Inside Constraint organizes its paper, source, exact verifier, finite K8 gate witness, receipts, and checksum ledger for inspection.
+
+Formal basis: [Proofs & Verification](https://eulershiddenl.ink/verify) · [Research Library](https://eulershiddenl.ink/library)
+
+Boundary: The page’s finite witness and receipts remain subject to the stated source and checksum ledger.
+
+<!-- topology:publication-records -->
+### Publication Records
+
+URL: https://eulershiddenl.ink/publication-records
+
+Summary: Publication Records registers fourteen current Zenodo releases with their corresponding reader-facing site forms.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Formal Correspondence](https://eulershiddenl.ink/formal-correspondence/)
+
+Boundary: A publication listing records the release and reading form; each release retains its own version, DOI, and claims.
+
+## Laboratories and models
+
+<!-- topology:architecture -->
+### Laboratory & Constructions
+
+URL: https://eulershiddenl.ink/architecture
+
+Summary: Laboratory & Constructions is the public index for reader tools, gauge and matter laboratories, root geometry, finite models, and their source-aware boundaries.
+
+Formal basis: [Research Library](https://eulershiddenl.ink/library) · [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: Laboratory tools remain scoped to their stated inputs, measurements, source paths, and verification conditions.
+
+<!-- topology:native-engine -->
+### Clear Onyx Native Engine v0.2
+
+URL: https://eulershiddenl.ink/models/view/clear-onyx-native-engine-v0.2.html
+
+Summary: Clear Onyx Native Engine v0.2 is a browser laboratory whose model inputs, measurements, sources, and scope are explicitly declared.
+
+Formal basis: [Laboratory & Constructions](https://eulershiddenl.ink/architecture)
+
+Boundary: The laboratory is an interactive reader with its own declared model and measurement scope.
+
+<!-- topology:gauge-matter-lab -->
+### Gauge & Matter Laboratory
+
+URL: https://eulershiddenl.ink/models/view/clear-onyx-gauge-laboratory-v0.5.7
+
+Summary: Gauge & Matter Laboratory is a declared 2D signal-language reader for its named gauge, matter, atomic, molecular, and Phi4 studies.
+
+Formal basis: [Laboratory & Constructions](https://eulershiddenl.ink/architecture)
+
+Boundary: Its visual and computational studies remain tied to the page’s declared input language and scope. A Netlify Link header supplies its stable canonical address without altering the pinned v0.5.7 artifact bytes or source package.
+
+<!-- topology:nop-workbench -->
+### NOP Return / Memory Workbench
+
+URL: https://eulershiddenl.ink/nop/
+
+Summary: The NOP workbench is a local research audit using paired oxygen and redox observations, exact rational arithmetic, and explicit assay limits.
+
+Formal basis: [NOP demonstration](https://eulershiddenl.ink/nop/demonstration)
+
+Boundary: The workbench records local observation and assay bounds; it is not a clinical, biological, or population-level conclusion.
+
+<!-- topology:nop-demonstration -->
+### NOP Return / Memory Demonstration
+
+URL: https://eulershiddenl.ink/nop/demonstration
+
+Summary: The NOP demonstration supplies a synthetic exact-rational example for the workbench while preserving its stated assay and biological-fit limits.
+
+Formal basis: [NOP Return / Memory Workbench](https://eulershiddenl.ink/nop/)
+
+Boundary: The demonstration is synthetic and does not establish biological mechanism, diagnosis, treatment, or clinical efficacy.
+
+## External record
+
+<!-- topology:external-formalization -->
+### External Formalization Reader
+
+URL: https://eulershiddenl.ink/external-formalization/
+
+Summary: The External Formalization Reader identifies a public Riemann-Hypothesis Lean record, its cited artifacts and reported checks, and the limits of this site’s local reading.
+
+Formal basis: [Proofs & Verification](https://eulershiddenl.ink/verify)
+
+Boundary: This site does not derive or locally replay the theorem and does not publish, link, or distribute the EARR-001 packet.

@@ -1,0 +1,74 @@
+{
+  "schema": "CoppaliniArchitecture.Site-Area-Register/v0.1",
+  "purpose": "Route and lifecycle classification only. This register does not restate theorem language, artifact hashes, DOI values, or result statuses; it points to records that own those facts.",
+  "coverage": "Only explicitly classified current work. Filenames and historical draft wording do not infer an area assignment.",
+  "areas": [
+    {
+      "id": "locked",
+      "label": "Locked record",
+      "reading_rule": "A public result with its named source, carrier, condition, and applicable check or pin."
+    },
+    {
+      "id": "development",
+      "label": "Development",
+      "reading_rule": "Readable draft or held work with an explicit admission condition; excluded from sitemap and LLM/result discovery until released."
+    },
+    {
+      "id": "archive",
+      "label": "Archive",
+      "reading_rule": "Retained historical bytes, not a current result claim."
+    }
+  ],
+  "records": [
+    {
+      "id": "field-result",
+      "area": "locked",
+      "route": "/",
+      "source_records": [
+        "/papers/symmetric-minimum/",
+        "/proofs/smooth-completion/",
+        "/proofs/minimum-mechanics/#field-mechanics",
+        "/verify#scope"
+      ]
+    },
+    {
+      "id": "moonlight-reader",
+      "area": "locked",
+      "route": "/moonlight/",
+      "source_records": [
+        "/verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json",
+        "/moonlight/manual/",
+        "/moonlight/dome/"
+      ]
+    },
+    {
+      "id": "moonlight-receipt-drafts",
+      "area": "development",
+      "route": "/moonlight/receipts/",
+      "discovery": "noindex",
+      "source_records": [
+        "/moonlight/receipts/release.json",
+        "/moonlight/receipts/verification.json"
+      ],
+      "admission_condition": "Complete-domain verification and source pins."
+    },
+    {
+      "id": "autotune-projection",
+      "area": "development",
+      "route": null,
+      "discovery": "hold-only",
+      "source_records": [
+        "/moonlight/receipts/release.json"
+      ],
+      "admission_condition": "Independently checked source package, explicit release/pin record, and separate promotion decision."
+    },
+    {
+      "id": "r58-public-arrangement",
+      "area": "archive",
+      "route": "/archive/",
+      "source_records": [
+        "/archive/index.html"
+      ]
+    }
+  ]
+}

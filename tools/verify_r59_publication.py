@@ -11,17 +11,19 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 import json
 import re
+import subprocess
 import sys
 import zipfile
 
 ROOT = Path(".")
+STAGE_SENTINEL = ".coppalini-public-stage"
 CURRENT = ("index.html","notice/index.html","about.html","library.html","publication-records.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html","external-formalization/index.html",
            "archive/index.html","proofs/minimum-mechanics/index.html",
            "proofs/smooth-completion/index.html","formal-correspondence/index.html","moonlight/index.html",
            "moonlight/manual/index.html","moonlight/dome/index.html","moonlight/receipts/index.html",
-           "papers/symmetric-minimum/index.html")
+           "papers/symmetric-minimum/index.html","development/index.html")
 HISTORY = ("archive/r58-home.html","archive/r58-library.html",
            "archive/r58-verify.html","archive/r58-constructions.html",
            "archive/r58-basis.html")
@@ -74,6 +76,7 @@ HOMEPAGE_RESULT_SCOPE_MARKERS = (
  "selected spin-two TT readout remain open",
  'href="/papers/symmetric-minimum/#status-lineage">canonical seven-status key</a>',
  "Proof in order of force",
+    "Read the result first; then follow its named source, carrier, condition, and check.",
 )
 SMOOTH_COMPLETION_RECORD = "research/smooth-completion-cinf-t3-v0.1.json"
 SMOOTH_COMPLETION_PREMISES = (
@@ -150,6 +153,15 @@ def location(path):
     for q in (t, Path(str(t) + ".html"), t/"index.html"):
         if q.is_file(): return q
     return None
+
+def is_staged_subtree(path):
+    root = ROOT.resolve()
+    current = path.parent
+    while current.resolve() != root:
+        if (current / STAGE_SENTINEL).is_file():
+            return True
+        current = current.parent
+    return False
 
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -335,7 +347,7 @@ def verify():
         if page in HISTORY and not parser.noindex: errors.append(page+": historic page must be noindex")
         if page == "moonlight/receipts/index.html" and not parser.noindex:
             errors.append(page+": draft receipt page must be noindex")
-        if page in CURRENT and page not in ("archive/index.html", "moonlight/receipts/index.html") and parser.noindex:
+        if page in CURRENT and page not in ("archive/index.html", "moonlight/receipts/index.html", "development/index.html") and parser.noindex:
             errors.append(page+": current page unexpectedly noindex")
         for href in parser.links:
             if href.startswith(("https://","http://","mailto:","tel:","data:","//")): continue
@@ -448,6 +460,8 @@ def verify():
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     if "/moonlight/receipts/" in sitemap:
         errors.append("MOONLIGHT draft receipt route must not be sitemap-indexed")
+    if "/development/" in sitemap:
+        errors.append("development route must not be sitemap-indexed")
     proof = json.loads((ROOT/"research/minimum-mechanics-010u.json").read_text())
     if proof.get("pinned_commit") != PROOF_PIN: errors.append("proof pin mismatch")
     if proof.get("modules") != 45 or len(proof.get("stages",[])) != 21:
@@ -593,7 +607,7 @@ def verify():
             errors.append("formal correspondence page missing marker: "+marker)
     for page in ROOT.rglob("*.html"):
         relative = page.relative_to(ROOT).as_posix()
-        if relative == "404.html" or relative.startswith("archive/") or relative.split("/", 1)[0].startswith("public"):
+        if relative == "404.html" or relative.startswith("archive/") or is_staged_subtree(page):
             continue
         text = page.read_text(encoding="utf-8")
         if '<nav class="primary-nav"' in text and 'href="/notice/"' not in text:
@@ -607,6 +621,33 @@ def verify():
                  "archive/r58-constructions.html","archive/r58-basis.html"):
         if "<base href=\"/\">" not in (ROOT/page).read_text():
             errors.append(page+": missing archival base correction")
+    area_register = subprocess.run(
+        [sys.executable, "-I", "-B", str(ROOT / "tools/verify_site_area_register.py")],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if area_register.returncode:
+        detail = (area_register.stdout + area_register.stderr).strip().replace("\n", " | ")
+        errors.append("site-area register validation failed: " + detail)
+    topology = subprocess.run(
+        [
+            sys.executable,
+            "-I",
+            "-B",
+            str(ROOT / "tools/verify_site_topology.py"),
+            "--root",
+            str(ROOT),
+            "--mode",
+            "source",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if topology.returncode:
+        detail = (topology.stdout + topology.stderr).strip().replace("\n", " | ")
+        errors.append("site topology validation failed: " + detail)
     print(f"Static candidate checked {len(CURRENT)} current pages, {len(HISTORY)} archived pages, "
           f"{checked} local references, {repairs} backward-compatible redirects, "
           f"{len(proof_files)} pinned proof source addresses, and Symmetric Minimum v{SYMMETRIC_MINIMUM_VERSION}")
