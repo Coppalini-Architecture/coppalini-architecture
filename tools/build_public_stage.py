@@ -43,7 +43,13 @@ def is_forbidden(relative: str) -> bool:
 
 
 def is_repository_only(relative: str) -> bool:
-    return relative in REPOSITORY_ONLY_NAMES or any(relative.startswith(item) for item in REPOSITORY_ONLY_PREFIXES)
+    path = Path(relative)
+    return (
+        relative in REPOSITORY_ONLY_NAMES
+        or any(relative.startswith(item) for item in REPOSITORY_ONLY_PREFIXES)
+        or "__pycache__" in path.parts
+        or path.suffix in {".pyc", ".pyo"}
+    )
 
 
 def file_digest(path: Path) -> str:
@@ -59,8 +65,9 @@ def tree_digest(root: Path) -> tuple[str, int]:
     for path in sorted(root.rglob("*")):
         if path.is_symlink():
             fail(f"symlink in staged payload: {path.relative_to(root)}")
-        if path.is_file() and path.name not in {SENTINEL, "PUBLIC_STAGE_RECEIPT.json"}:
-            files.append((path.relative_to(root).as_posix(), file_digest(path)))
+        relative = path.relative_to(root).as_posix()
+        if path.is_file() and relative not in {SENTINEL, "PUBLIC_STAGE_RECEIPT.json"}:
+            files.append((relative, file_digest(path)))
     serial = "".join(f"{relative}\0{digest}\n" for relative, digest in files).encode("utf-8")
     return hashlib.sha256(serial).hexdigest(), len(files)
 
@@ -80,6 +87,29 @@ def tracked_files() -> list[str]:
     return sorted(item.decode("utf-8") for item in output.split(b"\0") if item)
 
 
+def source_dirty_state(stage: Path) -> str:
+    """Return non-stage checkout changes, retaining a prior marked stage as disposable."""
+    state = git("status", "--porcelain")
+    if not state or not (stage / SENTINEL).is_file():
+        return state
+    stage_relative = stage.relative_to(ROOT).as_posix().rstrip("/")
+    retained: list[str] = []
+    for line in state.splitlines():
+        changed = line[3:]
+        if changed == stage_relative or changed.startswith(stage_relative + "/"):
+            continue
+        retained.append(line)
+    return "\n".join(retained)
+
+
+def run_staged_check(stage: Path, *arguments: str) -> None:
+    command = [sys.executable, "-I", "-B", *arguments]
+    result = subprocess.run(command, cwd=stage, text=True, capture_output=True)
+    if result.returncode:
+        detail = (result.stdout + result.stderr).strip()
+        fail("staged topology command failed: " + " ".join(command) + ("\n" + detail if detail else ""))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True, type=Path, help="fresh stage directory below the repository root")
@@ -91,7 +121,7 @@ def main() -> int:
         fail("stage directory must be below the repository root")
     if stage == ROOT:
         fail("repository root cannot be a stage directory")
-    if git("status", "--porcelain"):
+    if source_dirty_state(stage):
         fail("source checkout is dirty; build from a clean release commit")
     commit = git("rev-parse", "HEAD")
     files = tracked_files()
@@ -110,13 +140,33 @@ def main() -> int:
         target = stage / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
+    run_staged_check(
+        stage,
+        str(stage / "tools/render_site_topology.py"),
+        "--root",
+        str(stage),
+        "--write",
+        "--render-nav",
+    )
+    run_staged_check(
+        stage,
+        str(stage / "tools/verify_site_topology.py"),
+        "--root",
+        str(stage),
+        "--mode",
+        "staged",
+    )
     digest, count = tree_digest(stage)
     receipt = {
-        "schema": "coppalini/public-stage/v0.1",
+        "schema": "coppalini/public-stage/v0.2",
         "source_commit": commit,
         "source_state": "CLEAN_CHECKOUT",
         "file_count": count,
         "tree_sha256": digest,
+        "topology_rendered": True,
+        "site_topology_manifest_sha256": file_digest(stage / "research/site-topology-v0.1.json"),
+        "site_topology_renderer_sha256": file_digest(stage / "tools/render_site_topology.py"),
+        "site_topology_verifier_sha256": file_digest(stage / "tools/verify_site_topology.py"),
         "excluded": list(FORBIDDEN_PUBLIC_PREFIXES),
     }
     (stage / "PUBLIC_STAGE_RECEIPT.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")

@@ -16,6 +16,7 @@ import sys
 import zipfile
 
 ROOT = Path(".")
+STAGE_SENTINEL = ".coppalini-public-stage"
 CURRENT = ("index.html","notice/index.html","about.html","library.html","publication-records.html","verify.html",
            "architecture.html","architecture/index.html","formalism.html",
            "language-mechanics.html","external-formalization/index.html",
@@ -152,6 +153,15 @@ def location(path):
     for q in (t, Path(str(t) + ".html"), t/"index.html"):
         if q.is_file(): return q
     return None
+
+def is_staged_subtree(path):
+    root = ROOT.resolve()
+    current = path.parent
+    while current.resolve() != root:
+        if (current / STAGE_SENTINEL).is_file():
+            return True
+        current = current.parent
+    return False
 
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -597,7 +607,7 @@ def verify():
             errors.append("formal correspondence page missing marker: "+marker)
     for page in ROOT.rglob("*.html"):
         relative = page.relative_to(ROOT).as_posix()
-        if relative == "404.html" or relative.startswith("archive/") or relative.split("/", 1)[0].startswith("public"):
+        if relative == "404.html" or relative.startswith("archive/") or is_staged_subtree(page):
             continue
         text = page.read_text(encoding="utf-8")
         if '<nav class="primary-nav"' in text and 'href="/notice/"' not in text:
@@ -612,7 +622,7 @@ def verify():
         if "<base href=\"/\">" not in (ROOT/page).read_text():
             errors.append(page+": missing archival base correction")
     area_register = subprocess.run(
-        [sys.executable, "-I", str(ROOT / "tools/verify_site_area_register.py")],
+        [sys.executable, "-I", "-B", str(ROOT / "tools/verify_site_area_register.py")],
         cwd=ROOT,
         capture_output=True,
         text=True,
@@ -620,6 +630,24 @@ def verify():
     if area_register.returncode:
         detail = (area_register.stdout + area_register.stderr).strip().replace("\n", " | ")
         errors.append("site-area register validation failed: " + detail)
+    topology = subprocess.run(
+        [
+            sys.executable,
+            "-I",
+            "-B",
+            str(ROOT / "tools/verify_site_topology.py"),
+            "--root",
+            str(ROOT),
+            "--mode",
+            "source",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if topology.returncode:
+        detail = (topology.stdout + topology.stderr).strip().replace("\n", " | ")
+        errors.append("site topology validation failed: " + detail)
     print(f"Static candidate checked {len(CURRENT)} current pages, {len(HISTORY)} archived pages, "
           f"{checked} local references, {repairs} backward-compatible redirects, "
           f"{len(proof_files)} pinned proof source addresses, and Symmetric Minimum v{SYMMETRIC_MINIMUM_VERSION}")
