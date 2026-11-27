@@ -64,14 +64,14 @@
   },
   "retained_artifact_pins": {
     "models/view/moonlight-phase-reader-v0.8.4.html": "70adec4bc28bf55590920cd3f402d469bbc592e2dbadd2409e69e6ea2ca080cb",
-    "moonlight/dome/index.html": "ef48feb21bff9207aa18364660dc2b2c3694210c78b5d4f3922163470d7a099e",
+    "moonlight/dome/index.html": "edd2bb8a9b515cdce4b967289242fe9cc98be2172b9824f5440a21fc6d3acf3d",
     "verification/receipts/MOONLIGHT-LAMBDA-001.schema.json": "c85c2f34eb9ff6fd2e01463be9f7eb6afb5414a8eb97ddd24fb5fac59675caad"
   },
   "files_sha256": {
     "RELEASE.md": "72fdc593180c2e408383b0a5e9ae0c47be8c2af79e285e9085d90d8779f8d5ab",
     "examples/harmonizer.json": "22bee9e9d6b0c9d7de293c3d18a2046fa250ced6ed9a0595f6833d14e68a4de5",
     "examples/relax.json": "4230e1e823133d9d562801877f03099ff7cbadae92e146bf37dad86cc3998d5a",
-    "index.html": "55365657bd5268cffecbe6e509bbd35e822a90ea17a802be587ee559b53db37c",
+    "index.html": "f57fc32600a54f9a71bd0dd877a328e91b243a70736c1d6beaa291e306ffdd90",
     "receipt-checkers.js": "a00e349db6d2d8615306229ee22ef05df04dabd2bc02a839487ee476fd750812",
     "receipt-reader.css": "eaec3cffb78687b234bb8a4e80f053087405c35f181bc23b15c66335dae6d57e",
     "receipt-reader.js": "4f64d2a09d6ca7e84183f8dbfe27dda19175217ce259d987a2f36dc37963aecb",
