@@ -1,14 +1,18 @@
 /*
  * Mirror I^-1 / phase-adapter kernel v0.1
  *
- * The carrier is a declared local coordinate record.  It does not sample
- * hidden model activations, model weights, or an external physical field.
- * A host supplies (t, L, C, H), and this module returns the same declared
- * coordinate through a phase/color/ASCII reader with retained metrics.
+ * The carrier is a declared local coordinate record. A host supplies
+ * (t, L, C, H), and this module returns the same declared coordinate through
+ * phase/color/ASCII readers with retained metrics. A reference-phase reading
+ * enters only through its separately declared bridge and receipt.
  */
 
 export const SCHEMA = "mirror-i-inverse-phase-adapter/001";
 export const TAU = 2 * Math.PI;
+export const CONTACT_MODULUS = 548n;
+export const MOONLIGHT_MODULUS = 2520n;
+export const JOINT_MODULUS = 345240n;
+const BAND_FLOAT_TOLERANCE = 1e-12;
 
 function finite(name, value) {
   const number = Number(value);
@@ -25,6 +29,77 @@ function bounded(name, value, low, high) {
 export function normalizeHue(degrees) {
   const value = finite("H", degrees) % 360;
   return value < 0 ? value + 360 : value;
+}
+
+function integer(name, value) {
+  if (typeof value === "bigint") return value;
+  if (typeof value === "number") {
+    if (!Number.isSafeInteger(value)) {
+      throw new TypeError(name + " must be a safe integer Number; use a decimal string or BigInt");
+    }
+    return BigInt(value);
+  }
+  if (typeof value === "string" && /^[+-]?\d+$/.test(value)) return BigInt(value);
+  throw new TypeError(name + " must be an integer");
+}
+
+function modulo(value, modulus) {
+  const remainder = value % modulus;
+  return remainder < 0n ? remainder + modulus : remainder;
+}
+
+function floorDivide(value, divisor) {
+  const quotient = value / divisor;
+  const remainder = value % divisor;
+  return remainder < 0n ? quotient - 1n : quotient;
+}
+
+function nearestInteger(value) {
+  return value >= 0 ? Math.floor(value + 0.5) : -Math.floor(-value + 0.5);
+}
+
+/*
+ * Lift-aware companion reader.  The state remains the declared integer
+ * carrier (n,s,k); this returns its bounded contact/completion readings and
+ * the carried super-lift.  Packet Moonlight phase m_H is kept separate from
+ * the state reading m2 until their declared residues coincide.
+ */
+export function liftAwareRead({ n, s, k = 0 }, H) {
+  const liftN = integer("n", n);
+  const sector = Number(s);
+  const turns = integer("k", k);
+  if (!Number.isInteger(sector) || sector < 0 || sector >= 137) {
+    throw new RangeError("s must be an integer in [0, 136]");
+  }
+  const hue = normalizeHue(H);
+  const X = 137n * liftN + BigInt(sector);
+  const rawBand = 7 * hue;
+  const nearestBand = nearestInteger(rawBand);
+  const rawResidual = rawBand - nearestBand;
+  const epsilonBand = Math.abs(rawResidual) < BAND_FLOAT_TOLERANCE ? 0 : rawResidual;
+  const packetBand = Number(modulo(BigInt(nearestBand), MOONLIGHT_MODULUS));
+  const m2 = Number(modulo(X, MOONLIGHT_MODULUS));
+  const joint = Number(modulo(X, JOINT_MODULUS));
+  return Object.freeze({
+    n: liftN,
+    s: sector,
+    k: turns,
+    X,
+    I0: X - 137n * turns,
+    c: floorDivide(liftN, 4n),
+    q: Number(modulo(liftN, 4n)),
+    u: Number(modulo(X, CONTACT_MODULUS)),
+    m2,
+    J: joint,
+    super_lift: floorDivide(X, JOINT_MODULUS),
+    r4: Number(modulo(X, 4n)),
+    m_H_raw: rawBand,
+    m_H: packetBand,
+    epsilon_band: epsilonBand,
+    packet_lattice_exact: epsilonBand === 0,
+    joined: epsilonBand === 0 && packetBand === m2,
+    reconstruct_X: floorDivide(X, JOINT_MODULUS) * JOINT_MODULUS + BigInt(joint)
+  });
 }
 
 /*
