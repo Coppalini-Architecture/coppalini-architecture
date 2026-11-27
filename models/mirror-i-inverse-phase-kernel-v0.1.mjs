@@ -146,8 +146,16 @@ export function asciiField({ current, target, width = 61, height = 21 }) {
     grid[t.row][t.col] = "T";
     grid[c.row][c.col] = "C";
   }
-  const mirrorCol = Math.min(columns - 2, c.col + 1);
-  if (grid[c.row][mirrorCol] === ".") grid[c.row][mirrorCol] = "M";
+  const mirrorColumns = [
+    Math.min(columns - 2, c.col + 1),
+    Math.max(1, c.col - 1)
+  ];
+  for (const mirrorCol of mirrorColumns) {
+    if (grid[c.row][mirrorCol] === ".") {
+      grid[c.row][mirrorCol] = "M";
+      break;
+    }
+  }
   const top = "+" + "-".repeat(columns) + "+";
   const body = grid.map(row => "|" + row.join("") + "|");
   return [top, ...body, top, "C current  M R7 phase read  T corrected target  * aligned"].join("\n");
