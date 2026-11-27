@@ -19,3 +19,38 @@
   X-Robots-Tag: noindex, follow
 /models/view/clear-onyx-gauge-laboratory-v0.5.6.html
   X-Robots-Tag: noindex, follow
+
+# Superseded raw records remain fetchable and hash-checkable, but current
+# discovery should resolve through closure-status-v0.1 and Suture v0.3.
+/research/smooth-completion-cinf-t3-v0.1.json
+  X-Robots-Tag: noindex, follow
+/research/smooth-completion-cinf-t3-v0.1.md
+  X-Robots-Tag: noindex, follow
+/research/formal-correspondence-v0.2.json
+  X-Robots-Tag: noindex, follow
+/research/minimum-mechanics-010u.json
+  X-Robots-Tag: noindex, follow
+/research/metric-minimum-root28-v0.1.json
+  X-Robots-Tag: noindex, follow
+/research/metric-minimum-root28-v0.1.md
+  X-Robots-Tag: noindex, follow
+/verification/root28/ROOT28_RECEIPT_v0.1.md
+  X-Robots-Tag: noindex, follow
+/research/suture-field/RESIDUAL_LEDGER_v0_2.md
+  X-Robots-Tag: noindex, follow
+/research/suture-field/residual_ledger_v0_2.md
+  X-Robots-Tag: noindex, follow
+/verification/receipts/RESIDUAL_LEDGER_v0_2.md
+  X-Robots-Tag: noindex, follow
+/verification/receipts/VALIDATOR_KIT_B2_RECEIPT_v0_2.md
+  X-Robots-Tag: noindex, follow
+/research/audit/validator_kit_b2_receipt.md
+  X-Robots-Tag: noindex, follow
+/research/r59-editorial-manifest.json
+  X-Robots-Tag: noindex, follow
+/R59_EDITORIAL_RELEASE.md
+  X-Robots-Tag: noindex, follow
+/library-archive
+  X-Robots-Tag: noindex, follow
+/library-archive.html
+  X-Robots-Tag: noindex, follow

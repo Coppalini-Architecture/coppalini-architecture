@@ -1,6 +1,6 @@
 # Reader verification index
 
-Coppalini Architecture · 12 November 2026
+Coppalini Architecture · current index amended 27 November 2026
 
 [Registry index](https://eulershiddenl.ink/research/registry-index.json) · [Reader contract v1.2.0](https://eulershiddenl.ink/research/reader-contract.json)
 
@@ -13,6 +13,7 @@ Each source registry retains its own record identifiers, source edition, stateme
 | [Exact Reader registry](https://eulershiddenl.ink/exact/read-registry.json) | Schema 1.1.0; source updated 11 November 2026 | 3 records: `CA-ALG-001`, `COT-001`, `TBM-001` | [Exact Reader](https://eulershiddenl.ink/exact/); each record links its procedure, output, receipt, and boundary. |
 | [Four Dual Forms physical claim register](https://eulershiddenl.ink/research/four-dual-forms-v0.3.json) | v0.3 | 5 claim records covering the shared root and four papers | [Verifier](https://eulershiddenl.ink/papers/four-dual-forms/source/verify_four_papers_v0_3.py) · [recorded result](https://eulershiddenl.ink/verification/four-dual-forms/verify_four_papers_v0_3.out). |
 | [Released public registry](https://eulershiddenl.ink/research/public-claim-registry-v0.3.json) | v0.3; released 12 November 2026 | 5 artifact records: `B-2`, `S-5/05a`, `W-0`, `W-1`, `NDA-3` | [Audit Register](https://eulershiddenl.ink/verify) · [verification manifest v0.3](https://eulershiddenl.ink/research/verification-manifest-v0.3.json). |
+| [Cross-carrier closure status](https://eulershiddenl.ink/research/closure-status-v0.1.json) | v0.1; issued 27 November 2026 | Finite prime/address rational floor; classical T3 field carrier; conditional 010o; certified regular G,C-to-Suture segment; retained whole-root/observable tail | [Reader record](https://eulershiddenl.ink/research/closure-status-v0.1.md) · [local integrity check](https://eulershiddenl.ink/verification/closure-status-v0.1/check_closure_status.py). |
 | [Archived R28 preparation metadata](https://eulershiddenl.ink/research/claims.json) | Schema 1.0.0; source registry dated 5 November 2026 | 7 historical claim records with their source-owned statuses | [Original index snapshot](https://eulershiddenl.ink/research/verification-index-r28-snapshot-2026-11-11.md), preserved on 11 November 2026. |
 
 The source-relative paths in the Four Dual Forms and released public registries resolve against `https://eulershiddenl.ink/`. The machine-readable registry index supplies that canonical base explicitly.

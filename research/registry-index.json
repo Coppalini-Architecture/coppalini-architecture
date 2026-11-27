@@ -3,11 +3,19 @@
   "schema_version": "1.0.0",
   "canonical_url": "https://eulershiddenl.ink/research/registry-index.json",
   "canonicalBase": "https://eulershiddenl.ink/",
-  "updated": "2026-11-20",
-  "role": "Inventory of source registries, their versions, record identities, and evidence locations.",
+  "updated": "2026-11-27",
+  "role": "Inventory of source registries, their versions, record identities, evidence locations, and the current cross-carrier status amendment.",
   "reading_rule": "Open the named source registry for its statements, hypotheses, results, status, and boundaries. This index preserves those source assignments.",
   "reader_contract": "https://eulershiddenl.ink/research/reader-contract.json",
   "verification_index": "https://eulershiddenl.ink/research/verification-index.md",
+  "current_status_amendment": {
+    "id": "closure-status-v0.1",
+    "title": "Cross-carrier closure status",
+    "url": "https://eulershiddenl.ink/research/closure-status-v0.1.json",
+    "reader_url": "https://eulershiddenl.ink/research/closure-status-v0.1.md",
+    "integrity_check": "https://eulershiddenl.ink/verification/closure-status-v0.1/check_closure_status.py",
+    "scope": "Current status for the finite prime/address reader, the classical T3 field carrier, the certified regular G,C-to-Suture segment, and retained whole-root/observable tail. It amends current reading only and preserves the byte-bound historical records it names."
+  },
   "registries": [
     {
       "id": "exact-reader",
@@ -82,7 +90,7 @@
       "id": "smooth-completion-cinf-t3-v0.1",
       "title": "Classical Smooth Field Completion on T3",
       "role": "Source-documented real C-infinity Einstein–Maxwell carrier, seven premise-role receipt, and retained Lean boundary",
-      "inventory_status": "current_source_record",
+      "inventory_status": "source_record_with_current_status_amendment",
       "url": "https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.json",
       "reader_url": "https://eulershiddenl.ink/proofs/smooth-completion/",
       "source_version": {
@@ -101,13 +109,13 @@
         "sourceMomentumAddress",
         "boundaryNormal"
       ],
-      "evidence_location": "The source receipt supplies the real C-infinity carrier, functional derivatives, Stokes conditions, six brackets, and the separate Int-valued Lean boundary."
+      "evidence_location": "The source receipt supplies the real C-infinity carrier, functional derivatives, Stokes conditions, six brackets, and the separate finite address Lean boundary. Current cross-carrier status is supplied by closure-status-v0.1."
     },
     {
       "id": "formal-correspondence-v0.2",
       "title": "Formal Correspondence Ledger",
       "role": "Public/source correspondence records with rooted namespace, status key, source records, and typed open boundaries",
-      "inventory_status": "current_source_registry",
+      "inventory_status": "historical_source_registry_under_current_status_amendment",
       "url": "https://eulershiddenl.ink/research/formal-correspondence-v0.2.json",
       "reader_url": "https://eulershiddenl.ink/formal-correspondence/",
       "source_version": {
@@ -126,7 +134,7 @@
         "three-body",
         "provenance"
       ],
-      "evidence_location": "The v0.2 ledger identifies the finite root, the canonical Einstein-Maxwell generator, the finite and upper-half-plane axial coordinates, their status, and the separately open Lean constructor and P14 adapter."
+      "evidence_location": "The v0.2 ledger preserves its then-current namespace and boundary wording. closure-status-v0.1 supplies the current finite prime/address and regular G,C-to-Suture status split without rewriting v0.2."
     },
     {
       "id": "r28-preparation-2026-11-05",

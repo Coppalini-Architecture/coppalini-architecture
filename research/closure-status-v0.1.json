@@ -1,0 +1,208 @@
+{
+  "record_type": "CoppaliniArchitecture.CrossCarrierClosureStatus",
+  "version": "0.1",
+  "issued": "2026-11-27",
+  "canonical_url": "https://eulershiddenl.ink/research/closure-status-v0.1.json",
+  "reader_urls": [
+    "https://eulershiddenl.ink/proofs/smooth-completion/",
+    "https://eulershiddenl.ink/proofs/minimum-mechanics/",
+    "https://eulershiddenl.ink/papers/symmetric-minimum/",
+    "https://eulershiddenl.ink/formal-correspondence/"
+  ],
+  "purpose": "Current, source-pinned status for the finite prime/address reader, the classical T3 field carrier, and the separately pinned regular G,C-to-Suture bridge. It corrects obsolete blanket-open summaries without changing the historical records they supersede.",
+  "reading_rule": "Read each segment at its stated carrier. No segment silently coerces the finite address reader into the real field carrier, or promotes a regular G,C segment into a whole-root physical-observable equivalence.",
+  "historical_subjects": [
+    {
+      "path": "research/smooth-completion-cinf-t3-v0.1.json",
+      "sha256": "97a8a10715001481f298c55788de889b410a6d7d6cdc85bcf54c4f92f0aa8690"
+    },
+    {
+      "path": "research/smooth-completion-cinf-t3-v0.1.md",
+      "sha256": "18f72e2c9de53b92cbbadfdfbf6c3d752307193427e2ec6e91214e73d33d9d78"
+    },
+    {
+      "path": "research/formal-correspondence-v0.2.json",
+      "sha256": "a0e87f48f590ae089317f47c32fcc0f06f837967ce0b149f4c407fd72f68003f"
+    },
+    {
+      "path": "research/metric-minimum-root28-v0.1.json",
+      "sha256": "32e9d3c14f0d44aab329d18b0f15011fffd6d0be4344d9b97c0836025a2667f0"
+    }
+  ],
+  "source_relation": {
+    "site_r57_commit": "d6194ac5f418677d58e69ec34eb3024b79b9732a",
+    "pinned_source_relation": "The two Suture Lean sources below are separately pinned public source branches. They are not asserted to be ancestors of site-r57; this record cites their commits, source hashes, and CI receipts directly."
+  },
+  "status_key": {
+    "CLOSED_FINITE_PRIME_RATIONAL_FLOOR": "A pinned Lean source establishes the stated finite Rat-valued pairing and prime-word witnesses.",
+    "CLOSED_CLASSICAL_FIELD_SCOPE": "A source-documented classical construction closes the displayed result in its stated real smooth carrier.",
+    "CONDITIONAL_LEAN_THEOREM": "A compiled theorem holds for its explicitly supplied premises.",
+    "CERTIFIED_REGULAR_GC_TO_SUTURE_SEGMENT": "Separately pinned Lean sources and successful CI certify the stated regular G,C metric/flux and Euler-reduction segment.",
+    "LEAN_CHECKED_GENERIC_INTERFACE": "A pinned Lean definition and its generic theorems are compiled; no carrier-specific instantiation is inferred.",
+    "SOURCE_REPORTED_ARCHIVAL_SCOPE": "An archived source reports closure only at its named scope; a later uninspected edition is not inferred.",
+    "RETAINED_BOUNDARY": "A named map, condition, measurement, or physical realization is not supplied by the cited segment."
+  },
+  "segments": [
+    {
+      "id": "finite_prime_address_interface",
+      "status": "CLOSED_FINITE_PRIME_RATIONAL_FLOOR",
+      "carrier": "Finite address bookkeeping: the earlier Int implementation and ordered prime words; 010t's nonzero canonical pairing over Rat.",
+      "claim": "010t closes the finite scalar repair: ordered prime words remain distinguishable before multiplicative projection, and a nonzero Rat-valued canonical pairing is proved at the finite-address level.",
+      "evidence": [
+        {
+          "source": "PrimeRationalSymplectic010t.lean",
+          "commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/PrimeRationalSymplectic010t.lean",
+          "sha256": "8a922b874f02a70d2e24f17a3e754f1e3d9e6278e46435da6b95101ac81a4982"
+        }
+      ],
+      "does_not_establish": [
+        "A C-infinity Frechet tangent/cotangent bundle, weak symplectic form, functional derivatives, or a FunctionalClosure010o.SmoothCompletion instance.",
+        "A coercion or identity between the finite prime/address carrier and the real C-infinity field carrier."
+      ],
+      "correction": "The Int implementation is a finite integer / prime-word address interface, not an unbuilt real-number interface awaiting a C-infinity constructor."
+    },
+    {
+      "id": "classical_t3_field_scope",
+      "status": "CLOSED_CLASSICAL_FIELD_SCOPE",
+      "carrier": "Real C-infinity Einstein-Maxwell phase space on compact, oriented, boundaryless T3 with the stated trivial U(1) bundle.",
+      "claim": "The field record supplies the seven named field-level roles and six secondary bracket relations in its stated classical carrier.",
+      "evidence": [
+        {
+          "record": "smooth-completion-cinf-t3-v0.1",
+          "url": "https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.json",
+          "integrity_check": "https://eulershiddenl.ink/verification/smooth-completion-cinf-v0.1/check_smooth_completion_cinf_record.py"
+        }
+      ],
+      "does_not_establish": [
+        "The separate generic Lean theorem is instantiated by this prose/source record."
+      ]
+    },
+    {
+      "id": "functional_closure_010o",
+      "status": "CONDITIONAL_LEAN_THEOREM",
+      "carrier": "FunctionalClosure010o.SmoothCompletion with Int-valued D, Gc, H, and bracket outputs.",
+      "claim": "For a supplied SmoothCompletion C carrying its seven named premises, the theorem proves the six secondary brackets.",
+      "evidence": [
+        {
+          "source": "FunctionalClosure010o.lean",
+          "commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/FunctionalClosure010o.lean"
+        },
+        {
+          "source": "FieldAttachment010s.lean",
+          "commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/FieldAttachment010s.lean"
+        }
+      ],
+      "conditions": [
+        "hDensityCovariance",
+        "gaugeHamiltonianVariationZero",
+        "gaussSmearingCovariance",
+        "boundaryH",
+        "sourceNormalGradient",
+        "sourceMomentumAddress",
+        "boundaryNormal"
+      ],
+      "does_not_establish": [
+        "A change of carrier from the finite Int interface to the real C-infinity field record."
+      ]
+    },
+    {
+      "id": "regular_gc_to_suture_segment",
+      "status": "CERTIFIED_REGULAR_GC_TO_SUTURE_SEGMENT",
+      "carrier": "The G,C root block in the Suture coframe: etaHat = G plus I6 and cHat = C plus C plus C plus C, with the stated regular branch.",
+      "claim": "The separately pinned bridge proves the metric/flux differential and Taylor identities, regular full-rank criterion, and wall relation. The separately pinned Euler source proves regular Euler equivalence, constrained Euler reduction, the auxiliary canonical-bracket inverse, and its rank certificate.",
+      "conditions": [
+        "rank D S_Pi = 16 for the regular reduction",
+        "b(g,F) < |chi| for the stated regular image branch"
+      ],
+      "evidence": [
+        {
+          "source": "SutureDifferentialBridge.lean",
+          "commit": "ce044a915108da2bcdd33766efd71765c12d6824",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/ce044a915108da2bcdd33766efd71765c12d6824/proofs/SutureDifferentialBridge.lean",
+          "sha256": "7af54b588f9254d5d7244753addb6da7012451779829bc2e6097d380db5c8557",
+          "ci_url": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43758920696",
+          "workflow": "lean-suture-differential-bridge.yml",
+          "lean_version": "4.33.0"
+        },
+        {
+          "source": "SutureEulerReduction.lean",
+          "commit": "7235356c867ca5469dea607131b762083e74b127",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/7235356c867ca5469dea607131b762083e74b127/proofs/SutureEulerReduction.lean",
+          "sha256": "40f18b82f5fb903a81c8f1ea14d696b95500eff8d631f623b12bbc3ac1c06afe",
+          "ci_url": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43728787705",
+          "workflow": "lean-suture-euler.yml",
+          "lean_version": "4.33.0"
+        },
+        {
+          "source": "MinimumMechanicalBasis.lean",
+          "commit": "9121e1b468e26566b1ed7ebcd197fa9e373b7e4c",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/9121e1b468e26566b1ed7ebcd197fa9e373b7e4c/proofs/MinimumMechanicalBasis.lean",
+          "sha256": "93f289f0f82f36028551238f19da3b56e985775e62afab23402a50eec0c571a5",
+          "ci_url": "https://github.com/Coppalini-Architecture/coppalini-architecture/actions/runs/43689730879",
+          "workflow": "lean-minimum-mechanical-basis.yml",
+          "lean_version": "4.33.0",
+          "scope": "One finite joint certificate for the root, root/projective adapters, regular-suture and multiplier witnesses; it expressly excludes coupled field Euler equations, global Hamiltonian equivalence, and empirical realization."
+        },
+        {
+          "record": "Suture Field Dynamics v0.3",
+          "artifact": "https://eulershiddenl.ink/downloads/Suture_Audit_v0_3.zip",
+          "receipt": "https://eulershiddenl.ink/research/suture-field/residual_ledger_v0_3.md"
+        }
+      ],
+      "does_not_establish": [
+        "A whole-root Q, Omega_root, or L_ax action/flow intertwiner into a field action.",
+        "Material coupling, calibration, refinement/quotient transport, or observable transport.",
+        "A replacement for the stated regular-branch conditions."
+      ]
+    },
+    {
+      "id": "jurisdiction_generic_interface",
+      "status": "LEAN_CHECKED_GENERIC_INTERFACE",
+      "carrier": "UniversalClosure010u.Jurisdiction State for arbitrary State.",
+      "claim": "The source defines the typed gate, constraint, survival, and three residual fields, and proves the named admission, refusal, retained-history, and Enough consequences generically.",
+      "evidence": [
+        {
+          "source": "UniversalClosure010u.lean",
+          "commit": "b9e939d514a63fb021592f79a316f70cbc70ed8a",
+          "url": "https://github.com/Coppalini-Architecture/coppalini-architecture/blob/b9e939d514a63fb021592f79a316f70cbc70ed8a/proofs/UniversalClosure010u.lean",
+          "sha256": "47aeccb2ac51e3a79b13c9777f34c1bf000d8833c19c1f597c15a1862e3e4ed7"
+        }
+      ],
+      "does_not_establish": [
+        "A specific physical, institutional, or empirical Jurisdiction instance."
+      ]
+    },
+    {
+      "id": "archival_tt_local_reader",
+      "status": "SOURCE_REPORTED_ARCHIVAL_SCOPE",
+      "carrier": "The archival Gaussian carrier and boundary spin-two TT reader under its specified refinement and symmetry assumptions.",
+      "claim": "The archival record reports the carrier and local TT reader closed; the fixed-packet finite-helicity overlap remains a pending matrix-element evaluation.",
+      "evidence": [
+        {
+          "record": "CA-QG-001 in the archived R28 preparation metadata",
+          "url": "https://eulershiddenl.ink/research/claims.json"
+        }
+      ],
+      "does_not_establish": [
+        "A completed physical continuum result.",
+        "The status of an uninspected successor edition."
+      ]
+    }
+  ],
+  "retained_boundaries": [
+    "The whole-root action/flow adapter is not supplied by the certified regular G,C-to-Suture segment.",
+    "Material coupling, calibration, refinement/quotient transport, and observable transport remain separately typed conditions.",
+    "The fixed-packet finite-helicity overlap remains pending in the archival TT record.",
+    "The FunctionalClosure010o theorem remains conditional over its seven named premises."
+  ],
+  "historical_records_preserved": [
+    "smooth-completion-cinf-t3-v0.1",
+    "formal-correspondence-v0.2",
+    "metric-minimum-root28-v0.1",
+    "Suture residual ledger v0.2"
+  ],
+  "integrity_check": "https://eulershiddenl.ink/verification/closure-status-v0.1/check_closure_status.py"
+}

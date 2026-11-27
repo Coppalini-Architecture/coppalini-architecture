@@ -20,41 +20,43 @@ Each entry below is a discovery annotation. The linked pages and their cited rec
 
 URL: https://eulershiddenl.ink/
 
-Summary: The public field result is presented first: Π → (g, F_sol) → F_em, with its regular branch, finite checks, source paths, and named open adapters kept distinct.
+Summary: The public field result is presented first: Π → (g, F_sol) → F_em, with its regular branch, finite checks, source paths, certified regular G,C-to-Suture segment, and separately scoped whole-root/observable tail kept distinct.
 
 Formal basis: [Metric Minimum](https://eulershiddenl.ink/papers/symmetric-minimum/) · [Smooth Completion](https://eulershiddenl.ink/proofs/smooth-completion/) · [Proof Atlas field mechanics](https://eulershiddenl.ink/proofs/minimum-mechanics/#field-mechanics)
 
+Source record: [Current closure status](https://eulershiddenl.ink/research/closure-status-v0.1.json)
+
 Check / record: [Proofs & Verification](https://eulershiddenl.ink/verify)
 
-Boundary: The original Int-valued SmoothCompletion constructor, P14 adapter, and selected spin-two readout remain separately named open items.
+Boundary: The finite Int / prime-word address layer has a Rat scalar floor; the regular G,C-to-Suture segment is certified. Whole-root action/flow and observable transport remain separately scoped. The archival TT carrier and local reader are reported closed, while its fixed-packet finite-helicity overlap remains unevaluated.
 
 <!-- topology:metric-minimum -->
 ### Metric Minimum
 
 URL: https://eulershiddenl.ink/papers/symmetric-minimum/
 
-Summary: Metric Minimum states the coframe, metric, flux, regular-branch reduction, reader, source files, and verification materials at their declared carriers.
+Summary: Metric Minimum states the coframe, metric, flux, regular-branch reduction, reader, source files, verification materials, and current cross-carrier status at their distinct carriers.
 
 Formal basis: [Field closure on T³](https://eulershiddenl.ink/proofs/smooth-completion/) · [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/)
 
 Check / record: [Verification index](https://eulershiddenl.ink/verify)
 
-Boundary: The page distinguishes the stated field construction from its separate conditional Lean boundary and open adapters.
+Boundary: The page distinguishes the closed classical field carrier, conditional Lean theorem, certified regular G,C-to-Suture segment, and separately scoped whole-root/observable tail.
 
 <!-- topology:smooth-completion -->
 ### Einstein–Maxwell Field Closure on T³
 
 URL: https://eulershiddenl.ink/proofs/smooth-completion/
 
-Summary: The construction records its seven field roles and six canonical secondary brackets, then separates the classical construction from the conditional Lean theorem and remaining obligations.
+Summary: The construction records its seven field roles and six canonical secondary brackets, then separates the closed classical carrier from the conditional Lean theorem, finite prime/address layer, certified regular bridge, and retained whole-root/observable tail.
 
 Formal basis: [Metric Minimum](https://eulershiddenl.ink/papers/symmetric-minimum/) · [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/)
 
-Source record: [C∞ field record](https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.md)
+Source record: [C∞ field record](https://eulershiddenl.ink/research/smooth-completion-cinf-t3-v0.1.md) · [Current closure status](https://eulershiddenl.ink/research/closure-status-v0.1.json)
 
 Check / record: [C∞ field-record checker](https://eulershiddenl.ink/verification/smooth-completion-cinf-v0.1/check_smooth_completion_cinf_record.py)
 
-Boundary: The Lean theorem is conditional on the named SmoothCompletion roles; the original constructor and P14 adapter remain open.
+Boundary: The Lean theorem remains conditional on the named SmoothCompletion roles. The finite prime/address layer and certified regular G,C-to-Suture segment are separate from the retained whole-root/observable tail.
 
 <!-- topology:verify -->
 ### Proofs & Verification
@@ -65,7 +67,7 @@ Summary: Verification routes readers to Lean source, compiler receipts, finite c
 
 Formal basis: [Proof Atlas](https://eulershiddenl.ink/proofs/minimum-mechanics/) · [External Formalization Reader](https://eulershiddenl.ink/external-formalization/)
 
-Boundary: Reported checks and runnable finite verifiers do not turn named open adapters into proved results.
+Boundary: Reported checks and runnable finite verifiers establish only their named carrier and scope; the current closure record separates certified regular segments from the retained whole-root and observable tail.
 
 <!-- topology:library -->
 ### Research Library
@@ -111,7 +113,7 @@ Summary: The Proof Atlas identifies Lean source modules, reported compiler evide
 
 Formal basis: [Proofs & Verification](https://eulershiddenl.ink/verify) · [Field Closure on T³](https://eulershiddenl.ink/proofs/smooth-completion/)
 
-Boundary: The atlas preserves source-reported status and does not close the separately named constructor or adapter obligations.
+Boundary: The atlas preserves source-reported status: 010o remains conditional, while the finite prime/address scalar floor and certified regular G,C-to-Suture segment are separately pinned from the retained whole-root/observable tail.
 
 <!-- topology:formalism -->
 ### Basis & Scope

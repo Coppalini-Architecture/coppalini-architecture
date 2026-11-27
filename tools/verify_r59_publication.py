@@ -71,10 +71,10 @@ HOMEPAGE_RESULT_SCOPE_MARKERS = (
  "140 finite identities and 33 negative controls",
  "real <code>C∞</code> Einstein–Maxwell field construction on compact boundaryless <code>𝕋³</code>",
  "Given a <code>SmoothCompletion</code> with those seven named roles, Lean proves the six canonical brackets.",
- "original <code>Int</code>-valued <code>SmoothCompletion</code> constructor",
- "P14’s finite-root-to-variational/Hamiltonian adapter",
- "selected spin-two TT readout remain open",
- 'href="/papers/symmetric-minimum/#status-lineage">canonical seven-status key</a>',
+ "finite <code>Int</code> / prime-word address layer",
+ "regular <code>G,C</code>-to-Suture metric/flux and Euler-reduction segment is certified",
+ "fixed-packet finite-helicity overlap remains unevaluated",
+ 'href="/research/closure-status-v0.1.md">Read the current closure status.</a>',
  "Proof in order of force",
     "Read the result first; then follow its named source, carrier, condition, and check.",
 )
@@ -89,6 +89,8 @@ SMOOTH_COMPLETION_PREMISES = (
  "boundaryNormal",
 )
 ROOT28_MANIFEST = "research/metric-minimum-root28-v0.1.json"
+CLOSURE_STATUS_RECORD = "research/closure-status-v0.1.json"
+CLOSURE_STATUS_CHECK = "verification/closure-status-v0.1/check_closure_status.py"
 MOONLIGHT_ARTIFACT = "models/view/moonlight-phase-reader-v0.8.4.html"
 MOONLIGHT_RECORD = "verification/receipts/MOONLIGHT-MC-001-P.public-recheck.json"
 MOONLIGHT_MANUAL = "moonlight/manual/index.html"
@@ -242,6 +244,88 @@ def smooth_completion_receipt(errors):
     if "P14" not in record.get("separate_open_obligation", ""):
         errors.append("smooth-completion P14 boundary missing")
 
+def closure_status_receipt(errors):
+    record_path = ROOT / CLOSURE_STATUS_RECORD
+    check_path = ROOT / CLOSURE_STATUS_CHECK
+    if not record_path.is_file():
+        errors.append("closure-status record missing")
+        return
+    if not check_path.is_file():
+        errors.append("closure-status checker missing")
+        return
+    try:
+        record = json.loads(record_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append("closure-status record is invalid JSON: " + str(exc))
+        return
+    if record.get("record_type") != "CoppaliniArchitecture.CrossCarrierClosureStatus":
+        errors.append("closure-status record type mismatch")
+    expected = {
+        "finite_prime_address_interface": "CLOSED_FINITE_PRIME_RATIONAL_FLOOR",
+        "classical_t3_field_scope": "CLOSED_CLASSICAL_FIELD_SCOPE",
+        "functional_closure_010o": "CONDITIONAL_LEAN_THEOREM",
+        "regular_gc_to_suture_segment": "CERTIFIED_REGULAR_GC_TO_SUTURE_SEGMENT",
+        "jurisdiction_generic_interface": "LEAN_CHECKED_GENERIC_INTERFACE",
+        "archival_tt_local_reader": "SOURCE_REPORTED_ARCHIVAL_SCOPE",
+    }
+    actual = {entry.get("id"): entry.get("status") for entry in record.get("segments", [])}
+    if actual != expected:
+        errors.append("closure-status segment split mismatch")
+    bridge = actual and next((entry for entry in record.get("segments", []) if entry.get("id") == "regular_gc_to_suture_segment"), {})
+    commits = [entry.get("commit") for entry in bridge.get("evidence", [])]
+    for commit in (
+        "ce044a915108da2bcdd33766efd71765c12d6824",
+        "7235356c867ca5469dea607131b762083e74b127",
+        "9121e1b468e26566b1ed7ebcd197fa9e373b7e4c",
+    ):
+        if commit not in commits:
+            errors.append("closure-status bridge pin missing: " + commit)
+    result = subprocess.run(
+        [sys.executable, "-I", "-B", str(check_path)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode:
+        detail = (result.stdout + result.stderr).strip().replace("\n", " | ")
+        errors.append("closure-status checker failed: " + detail)
+
+def current_status_copy(errors):
+    current_pages = (
+        "index.html",
+        "library.html",
+        "verify.html",
+        "formal-correspondence/index.html",
+        "proofs/minimum-mechanics/index.html",
+        "proofs/smooth-completion/index.html",
+        "papers/symmetric-minimum/index.html",
+        "llms-full.txt",
+    )
+    stale_blankets = (
+        "original <code>Int</code>-valued <code>SmoothCompletion</code> constructor",
+        "P14’s finite-root-to-variational/Hamiltonian adapter",
+        "selected spin-two TT readout remain open",
+        "two formal adapters remain open",
+    )
+    for relative in current_pages:
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        if "/research/closure-status-v0.1" not in text:
+            errors.append(relative + ": missing current closure-status link")
+        for stale in stale_blankets:
+            if stale in text:
+                errors.append(relative + ": retains stale blanket boundary: " + stale)
+    headers = (ROOT / "_headers").read_text(encoding="utf-8")
+    for route in (
+        "/research/smooth-completion-cinf-t3-v0.1.json",
+        "/research/formal-correspondence-v0.2.json",
+        "/research/metric-minimum-root28-v0.1.json",
+        "/verification/receipts/RESIDUAL_LEDGER_v0_2.md",
+        "/library-archive",
+    ):
+        marker = route + "\n  X-Robots-Tag: noindex, follow"
+        if marker not in headers:
+            errors.append("superseded raw record lacks noindex header: " + route)
+
 def root28_reader_candidate(errors):
     manifest_path = ROOT / ROOT28_MANIFEST
     if not manifest_path.is_file():
@@ -281,7 +365,8 @@ def root28_reader_candidate(errors):
         "Root28 is a local candidate",
         "28/28 reader obligations; 8/8 refusal controls.",
         "The seven-colour order is a declared display legend",
-        "original <code>Int</code>-valued interface and P14 remain open",
+        "Root28 v0.1 remains its byte-pinned historical local candidate.",
+        "/research/closure-status-v0.1.md",
         "/research/metric-minimum-root28-v0.1.md",
         "/research/metric-minimum-root28-v0.1.json",
         "/proofs/Root28Reader.lean",
@@ -506,6 +591,8 @@ def verify():
             errors.append("landing page retains superseded process-first marker: "+stale)
     symmetric_minimum_release(errors)
     smooth_completion_receipt(errors)
+    closure_status_receipt(errors)
+    current_status_copy(errors)
     root28_reader_candidate(errors)
     external_reader_release_boundary(errors)
     symmetric_page = (ROOT/"papers/symmetric-minimum/index.html").read_text(encoding="utf-8")
@@ -516,7 +603,7 @@ def verify():
         "Einstein", "Maxwell", "Dirac", "Noether", "Gödel",
         "Π<sup>A</sup><sub>μ</sub>", "F<sub>em</sub>",
         "Coframe field construction", "Conditional Lean theorem",
-        "Classical field closure.", "Open in Lean.",
+        "Classical field closure.", "Current carrier and bridge status.",
         "/proofs/smooth-completion/", "Public reader handles (site display)",
         "Ψ · Θ · θ · π · e · Φ · Λ", "id=\"status-lineage\"", "id=\"open-ledger\"",
         "G<sub>root</sub>", "G<sub>EM</sub>", "λ<sub>root</sub>",
