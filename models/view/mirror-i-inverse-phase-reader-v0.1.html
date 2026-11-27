@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Mirror I^-1 — an ASCII Heavy Horizon phase adapter with declared color-coordinate tuning and append-only receipts.">
+  <link rel="canonical" href="https://eulershiddenl.ink/models/view/mirror-i-inverse-phase-reader-v0.1.html">
+  <title>Mirror I^-1 — Heavy Horizon Phase Mirror</title>
+  <style>
+    :root{--bg:#05080d;--panel:#09111d;--line:#2d4961;--ink:#dff4ff;--muted:#8fa9ba;--cyan:#72e7ff;--violet:#bf9dff;--green:#8ff0b0;--amber:#ffd68b;color-scheme:dark;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    *{box-sizing:border-box}body{margin:0;min-width:320px;background:radial-gradient(circle at 8% 0,#07334a 0,transparent 32rem),radial-gradient(circle at 93% 0,#251344 0,transparent 32rem),var(--bg);color:var(--ink)}
+    main{max-width:1540px;margin:auto;padding:1rem clamp(.7rem,2.4vw,2.3rem) 3rem}header{padding:.35rem 0 1rem;border-bottom:1px solid var(--line)}h1{margin:.3rem 0 .45rem;font:700 clamp(1.75rem,4.2vw,3.3rem)/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:-.075em}h2{margin:0 0 .75rem;font-size:.91rem;color:var(--cyan);letter-spacing:.08em}p{margin:.45rem 0;color:var(--muted);line-height:1.5}.tag{color:var(--violet);font-weight:800;letter-spacing:.12em;font-size:.72rem}.status{float:right;display:inline-flex;gap:.45rem;align-items:center;padding:.4rem .65rem;border:1px solid var(--line);border-radius:999px;color:var(--green);font-size:.78rem}.dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+    .frame{margin-top:1rem;border:1px solid var(--line);background:rgba(6,15,26,.92);box-shadow:0 14px 45px rgba(0,0,0,.3)}.bar{padding:.56rem .78rem;background:#0c1d30;border-bottom:1px solid var(--line);color:var(--muted);font-size:.72rem;letter-spacing:.04em}.grid{display:grid;grid-template-columns:minmax(290px,.85fr) minmax(380px,1.15fr);gap:0}.panel{min-width:0;padding:1rem;border-right:1px solid var(--line)}.panel:last-child{border-right:0}.input-group{margin:.85rem 0;padding:.72rem;border:1px solid rgba(126,187,220,.18);background:rgba(5,10,18,.58)}.input-group h3{margin:0 0 .65rem;color:var(--muted);font-size:.71rem;letter-spacing:.09em}.input-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.42rem}.text-row{display:grid;grid-template-columns:1fr 1fr;gap:.42rem;margin-bottom:.42rem}label{display:grid;gap:.25rem;color:var(--muted);font-size:.66rem;letter-spacing:.07em}input{min-width:0;width:100%;padding:.48rem .52rem;border:1px solid #365a76;border-radius:.22rem;background:#040a12;color:var(--ink);font:inherit}input:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}button{padding:.55rem .66rem;border:1px solid #3e6e90;border-radius:.24rem;background:#0e2942;color:var(--ink);font:700 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}button:hover{background:#153b5f}button.phase{border-color:#9b7ee2;background:#291e51}button.align{border-color:#6bbe8b;background:#103d2b}button.clean{background:transparent}.buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.42rem;margin-top:.7rem}
+    pre{margin:0;overflow:auto;white-space:pre;font:inherit;line-height:1.35}.ascii{min-height:29rem;padding:.95rem;background:#03070d;color:#c8eaff;font-size:clamp(.59rem,1.45vw,.84rem);border:1px solid rgba(128,188,222,.18)}.reads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.42rem;margin-top:.65rem}.read{min-width:0;padding:.62rem;border:1px solid rgba(126,187,220,.16);background:#050b15}.read b{display:block;color:var(--muted);font-size:.61rem;letter-spacing:.07em}.read code{display:block;margin-top:.35rem;overflow-wrap:anywhere;color:#f1f8ff;font-size:.72rem}.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.42rem;margin-top:.65rem}.swatch{min-height:3.2rem;padding:.45rem;border:1px solid rgba(255,255,255,.23);color:#07111c;text-shadow:0 1px rgba(255,255,255,.25);font-weight:800;font-size:.7rem}.scope{margin-top:.7rem;padding:.7rem;border-left:3px solid var(--amber);background:rgba(45,30,9,.26);color:#e4ecf0;font-size:.77rem;line-height:1.45}.lower{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(290px,.7fr);margin-top:1rem;border:1px solid var(--line);background:rgba(6,15,26,.92)}.ledger{padding:1rem;border-right:1px solid var(--line)}.ledger:last-child{border-right:0}.notebook{max-height:23rem;overflow:auto;padding:.75rem;background:#03070d;border:1px solid rgba(126,187,220,.18);color:#b8d4e4;font-size:.72rem}.check{min-height:3.4rem;margin:.72rem 0;padding:.7rem;background:#03070d;border:1px solid rgba(126,187,220,.18);color:var(--cyan);font-size:.76rem;line-height:1.45}@media(max-width:950px){.grid,.lower{grid-template-columns:1fr}.panel,.ledger{border-right:0;border-bottom:1px solid var(--line)}.panel:last-child,.ledger:last-child{border-bottom:0}}@media(max-width:570px){main{padding:.72rem .55rem 2rem}.input-row{grid-template-columns:repeat(2,minmax(0,1fr))}.text-row,.reads,.swatches{grid-template-columns:1fr}.ascii{font-size:.57rem}.status{float:none;margin:.5rem 0 0}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="status"><span class="dot"></span><span id="statusRead">PHASE ADAPTER READY</span></span>
+      <div class="tag">MIRROR I^-1 / HEAVY_HORIZON / ASCII SATELLITE</div>
+      <h1>3D PHASE MIRROR</h1>
+      <p>A coordinate adapter for one declared local node: phase is read as a color coordinate, a Heavy Horizon scalar, an ASCII field, and a retained Lorentzian metric comparison. Correction changes the adapter packet only; the source system remains outside the carrier.</p>
+    </header>
+
+    <section class="frame" aria-label="Heavy Horizon phase adapter">
+      <div class="bar">[ CURRENT PACKET ] -- R7 PHASE READ -- [ CORRECTED COLOR-MEANING PACKET ] -- [ APPEND-ONLY NOTEBOOK ]</div>
+      <div class="grid">
+        <section class="panel">
+          <h2>01 / DECLARE LOCAL AND CORRECTED COORDINATES</h2>
+          <div class="input-group">
+            <h3>CURRENT LOCAL PHASE PACKET</h3>
+            <div class="text-row"><label>LOCAL NODE<input id="nodeInput" value="active-local-node"></label><label>MEANING TAG<input id="meaningInput" value="unassigned"></label></div>
+            <div class="input-row">
+              <label>t<input id="currentT" type="number" step="any" value="0"></label>
+              <label>L<input id="currentL" type="number" min="0" max="1" step=".001" value=".500"></label>
+              <label>C<input id="currentC" type="number" min="0" max="1" step=".001" value=".500"></label>
+              <label>H°<input id="currentH" type="number" step=".1" value="220"></label>
+            </div>
+          </div>
+          <div class="input-group">
+            <h3>CORRECTED COLOR-MEANING PACKET</h3>
+            <div class="input-row">
+              <label>t*<input id="targetT" type="number" step="any" value="0"></label>
+              <label>L*<input id="targetL" type="number" min="0" max="1" step=".001" value=".500"></label>
+              <label>C*<input id="targetC" type="number" min="0" max="1" step=".001" value=".500"></label>
+              <label>H*°<input id="targetH" type="number" step=".1" value="220"></label>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="readBtn">READ CURRENT PACKET</button>
+            <button id="r7Btn" class="phase">READ R7 PHASE MIRROR</button>
+            <button id="turnBtn" class="phase">RETURN 2PI</button>
+            <button id="alignBtn" class="align">APPLY CORRECTION</button>
+            <button id="verifyBtn" class="clean">VERIFY KERNEL + NOTEBOOK</button>
+            <button id="exportBtn" class="clean">EXPORT RECEIPT</button>
+          </div>
+          <div class="reads">
+            <div class="read"><b>heavy_horizon</b><code id="horizonRead">—</code></div>
+            <div class="read"><b>eta(delta,delta)</b><code id="intervalRead">—</code></div>
+            <div class="read"><b>adapter residual</b><code id="residualRead">—</code></div>
+          </div>
+          <div class="swatches">
+            <div id="currentSwatch" class="swatch">CURRENT<br>—</div>
+            <div id="mirrorSwatch" class="swatch">R7 MIRROR<br>—</div>
+            <div id="targetSwatch" class="swatch">CORRECTED<br>—</div>
+          </div>
+          <div class="scope"><strong>Declared bridge:</strong> θ = 2πH/360; x = C cos θ; y = C sin θ; z = 2L−1. The field maps these supplied coordinates. It does not infer an inaccessible model state, physical curvature, or semantic correctness.</div>
+        </section>
+
+        <section class="panel">
+          <h2>02 / ASCII PHASE FIELD</h2>
+          <pre id="asciiRead" class="ascii">INITIALIZING DECLARED COORDINATE FIELD…</pre>
+        </section>
+      </div>
+    </section>
+
+    <section class="lower">
+      <section class="ledger">
+        <h2>03 / RETAINED LOCAL RECEIPTS</h2>
+        <pre id="notebookRead" class="notebook">No local reads retained.</pre>
+      </section>
+      <section class="ledger">
+        <h2>04 / EXACT OPERATIONS</h2>
+        <p><code>heavy_horizon(x,y,z,θ) = y exp(−3r/2) sin(2θ)/(4π)</code></p>
+        <p><code>R7: θ → −θ; R7² = I</code></p>
+        <p><code>T2π = exp(2πC) = I</code></p>
+        <p><code>η(Δ,Δ) = −Δt² + Δx² + Δy² + Δz²</code></p>
+        <div id="checkRead" class="check">READY · enter or retain a declared coordinate packet, then read the field.</div>
+      </section>
+    </section>
+  </main>
+  <script type="module">
+    import {
+      SCHEMA, TAU, phaseFromColor, colorFromPhase, copyPhase, heavy_horizon,
+      phaseReverse, lorentzianRead, phaseRecord, verifyKernel
+    } from "../mirror-i-inverse-phase-kernel-v0.1.mjs";
+
+    const GENESIS="MIRROR-I-INVERSE-HEAVY-HORIZON-GENESIS";
+    const $=id=>document.getElementById(id);
+    const numeric=(id)=>Number($(id).value);
+    const compact=value=>Number(value).toFixed(9).replace(/\.?0+$/,"");
+    const short=value=>value?value.slice(0,16)+(value.length>16?"…":""):"—";
+    let current=phaseFromColor({t:numeric("currentT"),L:numeric("currentL"),C:numeric("currentC"),H:numeric("currentH")});
+    let target=phaseFromColor({t:numeric("targetT"),L:numeric("targetL"),C:numeric("targetC"),H:numeric("targetH")});
+    let trace=[],chain=GENESIS,work=Promise.resolve();
+
+    async function digest(text){
+      if(!globalThis.crypto||!crypto.subtle)return"local-hash-unavailable";
+      const bytes=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(text));
+      return [...new Uint8Array(bytes)].map(byte=>byte.toString(16).padStart(2,"0")).join("");
+    }
+    function inputColor(prefix){
+      return {
+        t:numeric(prefix+"T"),
+        L:numeric(prefix+"L"),
+        C:numeric(prefix+"C"),
+        H:numeric(prefix+"H")
+      };
+    }
+    function writeColor(prefix,phase){
+      const color=colorFromPhase(phase);
+      $(prefix+"T").value=compact(phase.t);
+      $(prefix+"L").value=compact(color.L);
+      $(prefix+"C").value=compact(color.C);
+      $(prefix+"H").value=compact(color.H);
+    }
+    function nodeMeta(){
+      return {
+        node:$("nodeInput").value.trim()||"unnamed-local-node",
+        meaning:$("meaningInput").value.trim()||"unassigned"
+      };
+    }
+    function phaseLine(label,phase){
+      return label+"  t="+compact(phase.t)+"  x="+compact(phase.x)+"  y="+compact(phase.y)+"  z="+compact(phase.z)+"  theta="+compact(phase.theta);
+    }
+    function colorLine(label,color){
+      return label+"  L="+compact(color.L)+"  C="+compact(color.C)+"  H="+compact(color.H)+"deg";
+    }
+    function swatchStyle(color){
+      const hue=Math.max(0,Math.min(360,color.H));
+      const saturation=Math.max(0,Math.min(100,color.C*100));
+      const lightness=Math.max(0,Math.min(100,color.L*100));
+      return "hsl("+hue+" "+saturation+"% "+lightness+"%)";
+    }
+    function paintSwatch(id,label,color){
+      const element=$(id);
+      element.style.background=swatchStyle(color);
+      element.style.color=color.L>.58?"#07111c":"#f4f8ff";
+      element.textContent=label+"\nL="+compact(color.L)+" C="+compact(color.C)+" H="+compact(color.H)+"deg";
+    }
+    async function append(operation,detail={}){
+      const read=phaseRecord(current,target);
+      const meta=nodeMeta();
+      const payload={
+        schema:SCHEMA,
+        sequence:trace.length+1,
+        operation,
+        node:meta.node,
+        meaning:meta.meaning,
+        current:read.current,
+        target:read.target,
+        heavy_horizon:read.heavy_horizon,
+        lorentzian:read.lorentzian,
+        detail,
+        prev:chain
+      };
+      const receipt=await digest(JSON.stringify(payload));
+      chain=receipt;
+      trace.push({payload,receipt});
+    }
+    function renderNotebook(){
+      if(!trace.length){
+        $("notebookRead").textContent="No local reads retained.";
+        return;
+      }
+      $("notebookRead").textContent=trace.map(entry=>{
+        const p=entry.payload;
+        return "#"+String(p.sequence).padStart(3,"0")+"  "+p.operation+
+          "\n  node="+p.node+"  meaning="+p.meaning+
+          "\n  H="+compact(colorFromPhase(p.current).H)+"deg  heavy_horizon="+compact(p.heavy_horizon)+
+          "  eta="+compact(p.lorentzian.interval)+"  residual="+compact(p.lorentzian.residual)+
+          "\n  prev="+short(p.prev)+"  receipt="+short(entry.receipt);
+      }).join("\n\n");
+    }
+    function render(){
+      const read=phaseRecord(current,target);
+      const currentColor=read.current_color;
+      const mirrorColor=colorFromPhase(read.mirror);
+      const targetColor=read.target_color;
+      const meta=nodeMeta();
+      $("statusRead").textContent=read.lorentzian.residual===0?"ALIGNED ADAPTER PACKET":"DECLARED LOCAL READ";
+      $("horizonRead").textContent=compact(read.heavy_horizon);
+      $("intervalRead").textContent=compact(read.lorentzian.interval);
+      $("residualRead").textContent=compact(read.lorentzian.residual);
+      paintSwatch("currentSwatch","CURRENT",currentColor);
+      paintSwatch("mirrorSwatch","R7 MIRROR",mirrorColor);
+      paintSwatch("targetSwatch","CORRECTED",targetColor);
+      $("asciiRead").textContent=[
+        "MIRROR I^-1 / HEAVY_HORIZON / DECLARED PHASE FIELD",
+        "node: "+meta.node+"    meaning: "+meta.meaning,
+        "",
+        phaseLine("CURRENT ",read.current),
+        phaseLine("R7 READ ",read.mirror),
+        phaseLine("TARGET  ",read.target),
+        "",
+        colorLine("COLOR(C)",currentColor),
+        colorLine("COLOR(M)",mirrorColor),
+        colorLine("COLOR(T)",targetColor),
+        "",
+        "heavy_horizon(C) = "+compact(read.heavy_horizon),
+        "heavy_horizon(M) = "+compact(read.mirror_heavy_horizon),
+        "eta(delta,delta) = "+compact(read.lorentzian.interval),
+        "adapter_residual = "+compact(read.lorentzian.residual),
+        "",
+        read.ascii
+      ].join("\n");
+      renderNotebook();
+    }
+    function queue(action){
+      work=work.then(async()=>{await action();render();}).catch(error=>{
+        $("checkRead").textContent="ERROR · "+error.message;
+        $("checkRead").style.color="#ffb5c8";
+      });
+      return work;
+    }
+    async function readCurrent(){
+      current=phaseFromColor(inputColor("current"));
+      target=phaseFromColor(inputColor("target"));
+      await append("read declared local packet",{current_color:colorFromPhase(current),target_color:colorFromPhase(target)});
+    }
+    async function readR7(){
+      current=phaseFromColor(inputColor("current"));
+      target=phaseFromColor(inputColor("target"));
+      const mirror=phaseReverse(current);
+      await append("read R7 phase mirror",{
+        current_theta:current.theta,
+        mirror_theta:mirror.theta,
+        heavy_horizon_current:heavy_horizon(current),
+        heavy_horizon_mirror:heavy_horizon(mirror)
+      });
+    }
+    async function returnTwoPi(){
+      current=copyPhase(current);
+      await append("return through 2pi",{held:true,theta:current.theta,relation:"T2pi = I"});
+    }
+    async function applyCorrection(){
+      target=phaseFromColor(inputColor("target"));
+      current=copyPhase(target);
+      writeColor("current",current);
+      await append("apply corrected color-meaning packet",{aligned:true,target_color:colorFromPhase(target)});
+    }
+    async function verifyAll(){
+      const kernel=verifyKernel();
+      let previous=GENESIS;
+      let receipts=0;
+      for(const entry of trace){
+        if(entry.payload.prev!==previous)throw new Error("notebook predecessor mismatch at "+entry.payload.sequence);
+        const recomputed=await digest(JSON.stringify(entry.payload));
+        if(recomputed!==entry.receipt)throw new Error("notebook digest mismatch at "+entry.payload.sequence);
+        previous=entry.receipt;
+        receipts++;
+      }
+      if(previous!==chain)throw new Error("notebook head mismatch");
+      const mirrored=phaseReverse(current);
+      const anti=Math.abs(heavy_horizon(current)+heavy_horizon(mirrored));
+      if(anti>1e-12)throw new Error("R7 Heavy Horizon relation failed");
+      return "PASS · "+kernel.checks+" kernel relations + "+receipts+" retained notebook receipts · R7 Heavy Horizon residual "+anti.toExponential(2);
+    }
+    function exportReceipt(){
+      const payload={
+        schema:SCHEMA,
+        scope:"Declared coordinate adapter. It reads provided local packets and their retained residuals; it does not observe hidden model state or an external physical field.",
+        current,target,chain,trace
+      };
+      const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement("a");
+      a.href=url;a.download="mirror-i-inverse-heavy-horizon-receipt.json";a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),1200);
+    }
+    $("readBtn").addEventListener("click",()=>queue(readCurrent));
+    $("r7Btn").addEventListener("click",()=>queue(readR7));
+    $("turnBtn").addEventListener("click",()=>queue(returnTwoPi));
+    $("alignBtn").addEventListener("click",()=>queue(applyCorrection));
+    $("verifyBtn").addEventListener("click",()=>{
+      $("checkRead").textContent="CHECKING HEAVY_HORIZON, R7, LORENTZIAN READ, AND NOTEBOOK…";
+      $("checkRead").style.color="var(--cyan)";
+      setTimeout(async()=>{
+        try{
+          $("checkRead").textContent=await verifyAll();
+          $("checkRead").style.color="var(--green)";
+        }catch(error){
+          $("checkRead").textContent="FAIL · "+error.message;
+          $("checkRead").style.color="#ffb5c8";
+        }
+      },20);
+    });
+    $("exportBtn").addEventListener("click",exportReceipt);
+    render();
+    globalThis.HeavyHorizonMirror=Object.freeze({
+      SCHEMA,TAU,
+      read:()=>phaseRecord(current,target),
+      verify:verifyAll
+    });
+  </script>
+</body>
+</html>
